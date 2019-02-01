@@ -39,21 +39,21 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import Footer from "./components/Footer";
+import HelloWorld from './components/HelloWorld';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
   components: {
     Footer,
-    HelloWorld
+    HelloWorld,
   },
   data: () => ({
-    drawer: null
+    drawer: null,
   }),
 
   props: {
-    source: String
-  }
-}
+    source: String,
+  },
+};
 </script>
