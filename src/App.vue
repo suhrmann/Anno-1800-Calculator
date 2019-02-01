@@ -34,18 +34,18 @@
       <HelloWorld/>
 
     </v-content>
-    <v-footer color="indigo" app>
-      <span class="white--text">&copy; 2017</span>
-    </v-footer>
+    <Footer></Footer>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import Footer from "./components/Footer";
 
 export default {
   name: 'App',
   components: {
+    Footer,
     HelloWorld
   },
   data: () => ({
