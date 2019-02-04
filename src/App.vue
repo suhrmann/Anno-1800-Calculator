@@ -1,5 +1,5 @@
 <template>
-  <v-app id="keep">
+  <v-app id="anno1800calc">
     <v-navigation-drawer v-model="drawer" fixed clipped class="grey lighten-4" app>
       <v-list dense class="grey lighten-4">
         <template v-for="(item, i) in items">
@@ -8,11 +8,11 @@
               <v-subheader v-if="item.heading">{{ item.heading }}</v-subheader>
             </v-flex>
             <v-flex xs6 class="text-xs-right">
-              <v-btn small flat>edit</v-btn>
+              <!-- <v-btn small flat>edit</v-btn> -->
             </v-flex>
           </v-layout>
           <v-divider v-else-if="item.divider" :key="i" dark class="my-3"></v-divider>
-          <v-list-tile v-else :key="i" @click>
+          <v-list-tile v-else :key="i" :to="{path: item.route}">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -26,35 +26,14 @@
     <v-toolbar color="primary" app absolute clipped-left>
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <span class="title ml-3 mr-5">
-        Google&nbsp;
-        <span class="font-weight-light">Keep</span>
+        {{ title }} ||&nbsp;
+        <span class="font-weight-light subheading">{{subtitle}}</span>
       </span>
-      <v-text-field solo-inverted flat hide-details label="Search" prepend-inner-icon="search"></v-text-field>
-      <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height class="grey lighten-4">
-        <v-layout justify-center align-center>
-          <v-flex shrink>
-            <v-tooltip right>
-              <v-btn slot="activator" :href="source" icon large target="_blank">
-                <v-icon large>code</v-icon>
-              </v-btn>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <v-btn
-                slot="activator"
-                icon
-                large
-                href="https://codepen.io/johnjleider/pen/jZQNbd"
-                target="_blank"
-              >
-                <v-icon large>mdi-codepen</v-icon>
-              </v-btn>
-              <span>Codepen</span>
-            </v-tooltip>
-          </v-flex>
+      <v-container fill-height>
+        <v-layout row wrap justify-center align-center>
+          <router-view></router-view>
         </v-layout>
       </v-container>
     </v-content>
@@ -65,21 +44,24 @@
 export default {
   data: () => ({
     drawer: null,
+    title: "Anno 1800 Calculator",
+    subtitle: "a production chain cheatsheet",
     items: [
-      { icon: "lightbulb_outline", text: "Notes" },
-      { icon: "touch_app", text: "Reminders" },
+      { icon: "lightbulb_outline", text: "Colors", route: "/colors" },
       { divider: true },
-      { heading: "Labels" },
-      { icon: "add", text: "Create new label" },
+      { heading: "Production" },
+      {
+        icon: "lightbulb_outline",
+        text: "Production Chains",
+        route: "/prodchains"
+      },
+      { icon: "touch_app", text: "Production Layouts", route: "/prodlayouts" },
       { divider: true },
-      { icon: "archive", text: "Archive" },
-      { icon: "delete", text: "Trash" },
+      { heading: "sonstiger Schaas" },
+      { icon: "add", text: "hepp" },
       { divider: true },
-      { icon: "settings", text: "Settings" },
-      { icon: "chat_bubble", text: "Trash" },
-      { icon: "help", text: "Help" },
-      { icon: "phonelink", text: "App downloads" },
-      { icon: "keyboard", text: "Keyboard shortcuts" }
+      { icon: "archive", text: "About" },
+      { icon: "delete", text: "Close" }
     ]
   }),
   props: {
