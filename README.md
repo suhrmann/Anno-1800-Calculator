@@ -1,6 +1,12 @@
-# anno-1800-calc
+# Anno 1800 Calculator
 
 ## Project setup
+### 1 Get Project
+```
+git clone https://github.com/Vadammt/Anno-1800-Calculator.git
+```
+
+### 2 Install dependencies
 ```
 npm install
 ```
