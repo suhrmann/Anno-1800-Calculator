@@ -4,4 +4,11 @@ import 'vuetify/src/stylus/app.styl';
 
 Vue.use(Vuetify, {
   iconfont: 'md',
+  theme: {
+    primary: '#C68D5C',
+    secondary: '#8E6B49',
+    accent: '#C66F1B',
+    complementary: '#3f6696',
+  },
+
 });
