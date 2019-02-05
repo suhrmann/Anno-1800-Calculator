@@ -44,26 +44,26 @@
 export default {
   data: () => ({
     drawer: null,
-    title: 'Anno 1800 Calculator',
-    subtitle: 'a production chain cheatsheet',
+    title: "Anno 1800 Calculator",
+    subtitle: "a production chain cheatsheet",
     items: [
-      { icon: 'lightbulb_outline', text: 'Colors', route: '/colors' },
+      { icon: "lightbulb_outline", text: "Tester", route: "/colors" },
       { divider: true },
-      { heading: 'Production' },
-      { icon: 'merge_type', text: 'Production Chains', route: '/chains' },
-      { icon: 'trending_up', text: 'Resident Demand', route: '/demands' },
-      { icon: 'border_inner', text: 'Production Layouts', route: '/layouts' },
+      { heading: "Production" },
+      { icon: "merge_type", text: "Production Chains", route: "/chains" },
+      { icon: "trending_up", text: "Resident Demand", route: "/demands" },
+      { icon: "border_inner", text: "Production Layouts", route: "/layouts" },
       { divider: true },
-      { heading: 'sonstiger Schaas' },
-      { icon: 'add', text: 'hepp' },
+      { heading: "sonstiger Schaas" },
+      { icon: "add", text: "hepp" },
       { divider: true },
-      { icon: 'info', text: 'About', route: '/about' },
-      { icon: 'close', text: 'Close' },
-    ],
+      { icon: "info", text: "About", route: "/about" },
+      { icon: "close", text: "Close" }
+    ]
   }),
   props: {
-    source: String,
-  },
+    source: String
+  }
 };
 </script>
 
