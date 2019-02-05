@@ -100,7 +100,16 @@ export default {
   },
   data: function() {
     return {
-      productionChain: null, // new ProductionChain(),
+      /**
+       * The name of this production chain.
+       * @var {string}
+       */
+      productName: null,
+      /**
+       * The trunk of this production chain; aka the final / last production.
+       * @var {Producer}
+       */
+      trunk: null,
     };
   },
 };
