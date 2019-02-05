@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 // Routes
-import ColorComponent from './components/ColorComponent.vue';
+import Tester from './components/Tester.vue';
 import ProductionChains from './components/ProductionChains';
 import ProductionLayouts from './components/ProductionLayouts';
 import ResidentDemands from './components/ResidentDemands';
@@ -13,9 +13,9 @@ export default new Router({
   routes: [
     // ------
     {
-      path: '/colors',
-      name: 'colors',
-      component: ColorComponent,
+      path: '/tester',
+      name: 'tester',
+      component: Tester,
     },
     // - Production ------
     {
