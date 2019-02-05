@@ -275,25 +275,7 @@
                   }
               },
 
-              "Rum": {
-                  "finalProduct": "Rum",
-                  "building": "Rum Distillery",
-                  "alternative": "",
-                  "precursorBuildings": {
-                      "1": {
-                          "building": "Lumberjack Hut",
-                          "alternative": "",
-                          "precursorBuildings": {}
-                      },
-                      "2": {
-                          "building": "Sugar Cane Plantation",
-                          "alternative": "",
-                          "precursorBuildings": {
 
-                          }
-                      }
-                  }
-              },
               "Fur Coats": {
                   "finalProduct": "Fur Coats",
                   "building": "Fur Dealer",
@@ -316,6 +298,142 @@
                               }
                           }
                       }
+                  }
+              }
+          },
+
+          "NewWorld": {
+              "Fried Plantains": {
+                  "finalProduct": "Fried Plantains",
+                  "building": "Fried Plantain Kitchen",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Fish Oil Factory",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      },
+                      "2": {
+                          "building": "Plantain Plantation",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      }
+                  }
+              },
+              "Rum": {
+                  "finalProduct": "Rum",
+                  "building": "Rum Distillery",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Lumberjack Hut",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      },
+                      "2": {
+                          "building": "Sugar Cane Plantation",
+                          "alternative": "",
+                          "precursorBuildings": {
+
+                          }
+                      }
+                  }
+              },
+              "Ponchos": {
+                  "finalProduct": "Ponchos",
+                  "building": "Poncho Darner",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Alpaca Farm",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      }
+                  }
+              },
+              "Tortillas": {
+                  "finalProduct": "Tortillas",
+                  "building": "Tortilla Maker",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Cattle Farm",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      },
+                      "2": {
+                          "building": "Corn Farm",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      }
+                  }
+              },
+              "Coffee": {
+                  "finalProduct": "Coffee",
+                  "building": "Coffee Roaster",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Coffee Plantation",
+                          "alternative": "",
+                          "precursorBuildings": {}
+                      }
+                  }
+              },
+
+              "Electricity": {
+                  "finalProduct": "Electricity",
+                  "building": "Oil Power Plant",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Small Oil Harbour",
+                          "alternative": "",
+                          "precursorBuildings": {
+                              "1": {
+                                  "building": "Railway",
+                                  "alternative": "",
+                                  "precursorBuildings": {
+                                      "1": {
+                                          "building": "Oil Refinery",
+                                          "alternative": "",
+                                          "precursorBuildings": {}
+                                      }
+                                  }
+                              },
+                              "2": {
+                                  "building": "Oil Storage",
+                                  "alternative": "",
+                                  "precursorBuildings": {}
+                              }
+                          }
+                      }
+                  }
+              },
+              "Cigars": {
+                  "finalProduct": "Cigars",
+                  "building": "Cigar Factory",
+                  "alternative": "",
+                  "precursorBuildings": {
+                      "1": {
+                          "building": "Tobacco Plantation",
+                          "alternative": "",
+                          "precursorBuildings": {
+
+                          }
+                      },
+                      "2": {
+                          "building": "Marquetry Workshop",
+                          "alternative": "",
+                          "precursorBuildings": {
+                              "1": {
+                                  "building": "Lumberjack Hut",
+                                  "alternative": "",
+                                  "precursorBuildings": {}
+                              }
+                          }
+                      }
+
                   }
               }
           }
