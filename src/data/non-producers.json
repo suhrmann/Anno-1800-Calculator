@@ -1,0 +1,292 @@
+{
+    "version": "Anno 1800 Beta",
+    "buildings": {
+        "Dirt Road": {
+            "name": "Dirt Road",
+            "construction": {
+                "cash": 3,
+                "wood": 0,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Marketplace": {
+            "name": "Marketplace",
+            "construction": {
+                "cash": 500,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 20,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Farmer Residence": {
+            "name": "Farmer Residence",
+            "construction": {
+                "cash": 0,
+                "wood": 2,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+
+        "Small Warehouse": {
+            "name": "Small Warehouse",
+            "construction": {
+                "cash": 500,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 20,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Fire Station": {
+            "name": "Fire Station",
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 25,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Pub": {
+            "name": "Pub",
+            "construction": {
+                "cash": 500,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 20,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Paved Street": {
+            "name": "Paved Street",
+            "construction": {
+                "cash": 5,
+                "wood": 0,
+                "brick": 1,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Trade Union": {
+            "name": "Trade Union",
+            "construction": {
+                "cash": 2500,
+                "wood": 25,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 25
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Church": {
+            "name": "Church",
+            "construction": {
+                "cash": 2500,
+                "wood": 20,
+                "brick": 25,
+                "steel": 0,
+                "window": 0,
+                "influence": 25
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Police Station": {
+            "name": "Police Station",
+            "construction": {
+                "cash": 2500,
+                "wood": 8,
+                "brick": 10,
+                "steel": 0,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "School": {
+            "name": "School",
+            "construction": {
+                "cash": 2500,
+                "wood": 20,
+                "brick": 25,
+                "steel": 20,
+                "window": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Town Hall": {
+            "name": "Town Hall",
+            "construction": {
+                "cash": 2500,
+                "wood": 20,
+                "brick": 25,
+                "steel": 20,
+                "window": 5,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Variety Theatre": {
+            "name": "Variety Theatre",
+            "construction": {
+                "cash": 10000,
+                "wood": 30,
+                "brick": 50,
+                "steel": 40,
+                "window": 40,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Zoo": {
+            "name": "Zoo",
+            "construction": {
+                "cash": 10000,
+                "wood": 30,
+                "brick": 30,
+                "steel": 10,
+                "window": 5,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Hospital": {
+            "name": "Hospital",
+            "construction": {
+                "cash": 10000,
+                "wood": 12,
+                "brick": 20,
+                "steel": 16,
+                "window": 40,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        }
+
+    }
+}
