@@ -45,7 +45,7 @@
                   ></v-combobox>
                 </v-flex>
                 <v-flex xs-3>
-                  <v-btn @click="loadChain(this.chainSelection)" color="accent">Load Chain</v-btn>
+                  <v-btn @click="loadChain()" color="accent">Load Chain</v-btn>
                 </v-flex>
               </v-card>
             </v-tab-item>
@@ -142,24 +142,36 @@ export default {
       return endProductsArray;
     },
 
+    /**
+     *
+     * @todo DOC
+     */
     getCertainChain(chainsCollection, chainName) {
+      let test = [];
+      console.log(chainsCollection);
       Object.keys(chainsCollection).forEach(chain => {
-        if (chainsCollection[chain].finalProduct == name) {
-          return chainsCollection[chain];
+        if (chainsCollection[chain].finalProduct == chainName) {
+          test.push(chainsCollection[chain]);
+          console.log(test[0]);
         } else {
           return {};
         }
       });
     },
 
+    /**
+     *
+     * @todo DOC
+     */
     loadChain(chainName, chainCollection) {
+      chainName = this.chainSelection;
       let chains = null;
       if (chainCollection == null) {
         chains = this.fetchAllProductionChains();
       } else {
         chains = chainsCollection;
       }
-      chain = this.getCertainChain(chainName, chains);
+      let chain = this.getCertainChain(chains, chainName);
       console.log(chain);
       return chain;
     },
