@@ -1,11 +1,14 @@
 <template>
 
   <v-flex xs12>
+    selectedWorldID: {{selectedWorldID}},
+    selectedSocialClassID: {{selectedSocialClassID}},
+    selectedProductionChainName: {{selectedProductionChainName}},
 
-    <!-- Nav Bar: TIER -->
+    <!-- Nav Bar: PRODUCTION CHAIN -->
     <v-card height="56px">
       <v-bottom-nav
-        :active.sync="selectedSocialClassName"
+        :active.sync="selectedProductionChainName"
         :value="true"
         absolute
         dark
@@ -13,11 +16,32 @@
         <v-btn
           color="primary"
           flat
-          v-for="(tier, i) in selectedWorld.socialClasses"
-          :value="tier.name"
+          v-for="(chain, i) in selectedProductionChains"
+          :value="chain.id"
         >
-          <span>{{ tier.name }}</span>
-          <img :src="tier.img" :alt="tier.name + ' Image'">
+          <span>{{ chain.name }}</span>
+          <img :src="chain.img" :alt="chain.name + ' Image'">
+        </v-btn>
+
+      </v-bottom-nav>
+    </v-card>
+
+    <!-- Nav Bar: SOCIAL CLASS -->
+    <v-card height="56px">
+      <v-bottom-nav
+        :active.sync="selectedSocialClassID"
+        :value="true"
+        absolute
+        dark
+      >
+        <v-btn
+          color="primary"
+          flat
+          v-for="(socialClass, i) in selectedSocialClasses"
+          :value="socialClass.id"
+        >
+          <span>{{ socialClass.name }}</span>
+          <img :src="socialClass.img" :alt="socialClass.name + ' Image'">
         </v-btn>
 
       </v-bottom-nav>
@@ -26,7 +50,7 @@
     <!-- Nav Bar: WORLD -->
     <v-card height="55px">
       <v-bottom-nav
-        :active.sync="selectedWorldName"
+        :active.sync="selectedWorldID"
         :value="true"
         absolute
         dark
@@ -35,7 +59,8 @@
           color="primary"
           flat
           v-for="(world, i) in worlds"
-          :value="world.name"
+          :value="world.id"
+          @click="resetSocialClass()"
         >
           <span>{{ world.name }}</span>
           <img :src="world.img" :alt="world.name + ' Image'">
@@ -48,7 +73,9 @@
 </template>
 
 <script>
-import Tiers from '../data/tiers.json';
+import worlds from '../data/worlds.json';
+import socialClasses from '../data/socialClasses.json';
+import productionChains from '../data/productionChain';
 
 export default {
   name: 'BottomNavBar',
@@ -56,19 +83,32 @@ export default {
     return {
 
       // Init selection
-      selectedWorldName: 'Old World',
-      selectedSocialClassName: '',
+      selectedWorldID: 1,
+      selectedSocialClassID: 1,
+      selectedProductionChainName: 1,
 
       /**
-       * The tiers, grouped by world (old world and new world)
+       * The socialClasses, grouped by world (old world and new world)
        */
-      worlds: Tiers,
+      worlds: worlds,
+      socialClasses: socialClasses,
+      productionChains: productionChains.Production_Chain,
     };
   },
   computed: {
-    selectedWorld: function() {
-      const worlds = Object.values(this.worlds);
-      return worlds.find((world) => world.name === this.selectedWorldName);
+    selectedSocialClasses: function() {
+      const socialClasses = Object.values(this.socialClasses);
+      return socialClasses.filter((socialClass) => socialClass.worldID === this.selectedWorldID);
+    },
+
+    selectedProductionChains: function() {
+      const productionChains = Object.values(this.productionChains);
+      return productionChains.filter((chain) => chain.socialClassID === this.selectedSocialClassID);
+    },
+  },
+  methods: {
+    resetSocialClass: function() {
+      this.selectedSocialClassID = 1;
     },
   },
 };
