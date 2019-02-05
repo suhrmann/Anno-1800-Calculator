@@ -1,12 +1,19 @@
 <template>
-  <div>
+  <v-card>
     <h1>Production Chains</h1>
-  </div>
+
+    <BottomNavBar></BottomNavBar>
+  </v-card>
 </template>
 
 <script>
+import BottomNavBar from './BottomNavBar';
+
 export default {
   name: 'ProductionChains',
+  components: {
+    BottomNavBar,
+  },
 };
 </script>
 

@@ -1,12 +1,19 @@
 <template>
-  <div>
+  <v-card>
     <h1>Resident Demands</h1>
-  </div>
+
+    <BottomNavBar></BottomNavBar>
+  </v-card>
 </template>
 
 <script>
+import BottomNavBar from './BottomNavBar';
+
 export default {
   name: 'ResidentDemands',
+  components: {
+    BottomNavBar,
+  },
 };
 </script>
 
