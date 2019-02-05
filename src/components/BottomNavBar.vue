@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import Tiers from '../data/tiers.json';
+
 export default {
   name: 'BottomNavBar',
   data() {
@@ -32,58 +34,10 @@ export default {
       selectedWorld: null,
       selectedSocialClass: null,
 
-      // TODO Extract this into a JSON
-      worlds: {
-        oldWorld: {
-          name: 'Old World',
-          img: 'old-world.png',
-
-          /**
-           * The social classes of the OLD word
-           */
-          socialClasses: {
-            farmers: {
-              name: 'Farmers',
-              img: 'farmers.png',
-            },
-            workers: {
-              name: 'Workers',
-              img: 'workers.png',
-            },
-            artisans: {
-              name: 'Artisans',
-              img: 'artisans.png',
-            },
-            engineers: {
-              name: 'Engineers',
-              img: 'engineers.png',
-            },
-            investors: {
-              name: 'Investors',
-              img: 'investors.png',
-            },
-          },
-        },
-
-        newWorld: {
-          name: 'New World',
-          img: 'new-world',
-
-          /**
-           * The social classes of the NEW word
-           */
-          socialClasses: {
-            jornaleros: {
-              name: 'Jornaleros',
-              img: 'jornaleros.png',
-            },
-            obreros: {
-              name: 'Obreros',
-              img: 'obreros.png',
-            },
-          },
-        },
-      },
+      /**
+       * The tiers, grouped by world (old world and new world)
+       */
+      worlds: Tiers,
     };
   },
 };
