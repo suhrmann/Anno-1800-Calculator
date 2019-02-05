@@ -1,466 +1,488 @@
-  {
-      "Version": "Anno1800 Beta",
-      "Production_Chain": {
-
-          "Timber": {
-              "socialClassID": 1,
-              "finalProduct": "Timber",
-              "building": "Sawmill",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Lumberjack Hut",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-          "Fish": {
-              "socialClassID": 1,
-              "finalProduct": "Fish",
-              "building": "Fishery",
+{
+  "Version": "Anno1800 Beta",
+  "Production_Chain": {
+    "Timber": {
+      "name": "Timber",
+      "img": "",
+      "socialClassID": 1,
+      "finalProduct": "Timber",
+      "building": "Sawmill",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Lumberjack Hut",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Fish": {
+      "name": "Fish",
+      "img": "",
+      "socialClassID": 1,
+      "finalProduct": "Fish",
+      "building": "Fishery",
+      "alternative": "",
+      "precursorBuildings": {}
+    },
+    "Schnapps": {
+      "name": "Schnapps",
+      "img": "",
+      "socialClassID": 1,
+      "finalProduct": "Schnapps",
+      "building": "Schnapps Distillery",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Potato Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Work Clothes": {
+      "name": "Clothes",
+      "img": "",
+      "socialClassID": 1,
+      "finalProduct": "Work Clothes",
+      "building": "Framework Knitters",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Sheep Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Bricks": {
+      "name": "Bricks",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Bricks",
+      "building": "Brick Factory",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Clay Pit",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Sausages": {
+      "name": "Sausages",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Sausages",
+      "building": "Slaughterhouse",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Pig Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Sails": {
+      "name": "Sails",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Sails",
+      "building": "Sailmakers",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Sheep Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Bread": {
+      "name": "Bread",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Bread",
+      "building": "Bakery",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Flour Mill",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Grain Farm",
               "alternative": "",
               "precursorBuildings": {}
-          },
-
-          "Schnapps": {
-              "socialClassID": 1,
-              "finalProduct": "Schnapps",
-              "building": "Schnapps Distillery",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Potato Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-
-          "Work Clothes": {
-              "socialClassID": 1,
-              "finalProduct": "Work Clothes",
-              "building": "Framework Knitters",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Sheep Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-
-
-
-          "Bricks": {
-              "socialClassID": 2,
-              "finalProduct": "Bricks",
-              "building": "Brick Factory",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Clay Pit",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-          "Sausages": {
-              "socialClassID": 2,
-              "finalProduct": "Sausages",
-              "building": "Slaughterhouse",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Pig Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-
-          "Sails": {
-              "socialClassID": 2,
-              "finalProduct": "Sails",
-              "building": "Sailmakers",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Sheep Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-
-          "Bread": {
-              "socialClassID": 2,
-              "finalProduct": "Bread",
-              "building": "Bakery",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Flour Mill",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Grain Farm",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-          "Soap": {
-              "socialClassID": 2,
-              "finalProduct": "Soap",
-              "building": "Soap Factory",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Rendering Works",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Pig Farm",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-
-          "Steel Beams": {
-              "socialClassID": 2,
-              "finalProduct": "Steel Beams",
-              "building": "Steelworks",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Furnace",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Iron Mine",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          },
-                          "2": {
-                              "building": "Charcoal Kiln",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-          "Weapons": {
-              "socialClassID": 2,
-              "finalProduct": "Weapons",
-              "building": "Weapon Factory",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Furnace",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Iron Mine",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          },
-                          "2": {
-                              "building": "Charcoal Kiln",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-          "Beer": {
-              "socialClassID": 2,
-              "finalProduct": "Beer",
-              "building": "Brewery",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Hop Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Malthouse",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Grain Farm",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-
-
-
-
-          "Windows": {
-              "socialClassID": 3,
-              "finalProduct": "Windows",
-              "building": "Window Makers",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Lumberjack Hut",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Glassmakers",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Sand Mine",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-          "Canned Food": {
-              "socialClassID": 3,
-              "finalProduct": "Canned Food",
-              "building": "Cannery",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Iron Mine",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Artisanal Kitchen",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Cattle Farm",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          },
-                          "2": {
-                              "building": "Red Pepper Farm",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-          "Sewing Machines": {
-              "socialClassID": 3,
-              "finalProduct": "Sewing Machines",
-              "building": "Sewing Machine Factory",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Lumberjack Hut",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Furnace",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Iron Mine",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          },
-                          "2": {
-                              "building": "Coal Mine",
-                              "alternative": "Charcoal Kiln",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-
-
-          "Fur Coats": {
-              "socialClassID": 3,
-              "finalProduct": "Fur Coats",
-              "building": "Fur Dealer",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Hunting Cabin",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-
-                  "2": {
-                      "building": "Cotton Mill",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Cotton Plantation",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-
-
-
-          "Fried Plantains": {
-              "socialClassID": 6,
-              "finalProduct": "Fried Plantains",
-              "building": "Fried Plantain Kitchen",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Fish Oil Factory",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Plantain Plantation",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-          "Rum": {
-              "socialClassID": 6,
-              "finalProduct": "Rum",
-              "building": "Rum Distillery",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Lumberjack Hut",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Sugar Cane Plantation",
-                      "alternative": "",
-                      "precursorBuildings": {
-
-                      }
-                  }
-              }
-          },
-          "Ponchos": {
-              "socialClassID": 6,
-              "finalProduct": "Ponchos",
-              "building": "Poncho Darner",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Alpaca Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-          "Tortillas": {
-              "socialClassID": 7,
-              "finalProduct": "Tortillas",
-              "building": "Tortilla Maker",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Cattle Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  },
-                  "2": {
-                      "building": "Corn Farm",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-          "Coffee": {
-              "socialClassID": 7,
-              "finalProduct": "Coffee",
-              "building": "Coffee Roaster",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Coffee Plantation",
-                      "alternative": "",
-                      "precursorBuildings": {}
-                  }
-              }
-          },
-
-          "Electricity": {
-              "socialClassID": 7,
-              "finalProduct": "Electricity",
-              "building": "Oil Power Plant",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Small Oil Harbour",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Railway",
-                              "alternative": "",
-                              "precursorBuildings": {
-                                  "1": {
-                                      "building": "Oil Refinery",
-                                      "alternative": "",
-                                      "precursorBuildings": {}
-                                  }
-                              }
-                          },
-                          "2": {
-                              "building": "Oil Storage",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-              }
-          },
-          "Cigars": {
-              "socialClassID": 7,
-              "finalProduct": "Cigars",
-              "building": "Cigar Factory",
-              "alternative": "",
-              "precursorBuildings": {
-                  "1": {
-                      "building": "Tobacco Plantation",
-                      "alternative": "",
-                      "precursorBuildings": {
-
-                      }
-                  },
-                  "2": {
-                      "building": "Marquetry Workshop",
-                      "alternative": "",
-                      "precursorBuildings": {
-                          "1": {
-                              "building": "Lumberjack Hut",
-                              "alternative": "",
-                              "precursorBuildings": {}
-                          }
-                      }
-                  }
-
-              }
-
+            }
           }
+        }
       }
+    },
+    "Soap": {
+      "name": "Soap",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Soap",
+      "building": "Soap Factory",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Rendering Works",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Pig Farm",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Steel Beams": {
+      "name": "Steel Beams",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Steel Beams",
+      "building": "Steelworks",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Furnace",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Iron Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Charcoal Kiln",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Weapons": {
+      "name": "Weapons",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Weapons",
+      "building": "Weapon Factory",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Furnace",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Iron Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Charcoal Kiln",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Beer": {
+      "name": "Beer",
+      "img": "",
+      "socialClassID": 2,
+      "finalProduct": "Beer",
+      "building": "Brewery",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Hop Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Malthouse",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Grain Farm",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Windows": {
+      "name": "Windows",
+      "img": "",
+      "socialClassID": 3,
+      "finalProduct": "Windows",
+      "building": "Window Makers",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Lumberjack Hut",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Glassmakers",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Sand Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Canned Food": {
+      "name": "Canned Food",
+      "img": "",
+      "socialClassID": 3,
+      "finalProduct": "Canned Food",
+      "building": "Cannery",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Iron Mine",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Artisanal Kitchen",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Cattle Farm",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Red Pepper Farm",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Sewing Machines": {
+      "name": "Sewing Machines",
+      "img": "",
+      "socialClassID": 3,
+      "finalProduct": "Sewing Machines",
+      "building": "Sewing Machine Factory",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Lumberjack Hut",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Furnace",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Iron Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Coal Mine",
+              "alternative": "Charcoal Kiln",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Fur Coats": {
+      "name": "Fur Coats",
+      "img": "",
+      "socialClassID": 3,
+      "finalProduct": "Fur Coats",
+      "building": "Fur Dealer",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Hunting Cabin",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Cotton Mill",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Cotton Plantation",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Fried Plantains": {
+      "name": "Fried Plantains",
+      "img": "",
+      "socialClassID": 6,
+      "finalProduct": "Fried Plantains",
+      "building": "Fried Plantain Kitchen",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Fish Oil Factory",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Plantain Plantation",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Rum": {
+      "name": "Rum",
+      "img": "",
+      "socialClassID": 6,
+      "finalProduct": "Rum",
+      "building": "Rum Distillery",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Lumberjack Hut",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Sugar Cane Plantation",
+          "alternative": "",
+          "precursorBuildings": {
+          }
+        }
+      }
+    },
+    "Ponchos": {
+      "name": "Ponchos",
+      "img": "",
+      "socialClassID": 6,
+      "finalProduct": "Ponchos",
+      "building": "Poncho Darner",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Alpaca Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Tortillas": {
+      "name": "Tortillas",
+      "img": "",
+      "socialClassID": 7,
+      "finalProduct": "Tortillas",
+      "building": "Tortilla Maker",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Cattle Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        },
+        "2": {
+          "building": "Corn Farm",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Coffee": {
+      "name": "Coffee",
+      "img": "",
+      "socialClassID": 7,
+      "finalProduct": "Coffee",
+      "building": "Coffee Roaster",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Coffee Plantation",
+          "alternative": "",
+          "precursorBuildings": {}
+        }
+      }
+    },
+    "Electricity": {
+      "name": "Electricity",
+      "img": "",
+      "socialClassID": 7,
+      "finalProduct": "Electricity",
+      "building": "Oil Power Plant",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Small Oil Harbour",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Railway",
+              "alternative": "",
+              "precursorBuildings": {
+                "1": {
+                  "building": "Oil Refinery",
+                  "alternative": "",
+                  "precursorBuildings": {}
+                }
+              }
+            },
+            "2": {
+              "building": "Oil Storage",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Cigars": {
+      "name": "Cigars",
+      "img": "",
+      "socialClassID": 7,
+      "finalProduct": "Cigars",
+      "building": "Cigar Factory",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Tobacco Plantation",
+          "alternative": "",
+          "precursorBuildings": {
+          }
+        },
+        "2": {
+          "building": "Marquetry Workshop",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Lumberjack Hut",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    }
   }
+}
