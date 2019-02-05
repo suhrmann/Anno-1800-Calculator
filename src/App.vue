@@ -50,19 +50,16 @@ export default {
       { icon: "lightbulb_outline", text: "Colors", route: "/colors" },
       { divider: true },
       { heading: "Production" },
-      {
-        icon: "lightbulb_outline",
-        text: "Production Chains",
-        route: "/prodchains"
-      },
-      { icon: "touch_app", text: "Production Layouts", route: "/prodlayouts" },
+      { icon: 'merge_type', text: 'Production Chains', route: '/prodchains', },
+      { icon: 'trending_up', text: 'Resident Demand', route: '/demands', },
+      { icon: 'border_inner', text: 'Production Layouts', route: '/prodlayouts' },
       { divider: true },
       { heading: "sonstiger Schaas" },
       { icon: "add", text: "hepp" },
       { divider: true },
-      { icon: "archive", text: "About" },
-      { icon: "delete", text: "Close" }
-    ]
+      { icon: 'info', text: 'About' },
+      { icon: 'close', text: 'Close' },
+    ],
   }),
   props: {
     source: String
