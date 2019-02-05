@@ -68,9 +68,9 @@ export default {
         "Farmer",
         "Worker",
         "Artisan",
+        "New World",
         "Engineer",
-        "Investor",
-        "New World"
+        "Investor"
       ],
 
       prodChain: productionChain,
@@ -83,30 +83,16 @@ export default {
 
   computed: {
     /**
-     * Returns Production Chains for a certain Tier
+     * Returns an array of Production Chain Endproduct names for a certain Tier
      * @return {String[]} An Array containing all Production Chain names
      */
     getChains() {
-      this.tierSelection = [];
-      let tieredChains = [];
-      let productionChainsArray = [];
-
-      let productionChains = JSON.parse(
-        JSON.stringify(this.prodChain.Production_Chain)
+      let productionChains = this.fetchAllProductionChains();
+      let tieredChains = this.getProductionChainsByTier(
+        productionChains,
+        this.selectedTier + 1
       );
-
-      Object.keys(productionChains).forEach(chain => {
-        if (productionChains[chain].tier == this.selectedTier + 1) {
-          tieredChains.push(productionChains[chain]);
-        }
-      });
-
-      console.log(tieredChains);
-
-      Object.keys(tieredChains).forEach(chain => {
-        productionChainsArray.push(tieredChains[chain].finalProduct);
-      });
-
+      let productionChainsArray = this.getChainsEndProducts(tieredChains);
       this.tierObjects = tieredChains;
 
       return productionChainsArray;
@@ -118,9 +104,45 @@ export default {
       console.log(string);
     },
 
-    searchForChain(chainname) {
-      let rawData = JSON.parse(JSON.stringify(this.prodChain));
+    /**
+     * Returns a deep copy of all Production Chains
+     * @return {Object} A JS Object with all production chain objects init
+     */
+    fetchAllProductionChains() {
+      return JSON.parse(JSON.stringify(this.prodChain.Production_Chain));
     },
+
+    /**
+     *
+     * @param {Object} allProductionChains A JS Object containing all Production Chains
+     * @param {int} tier The tier, by which the production chains get filtered
+     * @return {Object} A JS Object with all production chain objects init
+     */
+    getProductionChainsByTier(allProductionChains, tier) {
+      let tieredChains = [];
+      Object.keys(allProductionChains).forEach(chain => {
+        if (allProductionChains[chain].tier == tier) {
+          tieredChains.push(allProductionChains[chain]);
+        }
+      });
+      return tieredChains;
+    },
+
+    /**
+     *
+     * @param {Object} chainsCollection A JS Object containing one or more Production Chains
+     * @return {Array} An Array with all the Products' names of the given Production Chains
+     */
+    getChainsEndProducts(chainsCollection) {
+      let endProductsArray = [];
+      Object.keys(chainsCollection).forEach(chain => {
+        endProductsArray.push(chainsCollection[chain].finalProduct);
+      });
+
+      return endProductsArray;
+    },
+
+    searchForChain(chainname) {},
 
     analyzeChain(chain) {}
   }
