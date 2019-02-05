@@ -76,7 +76,8 @@ export default {
       prodChain: productionChain,
       nonproducers: nonProducers,
       producers: producers,
-      chainSelection: null
+      chainSelection: null,
+      tierObjects: null
     };
   },
 
@@ -86,19 +87,29 @@ export default {
      * @return {String[]} An Array containing all Production Chain names
      */
     getChains() {
-      let productionChainArray = [];
-      let tierAsName = this.determineTier(this.selectedTier);
-      console.log(tierAsName);
+      this.tierSelection = [];
+      let tieredChains = [];
+      let productionChainsArray = [];
 
-      let rawData = JSON.parse(JSON.stringify(this.prodChain));
-      let tierChains = rawData.Production_Chain[tierAsName];
+      let productionChains = JSON.parse(
+        JSON.stringify(this.prodChain.Production_Chain)
+      );
 
-      Object.keys(tierChains).forEach(chain => {
-        productionChainArray.push(tierChains[chain].finalProduct);
+      Object.keys(productionChains).forEach(chain => {
+        if (productionChains[chain].tier == this.selectedTier + 1) {
+          tieredChains.push(productionChains[chain]);
+        }
       });
 
-      console.log(productionChainArray);
-      return productionChainArray;
+      console.log(tieredChains);
+
+      Object.keys(tieredChains).forEach(chain => {
+        productionChainsArray.push(tieredChains[chain].finalProduct);
+      });
+
+      this.tierObjects = tieredChains;
+
+      return productionChainsArray;
     }
   },
 
@@ -107,19 +118,9 @@ export default {
       console.log(string);
     },
 
-    determineTier(number) {
-      let tiersArray = [
-        "FarmerTier",
-        "WorkerTier",
-        "ArtisanTier",
-        "EngineerTier",
-        "InvestorTier",
-        "NewWorld"
-      ];
-      return tiersArray[number];
+    searchForChain(chainname) {
+      let rawData = JSON.parse(JSON.stringify(this.prodChain));
     },
-
-    searchForChain(chain) {},
 
     analyzeChain(chain) {}
   }
