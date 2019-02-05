@@ -1,51 +1,26 @@
 <template>
-  <v-card height="400px" flat>
-    <span>{{ this.worlds.oldWorld.name }}</span>
+
+  <v-flex xs12>
 
     <v-bottom-nav
       :active.sync="selectedWorld"
       :value="true"
       absolute
-      color="transparent"
+      dark
     >
       <v-btn
-        color="teal"
+        color="primary"
         flat
-        value="recent"
+        v-for="(world, i) in worlds"
+        :value="world"
       >
-        <span>{{ worlds.oldWorld.name }}</span>
+        <span>{{ world.name }}</span>
         <v-icon>history</v-icon>
       </v-btn>
 
-      <v-btn
-        color="teal"
-        flat
-        value="recent"
-      >
-        <span>Recent</span>
-        <v-icon>history</v-icon>
-      </v-btn>
-
-      <v-btn
-        color="teal"
-        flat
-        value="favorites"
-      >
-        <span>Favorites</span>
-        <v-icon>favorite</v-icon>
-      </v-btn>
-
-      <v-btn
-        color="teal"
-        flat
-        value="nearby"
-      >
-        <span>Nearby</span>
-        <v-icon>place</v-icon>
-      </v-btn>
     </v-bottom-nav>
 
-  </v-card>
+  </v-flex>
 </template>
 
 <script>

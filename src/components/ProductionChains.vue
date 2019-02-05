@@ -4,9 +4,7 @@
       <v-flex xs12>
         <h1>Production Chains</h1>
       </v-flex>
-      <v-flex xs12>
-        <BottomNavBar></BottomNavBar>
-      </v-flex>
+      <BottomNavBar></BottomNavBar>
     </v-layout>
   </v-container>
 </template>
