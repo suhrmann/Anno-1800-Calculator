@@ -34,7 +34,7 @@
       "Production_Chain": {
 
           "Timber": {
-              "tier": "1",
+              "socialClassID": 1,
               "finalProduct": "Timber",
               "building": "Sawmill",
               "alternative": "",
@@ -47,7 +47,7 @@
               }
           },
           "Fish": {
-              "tier": "1",
+              "socialClassID": 1,
               "finalProduct": "Fish",
               "building": "Fishery",
               "alternative": "",
@@ -55,7 +55,7 @@
           },
 
           "Schnapps": {
-              "tier": "1",
+              "socialClassID": 1,
               "finalProduct": "Schnapps",
               "building": "Schnapps Distillery",
               "alternative": "",
@@ -69,7 +69,7 @@
           },
 
           "Work Clothes": {
-              "tier": "1",
+              "socialClassID": 1,
               "finalProduct": "Work Clothes",
               "building": "Framework Knitters",
               "alternative": "",
@@ -85,7 +85,7 @@
 
 
           "Bricks": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Bricks",
               "building": "Brick Factory",
               "alternative": "",
@@ -98,7 +98,7 @@
               }
           },
           "Sausages": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Sausages",
               "building": "Slaughterhouse",
               "alternative": "",
@@ -112,7 +112,7 @@
           },
 
           "Sails": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Sails",
               "building": "Sailmakers",
               "alternative": "",
@@ -126,7 +126,7 @@
           },
 
           "Bread": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Bread",
               "building": "Bakery",
               "alternative": "",
@@ -145,7 +145,7 @@
               }
           },
           "Soap": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Soap",
               "building": "Soap Factory",
               "alternative": "",
@@ -165,7 +165,7 @@
           },
 
           "Steel Beams": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Steel Beams",
               "building": "Steelworks",
               "alternative": "",
@@ -189,7 +189,7 @@
               }
           },
           "Weapons": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Weapons",
               "building": "Weapon Factory",
               "alternative": "",
@@ -213,7 +213,7 @@
               }
           },
           "Beer": {
-              "tier": "2",
+              "socialClassID": 2,
               "finalProduct": "Beer",
               "building": "Brewery",
               "alternative": "",
@@ -241,7 +241,7 @@
 
 
           "Windows": {
-              "tier": "3",
+              "socialClassID": 3,
               "finalProduct": "Windows",
               "building": "Window Makers",
               "alternative": "",
@@ -265,7 +265,7 @@
               }
           },
           "Canned Food": {
-              "tier": "3",
+              "socialClassID": 3,
               "finalProduct": "Canned Food",
               "building": "Cannery",
               "alternative": "",
@@ -294,7 +294,7 @@
               }
           },
           "Sewing Machines": {
-              "tier": "3",
+              "socialClassID": 3,
               "finalProduct": "Sewing Machines",
               "building": "Sewing Machine Factory",
               "alternative": "",
@@ -325,7 +325,7 @@
 
 
           "Fur Coats": {
-              "tier": "3",
+              "socialClassID": 3,
               "finalProduct": "Fur Coats",
               "building": "Fur Dealer",
               "alternative": "",
@@ -353,7 +353,7 @@
 
 
           "Fried Plantains": {
-              "tier": "6",
+              "socialClassID": 6,
               "finalProduct": "Fried Plantains",
               "building": "Fried Plantain Kitchen",
               "alternative": "",
@@ -371,7 +371,7 @@
               }
           },
           "Rum": {
-              "tier": "6",
+              "socialClassID": 6,
               "finalProduct": "Rum",
               "building": "Rum Distillery",
               "alternative": "",
@@ -391,7 +391,7 @@
               }
           },
           "Ponchos": {
-              "tier": "6",
+              "socialClassID": 6,
               "finalProduct": "Ponchos",
               "building": "Poncho Darner",
               "alternative": "",
@@ -404,7 +404,7 @@
               }
           },
           "Tortillas": {
-              "tier": "7",
+              "socialClassID": 7,
               "finalProduct": "Tortillas",
               "building": "Tortilla Maker",
               "alternative": "",
@@ -422,7 +422,7 @@
               }
           },
           "Coffee": {
-              "tier": "7",
+              "socialClassID": 7,
               "finalProduct": "Coffee",
               "building": "Coffee Roaster",
               "alternative": "",
@@ -436,7 +436,7 @@
           },
 
           "Electricity": {
-              "tier": "7",
+              "socialClassID": 7,
               "finalProduct": "Electricity",
               "building": "Oil Power Plant",
               "alternative": "",
@@ -466,7 +466,7 @@
               }
           },
           "Cigars": {
-              "tier": "7",
+              "socialClassID": 7,
               "finalProduct": "Cigars",
               "building": "Cigar Factory",
               "alternative": "",
