@@ -78,7 +78,7 @@
             }
         },
 
-        "Schnapps": {
+        "Schnapps Distillery": {
             "product": "Schnapps",
             "building": "Schnapps Distillery",
             "productionTime": 30,
@@ -100,86 +100,82 @@
                 "artisan": 0,
                 "engineer": 0,
                 "investor": 0
-            },
-
-            "Potato Farm": {
-                "product": "Potatoes",
-                "building": "Potato Farm",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 100,
-                    "wood": 2,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 20,
-                    "farmer": 20,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Framework Knitters": {
-                "product": "Work Clothes",
-                "building": "Framework Knitters",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 100,
-                    "wood": 2,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 50,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-
-            "Sheep Farm": {
-                "product": "Wool",
-                "building": "Sheep Farm",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 100,
-                    "wood": 2,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 20,
-                    "farmer": 10,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
             }
         },
 
+        "Potato Farm": {
+            "product": "Potatoes",
+            "building": "Potato Farm",
+            "productionTime": 30,
+            "construction": {
+                "cash": 100,
+                "wood": 2,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 20,
+                "farmer": 20,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Framework Knitters": {
+            "product": "Work Clothes",
+            "building": "Framework Knitters",
+            "productionTime": 30,
+            "construction": {
+                "cash": 100,
+                "wood": 2,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 50,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
 
-
-
+        "Sheep Farm": {
+            "product": "Wool",
+            "building": "Sheep Farm",
+            "productionTime": 30,
+            "construction": {
+                "cash": 100,
+                "wood": 2,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 20,
+                "farmer": 10,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
 
         "Clay Pit": {
             "product": "Clay",
@@ -349,996 +345,997 @@
                 "artisan": 0,
                 "engineer": 0,
                 "investor": 0
-            },
-            "Bakery": {
-                "product": "Bread",
-                "building": "Bakery",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 60,
-                    "farmer": 0,
-                    "worker": 50,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Rendering Works": {
-                "product": "Tallow",
-                "building": "Rendering Works",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 4,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 40,
-                    "farmer": 0,
-                    "worker": 40,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-
-            "Soap Factory": {
-                "product": "Soap",
-                "building": "Soap Factory",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 4,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 0,
-                    "worker": 50,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Iron Mine": {
-                "product": "Iron",
-                "building": "Iron Mine",
-                "productionTime": 15,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 0,
-                    "worker": 50,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Charcoal Kiln": {
-                "product": "Coal",
-                "building": "Charcoal Kiln",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 20,
-                    "farmer": 0,
-                    "worker": 10,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Furnace": {
-                "product": "Steel",
-                "building": "Furnace",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 20,
-                    "farmer": 0,
-                    "worker": 100,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-
-            "Steelworks": {
-                "product": "Steel Beams",
-                "building": "Furnace",
-                "productionTime": 45,
-                "construction": {
-                    "cash": 500,
-                    "wood": 8,
-                    "brick": 10,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 200,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Weapon Factory": {
-                "product": "Weapons",
-                "building": "Weapon Factory",
-                "productionTime": 90,
-                "construction": {
-                    "cash": 500,
-                    "wood": 8,
-                    "brick": 10,
-                    "steel": 8,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 120,
-                    "farmer": 0,
-                    "worker": 50,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Malthouse": {
-                "product": "Malt",
-                "building": "Malthouse",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 4,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 150,
-                    "farmer": 0,
-                    "worker": 25,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Hop Farm": {
-                "product": "Hop",
-                "building": "Hop Farm",
-                "productionTime": 90,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 20,
-                    "farmer": 20,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Brewery": {
-                "product": "Beer",
-                "building": "Brewery",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 4,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 200,
-                    "farmer": 0,
-                    "worker": 75,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Sand Mine": {
-                "product": "Quartz Sand",
-                "building": "Sand Mine",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 5,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 120,
-                    "farmer": 0,
-                    "worker": 25,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Glassmakers": {
-                "product": "Glass",
-                "building": "Glassmakers",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 10,
-                    "steel": 8,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 100,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-
-            "Window Makers": {
-                "product": "Windows",
-                "building": "Window Makers",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 12,
-                    "brick": 20,
-                    "steel": 16,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 100,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Cattle Farm": {
-                "product": "Beef",
-                "building": "Cattle Farm",
-                "productionTime": 120,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 20,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Red Pepper farm": {
-                "product": "Red Peppers",
-                "building": "Red Pepper Farm",
-                "productionTime": 120,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 10,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Artisanal Kitchen": {
-                "product": "Goulash",
-                "building": "Artisanal Kitchen",
-                "productionTime": 120,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 10,
-                    "steel": 8,
-                    "window": 8,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 75,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Cannery": {
-                "product": "Canned Food",
-                "building": "Cannery",
-                "productionTime": 90,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 10,
-                    "steel": 8,
-                    "window": 8,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 75,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Coal Mine": {
-                "product": "Coal",
-                "building": "Coal Mine",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 4,
-                    "brick": 5,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 0,
-                    "worker": 50,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Sewing Machine Factory": {
-                "product": "Sewing Machines",
-                "building": "Sewing Machine Factory",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 10,
-                    "steel": 8,
-                    "window": 8,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 500,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 150,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Sugar Cane Plantation": {
-                "product": "Sugar Cane",
-                "building": "Sugar Cane Plantation",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 5,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Rum Distillery": {
-                "product": "Rum",
-                "building": "Rum Distillery",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 50,
-                    "obreros": 0,
-                    "cash": 30,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Cotton Plantation": {
-                "product": "Cotton",
-                "building": "Cotton Plantation",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 5,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Cotton Mill": {
-                "product": "Cotton Fabric",
-                "building": "Cotton Mill",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 10,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Hunting Cabin": {
-                "product": "Furs",
-                "building": "Hunting Cabin",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 10,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Fur Dealer": {
-                "product": "Fur Coats",
-                "building": "Fur Dealer",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 2000,
-                    "wood": 6,
-                    "brick": 10,
-                    "steel": 8,
-                    "window": 5,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 500,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 200,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Fish Oil Factory": {
-                "product": "Fish Oil",
-                "building": "Fish Oil Factory",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 15,
-                    "obreros": 0,
-                    "cash": 5,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Plantain Plantation": {
-                "product": "Plantains",
-                "building": "Plantain Plantation",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 5,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Fried Plantain Kitchen": {
-                "product": "Fried Plantains",
-                "building": "Fried Plantain Kitchen",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 2,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 25,
-                    "obreros": 0,
-                    "cash": 15,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Alpaca Farm": {
-                "product": "Alpaca Wool",
-                "building": "Alpaca Farm",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 5,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Poncho Darner": {
-                "product": "Ponchos",
-                "building": "Poncho Darner",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 500,
-                    "wood": 6,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 30,
-                    "obreros": 0,
-                    "cash": 15,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Corn Farm": {
-                "product": "Corn",
-                "building": "Corn Farm",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 3,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 25,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Tortilla Maker": {
-                "product": "Tortillas",
-                "building": "Tortilla Maker",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 3,
-                    "brick": 2,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 100,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Coffee Plantation": {
-                "product": "Coffee Beans",
-                "building": "Coffee Plantation",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 5,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 25,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Coffee Roaster": {
-                "product": "Coffee",
-                "building": "Coffee Roaster",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 5,
-                    "brick": 3,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 150,
-                    "cash": 150,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Oil Refinery": {
-                "product": "Oil",
-                "building": "Oil Refinery",
-                "productionTime": 15,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 8,
-                    "brick": 15,
-                    "steel": 12,
-                    "window": 10,
-                    "influence": 0,
-                    "concrete": 10
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 75,
-                    "cash": 250,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Oil Storage": {
-                "product": "Oil Storage",
-                "building": "Oil Storage",
-                "productionTime": 0,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 8,
-                    "brick": 15,
-                    "steel": 12,
-                    "window": 10,
-                    "influence": 0,
-                    "concrete": 10
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 50,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Small Oil Harbour": {
-                "product": "Oil Storage",
-                "building": "Small Oil Harbour",
-                "productionTime": 0,
-                "construction": {
-                    "cash": 10000,
-                    "wood": 20,
-                    "brick": 25,
-                    "steel": 20,
-                    "window": 15,
-                    "influence": 0,
-                    "concrete": 15
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 0,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Tobacco Plantation": {
-                "product": "Tobacco",
-                "building": "Tobacco Plantation",
-                "productionTime": 120,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 10,
-                    "brick": 0,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 10,
-                    "obreros": 0,
-                    "cash": 25,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Cigar Factory": {
-                "product": "Cigars",
-                "building": "Cigar Factory",
-                "productionTime": 30,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 10,
-                    "brick": 20,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 175,
-                    "cash": 250,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
-            },
-            "Marquetry Workshop": {
-                "product": "Wood Veneers",
-                "building": "Marquetry Workshop",
-                "productionTime": 60,
-                "construction": {
-                    "cash": 2500,
-                    "wood": 10,
-                    "brick": 20,
-                    "steel": 0,
-                    "window": 0,
-                    "influence": 0,
-                    "concrete": 0
-                },
-                "maintenance": {
-                    "jornaleros": 0,
-                    "obreros": 100,
-                    "cash": 100,
-                    "farmer": 0,
-                    "worker": 0,
-                    "artisan": 0,
-                    "engineer": 0,
-                    "investor": 0
-                }
             }
+        },
+        "Bakery": {
+            "product": "Bread",
+            "building": "Bakery",
+            "productionTime": 60,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 60,
+                "farmer": 0,
+                "worker": 50,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Rendering Works": {
+            "product": "Tallow",
+            "building": "Rendering Works",
+            "productionTime": 60,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 4,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 40,
+                "farmer": 0,
+                "worker": 40,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
 
+        "Soap Factory": {
+            "product": "Soap",
+            "building": "Soap Factory",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 4,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 0,
+                "worker": 50,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Iron Mine": {
+            "product": "Iron",
+            "building": "Iron Mine",
+            "productionTime": 15,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 0,
+                "worker": 50,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Charcoal Kiln": {
+            "product": "Coal",
+            "building": "Charcoal Kiln",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 20,
+                "farmer": 0,
+                "worker": 10,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Furnace": {
+            "product": "Steel",
+            "building": "Furnace",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 20,
+                "farmer": 0,
+                "worker": 100,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
 
+        "Steelworks": {
+            "product": "Steel Beams",
+            "building": "Furnace",
+            "productionTime": 45,
+            "construction": {
+                "cash": 500,
+                "wood": 8,
+                "brick": 10,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 200,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Weapon Factory": {
+            "product": "Weapons",
+            "building": "Weapon Factory",
+            "productionTime": 90,
+            "construction": {
+                "cash": 500,
+                "wood": 8,
+                "brick": 10,
+                "steel": 8,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 120,
+                "farmer": 0,
+                "worker": 50,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Malthouse": {
+            "product": "Malt",
+            "building": "Malthouse",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 4,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 150,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Hop Farm": {
+            "product": "Hop",
+            "building": "Hop Farm",
+            "productionTime": 90,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 20,
+                "farmer": 20,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Brewery": {
+            "product": "Beer",
+            "building": "Brewery",
+            "productionTime": 60,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 4,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 200,
+                "farmer": 0,
+                "worker": 75,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Sand Mine": {
+            "product": "Quartz Sand",
+            "building": "Sand Mine",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 120,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Glassmakers": {
+            "product": "Glass",
+            "building": "Glassmakers",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 10,
+                "steel": 8,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 100,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+
+        "Window Makers": {
+            "product": "Windows",
+            "building": "Window Makers",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2000,
+                "wood": 12,
+                "brick": 20,
+                "steel": 16,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 100,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cattle Farm": {
+            "product": "Beef",
+            "building": "Cattle Farm",
+            "productionTime": 120,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 20,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Red Pepper farm": {
+            "product": "Red Peppers",
+            "building": "Red Pepper Farm",
+            "productionTime": 120,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 10,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Artisanal Kitchen": {
+            "product": "Goulash",
+            "building": "Artisanal Kitchen",
+            "productionTime": 120,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 10,
+                "steel": 8,
+                "window": 8,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 75,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cannery": {
+            "product": "Canned Food",
+            "building": "Cannery",
+            "productionTime": 90,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 10,
+                "steel": 8,
+                "window": 8,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 75,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Coal Mine": {
+            "product": "Coal",
+            "building": "Coal Mine",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 4,
+                "brick": 5,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 0,
+                "worker": 50,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Sewing Machine Factory": {
+            "product": "Sewing Machines",
+            "building": "Sewing Machine Factory",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 10,
+                "steel": 8,
+                "window": 8,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 500,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 150,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Sugar Cane Plantation": {
+            "product": "Sugar Cane",
+            "building": "Sugar Cane Plantation",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 5,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Rum Distillery": {
+            "product": "Rum",
+            "building": "Rum Distillery",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 50,
+                "obreros": 0,
+                "cash": 30,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cotton Plantation": {
+            "product": "Cotton",
+            "building": "Cotton Plantation",
+            "productionTime": 60,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 5,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cotton Mill": {
+            "product": "Cotton Fabric",
+            "building": "Cotton Mill",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 10,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Hunting Cabin": {
+            "product": "Furs",
+            "building": "Hunting Cabin",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 10,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Fur Dealer": {
+            "product": "Fur Coats",
+            "building": "Fur Dealer",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 10,
+                "steel": 8,
+                "window": 5,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 500,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 200,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Fish Oil Factory": {
+            "product": "Fish Oil",
+            "building": "Fish Oil Factory",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 15,
+                "obreros": 0,
+                "cash": 5,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Plantain Plantation": {
+            "product": "Plantains",
+            "building": "Plantain Plantation",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 5,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Fried Plantain Kitchen": {
+            "product": "Fried Plantains",
+            "building": "Fried Plantain Kitchen",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 2,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 25,
+                "obreros": 0,
+                "cash": 15,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Alpaca Farm": {
+            "product": "Alpaca Wool",
+            "building": "Alpaca Farm",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 5,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Poncho Darner": {
+            "product": "Ponchos",
+            "building": "Poncho Darner",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 30,
+                "obreros": 0,
+                "cash": 15,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Corn Farm": {
+            "product": "Corn",
+            "building": "Corn Farm",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2500,
+                "wood": 3,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 25,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Tortilla Maker": {
+            "product": "Tortillas",
+            "building": "Tortilla Maker",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2500,
+                "wood": 3,
+                "brick": 2,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 100,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Coffee Plantation": {
+            "product": "Coffee Beans",
+            "building": "Coffee Plantation",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2500,
+                "wood": 5,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 25,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Coffee Roaster": {
+            "product": "Coffee",
+            "building": "Coffee Roaster",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2500,
+                "wood": 5,
+                "brick": 3,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 150,
+                "cash": 150,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Oil Refinery": {
+            "product": "Oil",
+            "building": "Oil Refinery",
+            "productionTime": 15,
+            "construction": {
+                "cash": 2500,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "influence": 0,
+                "concrete": 10
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 75,
+                "cash": 250,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Oil Storage": {
+            "product": "Oil Storage",
+            "building": "Oil Storage",
+            "productionTime": 0,
+            "construction": {
+                "cash": 2500,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "influence": 0,
+                "concrete": 10
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Small Oil Harbour": {
+            "product": "Oil Storage",
+            "building": "Small Oil Harbour",
+            "productionTime": 0,
+            "construction": {
+                "cash": 10000,
+                "wood": 20,
+                "brick": 25,
+                "steel": 20,
+                "window": 15,
+                "influence": 0,
+                "concrete": 15
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 0,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Tobacco Plantation": {
+            "product": "Tobacco",
+            "building": "Tobacco Plantation",
+            "productionTime": 120,
+            "construction": {
+                "cash": 2500,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 10,
+                "obreros": 0,
+                "cash": 25,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cigar Factory": {
+            "product": "Cigars",
+            "building": "Cigar Factory",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2500,
+                "wood": 10,
+                "brick": 20,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 175,
+                "cash": 250,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Marquetry Workshop": {
+            "product": "Wood Veneers",
+            "building": "Marquetry Workshop",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2500,
+                "wood": 10,
+                "brick": 20,
+                "steel": 0,
+                "window": 0,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "jornaleros": 0,
+                "obreros": 100,
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
         }
+
+
     }
+}
 }

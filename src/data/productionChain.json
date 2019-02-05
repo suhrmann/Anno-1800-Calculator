@@ -1,5 +1,36 @@
   {
       "Version": "Anno1800 Beta",
+      "tiers": [{
+              "id": 1,
+              "name": "Farmers"
+          },
+          {
+              "id": 2,
+              "name": "Workers"
+          },
+          {
+              "id": 3,
+              "name": "Artisans"
+          },
+          {
+              "id": 4,
+              "name": "Engineers"
+          },
+          {
+              "id": 5,
+              "name": "Investors"
+          },
+
+          {
+              "id": 6,
+              "name": "Jornaleros"
+          },
+          {
+              "id": 7,
+              "name": "Obreros"
+          }
+      ],
+
       "Production_Chain": {
 
           "Timber": {
@@ -22,6 +53,7 @@
               "alternative": "",
               "precursorBuildings": {}
           },
+
           "Schnapps": {
               "tier": "1",
               "finalProduct": "Schnapps",
@@ -35,7 +67,8 @@
                   }
               }
           },
-          "WorkerClothes": {
+
+          "Work Clothes": {
               "tier": "1",
               "finalProduct": "Work Clothes",
               "building": "Framework Knitters",
@@ -320,7 +353,7 @@
 
 
           "Fried Plantains": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Fried Plantains",
               "building": "Fried Plantain Kitchen",
               "alternative": "",
@@ -338,7 +371,7 @@
               }
           },
           "Rum": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Rum",
               "building": "Rum Distillery",
               "alternative": "",
@@ -358,7 +391,7 @@
               }
           },
           "Ponchos": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Ponchos",
               "building": "Poncho Darner",
               "alternative": "",
@@ -371,7 +404,7 @@
               }
           },
           "Tortillas": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Tortillas",
               "building": "Tortilla Maker",
               "alternative": "",
@@ -389,7 +422,7 @@
               }
           },
           "Coffee": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Coffee",
               "building": "Coffee Roaster",
               "alternative": "",
@@ -403,7 +436,7 @@
           },
 
           "Electricity": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Electricity",
               "building": "Oil Power Plant",
               "alternative": "",
@@ -433,7 +466,7 @@
               }
           },
           "Cigars": {
-              "tier": "4",
+              "tier": "6",
               "finalProduct": "Cigars",
               "building": "Cigar Factory",
               "alternative": "",
