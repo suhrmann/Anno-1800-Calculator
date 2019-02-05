@@ -1,0 +1,12 @@
+{
+  "oldWorld": {
+    "id": 1,
+    "name": "Old World",
+    "img": "old-world.png"
+  },
+  "newWorld": {
+    "id": 2,
+    "name": "New World",
+    "img": "new-world"
+  }
+}

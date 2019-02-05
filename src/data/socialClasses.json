@@ -1,0 +1,50 @@
+{
+  "socialClasses": {
+
+    "farmers": {
+      "id": 1,
+      "name": "Farmers",
+      "img": "farmers.png",
+      "worldID": 1
+    },
+    "workers": {
+      "id": 2,
+      "name": "Workers",
+      "img": "workers.png",
+      "worldID": 1
+    },
+    "artisans": {
+      "id": 3,
+      "name": "Artisans",
+      "img": "artisans.png",
+      "worldID": 1
+    },
+    "engineers": {
+      "id": 4,
+      "name": "Engineers",
+      "img": "engineers.png",
+      "worldID": 1
+    },
+    "investors": {
+      "id": 5,
+      "name": "Investors",
+      "img": "investors.png",
+      "worldID": 1
+    },
+
+
+    "jornaleros": {
+      "id": 6,
+      "name": "Jornaleros",
+      "img": "jornaleros.png",
+      "worldID": 2
+    },
+    "obreros": {
+      "id": 7,
+      "name": "Obreros",
+      "img": "obreros.png",
+      "worldID": 2
+    }
+
+  }
+}
