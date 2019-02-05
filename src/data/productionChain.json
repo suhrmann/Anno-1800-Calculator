@@ -404,7 +404,7 @@
               }
           },
           "Tortillas": {
-              "tier": "6",
+              "tier": "7",
               "finalProduct": "Tortillas",
               "building": "Tortilla Maker",
               "alternative": "",
@@ -422,7 +422,7 @@
               }
           },
           "Coffee": {
-              "tier": "6",
+              "tier": "7",
               "finalProduct": "Coffee",
               "building": "Coffee Roaster",
               "alternative": "",
@@ -436,7 +436,7 @@
           },
 
           "Electricity": {
-              "tier": "6",
+              "tier": "7",
               "finalProduct": "Electricity",
               "building": "Oil Power Plant",
               "alternative": "",
@@ -466,7 +466,7 @@
               }
           },
           "Cigars": {
-              "tier": "6",
+              "tier": "7",
               "finalProduct": "Cigars",
               "building": "Cigar Factory",
               "alternative": "",
