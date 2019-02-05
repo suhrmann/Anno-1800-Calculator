@@ -1,9 +1,9 @@
 {
   "Version": "Anno1800 Beta",
   "Production_Chain": {
-    "Timber": {
+    "timber": {
       "name": "Timber",
-      "img": "",
+      "img": "timber.png",
       "socialClassID": 1,
       "finalProduct": "Timber",
       "building": "Sawmill",
@@ -16,18 +16,18 @@
         }
       }
     },
-    "Fish": {
+    "fish": {
       "name": "Fish",
-      "img": "",
+      "img": "fish.png",
       "socialClassID": 1,
       "finalProduct": "Fish",
       "building": "Fishery",
       "alternative": "",
       "precursorBuildings": {}
     },
-    "Schnapps": {
+    "schnapps": {
       "name": "Schnapps",
-      "img": "",
+      "img": "schnapps.png",
       "socialClassID": 1,
       "finalProduct": "Schnapps",
       "building": "Schnapps Distillery",
@@ -40,9 +40,9 @@
         }
       }
     },
-    "Work Clothes": {
+    "work-clothes": {
       "name": "Clothes",
-      "img": "",
+      "img": "work-clothes.png",
       "socialClassID": 1,
       "finalProduct": "Work Clothes",
       "building": "Framework Knitters",
@@ -55,9 +55,9 @@
         }
       }
     },
-    "Bricks": {
+    "bricks": {
       "name": "Bricks",
-      "img": "",
+      "img": "bricks.png",
       "socialClassID": 2,
       "finalProduct": "Bricks",
       "building": "Brick Factory",
@@ -70,9 +70,9 @@
         }
       }
     },
-    "Sausages": {
+    "sausages": {
       "name": "Sausages",
-      "img": "",
+      "img": "sausages.png",
       "socialClassID": 2,
       "finalProduct": "Sausages",
       "building": "Slaughterhouse",
@@ -85,9 +85,9 @@
         }
       }
     },
-    "Sails": {
+    "sails": {
       "name": "Sails",
-      "img": "",
+      "img": "sails.png",
       "socialClassID": 2,
       "finalProduct": "Sails",
       "building": "Sailmakers",
@@ -100,9 +100,9 @@
         }
       }
     },
-    "Bread": {
+    "bread": {
       "name": "Bread",
-      "img": "",
+      "img": "bread.png",
       "socialClassID": 2,
       "finalProduct": "Bread",
       "building": "Bakery",
@@ -121,9 +121,9 @@
         }
       }
     },
-    "Soap": {
+    "soap": {
       "name": "Soap",
-      "img": "",
+      "img": "soap.png",
       "socialClassID": 2,
       "finalProduct": "Soap",
       "building": "Soap Factory",
@@ -142,9 +142,9 @@
         }
       }
     },
-    "Steel Beams": {
+    "steel-beams": {
       "name": "Steel Beams",
-      "img": "",
+      "img": "steel-beams.png",
       "socialClassID": 2,
       "finalProduct": "Steel Beams",
       "building": "Steelworks",
@@ -168,9 +168,9 @@
         }
       }
     },
-    "Weapons": {
+    "weapons": {
       "name": "Weapons",
-      "img": "",
+      "img": "weapons.png",
       "socialClassID": 2,
       "finalProduct": "Weapons",
       "building": "Weapon Factory",
@@ -194,9 +194,9 @@
         }
       }
     },
-    "Beer": {
+    "beer": {
       "name": "Beer",
-      "img": "",
+      "img": "beer.png",
       "socialClassID": 2,
       "finalProduct": "Beer",
       "building": "Brewery",
@@ -220,9 +220,9 @@
         }
       }
     },
-    "Windows": {
+    "windows": {
       "name": "Windows",
-      "img": "",
+      "img": "windows.png",
       "socialClassID": 3,
       "finalProduct": "Windows",
       "building": "Window Makers",
@@ -246,9 +246,9 @@
         }
       }
     },
-    "Canned Food": {
+    "canned-food": {
       "name": "Canned Food",
-      "img": "",
+      "img": "canned-food.png",
       "socialClassID": 3,
       "finalProduct": "Canned Food",
       "building": "Cannery",
@@ -277,9 +277,9 @@
         }
       }
     },
-    "Sewing Machines": {
+    "sewing-machines": {
       "name": "Sewing Machines",
-      "img": "",
+      "img": "sewing-machines.png",
       "socialClassID": 3,
       "finalProduct": "Sewing Machines",
       "building": "Sewing Machine Factory",
@@ -308,9 +308,9 @@
         }
       }
     },
-    "Fur Coats": {
+    "fur-coats": {
       "name": "Fur Coats",
-      "img": "",
+      "img": "fur-coats.png",
       "socialClassID": 3,
       "finalProduct": "Fur Coats",
       "building": "Fur Dealer",
@@ -334,9 +334,9 @@
         }
       }
     },
-    "Fried Plantains": {
+    "fried-plantains": {
       "name": "Fried Plantains",
-      "img": "",
+      "img": "fried-plantains.png",
       "socialClassID": 6,
       "finalProduct": "Fried Plantains",
       "building": "Fried Plantain Kitchen",
@@ -354,9 +354,9 @@
         }
       }
     },
-    "Rum": {
+    "rum": {
       "name": "Rum",
-      "img": "",
+      "img": "rum.png",
       "socialClassID": 6,
       "finalProduct": "Rum",
       "building": "Rum Distillery",
@@ -375,9 +375,9 @@
         }
       }
     },
-    "Ponchos": {
+    "ponchos": {
       "name": "Ponchos",
-      "img": "",
+      "img": "ponchos.png",
       "socialClassID": 6,
       "finalProduct": "Ponchos",
       "building": "Poncho Darner",
@@ -390,9 +390,9 @@
         }
       }
     },
-    "Tortillas": {
+    "tortillas": {
       "name": "Tortillas",
-      "img": "",
+      "img": "tortillas.png",
       "socialClassID": 7,
       "finalProduct": "Tortillas",
       "building": "Tortilla Maker",
@@ -410,9 +410,9 @@
         }
       }
     },
-    "Coffee": {
+    "coffee": {
       "name": "Coffee",
-      "img": "",
+      "img": "coffee.png",
       "socialClassID": 7,
       "finalProduct": "Coffee",
       "building": "Coffee Roaster",
@@ -425,9 +425,9 @@
         }
       }
     },
-    "Electricity": {
+    "electricity": {
       "name": "Electricity",
-      "img": "",
+      "img": "electricity.png",
       "socialClassID": 7,
       "finalProduct": "Electricity",
       "building": "Oil Power Plant",
@@ -457,9 +457,9 @@
         }
       }
     },
-    "Cigars": {
+    "cigars": {
       "name": "Cigars",
-      "img": "",
+      "img": "cigars.png",
       "socialClassID": 7,
       "finalProduct": "Cigars",
       "building": "Cigar Factory",
