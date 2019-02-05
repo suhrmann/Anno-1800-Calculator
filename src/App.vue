@@ -31,11 +31,7 @@
       </span>
     </v-toolbar>
     <v-content>
-      <v-container fill-height>
-        <v-layout row wrap justify-center align-center>
-          <router-view></router-view>
-        </v-layout>
-      </v-container>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>

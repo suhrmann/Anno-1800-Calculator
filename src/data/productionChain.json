@@ -21,6 +21,7 @@
                   "precursorBuildings": {}
               },
               "Schnapps": {
+                  "finalProduct": "Schnapps",
                   "building": "Schnapps Distillery",
                   "alternative": "",
                   "precursorBuildings": {
