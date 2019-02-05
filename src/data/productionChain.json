@@ -1,36 +1,5 @@
   {
       "Version": "Anno1800 Beta",
-      "tiers": [{
-              "id": 1,
-              "name": "Farmers"
-          },
-          {
-              "id": 2,
-              "name": "Workers"
-          },
-          {
-              "id": 3,
-              "name": "Artisans"
-          },
-          {
-              "id": 4,
-              "name": "Engineers"
-          },
-          {
-              "id": 5,
-              "name": "Investors"
-          },
-
-          {
-              "id": 6,
-              "name": "Jornaleros"
-          },
-          {
-              "id": 7,
-              "name": "Obreros"
-          }
-      ],
-
       "Production_Chain": {
 
           "Timber": {
