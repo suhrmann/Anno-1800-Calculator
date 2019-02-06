@@ -3,6 +3,14 @@
     selectedWorldID: {{selectedWorldID}},
     selectedSocialClassID: {{selectedSocialClassID}},
     selectedProductionChainID: {{selectedProductionChainID}},
+    <!-- 
+      The following element is needed to trigger the initial rendering of the computed property selectedProductionChain 
+      The element does render but is not shown
+    -->
+    <p v-show="false">{{selectedProductionChain}}</p>
+    <p v-show="false">{{selectedSocialClasses}}</p>
+    <p v-show="false">{{selectedProductionChains}}</p>
+
     <v-card height="56px">
       <v-bottom-nav :active.sync="selectedProductionChainID" :value="true" absolute dark>
         <v-btn
@@ -75,6 +83,7 @@ export default {
       productionChains: productionChains.Production_Chain
     };
   },
+
   computed: {
     /**
      * Search production chain by ChainID.
@@ -91,8 +100,7 @@ export default {
           productionChain = selectedSocialClassChains[chain];
         }
       });
-
-      this.$store.commit("changeProductionChain", productionChain);
+      this.setProductionChain(productionChain);
       return productionChain;
     },
 
@@ -145,6 +153,10 @@ export default {
       this.selectedProductionChainID = this.selectedProductionChains
         ? this.selectedProductionChains[0].id
         : [];
+    },
+
+    setProductionChain(productionChain) {
+      this.$store.commit("changeProductionChain", productionChain);
     }
   }
 };
