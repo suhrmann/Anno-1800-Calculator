@@ -87,30 +87,45 @@ export default {
       selectedSocialClassID: 1,
       selectedProductionChainID: 1,
 
-      /**
-       * The socialClasses, grouped by world (old world and new world)
-       */
+      /* Store data from JSON in component */
+      // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
       socialClasses: socialClasses,
       productionChains: productionChains.Production_Chain,
     };
   },
   computed: {
+    /**
+     * Filter the social classes for the ones available in the selected world.
+     *
+     * @return {array} The social classes of the selected world.
+     */
     selectedSocialClasses: function() {
       const socialClasses = Object.values(this.socialClasses);
       return socialClasses.filter((socialClass) => socialClass.worldID === this.selectedWorldID);
     },
 
+    /**
+     * Filter the production chains for the ones available in the selected social class.
+     *
+     * @return {array} The production chains of the selected world and social class.
+     */
     selectedProductionChains: function() {
       const productionChains = Object.values(this.productionChains);
       return productionChains.filter((chain) => chain.socialClassID === this.selectedSocialClassID);
     },
   },
   methods: {
+    /**
+     * After changing the world, display the first social class.
+     */
     resetSocialClass: function() {
       this.selectedSocialClassID = this.selectedSocialClasses ? this.selectedSocialClasses[0].id : [];
       this.resetProductionChain();
     },
+    /**
+     * After changing the social class, display the first production chain.
+     */
     resetProductionChain: function() {
       this.selectedProductionChainID = this.selectedProductionChains ? this.selectedProductionChains[0].id : [];
     },
