@@ -3,12 +3,11 @@
   <v-flex xs12>
     selectedWorldID: {{selectedWorldID}},
     selectedSocialClassID: {{selectedSocialClassID}},
-    selectedProductionChainName: {{selectedProductionChainName}},
+    selectedProductionChainID: {{selectedProductionChainID}},
 
-    <!-- Nav Bar: PRODUCTION CHAIN -->
     <v-card height="56px">
       <v-bottom-nav
-        :active.sync="selectedProductionChainName"
+        :active.sync="selectedProductionChainID"
         :value="true"
         absolute
         dark
@@ -39,6 +38,7 @@
           flat
           v-for="(socialClass, i) in selectedSocialClasses"
           :value="socialClass.id"
+          @click="resetProductionChain()"
         >
           <span>{{ socialClass.name }}</span>
           <img :src="socialClass.img" :alt="socialClass.name + ' Image'">
@@ -85,7 +85,7 @@ export default {
       // Init selection
       selectedWorldID: 1,
       selectedSocialClassID: 1,
-      selectedProductionChainName: 1,
+      selectedProductionChainID: 1,
 
       /**
        * The socialClasses, grouped by world (old world and new world)
@@ -108,7 +108,11 @@ export default {
   },
   methods: {
     resetSocialClass: function() {
-      this.selectedSocialClassID = 1;
+      this.selectedSocialClassID = this.selectedSocialClasses ? this.selectedSocialClasses[0].id : [];
+      this.resetProductionChain();
+    },
+    resetProductionChain: function() {
+      this.selectedProductionChainID = this.selectedProductionChains ? this.selectedProductionChains[0].id : [];
     },
   },
 };
