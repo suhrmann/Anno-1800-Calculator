@@ -2,6 +2,7 @@
   "Version": "Anno1800 Beta",
   "Production_Chain": {
     "timber": {
+      "id": 1,
       "name": "Timber",
       "img": "timber.png",
       "socialClassID": 1,
@@ -17,6 +18,7 @@
       }
     },
     "fish": {
+      "id": 2,
       "name": "Fish",
       "img": "fish.png",
       "socialClassID": 1,
@@ -26,6 +28,7 @@
       "precursorBuildings": {}
     },
     "schnapps": {
+      "id": 3,
       "name": "Schnapps",
       "img": "schnapps.png",
       "socialClassID": 1,
@@ -41,6 +44,7 @@
       }
     },
     "work-clothes": {
+      "id": 4,
       "name": "Clothes",
       "img": "work-clothes.png",
       "socialClassID": 1,
@@ -56,6 +60,7 @@
       }
     },
     "bricks": {
+      "id": 5,
       "name": "Bricks",
       "img": "bricks.png",
       "socialClassID": 2,
@@ -71,6 +76,7 @@
       }
     },
     "sausages": {
+      "id": 6,
       "name": "Sausages",
       "img": "sausages.png",
       "socialClassID": 2,
@@ -86,6 +92,7 @@
       }
     },
     "sails": {
+      "id": 7,
       "name": "Sails",
       "img": "sails.png",
       "socialClassID": 2,
@@ -101,6 +108,7 @@
       }
     },
     "bread": {
+      "id": 8,
       "name": "Bread",
       "img": "bread.png",
       "socialClassID": 2,
@@ -122,6 +130,7 @@
       }
     },
     "soap": {
+      "id": 9,
       "name": "Soap",
       "img": "soap.png",
       "socialClassID": 2,
@@ -143,6 +152,7 @@
       }
     },
     "steel-beams": {
+      "id": 10,
       "name": "Steel Beams",
       "img": "steel-beams.png",
       "socialClassID": 2,
@@ -169,6 +179,7 @@
       }
     },
     "weapons": {
+      "id": 11,
       "name": "Weapons",
       "img": "weapons.png",
       "socialClassID": 2,
@@ -195,6 +206,7 @@
       }
     },
     "beer": {
+      "id": 12,
       "name": "Beer",
       "img": "beer.png",
       "socialClassID": 2,
@@ -221,6 +233,7 @@
       }
     },
     "windows": {
+      "id": 13,
       "name": "Windows",
       "img": "windows.png",
       "socialClassID": 3,
@@ -247,6 +260,7 @@
       }
     },
     "canned-food": {
+      "id": 14,
       "name": "Canned Food",
       "img": "canned-food.png",
       "socialClassID": 3,
@@ -278,6 +292,7 @@
       }
     },
     "sewing-machines": {
+      "id": 15,
       "name": "Sewing Machines",
       "img": "sewing-machines.png",
       "socialClassID": 3,
@@ -309,6 +324,7 @@
       }
     },
     "fur-coats": {
+      "id": 16,
       "name": "Fur Coats",
       "img": "fur-coats.png",
       "socialClassID": 3,
@@ -335,6 +351,7 @@
       }
     },
     "fried-plantains": {
+      "id": 17,
       "name": "Fried Plantains",
       "img": "fried-plantains.png",
       "socialClassID": 6,
@@ -355,6 +372,7 @@
       }
     },
     "rum": {
+      "id": 18,
       "name": "Rum",
       "img": "rum.png",
       "socialClassID": 6,
@@ -376,6 +394,7 @@
       }
     },
     "ponchos": {
+      "id": 19,
       "name": "Ponchos",
       "img": "ponchos.png",
       "socialClassID": 6,
@@ -391,6 +410,7 @@
       }
     },
     "tortillas": {
+      "id": 20,
       "name": "Tortillas",
       "img": "tortillas.png",
       "socialClassID": 7,
@@ -411,6 +431,7 @@
       }
     },
     "coffee": {
+      "id": 21,
       "name": "Coffee",
       "img": "coffee.png",
       "socialClassID": 7,
@@ -426,6 +447,7 @@
       }
     },
     "electricity": {
+      "id": 22,
       "name": "Electricity",
       "img": "electricity.png",
       "socialClassID": 7,
@@ -458,6 +480,7 @@
       }
     },
     "cigars": {
+      "id": 23,
       "name": "Cigars",
       "img": "cigars.png",
       "socialClassID": 7,
