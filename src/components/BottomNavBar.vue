@@ -8,8 +8,6 @@
       The element does render but is not shown
     -->
     <p v-show="false">{{selectedProductionChain}}</p>
-    <p v-show="false">{{selectedSocialClasses}}</p>
-    <p v-show="false">{{selectedProductionChains}}</p>
 
     <v-card height="56px">
       <v-bottom-nav :active.sync="selectedProductionChainID" :value="true" absolute dark>
