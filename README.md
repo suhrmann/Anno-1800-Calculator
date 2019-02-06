@@ -1,29 +1,5 @@
-# anno-1800-calc
+# Anno 1800 Calculator
 
-## Project setup
-```
-npm install
-```
+This is the release branch of *Anno 1800 Calculator*.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Artifacts (Win, Mac, Linux) releases and github-pages will be built from this using [Travis CI](https://travis-ci.org).
