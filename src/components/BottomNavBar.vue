@@ -140,17 +140,40 @@ export default {
      */
     resetSocialClass: function() {
       this.selectedSocialClassID = this.selectedSocialClasses
-        ? this.selectedSocialClasses[0].id
+        ? (this.selectedSocialClasses[0].id = 1)
         : [];
-      this.resetProductionChain();
+      this.resetProductionChain(this.worldID, this.selectedSocialClassID);
     },
     /**
      * After changing the social class, display the first production chain.
      */
     resetProductionChain: function() {
       this.selectedProductionChainID = this.selectedProductionChains
-        ? this.selectedProductionChains[0].id
+        ? (this.selectedProductionChains[0].id = this.getFirstChain(
+            this.worldID,
+            this.selectedSocialClassID
+          ))
         : [];
+    },
+
+    getFirstChain(worldID, socialClass) {
+      switch (socialClass) {
+        case 1:
+          return 1;
+          break;
+        case 2:
+          return 5;
+          break;
+        case 3:
+          return 13;
+          break;
+        case 4:
+          return 20;
+          break;
+        case 5:
+          return 25;
+          break;
+      }
     },
 
     setProductionChain(productionChain) {
