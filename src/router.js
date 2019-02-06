@@ -1,23 +1,43 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+// Routes
+import Tester from './components/Tester.vue';
+import ProductionChains from './components/ProductionChains';
+import ProductionLayouts from './components/ProductionLayouts';
+import ResidentDemands from './components/ResidentDemands';
+import About from './components/About';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
+    // ------
     {
-      path: '/',
-      name: 'home',
-      component: Home,
+      path: '/tester',
+      name: 'tester',
+      component: Tester,
     },
+    // - Production ------
+    {
+      path: '/chains',
+      name: 'production-chains',
+      component: ProductionChains,
+    },
+    {
+      path: '/demands',
+      name: 'resident-demands',
+      component: ResidentDemands,
+    },
+    {
+      path: '/layouts',
+      name: 'production-layouts',
+      component: ProductionLayouts,
+    },
+    // ------
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: About,
     },
   ],
 });
