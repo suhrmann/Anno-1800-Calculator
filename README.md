@@ -15,6 +15,6 @@ This crawler requires Python 3 and is based on [Scrapy](https://scrapy.org/).
     ```
 3. Run crawler
     ```
-    scrapy runspider buildings
-    scrapy runspider population
+    scrapy crawl buildings
+    scrapy crawl population
     ```
