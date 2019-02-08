@@ -1,14 +1,9 @@
-<template>
-
-</template>
-
-<script>
 import Producer from './Producer';
 import ProductionChainNode from './ProductionChainNode';
 
 export default {
   name: 'ProductionChainNode',
-  data: function() {
+  data: function () {
     return {
       /**
        * The producer / building stored in this node.
@@ -28,7 +23,7 @@ export default {
      * @return {ProductionChainNode|null} Iff this chain is linear return the single next node,
      *                                    otherwise (if this node has none or multiple next nodes) return null.
      */
-    next: function() {
+    next: function () {
       // Error handling
       if (!this.isLinear()) {
         throw Error('This node is not linear. Use either nextTop() or nextBottom().');
@@ -43,7 +38,7 @@ export default {
      *
      * @return {boolean} true if this node has exactly one next node.
      */
-    isLinear: function() {
+    isLinear: function () {
       // nextTop XOR nextBottom (but NOT both)
       return (this.nextTop && !this.nextBottom) || (!this.nextTop && this.nextBottom);
     },
@@ -53,13 +48,8 @@ export default {
      *
      * @return {boolean} true if this node has no next nodes.
      */
-    isLeaf: function() {
+    isLeaf: function () {
       return this.nextTop == null && this.nextBottom == null;
     },
   },
 };
-</script>
-
-<style scoped>
-
-</style>
