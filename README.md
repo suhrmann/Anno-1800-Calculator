@@ -18,3 +18,8 @@ This crawler requires Python 3 and is based on [Scrapy](https://scrapy.org/).
     scrapy crawl buildings
     scrapy crawl population
     ```
+
+### FAQ
+
+- How to change the download directory? <br/>
+    Adjust the value `IMAGE_PATH` in the spiders `spiders/buildings.py` or `spiders/population.py`
