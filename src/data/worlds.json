@@ -2,11 +2,13 @@
   "oldWorld": {
     "id": 1,
     "name": "Old World",
-    "img": "old-world.png"
+    "img": "old-world.png",
+    "startingSocialClassID": 1
   },
   "newWorld": {
     "id": 2,
     "name": "New World",
-    "img": "new-world"
+    "img": "new-world",
+    "startingSocialClassID": 6
   }
 }
