@@ -1,5 +1,7 @@
 # Anno 1800 Calculator
 
+[![Build Status](https://travis-ci.org/Vadammt/Anno-1800-Calculator.svg?branch=master)](https://travis-ci.org/Vadammt/Anno-1800-Calculator)
+
 ## Project setup
 ### 1 Get Project
 ```
