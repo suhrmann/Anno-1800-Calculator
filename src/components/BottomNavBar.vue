@@ -17,6 +17,7 @@
           v-for="(chain, i) in selectedProductionChains"
           :key="i"
           :value="chain.id"
+          @click="switchedProductionChain()"
         >
           <span>{{ chain.name }}</span>
           <img :src="chain.img" :alt="chain.name + ' Image'">
@@ -64,6 +65,7 @@
 import worlds from "../data/worlds.json";
 import socialClasses from "../data/socialClasses.json";
 import productionChains from "../data/productionChain";
+import { EventBus } from "../EventBus.js";
 
 export default {
   name: "BottomNavBar",
@@ -99,6 +101,7 @@ export default {
         }
       });
       this.setProductionChain(productionChain);
+      EventBus.$emit("bottomNavBarChanged");
       return productionChain;
     },
 
@@ -148,6 +151,7 @@ export default {
       this.selectedSocialClassID = selectedSocialClass.id;
 
       this.resetProductionChain(selectedSocialClass.id);
+      EventBus.$emit("bottomNavBarChanged");
     },
 
     /**

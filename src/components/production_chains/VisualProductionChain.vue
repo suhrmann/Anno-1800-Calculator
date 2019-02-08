@@ -25,6 +25,7 @@
 
 <script>
 import { chainNodeMixin } from "./chainNodeMixin.js";
+import { EventBus } from "../../EventBus.js";
 
 export default {
   data() {
@@ -35,13 +36,15 @@ export default {
     };
   },
 
-  mounted() {
-    let chainNodeMixin = this;
-    chainNodeMixin.iterateProductionChain(
-      this.productionChain,
-      () => {},
-      false
-    );
+  created() {
+    EventBus.$on("bottomNavBarChanged", () => {
+      let chainNodeMixin = this;
+      chainNodeMixin.iterateProductionChain(
+        this.productionChain,
+        () => {},
+        false
+      );
+    });
   },
 
   mixins: [chainNodeMixin],
@@ -50,10 +53,12 @@ export default {
       return this.$store.state.selectedProductionChain;
     },
     gridWidth() {
-      return this.chainDepth * 2 + 1;
+      let chainNodeMixin = this;
+      return chainNodeMixin.chainDepth * 2 + 1;
     },
     gridHeight() {
-      return this.chainWidth * 2 + 1;
+      let chainNodeMixin = this;
+      return chainNodeMixin.chainWidth * 2 + 1;
     }
   },
   methods: {
