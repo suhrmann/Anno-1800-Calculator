@@ -2,8 +2,10 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-        <h2>Dynamic Grid TODO</h2>
+        <h2>Dynamic Grid TODO1</h2>
+        <v-btn @click="test">test</v-btn>
         <p>Selected Chain: {{productionChain}}</p>
+
         <v-card dark color="primary">
           <v-card-text class="px-0">12</v-card-text>
         </v-card>
@@ -38,10 +40,20 @@
 </template>
 
 <script>
+import { chainNodeMixin } from "./chainNodeMixin.js";
+
 export default {
+  mixins: [chainNodeMixin],
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
+    }
+  },
+  methods: {
+    test() {
+      let chainNodeMixin = this;
+      let depth = chainNodeMixin.getChainDepth(this.productionChain);
+      console.log(depth);
     }
   }
 };
