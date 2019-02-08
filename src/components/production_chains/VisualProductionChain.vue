@@ -4,7 +4,7 @@
       <v-flex xs12>
         <h2>Dynamic Grid TODO1</h2>
         <v-btn @click="test">test</v-btn>
-        <p>Selected Chain: {{productionChain}}</p>
+        <p>Selected Chain: {{productionChain.name}}</p>
         <p>Grid Width: {{gridWidth}}</p>
 
         <v-card dark color="primary">
