@@ -504,6 +504,49 @@
           }
         }
       }
+    },
+    "Steam Motors": {
+      "id": 24,
+      "name": "Steam Motors",
+      "img": "steam_motors.png",
+      "socialClassID": 4,
+      "finalProduct": "Steam Motors",
+      "building": "Motor Assembly Lines",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Furnace",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Iron Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Charcoal Kiln",
+              "alternative": "Coal Mine",
+              "precursorBuildings": {}
+            }
+          }
+        },
+        "2": {
+          "building": "Brass Smeltery",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Zinc Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Copper Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
     }
   }
 }

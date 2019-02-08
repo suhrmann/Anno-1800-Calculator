@@ -25,7 +25,8 @@
     "name": "Engineers",
     "img": "engineers.png",
     "worldID": 1,
-    "firstProductionChain": null
+    "firstProductionChain": 24
+
   },
   "investors": {
     "id": 5,

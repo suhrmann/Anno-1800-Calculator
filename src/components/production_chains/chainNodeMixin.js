@@ -6,19 +6,31 @@ export const chainNodeMixin = {
       chainDepth: 0,
       chainDepthCounter: 0,
       chainDepthArray: [],
-      /**
-       * The producer / building stored in this node.
-       * @var {Producer}
-       */
-      building: null,
 
-      // Store the following nodes of the tree
-      nextTop: null,
-      nextBottom: null,
+      chainWidth: 0,
+      chainWidthCounter: 0,
+      chainWidthArray: [],
     };
   },
 
   methods: {
+
+    determineChainWidth() {
+      const depthArray = JSON.parse(JSON.stringify(this.chainDepthArray));
+      const counts = {};
+      const countsArray = [];
+
+      for (let i = 0; i < depthArray.length; i++) {
+        counts[depthArray[i]] = (counts[depthArray[i]] + 1) || 1;
+      }
+
+      Object.keys(counts).forEach((depthLevel) => {
+        countsArray.push(counts[depthLevel]);
+      });
+
+      const treeWidth = Math.max(...countsArray);
+      return treeWidth;
+    },
 
     /**
      * @param {Object} productionChain a variable containing a ProductionChain Object
@@ -45,16 +57,20 @@ export const chainNodeMixin = {
         this.iterateTreeElements(root, callbackFunction, debugOutput);
       } else {
         this.chainDepth = 1;
+        this.chainWidth = 1;
+        this.chainDepthArray = [1];
         if (callbackFunction) callbackFunction(root);
       }
 
       // determine the highest number in chainDepthArray, which is the tree height
       this.chainDepth = Math.max(...this.chainDepthArray);
+      this.chainWidth = this.determineChainWidth();
 
       if (debugOutput) {
         console.log('');
         console.log('Array: ' + this.chainDepthArray);
         console.log('Chain Depth: ' + this.chainDepth);
+        console.log('Chain Width: ' + this.chainWidth);
       }
     },
 
@@ -120,33 +136,6 @@ export const chainNodeMixin = {
      */
     countPrecursors(element) {
       return Object.keys(element.precursorBuildings).length;
-    },
-
-
-    /**
-     * If this node is linear, return this single next node.
-     *
-     * @return {ProductionChainNode|null} Iff this chain is linear return the single next node,
-     *                                    otherwise (if this node has none or multiple next nodes) return null.
-     */
-    next() {
-      // Error handling
-      if (!this.isLinear()) {
-        throw Error('This node is not linear. Use either nextTop() or nextBottom().');
-      }
-
-      // Return the next node that is set.
-      return this.nextTop || this.nextBottom;
-    },
-
-    /**
-     * Is this node linear (has only one next node).
-     *
-     * @return {boolean} true if this node has exactly one next node.
-     */
-    isLinear() {
-      // nextTop XOR nextBottom (but NOT both)
-      return (this.nextTop && !this.nextBottom) || (!this.nextTop && this.nextBottom);
     },
 
     /**
