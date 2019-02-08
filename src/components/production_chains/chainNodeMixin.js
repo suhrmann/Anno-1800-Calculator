@@ -4,6 +4,8 @@ export const chainNodeMixin = {
   data() {
     return {
       chainDepth: 0,
+      chainDepthCounter: 0,
+      chainDepthArray: [],
       /**
        * The producer / building stored in this node.
        * @var {Producer}
@@ -20,41 +22,69 @@ export const chainNodeMixin = {
 
     /**
      * @param {Object} productionChain an variable containing a ProductionChain Object
-     * @return {int} depth of the Production Chain
-     * Returns a number which represents the number of levels in the production hierarchy
+     * @param {function} callbackFunction a function which gets executed on every tree element
+     * @return {void} the depth of the Production Chain and the callback function's
+     * result can be accessed by a vdata property
+     * -
+     * Iterates through all tree objects and executes a function at every element.
+     * Determines the Production Chain's depth.
      */
 
-    getChainDepth(productionChain) {
-      const element = productionChain;
-      console.log('Root: ' + element.building);
-      console.log('Leaf? ' + this.isLeaf(element));
+    iterateProductionChain(productionChain, callbackFunction, debugOutput) {
+      this.chainDepthArray = [];
+      const root = productionChain;
+
+      if (!this.isLeaf(root)) {
+        this.iterateTreeElements(root, callbackFunction, debugOutput);
+      } else {
+        this.chainDepth = 1;
+        if (callbackFunction) callbackFunction();
+      }
+
+      this.chainDepth = Math.max(...this.chainDepthArray);
+
+      if (debugOutput) {
+        console.log('');
+        console.log('Array: ' + this.chainDepthArray);
+        console.log('Chain Depth: ' + this.chainDepth);
+      }
+    },
+
+    iterateTreeElements(element, callbackFunction, debugOutput) {
+      if (debugOutput) {
+        console.log('');
+        console.log('New Element:');
+        console.log('Element: "' + element.building + '", Leaf: ' + this.isLeaf(element));
+      }
 
       if (!this.isLeaf(element)) {
-        let leftPrecursor = null;
-        let rightPrecursor = null;
+        if (callbackFunction) callbackFunction();
+        this.chainDepthCounter++;
+        this.chainDepthArray.push(this.chainDepthCounter);
 
-        console.log(element.precursorBuildings)
-
-
-        if (this.isLeaf(element.precursorBuildings[1])) {
-          leftPrecursor = element.precursorBuildings[1];
+        if (debugOutput) {
+          console.log('Element Depth: ' + this.chainDepthCounter);
         }
 
-        if (this.isLeaf(element.precursorBuildings[2])) {
-          rightPrecursor = element.precursorBuildings[2];
+        for (const precursors in element.precursorBuildings) {
+          const precursor = element.precursorBuildings[precursors];
+          this.iterateTreeElements(precursor, callbackFunction, debugOutput);
         }
+      } else {
+        if (callbackFunction) callbackFunction();
 
-        if (leftPrecursor !== null) {
-          this.getChainDepth(leftPrecursor);
-        } else {
-          console.log('end');
-        }
-        if (rightPrecursor !== null) {
-          this.getChainDepth(rightPrecursor);
-        } else {
-          console.log('end');
+        this.chainDepthCounter++;
+        this.chainDepthArray.push(this.chainDepthCounter);
+
+        if (debugOutput) {
+          console.log('Element Depth: ' + this.chainDepthCounter);
         }
       }
+      this.chainDepthCounter--;
+    },
+
+    countPrecursors(element) {
+      return Object.keys(element.precursorBuildings).length;
     },
 
 

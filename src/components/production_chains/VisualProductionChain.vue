@@ -52,8 +52,13 @@ export default {
   methods: {
     test() {
       let chainNodeMixin = this;
-      let depth = chainNodeMixin.getChainDepth(this.productionChain);
-      console.log(depth);
+      let depth = chainNodeMixin.iterateProductionChain(
+        this.productionChain,
+        () => {
+          console.log("callback gets executed!");
+        },
+        true
+      );
     }
   }
 };
