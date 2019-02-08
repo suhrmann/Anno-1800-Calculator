@@ -8,8 +8,6 @@
       The element does render but is not shown
     -->
     <p v-show="false">{{selectedProductionChain}}</p>
-    <p v-show="false">{{selectedSocialClasses}}</p>
-    <p v-show="false">{{selectedProductionChains}}</p>
 
     <v-card height="56px">
       <v-bottom-nav :active.sync="selectedProductionChainID" :value="true" absolute dark>
@@ -35,7 +33,7 @@
           v-for="(socialClass, i) in selectedSocialClasses"
           :key="i"
           :value="socialClass.id"
-          @click="resetProductionChain()"
+          @click="resetProductionChain(socialClass.id)"
         >
           <span>{{ socialClass.name }}</span>
           <img :src="socialClass.img" :alt="socialClass.name + ' Image'">
@@ -52,7 +50,7 @@
           v-for="(world, i) in worlds"
           :key="i"
           :value="world.id"
-          @click="resetSocialClass()"
+          @click="resetSocialClass(world.id)"
         >
           <span>{{ world.name }}</span>
           <img :src="world.img" :alt="world.name + ' Image'">
@@ -140,23 +138,58 @@ export default {
     /**
      * After changing the world, display the first social class.
      */
-    resetSocialClass: function() {
-      this.selectedSocialClassID = this.selectedSocialClasses
-        ? this.selectedSocialClasses[0].id
-        : [];
-      this.resetProductionChain();
+    resetSocialClass: function(worldID) {
+      let selectedWorld = this.getWorldByID(worldID);
+      this.selectedWorldID = selectedWorld.id;
+
+      let selectedSocialClass = this.getSocialClassByID(
+        selectedWorld.startingSocialClassID
+      );
+      this.selectedSocialClassID = selectedSocialClass.id;
+
+      this.resetProductionChain(selectedSocialClass.id);
     },
+
     /**
      * After changing the social class, display the first production chain.
      */
-    resetProductionChain: function() {
-      this.selectedProductionChainID = this.selectedProductionChains
-        ? this.selectedProductionChains[0].id
-        : [];
+    resetProductionChain: function(socialClassID) {
+      let socialClass = this.getSocialClassByID(socialClassID);
+      this.selectedProductionChainID = socialClass.firstProductionChain;
     },
 
+    /**
+     * @param {Object} productionChain
+     * Changes the VueX State so every Component can access the current productionChain
+     * This updates when this.selectedProductionChainID updates
+     */
     setProductionChain(productionChain) {
       this.$store.commit("changeProductionChain", productionChain);
+    },
+
+    /**
+     * @param {int} id
+     * @return {Object} The selected World Object
+     * Searches all worlds by their world id
+     */
+    getWorldByID(id) {
+      const worlds = Object.values(this.worlds);
+      let selectedWorld = worlds.filter(world => world.id === id)[0];
+      return selectedWorld;
+    },
+
+    /**
+     * @param {int} id
+     * @return {Object} The selected Social Class Object
+     * Searches all social classes by their social class id
+     *
+     */
+    getSocialClassByID(id) {
+      const socialClasses = Object.values(this.socialClasses);
+      let selectedSocialClass = socialClasses.filter(
+        socialClass => socialClass.id === id
+      )[0];
+      return selectedSocialClass;
     }
   }
 };

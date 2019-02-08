@@ -350,7 +350,7 @@
         }
       }
     },
-    "fried-plantains": {
+    "Fried Plantains": {
       "id": 17,
       "name": "Fried Plantains",
       "img": "fried-plantains.png",
@@ -388,8 +388,7 @@
         "2": {
           "building": "Sugar Cane Plantation",
           "alternative": "",
-          "precursorBuildings": {
-          }
+          "precursorBuildings": {}
         }
       }
     },
@@ -491,8 +490,7 @@
         "1": {
           "building": "Tobacco Plantation",
           "alternative": "",
-          "precursorBuildings": {
-          }
+          "precursorBuildings": {}
         },
         "2": {
           "building": "Marquetry Workshop",
