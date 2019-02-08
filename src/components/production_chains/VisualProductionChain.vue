@@ -35,6 +35,15 @@ export default {
     };
   },
 
+  mounted() {
+    let chainNodeMixin = this;
+    chainNodeMixin.iterateProductionChain(
+      this.productionChain,
+      () => {},
+      false
+    );
+  },
+
   mixins: [chainNodeMixin],
   computed: {
     productionChain() {
