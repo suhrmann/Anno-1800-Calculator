@@ -5,7 +5,7 @@ import os
 import re
 import requests
 
-from scrapy.linkextractor import LinkExtractor
+from scrapy.linkextractors import LinkExtractor
 from scrapy.selector import Selector
 
 
