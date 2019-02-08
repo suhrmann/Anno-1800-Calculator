@@ -5,6 +5,7 @@
         <h2>Dynamic Grid TODO1</h2>
         <v-btn @click="test">test</v-btn>
         <p>Selected Chain: {{productionChain}}</p>
+        <p>Grid Width: {{gridWidth}}</p>
 
         <v-card dark color="primary">
           <v-card-text class="px-0">12</v-card-text>
@@ -43,10 +44,17 @@
 import { chainNodeMixin } from "./chainNodeMixin.js";
 
 export default {
+  data() {
+    return {};
+  },
+
   mixins: [chainNodeMixin],
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
+    },
+    gridWidth() {
+      return this.chainDepth * 2 + 1;
     }
   },
   methods: {
