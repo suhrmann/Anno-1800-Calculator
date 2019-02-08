@@ -9,10 +9,14 @@
         <p>Grid Height: {{gridHeight}}</p>
       </v-flex>
     </v-layout>
-    <v-layout v-for="i in gridHeight" :key="i" justify-center row wrap>
+
+    <v-layout v-for="j in gridHeight" :key="j" justify-center row wrap>
       <v-flex v-for="i in gridWidth" :key="i" xs1>
         <v-card dark color="secondary">
-          <v-card-text class="px-0">1</v-card-text>
+          <v-tooltip bottom>
+            <img slot="activator" :src="building.img" :alt="'building'">
+            <span>Building name</span>
+          </v-tooltip>
         </v-card>
       </v-flex>
     </v-layout>
@@ -24,7 +28,11 @@ import { chainNodeMixin } from "./chainNodeMixin.js";
 
 export default {
   data() {
-    return {};
+    return {
+      building: {
+        img: "test"
+      }
+    };
   },
 
   mixins: [chainNodeMixin],
@@ -40,6 +48,10 @@ export default {
     }
   },
   methods: {
+    even(rowOrColumn) {
+      if (rowOrColumn % 2 == 0) return true;
+    },
+
     test() {
       let chainNodeMixin = this;
       let depth = chainNodeMixin.iterateProductionChain(
