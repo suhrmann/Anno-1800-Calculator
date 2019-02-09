@@ -34,8 +34,9 @@ export const chainNodeMixin = {
 
     /**
      * @param {Object} productionChain a variable containing a ProductionChain Object
-     * @param {function} callbackFunction a function which gets executed on every tree element.
-     * The element is given to the callback function as a parameter
+     * @param {function} rootCallbackFunction a function which only gets execeuted on the root element
+     * @param {function} elementCallbackFunction a function which gets executed on every tree element
+     * which is not the root. The element is given to the callback function as a parameter
      * @param {boolean} debugOutput if true, debug output gets written in the console
      * @return {void} the depth of the Production Chain and the callback function's
      * result can be accessed by a vdata property. Recommendation: populate an Object or Array with the results
@@ -43,7 +44,7 @@ export const chainNodeMixin = {
      * Iterates through all tree objects and executes a function at every element.
      * Determines the Production Chain's depth.
      */
-    iterateProductionChain(productionChain, callbackFunction, debugOutput) {
+    iterateProductionChain(productionChain, rootCallbackFunction, elementCallbackFunction, debugOutput) {
       this.chainDepthArray = []; // this array stores the depth levels on every element
       const root = productionChain; // naming reasons
 
@@ -54,12 +55,13 @@ export const chainNodeMixin = {
       // if the root element is already a leaf, execute callback function and return depth 1
       // if not, recursively iterate through the tree
       if (!this.isLeaf(root)) {
-        this.iterateTreeElements(root, callbackFunction, debugOutput);
+        if (rootCallbackFunction) rootCallbackFunction(root);
+        this.iterateTreeElements(root, elementCallbackFunction, debugOutput);
       } else {
         this.chainDepth = 1;
         this.chainWidth = 1;
         this.chainDepthArray = [1];
-        if (callbackFunction) callbackFunction(root);
+        if (rootCallbackFunction) rootCallbackFunction(root);
       }
 
       // determine the highest number in chainDepthArray, which is the tree height
@@ -76,7 +78,7 @@ export const chainNodeMixin = {
 
     /**
      * @param {Object} element a variable containing an element of the production chain
-     * @param {function} callbackFunction a function which gets executed on every tree element
+     * @param {function} elementCallbackFunction a function which gets executed on every tree element
      * @param {boolean} debugOutput if true, debug output gets written in the console
      * ---
      * If the given element is the root or a node:
@@ -93,16 +95,20 @@ export const chainNodeMixin = {
      * if the procedure reaches a node on its way back,
      * the iteration continues on the other precursors incrementing the counter again
      */
-    iterateTreeElements(element, callbackFunction, debugOutput) {
+    iterateTreeElements(element, elementCallbackFunction, debugOutput) {
       if (debugOutput) {
         console.log('');
         console.log('Element: "' + element.building + '", Leaf: ' + this.isLeaf(element));
       }
       if (!this.isLeaf(element)) {
         // if element is root or node
-        if (callbackFunction) callbackFunction(element);
         this.chainDepthCounter++;
         this.chainDepthArray.push(this.chainDepthCounter);
+
+        // only execute callback function when element != root
+        if (this.chainDepthCounter !== 1) {
+          if (elementCallbackFunction) elementCallbackFunction(element);
+        }
 
         if (debugOutput) {
           console.log('Element Depth: ' + this.chainDepthCounter);
@@ -112,14 +118,18 @@ export const chainNodeMixin = {
         for (const precursors in element.precursorBuildings) {
           if (precursors) {
             const precursor = element.precursorBuildings[precursors];
-            this.iterateTreeElements(precursor, callbackFunction, debugOutput);
+            this.iterateTreeElements(precursor, elementCallbackFunction, debugOutput);
           }
         }
       } else {
         // if element is a leaf
-        if (callbackFunction) callbackFunction(element);
         this.chainDepthCounter++;
         this.chainDepthArray.push(this.chainDepthCounter);
+
+        // only execute callback function when element != root
+        if (this.chainDepthCounter !== 1) {
+          if (elementCallbackFunction) elementCallbackFunction(element);
+        }
 
         if (debugOutput) {
           console.log('Element Depth: ' + this.chainDepthCounter);

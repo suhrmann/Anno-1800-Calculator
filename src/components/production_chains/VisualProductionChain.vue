@@ -41,8 +41,18 @@ export default {
       let chainNodeMixin = this;
       chainNodeMixin.iterateProductionChain(
         this.productionChain,
-        () => {},
+        element => {},
+        element => {},
         false
+      );
+
+      let gridDimensions = JSON.parse(
+        JSON.stringify(this.makeMatchingGrid(this.gridHeight, this.gridWidth))
+      );
+
+      let gridToRender = this.fillGridWithProductionChain(
+        gridDimensions,
+        this.productionChain
       );
     });
   },
@@ -66,12 +76,73 @@ export default {
       if (rowOrColumn % 2 == 0) return true;
     },
 
+    /**
+     * This function takes a certain width and heigth and creates a 2-dimensional array
+     * @param {int} height
+     * @param {int} width
+     * @return {Array[height][width]}
+     */
+    makeMatchingGrid(height, width) {
+      let val = {};
+      let arr = [];
+      for (let i = 0; i < width; i++) {
+        arr[i] = [];
+        for (let j = 0; j < height; j++) {
+          arr[i][j] = val;
+        }
+      }
+
+      return arr;
+    },
+
+    /**
+     * This function takes a proper grid and integrates the production chain in the way it should be rendered
+     * @param {Array [][] } grid
+     * @param {Object} productionChain
+     * @return {Array [][] } An Array containing the production chain grid ready to render
+     */
+    fillGridWithProductionChain(grid, productionChain) {
+      // some attributes of the given grid
+      let arrayHeight = grid[0].length;
+      let arrayWidth = grid.length;
+
+      let lastObjectPosition = { x: arrayWidth - 1, y: arrayHeight / 2 + 0.5 };
+
+      console.log("Chain: " + productionChain.name);
+      console.log("GridHeight: " + arrayHeight);
+      console.log("GridWidth: " + arrayWidth);
+      console.log(
+        "Position Last: x:" +
+          lastObjectPosition.x +
+          " y:" +
+          lastObjectPosition.y
+      );
+
+      grid[lastObjectPosition.x - 1][lastObjectPosition.y - 1] =
+        productionChain.building;
+
+      let chainNodeMixin = this;
+
+      chainNodeMixin.iterateProductionChain(
+        productionChain,
+        null,
+        element => {
+          console.log("elementcallback");
+        },
+        true
+      );
+      console.table(grid);
+    },
+
     test() {
       let chainNodeMixin = this;
       let depth = chainNodeMixin.iterateProductionChain(
         this.productionChain,
-        () => {
-          console.log("callback gets executed!");
+        element => {
+          console.log("root callback gets executed!");
+        },
+        element => {
+          console.log("element callback gets executed!");
         },
         true
       );
@@ -82,3 +153,5 @@ export default {
 
 <style>
 </style>
+
+     

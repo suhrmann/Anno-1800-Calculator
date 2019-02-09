@@ -17,7 +17,6 @@
           v-for="(chain, i) in selectedProductionChains"
           :key="i"
           :value="chain.id"
-          @click="switchedProductionChain()"
         >
           <span>{{ chain.name }}</span>
           <img :src="chain.img" :alt="chain.name + ' Image'">
