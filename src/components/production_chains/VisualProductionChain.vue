@@ -107,6 +107,7 @@ export default {
       let arrayWidth = grid.length;
 
       let lastObjectPosition = { x: arrayWidth - 1, y: arrayHeight / 2 + 0.5 };
+      let nextObjectPosition = { x: 0, y1: 0, y2: 0 };
 
       console.log("Chain: " + productionChain.name);
       console.log("GridHeight: " + arrayHeight);
@@ -118,20 +119,34 @@ export default {
           lastObjectPosition.y
       );
 
-      grid[lastObjectPosition.x - 1][lastObjectPosition.y - 1] =
-        productionChain.building;
-
+      grid[lastObjectPosition.x - 1][lastObjectPosition.y - 1] = root.building;
       let chainNodeMixin = this;
 
       chainNodeMixin.iterateProductionChain(
         productionChain,
-        null,
+        root => {
+          console.log("rootcallback");
+        },
         element => {
           console.log("elementcallback");
+          let elementPositionX = this.determineElementX();
+
+          let elementPositionY = this.determineElementY();
+
+          grid[elementPositionX][elementPositionY] = element;
+          numberOfPrecursors = this.countPrecursors(root);
         },
         true
       );
       console.table(grid);
+    },
+
+    determineElementY() {
+      return 1;
+    },
+
+    determineElementX() {
+      return 2;
     },
 
     test() {

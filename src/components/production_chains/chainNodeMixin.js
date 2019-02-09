@@ -46,6 +46,7 @@ export const chainNodeMixin = {
      */
     iterateProductionChain(productionChain, rootCallbackFunction, elementCallbackFunction, debugOutput) {
       this.chainDepthArray = []; // this array stores the depth levels on every element
+      this.chainDepthCounter = 0;
       const root = productionChain; // naming reasons
 
       if (debugOutput) {
