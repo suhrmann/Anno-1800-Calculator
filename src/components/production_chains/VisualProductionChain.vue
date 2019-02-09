@@ -119,22 +119,22 @@ export default {
           lastObjectPosition.y
       );
 
-      grid[lastObjectPosition.x - 1][lastObjectPosition.y - 1] = root.building;
       let chainNodeMixin = this;
 
       chainNodeMixin.iterateProductionChain(
         productionChain,
         root => {
           console.log("rootcallback");
+          grid[lastObjectPosition.x - 1][lastObjectPosition.y - 1] =
+            root.building;
         },
         element => {
           console.log("elementcallback");
-          let elementPositionX = this.determineElementX();
+          let elementPositionX = this.determineElementX(lastObjectPosition);
 
           let elementPositionY = this.determineElementY();
 
-          grid[elementPositionX][elementPositionY] = element;
-          numberOfPrecursors = this.countPrecursors(root);
+          grid[elementPositionX][elementPositionY] = element.building;
         },
         true
       );
@@ -145,8 +145,8 @@ export default {
       return 1;
     },
 
-    determineElementX() {
-      return 2;
+    determineElementX(lastObjectPosition) {
+      return lastObjectPosition.x - (this.chainDepthCounter - 1) * 2;
     },
 
     test() {
