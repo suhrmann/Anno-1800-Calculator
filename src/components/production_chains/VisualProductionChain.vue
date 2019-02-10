@@ -149,6 +149,8 @@ export default {
             this.chainDepthCounter
           );
 
+          console.log(chainLevel, siblingNumber);
+
           this.positionTree.depth[chainLevel].sibling[siblingNumber] = root;
         },
 
@@ -169,7 +171,11 @@ export default {
         },
         true
       );
+      console.log("");
+      console.log("Visual Grid");
       console.table(grid);
+      console.log("");
+      console.log("Elements sorted by position");
       console.table(this.positionTree);
     },
 

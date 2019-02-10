@@ -134,6 +134,8 @@ export const chainNodeMixin = {
       this.changePosition(1, 'root');
 
       if (debugOutput) {
+        console.log('');
+        console.log('---------------------------------');
         console.log('Chain: ' + productionChain.name);
         console.log('Position: ');
         console.log(this.currentPosition);
