@@ -32,17 +32,24 @@ export default {
     return {
       building: {
         img: "test"
-      }
+      },
+
+      widthIndicator: { depth: { 1: [], 2: [], 3: [], 4: [], 5: [] } }
     };
   },
 
   created() {
     EventBus.$on("bottomNavBarChanged", () => {
+      this.resetWidthIndicator();
       let chainNodeMixin = this;
       chainNodeMixin.iterateProductionChain(
         this.productionChain,
-        element => {},
-        element => {},
+        root => {
+          this.buildWidthGrid(root);
+        },
+        element => {
+          this.buildWidthGrid(element);
+        },
         false
       );
 
@@ -72,6 +79,9 @@ export default {
     }
   },
   methods: {
+    resetWidthIndicator() {
+      this.widthIndicator = { depth: { 1: [], 2: [], 3: [], 4: [], 5: [] } };
+    },
     even(rowOrColumn) {
       if (rowOrColumn % 2 == 0) return true;
     },
@@ -139,6 +149,7 @@ export default {
         true
       );
       console.table(grid);
+      console.log(this.widthIndicator);
     },
 
     determineElementY() {
@@ -147,6 +158,10 @@ export default {
 
     determineElementX(lastObjectPosition) {
       return lastObjectPosition.x - (this.chainDepthCounter - 1) * 2;
+    },
+
+    buildWidthGrid(element) {
+      this.widthIndicator.depth[this.chainDepthCounter].push(element);
     },
 
     test() {

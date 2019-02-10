@@ -10,11 +10,92 @@ export const chainNodeMixin = {
       chainWidth: 0,
       chainWidthCounter: 0,
       chainWidthArray: [],
+
+      currentPosition: {
+        root: 0,
+        parent: 0,
+        grandparent: 0,
+        greatGrandparent: 0,
+        twoGreatGrandparent: 0,
+      },
     };
   },
 
   methods: {
 
+    /**
+     * @param {int} to A Number to which the position is set
+     * @param {string} level The key of the currentPosition property to change
+     * @return {void} changes this.currentPosition.root
+     */
+    changePosition(to, level) {
+      this.currentPosition[level] = to;
+    },
+
+    /**
+     * @param {boolean} all Set true if you want to reset all keys to 0
+     * @param {string} level Set this key of the currentPosition property to 0
+     * @return {void} changes this.currentPosition.root
+     */
+    resetPosition(all, level) {
+      if (all) {
+        this.currentPosition = {
+          root: 0,
+          parent: 0,
+          grandparent: 0,
+          greatGrandparent: 0,
+          twoGreatGrandparent: 0,
+        };
+      } else if (level) {
+        this.currentPosition[level] = 0;
+      }
+    },
+
+
+    /**
+     * @param {int} chainDepth The element's level in the tree
+     * @return {String} the corresponding position key name
+     * Returns the key name of current depth Position
+     */
+    getCurrentPositionLevel(chainDepth) {
+      switch (chainDepth) {
+        case 1:
+          return 'root';
+        case 2:
+          return 'parent';
+        case 3:
+          return 'grandparent';
+        case 4:
+          return 'greatGrandparent';
+        case 5:
+          return 'twoGreatGrandparent';
+      }
+    },
+
+    /**
+     * @param {Array} chainDepthArray An Array filled with all objects so far stored tree level
+     * @param {int} chainDepth The element 's level in the tree
+     * @return {int} The current number of objects already in the given level
+     * -
+     * Counts the number of elements already stored for this depth level.
+     * Think: There are already 2 elements stored on this depth, so this must be sibling three
+     */
+    getCountedSiblingsUntil(chainDepthArray, chainDepth) {
+      let count = 0;
+      const arr = chainDepthArray;
+      for (let i = 0; i < arr.length; ++i) {
+        if (arr[i] === chainDepth) {
+          count++;
+        }
+      }
+      return count;
+    },
+
+
+    /**
+     * Determines the maximum width of the chain
+     * @return {int} the tree width
+     */
     determineChainWidth() {
       const depthArray = JSON.parse(JSON.stringify(this.chainDepthArray));
       const counts = {};
@@ -47,22 +128,35 @@ export const chainNodeMixin = {
     iterateProductionChain(productionChain, rootCallbackFunction, elementCallbackFunction, debugOutput) {
       this.chainDepthArray = []; // this array stores the depth levels on every element
       this.chainDepthCounter = 0;
+      this.resetPosition(true);
       const root = productionChain; // naming reasons
+
+      this.changePosition(1, 'root');
 
       if (debugOutput) {
         console.log('Chain: ' + productionChain.name);
+        console.log('Position: ');
+        console.log(this.currentPosition);
       }
+
 
       // if the root element is already a leaf, execute callback function and return depth 1
       // if not, recursively iterate through the tree
       if (!this.isLeaf(root)) {
-        if (rootCallbackFunction) rootCallbackFunction(root);
+        // needs to be incremented and set to ensure that the correct data is given when the root function is exevuted
+        this.chainDepthCounter++;
+        this.chainDepthArray.push(this.chainDepthCounter);
+        if (rootCallbackFunction) rootCallbackFunction(root, this.currentPosition);
+        this.chainDepthCounter--;
+        this.chainDepthArray = [];
+
+
         this.iterateTreeElements(root, elementCallbackFunction, debugOutput);
       } else {
         this.chainDepth = 1;
         this.chainWidth = 1;
         this.chainDepthArray = [1];
-        if (rootCallbackFunction) rootCallbackFunction(root);
+        if (rootCallbackFunction) rootCallbackFunction(root, this.currentPosition);
       }
 
       // determine the highest number in chainDepthArray, which is the tree height
@@ -106,16 +200,27 @@ export const chainNodeMixin = {
         this.chainDepthCounter++;
         this.chainDepthArray.push(this.chainDepthCounter);
 
+        const chainLevel = this.getCurrentPositionLevel(this.chainDepthCounter);
+        const siblingNumber = this.getCountedSiblingsUntil(this.chainDepthArray, this.chainDepthCounter);
+
+        if (debugOutput) {
+          console.log('DepthPosition: ' + chainLevel);
+          console.log('Sibling Number: ' + siblingNumber);
+        }
+
+        this.changePosition(siblingNumber.chainLevel);
+
+
         // only execute callback function when element != root
         if (this.chainDepthCounter !== 1) {
-          if (elementCallbackFunction) elementCallbackFunction(element);
+          if (elementCallbackFunction) elementCallbackFunction(element, this.currentPosition);
         }
 
         if (debugOutput) {
           console.log('Element Depth: ' + this.chainDepthCounter);
         }
 
-        // recursively iterate on precursors
+        // recursively iterat        switch(this.chainDepthCounter)e on precursors
         for (const precursors in element.precursorBuildings) {
           if (precursors) {
             const precursor = element.precursorBuildings[precursors];
@@ -127,9 +232,19 @@ export const chainNodeMixin = {
         this.chainDepthCounter++;
         this.chainDepthArray.push(this.chainDepthCounter);
 
+        const chainLevel = this.getCurrentPositionLevel(this.chainDepthCounter);
+        const siblingNumber = this.getCountedSiblingsUntil(this.chainDepthArray, this.chainDepthCounter);
+
+        if (debugOutput) {
+          console.log('DepthPosition: ' + chainLevel);
+          console.log('Sibling Number: ' + siblingNumber);
+        }
+
+        this.changePosition(siblingNumber.chainLevel);
+
         // only execute callback function when element != root
         if (this.chainDepthCounter !== 1) {
-          if (elementCallbackFunction) elementCallbackFunction(element);
+          if (elementCallbackFunction) elementCallbackFunction(element, this.currentPosition);
         }
 
         if (debugOutput) {
