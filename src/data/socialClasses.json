@@ -2,7 +2,7 @@
   "farmers": {
     "id": 1,
     "name": "Farmers",
-    "img": "farmers.png",
+    "img": "farmers.webp",
     "worldID": 1,
     "firstProductionChain": 1
   },
@@ -16,14 +16,14 @@
   "artisans": {
     "id": 3,
     "name": "Artisans",
-    "img": "artisans.png",
+    "img": "workers.webp",
     "worldID": 1,
     "firstProductionChain": 13
   },
   "engineers": {
     "id": 4,
     "name": "Engineers",
-    "img": "engineers.png",
+    "img": "engineers.webp",
     "worldID": 1,
     "firstProductionChain": 24
 
@@ -31,7 +31,7 @@
   "investors": {
     "id": 5,
     "name": "Investors",
-    "img": "investors.png",
+    "img": "investors.webp",
     "worldID": 1,
     "firstProductionChain": null
   },
@@ -40,14 +40,14 @@
   "jornaleros": {
     "id": 6,
     "name": "Jornaleros",
-    "img": "jornaleros.png",
+    "img": "jornaleros.webp",
     "worldID": 2,
     "firstProductionChain": 17
   },
   "obreros": {
     "id": 7,
     "name": "Obreros",
-    "img": "obreros.png",
+    "img": "obreros.webp",
     "worldID": 2,
     "firstProductionChain": 20
   }
