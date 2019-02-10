@@ -34,24 +34,22 @@ export default {
         img: "test"
       },
 
-      widthIndicator: { depth: { 1: [], 2: [], 3: [], 4: [], 5: [] } }
+      positionTree: {
+        depth: {
+          root: { sibling: {} },
+          parent: { sibling: {} },
+          grandparent: { sibling: {} },
+          greatGrandparent: { sibling: {} },
+          twoGreatGrandparent: { sibling: {} }
+        }
+      }
     };
   },
 
   created() {
     EventBus.$on("bottomNavBarChanged", () => {
-      this.resetWidthIndicator();
+      this.resetPositionTree();
       let chainNodeMixin = this;
-      chainNodeMixin.iterateProductionChain(
-        this.productionChain,
-        root => {
-          this.buildWidthGrid(root);
-        },
-        element => {
-          this.buildWidthGrid(element);
-        },
-        false
-      );
 
       let gridDimensions = JSON.parse(
         JSON.stringify(this.makeMatchingGrid(this.gridHeight, this.gridWidth))
@@ -79,8 +77,16 @@ export default {
     }
   },
   methods: {
-    resetWidthIndicator() {
-      this.widthIndicator = { depth: { 1: [], 2: [], 3: [], 4: [], 5: [] } };
+    resetPositionTree() {
+      this.positionTree = {
+        depth: {
+          root: { sibling: {} },
+          parent: { sibling: {} },
+          grandparent: { sibling: {} },
+          greatGrandparent: { sibling: {} },
+          twoGreatGrandparent: { sibling: {} }
+        }
+      };
     },
     even(rowOrColumn) {
       if (rowOrColumn % 2 == 0) return true;
@@ -135,21 +141,36 @@ export default {
         productionChain,
         root => {
           console.log("rootcallback");
-          grid[lastObjectPosition.x - 1][lastObjectPosition.y - 1] =
-            root.building;
+          const chainLevel = this.getCurrentPositionLevel(
+            this.chainDepthCounter
+          );
+          const siblingNumber = this.getCountedSiblingsUntil(
+            this.chainDepthArray,
+            this.chainDepthCounter
+          );
+
+          this.positionTree.depth[chainLevel].sibling[siblingNumber] = root;
         },
+
         element => {
           console.log("elementcallback");
-          let elementPositionX = this.determineElementX(lastObjectPosition);
 
-          let elementPositionY = this.determineElementY();
+          const chainLevel = this.getCurrentPositionLevel(
+            this.chainDepthCounter
+          );
+          const siblingNumber = this.getCountedSiblingsUntil(
+            this.chainDepthArray,
+            this.chainDepthCounter
+          );
 
-          grid[elementPositionX][elementPositionY] = element.building;
+          console.log(chainLevel, siblingNumber);
+
+          this.positionTree.depth[chainLevel].sibling[siblingNumber] = element;
         },
         true
       );
       console.table(grid);
-      console.log(this.widthIndicator);
+      console.table(this.positionTree);
     },
 
     determineElementY() {
@@ -160,9 +181,7 @@ export default {
       return lastObjectPosition.x - (this.chainDepthCounter - 1) * 2;
     },
 
-    buildWidthGrid(element) {
-      this.widthIndicator.depth[this.chainDepthCounter].push(element);
-    },
+    buildWidthGrid(element) {},
 
     test() {
       let chainNodeMixin = this;
