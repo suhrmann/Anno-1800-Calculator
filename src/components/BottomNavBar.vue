@@ -81,7 +81,12 @@
           @click="resetSocialClass(world.id)"
         >
           <span>{{ world.name }}</span>
-          <img :src="world.img" :alt="world.name + ' Image'">
+          <v-avatar>
+            <img
+              :src="getImage(world.img, 'worlds')"
+              :alt="world.name + ' Image'"
+            >
+          </v-avatar>
         </v-btn>
       </v-bottom-nav>
     </v-card>

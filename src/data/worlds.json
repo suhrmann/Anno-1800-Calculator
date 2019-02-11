@@ -8,7 +8,7 @@
   "newWorld": {
     "id": 2,
     "name": "New World",
-    "img": "new-world",
+    "img": "new-world.png",
     "startingSocialClassID": 6
   }
 }
