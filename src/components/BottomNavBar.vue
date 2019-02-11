@@ -19,7 +19,12 @@
           :value="chain.id"
         >
           <span>{{ chain.name }}</span>
-          <img :src="chain.img" :alt="chain.name + ' Image'">
+          <v-avatar>
+            <img
+              :src="getBuildingImage(chain.img)"
+              :alt="chain.name + ' Image'"
+            >
+          </v-avatar>
         </v-btn>
       </v-bottom-nav>
     </v-card>
@@ -38,7 +43,7 @@
           <span>{{ socialClass.name }}</span>
           <v-avatar>
             <img
-              :src="getImagePath(socialClass.img, 'population')"
+              :src="getPopulationImage(socialClass.img, 'population')"
               :alt="socialClass.name + ' Image'"
             >
           </v-avatar>
@@ -205,10 +210,21 @@ export default {
      * @param {string} image The image to load.
      * @param {string} folder The folder that contains the image
      *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
-     * @return {string}
+     * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImagePath(image, folder) {
+    getPopulationImage(image, folder) {
       return image ? require(`../assets/${folder}/${image}`) : '';
+    },
+    /**
+     * Workaround to load images dynamically in for-loop.
+     *
+     * @param {string} image The image to load.
+     * @return {string} The URL of the image (e.g. for use as img src).
+     */
+    getBuildingImage(image) {
+      const population = this.getSocialClassByID(this.selectedSocialClassID);
+      const folder = population.name.toLowerCase();
+      return image ? require(`../assets/buildings/${folder}/${image}`) : '';
     },
   },
 };
