@@ -9,8 +9,14 @@
     -->
     <p v-show="false">{{selectedProductionChain}}</p>
 
-    <v-card height="56px">
-      <v-bottom-nav :active.sync="selectedProductionChainID" :value="true" absolute dark>
+    <v-card height="64px" tile>
+      <v-bottom-nav
+        :active.sync="selectedProductionChainID"
+        :value="true"
+        absolute
+        dark
+        height="64"
+      >
         <v-btn
           color="primary"
           flat
@@ -30,8 +36,14 @@
     </v-card>
 
     <!-- Nav Bar: SOCIAL CLASS -->
-    <v-card height="56px">
-      <v-bottom-nav :active.sync="selectedSocialClassID" :value="true" absolute dark>
+    <v-card height="64px" tile>
+      <v-bottom-nav
+        :active.sync="selectedSocialClassID"
+        :value="true"
+        absolute
+        dark
+        height="64"
+      >
         <v-btn
           color="primary"
           flat
@@ -52,8 +64,14 @@
     </v-card>
 
     <!-- Nav Bar: WORLD -->
-    <v-card height="55px">
-      <v-bottom-nav :active.sync="selectedWorldID" :value="true" absolute dark>
+    <v-card height="64px" tile>
+      <v-bottom-nav
+        :active.sync="selectedWorldID"
+        :value="true"
+        absolute
+        dark
+        height="64"
+      >
         <v-btn
           color="primary"
           flat
