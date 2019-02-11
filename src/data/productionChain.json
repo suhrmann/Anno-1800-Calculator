@@ -4,7 +4,7 @@
     "timber": {
       "id": 1,
       "name": "Timber",
-      "img": "timber.png",
+      "img": "farmers/timber.webp",
       "socialClassID": 1,
       "finalProduct": "Timber",
       "building": "Sawmill",
@@ -20,7 +20,7 @@
     "fish": {
       "id": 2,
       "name": "Fish",
-      "img": "fish.png",
+      "img": "farmers/fish.webp",
       "socialClassID": 1,
       "finalProduct": "Fish",
       "building": "Fishery",
@@ -30,7 +30,7 @@
     "schnapps": {
       "id": 3,
       "name": "Schnapps",
-      "img": "schnapps.png",
+      "img": "farmers/schnapps.webp",
       "socialClassID": 1,
       "finalProduct": "Schnapps",
       "building": "Schnapps Distillery",
@@ -46,7 +46,7 @@
     "work-clothes": {
       "id": 4,
       "name": "Clothes",
-      "img": "work-clothes.png",
+      "img": "farmers/work-clothes.webp",
       "socialClassID": 1,
       "finalProduct": "Work Clothes",
       "building": "Framework Knitters",
@@ -62,7 +62,7 @@
     "bricks": {
       "id": 5,
       "name": "Bricks",
-      "img": "bricks.png",
+      "img": "workers/bricks.webp",
       "socialClassID": 2,
       "finalProduct": "Bricks",
       "building": "Brick Factory",
@@ -78,7 +78,7 @@
     "sausages": {
       "id": 6,
       "name": "Sausages",
-      "img": "sausages.png",
+      "img": "workers/sausages.webp",
       "socialClassID": 2,
       "finalProduct": "Sausages",
       "building": "Slaughterhouse",
@@ -94,7 +94,7 @@
     "sails": {
       "id": 7,
       "name": "Sails",
-      "img": "sails.png",
+      "img": "workers/sails.webp",
       "socialClassID": 2,
       "finalProduct": "Sails",
       "building": "Sailmakers",
@@ -110,7 +110,7 @@
     "bread": {
       "id": 8,
       "name": "Bread",
-      "img": "bread.png",
+      "img": "workers/bread.webp",
       "socialClassID": 2,
       "finalProduct": "Bread",
       "building": "Bakery",
@@ -132,7 +132,7 @@
     "soap": {
       "id": 9,
       "name": "Soap",
-      "img": "soap.png",
+      "img": "workers/soap.webp",
       "socialClassID": 2,
       "finalProduct": "Soap",
       "building": "Soap Factory",
@@ -154,7 +154,7 @@
     "steel-beams": {
       "id": 10,
       "name": "Steel Beams",
-      "img": "steel-beams.png",
+      "img": "workers/steel-beams.webp",
       "socialClassID": 2,
       "finalProduct": "Steel Beams",
       "building": "Steelworks",
@@ -181,7 +181,7 @@
     "weapons": {
       "id": 11,
       "name": "Weapons",
-      "img": "weapons.png",
+      "img": "workers/weapons.webp",
       "socialClassID": 2,
       "finalProduct": "Weapons",
       "building": "Weapon Factory",
@@ -208,7 +208,7 @@
     "beer": {
       "id": 12,
       "name": "Beer",
-      "img": "beer.png",
+      "img": "workers/beer.webp",
       "socialClassID": 2,
       "finalProduct": "Beer",
       "building": "Brewery",
@@ -235,7 +235,7 @@
     "windows": {
       "id": 13,
       "name": "Windows",
-      "img": "windows.png",
+      "img": "artisans/windows.webp",
       "socialClassID": 3,
       "finalProduct": "Windows",
       "building": "Window Makers",
@@ -262,7 +262,7 @@
     "canned-food": {
       "id": 14,
       "name": "Canned Food",
-      "img": "canned-food.png",
+      "img": "artisans/canned-food.webp",
       "socialClassID": 3,
       "finalProduct": "Canned Food",
       "building": "Cannery",
@@ -294,7 +294,7 @@
     "sewing-machines": {
       "id": 15,
       "name": "Sewing Machines",
-      "img": "sewing-machines.png",
+      "img": "artisans/sewing-machines.webp",
       "socialClassID": 3,
       "finalProduct": "Sewing Machines",
       "building": "Sewing Machine Factory",
@@ -326,7 +326,7 @@
     "fur-coats": {
       "id": 16,
       "name": "Fur Coats",
-      "img": "fur-coats.png",
+      "img": "artisans/fur-coats.webp",
       "socialClassID": 3,
       "finalProduct": "Fur Coats",
       "building": "Fur Dealer",
@@ -353,7 +353,7 @@
     "Fried Plantains": {
       "id": 17,
       "name": "Fried Plantains",
-      "img": "fried-plantains.png",
+      "img": "jornaleros/fried-plantains.webp",
       "socialClassID": 6,
       "finalProduct": "Fried Plantains",
       "building": "Fried Plantain Kitchen",
@@ -374,7 +374,7 @@
     "rum": {
       "id": 18,
       "name": "Rum",
-      "img": "rum.png",
+      "img": "jornaleros/rum.webp",
       "socialClassID": 6,
       "finalProduct": "Rum",
       "building": "Rum Distillery",
@@ -395,7 +395,7 @@
     "ponchos": {
       "id": 19,
       "name": "Ponchos",
-      "img": "ponchos.png",
+      "img": "jornaleros/poncho.webp",
       "socialClassID": 6,
       "finalProduct": "Ponchos",
       "building": "Poncho Darner",
@@ -411,7 +411,7 @@
     "tortillas": {
       "id": 20,
       "name": "Tortillas",
-      "img": "tortillas.png",
+      "img": "obreros/tortilla.webp",
       "socialClassID": 7,
       "finalProduct": "Tortillas",
       "building": "Tortilla Maker",
@@ -432,7 +432,7 @@
     "coffee": {
       "id": 21,
       "name": "Coffee",
-      "img": "coffee.png",
+      "img": "obreros/coffee.webp",
       "socialClassID": 7,
       "finalProduct": "Coffee",
       "building": "Coffee Roaster",
@@ -448,7 +448,7 @@
     "electricity": {
       "id": 22,
       "name": "Electricity",
-      "img": "electricity.png",
+      "img": "engineers/oil-power-plant.webp",
       "socialClassID": 7,
       "finalProduct": "Electricity",
       "building": "Oil Power Plant",
@@ -481,7 +481,7 @@
     "cigars": {
       "id": 23,
       "name": "Cigars",
-      "img": "cigars.png",
+      "img": "obreros/cigars.webp",
       "socialClassID": 7,
       "finalProduct": "Cigars",
       "building": "Cigar Factory",
@@ -498,6 +498,49 @@
           "precursorBuildings": {
             "1": {
               "building": "Lumberjack Hut",
+              "alternative": "",
+              "precursorBuildings": {}
+            }
+          }
+        }
+      }
+    },
+    "Steam Motors": {
+      "id": 24,
+      "name": "Steam Motors",
+      "img": "engineers/steam-machine.webp",
+      "socialClassID": 4,
+      "finalProduct": "Steam Motors",
+      "building": "Motor Assembly Lines",
+      "alternative": "",
+      "precursorBuildings": {
+        "1": {
+          "building": "Furnace",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Iron Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Charcoal Kiln",
+              "alternative": "Coal Mine",
+              "precursorBuildings": {}
+            }
+          }
+        },
+        "2": {
+          "building": "Brass Smeltery",
+          "alternative": "",
+          "precursorBuildings": {
+            "1": {
+              "building": "Zinc Mine",
+              "alternative": "",
+              "precursorBuildings": {}
+            },
+            "2": {
+              "building": "Copper Mine",
               "alternative": "",
               "precursorBuildings": {}
             }

@@ -5,6 +5,7 @@
         "Sawmill": {
             "product": "Timber",
             "building": "Sawmill",
+            "img": "farmers/timber.webp",
             "productionTime": 15,
             "construction": {
                 "cash": 100,
@@ -30,6 +31,7 @@
         "Lumberjack Hut": {
             "product": "Wood",
             "building": "Lumberjack's Hut",
+            "img": "farmers/wood.webp",
             "productionTime": 15,
             "construction": {
                 "cash": 100,
@@ -56,6 +58,7 @@
         "Fishery": {
             "product": "Fish",
             "building": "Fishery",
+            "img": "farmers/fish.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 100,
@@ -81,6 +84,7 @@
         "Schnapps Distillery": {
             "product": "Schnapps",
             "building": "Schnapps Distillery",
+            "img": "farmers/schnapps.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 100,
@@ -106,6 +110,7 @@
         "Potato Farm": {
             "product": "Potatoes",
             "building": "Potato Farm",
+            "img": "farmers/potato.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 100,
@@ -130,6 +135,7 @@
         "Framework Knitters": {
             "product": "Work Clothes",
             "building": "Framework Knitters",
+            "img": "farmers/work-clothes.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 100,
@@ -155,6 +161,7 @@
         "Sheep Farm": {
             "product": "Wool",
             "building": "Sheep Farm",
+            "img": "farmers/wool.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 100,
@@ -180,6 +187,7 @@
         "Clay Pit": {
             "product": "Clay",
             "building": "Clay Pit",
+            "img": "workers/clay.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -204,6 +212,7 @@
         "Brick Factory": {
             "product": "Bricks",
             "building": "Brick Factory",
+            "img": "workers/bricks.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -229,6 +238,7 @@
         "Pig Farm": {
             "product": "Pigs",
             "building": "Pig Farm",
+            "img": "workers/pigs.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -254,6 +264,7 @@
         "Slaughterhouse": {
             "product": "Sausages",
             "building": "Slaughterhouse",
+            "img": "workers/sausages.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -278,6 +289,7 @@
         "Sailmakers": {
             "product": "Sails",
             "building": "Sailmakers",
+            "img": "workers/sails.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -302,6 +314,7 @@
         "Grain Farm": {
             "product": "Grain",
             "building": "Grain Farm",
+            "img": "workers/grain.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -326,6 +339,7 @@
         "Flour Mill": {
             "product": "Flour",
             "building": "Flour Mill",
+            "img": "workers/flour.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -350,6 +364,7 @@
         "Bakery": {
             "product": "Bread",
             "building": "Bakery",
+            "img": "workers/bread.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -374,6 +389,7 @@
         "Rendering Works": {
             "product": "Tallow",
             "building": "Rendering Works",
+            "img": "workers/tallow.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -399,6 +415,7 @@
         "Soap Factory": {
             "product": "Soap",
             "building": "Soap Factory",
+            "img": "workers/soap.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -423,6 +440,7 @@
         "Iron Mine": {
             "product": "Iron",
             "building": "Iron Mine",
+            "img": "workers/iron.webp",
             "productionTime": 15,
             "construction": {
                 "cash": 500,
@@ -447,6 +465,7 @@
         "Charcoal Kiln": {
             "product": "Coal",
             "building": "Charcoal Kiln",
+            "img": "workers/charcoal-kiln.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -471,6 +490,7 @@
         "Furnace": {
             "product": "Steel",
             "building": "Furnace",
+            "img": "workers/steel.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -496,6 +516,7 @@
         "Steelworks": {
             "product": "Steel Beams",
             "building": "Furnace",
+            "img": "workers/steel-beams.webp",
             "productionTime": 45,
             "construction": {
                 "cash": 500,
@@ -520,6 +541,7 @@
         "Weapon Factory": {
             "product": "Weapons",
             "building": "Weapon Factory",
+            "img": "workers/weapons.webp",
             "productionTime": 90,
             "construction": {
                 "cash": 500,
@@ -544,6 +566,7 @@
         "Malthouse": {
             "product": "Malt",
             "building": "Malthouse",
+            "img": "workers/malt.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -568,6 +591,7 @@
         "Hop Farm": {
             "product": "Hop",
             "building": "Hop Farm",
+            "img": "workers/hops.webp",
             "productionTime": 90,
             "construction": {
                 "cash": 500,
@@ -592,6 +616,7 @@
         "Brewery": {
             "product": "Beer",
             "building": "Brewery",
+            "img": "workers/beer.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -616,6 +641,7 @@
         "Sand Mine": {
             "product": "Quartz Sand",
             "building": "Sand Mine",
+            "img": "artisans/quartz-sand.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 2000,
@@ -640,6 +666,7 @@
         "Glassmakers": {
             "product": "Glass",
             "building": "Glassmakers",
+            "img": "artisans/glass.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 2000,
@@ -665,6 +692,7 @@
         "Window Makers": {
             "product": "Windows",
             "building": "Window Makers",
+            "img": "artisans/windows.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 2000,
@@ -689,6 +717,7 @@
         "Cattle Farm": {
             "product": "Beef",
             "building": "Cattle Farm",
+            "img": "artisans/beef.webp",
             "productionTime": 120,
             "construction": {
                 "cash": 2000,
@@ -713,6 +742,7 @@
         "Red Pepper farm": {
             "product": "Red Peppers",
             "building": "Red Pepper Farm",
+            "img": "artisans/red-peppers.webp",
             "productionTime": 120,
             "construction": {
                 "cash": 2000,
@@ -737,6 +767,7 @@
         "Artisanal Kitchen": {
             "product": "Goulash",
             "building": "Artisanal Kitchen",
+            "img": "artisans/goulash.webp",
             "productionTime": 120,
             "construction": {
                 "cash": 2000,
@@ -761,6 +792,7 @@
         "Cannery": {
             "product": "Canned Food",
             "building": "Cannery",
+            "img": "artisans/canned-food.webp",
             "productionTime": 90,
             "construction": {
                 "cash": 2000,
@@ -785,6 +817,7 @@
         "Coal Mine": {
             "product": "Coal",
             "building": "Coal Mine",
+            "img": "artisans/coal.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -809,6 +842,7 @@
         "Sewing Machine Factory": {
             "product": "Sewing Machines",
             "building": "Sewing Machine Factory",
+            "img": "artisans/sewing-machines.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -833,6 +867,7 @@
         "Sugar Cane Plantation": {
             "product": "Sugar Cane",
             "building": "Sugar Cane Plantation",
+            "img": "artisans/sugar-cane.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -857,6 +892,7 @@
         "Rum Distillery": {
             "product": "Rum",
             "building": "Rum Distillery",
+            "img": "artisans/rum.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -881,6 +917,7 @@
         "Cotton Plantation": {
             "product": "Cotton",
             "building": "Cotton Plantation",
+            "img": "artisans/cotton.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 500,
@@ -905,6 +942,7 @@
         "Cotton Mill": {
             "product": "Cotton Fabric",
             "building": "Cotton Mill",
+            "img": "artisans/cotton-fabric.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -929,6 +967,7 @@
         "Hunting Cabin": {
             "product": "Furs",
             "building": "Hunting Cabin",
+            "img": "artisans/furs.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 2000,
@@ -953,6 +992,7 @@
         "Fur Dealer": {
             "product": "Fur Coats",
             "building": "Fur Dealer",
+            "img": "artisans/fur-coats.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 2000,
@@ -977,6 +1017,7 @@
         "Fish Oil Factory": {
             "product": "Fish Oil",
             "building": "Fish Oil Factory",
+            "img": "jornaleros/fish-oil.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -1001,6 +1042,7 @@
         "Plantain Plantation": {
             "product": "Plantains",
             "building": "Plantain Plantation",
+            "img": "artisans/plantains.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -1025,6 +1067,7 @@
         "Fried Plantain Kitchen": {
             "product": "Fried Plantains",
             "building": "Fried Plantain Kitchen",
+            "img": "artisans/fried-plantains.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -1049,6 +1092,7 @@
         "Alpaca Farm": {
             "product": "Alpaca Wool",
             "building": "Alpaca Farm",
+            "img": "artisans/alpaca-wool.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -1073,6 +1117,7 @@
         "Poncho Darner": {
             "product": "Ponchos",
             "building": "Poncho Darner",
+            "img": "artisans/poncho.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 500,
@@ -1097,6 +1142,7 @@
         "Corn Farm": {
             "product": "Corn",
             "building": "Corn Farm",
+            "img": "obreros/corn.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 2500,
@@ -1121,6 +1167,7 @@
         "Tortilla Maker": {
             "product": "Tortillas",
             "building": "Tortilla Maker",
+            "img": "obreros/tortilla.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 2500,
@@ -1145,6 +1192,7 @@
         "Coffee Plantation": {
             "product": "Coffee Beans",
             "building": "Coffee Plantation",
+            "img": "obreros/coffee-beans.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 2500,
@@ -1169,6 +1217,7 @@
         "Coffee Roaster": {
             "product": "Coffee",
             "building": "Coffee Roaster",
+            "img": "obreros/coffee.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 2500,
@@ -1193,6 +1242,7 @@
         "Oil Refinery": {
             "product": "Oil",
             "building": "Oil Refinery",
+            "img": "obreros/oil.webp",
             "productionTime": 15,
             "construction": {
                 "cash": 2500,
@@ -1217,6 +1267,7 @@
         "Oil Storage": {
             "product": "Oil Storage",
             "building": "Oil Storage",
+            "img": "obreros/oil-storage.webp",
             "productionTime": 0,
             "construction": {
                 "cash": 2500,
@@ -1241,6 +1292,7 @@
         "Small Oil Harbour": {
             "product": "Oil Storage",
             "building": "Small Oil Harbour",
+            "img": "obreros/oil-harbour.webp",
             "productionTime": 0,
             "construction": {
                 "cash": 10000,
@@ -1265,6 +1317,7 @@
         "Tobacco Plantation": {
             "product": "Tobacco",
             "building": "Tobacco Plantation",
+            "img": "obreros/tobacco.webp",
             "productionTime": 120,
             "construction": {
                 "cash": 2500,
@@ -1289,6 +1342,7 @@
         "Cigar Factory": {
             "product": "Cigars",
             "building": "Cigar Factory",
+            "img": "obreros/cigars.webp",
             "productionTime": 30,
             "construction": {
                 "cash": 2500,
@@ -1313,6 +1367,7 @@
         "Marquetry Workshop": {
             "product": "Wood Veneers",
             "building": "Marquetry Workshop",
+            "img": "obreros/wood-veneers.webp",
             "productionTime": 60,
             "construction": {
                 "cash": 2500,
@@ -1334,7 +1389,6 @@
                 "investor": 0
             }
         }
-
 
     }
 }
