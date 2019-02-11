@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 // Routes
 import Tester from './components/Tester.vue';
-import ProductionChains from './components/production_chains/ProductionChains';
+import ProductionChains from './components/ProductionChains';
 import ProductionLayouts from './components/ProductionLayouts';
 import ResidentDemands from './components/ResidentDemands';
 import About from './components/About';

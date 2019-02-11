@@ -8,7 +8,8 @@
       <p>
         <strong> <span class="title">THANK YOU</span> Anno 1800 Wiki(s)!</strong>
       </p>
-      If you want to improve this App contribute to the Wiki! This App is uses on the content, information and images of the Wiki.
+      If you want to improve this App contribute to the Wiki!
+      This App is uses on the content, information and images of the Wiki.
     </v-alert>
 
     <p>&nbsp;</p>

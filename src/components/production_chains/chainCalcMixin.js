@@ -6,7 +6,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalUpkeepCosts: function () {
+    totalUpkeepCosts: function() {
       // TODO Implement me!
       return -1;
     },
@@ -15,7 +15,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumFarmers: function () {
+    totalNumFarmers: function() {
       // TODO Implement me!
       return -1;
     },
@@ -24,7 +24,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumWorkers: function () {
+    totalNumWorkers: function() {
       // TODO Implement me!
       return -1;
     },
@@ -33,7 +33,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumArtisans: function () {
+    totalNumArtisans: function() {
       // TODO Implement me!
       return -1;
     },
@@ -42,7 +42,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumEngineers: function () {
+    totalNumEngineers: function() {
       // TODO Implement me!
       return -1;
     },
@@ -51,7 +51,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumInvestors: function () {
+    totalNumInvestors: function() {
       // TODO Implement me!
       return -1;
     },
@@ -60,7 +60,7 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumJornaleros: function () {
+    totalNumJornaleros: function() {
       // TODO Implement me!
       return -1;
     },
@@ -69,12 +69,12 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalNumObreros: function () {
+    totalNumObreros: function() {
       // TODO Implement me!
       return -1;
     },
   },
-  data: function () {
+  data: function() {
     return {
       /**
        * The name of this production chain.
