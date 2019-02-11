@@ -9,14 +9,14 @@
   "workers": {
     "id": 2,
     "name": "Workers",
-    "img": "workers.png",
+    "img": "workers.webp",
     "worldID": 1,
     "firstProductionChain": 5
   },
   "artisans": {
     "id": 3,
     "name": "Artisans",
-    "img": "workers.webp",
+    "img": "artisans.webp",
     "worldID": 1,
     "firstProductionChain": 13
   },

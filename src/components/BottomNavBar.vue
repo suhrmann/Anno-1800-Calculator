@@ -3,8 +3,8 @@
     selectedWorldID: {{selectedWorldID}},
     selectedSocialClassID: {{selectedSocialClassID}},
     selectedProductionChainID: {{selectedProductionChainID}},
-    <!-- 
-      The following element is needed to trigger the initial rendering of the computed property selectedProductionChain 
+    <!--
+      The following element is needed to trigger the initial rendering of the computed property selectedProductionChain
       The element does render but is not shown
     -->
     <p v-show="false">{{selectedProductionChain}}</p>
@@ -36,7 +36,12 @@
           @click="resetProductionChain(socialClass.id)"
         >
           <span>{{ socialClass.name }}</span>
-          <img :src="socialClass.img" :alt="socialClass.name + ' Image'">
+          <v-avatar>
+            <img
+              :src="getImagePath(socialClass.img, 'population')"
+              :alt="socialClass.name + ' Image'"
+            >
+          </v-avatar>
         </v-btn>
       </v-bottom-nav>
     </v-card>
@@ -61,13 +66,13 @@
 </template>
 
 <script>
-import worlds from "../data/worlds.json";
-import socialClasses from "../data/socialClasses.json";
-import productionChains from "../data/productionChain";
-import { EventBus } from "../EventBus.js";
+import worlds from '../data/worlds.json';
+import socialClasses from '../data/socialClasses.json';
+import productionChains from '../data/productionChain';
+import { EventBus } from '../EventBus.js';
 
 export default {
-  name: "BottomNavBar",
+  name: 'BottomNavBar',
   data() {
     return {
       // Init selection
@@ -79,7 +84,7 @@ export default {
       // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
       socialClasses: socialClasses,
-      productionChains: productionChains.Production_Chain
+      productionChains: productionChains.Production_Chain,
     };
   },
 
@@ -90,17 +95,17 @@ export default {
      * @return {Object} The selected Production Chain
      */
     selectedProductionChain() {
-      let selectedSocialClassChains = this.selectedProductionChains;
-      let chainID = this.selectedProductionChainID;
+      const selectedSocialClassChains = this.selectedProductionChains;
+      const chainID = this.selectedProductionChainID;
       let productionChain = {};
 
-      Object.keys(selectedSocialClassChains).forEach(chain => {
-        if (selectedSocialClassChains[chain].id == chainID) {
+      Object.keys(selectedSocialClassChains).forEach((chain) => {
+        if (selectedSocialClassChains[chain].id === chainID) {
           productionChain = selectedSocialClassChains[chain];
         }
       });
       this.setProductionChain(productionChain);
-      EventBus.$emit("bottomNavBarChanged");
+      EventBus.$emit('bottomNavBarChanged');
       return productionChain;
     },
 
@@ -120,7 +125,7 @@ export default {
     selectedSocialClasses: function() {
       const socialClasses = Object.values(this.socialClasses);
       return socialClasses.filter(
-        socialClass => socialClass.worldID === this.selectedWorldID
+          (socialClass) => socialClass.worldID === this.selectedWorldID
       );
     },
 
@@ -132,32 +137,32 @@ export default {
     selectedProductionChains: function() {
       const productionChains = Object.values(this.productionChains);
       return productionChains.filter(
-        chain => chain.socialClassID === this.selectedSocialClassID
+          (chain) => chain.socialClassID === this.selectedSocialClassID
       );
-    }
+    },
   },
   methods: {
     /**
      * After changing the world, display the first social class.
      */
     resetSocialClass: function(worldID) {
-      let selectedWorld = this.getWorldByID(worldID);
+      const selectedWorld = this.getWorldByID(worldID);
       this.selectedWorldID = selectedWorld.id;
 
-      let selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.startingSocialClassID
+      const selectedSocialClass = this.getSocialClassByID(
+          selectedWorld.startingSocialClassID
       );
       this.selectedSocialClassID = selectedSocialClass.id;
 
       this.resetProductionChain(selectedSocialClass.id);
-      EventBus.$emit("bottomNavBarChanged");
+      EventBus.$emit('bottomNavBarChanged');
     },
 
     /**
      * After changing the social class, display the first production chain.
      */
     resetProductionChain: function(socialClassID) {
-      let socialClass = this.getSocialClassByID(socialClassID);
+      const socialClass = this.getSocialClassByID(socialClassID);
       this.selectedProductionChainID = socialClass.firstProductionChain;
     },
 
@@ -167,7 +172,7 @@ export default {
      * This updates when this.selectedProductionChainID updates
      */
     setProductionChain(productionChain) {
-      this.$store.commit("changeProductionChain", productionChain);
+      this.$store.commit('changeProductionChain', productionChain);
     },
 
     /**
@@ -177,7 +182,7 @@ export default {
      */
     getWorldByID(id) {
       const worlds = Object.values(this.worlds);
-      let selectedWorld = worlds.filter(world => world.id === id)[0];
+      const selectedWorld = worlds.filter((world) => world.id === id)[0];
       return selectedWorld;
     },
 
@@ -189,12 +194,23 @@ export default {
      */
     getSocialClassByID(id) {
       const socialClasses = Object.values(this.socialClasses);
-      let selectedSocialClass = socialClasses.filter(
-        socialClass => socialClass.id === id
+      const selectedSocialClass = socialClasses.filter(
+          (socialClass) => socialClass.id === id
       )[0];
       return selectedSocialClass;
-    }
-  }
+    },
+    /**
+     * Workaround to load images dynamically in for-loop.
+     *
+     * @param {string} image The image to load.
+     * @param {string} folder The folder that contains the image
+     *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
+     * @return {string}
+     */
+    getImagePath(image, folder) {
+      return image ? require(`../assets/${folder}/${image}`) : '';
+    },
+  },
 };
 </script>
 
