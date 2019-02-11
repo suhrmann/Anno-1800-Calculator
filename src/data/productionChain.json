@@ -508,7 +508,7 @@
     "Steam Motors": {
       "id": 24,
       "name": "Steam Motors",
-      "img": "steam_motors.webp",
+      "img": "steam-machine.webp",
       "socialClassID": 4,
       "finalProduct": "Steam Motors",
       "building": "Motor Assembly Lines",
