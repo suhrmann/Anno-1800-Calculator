@@ -21,7 +21,7 @@
           <span>{{ chain.name }}</span>
           <v-avatar>
             <img
-              :src="getBuildingImage(chain.img)"
+              :src="getImage(chain.img, 'buildings')"
               :alt="chain.name + ' Image'"
             >
           </v-avatar>
@@ -43,7 +43,7 @@
           <span>{{ socialClass.name }}</span>
           <v-avatar>
             <img
-              :src="getPopulationImage(socialClass.img, 'population')"
+              :src="getImage(socialClass.img, 'population')"
               :alt="socialClass.name + ' Image'"
             >
           </v-avatar>
@@ -212,19 +212,8 @@ export default {
      *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getPopulationImage(image, folder) {
+    getImage(image, folder) {
       return image ? require(`../assets/${folder}/${image}`) : '';
-    },
-    /**
-     * Workaround to load images dynamically in for-loop.
-     *
-     * @param {string} image The image to load.
-     * @return {string} The URL of the image (e.g. for use as img src).
-     */
-    getBuildingImage(image) {
-      const population = this.getSocialClassByID(this.selectedSocialClassID);
-      const folder = population.name.toLowerCase();
-      return image ? require(`../assets/buildings/${folder}/${image}`) : '';
     },
   },
 };
