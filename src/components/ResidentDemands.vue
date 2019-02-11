@@ -1,9 +1,13 @@
 <template>
-  <v-card>
-    <h1>Resident Demands</h1>
-
-    <BottomNavBar></BottomNavBar>
-  </v-card>
+  <v-container fluid fill-height>
+    <v-layout row wrap align-content-space-between>
+      <v-flex xs12>
+        <h1>Resident Demands</h1>
+      </v-flex>
+      <!-- Resident Demands -->
+      <bottom-nav-bar></bottom-nav-bar>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
