@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { EventBus } from "../../EventBus.js";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { EventBus } from '../../EventBus.js';
 
 export default {
   data() {
     return {
       building: {
-        img: "test"
+        img: 'test',
       },
 
       positionTree: {
@@ -40,24 +40,24 @@ export default {
           parent: { sibling: {} },
           grandparent: { sibling: {} },
           greatGrandparent: { sibling: {} },
-          twoGreatGrandparent: { sibling: {} }
-        }
-      }
+          twoGreatGrandparent: { sibling: {} },
+        },
+      },
     };
   },
 
   created() {
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.resetPositionTree();
-      let chainNodeMixin = this;
+      const chainNodeMixin = this;
 
-      let gridDimensions = JSON.parse(
-        JSON.stringify(this.makeMatchingGrid(this.gridHeight, this.gridWidth))
+      const gridDimensions = JSON.parse(
+          JSON.stringify(this.makeMatchingGrid(this.gridHeight, this.gridWidth))
       );
 
-      let gridToRender = this.fillGridWithProductionChain(
-        gridDimensions,
-        this.productionChain
+      const gridToRender = this.fillGridWithProductionChain(
+          gridDimensions,
+          this.productionChain
       );
     });
   },
@@ -68,13 +68,13 @@ export default {
       return this.$store.state.selectedProductionChain;
     },
     gridWidth() {
-      let chainNodeMixin = this;
+      const chainNodeMixin = this;
       return chainNodeMixin.chainDepth * 2 + 1;
     },
     gridHeight() {
-      let chainNodeMixin = this;
+      const chainNodeMixin = this;
       return chainNodeMixin.chainWidth * 2 + 1;
-    }
+    },
   },
   methods: {
     resetPositionTree() {
@@ -84,23 +84,24 @@ export default {
           parent: { sibling: {} },
           grandparent: { sibling: {} },
           greatGrandparent: { sibling: {} },
-          twoGreatGrandparent: { sibling: {} }
-        }
+          twoGreatGrandparent: { sibling: {} },
+        },
       };
     },
     even(rowOrColumn) {
-      if (rowOrColumn % 2 == 0) return true;
+      if (rowOrColumn % 2 === 0) return true;
     },
 
     /**
      * This function takes a certain width and heigth and creates a 2-dimensional array
+     *
      * @param {int} height
      * @param {int} width
-     * @return {Array[height][width]}
+     * @return {array} 2D array with given height and width.
      */
     makeMatchingGrid(height, width) {
-      let val = {};
-      let arr = [];
+      const val = {};
+      const arr = [];
       for (let i = 0; i < width; i++) {
         arr[i] = [];
         for (let j = 0; j < height; j++) {
@@ -113,70 +114,73 @@ export default {
 
     /**
      * This function takes a proper grid and integrates the production chain in the way it should be rendered
-     * @param {Array [][] } grid
+     *
+     * @param {array} grid The 2D grid to fills
      * @param {Object} productionChain
-     * @return {Array [][] } An Array containing the production chain grid ready to render
+     * @return {array} The 2D Array containing the production chain grid ready to render
      */
     fillGridWithProductionChain(grid, productionChain) {
       // some attributes of the given grid
-      let arrayHeight = grid[0].length;
-      let arrayWidth = grid.length;
+      const arrayHeight = grid[0].length;
+      const arrayWidth = grid.length;
 
-      let lastObjectPosition = { x: arrayWidth - 1, y: arrayHeight / 2 + 0.5 };
-      let nextObjectPosition = { x: 0, y1: 0, y2: 0 };
+      const lastObjectPosition = { x: arrayWidth - 1, y: arrayHeight / 2 + 0.5 };
+      const nextObjectPosition = { x: 0, y1: 0, y2: 0 };
 
-      console.log("Chain: " + productionChain.name);
-      console.log("GridHeight: " + arrayHeight);
-      console.log("GridWidth: " + arrayWidth);
+      console.log('Chain: ' + productionChain.name);
+      console.log('GridHeight: ' + arrayHeight);
+      console.log('GridWidth: ' + arrayWidth);
       console.log(
-        "Position Last: x:" +
+          'Position Last: x:' +
           lastObjectPosition.x +
-          " y:" +
+          ' y:' +
           lastObjectPosition.y
       );
 
-      let chainNodeMixin = this;
+      const chainNodeMixin = this;
 
       chainNodeMixin.iterateProductionChain(
-        productionChain,
-        root => {
-          console.log("rootcallback");
-          const chainLevel = this.getCurrentPositionLevel(
-            this.chainDepthCounter
-          );
-          const siblingNumber = this.getCountedSiblingsUntil(
-            this.chainDepthArray,
-            this.chainDepthCounter
-          );
+          productionChain,
+          (root) => {
+            console.log('rootcallback');
+            const chainLevel = this.getCurrentPositionLevel(
+                this.chainDepthCounter
+            );
+            const siblingNumber = this.getCountedSiblingsUntil(
+                this.chainDepthArray,
+                this.chainDepthCounter
+            );
 
-          console.log(chainLevel, siblingNumber);
+            console.log(chainLevel, siblingNumber);
 
-          this.positionTree.depth[chainLevel].sibling[siblingNumber] = root;
-        },
+            this.positionTree.depth[chainLevel].sibling[siblingNumber] = root;
+          },
 
-        element => {
-          console.log("elementcallback");
+          (element) => {
+            console.log('elementcallback');
 
-          const chainLevel = this.getCurrentPositionLevel(
-            this.chainDepthCounter
-          );
-          const siblingNumber = this.getCountedSiblingsUntil(
-            this.chainDepthArray,
-            this.chainDepthCounter
-          );
+            const chainLevel = this.getCurrentPositionLevel(
+                this.chainDepthCounter
+            );
+            const siblingNumber = this.getCountedSiblingsUntil(
+                this.chainDepthArray,
+                this.chainDepthCounter
+            );
 
-          console.log(chainLevel, siblingNumber);
+            console.log(chainLevel, siblingNumber);
 
-          this.positionTree.depth[chainLevel].sibling[siblingNumber] = element;
-        },
-        true
+            this.positionTree.depth[chainLevel].sibling[siblingNumber] = element;
+          },
+          true
       );
-      console.log("");
-      console.log("Visual Grid");
+      console.log('');
+      console.log('Visual Grid');
       console.table(grid);
-      console.log("");
-      console.log("Elements sorted by position");
+      console.log('');
+      console.log('Elements sorted by position');
       console.table(this.positionTree);
+
+      return [[]];
     },
 
     determineElementY() {
@@ -190,23 +194,22 @@ export default {
     buildWidthGrid(element) {},
 
     test() {
-      let chainNodeMixin = this;
-      let depth = chainNodeMixin.iterateProductionChain(
-        this.productionChain,
-        element => {
-          console.log("root callback gets executed!");
-        },
-        element => {
-          console.log("element callback gets executed!");
-        },
-        true
+      const chainNodeMixin = this;
+      const depth = chainNodeMixin.iterateProductionChain(
+          this.productionChain,
+          (element) => {
+            console.log('root callback gets executed!');
+          },
+          (element) => {
+            console.log('element callback gets executed!');
+          },
+          true
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
 </style>
 
-     

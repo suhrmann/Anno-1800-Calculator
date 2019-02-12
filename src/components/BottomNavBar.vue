@@ -172,6 +172,8 @@ export default {
   methods: {
     /**
      * After changing the world, display the first social class.
+     *
+     * @param {int} worldID The id of the world that caused this reset.
      */
     resetSocialClass: function(worldID) {
       const selectedWorld = this.getWorldByID(worldID);
@@ -188,6 +190,8 @@ export default {
 
     /**
      * After changing the social class, display the first production chain.
+     *
+     * @param {int} socialClassID The id of the social class that caused this reset.
      */
     resetProductionChain: function(socialClassID) {
       const socialClass = this.getSocialClassByID(socialClassID);
