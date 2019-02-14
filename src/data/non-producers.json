@@ -3,6 +3,7 @@
     "buildings": {
         "Dirt Road": {
             "name": "Dirt Road",
+            "img": "farmers/dirt-road.webp",
             "construction": {
                 "cash": 3,
                 "wood": 0,
@@ -23,6 +24,7 @@
         },
         "Marketplace": {
             "name": "Marketplace",
+            "img": "farmers/marketplace.webp",
             "construction": {
                 "cash": 500,
                 "wood": 10,
@@ -43,6 +45,7 @@
         },
         "Farmer Residence": {
             "name": "Farmer Residence",
+            "img": "farmers/residence.webp",
             "construction": {
                 "cash": 0,
                 "wood": 2,
@@ -64,6 +67,7 @@
 
         "Small Warehouse": {
             "name": "Small Warehouse",
+            "img": "farmers/warehouse.webp",
             "construction": {
                 "cash": 500,
                 "wood": 10,
@@ -84,6 +88,7 @@
         },
         "Fire Station": {
             "name": "Fire Station",
+            "img": "farmers/fire-station.webp",
             "construction": {
                 "cash": 500,
                 "wood": 4,
@@ -104,6 +109,7 @@
         },
         "Pub": {
             "name": "Pub",
+            "img": "farmers/pub.webp",
             "construction": {
                 "cash": 500,
                 "wood": 10,
@@ -124,6 +130,7 @@
         },
         "Paved Street": {
             "name": "Paved Street",
+            "img": "workers/paved-street.webp",
             "construction": {
                 "cash": 5,
                 "wood": 0,
@@ -144,6 +151,7 @@
         },
         "Trade Union": {
             "name": "Trade Union",
+            "img": "workers/trade-union.webp",
             "construction": {
                 "cash": 2500,
                 "wood": 25,
@@ -163,6 +171,7 @@
         },
         "Church": {
             "name": "Church",
+            "img": "workers/church.webp",
             "construction": {
                 "cash": 2500,
                 "wood": 20,
@@ -183,6 +192,7 @@
         },
         "Police Station": {
             "name": "Police Station",
+            "img": "workers/police-station.webp",
             "construction": {
                 "cash": 2500,
                 "wood": 8,
@@ -203,6 +213,7 @@
         },
         "School": {
             "name": "School",
+            "img": "workers/school-icon.webp",
             "construction": {
                 "cash": 2500,
                 "wood": 20,
@@ -223,6 +234,7 @@
         },
         "Town Hall": {
             "name": "Town Hall",
+            "img": "artisans/town-hall.webp",
             "construction": {
                 "cash": 2500,
                 "wood": 20,
@@ -243,6 +255,7 @@
         },
         "Variety Theatre": {
             "name": "Variety Theatre",
+            "img": "artisans/variety-theatre.webp",
             "construction": {
                 "cash": 10000,
                 "wood": 30,
@@ -263,6 +276,7 @@
         },
         "Zoo": {
             "name": "Zoo",
+            "img": "artisans/zoo.webp",
             "construction": {
                 "cash": 10000,
                 "wood": 30,
@@ -283,6 +297,7 @@
         },
         "Hospital": {
             "name": "Hospital",
+            "img": "artisans/hospital.webp",
             "construction": {
                 "cash": 10000,
                 "wood": 12,
