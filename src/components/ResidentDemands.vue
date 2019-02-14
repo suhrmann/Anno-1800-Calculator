@@ -5,6 +5,7 @@
         <h1>Resident Demands</h1>
       </v-flex>
       <!-- Resident Demands -->
+      <resident-demand-calculator></resident-demand-calculator>
       <bottom-nav-bar></bottom-nav-bar>
     </v-layout>
   </v-container>
@@ -12,11 +13,13 @@
 
 <script>
 import BottomNavBar from './BottomNavBar';
+import ResidentDemandCalculator from './resident_demands/ResidentDemandCalculator';
 
 export default {
   name: 'ResidentDemands',
   components: {
-    BottomNavBar,
+    'bottom-nav-bar': BottomNavBar,
+    'resident-demand-calculator': ResidentDemandCalculator,
   },
 };
 </script>
