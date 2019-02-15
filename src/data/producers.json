@@ -1,7 +1,6 @@
 {
     "Version": "Anno1800 Beta",
     "Producers": {
-
         "Sawmill": {
             "product": "Timber",
             "building": "Sawmill",
@@ -27,8 +26,7 @@
                 "investor": 0
             }
         },
-
-        "Lumberjack Hut": {
+        "Lumberjack's Hut": {
             "product": "Wood",
             "building": "Lumberjack's Hut",
             "img": "farmers/wood.webp",
@@ -53,8 +51,6 @@
                 "investor": 0
             }
         },
-
-
         "Fishery": {
             "product": "Fish",
             "building": "Fishery",
@@ -80,7 +76,6 @@
                 "investor": 0
             }
         },
-
         "Schnapps Distillery": {
             "product": "Schnapps",
             "building": "Schnapps Distillery",
@@ -106,7 +101,6 @@
                 "investor": 0
             }
         },
-
         "Potato Farm": {
             "product": "Potatoes",
             "building": "Potato Farm",
@@ -157,7 +151,6 @@
                 "investor": 0
             }
         },
-
         "Sheep Farm": {
             "product": "Wool",
             "building": "Sheep Farm",
@@ -183,7 +176,6 @@
                 "investor": 0
             }
         },
-
         "Clay Pit": {
             "product": "Clay",
             "building": "Clay Pit",
@@ -234,7 +226,6 @@
                 "investor": 0
             }
         },
-
         "Pig Farm": {
             "product": "Pigs",
             "building": "Pig Farm",
@@ -260,7 +251,6 @@
                 "investor": 0
             }
         },
-
         "Slaughterhouse": {
             "product": "Sausages",
             "building": "Slaughterhouse",
@@ -411,7 +401,6 @@
                 "investor": 0
             }
         },
-
         "Soap Factory": {
             "product": "Soap",
             "building": "Soap Factory",
@@ -512,7 +501,6 @@
                 "investor": 0
             }
         },
-
         "Steelworks": {
             "product": "Steel Beams",
             "building": "Furnace",
@@ -688,7 +676,6 @@
                 "investor": 0
             }
         },
-
         "Window Makers": {
             "product": "Windows",
             "building": "Window Makers",
@@ -1014,13 +1001,61 @@
                 "investor": 0
             }
         },
-
-
-        "Spectacle Factory": {
-            "product": "Glasses",
-            "building": "Spectacle Factory",
+        "Limestone Quarry": {
+            "product": "Cement",
+            "building": "Limestone Quarry",
+            "img": "engineers/cement.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Concrete Factory": {
+            "product": "Reinforced Concrete",
+            "building": "Concrete Factory",
+            "img": "engineers/reinforced-concrete.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 10000,
+                "wood": 20,
+                "brick": 30,
+                "steel": 24,
+                "window": 25,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 500,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 125,
+                "investor": 0
+            }
+        },
+        "Oil Refinery": {
+            "product": "Oil",
+            "building": "Oil Refinery",
             "img": "engineers/glasses.webp",
-            "productionTime": 90,
+            "productionTime": 15,
             "construction": {
                 "cash": 5000,
                 "wood": 8,
@@ -1031,38 +1066,13 @@
                 "influence": 0
             },
             "maintenance": {
-                "cash": 1000,
+                "cash": 250,
                 "jornaleros": 0,
                 "obreros": 0,
                 "farmer": 0,
-                "worker": 0,
+                "worker": 100,
                 "artisan": 0,
-                "engineer": 100,
-                "investor": 0
-            }
-        },
-        "Light Bulb Factory": {
-            "product": "Light Bulbs",
-            "building": "Light Bulb Factory",
-            "img": "engineers/light-bulb.webp",
-            "productionTime": 60,
-            "construction": {
-                "cash": 10000,
-                "wood": 8,
-                "brick": 15,
-                "steel": 12,
-                "window": 10,
-                "concrete": 10,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 1250,
-                "jornaleros": 0,
-                "obreros": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 150,
+                "engineer": 0,
                 "investor": 0
             }
         },
@@ -1091,8 +1101,408 @@
                 "investor": 0
             }
         },
+        "Coal Power Plant": {
+            "product": "Electricity",
+            "building": "Coal Power Plant",
+            "img": "engineers/coal-power-plant.webp",
+            "productionTime": -1,
+            "construction": {
+                "cash": 25000,
+                "wood": 30,
+                "brick": 50,
+                "steel": 40,
+                "window": 30,
+                "concrete": 25,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 150,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Zinc Mine": {
+            "product": "Zinc",
+            "building": "Zinc Mine",
+            "img": "engineers/zinc-ore.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Copper Mine": {
+            "product": "Copper",
+            "building": "Copper Mine",
+            "img": "engineers/copper.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 100,
+                "investor": 0
+            }
+        },
+        "Brass Smeltery": {
+            "product": "Brass",
+            "building": "Brass Smeltery",
+            "img": "engineers/brass.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Spectacle Factory": {
+            "product": "Glasses",
+            "building": "Spectacle Factory",
+            "img": "engineers/glasses.webp",
+            "productionTime": 90,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 100,
+                "investor": 0
+            }
+        },
+        "Motor Assembly Line": {
+            "product": "Steam Motors",
+            "building": "Motor Assembly Line",
+            "img": "engineers/steam-motor.webp",
+            "productionTime": 90,
+            "construction": {
+                "cash": 10000,
+                "wood": 16,
+                "brick": 30,
+                "steel": 24,
+                "window": 20,
+                "concrete": 20,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 5500,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 250,
+                "investor": 0
+            }
+        },
+        "Bicycle Factory": {
+            "product": "High Wheelers",
+            "building": "Bicycle Factory",
+            "img": "engineers/high-wheeler.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1625,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Gold Mine": {
+            "product": "Gold Ore",
+            "building": "Gold Mine",
+            "img": "engineers/gold-ore.webp",
+            "productionTime": 150,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Goldsmiths": {
+            "product": "Gold",
+            "building": "Goldsmiths",
+            "img": "engineers/gold.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 750,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 125,
+                "investor": 0
+            }
+        },
+        "Clockmakers": {
+            "product": "Pocket Watches",
+            "building": "Clockmakers",
+            "img": "engineers/pocket-watch.webp",
+            "productionTime": 90,
+            "construction": {
+                "cash": 10000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1700,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Filament Factory": {
+            "product": "Filament",
+            "building": "Filament Factory",
+            "img": "engineers/filament.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 750,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 125,
+                "investor": 0
+            }
+        },
+        "Light Bulb Factory": {
+            "product": "Light Bulbs",
+            "building": "Light Bulb Factory",
+            "img": "engineers/light-bulb.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 10000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
 
 
+        "Saltpeter Works":{
+            "product": "Saltpeter",
+            "building": "Saltpeter Works",
+            "img": "investors/saltpeter.webp",
+            "productionTime": 120,
+            "construction": {
+                "cash": 10000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 500,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 25,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Dynamite Factory": {
+            "product": "Dynamite",
+            "building": "Dynamite Factory",
+            "img": "investors/dynamite.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 10000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 250,
+                "investor": 0
+            }
+        },
+        "Heavy Weapons Factory":{
+            "product": "Advanced Weapons",
+            "building": "Heavy Weapons Factory",
+            "img": "investors/champagne.webp",
+            "productionTime": 120,
+            "construction": {
+                "cash": 25000,
+                "wood": 20,
+                "brick": 40,
+                "steel": 32,
+                "window": 30,
+                "concrete": 30,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 5000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 250,
+                "investor": 0
+            }
+        },
+        "Vineyard": {
+            "product": "Grapes",
+            "building": "Vineyard",
+            "img": "investors/grapes.webp",
+            "productionTime": 120,
+            "construction": {
+                "cash": 10000,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 10,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
         "Champagne Cellar": {
             "product": "Champagne",
             "building": "Champagne Cellar",
@@ -1108,7 +1518,32 @@
                 "influence": 0
             },
             "maintenance": {
-                "cash": 400,
+                "cash": 1000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 150,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Jewellers":{
+            "product": "Jewelry",
+            "building": "Jewellers",
+            "img": "investors/jewelry.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 25000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 8500,
                 "jornaleros": 0,
                 "obreros": 0,
                 "farmer": 0,
@@ -1118,7 +1553,82 @@
                 "investor": 0
             }
         },
-        "Cab Assembly Line": {
+        "Marquetry Workshop": {
+            "product": "Wood Veneers",
+            "building": "Marquetry Workshop",
+            "img": "investors/wood-veneers.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 10000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 750,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Gramophone Factory":{
+            "product": "Gramophones",
+            "building": "Gramophone Factory",
+            "img": "investors/gramophones.webp",
+            "productionTime": 120,
+            "construction": {
+                "cash": 25000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 6250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Coachmakers": {
+            "product": "Chassis",
+            "building": "Coachmakers",
+            "img": "investors/chassis.webp",
+            "productionTime": 120,
+            "construction": {
+                "cash": 10000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Cab Assembly Line":{
             "product": "Steam Carriages",
             "building": "Cab Assembly Line",
             "img": "investors/steam-carriage.webp",
@@ -1143,6 +1653,9 @@
                 "investor": 0
             }
         },
+
+
+
 
 
         "Fish Oil Factory": {

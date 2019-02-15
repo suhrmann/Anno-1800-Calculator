@@ -10,8 +10,8 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 0,
@@ -31,8 +31,8 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 20,
@@ -52,8 +52,8 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 0,
@@ -74,8 +74,8 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 20,
@@ -95,8 +95,8 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 25,
@@ -116,8 +116,8 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 20,
@@ -137,8 +137,8 @@
                 "brick": 1,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 0,
@@ -158,6 +158,7 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
+                "concrete": 0,
                 "influence": 25
             },
             "maintenance": {
@@ -178,8 +179,8 @@
                 "brick": 25,
                 "steel": 0,
                 "window": 0,
-                "influence": 25,
-                "concrete": 25
+                "concrete": 25,
+                "influence": 25
             },
             "maintenance": {
                 "cash": 50,
@@ -199,8 +200,8 @@
                 "brick": 10,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 50,
@@ -220,8 +221,8 @@
                 "brick": 25,
                 "steel": 20,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 50,
@@ -241,8 +242,8 @@
                 "brick": 25,
                 "steel": 20,
                 "window": 5,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 50,
@@ -262,8 +263,8 @@
                 "brick": 50,
                 "steel": 40,
                 "window": 40,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 100,
@@ -283,8 +284,8 @@
                 "brick": 30,
                 "steel": 10,
                 "window": 5,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 100,
@@ -304,8 +305,8 @@
                 "brick": 20,
                 "steel": 16,
                 "window": 40,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 100,
@@ -316,7 +317,6 @@
                 "investor": 0
             }
         },
-
         "University": {
             "name": "University",
             "img": "artisans/university.webp",
@@ -326,8 +326,8 @@
                 "brick": 50,
                 "steel": 40,
                 "window": 40,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
                 "cash": 400,
@@ -337,7 +337,162 @@
                 "engineer": 0,
                 "investor": 0
             }
+        },
+
+
+        "Rails": {
+            "name": "Rails",
+            "img": "engineers/railway.webp",
+            "construction": {
+                "cash": 100,
+                "wood": 1,
+                "brick": 0,
+                "steel": 1,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Small Oil Harbour": {
+            "name": "Small Oil Harbour",
+            "img": "engineers/oil-harbour.webp",
+            "construction": {
+                "cash": 10000,
+                "wood": 20,
+                "brick": 25,
+                "steel": 20,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Oil Storage": {
+            "name": "Oil Storage",
+            "img": "engineers/oil-storage.webp",
+            "construction": {
+                "cash": 25000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Steam Shipyard": {
+            "name": "Steam Shipyard",
+            "img": "engineers/steam-shipyard.webp",
+            "construction": {
+                "cash": 50000,
+                "wood": 50,
+                "brick": 100,
+                "steel": 80,
+                "window": 75,
+                "concrete": 75,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 400,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 200,
+                "investor": 0
+            }
+        },
+        "Bank": {
+            "name": "Bank",
+            "img": "engineers/bank.webp",
+            "construction": {
+                "cash": 25000,
+                "wood": 40,
+                "brick": 75,
+                "steel": 60,
+                "window": 60,
+                "concrete": 50,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1000,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+
+
+        "World's Fair: Foundations": {
+            "name": "World's Fair: Foundations",
+            "img": "investors/world-fair.webp",
+            "construction": {
+                "cash": 100000,
+                "wood": 100,
+                "brick": 200,
+                "steel": 160,
+                "window": 150,
+                "concrete": 150,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 500,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Members Club": {
+            "name": "Members Club",
+            "img": "investors/members-club.webp",
+            "construction": {
+                "cash": 50000,
+                "wood": 50,
+                "brick": 100,
+                "steel": 80,
+                "window": 75,
+                "concrete": 75,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 350,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
         }
+
+
+
+
 
     }
 }
