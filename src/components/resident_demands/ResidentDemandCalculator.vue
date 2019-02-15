@@ -213,7 +213,7 @@ export default {
           'Steam Carriages': 0.0,
           'Fried Plantains': 0.0,
           'Ponchos': 0.0,
-          'Burritos': 0.0,
+          'Tortillas': 0.0,
           'Bowler Hats': 0.0,
         },
         luxury: {
