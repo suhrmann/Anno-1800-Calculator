@@ -315,6 +315,28 @@
                 "engineer": 0,
                 "investor": 0
             }
+        },
+
+        "University": {
+            "name": "University",
+            "img": "artisans/university.webp",
+            "construction": {
+                "cash": 10000,
+                "wood": 30,
+                "brick": 50,
+                "steel": 40,
+                "window": 40,
+                "influence": 0,
+                "concrete": 0
+            },
+            "maintenance": {
+                "cash": 400,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
         }
 
     }
