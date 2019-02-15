@@ -13,13 +13,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 10,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 10,
                 "farmer": 10,
                 "worker": 0,
                 "artisan": 0,
@@ -39,13 +39,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 10,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 10,
                 "farmer": 5,
                 "worker": 0,
                 "artisan": 0,
@@ -66,13 +66,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 40,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 40,
                 "farmer": 25,
                 "worker": 0,
                 "artisan": 0,
@@ -92,13 +92,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 40,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 40,
                 "farmer": 50,
                 "worker": 0,
                 "artisan": 0,
@@ -118,13 +118,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 20,
                 "worker": 0,
                 "artisan": 0,
@@ -143,13 +143,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 50,
                 "worker": 0,
                 "artisan": 0,
@@ -169,13 +169,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 10,
                 "worker": 0,
                 "artisan": 0,
@@ -195,13 +195,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 10,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 10,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -220,13 +220,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 0,
                 "worker": 25,
                 "artisan": 0,
@@ -246,13 +246,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 40,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 40,
                 "farmer": 0,
                 "worker": 30,
                 "artisan": 0,
@@ -272,13 +272,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 80,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 80,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -297,13 +297,13 @@
                 "brick": 10,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 75,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 75,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -322,13 +322,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 20,
                 "worker": 0,
                 "artisan": 0,
@@ -347,13 +347,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 10,
                 "worker": 0,
                 "artisan": 0,
@@ -372,13 +372,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 60,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 60,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -397,13 +397,13 @@
                 "brick": 5,
                 "steel": 4,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 40,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 40,
                 "farmer": 0,
                 "worker": 40,
                 "artisan": 0,
@@ -423,13 +423,13 @@
                 "brick": 5,
                 "steel": 4,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -448,13 +448,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -473,13 +473,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 0,
                 "worker": 10,
                 "artisan": 0,
@@ -498,13 +498,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 0,
                 "worker": 100,
                 "artisan": 0,
@@ -524,13 +524,13 @@
                 "brick": 10,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 200,
                 "artisan": 0,
@@ -549,13 +549,13 @@
                 "brick": 10,
                 "steel": 8,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 120,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 120,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -574,13 +574,13 @@
                 "brick": 5,
                 "steel": 4,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 150,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 150,
                 "farmer": 0,
                 "worker": 25,
                 "artisan": 0,
@@ -599,13 +599,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 20,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 20,
                 "farmer": 20,
                 "worker": 0,
                 "artisan": 0,
@@ -624,13 +624,13 @@
                 "brick": 5,
                 "steel": 4,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 200,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 200,
                 "farmer": 0,
                 "worker": 75,
                 "artisan": 0,
@@ -649,13 +649,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 120,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 120,
                 "farmer": 0,
                 "worker": 25,
                 "artisan": 0,
@@ -674,13 +674,13 @@
                 "brick": 10,
                 "steel": 8,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 100,
@@ -700,13 +700,13 @@
                 "brick": 20,
                 "steel": 16,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 100,
@@ -725,13 +725,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 20,
@@ -750,13 +750,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 10,
                 "worker": 0,
                 "artisan": 0,
@@ -775,13 +775,13 @@
                 "brick": 10,
                 "steel": 8,
                 "window": 8,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 75,
@@ -800,13 +800,13 @@
                 "brick": 10,
                 "steel": 8,
                 "window": 8,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 75,
@@ -825,13 +825,13 @@
                 "brick": 5,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 0,
                 "worker": 50,
                 "artisan": 0,
@@ -850,13 +850,13 @@
                 "brick": 10,
                 "steel": 8,
                 "window": 8,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 500,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 500,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 150,
@@ -875,13 +875,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 5,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 5,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -900,13 +900,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 30,
                 "jornaleros": 50,
                 "obreros": 0,
-                "cash": 30,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -925,13 +925,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 5,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 5,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -950,13 +950,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 10,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 10,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -975,13 +975,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 10,
                 "worker": 0,
                 "artisan": 0,
@@ -1000,13 +1000,13 @@
                 "brick": 10,
                 "steel": 8,
                 "window": 5,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 500,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 500,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 200,
@@ -1014,6 +1014,137 @@
                 "investor": 0
             }
         },
+
+
+        "Spectacle Factory": {
+            "product": "Glasses",
+            "building": "Spectacle Factory",
+            "img": "engineers/glasses.webp",
+            "productionTime": 90,
+            "construction": {
+                "cash": 5000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 100,
+                "investor": 0
+            }
+        },
+        "Light Bulb Factory": {
+            "product": "Light Bulbs",
+            "building": "Light Bulb Factory",
+            "img": "engineers/light-bulb.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 10000,
+                "wood": 8,
+                "brick": 15,
+                "steel": 12,
+                "window": 10,
+                "concrete": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 1250,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Oil Power Plant": {
+            "product": "Electricity",
+            "building": "Oil Power Plant",
+            "img": "engineers/oil-power-plant.webp",
+            "productionTime": -1,
+            "construction": {
+                "cash": 25000,
+                "wood": 30,
+                "brick": 50,
+                "steel": 40,
+                "window": 30,
+                "concrete": 25,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 400,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+
+
+        "Champagne Cellar": {
+            "product": "Champagne",
+            "building": "Champagne Cellar",
+            "img": "investors/champagne.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 25000,
+                "wood": 10,
+                "brick": 20,
+                "steel": 16,
+                "window": 15,
+                "concrete": 15,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 400,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 150,
+                "investor": 0
+            }
+        },
+        "Cab Assembly Line": {
+            "product": "Steam Carriages",
+            "building": "Cab Assembly Line",
+            "img": "investors/steam-carriage.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 25000,
+                "wood": 20,
+                "brick": 40,
+                "steel": 32,
+                "window": 30,
+                "concrete": 30,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10000,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 500,
+                "investor": 0
+            }
+        },
+
+
         "Fish Oil Factory": {
             "product": "Fish Oil",
             "building": "Fish Oil Factory",
@@ -1025,13 +1156,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 5,
                 "jornaleros": 15,
                 "obreros": 0,
-                "cash": 5,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1050,13 +1181,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 5,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 5,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1075,13 +1206,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 15,
                 "jornaleros": 25,
                 "obreros": 0,
-                "cash": 15,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1100,13 +1231,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 5,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 5,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1125,13 +1256,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 15,
                 "jornaleros": 30,
                 "obreros": 0,
-                "cash": 15,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1150,13 +1281,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 25,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 25,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1175,13 +1306,13 @@
                 "brick": 2,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 100,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1200,13 +1331,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 25,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 25,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1225,13 +1356,38 @@
                 "brick": 3,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 150,
                 "jornaleros": 0,
                 "obreros": 150,
-                "cash": 150,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Bombin Weaver": {
+            "product": "Bowler Hats",
+            "building": "Bombin Weaver",
+            "img": "obreros/bowler-hats.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2500,
+                "wood": 3,
+                "brick": 2,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "jornaleros": 0,
+                "obreros": 20,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1250,13 +1406,13 @@
                 "brick": 15,
                 "steel": 12,
                 "window": 10,
-                "influence": 0,
-                "concrete": 10
+                "concrete": 10,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 250,
                 "jornaleros": 0,
                 "obreros": 75,
-                "cash": 250,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1275,13 +1431,13 @@
                 "brick": 15,
                 "steel": 12,
                 "window": 10,
-                "influence": 0,
-                "concrete": 10
+                "concrete": 10,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 50,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 50,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1300,13 +1456,13 @@
                 "brick": 25,
                 "steel": 20,
                 "window": 15,
-                "influence": 0,
-                "concrete": 15
+                "concrete": 15,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 0,
-                "cash": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1325,13 +1481,13 @@
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 25,
                 "jornaleros": 10,
                 "obreros": 0,
-                "cash": 25,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1350,13 +1506,13 @@
                 "brick": 20,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 250,
                 "jornaleros": 0,
                 "obreros": 175,
-                "cash": 250,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1375,13 +1531,38 @@
                 "brick": 20,
                 "steel": 0,
                 "window": 0,
-                "influence": 0,
-                "concrete": 0
+                "concrete": 0,
+                "influence": 0
             },
             "maintenance": {
+                "cash": 100,
                 "jornaleros": 0,
                 "obreros": 100,
-                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Chocolate Factory": {
+            "product": "Chocolate",
+            "building": "Chocolate Factory",
+            "img": "obreros/chocolate.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "jornaleros": 0,
+                "obreros": 100,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
