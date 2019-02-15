@@ -3,7 +3,7 @@
   "Consumption": {
     "farmers": {
       "basic": {
-        "Market": "",
+        "Marketplace": "",
         "Fish": 0.0025,
         "Work Clothes": 0.003076926
       },
@@ -15,7 +15,7 @@
 
     "workers": {
       "basic": {
-        "Market": "",
+        "Marketplace": "",
         "Fish": 0.0025,
         "Work Clothes": 0.003076926,
         "Sausages": 0.001000002,
@@ -93,7 +93,7 @@
 
     "jornaleros": {
       "basic": {
-        "Market": "",
+        "Marketplace": "",
         "Fried Plantains": 0.00285714,
         "Ponchos": 0.002500002
       },
@@ -105,7 +105,7 @@
 
     "obreros": {
       "basic": {
-        "Market": "",
+        "Marketplace": "",
         "Fried Plantains": 0.002857143,
         "Ponchos": 0.002499999,
         "Burritos": 0.00142857,
