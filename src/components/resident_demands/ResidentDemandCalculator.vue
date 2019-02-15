@@ -172,12 +172,15 @@
 <script>
 import Consumption from '../../data/consumption.json';
 import Producers from '../../data/producers.json';
+import NonProducers from '../../data/non-producers.json';
 
 export default {
   name: 'ResidentDemandCalculator',
   data: function() {
     return {
       producers: Producers.Producers,
+      nonProducers: NonProducers.buildings,
+
       population: {
         numFarmers: 0,
         numWorkers: 0,
@@ -189,7 +192,7 @@ export default {
       },
       consumption: {
         basic: {
-          'Market': '',
+          'Marketplace': '',
           'Fish': 0.0,
           'Work Clothes': 0.0,
           'Sausages': 0.0,
@@ -252,8 +255,10 @@ export default {
       const allProducers = Object.values(this.producers);
       const producer = allProducers.filter((producer) => producer.product === product)[0];
       if (!producer) {
-        // TODO Search through non-producers for image.
-        return '';
+        const allNonProducers = Object.values(this.nonProducers);
+        const nonProducer = allNonProducers.filter((nonProducer) => nonProducer.name === product)[0];
+        console.log(nonProducer + ' === ' + product);
+        return nonProducer ? this.getImage(nonProducer.img, 'buildings') : (product + 'Image');
       }
       return this.getImage(producer.img, 'buildings');
     },
