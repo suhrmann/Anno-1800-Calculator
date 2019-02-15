@@ -19,7 +19,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Marketplace": {
@@ -40,7 +42,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Farmer Residence": {
@@ -61,7 +65,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
 
@@ -83,7 +89,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Fire Station": {
@@ -104,7 +112,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Pub": {
@@ -125,7 +135,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Paved Street": {
@@ -146,7 +158,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Trade Union": {
@@ -167,7 +181,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Church": {
@@ -188,7 +204,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Police Station": {
@@ -209,7 +227,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "School": {
@@ -230,7 +250,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Town Hall": {
@@ -251,7 +273,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Variety Theatre": {
@@ -272,7 +296,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Zoo": {
@@ -293,7 +319,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Hospital": {
@@ -314,7 +342,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "University": {
@@ -335,7 +365,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
 
@@ -358,7 +390,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Small Oil Harbour": {
@@ -379,7 +413,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Oil Storage": {
@@ -400,7 +436,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Steam Shipyard": {
@@ -421,7 +459,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 200,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Bank": {
@@ -442,7 +482,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
 
@@ -465,7 +507,9 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         },
         "Members Club": {
@@ -486,13 +530,319 @@
                 "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
-                "investor": 0
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+
+
+
+
+
+
+        "Jornalero Residence": {
+            "name": "Jornalero Residence",
+            "img": "jornaleros/residence.webp",
+            "construction": {
+                "cash": 0,
+                "wood": 1,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Quay": {
+            "name": "Quay",
+            "img": "jornaleros/quay.webp",
+            "construction": {
+                "cash": 20,
+                "wood": 0,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Sailing shipyard": {
+            "name": "Residence",
+            "img": "jornaleros/residence.webp",
+            "construction": {
+                "cash": 10000,
+                "wood": 20,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 100,
+                "obrero": 0
+            }
+        },
+        "Depot": {
+            "name": "Depot",
+            "img": "jornaleros/depot.webp",
+            "construction": {
+                "cash": 2500,
+                "wood": 10,
+                "brick": 10,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 20,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Harbourmaster's Office": {
+            "name": "Residence",
+            "img": "jornaleros/residence.webp",
+            "construction": {
+                "cash": 2500,
+                "wood": 10,
+                "brick": 10,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Repair Crane": {
+            "name": "Repair Crane",
+            "img": "jornaleros/repair-crane.webp",
+            "construction": {
+                "cash": 500,
+                "wood": 50,
+                "brick": 75,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Mounted Guns": {
+            "name": "Mounted Guns",
+            "img": "jornaleros/mounted-guns.webp",
+            "construction": {
+                "cash": 5000,
+                "wood": 20,
+                "brick": 20,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "weapons": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Chapel": {
+            "name": "Chapel",
+            "img": "jornaleros/chapel.webp",
+            "construction": {
+                "cash": 500,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+
+
+        "Public Mooring": {
+            "name": "Public Mooring",
+            "img": "obreros/public-mooring.webp",
+            "construction": {
+                "cash": 2500,
+                "wood": 20,
+                "brick": 10,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 250,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Pier": {
+            "name": "Pier",
+            "img": "obreros/pier.webp",
+            "construction": {
+                "cash": 2500,
+                "wood": 30,
+                "brick": 50,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Cannon Tower": {
+            "name": "Cannon Tower",
+            "img": "obreros/cannon-tower.webp",
+            "construction": {
+                "cash": 10000,
+                "wood": 40,
+                "brick": 40,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "weapons": 10,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Boxing Arena": {
+            "name": "Boxing Arena",
+            "img": "obreros/boxing-arena.webp",
+            "construction": {
+                "cash": 2500,
+                "wood": 20,
+                "brick": 25,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 20,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
+            }
+        },
+        "Museum": {
+            "name": "Chapel",
+            "img": "obreros/chapel.webp",
+            "construction": {
+                "cash": 10000,
+                "wood": 30,
+                "brick": 30,
+                "steel": 10,
+                "window": 5,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0,
+                "jornalero": 0,
+                "obrero": 0
             }
         }
-
-
-
-
-
     }
 }

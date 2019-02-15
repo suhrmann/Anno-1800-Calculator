@@ -901,56 +901,6 @@
                 "investor": 0
             }
         },
-        "Cotton Plantation": {
-            "product": "Cotton",
-            "building": "Cotton Plantation",
-            "img": "artisans/cotton.webp",
-            "productionTime": 60,
-            "construction": {
-                "cash": 500,
-                "wood": 6,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 5,
-                "jornaleros": 10,
-                "obreros": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0
-            }
-        },
-        "Cotton Mill": {
-            "product": "Cotton Fabric",
-            "building": "Cotton Mill",
-            "img": "artisans/cotton-fabric.webp",
-            "productionTime": 30,
-            "construction": {
-                "cash": 500,
-                "wood": 6,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 10,
-                "jornaleros": 10,
-                "obreros": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0
-            }
-        },
         "Hunting Cabin": {
             "product": "Furs",
             "building": "Hunting Cabin",
@@ -1657,7 +1607,56 @@
 
 
 
-
+        "Lumberjack's Hut": {
+            "product": "Wood",
+            "building": "Lumberjack's Hut",
+            "img": "jornaleros/fish-oil.webp",
+            "productionTime": 15,
+            "construction": {
+                "cash": 500,
+                "wood": 0,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "jornaleros": 10,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Sawmill": {
+            "product": "Timber",
+            "building": "Sawmill",
+            "img": "jornaleros/fish-oil.webp",
+            "productionTime": 15,
+            "construction": {
+                "cash": 500,
+                "wood": 0,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "jornaleros": 20,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
         "Fish Oil Factory": {
             "product": "Fish Oil",
             "building": "Fish Oil Factory",
@@ -1732,6 +1731,81 @@
                 "engineer": 0,
                 "investor": 0
             }
+        },        "Pearl Farm":  0,
+        "Cotton Plantation": {
+            "product": "Cotton",
+            "building": "Cotton Plantation",
+            "img": "jornaleros/cotton.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 5,
+                "jornaleros": 10,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cotton Mill": {
+            "product": "Cotton Fabric",
+            "building": "Cotton Mill",
+            "img": "jornaleros/cotton-fabric.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "jornaleros": 10,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Sailmakers": {
+            "product": "Sails",
+            "building": "Sailmakers",
+            "img": "jornaleros/sails.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 8,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 15,
+                "jornaleros": 20,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
         },
         "Alpaca Farm": {
             "product": "Alpaca Wool",
@@ -1776,6 +1850,84 @@
                 "cash": 15,
                 "jornaleros": 30,
                 "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Caoutchouc Plantation": {
+            "product": "Caoutchouc",
+            "building": "Poncho Darner",
+            "img": "jornaleros/poncho.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2500,
+                "wood": 8,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 25,
+                "jornaleros": 10,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+
+
+
+        "Clay Pit": {
+            "product": "Clay",
+            "building": "Clay Pit",
+            "img": "obreros/clay.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2500,
+                "wood": 4,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "jornaleros": 0,
+                "obreros": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Brick Factory": {
+            "product": "Bricks",
+            "building": "Brick Factory",
+            "img": "obreros/bricks.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 2500,
+                "wood": 8,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 20,
+                "jornaleros": 0,
+                "obreros": 50,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -1876,6 +2028,31 @@
                 "cash": 150,
                 "jornaleros": 0,
                 "obreros": 150,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Felt Producer": {
+            "product": "Bowler Hats",
+            "building": "Bombin Weaver",
+            "img": "obreros/bowler-hats.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 2500,
+                "wood": 3,
+                "brick": 2,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "jornaleros": 10,
+                "obreros": 0,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
@@ -2051,6 +2228,57 @@
                 "cash": 100,
                 "jornaleros": 0,
                 "obreros": 100,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+
+        "Cocoa Plantation": {
+            "product": "Cocoa",
+            "building": "Cocoa Plantation",
+            "img": "obreros/cocoa.webp",
+            "productionTime": 60,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 5,
+                "jornaleros": 10,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Sugar Refinery": {
+            "product": "Sugar",
+            "building": "Sugar Refinery",
+            "img": "obreros/chocolate.webp",
+            "productionTime": 30,
+            "construction": {
+                "cash": 500,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 10,
+                "jornaleros": 0,
+                "obreros": 50,
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
