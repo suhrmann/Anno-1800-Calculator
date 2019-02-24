@@ -1,45 +1,59 @@
 <template>
-  <table v-if="treeData.name" style="display:inline-block">
-    <tr>
-      <td
-        :colspan="treeData.children ? treeData.children.length * 2 : 1"
-        :class="{parentLevel: treeData.children, extend: treeData.children && treeData.extend}"
-      >
-        <div :class="{node: true, hasMate: treeData.mate}">
-          <div
-            class="person"
-            @click="$emit('click-node', treeData)"
-            @mouseover="$emit('hover-node', treeData)"
-          >
-            <div class="avat">
-              <img :src="getBuildingImage(treeData.name)" :alt="treeData.name">
+  <div text-xs-center d-flex align-center>
+    <table v-if="treeData.name" style="display:inline-block">
+      <tr>
+        <td
+          :colspan="treeData.children ? treeData.children.length * 2 : 1"
+          :class="{parentLevel: treeData.children, extend: treeData.children && treeData.extend}"
+        >
+          <div :class="{node: true, hasMate: treeData.mate}">
+            <div
+              class="person"
+              @click="$emit('click-node', treeData)"
+              @mouseover="$emit('hover-node', treeData)"
+            >
+              <div
+                v-tooltip="{
+              content: getBuildingInfo(treeData),
+              placement: 'right',
+              classes: ['infa'],
+              offset: 50,
+              delay: {
+                show: 50,
+                hide: 50,
+              },
+            }"
+                class="avat"
+              >
+                <img :src="getBuildingImage(treeData.name)" :alt="treeData.name">
+              </div>
+              <div class="name">{{treeData.name}}</div>
             </div>
-            <div class="name">{{treeData.name}}</div>
-          </div>
-          <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
-            <div class="avat">
-              <img :src="getImage(treeData.mate.img, 'buildings')">
+            <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
+              <div class="avat">
+                <img :src="getImage(treeData.mate.img, 'buildings')">
+              </div>
+              <div class="name">{{treeData.mate.name}}</div>
             </div>
-            <div class="name">{{treeData.mate.name}}</div>
           </div>
-        </div>
-      </td>
-    </tr>
-    <tr v-if="treeData.children">
-      <td
-        v-for="(children, index) in treeData.children"
-        :key="index"
-        colspan="2"
-        class="childLevel"
-      >
-        <TreeChart
-          :json="children"
-          @hover-node="$emit('hover-node', $event)"
-          @click-node="$emit('click-node', $event)"
-        />
-      </td>
-    </tr>
-  </table>
+        </td>
+      </tr>
+      <tr v-if="treeData.children">
+        <td
+          v-for="(children, index) in treeData.children"
+          :key="index"
+          colspan="2"
+          class="childLevel"
+        >
+          <TreeChart
+            :json="children"
+            @hover-node="$emit('hover-node', $event)"
+            @click-node="$emit('click-node', $event)"
+          />
+        </td>
+      </tr>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -50,6 +64,7 @@ export default {
   mixins: [helperFunctionMixin],
   data() {
     return {
+      data: null,
       treeData: {},
       path: '',
     };
@@ -81,6 +96,19 @@ export default {
     toggleExtend: function(treeData) {
       treeData.extend = !treeData.extend;
       this.$forceUpdate();
+    },
+
+    getBuildingInfo(nodeData) {
+      const building = this.getBuildingByName(nodeData.name);
+
+      // build string
+      const headline = 'Building: ' + building.building;
+      const product = 'Product: ' + building.product;
+      const prodTime = 'Production Time: ' + building.productionTime;
+
+      const buildingInfo = headline + '<br/>' + product + '<br/>' + prodTime;
+
+      return buildingInfo;
     },
 
     getBuildingImage(name) {
@@ -193,7 +221,7 @@ td {
   position: relative;
   display: inline-block;
   z-index: 2;
-  width: 6em;
+  width: 100%;
   overflow: hidden;
 }
 .node .person .avat {
@@ -266,5 +294,14 @@ td {
 .landscape .hasMate .person:last-child {
   left: -4em;
   margin-left: 0;
+}
+
+.infa {
+  background: #424242;
+  color: white;
+  padding: 24px;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(black, 0.1);
+  max-width: 250px;
 }
 </style>

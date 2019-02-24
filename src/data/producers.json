@@ -503,7 +503,7 @@
         },
         "Steelworks": {
             "product": "Steel Beams",
-            "building": "Furnace",
+            "building": "Steelworks",
             "img": "workers/steel-beams.webp",
             "productionTime": 45,
             "construction": {
