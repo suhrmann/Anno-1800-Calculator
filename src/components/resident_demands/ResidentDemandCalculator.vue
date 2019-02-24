@@ -61,7 +61,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numFarmers"
+            v-model="numFarmers"
             label="Farmers"
             type="number"
             box
@@ -77,7 +77,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numWorkers"
+            v-model="numWorkers"
             label="Workers"
             type="number"
             box
@@ -93,7 +93,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numArtisans"
+            v-model="numArtisans"
             label="Artisans"
             type="number"
             box
@@ -109,7 +109,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numEngineers"
+            v-model="numEngineers"
             label="Engineers"
             type="number"
             box
@@ -125,7 +125,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numInvestors"
+            v-model="numInvestors"
             label="Investors"
             type="number"
             box
@@ -141,7 +141,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numJornaleros"
+            v-model="numJornaleros"
             label="Jornaleros"
             type="number"
             box
@@ -157,7 +157,7 @@
             >
           </v-avatar>
           <v-text-field
-            :value="population.numObreros"
+            v-model="numObreros"
             label="Obreros"
             type="number"
             box
@@ -165,6 +165,16 @@
         </v-card>
       </v-flex>
     </v-layout>
+
+    <p>
+      numFarmers: {{ numFarmers }};
+      numWorkers: {{ numWorkers }};
+      numArtisans: {{ numArtisans }};
+      numEngineers: {{ numEngineers }};
+      numInvestors: {{ numInvestors }};
+      numJornaleros: {{ numJornaleros }};
+      numObreros: {{ numObreros }};
+    </p>
 
   </v-container>
 </template>
@@ -181,15 +191,14 @@ export default {
       producers: Producers.Producers,
       nonProducers: NonProducers.buildings,
 
-      population: {
-        numFarmers: 0,
-        numWorkers: 0,
-        numArtisans: 0,
-        numEngineers: 0,
-        numInvestors: 0,
-        numJornaleros: 0,
-        numObreros: 0,
-      },
+      numFarmers: 0,
+      numWorkers: 0,
+      numArtisans: 0,
+      numEngineers: 0,
+      numInvestors: 0,
+      numJornaleros: 0,
+      numObreros: 0,
+
       consumption: {
         basic: {
           'Marketplace': '',
