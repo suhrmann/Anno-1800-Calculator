@@ -12,13 +12,13 @@
             @mouseover="$emit('hover-node', treeData)"
           >
             <div class="avat">
-              <img :src="treeData.image_url">
+              <img :src="'../assets/buildings/'+treeData.img">
             </div>
             <div class="name">{{treeData.name}}</div>
           </div>
           <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
             <div class="avat">
-              <img :src="treeData.mate.image_url">
+              <img :src="treeData.mate.img">
             </div>
             <div class="name">{{treeData.mate.name}}</div>
           </div>
@@ -33,7 +33,11 @@
         colspan="2"
         class="childLevel"
       >
-        <TreeChart :json="children" @click-node="$emit('click-node', $event)"/>
+        <TreeChart
+          :json="children"
+          @hover-node="$emit('hover-node', $event)"
+          @click-node="$emit('click-node', $event)"
+        />
       </td>
     </tr>
   </table>
@@ -45,7 +49,8 @@ export default {
   props: ["json"],
   data() {
     return {
-      treeData: {}
+      treeData: {},
+      path: ""
     };
   },
   watch: {
