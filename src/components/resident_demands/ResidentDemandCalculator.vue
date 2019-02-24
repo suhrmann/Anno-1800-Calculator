@@ -272,32 +272,28 @@ export default {
       };
 
       // TODO Merge (reduce and sum up) the demands together
-      const basic = {};
+      const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
-      for (const [key, population] of Object.entries(demands)) {
+      for (const [popKey, population] of Object.entries(demands)) {
 
-        // Iterate over all demands of the current population
-        for (const [key, demand] of Object.entries(population.basic)) {
+        for (const [dtKey, demandType] of Object.entries(population)) {
 
-          // Init key if it does not exist is total demands
-          if (!basic[key]) {
-            basic[key] = 0;
+          // Iterate over all demands of the current population
+          for (const [dKey, demand] of Object.entries(demandType)) {
+
+            console.log();
+
+            // Init demand with 0 if it does not exist in total demands
+            if (!totalDemands[dtKey][dKey]) {
+              totalDemands[dtKey][dKey] = 0;
+            }
+
+            // Sum up new demands
+            totalDemands[dtKey][dKey] += demand;
           }
-
-          // Sum up new demands
-          basic[key] += demand;
         }
       }
-      return {
-        basic: basic,
-      };
-
-      const luxury = {};
-      for (const [key, demand] of Object.entries(demands)) {
-        basic[key] = demand;
-      }
-
-      return { basic, luxury };
+      return totalDemands;
     },
   },
   methods: {
