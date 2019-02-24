@@ -193,7 +193,7 @@ td {
   position: relative;
   display: inline-block;
   z-index: 2;
-  width: 6em;
+  width: 100%;
   overflow: hidden;
 }
 .node .person .avat {
