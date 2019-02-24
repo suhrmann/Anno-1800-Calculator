@@ -1,9 +1,6 @@
 <template>
   <v-container fluid fill-height>
     <v-layout row wrap align-content-space-between>
-      <v-flex xs12>
-        <h1>Production Chains</h1>
-      </v-flex>
       <visual-production-chain></visual-production-chain>
       <bottom-nav-bar></bottom-nav-bar>
     </v-layout>

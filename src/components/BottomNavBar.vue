@@ -26,10 +26,7 @@
         >
           <span>{{ chain.name }}</span>
           <v-avatar>
-            <img
-              :src="getImage(chain.img, 'buildings')"
-              :alt="chain.name + ' Image'"
-            >
+            <img :src="getImage(chain.img, 'buildings')" :alt="chain.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-nav>
@@ -37,13 +34,7 @@
 
     <!-- Nav Bar: SOCIAL CLASS -->
     <v-card height="64px" tile>
-      <v-bottom-nav
-        :active.sync="selectedSocialClassID"
-        :value="true"
-        absolute
-        dark
-        height="64"
-      >
+      <v-bottom-nav :active.sync="selectedSocialClassID" :value="true" absolute dark height="64">
         <v-btn
           color="primary"
           flat
@@ -54,10 +45,7 @@
         >
           <span>{{ socialClass.name }}</span>
           <v-avatar>
-            <img
-              :src="getImage(socialClass.img, 'population')"
-              :alt="socialClass.name + ' Image'"
-            >
+            <img :src="getImage(socialClass.img, 'population')" :alt="socialClass.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-nav>
@@ -65,13 +53,7 @@
 
     <!-- Nav Bar: WORLD -->
     <v-card height="64px" tile>
-      <v-bottom-nav
-        :active.sync="selectedWorldID"
-        :value="true"
-        absolute
-        dark
-        height="64"
-      >
+      <v-bottom-nav :active.sync="selectedWorldID" :value="true" absolute dark height="64">
         <v-btn
           color="primary"
           flat
@@ -82,10 +64,7 @@
         >
           <span>{{ world.name }}</span>
           <v-avatar>
-            <img
-              :src="getImage(world.img, 'worlds')"
-              :alt="world.name + ' Image'"
-            >
+            <img :src="getImage(world.img, 'worlds')" :alt="world.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-nav>
@@ -97,10 +76,12 @@
 import worlds from '../data/worlds.json';
 import socialClasses from '../data/socialClasses.json';
 import productionChains from '../data/productionChain';
+import { helperFunctionMixin } from './helperFunctionMixin.js';
 import { EventBus } from '../EventBus.js';
 
 export default {
   name: 'BottomNavBar',
+  mixins: [helperFunctionMixin],
   data() {
     return {
       // Init selection
@@ -230,17 +211,6 @@ export default {
           (socialClass) => socialClass.id === id
       )[0];
       return selectedSocialClass;
-    },
-    /**
-     * Workaround to load images dynamically in for-loop.
-     *
-     * @param {string} image The image to load.
-     * @param {string} folder The folder that contains the image
-     *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
-     * @return {string} The URL of the image (e.g. for use as img src).
-     */
-    getImage(image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : '';
     },
   },
 };
