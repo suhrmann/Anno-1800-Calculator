@@ -5,9 +5,11 @@
     <v-layout justify-center row wrap>
       <v-flex
         lg2 md3 sm3
-        v-for="(usage, product) in consumption.basic"
+        v-for="(usage, product) in totalDemands.basic"
       >
-        <v-card>
+        <v-card
+          v-if="usage > 0"
+        >
           <v-avatar>
             <img
               :src="getBuildingImage(product)"
@@ -29,9 +31,11 @@
     <v-layout justify-center row wrap>
       <v-flex
         lg2 md3 sm3
-        v-for="(usage, product) in consumption.luxury"
+        v-for="(usage, product) in totalDemands.luxury"
       >
-        <v-card>
+        <v-card
+          v-if="usage > 0"
+        >
           <v-avatar>
             <img
               :src="getBuildingImage(product)"
@@ -167,13 +171,17 @@
     </v-layout>
 
     <p>
-      numFarmers: {{ numFarmers }};
-      numWorkers: {{ numWorkers }};
-      numArtisans: {{ numArtisans }};
-      numEngineers: {{ numEngineers }};
-      numInvestors: {{ numInvestors }};
-      numJornaleros: {{ numJornaleros }};
-      numObreros: {{ numObreros }};
+      numFarmers: {{ numFarmers }} - {{ farmersDemands }}; <br>
+      numWorkers: {{ numWorkers }} - {{ workersDemands }}; <br>
+      numArtisans: {{ numArtisans }} - {{ artisansDemands }}; <br>
+      numEngineers: {{ numEngineers }} - {{ engineersDemands }}; <br>
+      numInvestors: {{ numInvestors }} - {{ investorsDemands }}; <br>
+      numJornaleros: {{ numJornaleros }} - {{ jornalerosDemands }}; <br>
+      numObreros: {{ numObreros }} - {{ obrerosDemands }}; <br>
+    </p>
+
+    <p>
+      TOTAL: {{ totalDemands }}; <br>
     </p>
 
   </v-container>
@@ -190,6 +198,7 @@ export default {
     return {
       producers: Producers.Producers,
       nonProducers: NonProducers.buildings,
+      consumption: Consumption,
 
       numFarmers: 0,
       numWorkers: 0,
@@ -198,68 +207,81 @@ export default {
       numInvestors: 0,
       numJornaleros: 0,
       numObreros: 0,
-
-      consumption: {
-        basic: {
-          'Marketplace': '',
-          'Fish': 0.0,
-          'Work Clothes': 0.0,
-          'Sausages': 0.0,
-          'Bread': 0.0,
-          'Soap': 0.0,
-          'School': '',
-          'Canned Food': 0.0,
-          'Sewing Machines': 0.0,
-          'Fur Coats': 0.0,
-          'University': '',
-          'Glasses': 0.0,
-          'Electricity': '',
-          'Coffee': 0.0,
-          'Light Bulbs': 0.0,
-          'Champagne': 0.0,
-          'Cigars': 0.0,
-          'Chocolate': 0.0,
-          'Steam Carriages': 0.0,
-          'Fried Plantains': 0.0,
-          'Ponchos': 0.0,
-          'Tortillas': 0.0,
-          'Bowler Hats': 0.0,
-        },
-        luxury: {
-          'Schnapps': 0.0,
-          'Pub': '',
-          'Church': '',
-          'Beer': 0.0,
-          'Variety Theatre': '',
-          'Rum': 0.0,
-          'High Wheelers': 0.0,
-          'Pocket Watches': 0.0,
-          'Bank': '',
-          'Members Club': '',
-          'Jewelry': 0.0,
-          'Gramophones': 0.0,
-          'Chapel': '',
-          'Boxing Arena': '',
-          'Cigars': 0.0,
-        },
-      },
     };
   },
   computed: {
-    /**
-       * Calculate the populations' consumption.
-       */
-    calculateConsumption: function() {
-      // TODO Implement calculation
+    farmersDemands: function() {
+      const farmersDemands = this.consumption.Consumption.farmers;
+      return {
+        basic: this.calculateDemands(farmersDemands.basic, this.numFarmers),
+        luxury: this.calculateDemands(farmersDemands.luxury, this.numFarmers),
+      };
+    },
+    workersDemands: function() {
+      const workersDemands = this.consumption.Consumption.workers;
+      return {
+        basic: this.calculateDemands(workersDemands.basic, this.numWorkers),
+        luxury: this.calculateDemands(workersDemands.luxury, this.numWorkers),
+      };
+    },
+    artisansDemands: function() {
+      const artisansDemands = this.consumption.Consumption.artisans;
+      return {
+        basic: this.calculateDemands(artisansDemands.basic, this.numArtisans),
+        luxury: this.calculateDemands(artisansDemands.luxury, this.numArtisans),
+      };
+    },
+    engineersDemands: function() {
+      const engineersDemands = this.consumption.Consumption.engineers;
+      return {
+        basic: this.calculateDemands(engineersDemands.basic, this.numEngineers),
+        luxury: this.calculateDemands(engineersDemands.luxury, this.numEngineers),
+      };
+    },
+    investorsDemands: function() {
+      const investorsDemands = this.consumption.Consumption.investors;
+      return {
+        basic: this.calculateDemands(investorsDemands.basic, this.numInvestors),
+        luxury: this.calculateDemands(investorsDemands.luxury, this.numInvestors),
+      };
+    },
+    jornalerosDemands: function() {
+      const jornalerosDemands = this.consumption.Consumption.jornaleros;
+      return {
+        basic: this.calculateDemands(jornalerosDemands.basic, this.numJornaleros),
+        luxury: this.calculateDemands(jornalerosDemands.luxury, this.numJornaleros),
+      };
+    },
+    obrerosDemands: function() {
+      const obrerosDemands = this.consumption.Consumption.obreros;
+      return {
+        basic: this.calculateDemands(obrerosDemands.basic, this.numObreros),
+        luxury: this.calculateDemands(obrerosDemands.luxury, this.numObreros),
+      };
+    },
+    totalDemands: function() {
+      // Merge all demands
+      const demands = {
+        farmers: this.farmersDemands,
+        workers: this.workersDemands,
+        artisans: this.artisansDemands,
+        engineers: this.engineersDemands,
+        investors: this.investorsDemands,
+        jornaleros: this.jornalerosDemands,
+        obreros: this.obrerosDemands,
+      };
+
+      // TODO Merge (reduce and sum up) the demands together
+      return {};
     },
   },
   methods: {
     /**
-     * Find the image of a building by its produced product.
-     *
-     * @param {string} product The product name - see producers.json >> Producers.<Producer>.product
-     * @return {string} The URL to the image.
-     */
+       * Find the image of a building by its produced product.
+       *
+       * @param {string} product The product name - see producers.json >> Producers.<Producer>.product
+       * @return {string} The URL to the image.
+       */
     getBuildingImage(product) {
       const allProducers = Object.values(this.producers);
       const producer = allProducers.filter((producer) => producer.product === product)[0];
@@ -272,15 +294,26 @@ export default {
       return this.getImage(producer.img, 'buildings');
     },
     /**
-     * Workaround to load images dynamically in for-loop.
-     *
-     * @param {string} image The image to load.
-     * @param {string} folder The folder that contains the image
-     *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
-     * @return {string} The URL of the image (e.g. for use as img src).
-     */
+       * Workaround to load images dynamically in for-loop.
+       *
+       * @param {string} image The image to load.
+       * @param {string} folder The folder that contains the image
+       *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
+       * @return {string} The URL of the image (e.g. for use as img src).
+       */
     getImage(image, folder) {
       return image ? require(`../../assets/${folder}/${image}`) : '';
+    },
+    calculateDemands: function(populationDemands, numPopulation) {
+      const demands = {};
+      for (const [key, demand] of Object.entries(populationDemands)) {
+        if (demand) {
+          demands[key] = demand * numPopulation;
+        } else {
+          demands[key] = numPopulation > 0 ? 1 : null;
+        }
+      }
+      return demands;
     },
   },
 };
