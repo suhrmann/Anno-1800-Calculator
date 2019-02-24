@@ -1,5 +1,5 @@
 <template>
-  <table v-if="treeData.name">
+  <table v-if="treeData.name" style="display:inline-block">
     <tr>
       <td
         :colspan="treeData.children ? treeData.children.length * 2 : 1"
@@ -12,21 +12,20 @@
             @mouseover="$emit('hover-node', treeData)"
           >
             <div class="avat">
-              <img :src="'../assets/buildings/'+treeData.img">
+              <img :src="getBuildingImage(treeData.name)" :alt="treeData.name">
             </div>
             <div class="name">{{treeData.name}}</div>
           </div>
           <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
             <div class="avat">
-              <img :src="treeData.mate.img">
+              <img :src="getImage(treeData.mate.img, 'buildings')">
             </div>
             <div class="name">{{treeData.mate.name}}</div>
           </div>
         </div>
-        <div class="extend_handle" v-if="treeData.children" @click="toggleExtend(treeData)"></div>
       </td>
     </tr>
-    <tr v-if="treeData.children && treeData.extend">
+    <tr v-if="treeData.children">
       <td
         v-for="(children, index) in treeData.children"
         :key="index"
@@ -55,6 +54,9 @@ export default {
       path: ""
     };
   },
+
+  mounted() {},
+
   watch: {
     json: {
       handler: function(Props) {
@@ -79,6 +81,11 @@ export default {
     toggleExtend: function(treeData) {
       treeData.extend = !treeData.extend;
       this.$forceUpdate();
+    },
+
+    getBuildingImage(name) {
+      let building = this.getBuildingByName(name);
+      return this.getImage(building.img, "buildings");
     }
   }
 };

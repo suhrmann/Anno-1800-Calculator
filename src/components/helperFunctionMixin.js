@@ -1,4 +1,15 @@
+import producers from '../data/producers.json';
+import nonProducers from '../data/non-producers.json';
+
 export const helperFunctionMixin = {
+  computed: {
+    producers() {
+      return JSON.parse(JSON.stringify(producers));
+    },
+    nonProducers() {
+      return JSON.parse(JSON.stringify(nonProducers));
+    },
+  },
   methods: {
     /**
      * Workaround to load images dynamically in for-loop.
@@ -10,6 +21,16 @@ export const helperFunctionMixin = {
      */
     getImage(image, folder) {
       return image ? require(`../assets/${folder}/${image}`) : '';
+    },
+
+    getBuildingByName(name) {
+      const buildings = this.producers.Producers;
+      for (const building in buildings) {
+        if (buildings[building].building === name) {
+          console.log(buildings[building]);
+          return buildings[building];
+        }
+      }
     },
   },
 };

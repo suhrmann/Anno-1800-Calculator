@@ -12,7 +12,7 @@
       "children": [{
         "name": "Lumberjack Hut",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "fish": {
@@ -23,7 +23,7 @@
       "finalProduct": "Fish",
       "name": "Fishery",
       "alternative": "",
-      "children": []
+      "children": null
     },
     "schnapps": {
       "id": 3,
@@ -36,7 +36,7 @@
       "children": [{
         "name": "Potato Farm",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "work-clothes": {
@@ -50,7 +50,7 @@
       "children": [{
         "name": "Sheep Farm",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "bricks": {
@@ -64,7 +64,7 @@
       "children": [{
         "name": "Clay Pit",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "sausages": {
@@ -78,7 +78,7 @@
       "children": [{
         "name": "Pig Farm",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "sails": {
@@ -92,7 +92,7 @@
       "children": [{
         "name": "Sheep Farm",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "bread": {
@@ -109,7 +109,7 @@
         "children": [{
           "name": "Grain Farm",
           "alternative": "",
-          "children": []
+          "children": null
         }]
       }]
     },
@@ -127,7 +127,7 @@
         "children": [{
           "name": "Pig Farm",
           "alternative": "",
-          "children": []
+          "children": null
         }]
       }]
     },
@@ -145,12 +145,12 @@
         "children": [{
             "name": "Iron Mine",
             "alternative": "",
-            "children": []
+            "children": null
           },
           {
             "name": "Charcoal Kiln",
             "alternative": "",
-            "children": []
+            "children": null
           }
         ]
       }]
@@ -169,12 +169,12 @@
         "children": [{
             "name": "Iron Mine",
             "alternative": "",
-            "children": []
+            "children": null
           },
           {
             "name": "Charcoal Kiln",
             "alternative": "",
-            "children": []
+            "children": null
           }
         ]
       }]
@@ -190,7 +190,7 @@
       "children": [{
           "name": "Hop Farm",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Malthouse",
@@ -198,7 +198,7 @@
           "children": [{
             "name": "Grain Farm",
             "alternative": "",
-            "children": []
+            "children": null
           }]
         }
       ]
@@ -214,7 +214,7 @@
       "children": [{
           "name": "Lumberjack Hut",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Glassmakers",
@@ -222,7 +222,7 @@
           "children": [{
             "name": "Sand Mine",
             "alternative": "",
-            "children": []
+            "children": null
           }]
         }
       ]
@@ -238,7 +238,7 @@
       "children": [{
           "name": "Iron Mine",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Artisanal Kitchen",
@@ -246,12 +246,12 @@
           "children": [{
               "name": "Cattle Farm",
               "alternative": "",
-              "children": []
+              "children": null
             },
             {
               "name": "Red Pepper Farm",
               "alternative": "",
-              "children": []
+              "children": null
             }
           ]
         }
@@ -268,7 +268,7 @@
       "children": [{
           "name": "Lumberjack Hut",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Furnace",
@@ -276,12 +276,12 @@
           "children": [{
               "name": "Iron Mine",
               "alternative": "",
-              "children": []
+              "children": null
             },
             {
               "name": "Coal Mine",
               "alternative": "Charcoal Kiln",
-              "children": []
+              "children": null
             }
           ]
         }
@@ -298,7 +298,7 @@
       "children": [{
           "name": "Hunting Cabin",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Cotton Mill",
@@ -306,7 +306,7 @@
           "children": [{
             "name": "Cotton Plantation",
             "alternative": "",
-            "children": []
+            "children": null
           }]
         }
       ]
@@ -322,12 +322,12 @@
       "children": [{
           "name": "Fish Oil Factory",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Plantain Plantation",
           "alternative": "",
-          "children": []
+          "children": null
         }
       ]
     },
@@ -342,12 +342,12 @@
       "children": [{
           "name": "Lumberjack Hut",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Sugar Cane Plantation",
           "alternative": "",
-          "children": []
+          "children": null
         }
       ]
     },
@@ -362,7 +362,7 @@
       "children": [{
         "name": "Alpaca Farm",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "tortillas": {
@@ -376,12 +376,12 @@
       "children": [{
           "name": "Cattle Farm",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Corn Farm",
           "alternative": "",
-          "children": []
+          "children": null
         }
       ]
     },
@@ -396,7 +396,7 @@
       "children": [{
         "name": "Coffee Plantation",
         "alternative": "",
-        "children": []
+        "children": null
       }]
     },
     "electricity": {
@@ -416,13 +416,13 @@
             "children": [{
               "name": "Oil Refinery",
               "alternative": "",
-              "children": []
+              "children": null
             }]
           },
           {
             "name": "Oil Storage",
             "alternative": "",
-            "children": []
+            "children": null
           }
         ]
       }]
@@ -438,7 +438,7 @@
       "children": [{
           "name": "Tobacco Plantation",
           "alternative": "",
-          "children": []
+          "children": null
         },
         {
           "name": "Marquetry Workshop",
@@ -446,7 +446,7 @@
           "children": [{
             "name": "Lumberjack Hut",
             "alternative": "",
-            "children": []
+            "children": null
           }]
         }
       ]
@@ -465,12 +465,12 @@
           "children": [{
               "name": "Iron Mine",
               "alternative": "",
-              "children": []
+              "children": null
             },
             {
               "name": "Charcoal Kiln",
               "alternative": "Coal Mine",
-              "children": []
+              "children": null
             }
           ]
         },
@@ -480,12 +480,12 @@
           "children": [{
               "name": "Zinc Mine",
               "alternative": "",
-              "children": []
+              "children": null
             },
             {
               "name": "Copper Mine",
               "alternative": "",
-              "children": []
+              "children": null
             }
           ]
         }

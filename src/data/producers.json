@@ -26,9 +26,9 @@
                 "investor": 0
             }
         },
-        "Lumberjack's Hut": {
+        "Lumberjack Hut": {
             "product": "Wood",
-            "building": "Lumberjack's Hut",
+            "building": "Lumberjack Hut",
             "img": "farmers/wood.webp",
             "productionTime": 15,
             "construction": {
@@ -1353,7 +1353,7 @@
         },
 
 
-        "Saltpeter Works":{
+        "Saltpeter Works": {
             "product": "Saltpeter",
             "building": "Saltpeter Works",
             "img": "investors/saltpeter.webp",
@@ -1403,7 +1403,7 @@
                 "investor": 0
             }
         },
-        "Heavy Weapons Factory":{
+        "Heavy Weapons Factory": {
             "product": "Advanced Weapons",
             "building": "Heavy Weapons Factory",
             "img": "investors/champagne.webp",
@@ -1478,7 +1478,7 @@
                 "investor": 0
             }
         },
-        "Jewellers":{
+        "Jewellers": {
             "product": "Jewelry",
             "building": "Jewellers",
             "img": "investors/jewelry.webp",
@@ -1528,7 +1528,7 @@
                 "investor": 0
             }
         },
-        "Gramophone Factory":{
+        "Gramophone Factory": {
             "product": "Gramophones",
             "building": "Gramophone Factory",
             "img": "investors/gramophones.webp",
@@ -1578,7 +1578,7 @@
                 "investor": 0
             }
         },
-        "Cab Assembly Line":{
+        "Cab Assembly Line": {
             "product": "Steam Carriages",
             "building": "Cab Assembly Line",
             "img": "investors/steam-carriage.webp",
@@ -1610,7 +1610,7 @@
         "Lumberjack's Hut": {
             "product": "Wood",
             "building": "Lumberjack's Hut",
-            "img": "jornaleros/fish-oil.webp",
+            "img": "jornaleros/wood.webp",
             "productionTime": 15,
             "construction": {
                 "cash": 500,
@@ -1635,7 +1635,7 @@
         "Sawmill": {
             "product": "Timber",
             "building": "Sawmill",
-            "img": "jornaleros/fish-oil.webp",
+            "img": "jornaleros/timber.webp",
             "productionTime": 15,
             "construction": {
                 "cash": 500,
@@ -1731,7 +1731,8 @@
                 "engineer": 0,
                 "investor": 0
             }
-        },        "Pearl Farm":  0,
+        },
+        "Pearl Farm": 0,
         "Cotton Plantation": {
             "product": "Cotton",
             "building": "Cotton Plantation",

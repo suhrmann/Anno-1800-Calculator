@@ -1,9 +1,10 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <v-layout justify-center row wrap>
+      <v-flex xs12 mb-5>
+        <h2 color="primary">Selected Chain: {{productionChain.finalProduct}}</h2>
+      </v-flex>
       <v-flex xs12>
-        <h2>Dynamic Grid TODO1</h2>
-        <p>Selected Chain: {{productionChain.name}}</p>
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
     </v-layout>
@@ -29,9 +30,6 @@ export default {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
     EventBus.$on("bottomNavBarChanged", () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    });
-    this.$on("hover-node", () => {
-      alert("asd");
     });
   },
 

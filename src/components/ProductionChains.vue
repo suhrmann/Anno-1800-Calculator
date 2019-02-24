@@ -1,9 +1,6 @@
 <template>
   <v-container fluid fill-height>
     <v-layout row wrap align-content-space-between>
-      <v-flex xs12>
-        <h1>Production Chains</h1>
-      </v-flex>
       <visual-production-chain></visual-production-chain>
       <bottom-nav-bar></bottom-nav-bar>
     </v-layout>
@@ -11,15 +8,15 @@
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar.vue';
-import VisualProductionChain from './production_chains/VisualProductionChain.vue';
+import BottomNavBar from "./BottomNavBar.vue";
+import VisualProductionChain from "./production_chains/VisualProductionChain.vue";
 
 export default {
-  name: 'ProductionChains',
+  name: "ProductionChains",
   components: {
-    'bottom-nav-bar': BottomNavBar,
-    'visual-production-chain': VisualProductionChain,
-  },
+    "bottom-nav-bar": BottomNavBar,
+    "visual-production-chain": VisualProductionChain
+  }
 };
 </script>
 
