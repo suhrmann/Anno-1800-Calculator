@@ -272,7 +272,32 @@ export default {
       };
 
       // TODO Merge (reduce and sum up) the demands together
-      return {};
+      const basic = {};
+      // Iterate over all populations
+      for (const [key, population] of Object.entries(demands)) {
+
+        // Iterate over all demands of the current population
+        for (const [key, demand] of Object.entries(population.basic)) {
+
+          // Init key if it does not exist is total demands
+          if (!basic[key]) {
+            basic[key] = 0;
+          }
+
+          // Sum up new demands
+          basic[key] += demand;
+        }
+      }
+      return {
+        basic: basic,
+      };
+
+      const luxury = {};
+      for (const [key, demand] of Object.entries(demands)) {
+        basic[key] = demand;
+      }
+
+      return { basic, luxury };
     },
   },
   methods: {
