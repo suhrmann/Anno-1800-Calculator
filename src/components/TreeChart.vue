@@ -44,9 +44,11 @@
 </template>
 
 <script>
+import { helperFunctionMixin } from "./helperFunctionMixin.js";
 export default {
   name: "TreeChart",
   props: ["json"],
+  mixins: [helperFunctionMixin],
   data() {
     return {
       treeData: {},

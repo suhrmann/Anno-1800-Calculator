@@ -26,10 +26,7 @@
         >
           <span>{{ chain.name }}</span>
           <v-avatar>
-            <img
-              :src="getImage(chain.img, 'buildings')"
-              :alt="chain.name + ' Image'"
-            >
+            <img :src="getImage(chain.img, 'buildings')" :alt="chain.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-nav>
@@ -37,13 +34,7 @@
 
     <!-- Nav Bar: SOCIAL CLASS -->
     <v-card height="64px" tile>
-      <v-bottom-nav
-        :active.sync="selectedSocialClassID"
-        :value="true"
-        absolute
-        dark
-        height="64"
-      >
+      <v-bottom-nav :active.sync="selectedSocialClassID" :value="true" absolute dark height="64">
         <v-btn
           color="primary"
           flat
@@ -54,10 +45,7 @@
         >
           <span>{{ socialClass.name }}</span>
           <v-avatar>
-            <img
-              :src="getImage(socialClass.img, 'population')"
-              :alt="socialClass.name + ' Image'"
-            >
+            <img :src="getImage(socialClass.img, 'population')" :alt="socialClass.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-nav>
@@ -65,13 +53,7 @@
 
     <!-- Nav Bar: WORLD -->
     <v-card height="64px" tile>
-      <v-bottom-nav
-        :active.sync="selectedWorldID"
-        :value="true"
-        absolute
-        dark
-        height="64"
-      >
+      <v-bottom-nav :active.sync="selectedWorldID" :value="true" absolute dark height="64">
         <v-btn
           color="primary"
           flat
@@ -82,10 +64,7 @@
         >
           <span>{{ world.name }}</span>
           <v-avatar>
-            <img
-              :src="getImage(world.img, 'worlds')"
-              :alt="world.name + ' Image'"
-            >
+            <img :src="getImage(world.img, 'worlds')" :alt="world.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-nav>
@@ -94,13 +73,15 @@
 </template>
 
 <script>
-import worlds from '../data/worlds.json';
-import socialClasses from '../data/socialClasses.json';
-import productionChains from '../data/productionChain';
-import { EventBus } from '../EventBus.js';
+import worlds from "../data/worlds.json";
+import socialClasses from "../data/socialClasses.json";
+import productionChains from "../data/productionChain";
+import { helperFunctionMixin } from "./helperFunctionMixin.js";
+import { EventBus } from "../EventBus.js";
 
 export default {
-  name: 'BottomNavBar',
+  name: "BottomNavBar",
+  mixins: [helperFunctionMixin],
   data() {
     return {
       // Init selection
@@ -112,7 +93,7 @@ export default {
       // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
       socialClasses: socialClasses,
-      productionChains: productionChains.Production_Chain,
+      productionChains: productionChains.Production_Chain
     };
   },
 
@@ -127,13 +108,13 @@ export default {
       const chainID = this.selectedProductionChainID;
       let productionChain = {};
 
-      Object.keys(selectedSocialClassChains).forEach((chain) => {
+      Object.keys(selectedSocialClassChains).forEach(chain => {
         if (selectedSocialClassChains[chain].id === chainID) {
           productionChain = selectedSocialClassChains[chain];
         }
       });
       this.setProductionChain(productionChain);
-      EventBus.$emit('bottomNavBarChanged');
+      EventBus.$emit("bottomNavBarChanged");
       return productionChain;
     },
 
@@ -153,7 +134,7 @@ export default {
     selectedSocialClasses: function() {
       const socialClasses = Object.values(this.socialClasses);
       return socialClasses.filter(
-          (socialClass) => socialClass.worldID === this.selectedWorldID
+        socialClass => socialClass.worldID === this.selectedWorldID
       );
     },
 
@@ -165,9 +146,9 @@ export default {
     selectedProductionChains: function() {
       const productionChains = Object.values(this.productionChains);
       return productionChains.filter(
-          (chain) => chain.socialClassID === this.selectedSocialClassID
+        chain => chain.socialClassID === this.selectedSocialClassID
       );
-    },
+    }
   },
   methods: {
     /**
@@ -180,12 +161,12 @@ export default {
       this.selectedWorldID = selectedWorld.id;
 
       const selectedSocialClass = this.getSocialClassByID(
-          selectedWorld.startingSocialClassID
+        selectedWorld.startingSocialClassID
       );
       this.selectedSocialClassID = selectedSocialClass.id;
 
       this.resetProductionChain(selectedSocialClass.id);
-      EventBus.$emit('bottomNavBarChanged');
+      EventBus.$emit("bottomNavBarChanged");
     },
 
     /**
@@ -204,7 +185,7 @@ export default {
      * This updates when this.selectedProductionChainID updates
      */
     setProductionChain(productionChain) {
-      this.$store.commit('changeProductionChain', productionChain);
+      this.$store.commit("changeProductionChain", productionChain);
     },
 
     /**
@@ -214,7 +195,7 @@ export default {
      */
     getWorldByID(id) {
       const worlds = Object.values(this.worlds);
-      const selectedWorld = worlds.filter((world) => world.id === id)[0];
+      const selectedWorld = worlds.filter(world => world.id === id)[0];
       return selectedWorld;
     },
 
@@ -227,22 +208,11 @@ export default {
     getSocialClassByID(id) {
       const socialClasses = Object.values(this.socialClasses);
       const selectedSocialClass = socialClasses.filter(
-          (socialClass) => socialClass.id === id
+        socialClass => socialClass.id === id
       )[0];
       return selectedSocialClass;
-    },
-    /**
-     * Workaround to load images dynamically in for-loop.
-     *
-     * @param {string} image The image to load.
-     * @param {string} folder The folder that contains the image
-     *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
-     * @return {string} The URL of the image (e.g. for use as img src).
-     */
-    getImage(image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : '';
-    },
-  },
+    }
+  }
 };
 </script>
 
