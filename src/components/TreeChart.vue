@@ -14,7 +14,7 @@
             >
               <div
                 v-tooltip="{
-              content: 'asdf',
+              content: getBuildingInfo(treeData),
               placement: 'right',
               classes: ['infa'],
               offset: 50,
@@ -96,6 +96,19 @@ export default {
     toggleExtend: function(treeData) {
       treeData.extend = !treeData.extend;
       this.$forceUpdate();
+    },
+
+    getBuildingInfo(nodeData) {
+      let building = this.getBuildingByName(nodeData.name);
+
+      // build string
+      let headline = "Building: " + building.building;
+      let product = "Product: " + building.product;
+      let prodTime = "Production Time: " + building.productionTime;
+
+      let buildingInfo = headline + "<br/>" + product + "<br/>" + prodTime;
+
+      return buildingInfo;
     },
 
     getBuildingImage(name) {
@@ -283,7 +296,7 @@ td {
   margin-left: 0;
 }
 
-.tooltip .infa {
+.infa {
   background: #424242;
   color: white;
   padding: 24px;
