@@ -6,20 +6,20 @@
       </v-flex>
       <!-- Resident Demands -->
       <resident-demand-calculator></resident-demand-calculator>
-      <bottom-nav-bar></bottom-nav-bar>
+      <bottom-population-input></bottom-population-input>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar';
+import BottomPopulationInput from './resident_demands/BottomPopulationInput';
 import ResidentDemandCalculator from './resident_demands/ResidentDemandCalculator';
 
 export default {
   name: 'ResidentDemands',
   components: {
-    'bottom-nav-bar': BottomNavBar,
     'resident-demand-calculator': ResidentDemandCalculator,
+    'bottom-population-input': BottomPopulationInput,
   },
 };
 </script>

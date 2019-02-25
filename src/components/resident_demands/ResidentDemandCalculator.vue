@@ -52,137 +52,7 @@
     </v-layout>
 
 
-    <p>&nbsp;</p>
-
-
-    <v-layout justify-center row wrap>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/farmers.webp"
-              alt="Farmers"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numFarmers"
-            label="Farmers"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/workers.webp"
-              alt="Workers"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numWorkers"
-            label="Workers"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/artisans.webp"
-              alt="Artisans"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numArtisans"
-            label="Artisans"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/engineers.webp"
-              alt="Engineers"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numEngineers"
-            label="Engineers"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/investors.webp"
-              alt="Investors"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numInvestors"
-            label="Investors"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/jornaleros.webp"
-              alt="Jornaleros"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numJornaleros"
-            label="Jornaleros"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-      <v-flex lg1 md2 sm2>
-        <v-card height="105">
-          <v-avatar>
-            <img
-              src="../../assets/population/obreros.webp"
-              alt="Obreros"
-            >
-          </v-avatar>
-          <v-text-field
-            v-model="numObreros"
-            label="Obreros"
-            type="number"
-            box
-          ></v-text-field>
-        </v-card>
-      </v-flex>
-    </v-layout>
-
-    <p>
-      numFarmers: {{ numFarmers }} - {{ farmersDemands }}; <br>
-      numWorkers: {{ numWorkers }} - {{ workersDemands }}; <br>
-      numArtisans: {{ numArtisans }} - {{ artisansDemands }}; <br>
-      numEngineers: {{ numEngineers }} - {{ engineersDemands }}; <br>
-      numInvestors: {{ numInvestors }} - {{ investorsDemands }}; <br>
-      numJornaleros: {{ numJornaleros }} - {{ jornalerosDemands }}; <br>
-      numObreros: {{ numObreros }} - {{ obrerosDemands }}; <br>
-    </p>
-
-    <p>
-      TOTAL: {{ totalDemands }}; <br>
-    </p>
+    <v-spacer></v-spacer>
 
   </v-container>
 </template>
@@ -199,17 +69,34 @@ export default {
       producers: Producers.Producers,
       nonProducers: NonProducers.buildings,
       consumption: Consumption,
-
-      numFarmers: 0,
-      numWorkers: 0,
-      numArtisans: 0,
-      numEngineers: 0,
-      numInvestors: 0,
-      numJornaleros: 0,
-      numObreros: 0,
     };
   },
   computed: {
+    // Computed properties for Vuex values
+    numFarmers: function() {
+      return this.$store.state.population.numFarmers;
+    },
+    numWorkers: function() {
+      return this.$store.state.population.numWorkers;
+    },
+    numArtisans: function() {
+      return this.$store.state.population.numArtisans;
+    },
+    numEngineers: function() {
+      return this.$store.state.population.numEngineers;
+    },
+    numInvestors: function() {
+      return this.$store.state.population.numInvestors;
+    },
+    numJornaleros: function() {
+      return this.$store.state.population.numJornaleros;
+    },
+    numObreros: function() {
+      return this.$store.state.population.numObreros;
+    },
+
+
+    // Compute population demands
     farmersDemands: function() {
       const farmersDemands = this.consumption.Consumption.farmers;
       return {
@@ -271,15 +158,13 @@ export default {
         obreros: this.obrerosDemands,
       };
 
-      // TODO Merge (reduce and sum up) the demands together
       const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
       for (const [popKey, population] of Object.entries(demands)) {
+        // Iterate over basic / luxury
         for (const [dtKey, demandType] of Object.entries(population)) {
           // Iterate over all demands of the current population
           for (const [dKey, demand] of Object.entries(demandType)) {
-            console.log();
-
             // Init demand with 0 if it does not exist in total demands
             if (!totalDemands[dtKey][dKey]) {
               totalDemands[dtKey][dKey] = 0;
