@@ -11,6 +11,7 @@
         </v-avatar>
         <v-text-field
           v-model="numFarmers"
+          @input="setNumFarmers()"
           label="Farmers"
           type="number"
           box
@@ -27,6 +28,7 @@
         </v-avatar>
         <v-text-field
           v-model="numWorkers"
+          @input="setNumWorkers()"
           label="Workers"
           type="number"
           box
@@ -43,6 +45,7 @@
         </v-avatar>
         <v-text-field
           v-model="numArtisans"
+          @input="setNumArtisans()"
           label="Artisans"
           type="number"
           box
@@ -59,6 +62,7 @@
         </v-avatar>
         <v-text-field
           v-model="numEngineers"
+          @input="setNumEngineers()"
           label="Engineers"
           type="number"
           box
@@ -75,6 +79,7 @@
         </v-avatar>
         <v-text-field
           v-model="numInvestors"
+          @input="setNumInvestors()"
           label="Investors"
           type="number"
           box
@@ -91,6 +96,7 @@
         </v-avatar>
         <v-text-field
           v-model="numJornaleros"
+          @input="setNumJornaleros()"
           label="Jornaleros"
           type="number"
           box
@@ -107,6 +113,7 @@
         </v-avatar>
         <v-text-field
           v-model="numObreros"
+          @input="setNumObreros()"
           label="Obreros"
           type="number"
           box
@@ -118,6 +125,8 @@
 </template>
 
 <script>
+import { EventBus } from '../../EventBus.js';
+
 export default {
   name: 'BottomPopulationInput',
   data: function() {
@@ -130,6 +139,38 @@ export default {
       numJornaleros: 0,
       numObreros: 0,
     };
+  },
+  methods: {
+    setNumFarmers: function() {
+      this.$store.commit('setNumFarmers', this.numFarmers);
+      EventBus.$emit('numFarmersChanged');
+
+      console.log('numFarmers: ', this.numFarmers, ' - numFarmers (Vuex): ', this.$store.state.population.numFarmers);
+    },
+    setNumWorkers: function() {
+      this.$store.commit('setNumWorkers', this.numWorkers);
+      EventBus.$emit('numWorkersChanged');
+    },
+    setNumArtisans: function() {
+      this.$store.commit('setNumArtisans', this.numArtisans);
+      EventBus.$emit('numArtisansChanged');
+    },
+    setNumEngineers: function() {
+      this.$store.commit('setNumEngineers', this.numEngineers);
+      EventBus.$emit('numEngineersChanged');
+    },
+    setNumInvestors: function() {
+      this.$store.commit('setNumInvestors', this.numInvestors);
+      EventBus.$emit('numInvestorsChanged');
+    },
+    setNumJornaleros: function() {
+      this.$store.commit('setNumJornaleros', this.numJornaleros);
+      EventBus.$emit('numJornalerosChanged');
+    },
+    setNumObreros: function() {
+      this.$store.commit('setNumObreros', this.numObreros);
+      EventBus.$emit('numObrerosChanged');
+    },
   },
 };
 </script>

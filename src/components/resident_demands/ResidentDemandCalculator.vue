@@ -72,6 +72,30 @@ export default {
     };
   },
   computed: {
+    // Computed properties for Vuex values
+    numFarmers: function() {
+      return this.$store.state.population.numFarmers;
+    },
+    numWorkers: function() {
+      return this.$store.state.population.numWorkers;
+    },
+    numArtisans: function() {
+      return this.$store.state.population.numArtisans;
+    },
+    numEngineers: function() {
+      return this.$store.state.population.numEngineers;
+    },
+    numInvestors: function() {
+      return this.$store.state.population.numInvestors;
+    },
+    numJornaleros: function() {
+      return this.$store.state.population.numJornaleros;
+    },
+    numObreros: function() {
+      return this.$store.state.population.numObreros;
+    },
+
+    // Compute population demands
     farmersDemands: function() {
       const farmersDemands = this.consumption.Consumption.farmers;
       return {
@@ -136,13 +160,10 @@ export default {
       const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
       for (const [popKey, population] of Object.entries(demands)) {
-
         // Iterate over basic / luxury
         for (const [dtKey, demandType] of Object.entries(population)) {
-
           // Iterate over all demands of the current population
           for (const [dKey, demand] of Object.entries(demandType)) {
-
             // Init demand with 0 if it does not exist in total demands
             if (!totalDemands[dtKey][dKey]) {
               totalDemands[dtKey][dKey] = 0;
