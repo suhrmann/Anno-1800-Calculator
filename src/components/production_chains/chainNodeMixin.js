@@ -35,14 +35,14 @@ export const chainNodeMixin = {
         console.log('Chain: ' + productionChain.chain);
       }
 
-
       // if the root element is already a leaf, execute callback function and return depth 1
       // if not, recursively iterate through the tree
+
       if (this.isLeaf(root)) {
         // needs to be incremented and set to ensure that the correct data is given when the root function is exevuted
-        if (rootCallbackFunction) rootCallbackFunction(root, this.currentPosition);
+        if (rootCallbackFunction) rootCallbackFunction(root);
       } else {
-        this.iterateTreeElements(root, elementCallbackFunction, debugOutput);
+        this.iterateTreeElements(root, rootCallbackFunction, elementCallbackFunction, debugOutput);
       }
 
       // determine the highest number in chainDepthArray, which is the tree height
@@ -79,13 +79,10 @@ export const chainNodeMixin = {
         console.log('');
         console.log('Element: "' + element.name + '", Leaf: ' + this.isLeaf(element));
       }
-
-
       if (!this.isLeaf(element)) {
         // if element is root or node
         this.chainDepthCounter++;
         this.chainDepthArray.push(this.chainDepthCounter);
-
 
         if (this.chainDepthCounter === 1) {
           if (rootCallbackFunction) rootCallbackFunction(element);
@@ -98,12 +95,11 @@ export const chainNodeMixin = {
         }
 
         // recursively iterate switch(this.chainDepthCounter)e on precursors
-        for (const childs in element.children) {
-          if (childs) {
-            const child = element.children[childs];
+        element.children.forEach((child) => {
+          if (child) {
             this.iterateTreeElements(child, rootCallbackFunction, elementCallbackFunction, debugOutput);
           }
-        }
+        });
       } else {
         // if element is a leaf
         this.chainDepthCounter++;
@@ -130,7 +126,7 @@ export const chainNodeMixin = {
      * @return {boolean} true if this node has no next nodes.
      */
     isLeaf(element) {
-      if (Object.keys(element.precursorBuildings).length === 0) {
+      if (element.children === null) {
         return true;
       } else {
         return false;

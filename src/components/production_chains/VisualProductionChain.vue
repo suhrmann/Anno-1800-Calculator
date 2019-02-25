@@ -12,34 +12,48 @@
 </template>
 
 <script>
-import { chainNodeMixin } from './chainNodeMixin.js';
-import { EventBus } from '../../EventBus.js';
-import TreeChart from '../TreeChart';
+import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { EventBus } from "../../EventBus.js";
+import TreeChart from "../TreeChart";
 
 export default {
   components: {
-    TreeChart,
+    TreeChart
   },
   data() {
     return {
-      treeData: {},
+      treeData: {}
     };
   },
 
   created() {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    EventBus.$on('bottomNavBarChanged', () => {
+    EventBus.$on("bottomNavBarChanged", () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
+
+      let helperFunctionMixin = this;
+      let productionTimes = helperFunctionMixin.getProductionTimes(
+        this.productionChain
+      );
+      let shortestProductionTime = helperFunctionMixin.getShortestprodTime(
+        productionTimes
+      );
+      let lcm = helperFunctionMixin.getLCM(productionTimes);
+      // console.log(productionTimes);
+      // console.log("lcm: " + lcm);
+      // console.log("shortest: " + shortestProductionTime);
+      EventBus.$emit("setLCMforChain", lcm, shortestProductionTime);
     });
   },
 
-  mixins: [chainNodeMixin],
+  mixins: [chainNodeMixin, helperFunctionMixin],
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
-    },
+    }
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
