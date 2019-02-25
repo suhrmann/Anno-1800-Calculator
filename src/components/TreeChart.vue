@@ -15,9 +15,10 @@
               <div
                 v-tooltip="{
               content: getBuildingInfo(treeData),
+              boundariesElement: 'window',
               placement: 'right',
               classes: ['infa'],
-              offset: 50,
+              offset: 1000,
               delay: {
                 show: 50,
                 hide: 50,
@@ -28,7 +29,7 @@
                 <img :src="getBuildingImage(treeData.name)" :alt="treeData.name">
               </div>
               <div class="name">{{treeData.name}}</div>
-              <div class="name">{{ test }}</div>
+              <div class="name">{{ numberOfBuildingsRelation }}</div>
             </div>
             <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
               <div class="avat">
@@ -77,13 +78,9 @@ export default {
   },
 
   computed: {
-    test() {
+    numberOfBuildingsRelation() {
       let building = this.getBuildingByName(this.treeData.name);
-      return (
-        (building.productionTime / this.lcm) *
-        (this.lcm / this.spt) *
-        this.counter
-      );
+      return (building.productionTime / this.spt) * this.counter;
     }
   },
 
@@ -152,7 +149,7 @@ table {
 td {
   position: relative;
   vertical-align: top;
-  padding: 0 0 50px 0;
+  padding: 0 0 20px 0;
   text-align: center;
 }
 .extend_handle {

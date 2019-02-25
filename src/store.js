@@ -16,6 +16,7 @@ export default new Vuex.Store({
       numJornaleros: 0,
       numObreros: 0,
     },
+    consumptionPerMinute: '(plz implement me!)',
   },
   mutations: {
     changeProductionChain(state, newChain) {
@@ -23,25 +24,25 @@ export default new Vuex.Store({
     },
 
 
-    setNumFarmers: function(state, numFarmers) {
+    setNumFarmers: function (state, numFarmers) {
       state.population.numFarmers = numFarmers;
     },
-    setNumWorkers: function(state, numWorkers) {
+    setNumWorkers: function (state, numWorkers) {
       state.population.numWorkers = numWorkers;
     },
-    setNumArtisans: function(state, numArtisans) {
+    setNumArtisans: function (state, numArtisans) {
       state.population.numArtisans = numArtisans;
     },
-    setNumEngineers: function(state, numEngineers) {
+    setNumEngineers: function (state, numEngineers) {
       state.population.numEngineers = numEngineers;
     },
-    setNumInvestors: function(state, numInvestors) {
+    setNumInvestors: function (state, numInvestors) {
       state.population.numInvestors = numInvestors;
     },
-    setNumJornaleros: function(state, numJornaleros) {
+    setNumJornaleros: function (state, numJornaleros) {
       state.population.numJornaleros = numJornaleros;
     },
-    setNumObreros: function(state, numObreros) {
+    setNumObreros: function (state, numObreros) {
       state.population.numObreros = numObreros;
     },
   },

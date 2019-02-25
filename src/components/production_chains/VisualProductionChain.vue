@@ -23,7 +23,10 @@
       </v-flex>
       <v-flex
         xs12
-      >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute (times final Building - To Implement!)</v-flex>
+      >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
+      <v-flex
+        xs12
+      >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -75,13 +78,16 @@ export default {
       return this.$store.state.selectedProductionChain;
     },
 
-    // TO DO: get number of final building and multiply with output!
+    consumptionPerMinute() {
+      return this.$store.state.consumptionPerMinute;
+    },
+
     outputPerMinute() {
       let helperFunctionMixin = this;
       let rootBuilding = helperFunctionMixin.getBuildingByName(
         this.productionChain.name
       );
-      let output = (60 / rootBuilding.productionTime) * this.counter;
+      let output = (60 * this.counter) / this.spt;
 
       if (output % 1 === 0) {
         return output;
