@@ -14,12 +14,16 @@
           type="number"
         ></v-text-field>
       </v-flex>
-      <v-flex xs11>
+      <v-flex xs9>
         <v-slider @input="changeCounter()" max="25" min="1" v-model="counter"></v-slider>
       </v-flex>
+
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
+      <v-flex
+        xs12
+      >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute (times final Building - To Implement!)</v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -37,7 +41,9 @@ export default {
   data() {
     return {
       treeData: {},
-      counter: 1
+      counter: 1,
+      lcm: 0,
+      spt: 0
     };
   },
 
@@ -57,6 +63,8 @@ export default {
       // console.log(productionTimes);
       // console.log("lcm: " + lcm);
       // console.log("shortest: " + shortestProductionTime);
+      this.lcm = lcm;
+      this.spt = shortestProductionTime;
       EventBus.$emit("setLCMforChain", lcm, shortestProductionTime);
     });
   },
@@ -65,8 +73,24 @@ export default {
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
+    },
+
+    // TO DO: get number of final building and multiply with output!
+    outputPerMinute() {
+      let helperFunctionMixin = this;
+      let rootBuilding = helperFunctionMixin.getBuildingByName(
+        this.productionChain.name
+      );
+      let output = (60 / rootBuilding.productionTime) * this.counter;
+
+      if (output % 1 === 0) {
+        return output;
+      } else {
+        return output.toFixed(2);
+      }
     }
   },
+
   methods: {
     changeCounter() {
       EventBus.$emit("changeSlider", this.counter);
