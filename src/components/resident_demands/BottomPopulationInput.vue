@@ -125,8 +125,6 @@
 </template>
 
 <script>
-import { EventBus } from '../../EventBus.js';
-
 export default {
   name: 'BottomPopulationInput',
   data: function() {
@@ -143,34 +141,36 @@ export default {
   methods: {
     setNumFarmers: function() {
       this.$store.commit('setNumFarmers', this.numFarmers);
-      EventBus.$emit('numFarmersChanged');
 
       console.log('numFarmers: ', this.numFarmers, ' - numFarmers (Vuex): ', this.$store.state.population.numFarmers);
     },
     setNumWorkers: function() {
       this.$store.commit('setNumWorkers', this.numWorkers);
-      EventBus.$emit('numWorkersChanged');
     },
     setNumArtisans: function() {
       this.$store.commit('setNumArtisans', this.numArtisans);
-      EventBus.$emit('numArtisansChanged');
     },
     setNumEngineers: function() {
       this.$store.commit('setNumEngineers', this.numEngineers);
-      EventBus.$emit('numEngineersChanged');
     },
     setNumInvestors: function() {
       this.$store.commit('setNumInvestors', this.numInvestors);
-      EventBus.$emit('numInvestorsChanged');
     },
     setNumJornaleros: function() {
       this.$store.commit('setNumJornaleros', this.numJornaleros);
-      EventBus.$emit('numJornalerosChanged');
     },
     setNumObreros: function() {
       this.$store.commit('setNumObreros', this.numObreros);
-      EventBus.$emit('numObrerosChanged');
     },
+  },
+
+  created() {
+    this.numFarmers = this.$store.state.population.numFarmers;
+    this.numWorkers = this.$store.state.population.numWorkers;
+    this.numEngineers = this.$store.state.population.numEngineers;
+    this.numInvestors = this.$store.state.population.numInvestors;
+    this.numJornaleros = this.$store.state.population.numJornaleros;
+    this.numObreros = this.$store.state.population.numObreros;
   },
 };
 </script>

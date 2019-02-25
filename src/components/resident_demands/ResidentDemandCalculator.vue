@@ -95,6 +95,7 @@ export default {
       return this.$store.state.population.numObreros;
     },
 
+
     // Compute population demands
     farmersDemands: function() {
       const farmersDemands = this.consumption.Consumption.farmers;
