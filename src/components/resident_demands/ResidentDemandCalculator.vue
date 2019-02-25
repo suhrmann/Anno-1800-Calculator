@@ -18,7 +18,7 @@
           </v-avatar>
 
           <v-card-text>
-            <span class="text-md-center"><b>{{ product }}:</b> {{ usage }}</span>
+            <span class="text-md-center"><b>{{ product }}:</b> {{ formatUsage(usage) }}</span>
           </v-card-text>
 
         </v-card>
@@ -44,7 +44,7 @@
           </v-avatar>
 
           <v-card-text>
-            <span class="text-md-center"><b>{{ product }}:</b> {{ usage }}</span>
+            <span class="text-md-center"><b>{{ product }}:</b> {{ formatUsage(usage) }}</span>
           </v-card-text>
 
         </v-card>
@@ -217,6 +217,16 @@ export default {
         }
       }
       return demands;
+    },
+
+    /**
+     * Format the float usage to pretty output (to avoid linebreaks when bin->dec conversion is not accurate).
+     *
+     * @param {float} usage The number of usage to format.
+     * @return {string} The pretty formatted usage.
+     */
+    formatUsage: function(usage) {
+      return Math.round(usage * 100000) / 100000;
     },
   },
 };

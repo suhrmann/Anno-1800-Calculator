@@ -57,16 +57,16 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from './helperFunctionMixin.js';
+import { helperFunctionMixin } from "./helperFunctionMixin.js";
 export default {
-  name: 'TreeChart',
-  props: ['json'],
+  name: "TreeChart",
+  props: ["json"],
   mixins: [helperFunctionMixin],
   data() {
     return {
       data: null,
       treeData: {},
-      path: '',
+      path: ""
     };
   },
 
@@ -75,11 +75,11 @@ export default {
   watch: {
     json: {
       handler: function(Props) {
-        const extendKey = function(jsonData) {
+        let extendKey = function(jsonData) {
           jsonData.extend =
             jsonData.extend === void 0 ? true : !!jsonData.extend;
           if (Array.isArray(jsonData.children)) {
-            jsonData.children.forEach((c) => {
+            jsonData.children.forEach(c => {
               extendKey(c);
             });
           }
@@ -89,8 +89,8 @@ export default {
           this.treeData = extendKey(Props);
         }
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   methods: {
     toggleExtend: function(treeData) {
@@ -99,23 +99,23 @@ export default {
     },
 
     getBuildingInfo(nodeData) {
-      const building = this.getBuildingByName(nodeData.name);
+      let building = this.getBuildingByName(nodeData.name);
 
       // build string
-      const headline = 'Building: ' + building.building;
-      const product = 'Product: ' + building.product;
-      const prodTime = 'Production Time: ' + building.productionTime;
+      let headline = "Building: " + building.building;
+      let product = "Product: " + building.product;
+      let prodTime = "Production Time: " + building.productionTime;
 
-      const buildingInfo = headline + '<br/>' + product + '<br/>' + prodTime;
+      let buildingInfo = headline + "<br/>" + product + "<br/>" + prodTime;
 
       return buildingInfo;
     },
 
     getBuildingImage(name) {
-      const building = this.getBuildingByName(name);
-      return this.getImage(building.img, 'buildings');
-    },
-  },
+      let building = this.getBuildingByName(name);
+      return this.getImage(building.img, "buildings");
+    }
+  }
 };
 </script>
 

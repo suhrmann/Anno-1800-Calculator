@@ -57,27 +57,27 @@
 </template>
 
 <script>
-import productionChain from '../data/productionChain.json';
-import nonProducers from '../data/non-producers.json';
-import producers from '../data/producers.json';
+import productionChain from "../data/productionChain.json";
+import nonProducers from "../data/non-producers.json";
+import producers from "../data/producers.json";
 export default {
   data() {
     return {
       selectedTier: 0,
       tiers: [
-        'Farmer',
-        'Worker',
-        'Artisan',
-        'New World',
-        'Engineer',
-        'Investor',
+        "Farmer",
+        "Worker",
+        "Artisan",
+        "New World",
+        "Engineer",
+        "Investor"
       ],
 
       prodChain: productionChain,
       nonproducers: nonProducers,
       producers: producers,
       chainSelection: null,
-      tierObjects: null,
+      tierObjects: null
     };
   },
 
@@ -87,16 +87,16 @@ export default {
      * @return {String[]} An Array containing all Production Chain names
      */
     getChains() {
-      const productionChains = this.fetchAllProductionChains();
-      const tieredChains = this.getProductionChainsByTier(
-          productionChains,
-          this.selectedTier + 1
+      let productionChains = this.fetchAllProductionChains();
+      let tieredChains = this.getProductionChainsByTier(
+        productionChains,
+        this.selectedTier + 1
       );
-      const productionChainsArray = this.getChainsEndProducts(tieredChains);
+      let productionChainsArray = this.getChainsEndProducts(tieredChains);
       this.tierObjects = tieredChains;
 
       return productionChainsArray;
-    },
+    }
   },
 
   methods: {
@@ -119,8 +119,8 @@ export default {
      * @return {Object} A JS Object with all production chain objects init
      */
     getProductionChainsByTier(allProductionChains, tier) {
-      const tieredChains = [];
-      Object.keys(allProductionChains).forEach((chain) => {
+      let tieredChains = [];
+      Object.keys(allProductionChains).forEach(chain => {
         if (allProductionChains[chain].tier == tier) {
           tieredChains.push(allProductionChains[chain]);
         }
@@ -134,8 +134,8 @@ export default {
      * @return {Array} An Array with all the Products' names of the given Production Chains
      */
     getChainsEndProducts(chainsCollection) {
-      const endProductsArray = [];
-      Object.keys(chainsCollection).forEach((chain) => {
+      let endProductsArray = [];
+      Object.keys(chainsCollection).forEach(chain => {
         endProductsArray.push(chainsCollection[chain].finalProduct);
       });
 
@@ -147,9 +147,9 @@ export default {
      * @todo DOC
      */
     getCertainChain(chainsCollection, chainName) {
-      const test = [];
+      let test = [];
       console.log(chainsCollection);
-      Object.keys(chainsCollection).forEach((chain) => {
+      Object.keys(chainsCollection).forEach(chain => {
         if (chainsCollection[chain].finalProduct == chainName) {
           test.push(chainsCollection[chain]);
           console.log(test[0]);
@@ -171,13 +171,13 @@ export default {
       } else {
         chains = chainsCollection;
       }
-      const chain = this.getCertainChain(chains, chainName);
+      let chain = this.getCertainChain(chains, chainName);
       console.log(chain);
       return chain;
     },
 
-    getChainWidth(chain) {},
-  },
+    getChainWidth(chain) {}
+  }
 };
 </script>
 

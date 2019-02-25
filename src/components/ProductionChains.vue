@@ -8,15 +8,15 @@
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar.vue';
-import VisualProductionChain from './production_chains/VisualProductionChain.vue';
+import BottomNavBar from "./BottomNavBar.vue";
+import VisualProductionChain from "./production_chains/VisualProductionChain.vue";
 
 export default {
-  name: 'ProductionChains',
+  name: "ProductionChains",
   components: {
-    'bottom-nav-bar': BottomNavBar,
-    'visual-production-chain': VisualProductionChain,
-  },
+    "bottom-nav-bar": BottomNavBar,
+    "visual-production-chain": VisualProductionChain
+  }
 };
 </script>
 
