@@ -133,17 +133,15 @@ export default {
         obreros: this.obrerosDemands,
       };
 
-      // TODO Merge (reduce and sum up) the demands together
       const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
       for (const [popKey, population] of Object.entries(demands)) {
 
+        // Iterate over basic / luxury
         for (const [dtKey, demandType] of Object.entries(population)) {
 
           // Iterate over all demands of the current population
           for (const [dKey, demand] of Object.entries(demandType)) {
-
-            console.log();
 
             // Init demand with 0 if it does not exist in total demands
             if (!totalDemands[dtKey][dKey]) {
