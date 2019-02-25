@@ -12,23 +12,23 @@
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { EventBus } from '../../EventBus.js';
+import TreeChart from '../TreeChart';
 
 export default {
   components: {
-    TreeChart
+    TreeChart,
   },
   data() {
     return {
-      treeData: {}
+      treeData: {},
     };
   },
 
   created() {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
     });
   },
@@ -37,9 +37,9 @@ export default {
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
-    }
+    },
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
