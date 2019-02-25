@@ -28,7 +28,7 @@
                 <img :src="getBuildingImage(treeData.name)" :alt="treeData.name">
               </div>
               <div class="name">{{treeData.name}}</div>
-              <div class="name">{{test}}</div>
+              <div class="name">{{ test }}</div>
             </div>
             <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
               <div class="avat">
@@ -71,14 +71,19 @@ export default {
       treeData: {},
       path: "",
       lcm: 0, // least common multiplier
-      spt: 0 // shortest production time in chain
+      spt: 0, // shortest production time in chain
+      counter: 1
     };
   },
 
   computed: {
     test() {
       let building = this.getBuildingByName(this.treeData.name);
-      return (1 / (this.lcm / building.productionTime)) * (this.lcm / this.spt);
+      return (
+        (building.productionTime / this.lcm) *
+        (this.lcm / this.spt) *
+        this.counter
+      );
     }
   },
 
@@ -86,6 +91,9 @@ export default {
     EventBus.$on("setLCMforChain", (lcm, spt) => {
       this.lcm = lcm;
       this.spt = spt;
+    });
+    EventBus.$on("changeSlider", value => {
+      this.counter = value;
     });
   },
 

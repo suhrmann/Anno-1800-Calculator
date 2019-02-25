@@ -4,6 +4,19 @@
       <v-flex xs12 mb-5>
         <h2 color="primary">Selected Chain: {{productionChain.finalProduct}}</h2>
       </v-flex>
+      <v-flex xs1 shrink style="width: 60px">
+        <v-text-field
+          @change="changeCounter()"
+          v-model="counter"
+          class="mt-0"
+          hide-details
+          single-line
+          type="number"
+        ></v-text-field>
+      </v-flex>
+      <v-flex xs11>
+        <v-slider @input="changeCounter()" max="25" min="1" v-model="counter"></v-slider>
+      </v-flex>
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
@@ -23,7 +36,8 @@ export default {
   },
   data() {
     return {
-      treeData: {}
+      treeData: {},
+      counter: 1
     };
   },
 
@@ -53,7 +67,11 @@ export default {
       return this.$store.state.selectedProductionChain;
     }
   },
-  methods: {}
+  methods: {
+    changeCounter() {
+      EventBus.$emit("changeSlider", this.counter);
+    }
+  }
 };
 </script>
 
