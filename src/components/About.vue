@@ -1,55 +1,140 @@
 <template>
   <v-container>
+
+    <!-- Thank you -->
     <v-alert
       :value="true"
-      type="secondary"
+      color="secondary"
       class="text-sm-center"
     >
-      <p>
-        <strong> <span class="title">THANK YOU</span> Anno 1800 Wiki(s)!</strong>
-      </p>
-      If you want to improve this App contribute to the Wiki!
-      This App is uses on the content, information and images of the Wiki.
+      <h1>THANK YOU Anno 1800 Wiki!</h1>
+      This App is based on the content, information and images provided by volunteers to the Anno 1800 Wiki.
+      If you want to improve this App contribute to the
+      <a href="https://anno1800.fandom.com/wiki/Anno_1800_Wiki" target="_blank">Anno 1800 Wiki</a>!
     </v-alert>
 
     <p>&nbsp;</p>
 
-    <h1>Author</h1>
+    <!-- Buy Anno 1800 card -->
+    <v-flex xs12 sm8 offset-sm2 lg6 offset-lg3>
+      <v-card>
+        <a href="https://www.ubisoft.com/en-gb/game/anno-1800/" target="_blank" >
+          <v-img
+            :src="require('../assets/backgrounds/anno1800wallpaper@0,1x.jpg')"
+            position="top center"
+            aspect-ratio="3"
+          ></v-img>
+        </a>
+
+        <v-card-title primary-title>
+          <div>
+            <h3 class="headline mb-0">Buy Anno 1800!</h3>
+            <div>
+              If you haven't already, buy Anno 1800 - it's awesome!
+              <span class="grey--text">These are <span class="">no</span> affiliate links</span>
+            </div>
+          </div>
+        </v-card-title>
+
+
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            large
+            block
+            href="https://store.ubi.com/en/anno-1800/5b647010ef3aa548048c5958.html"
+            target="_blank"
+          >
+            <v-icon>shopping_cart</v-icon> &nbsp;
+            Buy Anno 1800 (Uplay)
+          </v-btn>
+          <v-btn
+            color="primary"
+            large
+            block
+            href="https://store.steampowered.com/app/916440/Anno_1800/"
+            target="_blank"
+          >
+            <v-icon>shopping_cart</v-icon> &nbsp;
+            Buy Anno 1800 (Steam)
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-flex>
+
+    <p>&nbsp;</p>
+
+    <!-- Legal / Ubisoft stuff -->
+    <v-alert
+      :value="true"
+      type="info"
+      color="secondary"
+      outline
+    >
+      <h2>Legal</h2>
+      <p>
+        All the assets from <strong>Anno 1800</strong> game are &copy; by Ubsioft. <br>
+        These are especially but not exclusively the Anno 1800 logo,
+        all the icons of population, goods, items and ships
+        and the data of production chains and the consumptions values of population.
+      </p>
+    </v-alert>
+
+    <p>&nbsp;</p>
+
+    <!-- About -->
+    <h2>Authors</h2>
     <ul>
-      <li>Simon Uhrmann</li>
-      <li>Tobias Luderer</li>
+      <li>Simon Uhrmann <a href="https://github.com/Vadammt" target="_blank">@Vadammt</a></li>
+      <li>Tobias Luderer <a href="https://github.com/exarkun1298">@exarkun1298</a></li>
     </ul>
 
-    <h3>Sources</h3>
+    <h2>Information</h2>
     <ul>
       <li>
-        The English Anno 1800 Wiki <br>
-        <a href="http://de.anno1800.wikia.com/wiki/Anno_1800_Wiki">Anno 1800 Wiki [en]</a>
+        <strong>English Anno 1800 Wiki</strong>:
+        <a href="http://de.anno1800.wikia.com/wiki/Anno_1800_Wiki" target="_blank">Anno 1800 Wiki [en]</a>
+      </li>
+      <li>
+        German Anno 1800 Wiki:
+        <a href="http://anno1800.wikia.com/wiki/Anno_1800_Wiki" target="_blank">Anno 1800 Wiki [de]</a>
       </li>
     </ul>
 
-    The German Anno 1800 Wiki
-    <a href="http://anno1800.wikia.com/wiki/Anno_1800_Wiki">Anno 1800 Wiki [de]</a>
-
-    <h3>Images</h3>
+    <h2>Images and Icons</h2>
     <ul>
       <li>
-        ALL Icons (buildings, population, items, etc.): <br>
-        <a href="http://anno1800.wikia.com/wiki/Anno_1800_Wiki">Anno 1800 Wiki [en]</a>
+        ALL Icons (buildings, population, items, etc.) &copy; Ubisoft <br>
+        (Crawled form <a href="http://anno1800.wikia.com/wiki/Anno_1800_Wiki" target="_blank">Anno 1800 Wiki [en]</a> )
       </li>
       <li>
-        Background Images: <br>
-        <a href="https://store.ubi.com/de/anno-1800/5b647010ef3aa548048c5958.html">Anno 1800 in the Ubisoft Store</a>
+        Wallpapers:
+        <a href="https://www.ubisoft.com/en-gb/game/anno-1800/" target="_blank">Official Anno 1800 page</a> and
+        <a href="https://store.ubi.com/de/anno-1800/5b647010ef3aa548048c5958.html" target="_blank">Anno 1800 in the Ubisoft Store</a>
       </li>
     </ul>
 
-    <h3>Design</h3>
+    <h2>Design</h2>
     <ul>
       <li>
-        Color scheme (based on): <br>
-        <a href="https://www.ubisoft.com/en-gb/game/anno-1800/">The official Anno 1800 page</a>
+        Color scheme (based on): <a href="https://www.ubisoft.com/en-gb/game/anno-1800/">The official Anno 1800 page</a>
       </li>
     </ul>
+
+    <p>&nbsp;</p>
+
+    <v-alert
+      :value="true"
+      color="secondary"
+      type="error"
+      outline
+    >
+      <h3>Bugs and improvements</h3>
+      If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
+      <a href="https://github.com/Vadammt/Anno-1800-Calculator/issues" target="_blank">Issue on Github</a>
+    </v-alert>
+
+
 
   </v-container>
 </template>
