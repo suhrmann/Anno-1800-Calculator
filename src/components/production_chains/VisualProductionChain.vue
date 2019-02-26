@@ -32,43 +32,43 @@
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { EventBus } from '../../EventBus.js';
+import TreeChart from '../TreeChart';
 
 export default {
   components: {
-    TreeChart
+    TreeChart,
   },
   data() {
     return {
       treeData: {},
       counter: 1,
       lcm: 0,
-      spt: 0
+      spt: 0,
     };
   },
 
   created() {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
 
-      let helperFunctionMixin = this;
-      let productionTimes = helperFunctionMixin.getProductionTimes(
-        this.productionChain
+      const helperFunctionMixin = this;
+      const productionTimes = helperFunctionMixin.getProductionTimes(
+          this.productionChain
       );
-      let shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-        productionTimes
+      const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
+          productionTimes
       );
-      let lcm = helperFunctionMixin.getLCM(productionTimes);
+      const lcm = helperFunctionMixin.getLCM(productionTimes);
       // console.log(productionTimes);
       // console.log("lcm: " + lcm);
       // console.log("shortest: " + shortestProductionTime);
       this.lcm = lcm;
       this.spt = shortestProductionTime;
-      EventBus.$emit("setLCMforChain", lcm, shortestProductionTime);
+      EventBus.$emit('setLCMforChain', lcm, shortestProductionTime);
     });
   },
 
@@ -78,30 +78,30 @@ export default {
       return this.$store.state.selectedProductionChain;
     },
 
-    consumptionPerMinute() {
-      return this.$store.state.consumptionPerMinute;
+    consumption() {
+      return this.$store.state.consumption;
     },
 
     outputPerMinute() {
-      let helperFunctionMixin = this;
-      let rootBuilding = helperFunctionMixin.getBuildingByName(
-        this.productionChain.name
+      const helperFunctionMixin = this;
+      const rootBuilding = helperFunctionMixin.getBuildingByName(
+          this.productionChain.name
       );
-      let output = (60 * this.counter) / this.spt;
+      const output = (60 * this.counter) / this.spt;
 
       if (output % 1 === 0) {
         return output;
       } else {
         return output.toFixed(2);
       }
-    }
+    },
   },
 
   methods: {
     changeCounter() {
-      EventBus.$emit("changeSlider", this.counter);
-    }
-  }
+      EventBus.$emit('changeSlider', this.counter);
+    },
+  },
 };
 </script>
 

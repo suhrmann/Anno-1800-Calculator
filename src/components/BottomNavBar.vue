@@ -180,18 +180,20 @@ export default {
     },
 
     /**
-     * @param {Object} productionChain
      * Changes the VueX State so every Component can access the current productionChain
      * This updates when this.selectedProductionChainID updates
+     *
+     * @param {Object} productionChain
      */
     setProductionChain(productionChain) {
       this.$store.commit('changeProductionChain', productionChain);
     },
 
     /**
+     * Searches all worlds by their world id
+     *
      * @param {int} id
      * @return {Object} The selected World Object
-     * Searches all worlds by their world id
      */
     getWorldByID(id) {
       const worlds = Object.values(this.worlds);
@@ -200,10 +202,10 @@ export default {
     },
 
     /**
-     * @param {int} id
-     * @return {Object} The selected Social Class Object
      * Searches all social classes by their social class id
      *
+     * @param {int} id
+     * @return {Object} The selected Social Class Object
      */
     getSocialClassByID(id) {
       const socialClasses = Object.values(this.socialClasses);

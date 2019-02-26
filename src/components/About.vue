@@ -134,8 +134,6 @@
       <a href="https://github.com/Vadammt/Anno-1800-Calculator/issues" target="_blank">Issue on Github</a>
     </v-alert>
 
-
-
   </v-container>
 </template>
 

@@ -59,37 +59,37 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "./helperFunctionMixin.js";
-import { EventBus } from "../EventBus.js";
+import { helperFunctionMixin } from './helperFunctionMixin.js';
+import { EventBus } from '../EventBus.js';
 
 export default {
-  name: "TreeChart",
-  props: ["json"],
+  name: 'TreeChart',
+  props: ['json'],
   mixins: [helperFunctionMixin],
   data() {
     return {
       data: null,
       treeData: {},
-      path: "",
+      path: '',
       lcm: 0, // least common multiplier
       spt: 0, // shortest production time in chain
-      counter: 1
+      counter: 1,
     };
   },
 
   computed: {
     numberOfBuildingsRelation() {
-      let building = this.getBuildingByName(this.treeData.name);
+      const building = this.getBuildingByName(this.treeData.name);
       return (building.productionTime / this.spt) * this.counter;
-    }
+    },
   },
 
   created() {
-    EventBus.$on("setLCMforChain", (lcm, spt) => {
+    EventBus.$on('setLCMforChain', (lcm, spt) => {
       this.lcm = lcm;
       this.spt = spt;
     });
-    EventBus.$on("changeSlider", value => {
+    EventBus.$on('changeSlider', (value) => {
       this.counter = value;
     });
   },
@@ -101,7 +101,7 @@ export default {
           jsonData.extend =
             jsonData.extend === void 0 ? true : !!jsonData.extend;
           if (Array.isArray(jsonData.children)) {
-            jsonData.children.forEach(c => {
+            jsonData.children.forEach((c) => {
               extendKey(c);
             });
           }
@@ -111,8 +111,8 @@ export default {
           this.treeData = extendKey(Props);
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   methods: {
     toggleExtend: function(treeData) {
@@ -124,20 +124,20 @@ export default {
       const building = this.getBuildingByName(nodeData.name);
 
       // build string
-      const headline = "Building: " + building.building;
-      const product = "Product: " + building.product;
-      const prodTime = "Production Time: " + building.productionTime;
+      const headline = 'Building: ' + building.building;
+      const product = 'Product: ' + building.product;
+      const prodTime = 'Production Time: ' + building.productionTime;
 
-      const buildingInfo = headline + "<br/>" + product + "<br/>" + prodTime;
+      const buildingInfo = headline + '<br/>' + product + '<br/>' + prodTime;
 
       return buildingInfo;
     },
 
     getBuildingImage(name) {
       const building = this.getBuildingByName(name);
-      return this.getImage(building.img, "buildings");
-    }
-  }
+      return this.getImage(building.img, 'buildings');
+    },
+  },
 };
 </script>
 

@@ -43,14 +43,14 @@ export const helperFunctionMixin = {
       this.productionTimes = [];
       const chainNodeMixin = this;
       chainNodeMixin.iterateProductionChain(
-        productionChain,
-        (rootElement) => {
-          this.fetchProductionTime(rootElement);
-        },
-        (element) => {
-          this.fetchProductionTime(element);
-        },
-        false);
+          productionChain,
+          (rootElement) => {
+            this.fetchProductionTime(rootElement);
+          },
+          (element) => {
+            this.fetchProductionTime(element);
+          },
+          false);
       return this.productionTimes;
     },
 
