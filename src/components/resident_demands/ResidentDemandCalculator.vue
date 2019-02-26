@@ -6,6 +6,7 @@
       <v-flex
         lg2 md3 sm3
         v-for="(usage, product) in totalDemands.basic"
+        v-bind:key="product"
       >
         <v-card
           v-if="usage > 0"
@@ -32,6 +33,7 @@
       <v-flex
         lg2 md3 sm3
         v-for="(usage, product) in totalDemands.luxury"
+        v-bind:key="product"
       >
         <v-card
           v-if="usage > 0"
@@ -160,7 +162,7 @@ export default {
 
       const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
-      for (const [popKey, population] of Object.entries(demands)) {
+      for (const population of Object.entries(demands)) {
         // Iterate over basic / luxury
         for (const [dtKey, demandType] of Object.entries(population)) {
           // Iterate over all demands of the current population

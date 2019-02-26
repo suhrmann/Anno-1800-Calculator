@@ -4,42 +4,104 @@
       <v-flex xs12 mb-5>
         <h2 color="primary">Selected Chain: {{productionChain.finalProduct}}</h2>
       </v-flex>
+      <v-flex xs1 shrink style="width: 60px">
+        <v-text-field
+          @change="changeCounter()"
+          v-model="counter"
+          class="mt-0"
+          hide-details
+          single-line
+          type="number"
+        ></v-text-field>
+      </v-flex>
+      <v-flex xs9>
+        <v-slider @input="changeCounter()" max="25" min="1" v-model="counter"></v-slider>
+      </v-flex>
+
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
+      <v-flex
+        xs12
+      >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
+      <v-flex
+        xs12
+      >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { EventBus } from '../../EventBus.js';
+import TreeChart from '../TreeChart';
 
 export default {
   components: {
-    TreeChart
+    TreeChart,
   },
   data() {
     return {
-      treeData: {}
+      treeData: {},
+      counter: 1,
+      lcm: 0,
+      spt: 0,
     };
   },
 
   created() {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
+
+      const helperFunctionMixin = this;
+      const productionTimes = helperFunctionMixin.getProductionTimes(
+          this.productionChain
+      );
+      const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
+          productionTimes
+      );
+      const lcm = helperFunctionMixin.getLCM(productionTimes);
+      // console.log(productionTimes);
+      // console.log("lcm: " + lcm);
+      // console.log("shortest: " + shortestProductionTime);
+      this.lcm = lcm;
+      this.spt = shortestProductionTime;
+      EventBus.$emit('setLCMforChain', lcm, shortestProductionTime);
     });
   },
 
-  mixins: [chainNodeMixin],
+  mixins: [chainNodeMixin, helperFunctionMixin],
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
-    }
+    },
+
+    consumption() {
+      return this.$store.state.consumption;
+    },
+
+    outputPerMinute() {
+      const helperFunctionMixin = this;
+      const rootBuilding = helperFunctionMixin.getBuildingByName(
+          this.productionChain.name
+      );
+      const output = (60 * this.counter) / this.spt;
+
+      if (output % 1 === 0) {
+        return output;
+      } else {
+        return output.toFixed(2);
+      }
+    },
   },
-  methods: {}
+
+  methods: {
+    changeCounter() {
+      EventBus.$emit('changeSlider', this.counter);
+    },
+  },
 };
 </script>
 

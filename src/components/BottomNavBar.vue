@@ -73,14 +73,14 @@
 </template>
 
 <script>
-import worlds from "../data/worlds.json";
-import socialClasses from "../data/socialClasses.json";
-import productionChains from "../data/productionChain";
-import { helperFunctionMixin } from "./helperFunctionMixin.js";
-import { EventBus } from "../EventBus.js";
+import worlds from '../data/worlds.json';
+import socialClasses from '../data/socialClasses.json';
+import productionChains from '../data/productionChain';
+import { helperFunctionMixin } from './helperFunctionMixin.js';
+import { EventBus } from '../EventBus.js';
 
 export default {
-  name: "BottomNavBar",
+  name: 'BottomNavBar',
   mixins: [helperFunctionMixin],
   data() {
     return {
@@ -93,7 +93,7 @@ export default {
       // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
       socialClasses: socialClasses,
-      productionChains: productionChains.Production_Chain
+      productionChains: productionChains.Production_Chain,
     };
   },
 
@@ -108,13 +108,13 @@ export default {
       const chainID = this.selectedProductionChainID;
       let productionChain = {};
 
-      Object.keys(selectedSocialClassChains).forEach(chain => {
+      Object.keys(selectedSocialClassChains).forEach((chain) => {
         if (selectedSocialClassChains[chain].id === chainID) {
           productionChain = selectedSocialClassChains[chain];
         }
       });
       this.setProductionChain(productionChain);
-      EventBus.$emit("bottomNavBarChanged");
+      EventBus.$emit('bottomNavBarChanged');
       return productionChain;
     },
 
@@ -134,7 +134,7 @@ export default {
     selectedSocialClasses: function() {
       const socialClasses = Object.values(this.socialClasses);
       return socialClasses.filter(
-        socialClass => socialClass.worldID === this.selectedWorldID
+          (socialClass) => socialClass.worldID === this.selectedWorldID
       );
     },
 
@@ -146,9 +146,9 @@ export default {
     selectedProductionChains: function() {
       const productionChains = Object.values(this.productionChains);
       return productionChains.filter(
-        chain => chain.socialClassID === this.selectedSocialClassID
+          (chain) => chain.socialClassID === this.selectedSocialClassID
       );
-    }
+    },
   },
   methods: {
     /**
@@ -161,12 +161,12 @@ export default {
       this.selectedWorldID = selectedWorld.id;
 
       const selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.startingSocialClassID
+          selectedWorld.startingSocialClassID
       );
       this.selectedSocialClassID = selectedSocialClass.id;
 
       this.resetProductionChain(selectedSocialClass.id);
-      EventBus.$emit("bottomNavBarChanged");
+      EventBus.$emit('bottomNavBarChanged');
     },
 
     /**
@@ -180,39 +180,41 @@ export default {
     },
 
     /**
-     * @param {Object} productionChain
      * Changes the VueX State so every Component can access the current productionChain
      * This updates when this.selectedProductionChainID updates
+     *
+     * @param {Object} productionChain
      */
     setProductionChain(productionChain) {
-      this.$store.commit("changeProductionChain", productionChain);
+      this.$store.commit('changeProductionChain', productionChain);
     },
 
     /**
+     * Searches all worlds by their world id
+     *
      * @param {int} id
      * @return {Object} The selected World Object
-     * Searches all worlds by their world id
      */
     getWorldByID(id) {
       const worlds = Object.values(this.worlds);
-      const selectedWorld = worlds.filter(world => world.id === id)[0];
+      const selectedWorld = worlds.filter((world) => world.id === id)[0];
       return selectedWorld;
     },
 
     /**
-     * @param {int} id
-     * @return {Object} The selected Social Class Object
      * Searches all social classes by their social class id
      *
+     * @param {int} id
+     * @return {Object} The selected Social Class Object
      */
     getSocialClassByID(id) {
       const socialClasses = Object.values(this.socialClasses);
       const selectedSocialClass = socialClasses.filter(
-        socialClass => socialClass.id === id
+          (socialClass) => socialClass.id === id
       )[0];
       return selectedSocialClass;
-    }
-  }
+    },
+  },
 };
 </script>
 

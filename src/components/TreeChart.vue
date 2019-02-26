@@ -15,9 +15,10 @@
               <div
                 v-tooltip="{
               content: getBuildingInfo(treeData),
+              boundariesElement: 'window',
               placement: 'right',
               classes: ['infa'],
-              offset: 50,
+              offset: 1000,
               delay: {
                 show: 50,
                 hide: 50,
@@ -28,6 +29,7 @@
                 <img :src="getBuildingImage(treeData.name)" :alt="treeData.name">
               </div>
               <div class="name">{{treeData.name}}</div>
+              <div class="name">{{ numberOfBuildingsRelation }}</div>
             </div>
             <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
               <div class="avat">
@@ -57,29 +59,49 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "./helperFunctionMixin.js";
+import { helperFunctionMixin } from './helperFunctionMixin.js';
+import { EventBus } from '../EventBus.js';
+
 export default {
-  name: "TreeChart",
-  props: ["json"],
+  name: 'TreeChart',
+  props: ['json'],
   mixins: [helperFunctionMixin],
   data() {
     return {
       data: null,
       treeData: {},
-      path: ""
+      path: '',
+      lcm: 0, // least common multiplier
+      spt: 0, // shortest production time in chain
+      counter: 1,
     };
   },
 
-  mounted() {},
+  computed: {
+    numberOfBuildingsRelation() {
+      const building = this.getBuildingByName(this.treeData.name);
+      return (building.productionTime / this.spt) * this.counter;
+    },
+  },
+
+  created() {
+    EventBus.$on('setLCMforChain', (lcm, spt) => {
+      this.lcm = lcm;
+      this.spt = spt;
+    });
+    EventBus.$on('changeSlider', (value) => {
+      this.counter = value;
+    });
+  },
 
   watch: {
     json: {
       handler: function(Props) {
-        let extendKey = function(jsonData) {
+        const extendKey = function(jsonData) {
           jsonData.extend =
             jsonData.extend === void 0 ? true : !!jsonData.extend;
           if (Array.isArray(jsonData.children)) {
-            jsonData.children.forEach(c => {
+            jsonData.children.forEach((c) => {
               extendKey(c);
             });
           }
@@ -89,8 +111,8 @@ export default {
           this.treeData = extendKey(Props);
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   methods: {
     toggleExtend: function(treeData) {
@@ -99,23 +121,23 @@ export default {
     },
 
     getBuildingInfo(nodeData) {
-      let building = this.getBuildingByName(nodeData.name);
+      const building = this.getBuildingByName(nodeData.name);
 
       // build string
-      let headline = "Building: " + building.building;
-      let product = "Product: " + building.product;
-      let prodTime = "Production Time: " + building.productionTime;
+      const headline = 'Building: ' + building.building;
+      const product = 'Product: ' + building.product;
+      const prodTime = 'Production Time: ' + building.productionTime;
 
-      let buildingInfo = headline + "<br/>" + product + "<br/>" + prodTime;
+      const buildingInfo = headline + '<br/>' + product + '<br/>' + prodTime;
 
       return buildingInfo;
     },
 
     getBuildingImage(name) {
-      let building = this.getBuildingByName(name);
-      return this.getImage(building.img, "buildings");
-    }
-  }
+      const building = this.getBuildingByName(name);
+      return this.getImage(building.img, 'buildings');
+    },
+  },
 };
 </script>
 
@@ -127,7 +149,7 @@ table {
 td {
   position: relative;
   vertical-align: top;
-  padding: 0 0 50px 0;
+  padding: 0 0 20px 0;
   text-align: center;
 }
 .extend_handle {
