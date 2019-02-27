@@ -1,14 +1,68 @@
-# Travis CI (https://travis-ci.org/) configuration
-language: node_js
-node_js:
-  - "lts/*" # latest LTS Node.js release
+# Sample frmo electron-builder: https://www.electron.build/multi-platform-build#sample-travisyml-to-build-electron-app-for-macos-linux-and-windows
+# Fixed deployment with travis-cli: travis setup releases
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode9.4
+      language: node_js
+      node_js: '10'
+      env:
+        - ELECTRON_CACHE=$HOME/.cache/electron
+        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+    - os: linux
+      services: docker
+      language: node_js
+      node_js: '10'
+cache:
+  directories:
+    - node_modules
+    - "$HOME/.cache/electron"
+    - "$HOME/.cache/electron-builder"
 script:
-  - vue-cli-service build
+  # Build release for github-pages
+  - |
+    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      brew install yarn
+    fi
+    yarn build
+  # Build multi-OS binaries (using "Vue CLI Plugin Electron Builder")
+  - |
+    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      docker run --rm \
+        --env-file <(env | grep -vE '\r|\n' | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS_TAG|TRAVIS|TRAVIS_REPO_|TRAVIS_BUILD_|TRAVIS_BRANCH|TRAVIS_PULL_REQUEST_|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_') \
+        -v ${PWD}:/project \
+        -v ~/.cache/electron:/root/.cache/electron \
+        -v ~/.cache/electron-builder:/root/.cache/electron-builder \
+        electronuserland/builder:wine \
+        /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn electron:build --linux --win"
+    else
+      if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+        brew install yarn
+      fi
+      yarn electron:build
+    fi
+before_cache:
+  - rm -rf $HOME/.cache/electron-builder/wine
+branches:
+  only:
+    - releases
 deploy:
-  provider: pages
-  skip-cleanup: true
-  local_dir: dist
-  github-token: $GITHUB_TOKEN # a token generated on github allowing travis to push code on you repository
-  keep-history: true
-  on:
-    branch: releases
+  - provider: pages
+    skip-cleanup: true
+    local_dir: dist
+    github-token: $GITHUB_TOKEN # a token generated on github allowing travis to push code on you repository
+    keep-history: true
+    on:
+      branch: releases
+  - provider: releases
+    skip-cleanup: true
+    api_key:
+      secure: PcdvvKLSfjwdcx4ggrJuLGhjmr7lBqZCb0GTCcuVf/ckQYQv6+FQevzShZjJrHwKI0T3TH6ZLRbBCp0FVQOD2r5vwPWgF4ODQtSUtahx1FUoFpO+RgEYA6IDSVaowydGFzX+aq+R6ogQ2dJxVg2Z1aROKwZV7stXkXnz1ax8YuqE8B7yQ8E/br3u925M/oigIUAuyyvsvj90b07tVpSlT2hfUu/SXAKGfcBfAphw/P2FK9IYXwELySfYje3nAIEFr+gVVuFd0FTV/zknFrwSEPNqn53yE9clSkhwZuxBZFs6Ib28QdAMRZ/rFCd2TWw5icwcHMMA+QcV454EUz0xxQ6qLPAl7BUuxUFHcamKm/AFwECWJ58EB3KYR5jH1RDFVkByRXeFdt11/jnnz5GmFrpn/ihy9i62HnO3/RGjpOqclAKqHcuoyRgJcwNaoPEzRbpkkMRWJAGdKzsi8sCCd+Y+x6fucdV3novoT54EQCzVb1ZpqNzfR6gyeXt3sUL+6w+QfMmz3Oy0RD622VMnHPKObZWkIMv6SYNxpoQK+0s7AdulCwueHnIK+OQ+4a+SY0Emk7Y/fk3M7zRedj0e1iGpJP7EWyP8k71TpzN5SOzEK3w5/EUtuzT1dtMqY44xOCdLYIFvxdpvqxfDTY85cPWCbDsARjkEzhf6umdph1o=
+    file_glob: true
+    file:
+      - "dist_electron/*.exe"  # Windows
+      - "dist_electron/*.dmg"  # MacOS
+      - "dist_electron/*.AppImage"  # Linux
+      - "dist_electron/*.snap"  # Linux  on:
+    on:
+      branch: releases
