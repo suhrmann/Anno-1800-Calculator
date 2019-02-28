@@ -32,43 +32,37 @@
 </template>
 
 <script>
-import { chainNodeMixin } from './chainNodeMixin.js';
-import { helperFunctionMixin } from '../helperFunctionMixin.js';
-import { EventBus } from '../../EventBus.js';
-import TreeChart from '../TreeChart';
+import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { EventBus } from "../../EventBus.js";
+import TreeChart from "../TreeChart";
 
 export default {
   components: {
-    TreeChart,
+    TreeChart
   },
   data() {
     return {
       treeData: {},
       counter: 1,
-      lcm: 0,
-      spt: 0,
+      spt: 0
     };
   },
 
   created() {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    EventBus.$on('bottomNavBarChanged', () => {
+    EventBus.$on("bottomNavBarChanged", () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
 
       const helperFunctionMixin = this;
       const productionTimes = helperFunctionMixin.getProductionTimes(
-          this.productionChain
+        this.productionChain
       );
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-          productionTimes
+        productionTimes
       );
-      const lcm = helperFunctionMixin.getLCM(productionTimes);
-      // console.log(productionTimes);
-      // console.log("lcm: " + lcm);
-      // console.log("shortest: " + shortestProductionTime);
-      this.lcm = lcm;
       this.spt = shortestProductionTime;
-      EventBus.$emit('setLCMforChain', lcm, shortestProductionTime);
+      EventBus.$emit("setSPTforChain", shortestProductionTime);
     });
   },
 
@@ -85,7 +79,7 @@ export default {
     outputPerMinute() {
       const helperFunctionMixin = this;
       const rootBuilding = helperFunctionMixin.getBuildingByName(
-          this.productionChain.name
+        this.productionChain.name
       );
       const output = (60 * this.counter) / this.spt;
 
@@ -94,14 +88,14 @@ export default {
       } else {
         return output.toFixed(2);
       }
-    },
+    }
   },
 
   methods: {
     changeCounter() {
-      EventBus.$emit('changeSlider', this.counter);
-    },
-  },
+      EventBus.$emit("changeSlider", this.counter);
+    }
+  }
 };
 </script>
 
