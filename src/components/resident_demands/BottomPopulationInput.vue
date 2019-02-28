@@ -11,7 +11,6 @@
         </v-avatar>
         <v-text-field
           v-model="numFarmers"
-          @input="setNumFarmers()"
           label="Farmers"
           type="number"
           box
@@ -28,7 +27,6 @@
         </v-avatar>
         <v-text-field
           v-model="numWorkers"
-          @input="setNumWorkers()"
           label="Workers"
           type="number"
           box
@@ -45,7 +43,6 @@
         </v-avatar>
         <v-text-field
           v-model="numArtisans"
-          @input="setNumArtisans()"
           label="Artisans"
           type="number"
           box
@@ -62,7 +59,6 @@
         </v-avatar>
         <v-text-field
           v-model="numEngineers"
-          @input="setNumEngineers()"
           label="Engineers"
           type="number"
           box
@@ -79,7 +75,6 @@
         </v-avatar>
         <v-text-field
           v-model="numInvestors"
-          @input="setNumInvestors()"
           label="Investors"
           type="number"
           box
@@ -96,7 +91,6 @@
         </v-avatar>
         <v-text-field
           v-model="numJornaleros"
-          @input="setNumJornaleros()"
           label="Jornaleros"
           type="number"
           box
@@ -113,13 +107,13 @@
         </v-avatar>
         <v-text-field
           v-model="numObreros"
-          @input="setNumObreros()"
           label="Obreros"
           type="number"
           box
         ></v-text-field>
       </v-card>
     </v-flex>
+
   </v-layout>
 
 </template>
@@ -127,50 +121,35 @@
 <script>
 export default {
   name: 'BottomPopulationInput',
-  data: function() {
-    return {
-      numFarmers: 0,
-      numWorkers: 0,
-      numArtisans: 0,
-      numEngineers: 0,
-      numInvestors: 0,
-      numJornaleros: 0,
-      numObreros: 0,
-    };
-  },
-  methods: {
-    setNumFarmers: function() {
-      this.$store.commit('setNumFarmers', this.numFarmers);
-
-      console.log('numFarmers: ', this.numFarmers, ' - numFarmers (Vuex): ', this.$store.state.population.numFarmers);
+  computed: {
+    numFarmers: {
+      get: function() {return this.$store.state.population.numFarmers;},
+      set: function(numFarmers) {this.$store.commit('setNumFarmers', numFarmers);},
     },
-    setNumWorkers: function() {
-      this.$store.commit('setNumWorkers', this.numWorkers);
+    numWorkers: {
+      get: function() {return this.$store.state.population.numWorkers;},
+      set: function(numWorkers) {this.$store.commit('setNumWorkers', numWorkers);},
     },
-    setNumArtisans: function() {
-      this.$store.commit('setNumArtisans', this.numArtisans);
+    numArtisans: {
+      get: function() {return this.$store.state.population.numArtisans;},
+      set: function(numArtisans) {this.$store.commit('setNumArtisans', numArtisans);},
     },
-    setNumEngineers: function() {
-      this.$store.commit('setNumEngineers', this.numEngineers);
+    numEngineers: {
+      get: function() {return this.$store.state.population.numEngineers;},
+      set: function(numEngineers) {this.$store.commit('setNumEngineers', numEngineers);},
     },
-    setNumInvestors: function() {
-      this.$store.commit('setNumInvestors', this.numInvestors);
+    numInvestors: {
+      get: function() {return this.$store.state.population.numInvestors;},
+      set: function(numInvestors) {this.$store.commit('setNumInvestors', numInvestors);},
     },
-    setNumJornaleros: function() {
-      this.$store.commit('setNumJornaleros', this.numJornaleros);
+    numJornaleros: {
+      get: function() {return this.$store.state.population.numJornaleros;},
+      set: function(numJornaleros) {this.$store.commit('setNumJornaleros', numJornaleros);},
     },
-    setNumObreros: function() {
-      this.$store.commit('setNumObreros', this.numObreros);
+    numObreros: {
+      get: function() {return this.$store.state.population.numObreros;},
+      set: function(numObreros) {this.$store.commit('setNumObreros', numObreros);},
     },
-  },
-
-  created() {
-    this.numFarmers = this.$store.state.population.numFarmers;
-    this.numWorkers = this.$store.state.population.numWorkers;
-    this.numEngineers = this.$store.state.population.numEngineers;
-    this.numInvestors = this.$store.state.population.numInvestors;
-    this.numJornaleros = this.$store.state.population.numJornaleros;
-    this.numObreros = this.$store.state.population.numObreros;
   },
 };
 </script>
