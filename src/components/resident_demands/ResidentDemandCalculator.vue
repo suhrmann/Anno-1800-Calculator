@@ -162,7 +162,7 @@ export default {
 
       const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
-      for (const population of Object.entries(demands)) {
+      for (const [pKey, population] of Object.entries(demands)) { // eslint-disable-line no-unused-vars
         // Iterate over basic / luxury
         for (const [dtKey, demandType] of Object.entries(population)) {
           // Iterate over all demands of the current population
