@@ -37,29 +37,51 @@
 </template>
 
 <script>
+import Producers from "./data/producers.json";
 export default {
   data: () => ({
     drawer: null,
-    title: 'Anno 1800 Calculator',
-    subtitle: 'a production chain cheatsheet',
+    title: "Anno 1800 Calculator",
+    subtitle: "a production chain cheatsheet",
     items: [
-      { icon: 'lightbulb_outline', text: 'Home', route: '/Home' },
+      { icon: "lightbulb_outline", text: "Home", route: "/Home" },
       { divider: true },
-      { heading: 'Production' },
-      { icon: 'merge_type', text: 'Production Chains', route: '/chains' },
-      { icon: 'trending_up', text: 'Resident Demand', route: '/demands' },
-      { icon: 'border_inner', text: 'Production Layouts', route: '/layouts' },
+      { heading: "Production" },
+      { icon: "merge_type", text: "Production Chains", route: "/chains" },
+      { icon: "trending_up", text: "Resident Demand", route: "/demands" },
+      { icon: "border_inner", text: "Production Layouts", route: "/layouts" },
       { divider: true },
-      { heading: 'sonstiger Schaas' },
-      { icon: 'add', text: 'hepp' },
+      { heading: "sonstiger Schaas" },
+      { icon: "add", text: "hepp" },
       { divider: true },
-      { icon: 'info', text: 'About', route: '/about' },
-      { icon: 'close', text: 'Close' },
-    ],
+      { icon: "info", text: "About", route: "/about" },
+      { icon: "close", text: "Close" }
+    ]
   }),
   props: {
-    source: String,
+    source: String
   },
+
+  mounted() {
+    this.$nextTick(function() {
+      let productionProducts = this.buildProductObject();
+      let consumptionProducts = this.buildProductObject();
+      //this.$store.commit( "buildProductObjects",productionProducts,consumptionProducts);
+    });
+  },
+
+  methods: {
+    buildProductObject() {
+      let producerObject = {};
+      let producerFile = JSON.parse(JSON.stringify(Producers.Producers));
+      for (let producerKey in producerFile) {
+        let productName = producerFile[producerKey].product;
+        producerObject[productName] = 0;
+      }
+      console.log(producerObject);
+      return this.producerObject;
+    }
+  }
 };
 </script>
 
