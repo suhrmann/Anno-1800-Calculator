@@ -206,6 +206,16 @@ export default {
       return totalDemands;
     },
   },
+  watch: {
+    /**
+     * Whenever total demands is recalculated, commit changes to Vuex store.
+     * @param {object} newConsumption
+     * @param {object} oldConsumption Unused.
+     */
+    totalDemands: function(newConsumption, oldConsumption) {
+      this.$store.commit('setConsumption', newConsumption);
+    },
+  },
   methods: {
     /**
        * Find the image of a building by its produced product.
