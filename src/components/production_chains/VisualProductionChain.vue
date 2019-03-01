@@ -88,7 +88,31 @@ export default {
       } else {
         return output.toFixed(2);
       }
-    }
+    },
+
+    demands: {
+      get() {
+        const storeConsumption = this.$store.state.consumption;
+
+        // Check if consumption is set
+        if (!storeConsumption) {
+          return null;
+        }
+
+        // Flatten consumption
+        const flatConsumption = {};
+        // Iterate over basic / luxury
+        for (const demandType in storeConsumption) {
+          const demands = storeConsumption[demandType];
+          // Iterate over each demand
+          for (const dmndKey in demands) {
+            flatConsumption[dmndKey] = demands[dmndKey];
+          }
+        }
+
+        return flatConsumption;
+      },
+    },
   },
 
   methods: {
