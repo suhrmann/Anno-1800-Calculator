@@ -113,6 +113,17 @@ export default new Vuex.Store({
     setNumObreros(state, numObreros) {
       state.population.numObreros = numObreros;
     },
+
+    /**
+     * Set the calculated populations' demands.
+     *
+     * @param {object} state
+     * @param {object} consumption The calculated populations' demands.
+     *          For object structure see ResidentDemandCalculator.computed.totalDemands
+     */
+    setConsumption(state, consumption) {
+      state.consumption = consumption;
+    },
   },
   actions: {
 
