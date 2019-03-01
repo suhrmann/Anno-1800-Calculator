@@ -36,6 +36,12 @@ npm run serve
 
 **Core Technologies:**
 
- - [Electron](https://electronjs.org/)
- - [Vue.js](https://vuejs.org/)
- - [Vuetify](https://vuetifyjs.com/en/)
+ - [Electron](https://electronjs.org/) - Build cross platform desktop apps
+ - [Vue.js](https://vuejs.org/) - Progressive JavaScript Framework, really helpful for single-page applications
+ - [Vuetify](https://vuetifyjs.com/en/) - Material Design Component Framework for Vue.js
+
+**Dependencies**
+
+ - [vuex](https://vuex.vuejs.org/) - state management pattern + library for Vue.js
+ - [vue-tree-chart](https://refined-x.com/Vue-Tree-Chart/) - Vue.js component to display tree chart, really awesome ⭐
+ - [v-tooltip](https://akryum.github.io/v-tooltip/#/) - highly customizable tooltips
