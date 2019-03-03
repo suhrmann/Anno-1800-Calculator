@@ -10,6 +10,10 @@
       >
         <v-card
           v-if="usage"
+
+          :to="isConsumable(product, usage) ? '/chains' : false"
+          @click="isConsumable(product, usage) ? selectChain(product) : false"
+          :hover="isConsumable(product, usage)"
         >
           <v-avatar>
             <img
@@ -40,6 +44,10 @@
       >
         <v-card
           v-if="usage"
+
+          :to="isConsumable(product, usage) ? '/chains' : false"
+          @click="isConsumable(product, usage) ? selectChain(product) : false"
+          :hover="isConsumable(product, usage)"
         >
           <v-avatar>
             <img
@@ -275,6 +283,15 @@ export default {
      */
     formatUsage: function(usage) {
       return Math.round(usage * 100000) / 100000;
+    },
+
+    /**
+     * Set the selected chain.
+     *
+     * @param {string} product The selected Product.
+     */
+    selectChain(product) {
+      console.log('Resident Demand > Selected:', product);
     },
   },
 };
