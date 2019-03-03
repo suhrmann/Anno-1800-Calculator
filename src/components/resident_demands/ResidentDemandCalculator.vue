@@ -11,7 +11,7 @@
         <v-card
           v-if="usage"
 
-          :to="isConsumable(product, usage) ? '/chains' : false"
+          :to="isConsumable(product, usage) ? '/chains' : ''"
           @click="isConsumable(product, usage) ? selectChain(product) : false"
           :hover="isConsumable(product, usage)"
         >
@@ -45,7 +45,7 @@
         <v-card
           v-if="usage"
 
-          :to="isConsumable(product, usage) ? '/chains' : false"
+          :to="isConsumable(product, usage) ? '/chains' : ''"
           @click="isConsumable(product, usage) ? selectChain(product) : false"
           :hover="isConsumable(product, usage)"
         >
