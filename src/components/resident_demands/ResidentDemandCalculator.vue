@@ -21,7 +21,7 @@
           <v-card-text>
             <span class="text-md-center">
               <strong>{{ product }}</strong>
-              <span v-if="usage !== true" ><strong>:</strong> {{ formatUsage(usage) }}</span>
+              <span v-if="isConsumable(product, usage)" ><strong>:</strong> {{ formatUsage(usage) }}</span>
             </span>
           </v-card-text>
 
@@ -50,7 +50,7 @@
 
           <v-card-text>
             <span class="text-md-center"><strong>{{ product }}</strong></span>
-            <span v-if="usage !== true" ><strong>:</strong> {{ formatUsage(usage) }}</span>
+            <span v-if="isConsumable(product, usage)" ><strong>:</strong> {{ formatUsage(usage) }}</span>
           </v-card-text>
 
         </v-card>
@@ -254,6 +254,17 @@ export default {
         }
       }
       return demands;
+    },
+
+    /**
+     * Return if the product is consumable.
+     *
+     * @param {string} product The product
+     * @param {float|boolean} usage The usage of the product.
+     * @return {boolean} True if the product is consumable, otherwise false.
+     */
+    isConsumable(product, usage) {
+      return typeof usage !== 'boolean';
     },
 
     /**
