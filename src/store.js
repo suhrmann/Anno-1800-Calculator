@@ -21,12 +21,16 @@ export default new Vuex.Store({
     },
 
     /**
+     * The calculated production per good.
+     * Unit: Production per Minute
+     */
+    production: null,
+
+    /**
      * The calculated consumption per good.
      * Unit: Consumption per Minute
      */
-    consumption: {
-      // TODO Implement me!
-    },
+    consumption: null,
   },
   mutations: {
     /**
@@ -36,6 +40,18 @@ export default new Vuex.Store({
      */
     changeProductionChain(state, newChain) {
       state.selectedProductionChain = newChain;
+    },
+
+    /**
+     * Iitial building of the production and comsumption objects.
+     * @param {object} state
+     * @param {object} productObject An object with all possible products as keys (value 0)
+     * @param {object} consumptionObject An object with all possible products as keys (value 0)
+     * Two different parameters needed for two different object references
+     */
+    buildProductObjects(state, productObject, consumptionObject) {
+      state.production = productObject;
+      state.consumption = consumptionObject;
     },
 
     //
@@ -96,6 +112,17 @@ export default new Vuex.Store({
      */
     setNumObreros(state, numObreros) {
       state.population.numObreros = numObreros;
+    },
+
+    /**
+     * Set the calculated populations' demands.
+     *
+     * @param {object} state
+     * @param {object} consumption The calculated populations' demands.
+     *          For object structure see ResidentDemandCalculator.computed.totalDemands
+     */
+    setConsumption(state, consumption) {
+      state.consumption = consumption;
     },
   },
   actions: {

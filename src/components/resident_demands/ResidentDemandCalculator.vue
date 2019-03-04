@@ -1,4 +1,4 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <v-container grid-list-md text-xs-center>
 
     <h2>Basic Needs:</h2>
@@ -9,7 +9,11 @@
         v-bind:key="product"
       >
         <v-card
-          v-if="usage > 0"
+          v-if="usage"
+
+          :to="isConsumable(product, usage) ? '/chains' : ''"
+          @click="isConsumable(product, usage) ? selectChain(product) : false"
+          :hover="isConsumable(product, usage)"
         >
           <v-avatar>
             <img
@@ -19,7 +23,10 @@
           </v-avatar>
 
           <v-card-text>
-            <span class="text-md-center"><b>{{ product }}:</b> {{ formatUsage(usage) }}</span>
+            <span class="text-md-center">
+              <strong>{{ product }}</strong>
+              <span v-if="isConsumable(product, usage)" ><strong>:</strong> {{ formatUsage(usage) }}</span>
+            </span>
           </v-card-text>
 
         </v-card>
@@ -36,7 +43,11 @@
         v-bind:key="product"
       >
         <v-card
-          v-if="usage > 0"
+          v-if="usage"
+
+          :to="isConsumable(product, usage) ? '/chains' : ''"
+          @click="isConsumable(product, usage) ? selectChain(product) : false"
+          :hover="isConsumable(product, usage)"
         >
           <v-avatar>
             <img
@@ -46,7 +57,8 @@
           </v-avatar>
 
           <v-card-text>
-            <span class="text-md-center"><b>{{ product }}:</b> {{ formatUsage(usage) }}</span>
+            <span class="text-md-center"><strong>{{ product }}</strong></span>
+            <span v-if="isConsumable(product, usage)" ><strong>:</strong> {{ formatUsage(usage) }}</span>
           </v-card-text>
 
         </v-card>
@@ -148,6 +160,22 @@ export default {
         luxury: this.calculateDemands(obrerosDemands.luxury, this.numObreros),
       };
     },
+
+    /**
+     * Merge the various population's demands into one object.
+     *
+     * @return {object} The basic and luxury demands of the popuation.
+     *         Structure: {
+     *           basic: {
+     *             <Product>: {number} <consumption>
+     *             <Demand-Building>: {boolean}
+     *           }
+     *           luxury: {
+     *             <Product>: {number} <consumption>
+     *             <Demand-Building>: {boolean}
+     *           }
+     *         }
+     */
     totalDemands: function() {
       // Merge all demands
       const demands = {
@@ -173,11 +201,27 @@ export default {
             }
 
             // Sum up new demands
-            totalDemands[dtKey][dKey] += demand;
+            if (typeof demand === 'number') {
+              // Demand is consumable -> Add consumption to existing.
+              totalDemands[dtKey][dKey] += demand;
+            } else {
+              // Demand has area effect -> Enable / disable
+              totalDemands[dtKey][dKey] = totalDemands[dtKey][dKey] || demand;
+            }
           }
         }
       }
       return totalDemands;
+    },
+  },
+  watch: {
+    /**
+     * Whenever total demands is recalculated, commit changes to Vuex store.
+     * @param {object} newConsumption
+     * @param {object} oldConsumption Unused.
+     */
+    totalDemands: function(newConsumption, oldConsumption) {
+      this.$store.commit('setConsumption', newConsumption);
     },
   },
   methods: {
@@ -193,7 +237,6 @@ export default {
       if (!producer) {
         const allNonProducers = Object.values(this.nonProducers);
         const nonProducer = allNonProducers.filter((nonProducer) => nonProducer.name === product)[0];
-        console.log(nonProducer + ' === ' + product);
         return nonProducer ? this.getImage(nonProducer.img, 'buildings') : (product + 'Image');
       }
       return this.getImage(producer.img, 'buildings');
@@ -215,10 +258,21 @@ export default {
         if (demand) {
           demands[key] = demand * numPopulation;
         } else {
-          demands[key] = numPopulation > 0 ? 1 : null;
+          demands[key] = numPopulation > 0;
         }
       }
       return demands;
+    },
+
+    /**
+     * Return if the product is consumable.
+     *
+     * @param {string} product The product
+     * @param {float|boolean} usage The usage of the product.
+     * @return {boolean} True if the product is consumable, otherwise false.
+     */
+    isConsumable(product, usage) {
+      return typeof usage !== 'boolean';
     },
 
     /**
@@ -229,6 +283,15 @@ export default {
      */
     formatUsage: function(usage) {
       return Math.round(usage * 100000) / 100000;
+    },
+
+    /**
+     * Set the selected chain.
+     *
+     * @param {string} product The selected Product.
+     */
+    selectChain(product) {
+      console.log('Resident Demand > Selected:', product);
     },
   },
 };

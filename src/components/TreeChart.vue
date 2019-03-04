@@ -4,9 +4,9 @@
       <tr>
         <td
           :colspan="treeData.children ? treeData.children.length * 2 : 1"
-          :class="{parentLevel: treeData.children, extend: treeData.children && treeData.extend}"
+          :class="{parentLevel: treeData.children}"
         >
-          <div :class="{node: true, hasMate: treeData.mate}">
+          <div :class="{node: true}">
             <div
               class="person"
               @click="$emit('click-node', treeData)"
@@ -17,7 +17,7 @@
               content: getBuildingInfo(treeData),
               boundariesElement: 'window',
               placement: 'right',
-              classes: ['infa'],
+              classes: ['popover'],
               offset: 1000,
               delay: {
                 show: 50,
@@ -30,12 +30,6 @@
               </div>
               <div class="name">{{treeData.name}}</div>
               <div class="name">{{ numberOfBuildingsRelation }}</div>
-            </div>
-            <div class="person" v-if="treeData.mate" @click="$emit('click-node', treeData.mate)">
-              <div class="avat">
-                <img :src="getImage(treeData.mate.img, 'buildings')">
-              </div>
-              <div class="name">{{treeData.mate.name}}</div>
             </div>
           </div>
         </td>
@@ -59,21 +53,20 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from './helperFunctionMixin.js';
-import { EventBus } from '../EventBus.js';
+import { helperFunctionMixin } from "./helperFunctionMixin.js";
+import { EventBus } from "../EventBus.js";
 
 export default {
-  name: 'TreeChart',
-  props: ['json'],
+  name: "TreeChart",
+  props: ["json"],
   mixins: [helperFunctionMixin],
   data() {
     return {
       data: null,
       treeData: {},
-      path: '',
-      lcm: 0, // least common multiplier
-      spt: 0, // shortest production time in chain
-      counter: 1,
+      path: "",
+      spt: 1, // shortest production time in chain
+      counter: 1
     };
   },
 
@@ -81,15 +74,14 @@ export default {
     numberOfBuildingsRelation() {
       const building = this.getBuildingByName(this.treeData.name);
       return (building.productionTime / this.spt) * this.counter;
-    },
+    }
   },
 
   created() {
-    EventBus.$on('setLCMforChain', (lcm, spt) => {
-      this.lcm = lcm;
+    EventBus.$on("setSPTforChain", spt => {
       this.spt = spt;
     });
-    EventBus.$on('changeSlider', (value) => {
+    EventBus.$on("changeSlider", value => {
       this.counter = value;
     });
   },
@@ -101,7 +93,7 @@ export default {
           jsonData.extend =
             jsonData.extend === void 0 ? true : !!jsonData.extend;
           if (Array.isArray(jsonData.children)) {
-            jsonData.children.forEach((c) => {
+            jsonData.children.forEach(c => {
               extendKey(c);
             });
           }
@@ -111,8 +103,8 @@ export default {
           this.treeData = extendKey(Props);
         }
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   methods: {
     toggleExtend: function(treeData) {
@@ -124,20 +116,20 @@ export default {
       const building = this.getBuildingByName(nodeData.name);
 
       // build string
-      const headline = 'Building: ' + building.building;
-      const product = 'Product: ' + building.product;
-      const prodTime = 'Production Time: ' + building.productionTime;
+      const headline = "Building: " + building.building;
+      const product = "Product: " + building.product;
+      const prodTime = "Production Time: " + building.productionTime;
 
-      const buildingInfo = headline + '<br/>' + product + '<br/>' + prodTime;
+      const buildingInfo = headline + "<br/>" + product + "<br/>" + prodTime;
 
       return buildingInfo;
     },
 
     getBuildingImage(name) {
       const building = this.getBuildingByName(name);
-      return this.getImage(building.img, 'buildings');
-    },
-  },
+      return this.getImage(building.img, "buildings");
+    }
+  }
 };
 </script>
 
@@ -266,18 +258,6 @@ td {
   overflow: hidden;
   width: 100%;
 }
-.node.hasMate::after {
-  content: "";
-  position: absolute;
-  left: 2em;
-  right: 2em;
-  top: 2em;
-  border-top: 2px solid #ccc;
-  z-index: 1;
-}
-.node.hasMate .person:last-child {
-  margin-left: 1em;
-}
 .landscape {
   transform: rotate(-90deg);
   padding: 0 4em;
@@ -303,22 +283,8 @@ td {
   height: 4em;
   line-height: 4em;
 }
-.landscape .hasMate {
-  position: relative;
-}
-.landscape .hasMate .person {
-  position: absolute;
-}
-.landscape .hasMate .person:first-child {
-  left: auto;
-  right: -4em;
-}
-.landscape .hasMate .person:last-child {
-  left: -4em;
-  margin-left: 0;
-}
 
-.infa {
+.popover {
   background: #424242;
   color: white;
   padding: 24px;

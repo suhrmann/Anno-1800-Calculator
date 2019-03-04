@@ -13,6 +13,7 @@
           v-model="numFarmers"
           label="Farmers"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
@@ -29,6 +30,7 @@
           v-model="numWorkers"
           label="Workers"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
@@ -45,6 +47,7 @@
           v-model="numArtisans"
           label="Artisans"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
@@ -61,6 +64,7 @@
           v-model="numEngineers"
           label="Engineers"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
@@ -77,6 +81,7 @@
           v-model="numInvestors"
           label="Investors"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
@@ -93,6 +98,7 @@
           v-model="numJornaleros"
           label="Jornaleros"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
@@ -109,6 +115,7 @@
           v-model="numObreros"
           label="Obreros"
           type="number"
+          min="0"
           box
         ></v-text-field>
       </v-card>
