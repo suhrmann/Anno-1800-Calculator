@@ -1,3 +1,5 @@
+import productionChains from '../../data/productionChain.json';
+
 export const chainNodeMixin = {
   name: 'ProductionChainNode',
 
@@ -8,6 +10,11 @@ export const chainNodeMixin = {
       chainDepthArray: [],
 
     };
+  },
+  computed: {
+    productionChains() {
+      return JSON.parse(JSON.stringify(productionChains));
+    },
   },
 
   methods: {
@@ -131,6 +138,28 @@ export const chainNodeMixin = {
       } else {
         return false;
       }
+    },
+
+    /**
+     * Get the production by the product it produces.
+     * @param {string} product The product name.
+     * @return {object|null} The production chain that produces this product,
+     *                       or null if it were not found.
+     */
+    getProductionChainByProductName(product) {
+      console.log('--- getProductionChainByProductName(', product, ') ---');
+
+      const chains = this.productionChains.Production_Chain;
+      for (const chainKey in chains) {
+        if (chains.hasOwnProperty(chainKey)) {
+          const chain = chains[chainKey];
+          if (chain.finalProduct === product) {
+            return chain;
+          }
+        }
+      }
+
+      return null;
     },
   },
 };
