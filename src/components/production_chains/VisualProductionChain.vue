@@ -26,6 +26,7 @@
       >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
       <v-flex
         xs12
+        v-if="consumptionPerMinute !== null"
       >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
     </v-layout>
   </v-container>
@@ -74,6 +75,21 @@ export default {
 
     consumption() {
       return this.$store.state.consumption;
+    },
+
+    /**
+     * The consumption per minute, calculated in view Resident Demands calculator.
+     *
+     * @return {number|null} Number >= 0 if product is consumable, otherwise null.
+     */
+    consumptionPerMinute() {
+      // Find consumption of currently selected product.
+      const currentProduct = this.productionChain.finalProduct;
+      // Search for currently selected product in demands
+      const consumption = this.demands[currentProduct];
+
+      // Return consumption of product, or null.
+      return isNaN(consumption) ? null : consumption;
     },
 
     outputPerMinute() {
