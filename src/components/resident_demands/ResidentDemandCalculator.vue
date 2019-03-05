@@ -75,9 +75,11 @@
 import Consumption from '../../data/consumption.json';
 import Producers from '../../data/producers.json';
 import NonProducers from '../../data/non-producers.json';
+import { chainNodeMixin } from '../production_chains/chainNodeMixin';
 
 export default {
   name: 'ResidentDemandCalculator',
+  mixins: [chainNodeMixin],
   data: function() {
     return {
       producers: Producers.Producers,
@@ -291,7 +293,8 @@ export default {
      * @param {string} product The selected Product.
      */
     selectChain(product) {
-      console.log('Resident Demand > Selected:', product);
+      const selectedChain = this.getProductionChainByProductName(product);
+      this.$store.commit('changeProductionChain', selectedChain);
     },
   },
 };

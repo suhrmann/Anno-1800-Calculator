@@ -1,8 +1,6 @@
 import producers from '../data/producers.json';
 import nonProducers from '../data/non-producers.json';
-import {
-  chainNodeMixin,
-} from './production_chains/chainNodeMixin';
+import { chainNodeMixin } from './production_chains/chainNodeMixin';
 
 export const helperFunctionMixin = {
   mixins: [chainNodeMixin],

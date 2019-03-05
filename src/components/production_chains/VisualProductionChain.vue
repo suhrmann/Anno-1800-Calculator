@@ -26,43 +26,44 @@
       >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
       <v-flex
         xs12
+        v-if="consumptionPerMinute !== null"
       >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { EventBus } from '../../EventBus.js';
+import TreeChart from '../TreeChart';
 
 export default {
   components: {
-    TreeChart
+    TreeChart,
   },
   data() {
     return {
       treeData: {},
       counter: 1,
-      spt: 0
+      spt: 0,
     };
   },
 
   created() {
     this.treeData = JSON.parse(JSON.stringify(this.productionChain));
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.treeData = JSON.parse(JSON.stringify(this.productionChain));
 
       const helperFunctionMixin = this;
       const productionTimes = helperFunctionMixin.getProductionTimes(
-        this.productionChain
+          this.productionChain
       );
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-        productionTimes
+          productionTimes
       );
       this.spt = shortestProductionTime;
-      EventBus.$emit("setSPTforChain", shortestProductionTime);
+      EventBus.$emit('setSPTforChain', shortestProductionTime);
     });
   },
 
@@ -76,10 +77,25 @@ export default {
       return this.$store.state.consumption;
     },
 
+    /**
+     * The consumption per minute, calculated in view Resident Demands calculator.
+     *
+     * @return {number|null} Number >= 0 if product is consumable, otherwise null.
+     */
+    consumptionPerMinute() {
+      // Find consumption of currently selected product.
+      const currentProduct = this.productionChain.finalProduct;
+      // Search for currently selected product in demands
+      const consumption = this.demands[currentProduct];
+
+      // Return consumption of product, or null.
+      return isNaN(consumption) ? null : consumption;
+    },
+
     outputPerMinute() {
       const helperFunctionMixin = this;
       const rootBuilding = helperFunctionMixin.getBuildingByName(
-        this.productionChain.name
+          this.productionChain.name
       );
       const output = (60 * this.counter) / this.spt;
 
@@ -117,9 +133,9 @@ export default {
 
   methods: {
     changeCounter() {
-      EventBus.$emit("changeSlider", this.counter);
-    }
-  }
+      EventBus.$emit('changeSlider', this.counter);
+    },
+  },
 };
 </script>
 
