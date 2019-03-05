@@ -33,7 +33,7 @@ export const helperFunctionMixin = {
     /**
      * Extracts all production Times of a given production chain
      *
-     * @param {Object} productionChain a productionChain object as defined in productionChain.json
+     * @param {Object} productionChain a productionChain object as defined in production-chain.json
      * @return {Array} An Array containing all objects production times
      */
 

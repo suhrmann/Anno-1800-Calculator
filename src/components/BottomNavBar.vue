@@ -74,8 +74,8 @@
 
 <script>
 import worlds from '../data/worlds.json';
-import socialClasses from '../data/socialClasses.json';
-import productionChains from '../data/productionChain';
+import socialClasses from '../data/social-classes.json';
+import productionChains from '../data/production-chain';
 import { helperFunctionMixin } from './helperFunctionMixin.js';
 import { EventBus } from '../EventBus.js';
 

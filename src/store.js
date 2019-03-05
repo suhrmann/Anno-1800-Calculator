@@ -40,7 +40,7 @@ export default new Vuex.Store({
     /**
      * Change the selected production chain from bottom navbar.
      * @param {object} state
-     * @param {object} newChain The new selected production chain from productionChain.json.
+     * @param {object} newChain The new selected production chain from production-chain.json.
      */
     changeProductionChain(state, newChain) {
       state.selectedProductionChain = newChain;
