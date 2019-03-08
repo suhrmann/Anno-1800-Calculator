@@ -1,6 +1,9 @@
 import producers from '../data/producers.json';
 import nonProducers from '../data/non-producers.json';
-import { chainNodeMixin } from './production_chains/chainNodeMixin';
+import ProductionChains from '../data/production-chain.json';
+import {
+  chainNodeMixin
+} from './production_chains/chainNodeMixin';
 
 export const helperFunctionMixin = {
   mixins: [chainNodeMixin],
@@ -41,21 +44,22 @@ export const helperFunctionMixin = {
       this.productionTimes = [];
       const chainNodeMixin = this;
       chainNodeMixin.iterateProductionChain(
-          productionChain,
-          (rootElement) => {
-            this.fetchProductionTime(rootElement);
-          },
-          (element) => {
-            this.fetchProductionTime(element);
-          },
-          false);
+        productionChain,
+        (rootElement) => {
+          this.fetchProductionTime(rootElement);
+        },
+        (element) => {
+          this.fetchProductionTime(element);
+        },
+        false);
       return this.productionTimes;
     },
 
     /**
      * Calculates the Least Common Multiplier (LCM) of a given Array containing productiom times
      *
-     * @param {Array} prodTimeArray an array containing all production times (numbers) for which the least common multiplier is wanted
+     * @param {Array} prodTimeArray an array containing all production times (numbers) for 
+     *  which the least common multiplier is wanted
      * @return {Number} The least common multiplier
      */
     getLCM(prodTimeArray) {
@@ -74,7 +78,8 @@ export const helperFunctionMixin = {
     /**
      * Extracts the smalles productiom time of a given Array containing productiom times
      *
-     * @param {Array} prodTimeArray an array containing all production times (numbers) for which the least common multiplier is wanted
+     * @param {Array} prodTimeArray an array containing all production times (numbers) for 
+     *  which the least common multiplier is wanted
      * @return {Number} the shortest production time
      */
     getShortestprodTime(prodTimeArray) {
@@ -108,5 +113,19 @@ export const helperFunctionMixin = {
       }
       console.log('building not found :(');
     },
+
+    getProductionChainById(id) {
+      const productionChains = ProductionChains.Production_Chain;
+      let chainObject = {};
+      Object.keys(productionChains).some((chain) => {
+        if (productionChains[chain].id === id) {
+          chainObject = productionChains[chain];
+          return chainObject;
+        }
+      });
+      return chainObject;
+    },
+
+
   },
 };
