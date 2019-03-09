@@ -3,12 +3,12 @@
     "id": 1,
     "name": "Old World",
     "img": "old-world.png",
-    "startingSocialClassID": 1
+    "socialClassIDs": [1, 2, 3, 4, 5]
   },
   "newWorld": {
     "id": 2,
     "name": "New World",
     "img": "new-world.png",
-    "startingSocialClassID": 6
+    "socialClassIDs": [6, 7]
   }
 }
