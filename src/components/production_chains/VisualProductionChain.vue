@@ -21,13 +21,19 @@
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
+
       <v-flex
         xs12
       >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
+
       <v-flex
         xs12
-        v-if="consumptionPerMinute !== null"
+        v-if="isConsumable"
       >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
+      <v-flex
+        xs12
+        v-else
+      >The Population does not consume {{ productionChain.finalProduct }} over time.</v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -138,6 +144,40 @@ export default {
 
         return flatConsumption;
       }
+    },
+
+    /**
+     * checks if current ProductionChain produces a good which is consumed by population over time
+     * @return {boolean} true if consumable good
+     */
+    isConsumable() {
+      let returnValue = false;
+      const good = this.treeData.finalProduct;
+      const consumables = this.consumablesOverTime;
+      consumables.find(currentElement => {
+        if (good == currentElement) {
+          returnValue = true;
+        }
+      });
+      return returnValue;
+    },
+
+    consumablesOverTime() {
+      const listOfGoods = this.$store.state.consumption;
+      let consumablesArray = [];
+
+      for (var key in listOfGoods.basic) {
+        if (listOfGoods.basic[key] !== false) {
+          consumablesArray.push(key);
+        }
+      }
+
+      for (var key in listOfGoods.luxury) {
+        if (listOfGoods.luxury[key] !== false) {
+          consumablesArray.push(key);
+        }
+      }
+      return consumablesArray;
     }
   },
 
