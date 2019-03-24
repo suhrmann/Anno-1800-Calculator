@@ -2,7 +2,7 @@ import producers from '../data/producers.json';
 import nonProducers from '../data/non-producers.json';
 import ProductionChains from '../data/production-chain.json';
 import {
-  chainNodeMixin
+  chainNodeMixin,
 } from './production_chains/chainNodeMixin';
 
 export const helperFunctionMixin = {
@@ -40,7 +40,7 @@ export const helperFunctionMixin = {
      * @return {Array} An Array containing all objects production times
      */
 
-    getProductionTimes(productionChain) {
+    getAllProductionTimesOfChain(productionChain) {
       this.productionTimes = [];
       const chainNodeMixin = this;
       chainNodeMixin.iterateProductionChain(
@@ -58,7 +58,7 @@ export const helperFunctionMixin = {
     /**
      * Calculates the Least Common Multiplier (LCM) of a given Array containing productiom times
      *
-     * @param {Array} prodTimeArray an array containing all production times (numbers) for 
+     * @param {Array} prodTimeArray an array containing all production times (numbers) for
      *  which the least common multiplier is wanted
      * @return {Number} The least common multiplier
      */
@@ -78,7 +78,7 @@ export const helperFunctionMixin = {
     /**
      * Extracts the smalles productiom time of a given Array containing productiom times
      *
-     * @param {Array} prodTimeArray an array containing all production times (numbers) for 
+     * @param {Array} prodTimeArray an array containing all production times (numbers) for
      *  which the least common multiplier is wanted
      * @return {Number} the shortest production time
      */
