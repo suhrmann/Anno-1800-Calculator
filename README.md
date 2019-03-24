@@ -7,7 +7,7 @@ There are two versions of the calculator: An online version and a Desktop App.
 
 ## Online Calculator
 
-No download, no install. Just calculate: [Anno 1800 Calculator](https://vadammt.github.io/Anno-1800-Calculator/)
+No download, no install. Just calculate: [Anno 1800 Calculator](https://suhrmann.github.io/Anno-1800-Calculator/)
 
 
 ## Download App
