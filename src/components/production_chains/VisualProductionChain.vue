@@ -29,15 +29,15 @@
       </v-flex>
 
       <v-flex
-        xs12
+        xs6
       >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
 
       <v-flex
-        xs12
+        xs6
         v-if="isConsumable"
       >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
       <v-flex
-        xs12
+        xs6
         v-else
       >The Population does not consume {{ productionChain.finalProduct }} over time.</v-flex>
     </v-layout>

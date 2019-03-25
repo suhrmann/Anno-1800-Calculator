@@ -2,7 +2,7 @@
 <div>
     <v-layout row wrap v-if="!newWorld">
             <v-flex align-self-center xs2>
-                <h2 color="primary">Required Workers </h2>
+                <h2 color="primary">Population</h2>
             </v-flex>
             <v-flex xs1 v-if="requiredPopulation.requiredFarmers !== 0">
                 <v-flex xs12>            
@@ -60,7 +60,7 @@
                 </v-flex>
             </v-flex>
             <v-flex align-self-center xs2>
-                <v-btn @click="showDemands()">
+                <v-btn :to="'/demands'" @click="changeResidents()">
                     Show Demands
                 </v-btn>
             </v-flex>
@@ -145,7 +145,7 @@ export default {
         getPopulationReq(element) {
             const helperFunctionMixin = this
             let building = helperFunctionMixin.getBuildingByName(element.name)
-
+            console.log(building)
             this.requiredPopulation.requiredFarmers += (building.maintenance.farmer * element.relativeAmount)
             this.requiredPopulation.requiredWorkers += (building.maintenance.worker * element.relativeAmount)
             this.requiredPopulation.requiredArtisans += (building.maintenance.artisan * element.relativeAmount)
@@ -165,6 +165,14 @@ export default {
                 requiredJornaleros: 0, 
                 requiredObreros: 0
             }
+        },
+
+        changeResidents(){
+            this.$store.commit('setNumFarmers', this.requiredPopulation.requiredFarmers)
+            this.$store.commit('setNumWorkers', this.requiredPopulation.requiredWorkers)
+            this.$store.commit('setNumArtisans', this.requiredPopulation.requiredArtisans)
+            this.$store.commit('setNumEngineers', this.requiredPopulation.requiredEngineers)
+            this.$store.commit('setNumInvestors', this.requiredPopulation.requiredFInvestors)
         },
 
         showDemands(){

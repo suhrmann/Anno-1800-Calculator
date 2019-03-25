@@ -1,7 +1,7 @@
 <template>
     <v-layout row wrap>
             <v-flex align-self-center xs2>
-                <h2 color="primary">Required Resources </h2>
+                <h2 color="primary">Resources </h2>
             </v-flex>
             <v-flex xs1>
                 <v-flex xs12>            

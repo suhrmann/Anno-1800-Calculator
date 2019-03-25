@@ -129,7 +129,7 @@ table {
 td {
   position: relative;
   vertical-align: top;
-  padding: 0 0 20px 0;
+  padding: 0 0 5px 0;
   text-align: center;
 }
 .extend_handle {
