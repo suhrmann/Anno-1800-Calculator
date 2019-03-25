@@ -1,6 +1,10 @@
 <template>
+<div>
     <v-layout row wrap v-if="!newWorld">
-            <v-flex xs2>
+            <v-flex align-self-center xs2>
+                <h2 color="primary">Required Workers </h2>
+            </v-flex>
+            <v-flex xs1 v-if="requiredPopulation.requiredFarmers !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-farmers.webp', 'icons')"
@@ -11,7 +15,7 @@
                     Farmers: {{requiredPopulation.requiredFarmers}}
                 </v-flex>
             </v-flex>
-            <v-flex xs2>
+            <v-flex xs1 v-if="requiredPopulation.requiredWorkers !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-workers.webp', 'icons')"
@@ -22,18 +26,18 @@
                     Workers: {{requiredPopulation.requiredWorkers}}
                 </v-flex>
             </v-flex>
-            <v-flex xs2>
+            <v-flex xs1 v-if="requiredPopulation.requiredArtisans !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-artisans.webp', 'icons')"
                         :alt="'artisans'"
                     >
                 </v-flex>
-                <v-flex xs12>
+                <v-flex xs12 >
                     Artisans: {{requiredPopulation.requiredArtisans}}
                 </v-flex>
             </v-flex>
-            <v-flex xs2>
+            <v-flex xs1 v-if="requiredPopulation.requiredEngineers !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-engineers.webp', 'icons')"
@@ -44,7 +48,7 @@
                     Engineers: {{requiredPopulation.requiredEngineers}}
                 </v-flex>
             </v-flex>
-            <v-flex xs2>
+            <v-flex xs1 v-if="requiredPopulation.requiredInvestors !== 0">
                 <v-flex xs12>            
                     <img
                         
@@ -55,8 +59,14 @@
                     Investors: {{requiredPopulation.requiredInvestors}}
                 </v-flex>
             </v-flex>
+            <v-flex align-self-center xs2>
+                <v-btn @click="showDemands()">
+                    Show Demands
+                </v-btn>
+            </v-flex>
+        </v-layout>
         <v-layout row wrap v-if="newWorld">
-            <v-flex xs2>
+            <v-flex xs1>
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-jornaleros.webp', 'icons')"
@@ -67,20 +77,24 @@
                     Jornaleros: {{requiredPopulation.requiredJornaleros}}
                 </v-flex>
             </v-flex>
-            <v-flex xs2>
+            <v-flex xs1>
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-obreros.webp', 'icons')"
                         :alt="'Obreros'"
                     >
-                </v-flex>
+                </v-flex >
                 <v-flex xs12>
                     Obreros: {{requiredPopulation.requiredObreros}}
                 </v-flex>
             </v-flex>
+            <v-flex align-self-center>
+                <v-btn>
+                    Show Demands
+                </v-btn>
+            </v-flex>
         </v-layout>
-
-    </v-layout>
+    </div>
 </template>
 
 <script>
@@ -96,7 +110,6 @@ export default {
     },
     data() {
         return {
-
             requiredPopulation: {
                 requiredFarmers: 0, 
                 requiredWorkers: 0, 
@@ -153,13 +166,17 @@ export default {
                 requiredObreros: 0
             }
         },
+
+        showDemands(){
+            alert('this button should show the residental Demands for these specific numbers in future versions')
+        },
     },
 }
 </script>
 
 <style>
 img {
-    height: 25%;
-    width: 25%;
+    height: 40%;
+    width: 40%;
 }
 </style>

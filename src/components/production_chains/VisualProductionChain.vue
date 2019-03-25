@@ -1,13 +1,13 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <v-layout justify-center row wrap>
-      <v-flex xs12 mb-5>
-        <h2 color="primary">Selected Chain: {{productionChain.finalProduct}}</h2>
+
+      <v-flex xs12>
+        <WorkerPanel :chain="this.treeData"></WorkerPanel>
       </v-flex>
 
-      <v-flex xs12 mb-5>
-        <h4 color="primary">Required Workers</h4>
-        <WorkerPanel :chain="this.treeData"></WorkerPanel>
+      <v-flex xs12>
+        <ResourcePanel :chain="this.treeData"></ResourcePanel>
       </v-flex>
 
       <v-flex xs1 shrink style="width: 60px">
@@ -50,11 +50,13 @@ import { helperFunctionMixin } from "../helperFunctionMixin.js";
 import { EventBus } from "../../EventBus.js";
 import TreeChart from "../TreeChart";
 import WorkerPanel from "./WorkerPanel"
+import ResourcePanel from "./ResourcePanel"
 
 export default {
   components: {
     TreeChart,
-    WorkerPanel
+    WorkerPanel,
+    ResourcePanel
   },
   data() {
     return {

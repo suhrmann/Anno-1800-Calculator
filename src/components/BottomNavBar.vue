@@ -1,8 +1,5 @@
 <template>
   <v-flex xs12>
-    selectedWorldID: {{selectedWorldID}},
-    selectedSocialClassID: {{selectedSocialClassID}},
-    selectedProductionChainID: {{selectedProductionChainID}},
     <!--
       The following element is needed to trigger the initial rendering of the computed property selectedProductionChain
       The element does render but is not shown
