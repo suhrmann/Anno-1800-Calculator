@@ -1,0 +1,495 @@
+{
+  "Version": "Anno1800 Beta",
+  "Production_Chain": {
+    "timber": {
+      "id": 1,
+      "img": "farmers/timber.webp",
+      "chain": "Timber",
+      "socialClassID": 1,
+      "finalProduct": "Timber",
+      "name": "Sawmill",
+      "alternative": "",
+      "children": [{
+        "name": "Lumberjack Hut",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "fish": {
+      "id": 2,
+      "chain": "Fish",
+      "img": "farmers/fish.webp",
+      "socialClassID": 1,
+      "finalProduct": "Fish",
+      "name": "Fishery",
+      "alternative": "",
+      "children": null
+    },
+    "schnapps": {
+      "id": 3,
+      "img": "farmers/schnapps.webp",
+      "chain": "Schnapps",
+      "socialClassID": 1,
+      "finalProduct": "Schnapps",
+      "name": "Schnapps Distillery",
+      "alternative": "",
+      "children": [{
+        "name": "Potato Farm",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "work-clothes": {
+      "id": 4,
+      "img": "farmers/work-clothes.webp",
+      "chain": "Clothes",
+      "socialClassID": 1,
+      "finalProduct": "Work Clothes",
+      "name": "Framework Knitters",
+      "alternative": "",
+      "children": [{
+        "name": "Sheep Farm",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "bricks": {
+      "id": 5,
+      "img": "workers/bricks.webp",
+      "chain": "Bricks",
+      "socialClassID": 2,
+      "finalProduct": "Bricks",
+      "name": "Brick Factory",
+      "alternative": "",
+      "children": [{
+        "name": "Clay Pit",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "sausages": {
+      "id": 6,
+      "img": "workers/sausages.webp",
+      "chain": "Sausages",
+      "socialClassID": 2,
+      "finalProduct": "Sausages",
+      "name": "Slaughterhouse",
+      "alternative": "",
+      "children": [{
+        "name": "Pig Farm",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "sails": {
+      "id": 7,
+      "img": "workers/sails.webp",
+      "chain": "Sails",
+      "socialClassID": 2,
+      "finalProduct": "Sails",
+      "name": "Sailmakers",
+      "alternative": "",
+      "children": [{
+        "name": "Sheep Farm",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "bread": {
+      "id": 8,
+      "img": "workers/bread.webp",
+      "chain": "Bread",
+      "socialClassID": 2,
+      "finalProduct": "Bread",
+      "name": "Bakery",
+      "alternative": "",
+      "children": [{
+        "name": "Flour Mill",
+        "alternative": "",
+        "children": [{
+          "name": "Grain Farm",
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
+    "soap": {
+      "id": 9,
+      "img": "workers/soap.webp",
+      "chain": "Soap",
+      "socialClassID": 2,
+      "finalProduct": "Soap",
+      "name": "Soap Factory",
+      "alternative": "",
+      "children": [{
+        "name": "Rendering Works",
+        "alternative": "",
+        "children": [{
+          "name": "Pig Farm",
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
+    "steel-beams": {
+      "id": 10,
+      "img": "workers/steel-beams.webp",
+      "chain": "Steel Beams",
+      "socialClassID": 2,
+      "finalProduct": "Steel Beams",
+      "name": "Steelworks",
+      "alternative": "",
+      "children": [{
+        "name": "Furnace",
+        "alternative": "",
+        "children": [{
+            "name": "Iron Mine",
+            "alternative": "",
+            "children": null
+          },
+          {
+            "name": "Charcoal Kiln",
+            "alternative": "",
+            "children": null
+          }
+        ]
+      }]
+    },
+    "weapons": {
+      "id": 11,
+      "img": "workers/weapons.webp",
+      "chain": "Weapons",
+      "socialClassID": 2,
+      "finalProduct": "Weapons",
+      "name": "Weapon Factory",
+      "alternative": "",
+      "children": [{
+        "name": "Furnace",
+        "alternative": "",
+        "children": [{
+            "name": "Iron Mine",
+            "alternative": "",
+            "children": null
+          },
+          {
+            "name": "Charcoal Kiln",
+            "alternative": "",
+            "children": null
+          }
+        ]
+      }]
+    },
+    "beer": {
+      "id": 12,
+      "img": "workers/beer.webp",
+      "chain": "Beer",
+      "socialClassID": 2,
+      "finalProduct": "Beer",
+      "name": "Brewery",
+      "alternative": "",
+      "children": [{
+          "name": "Hop Farm",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Malthouse",
+          "alternative": "",
+          "children": [{
+            "name": "Grain Farm",
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
+    },
+    "windows": {
+      "id": 13,
+      "img": "artisans/windows.webp",
+      "chain": "Windows",
+      "socialClassID": 3,
+      "finalProduct": "Windows",
+      "name": "Window Makers",
+      "alternative": "",
+      "children": [{
+          "name": "Lumberjack Hut",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Glassmakers",
+          "alternative": "",
+          "children": [{
+            "name": "Sand Mine",
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
+    },
+    "canned-food": {
+      "id": 14,
+      "img": "artisans/canned-food.webp",
+      "chain": "Canned Food",
+      "socialClassID": 3,
+      "finalProduct": "Canned Food",
+      "name": "Cannery",
+      "alternative": "",
+      "children": [{
+          "name": "Iron Mine",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Artisanal Kitchen",
+          "alternative": "",
+          "children": [{
+              "name": "Cattle Farm",
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Red Pepper Farm",
+              "alternative": "",
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+    "sewing-machines": {
+      "id": 15,
+      "img": "artisans/sewing-machines.webp",
+      "chain": "Sewing Machines",
+      "socialClassID": 3,
+      "finalProduct": "Sewing Machines",
+      "name": "Sewing Machine Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Lumberjack Hut",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Furnace",
+          "alternative": "",
+          "children": [{
+              "name": "Iron Mine",
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Coal Mine",
+              "alternative": "Charcoal Kiln",
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+    "fur-coats": {
+      "id": 16,
+      "img": "artisans/fur-coats.webp",
+      "chain": "Fur Coats",
+      "socialClassID": 3,
+      "finalProduct": "Fur Coats",
+      "name": "Fur Dealer",
+      "alternative": "",
+      "children": [{
+          "name": "Hunting Cabin",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Cotton Mill",
+          "alternative": "",
+          "children": [{
+            "name": "Cotton Plantation",
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
+    },
+    "Fried Plantains": {
+      "id": 17,
+      "img": "jornaleros/fried-plantains.webp",
+      "chain": "Fried Plantains",
+      "socialClassID": 6,
+      "finalProduct": "Fried Plantains",
+      "name": "Fried Plantain Kitchen",
+      "alternative": "",
+      "children": [{
+          "name": "Fish Oil Factory",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Plantain Plantation",
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+    "rum": {
+      "id": 18,
+      "img": "jornaleros/rum.webp",
+      "chain": "Rum",
+      "socialClassID": 6,
+      "finalProduct": "Rum",
+      "name": "Rum Distillery",
+      "alternative": "",
+      "children": [{
+          "name": "Lumberjack Hut",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Sugar Cane Plantation",
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+    "ponchos": {
+      "id": 19,
+      "img": "jornaleros/poncho.webp",
+      "chain": "Ponchos",
+      "socialClassID": 6,
+      "finalProduct": "Ponchos",
+      "name": "Poncho Darner",
+      "alternative": "",
+      "children": [{
+        "name": "Alpaca Farm",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "tortillas": {
+      "id": 20,
+      "img": "obreros/tortilla.webp",
+      "chain": "Tortillas",
+      "socialClassID": 7,
+      "finalProduct": "Tortillas",
+      "name": "Tortilla Maker",
+      "alternative": "",
+      "children": [{
+          "name": "Cattle Farm",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Corn Farm",
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+    "coffee": {
+      "id": 21,
+      "img": "obreros/coffee.webp",
+      "chain": "Coffee",
+      "socialClassID": 7,
+      "finalProduct": "Coffee",
+      "name": "Coffee Roaster",
+      "alternative": "",
+      "children": [{
+        "name": "Coffee Plantation",
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "electricity": {
+      "id": 22,
+      "img": "engineers/oil-power-plant.webp",
+      "chain": "Electricity",
+      "socialClassID": 7,
+      "finalProduct": "Electricity",
+      "name": "Oil Power Plant",
+      "alternative": "",
+      "children": [{
+        "name": "Small Oil Harbour",
+        "alternative": "",
+        "children": [{
+            "name": "Railway",
+            "alternative": "",
+            "children": [{
+              "name": "Oil Refinery",
+              "alternative": "",
+              "children": null
+            }]
+          },
+          {
+            "name": "Oil Storage",
+            "alternative": "",
+            "children": null
+          }
+        ]
+      }]
+    },
+    "cigars": {
+      "id": 23,
+      "img": "obreros/cigars.webp",
+      "chain": "Cigars",
+      "socialClassID": 7,
+      "finalProduct": "Cigars",
+      "name": "Cigar Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Tobacco Plantation",
+          "alternative": "",
+          "children": null
+        },
+        {
+          "name": "Marquetry Workshop",
+          "alternative": "",
+          "children": [{
+            "name": "Lumberjack Hut",
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
+    },
+    "steam_motors": {
+      "id": 24,
+      "img": "engineers/steam-machine.webp",
+      "chain": "Steam Motors",
+      "socialClassID": 4,
+      "finalProduct": "Steam Motors",
+      "name": "Motor Assembly Lines",
+      "alternative": "",
+      "children": [{
+          "name": "Furnace",
+          "alternative": "",
+          "children": [{
+              "name": "Iron Mine",
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Charcoal Kiln",
+              "alternative": "Coal Mine",
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Brass Smeltery",
+          "alternative": "",
+          "children": [{
+              "name": "Zinc Mine",
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Copper Mine",
+              "alternative": "",
+              "children": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -59,7 +59,7 @@
 <script>
 /* eslint-disable */
 
-import productionChain from '../data/productionChain.json';
+import productionChain from '../data/production-chain.json';
 import nonProducers from '../data/non-producers.json';
 import producers from '../data/producers.json';
 export default {

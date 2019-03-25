@@ -1,4 +1,4 @@
-import productionChains from '../../data/productionChain.json';
+import productionChains from '../../data/production-chain.json';
 
 export const chainNodeMixin = {
   name: 'ProductionChainNode',
@@ -8,7 +8,7 @@ export const chainNodeMixin = {
       chainDepth: 0,
       chainDepthCounter: 0,
       chainDepthArray: [],
-
+      newProductionChain: {},
     };
   },
   computed: {
@@ -25,13 +25,14 @@ export const chainNodeMixin = {
      * @param {function} elementCallbackFunction a function which gets executed on every tree element
      * which is not the root. The element is given to the callback function as a parameter
      * @param {boolean} debugOutput if true, debug output gets written in the console
-     * @return {void} the depth of the Production Chain and the callback function's
-     * result can be accessed by a vdata property. Recommendation: populate an Object or Array with the results
+     * @return {void} the (modified) chain, depth of the Production Chain and the callback function's
+     * result can be accessed by a vdata property.
      * ---
      * Iterates through all tree objects and executes a function at every element.
      * Determines the Production Chain's depth.
      */
     iterateProductionChain(productionChain, rootCallbackFunction, elementCallbackFunction, debugOutput) {
+      this.newProductionChain = {};
       this.chainDepth = 1;
       this.chainDepthArray = [1];
       const root = productionChain; // naming reasons
@@ -54,6 +55,7 @@ export const chainNodeMixin = {
 
       // determine the highest number in chainDepthArray, which is the tree height
       this.chainDepth = Math.max(...this.chainDepthArray);
+      this.newProductionChain = productionChain;
 
       if (debugOutput) {
         console.log('');
@@ -147,7 +149,7 @@ export const chainNodeMixin = {
      *                       or null if it were not found.
      */
     getProductionChainByProductName(product) {
-      console.log('--- getProductionChainByProductName(', product, ') ---');
+      //console.log('--- getProductionChainByProductName(', product, ') ---');
 
       const chains = this.productionChains.Production_Chain;
       for (const chainKey in chains) {
