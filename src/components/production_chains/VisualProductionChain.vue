@@ -4,6 +4,12 @@
       <v-flex xs12 mb-5>
         <h2 color="primary">Selected Chain: {{productionChain.finalProduct}}</h2>
       </v-flex>
+
+      <v-flex xs12 mb-5>
+        <h4 color="primary">Required Workers</h4>
+        <WorkerPanel :chain="this.treeData"></WorkerPanel>
+      </v-flex>
+
       <v-flex xs1 shrink style="width: 60px">
         <v-text-field
           @change="changeCounter()"
@@ -43,10 +49,12 @@ import { chainNodeMixin } from "./chainNodeMixin.js";
 import { helperFunctionMixin } from "../helperFunctionMixin.js";
 import { EventBus } from "../../EventBus.js";
 import TreeChart from "../TreeChart";
+import WorkerPanel from "./WorkerPanel"
 
 export default {
   components: {
-    TreeChart
+    TreeChart,
+    WorkerPanel
   },
   data() {
     return {
