@@ -1,14 +1,6 @@
 {
   "name": "anno-1800-calculator",
   "version": "0.1.0",
-  "description": "Calculate your populations' demands and optimal production chains.",
-  "main": "background.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Vadammt/Anno-1800-Calculator.git"
-  },
-  "bugs": "https://github.com/Vadammt/Anno-1800-Calculator/issues",
-  "homepage": "https://vadammt.github.io/Anno-1800-Calculator",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -38,7 +30,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "vue-cli-plugin-electron-builder": "^1.0.4",
+    "vue-cli-plugin-electron-builder": "^1.0.2",
     "vue-cli-plugin-vuetify": "^0.4.6",
     "vue-template-compiler": "^2.5.21",
     "vuetify-loader": "^1.0.5"
@@ -67,5 +59,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "background.js"
 }
