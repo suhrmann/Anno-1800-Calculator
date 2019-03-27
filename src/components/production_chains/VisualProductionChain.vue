@@ -28,18 +28,56 @@
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
 
-      <v-flex
-        xs6
-      >Production Output: {{ outputPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
 
-      <v-flex
-        xs6
-        v-if="isConsumable"
-      >Consumption: {{ consumptionPerMinute }} {{ productionChain.finalProduct }} per Minute</v-flex>
-      <v-flex
-        xs6
-        v-else
-      >The Population does not consume {{ productionChain.finalProduct }} over time.</v-flex>
+      <v-flex xs12>
+
+        <v-layout>
+          <v-flex align-self-center md2 xs12>
+              <h2 color="primary">Production / Consumption:</h2>
+          </v-flex>
+
+          <v-flex xs3>
+            <v-container fill-height>
+              <v-flex class="text-xs-right" xs12>
+                <h1>{{ outputPerMinute }}</h1>
+                Production Output (per Minute): {{ outputPerMinute }} {{ productionChain.finalProduct }}
+              </v-flex>
+            </v-container>
+          </v-flex>
+
+          <v-flex xs2>
+            <v-container fill-height>
+              <v-btn fab color="green lighten-4" depressed class="disable-events">
+                <v-icon large color="green">arrow_upward</v-icon>
+              </v-btn>
+              <v-img :src="require('../../assets/buildings/farmers/warehouse.webp')" max-height="100px" min-height="33px" contain></v-img>
+              <v-btn fab color="deep-orange lighten-4" depressed class="disable-events">
+                <v-icon large color="deep-orange">arrow_downward</v-icon>
+              </v-btn>
+            </v-container>
+          </v-flex>
+
+          <v-flex xs3>
+            <v-container fill-height>
+              <v-flex class="text-xs-left">
+
+                <div v-if="isConsumable">
+                  <h1>{{ consumptionPerMinute }}</h1>
+                  Consumption (per Minute): {{ consumptionPerMinute }} {{ productionChain.finalProduct }}
+                </div>
+                <div v-else>
+                  <h1>-</h1>
+                  The Population does not consume {{ productionChain.finalProduct }} over time.
+                </div>
+              </v-flex>
+            </v-container>
+          </v-flex>
+
+        </v-layout>
+
+      </v-flex>
+
+
     </v-layout>
   </v-container>
 </template>
@@ -264,6 +302,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  .disable-events {
+    pointer-events: none
+  }
 </style>
 
