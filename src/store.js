@@ -42,6 +42,16 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    addToPopulationDemands(state, populationObject) {
+      state.population.numFarmers += populationObject.farmers;
+      state.population.numWorkers += populationObject.workers;
+      state.population.numArtisans += populationObject.artisans;
+      state.population.numEngineers += populationObject.engineers;
+      state.population.numInvestors += populationObject.investors;
+      state.population.numJornaleros += populationObject.jornaleros;
+      state.population.numObreros += populationObject.obreros;
+    },
+
     /**
      * Change the IDs corresponding to the selected productionChain
      * 
@@ -169,6 +179,8 @@ export default new Vuex.Store({
     setConsumption(state, consumption) {
       state.consumption = consumption;
     },
+
+
   },
   actions: {
 
