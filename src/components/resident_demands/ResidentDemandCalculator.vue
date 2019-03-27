@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <v-container grid-list-md text-xs-center>
 
     <h2>Basic Needs:</h2>
