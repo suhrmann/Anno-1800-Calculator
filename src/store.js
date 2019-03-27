@@ -10,6 +10,7 @@ export default new Vuex.Store({
     selectedSocialClassID: 0,
     selectedProductionChainID: 0,
 
+    buildingQueue: [],
 
 
     /**
@@ -50,6 +51,10 @@ export default new Vuex.Store({
       state.population.numInvestors += populationObject.investors;
       state.population.numJornaleros += populationObject.jornaleros;
       state.population.numObreros += populationObject.obreros;
+    },
+
+    addBuildings(state, buildings) {
+      state.buildingQueue = buildings
     },
 
     /**

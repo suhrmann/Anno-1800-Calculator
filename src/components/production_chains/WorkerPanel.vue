@@ -113,6 +113,7 @@ export default {
     },
     data() {
         return {
+            buildingQueue: [],
             requiredPopulation: {
                 farmers: 0, 
                 workers: 0, 
@@ -141,6 +142,7 @@ export default {
         chain(newChain) {
             const chainNodeMixin = this;
             this.resetRequiredPopulation();
+            this.buildingQueue = {};
             chainNodeMixin.iterateProductionChain(
                 this.chain, 
                 (rootElement) => this.getPopulationReq(rootElement), 
@@ -154,14 +156,15 @@ export default {
         getPopulationReq(element) {
             const helperFunctionMixin = this
             let building = helperFunctionMixin.getBuildingByName(element.name)
-            console.log(building)
             this.requiredPopulation.farmers += (building.maintenance.farmer * element.relativeAmount)
-            this.requiredPopulation.qorkers += (building.maintenance.worker * element.relativeAmount)
+            this.requiredPopulation.workers += (building.maintenance.worker * element.relativeAmount)
             this.requiredPopulation.artisans += (building.maintenance.artisan * element.relativeAmount)
             this.requiredPopulation.engineers += (building.maintenance.engineer * element.relativeAmount)
             this.requiredPopulation.investors += (building.maintenance.investor * element.relativeAmount)
             this.requiredPopulation.jornaleros += (building.maintenance.jornaleros * element.relativeAmount)
             this.requiredPopulation.obreros += (building.maintenance.obreros * element.relativeAmount)
+
+            this.addBuildingToQueue(element.name)
         },
 
         resetRequiredPopulation(){
@@ -176,7 +179,13 @@ export default {
             }
         },
 
+        addBuildingToQueue(building){
+            this.buildingQueue.push(building)
+
+        },
+
         changeResidents(){
+            this.$store.commit('addBuildings', this.buildingQueue)
             this.$store.commit('addToPopulationDemands', this.requiredPopulation)
             this.$router.push('/demands')
         },

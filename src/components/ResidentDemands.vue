@@ -5,8 +5,9 @@
         <h1>Resident Demands</h1>
       </v-flex>
       <!-- Resident Demands -->
+            <bottom-population-input></bottom-population-input>
       <resident-demand-calculator></resident-demand-calculator>
-      <bottom-population-input></bottom-population-input>
+
     </v-layout>
   </v-container>
 </template>
