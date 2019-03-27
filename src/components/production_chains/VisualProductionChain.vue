@@ -47,11 +47,11 @@
 
           <v-flex xs2>
             <v-container fill-height>
-              <v-btn fab color="green lighten-4" depressed class="no-button">
+              <v-btn fab color="green lighten-4" depressed class="disable-events">
                 <v-icon large color="green">arrow_upward</v-icon>
               </v-btn>
               <v-img :src="require('../../assets/buildings/farmers/warehouse.webp')" max-height="100px" min-height="33px" contain></v-img>
-              <v-btn fab color="deep-orange lighten-4" depressed class="no-button">
+              <v-btn fab color="deep-orange lighten-4" depressed class="disable-events">
                 <v-icon large color="deep-orange">arrow_downward</v-icon>
               </v-btn>
             </v-container>
@@ -302,6 +302,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  .disable-events {
+    pointer-events: none
+  }
 </style>
 
