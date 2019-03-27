@@ -5,8 +5,9 @@
         <h1>Resident Demands</h1>
       </v-flex>
       <!-- Resident Demands -->
+            <bottom-population-input></bottom-population-input>
       <resident-demand-calculator></resident-demand-calculator>
-      <bottom-population-input></bottom-population-input>
+
     </v-layout>
   </v-container>
 </template>
@@ -14,6 +15,7 @@
 <script>
 import BottomPopulationInput from './resident_demands/BottomPopulationInput';
 import ResidentDemandCalculator from './resident_demands/ResidentDemandCalculator';
+import store from "../store.js"
 
 export default {
   name: 'ResidentDemands',
@@ -21,6 +23,13 @@ export default {
     'resident-demand-calculator': ResidentDemandCalculator,
     'bottom-population-input': BottomPopulationInput,
   },
+
+  beforeRouteEnter (to, from, next) {
+    // do sth
+    next( vm => {
+      //gets executed when component is loaded. has access to component
+    })
+  }
 };
 </script>
 

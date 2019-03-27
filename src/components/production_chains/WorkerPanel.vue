@@ -4,7 +4,7 @@
             <v-flex align-self-center xs2>
                 <h2 color="primary">Population</h2>
             </v-flex>
-            <v-flex xs1 v-if="requiredPopulation.requiredFarmers !== 0">
+            <v-flex xs1 v-if="requiredPopulation.farmers !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-farmers.webp', 'icons')"
@@ -12,10 +12,10 @@
                     >
                 </v-flex>
                 <v-flex xs12>
-                    Farmers: {{requiredPopulation.requiredFarmers}}
+                    Farmers: {{requiredPopulation.farmers}}
                 </v-flex>
             </v-flex>
-            <v-flex xs1 v-if="requiredPopulation.requiredWorkers !== 0">
+            <v-flex xs1 v-if="requiredPopulation.workers !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-workers.webp', 'icons')"
@@ -23,10 +23,10 @@
                     >
                 </v-flex>
                 <v-flex xs12>
-                    Workers: {{requiredPopulation.requiredWorkers}}
+                    Workers: {{requiredPopulation.workers}}
                 </v-flex>
             </v-flex>
-            <v-flex xs1 v-if="requiredPopulation.requiredArtisans !== 0">
+            <v-flex xs1 v-if="requiredPopulation.artisans !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-artisans.webp', 'icons')"
@@ -34,10 +34,10 @@
                     >
                 </v-flex>
                 <v-flex xs12 >
-                    Artisans: {{requiredPopulation.requiredArtisans}}
+                    Artisans: {{requiredPopulation.artisans}}
                 </v-flex>
             </v-flex>
-            <v-flex xs1 v-if="requiredPopulation.requiredEngineers !== 0">
+            <v-flex xs1 v-if="requiredPopulation.engineers !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-engineers.webp', 'icons')"
@@ -45,10 +45,10 @@
                     >
                 </v-flex>
                 <v-flex xs12>
-                    Engineers: {{requiredPopulation.requiredEngineers}}
+                    Engineers: {{requiredPopulation.engineers}}
                 </v-flex>
             </v-flex>
-            <v-flex xs1 v-if="requiredPopulation.requiredInvestors !== 0">
+            <v-flex xs1 v-if="requiredPopulation.investors !== 0">
                 <v-flex xs12>            
                     <img
                         
@@ -56,17 +56,20 @@
                     >
                 </v-flex>
                 <v-flex xs12>
-                    Investors: {{requiredPopulation.requiredInvestors}}
+                    Investors: {{requiredPopulation.investors}}
                 </v-flex>
             </v-flex>
             <v-flex align-self-center xs2>
-                <v-btn :to="'/demands'" @click="changeResidents()">
-                    Show Demands
+                <v-btn @click="changeResidents()">
+                    Add to Demands
                 </v-btn>
             </v-flex>
         </v-layout>
         <v-layout row wrap v-if="newWorld">
-            <v-flex xs1>
+            <v-flex align-self-center xs2>
+                <h2 color="primary">Population</h2>
+            </v-flex>
+            <v-flex xs1 v-if="requiredPopulation.jornaleros !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-jornaleros.webp', 'icons')"
@@ -74,10 +77,10 @@
                     >
                 </v-flex>
                 <v-flex xs12>
-                    Jornaleros: {{requiredPopulation.requiredJornaleros}}
+                    Jornaleros: {{requiredPopulation.jornaleros}}
                 </v-flex>
             </v-flex>
-            <v-flex xs1>
+            <v-flex xs1 v-if="requiredPopulation.obreros !== 0">
                 <v-flex xs12>            
                     <img
                         :src="getImage('workforce-obreros.webp', 'icons')"
@@ -85,12 +88,12 @@
                     >
                 </v-flex >
                 <v-flex xs12>
-                    Obreros: {{requiredPopulation.requiredObreros}}
+                    Obreros: {{requiredPopulation.obreros}}
                 </v-flex>
             </v-flex>
             <v-flex align-self-center>
-                <v-btn>
-                    Show Demands
+                <v-btn @click="changeResidents()">
+                    Add to Demands
                 </v-btn>
             </v-flex>
         </v-layout>
@@ -110,21 +113,28 @@ export default {
     },
     data() {
         return {
+            buildingQueue: [],
             requiredPopulation: {
-                requiredFarmers: 0, 
-                requiredWorkers: 0, 
-                requiredArtisans: 0, 
-                requiredEngineers: 0, 
-                requiredInvestors: 0, 
-                requiredJornaleros: 0, 
-                requiredObreros: 0
+                farmers: 0, 
+                workers: 0, 
+                artisans: 0, 
+                engineers: 0, 
+                investors: 0, 
+                jornaleros: 0, 
+                obreros: 0
                 },
         }
     },
 
     computed: {
         newWorld() {
-            return false 
+            const worldID = this.$store.state.selectedWorldID
+            if (worldID === 1)
+            {
+                return false
+            } else {
+                return true
+            }
         }
     },
 
@@ -132,6 +142,7 @@ export default {
         chain(newChain) {
             const chainNodeMixin = this;
             this.resetRequiredPopulation();
+            this.buildingQueue = {};
             chainNodeMixin.iterateProductionChain(
                 this.chain, 
                 (rootElement) => this.getPopulationReq(rootElement), 
@@ -145,38 +156,38 @@ export default {
         getPopulationReq(element) {
             const helperFunctionMixin = this
             let building = helperFunctionMixin.getBuildingByName(element.name)
-            console.log(building)
-            this.requiredPopulation.requiredFarmers += (building.maintenance.farmer * element.relativeAmount)
-            this.requiredPopulation.requiredWorkers += (building.maintenance.worker * element.relativeAmount)
-            this.requiredPopulation.requiredArtisans += (building.maintenance.artisan * element.relativeAmount)
-            this.requiredPopulation.requiredEngineers += (building.maintenance.engineer * element.relativeAmount)
-            this.requiredPopulation.requiredInvestors += (building.maintenance.investor * element.relativeAmount)
-            this.requiredPopulation.requiredJornaleros += (building.maintenance.jornaleros * element.relativeAmount)
-            this.requiredPopulation.requiredObreros += (building.maintenance.obreros * element.relativeAmount)
+            this.requiredPopulation.farmers += (building.maintenance.farmer * element.relativeAmount)
+            this.requiredPopulation.workers += (building.maintenance.worker * element.relativeAmount)
+            this.requiredPopulation.artisans += (building.maintenance.artisan * element.relativeAmount)
+            this.requiredPopulation.engineers += (building.maintenance.engineer * element.relativeAmount)
+            this.requiredPopulation.investors += (building.maintenance.investor * element.relativeAmount)
+            this.requiredPopulation.jornaleros += (building.maintenance.jornaleros * element.relativeAmount)
+            this.requiredPopulation.obreros += (building.maintenance.obreros * element.relativeAmount)
+
+            this.addBuildingToQueue(element.name)
         },
 
         resetRequiredPopulation(){
             this.requiredPopulation = {
-                requiredFarmers: 0, 
-                requiredWorkers: 0, 
-                requiredArtisans: 0, 
-                requiredEngineers: 0, 
-                requiredInvestors: 0, 
-                requiredJornaleros: 0, 
-                requiredObreros: 0
+                farmers: 0, 
+                workers: 0, 
+                artisans: 0, 
+                engineers: 0, 
+                investors: 0, 
+                jornaleros: 0, 
+                obreros: 0
             }
         },
 
-        changeResidents(){
-            this.$store.commit('setNumFarmers', this.requiredPopulation.requiredFarmers)
-            this.$store.commit('setNumWorkers', this.requiredPopulation.requiredWorkers)
-            this.$store.commit('setNumArtisans', this.requiredPopulation.requiredArtisans)
-            this.$store.commit('setNumEngineers', this.requiredPopulation.requiredEngineers)
-            this.$store.commit('setNumInvestors', this.requiredPopulation.requiredFInvestors)
+        addBuildingToQueue(building){
+            this.buildingQueue.push(building)
+
         },
 
-        showDemands(){
-            alert('this button should show the residental Demands for these specific numbers in future versions')
+        changeResidents(){
+            this.$store.commit('addBuildings', this.buildingQueue)
+            this.$store.commit('addToPopulationDemands', this.requiredPopulation)
+            this.$router.push('/demands')
         },
     },
 }

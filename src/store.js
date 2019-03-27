@@ -6,6 +6,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     selectedProductionChain: null,
+    selectedWorldID: 0,
+    selectedSocialClassID: 0,
+    selectedProductionChainID: 0,
+
+    buildingQueue: [],
+
 
     /**
      * The user's input of number of populations - for consumption calculation.
@@ -37,6 +43,56 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    addToPopulationDemands(state, populationObject) {
+      state.population.numFarmers += populationObject.farmers;
+      state.population.numWorkers += populationObject.workers;
+      state.population.numArtisans += populationObject.artisans;
+      state.population.numEngineers += populationObject.engineers;
+      state.population.numInvestors += populationObject.investors;
+      state.population.numJornaleros += populationObject.jornaleros;
+      state.population.numObreros += populationObject.obreros;
+    },
+
+    addBuildings(state, buildings) {
+      state.buildingQueue = buildings
+    },
+
+    /**
+     * Change the IDs corresponding to the selected productionChain
+     * 
+     * @param {object} state
+     * @param {object} idObject
+     * {
+        * @param {integer} chainID 
+        * @param {integer} socialClassID 
+        * @param {integer} worldID 
+     * } 
+     */
+    changeSelectionIDs(state, idObject) {
+      state.selectedProductionChainID = idObject.chainID
+      state.selectedSocialClassID = idObject.socialClassID
+      state.selectedWorldID = idObject.worldID
+    },
+
+    changeWorldID(state, worldID){
+      state.selectedWorldID = worldID
+    },
+
+    changeSocialClassID(state, socialClassID){
+      state.selectedSocialClassID = socialClassID
+    },
+
+    changeProductionChainID(state, chainID){
+    state.selectedProductionChainID = chainID
+    },
+
+    resetSelectionIDs(state) {
+      state.selectedProductionChainID = 1
+      state.selectedSocialClassID = 1
+      state.selectedWorldID = 1
+    },
+
+
     /**
      * Change the selected production chain from bottom navbar.
      * @param {object} state
@@ -128,6 +184,8 @@ export default new Vuex.Store({
     setConsumption(state, consumption) {
       state.consumption = consumption;
     },
+
+
   },
   actions: {
 

@@ -38,7 +38,7 @@
           v-for="(socialClass, i) in selectedSocialClasses"
           :key="i"
           :value="socialClass.id"
-          @click="resetProductionChain(socialClass.id)"
+          @click="changeSocialClass(socialClass.id)"
         >
           <span>{{ socialClass.name }}</span>
           <v-avatar>
@@ -57,7 +57,7 @@
           v-for="(world, i) in worlds"
           :key="i"
           :value="world.id"
-          @click="resetSocialClass(world.id)"
+          @click="changeWorld(world.id)"
         >
           <span>{{ world.name }}</span>
           <v-avatar>
@@ -82,9 +82,9 @@ export default {
   data() {
     return {
       // Init selection
-      selectedWorldID: 1,
-      selectedSocialClassID: 1,
-      selectedProductionChainID: 1,
+      //selectedWorldID: 1,
+      //selectedSocialClassID: 1,
+      //selectedProductionChainID: 1,
 
       /* Store data from JSON in component */
       // TODO Load these centrally and access this data e.g. via Vuex
@@ -95,6 +95,24 @@ export default {
   },
 
   computed: {
+
+    selectedWorldID: {
+      get: function() {return this.$store.state.selectedWorldID;},
+      set: function(selectedWorldID) {this.$store.commit('changeWorldID', selectedWorldID);},
+    },
+
+    selectedSocialClassID: {
+      get: function() {return this.$store.state.selectedSocialClassID;},
+      set: function(selectedSocialClassID) {this.$store.commit('changeSocialClassID', selectedSocialClassID);},
+    },
+
+    selectedProductionChainID: {
+      get: function() {return this.$store.state.selectedProductionChainID;},
+      set: function(selectedProductionChainID) {this.$store.commit('changeProductionChainID', selectedProductionChainID);},
+    },
+
+
+
     /**
      * Search production chain by ChainID.
      *
@@ -153,16 +171,16 @@ export default {
      *
      * @param {int} worldID The id of the world that caused this reset.
      */
-    resetSocialClass: function(worldID) {
+    changeWorld: function(worldID) {
       const selectedWorld = this.getWorldByID(worldID);
       this.selectedWorldID = selectedWorld.id;
-
+     
       const selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.startingSocialClassID
+        selectedWorld.socialClassIDs[0]
       );
       this.selectedSocialClassID = selectedSocialClass.id;
 
-      this.resetProductionChain(selectedSocialClass.id);
+      this.changeSocialClass(selectedSocialClass.id);
       EventBus.$emit("bottomNavBarChanged");
     },
 
@@ -171,7 +189,7 @@ export default {
      *
      * @param {int} socialClassID The id of the social class that caused this reset.
      */
-    resetProductionChain: function(socialClassID) {
+    changeSocialClass: function(socialClassID) {
       const socialClass = this.getSocialClassByID(socialClassID);
       this.selectedProductionChainID = socialClass.firstProductionChain;
     },
