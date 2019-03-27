@@ -10,8 +10,6 @@
       >
         <v-card
           v-if="usage"
-
-          :to="isConsumable(product, usage) ? '/chains' : ''"
           @click="isConsumable(product, usage) ? selectChain(product) : false"
           :hover="isConsumable(product, usage)"
         >
@@ -44,8 +42,6 @@
       >
         <v-card
           v-if="usage"
-
-          :to="isConsumable(product, usage) ? '/chains' : ''"
           @click="isConsumable(product, usage) ? selectChain(product) : false"
           :hover="isConsumable(product, usage)"
         >
@@ -76,10 +72,11 @@ import Consumption from '../../data/consumption.json';
 import Producers from '../../data/producers.json';
 import NonProducers from '../../data/non-producers.json';
 import { chainNodeMixin } from '../production_chains/chainNodeMixin';
+import { helperFunctionMixin } from '../helperFunctionMixin'
 
 export default {
   name: 'ResidentDemandCalculator',
-  mixins: [chainNodeMixin],
+  mixins: [chainNodeMixin, helperFunctionMixin],
   data: function() {
     return {
       producers: Producers.Producers,
@@ -293,8 +290,20 @@ export default {
      * @param {string} product The selected Product.
      */
     selectChain(product) {
+      
+      const helperFunctionMixin = this
       const selectedChain = this.getProductionChainByProductName(product);
+      const socialClass =  helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID)
+      const world = helperFunctionMixin.getWorldByID(socialClass.worldID)
+      this.$store.commit(
+      'changeSelectionIDs', 
+      {
+        worldID: world.id, 
+        socialClassID: socialClass.id, 
+        chainID: selectedChain.id
+      })
       this.$store.commit('changeProductionChain', selectedChain);
+      this.$router.push("/chains")
     },
   },
 };

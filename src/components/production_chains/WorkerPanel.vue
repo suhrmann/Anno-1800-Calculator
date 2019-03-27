@@ -61,7 +61,7 @@
             </v-flex>
             <v-flex align-self-center xs2>
                 <v-btn :to="'/demands'" @click="changeResidents()">
-                    Show Demands
+                    Add to Demands
                 </v-btn>
             </v-flex>
         </v-layout>
@@ -90,7 +90,7 @@
             </v-flex>
             <v-flex align-self-center>
                 <v-btn>
-                    Show Demands
+                    Add to Demands
                 </v-btn>
             </v-flex>
         </v-layout>

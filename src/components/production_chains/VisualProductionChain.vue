@@ -10,18 +10,20 @@
         <ResourcePanel :chain="this.treeData"></ResourcePanel>
       </v-flex>
 
-      <v-flex xs1 shrink style="width: 60px">
+      <v-flex xs1 mr-5 style="width: 60px" shrink>
         <v-text-field
           @change="changeCounter()"
           v-model="chainCount"
-          class="mt-0"
           hide-details
           single-line
-          type="number"
+          outline
         ></v-text-field>
       </v-flex>
-      <v-flex xs9>
+      <v-flex xs9 mr-5 pr-5>
         <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
+      </v-flex>
+      <v-flex style="width: 60px" shrink>
+
       </v-flex>
 
       <v-flex xs12>
@@ -36,11 +38,11 @@
               <h2 color="primary">Production / Consumption:</h2>
           </v-flex>
 
-          <v-flex xs3>
+          <v-flex xs3 align-self-center>
             <v-container fill-height>
-              <v-flex class="text-xs-right" xs12>
+              <v-flex align-self-center class="text-xs-right" xs12>
                 <h1>{{ outputPerMinute }}</h1>
-                Production Output (per Minute): {{ outputPerMinute }} {{ productionChain.finalProduct }}
+                Production Output (per Minute)
               </v-flex>
             </v-container>
           </v-flex>
@@ -57,13 +59,13 @@
             </v-container>
           </v-flex>
 
-          <v-flex xs3>
+          <v-flex xs3 align-self-center>
             <v-container fill-height>
               <v-flex class="text-xs-left">
 
                 <div v-if="isConsumable">
                   <h1>{{ consumptionPerMinute }}</h1>
-                  Consumption (per Minute): {{ consumptionPerMinute }} {{ productionChain.finalProduct }}
+                  Consumption (per Minute)
                 </div>
                 <div v-else>
                   <h1>-</h1>

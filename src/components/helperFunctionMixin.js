@@ -1,6 +1,8 @@
 import producers from '../data/producers.json';
 import nonProducers from '../data/non-producers.json';
 import ProductionChains from '../data/production-chain.json';
+import Worlds from '../data/worlds.json'
+import SocialClasses from '../data/social-classes.json'
 import {
   chainNodeMixin,
 } from './production_chains/chainNodeMixin';
@@ -13,10 +15,10 @@ export const helperFunctionMixin = {
     };
   },
   computed: {
-    producers() {
+    producerFile() {
       return JSON.parse(JSON.stringify(producers));
     },
-    nonProducers() {
+    nonProducerFile() {
       return JSON.parse(JSON.stringify(nonProducers));
     },
   },
@@ -105,7 +107,7 @@ export const helperFunctionMixin = {
      * @return {Object} A JS Object representing the matching producer
      */
     getBuildingByName(name) {
-      const buildings = this.producers.Producers;
+      const buildings = this.producerFile.Producers;
       for (const building in buildings) {
         if (buildings[building].building === name) {
           return buildings[building];
@@ -125,6 +127,32 @@ export const helperFunctionMixin = {
       });
       return chainObject;
     },
+
+        /**
+     * Searches all worlds by their world id
+     *
+     * @param {int} id
+     * @return {Object} The selected World Object
+     */
+    getWorldByID(id) {
+      const worlds = Object.values(Worlds);
+      const selectedWorld = worlds.filter(world => world.id === id)[0];
+      return selectedWorld;
+    },
+
+    /**
+     * Searches all social classes by their social class id
+     *
+     * @param {int} id
+     * @return {Object} The selected Social Class Object
+     */
+    getSocialClassByID(id) {
+      const socialClasses = Object.values(SocialClasses);
+      const selectedSocialClass = socialClasses.filter(
+        socialClass => socialClass.id === id
+      )[0];
+      return selectedSocialClass;
+    }
 
 
   },
