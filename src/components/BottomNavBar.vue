@@ -6,13 +6,13 @@
     -->
     <p v-show="false">{{selectedProductionChain}}</p>
 
-    <v-card height="64px" tile>
+    <v-card height="70px" tile>
       <v-bottom-nav
         :active.sync="selectedProductionChainID"
         :value="true"
         absolute
         dark
-        height="64"
+        height="70"
       >
         <v-btn
           color="primary"
@@ -30,8 +30,8 @@
     </v-card>
 
     <!-- Nav Bar: SOCIAL CLASS -->
-    <v-card height="64px" tile>
-      <v-bottom-nav :active.sync="selectedSocialClassID" :value="true" absolute dark height="64">
+    <v-card height="70px" tile>
+      <v-bottom-nav :active.sync="selectedSocialClassID" :value="true" absolute dark height="70">
         <v-btn
           color="primary"
           flat
@@ -49,8 +49,8 @@
     </v-card>
 
     <!-- Nav Bar: WORLD -->
-    <v-card height="64px" tile>
-      <v-bottom-nav :active.sync="selectedWorldID" :value="true" absolute dark height="64">
+    <v-card height="70px" tile>
+      <v-bottom-nav :active.sync="selectedWorldID" :value="true" absolute dark height="70">
         <v-btn
           color="primary"
           flat
@@ -95,23 +95,35 @@ export default {
   },
 
   computed: {
-
     selectedWorldID: {
-      get: function() {return this.$store.state.selectedWorldID;},
-      set: function(selectedWorldID) {this.$store.commit('changeWorldID', selectedWorldID);},
+      get: function() {
+        return this.$store.state.selectedWorldID;
+      },
+      set: function(selectedWorldID) {
+        this.$store.commit("changeWorldID", selectedWorldID);
+      }
     },
 
     selectedSocialClassID: {
-      get: function() {return this.$store.state.selectedSocialClassID;},
-      set: function(selectedSocialClassID) {this.$store.commit('changeSocialClassID', selectedSocialClassID);},
+      get: function() {
+        return this.$store.state.selectedSocialClassID;
+      },
+      set: function(selectedSocialClassID) {
+        this.$store.commit("changeSocialClassID", selectedSocialClassID);
+      }
     },
 
     selectedProductionChainID: {
-      get: function() {return this.$store.state.selectedProductionChainID;},
-      set: function(selectedProductionChainID) {this.$store.commit('changeProductionChainID', selectedProductionChainID);},
+      get: function() {
+        return this.$store.state.selectedProductionChainID;
+      },
+      set: function(selectedProductionChainID) {
+        this.$store.commit(
+          "changeProductionChainID",
+          selectedProductionChainID
+        );
+      }
     },
-
-
 
     /**
      * Search production chain by ChainID.
@@ -174,7 +186,7 @@ export default {
     changeWorld: function(worldID) {
       const selectedWorld = this.getWorldByID(worldID);
       this.selectedWorldID = selectedWorld.id;
-     
+
       const selectedSocialClass = this.getSocialClassByID(
         selectedWorld.socialClassIDs[0]
       );
