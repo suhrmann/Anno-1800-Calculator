@@ -734,7 +734,7 @@
             "building": "Cattle Farm",
             "img": "artisans/beef.webp",
             "worldID": 1,
-            "productionTime": 120,
+            "productionTime": 60,
             "construction": {
                 "cash": 2000,
                 "wood": 6,
