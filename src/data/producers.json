@@ -762,8 +762,8 @@
             "worldID": 2,
             "productionTime": 120,
             "construction": {
-                "cash": 2000,
-                "wood": 6,
+                "cash": 2500,
+                "wood": 8,
                 "brick": 0,
                 "steel": 0,
                 "window": 0,
@@ -771,12 +771,12 @@
                 "influence": 0
             },
             "maintenance": {
-                "cash": 50,
-                "jornaleros": 0,
+                "cash": 20,
+                "jornaleros": 20,
                 "obreros": 0,
                 "farmer": 0,
                 "worker": 0,
-                "artisan": 20,
+                "artisan": 0,
                 "engineer": 0,
                 "investor": 0
             }
