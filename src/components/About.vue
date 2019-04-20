@@ -52,11 +52,11 @@
             color="primary"
             large
             block
-            href="https://store.steampowered.com/app/916440/Anno_1800/"
+            href="https://www.epicgames.com/store/en-US/product/anno-1800/home"
             target="_blank"
           >
             <v-icon>shopping_cart</v-icon> &nbsp;
-            Buy Anno 1800 (Steam)
+            Buy Anno 1800 (Epic Games)
           </v-btn>
         </v-card-actions>
       </v-card>
