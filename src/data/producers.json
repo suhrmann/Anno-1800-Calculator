@@ -734,7 +734,33 @@
             "building": "Cattle Farm",
             "img": "artisans/beef.webp",
             "worldID": 1,
-            "productionTime": 60,
+            "productionTime": 120,
+            "construction": {
+                "cash": 2000,
+                "wood": 6,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 50,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 20,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Cattle Farm": {
+            "product": "Beef",
+            "building": "Cattle Farm",
+            "img": "artisans/beef.webp",
+            "worldID": 2,
+            "productionTime": 120,
             "construction": {
                 "cash": 2000,
                 "wood": 6,
