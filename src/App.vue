@@ -44,7 +44,7 @@ export default {
     title: 'Anno 1800 Calculator',
     subtitle: 'a production chain cheatsheet',
     items: [
-      { icon: 'lightbulb_outline', text: 'Home', route: '/Home' },
+      { icon: 'home', text: 'Home', route: '/Home' },
       { divider: true },
       { heading: 'Production' },
       { icon: 'merge_type', text: 'Production Chains', route: '/chains' },
