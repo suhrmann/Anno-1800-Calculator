@@ -9,19 +9,52 @@
 
       <v-container grid-list-md text-xs-center>
 
-      <div v-if="isPopulationEmpty">
-        <v-alert
-          class="my-5"
-          :value="true"
-          type="warning"
-          transition="scale-transition"
-        >
-          <h3>No population set</h3>
-          Enter the number of at least one populations to start calculation of demands.
-        </v-alert>
-      </div>
+        <!-- Alert if no population was entered -->
+        <div v-if="isPopulationEmpty">
+          <v-alert
+            class="my-5"
+            :value="true"
+            type="warning"
+            transition="scale-transition"
+          >
+            <h3>No population set</h3>
+            Enter the number of at least one populations to start calculation of demands.
+          </v-alert>
+        </div>
 
-      <resident-demand-calculator></resident-demand-calculator>
+        <!-- Demands calculaiton -->
+        <v-tabs fixed-tabs>
+          <!-- TAB: Demands as cards -->
+          <v-tab
+            :key="1"
+          >
+            Demand Cards
+          </v-tab>
+          <v-tab-item
+            :key="1"
+          >
+            <v-card flat>
+              <resident-demands-cards></resident-demands-cards>
+            </v-card>
+          </v-tab-item>
+
+          <!-- TAB: Demands as table -->
+          <v-tab
+            :key="2"
+          >
+            Demands Table
+          </v-tab>
+          <v-tab-item
+            :key="2"
+          >
+            <v-card flat>
+              <resident-demands-table></resident-demands-table>
+            </v-card>
+          </v-tab-item>
+
+        </v-tabs>
+
+      </v-container>
 
     </v-layout>
   </v-container>
@@ -29,13 +62,18 @@
 
 <script>
 import BottomPopulationInput from './resident_demands/BottomPopulationInput';
-import ResidentDemandCalculator from './resident_demands/ResidentDemandCalculator';
+import ResidentDemandsCards from './resident_demands/ResidentDemandsCards';
+import ResidentDemandsTable from './resident_demands/ResidentDemandsTable';
+
+import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js';
 import store from '../store.js';
 
 export default {
   name: 'ResidentDemands',
   components: {
-    'resident-demand-calculator': ResidentDemandCalculator,
+    'resident-demands-cards': ResidentDemandsCards,
+    'resident-demands-table': ResidentDemandsTable,
+
     'bottom-population-input': BottomPopulationInput,
   },
 
@@ -46,12 +84,14 @@ export default {
     });
   },
 
+  mixins: [residentDemandCalculatorMixin],
+
   computed: {
     /**
-     * Check if any population was entered.
-     *
-     * @return {boolean} true if no population is set.
-     */
+       * Check if any population was entered.
+       *
+       * @return {boolean} true if no population is set.
+       */
     isPopulationEmpty: function() {
       return !(this.$store.state.population.numFarmers > 0 ||
           this.$store.state.population.numWorkers > 0 ||
