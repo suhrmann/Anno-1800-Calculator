@@ -45,6 +45,9 @@ export default {
     subtitle: "a production chain cheatsheet",
     items: [
       { icon: "home", text: "Home", route: "/Home" },
+      { heading: "Production" },
+      { icon: "merge_type", text: "Production Chains", route: "/chains" },
+      { icon: "trending_up", text: "Resident Demand", route: "/demands" },
       { divider: true },
       { heading: "Information" },
       {
