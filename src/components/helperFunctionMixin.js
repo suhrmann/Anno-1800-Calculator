@@ -1,8 +1,8 @@
 import producers from '../data/producers.json';
 import nonProducers from '../data/non-producers.json';
 import ProductionChains from '../data/production-chain.json';
-import Worlds from '../data/worlds.json'
-import SocialClasses from '../data/social-classes.json'
+import Worlds from '../data/worlds.json';
+import SocialClasses from '../data/social-classes.json';
 import {
   chainNodeMixin,
 } from './production_chains/chainNodeMixin';
@@ -96,7 +96,7 @@ export const helperFunctionMixin = {
      */
 
     fetchProductionTime(node) {
-      const building = this.getBuildingByName(node.name);
+      const building = this.getBuildingByName(node.name, node.worldID);
       this.productionTimes.push(building.productionTime);
     },
 
@@ -104,12 +104,13 @@ export const helperFunctionMixin = {
      * Search for building by its name.
      *
      * @param {String} name The buildings name.
+     * @param {int} worldID The current worldID
      * @return {Object} A JS Object representing the matching producer
      */
-    getBuildingByName(name) {
+    getBuildingByName(name, worldID) {
       const buildings = this.producerFile.Producers;
       for (const building in buildings) {
-        if (buildings[building].building === name) {
+        if (buildings[building].building === name && buildings[building].worldID === worldID) {
           return buildings[building];
         }
       }
@@ -128,7 +129,7 @@ export const helperFunctionMixin = {
       return chainObject;
     },
 
-        /**
+    /**
      * Searches all worlds by their world id
      *
      * @param {int} id
@@ -136,7 +137,7 @@ export const helperFunctionMixin = {
      */
     getWorldByID(id) {
       const worlds = Object.values(Worlds);
-      const selectedWorld = worlds.filter(world => world.id === id)[0];
+      const selectedWorld = worlds.filter((world) => world.id === id)[0];
       return selectedWorld;
     },
 
@@ -149,10 +150,10 @@ export const helperFunctionMixin = {
     getSocialClassByID(id) {
       const socialClasses = Object.values(SocialClasses);
       const selectedSocialClass = socialClasses.filter(
-        socialClass => socialClass.id === id
+        (socialClass) => socialClass.id === id
       )[0];
       return selectedSocialClass;
-    }
+    },
 
 
   },

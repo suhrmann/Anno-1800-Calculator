@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <v-container grid-list-md text-xs-center>
 
     <h2>Basic Needs:</h2>
@@ -22,8 +22,15 @@
 
           <v-card-text>
             <span class="text-md-center">
-              <strong>{{ product }}</strong>
-              <span v-if="isConsumable(product, usage)" ><strong>:</strong> {{ formatUsage(usage) }}</span>
+              <div v-if="!isConsumable(product, usage)"
+                   class="pb-3"
+              >
+                <h2>{{product}}</h2>
+              </div>
+              <div v-else>
+                <h3>{{ formatUsage(usage) }}</h3>
+                <span>{{ product }}</span>
+              </div>
             </span>
           </v-card-text>
 
@@ -53,8 +60,17 @@
           </v-avatar>
 
           <v-card-text>
-            <span class="text-md-center"><strong>{{ product }}</strong></span>
-            <span v-if="isConsumable(product, usage)" ><strong>:</strong> {{ formatUsage(usage) }}</span>
+            <span class="text-md-center">
+              <div v-if="!isConsumable(product, usage)"
+                   class="pb-3"
+              >
+                <h2>{{product}}</h2>
+              </div>
+              <div v-else>
+                <h3>{{ formatUsage(usage) }}</h3>
+                <span>{{ product }}</span>
+              </div>
+            </span>
           </v-card-text>
 
         </v-card>
@@ -72,7 +88,7 @@ import Consumption from '../../data/consumption.json';
 import Producers from '../../data/producers.json';
 import NonProducers from '../../data/non-producers.json';
 import { chainNodeMixin } from '../production_chains/chainNodeMixin';
-import { helperFunctionMixin } from '../helperFunctionMixin'
+import { helperFunctionMixin } from '../helperFunctionMixin';
 
 export default {
   name: 'ResidentDemandCalculator',
@@ -290,20 +306,19 @@ export default {
      * @param {string} product The selected Product.
      */
     selectChain(product) {
-      
-      const helperFunctionMixin = this
+      const helperFunctionMixin = this;
       const selectedChain = this.getProductionChainByProductName(product);
-      const socialClass =  helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID)
-      const world = helperFunctionMixin.getWorldByID(socialClass.worldID)
+      const socialClass = helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID);
+      const world = helperFunctionMixin.getWorldByID(socialClass.worldID);
       this.$store.commit(
-      'changeSelectionIDs', 
-      {
-        worldID: world.id, 
-        socialClassID: socialClass.id, 
-        chainID: selectedChain.id
-      })
+          'changeSelectionIDs',
+          {
+            worldID: world.id,
+            socialClassID: socialClass.id,
+            chainID: selectedChain.id,
+          });
       this.$store.commit('changeProductionChain', selectedChain);
-      this.$router.push("/chains")
+      this.$router.push('/chains');
     },
   },
 };

@@ -25,7 +25,7 @@
     "name": "Engineers",
     "img": "engineers.webp",
     "worldID": 1,
-    "firstProductionChain": 24
+    "firstProductionChain": 28
 
   },
   "investors": {
@@ -49,6 +49,6 @@
     "name": "Obreros",
     "img": "obreros.webp",
     "worldID": 2,
-    "firstProductionChain": 20
+    "firstProductionChain": 22
   }
 }
