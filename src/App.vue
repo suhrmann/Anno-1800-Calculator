@@ -23,7 +23,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="primary" app absolute clipped-left>
+    <v-toolbar color="primary" app scroll-off-screen clipped-left>
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <span class="title ml-3 mr-5">
         {{ title }} ||&nbsp;
@@ -37,29 +37,35 @@
 </template>
 
 <script>
-import Producers from './data/producers.json';
+import Producers from "./data/producers.json";
 export default {
   data: () => ({
     drawer: null,
-    title: 'Anno 1800 Calculator',
-    subtitle: 'a production chain cheatsheet',
+    title: "Anno 1800 Calculator",
+    subtitle: "a production chain cheatsheet",
     items: [
-      { icon: 'lightbulb_outline', text: 'Home', route: '/Home' },
+      { icon: "home", text: "Home", route: "/Home" },
+      { heading: "Production" },
+      { icon: "merge_type", text: "Production Chains", route: "/chains" },
+      { icon: "trending_up", text: "Resident Demand", route: "/demands" },
       { divider: true },
-      { heading: 'Production' },
-      { icon: 'merge_type', text: 'Production Chains', route: '/chains' },
-      { icon: 'trending_up', text: 'Resident Demand', route: '/demands' },
-      { icon: 'border_inner', text: 'Production Layouts', route: '/layouts' },
+      { heading: "Information" },
+      {
+        icon: "list",
+        text: "Building Queue (WIP)",
+        route: "/queue"
+      },
+      {
+        icon: "border_inner",
+        text: "Production Layouts (WIP)",
+        route: "/layouts"
+      },
       { divider: true },
-      { heading: 'sonstiger Schaas' },
-      { icon: 'add', text: 'hepp' },
-      { divider: true },
-      { icon: 'info', text: 'About', route: '/about' },
-      { icon: 'close', text: 'Close' },
-    ],
+      { icon: "info", text: "About", route: "/about" }
+    ]
   }),
   props: {
-    source: String,
+    source: String
   },
 
   mounted() {
@@ -80,8 +86,8 @@ export default {
       }
       //console.log(producerObject);
       return this.producerObject;
-    },
-  },
+    }
+  }
 };
 </script>
 

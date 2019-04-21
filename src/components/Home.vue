@@ -7,50 +7,6 @@
             <v-card-text class="px-0">12</v-card-text>
           </v-card>
         </v-flex>
-        <v-flex v-for="i in 2" :key="`6${i}`" xs6>
-          <v-card dark color="secondary">
-            <v-card-text class="px-0">6</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 3" :key="`4${i}`" xs4>
-          <v-card dark color="primary">
-            <v-card-text class="px-0">4</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 4" :key="`3${i}`" xs3>
-          <v-card dark color="secondary">
-            <v-card-text class="px-0">3</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 6" :key="`2${i}`" xs2>
-          <v-card dark color="primary">
-            <v-card-text class="px-0">2</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 12" :key="`1${i}`" xs1>
-          <v-card dark color="secondary">
-            <v-card-text class="px-0">1</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex xs12>
-          <v-tabs v-model="selectedTier" color="primary" dark slider-color="secondary">
-            <v-tab v-for="tier in tiers" :key="tier" ripple>{{ tier }}</v-tab>
-            <v-tab-item v-for="tier in tiers" :key="tier">
-              <v-card flat>
-                <v-flex xs-8>
-                  <v-combobox
-                    v-model="chainSelection"
-                    :items="getChains"
-                    label="Select a Production chain"
-                  ></v-combobox>
-                </v-flex>
-                <v-flex xs-3>
-                  <v-btn @click="loadChain()" color="accent">Load Chain</v-btn>
-                </v-flex>
-              </v-card>
-            </v-tab-item>
-          </v-tabs>
-        </v-flex>
       </v-layout>
     </v-container>
   </div>
@@ -59,27 +15,27 @@
 <script>
 /* eslint-disable */
 
-import productionChain from '../data/production-chain.json';
-import nonProducers from '../data/non-producers.json';
-import producers from '../data/producers.json';
+import productionChain from "../data/production-chain.json";
+import nonProducers from "../data/non-producers.json";
+import producers from "../data/producers.json";
 export default {
   data() {
     return {
       selectedTier: 0,
       tiers: [
-        'Farmer',
-        'Worker',
-        'Artisan',
-        'New World',
-        'Engineer',
-        'Investor',
+        "Farmer",
+        "Worker",
+        "Artisan",
+        "New World",
+        "Engineer",
+        "Investor"
       ],
 
       prodChain: productionChain,
       nonproducers: nonProducers,
       producers: producers,
       chainSelection: null,
-      tierObjects: null,
+      tierObjects: null
     };
   },
 
@@ -91,14 +47,14 @@ export default {
     getChains() {
       const productionChains = this.fetchAllProductionChains();
       const tieredChains = this.getProductionChainsByTier(
-          productionChains,
-          this.selectedTier + 1
+        productionChains,
+        this.selectedTier + 1
       );
       const productionChainsArray = this.getChainsEndProducts(tieredChains);
       this.tierObjects = tieredChains;
 
       return productionChainsArray;
-    },
+    }
   },
 
   methods: {
@@ -122,7 +78,7 @@ export default {
      */
     getProductionChainsByTier(allProductionChains, tier) {
       const tieredChains = [];
-      Object.keys(allProductionChains).forEach((chain) => {
+      Object.keys(allProductionChains).forEach(chain => {
         if (allProductionChains[chain].tier == tier) {
           tieredChains.push(allProductionChains[chain]);
         }
@@ -137,7 +93,7 @@ export default {
      */
     getChainsEndProducts(chainsCollection) {
       const endProductsArray = [];
-      Object.keys(chainsCollection).forEach((chain) => {
+      Object.keys(chainsCollection).forEach(chain => {
         endProductsArray.push(chainsCollection[chain].finalProduct);
       });
 
@@ -151,7 +107,7 @@ export default {
     getCertainChain(chainsCollection, chainName) {
       const test = [];
       console.log(chainsCollection);
-      Object.keys(chainsCollection).forEach((chain) => {
+      Object.keys(chainsCollection).forEach(chain => {
         if (chainsCollection[chain].finalProduct == chainName) {
           test.push(chainsCollection[chain]);
           console.log(test[0]);
@@ -178,8 +134,8 @@ export default {
       return chain;
     },
 
-    getChainWidth(chain) {},
-  },
+    getChainWidth(chain) {}
+  }
 };
 </script>
 
