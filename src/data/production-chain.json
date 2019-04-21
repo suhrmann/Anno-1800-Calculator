@@ -585,7 +585,7 @@
     },
 
     "chocolate": {
-      "id": 25,
+      "id": 27,
       "worldID": 2,
       "img": "obreros/chocolate.webp",
       "chain": "Chocolate",
@@ -612,15 +612,180 @@
         }
       ]
     },
+    "reinforced-concrete": {
+      "id": 28,
+      "worldID": 1,
+      "img": "engineers/reinforced-concrete.webp",
+      "chain": "Reinforced Concrete",
+      "socialClassID": 4,
+      "finalProduct": "Reinforced Concrete",
+      "name": "Concrete Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Furnace",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Iron Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Charcoal Kiln",
+              "worldID": 1,
+              "alternative": "Coal Mine",
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Limestone Quarry",
+          "worldID": 1,
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+
+    "glasses": {
+      "id": 29,
+      "worldID": 1,
+      "img": "engineers/glasses.webp",
+      "chain": "Glasses",
+      "socialClassID": 4,
+      "finalProduct": "Glasses",
+      "name": "Spectacle Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Glassmakers",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+            "name": "Sand Mine",
+            "worldID": 1,
+            "alternative": "",
+            "children": null
+          }]
+        },
+        {
+          "name": "Brass Smeltery",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Zinc Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Copper Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+
+    "advanced-weapons": {
+      "id": 30,
+      "worldID": 1,
+      "img": "engineers/advanced-weaponry.webp",
+      "chain": "Advanced Weapons",
+      "socialClassID": 4,
+      "finalProduct": "Advanced Weapons",
+      "name": "Heavy Weapons Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Dynamite Factory",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Rendering Works",
+              "worldID": 1,
+              "alternative": "",
+              "children": [{
+                "name": "Pig Farm",
+                "worldID": 1,
+                "alternative": "",
+                "children": null
+              }]
+            },
+            {
+              "name": "Saltpeter Works",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Furnace",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Iron Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Charcoal Kiln",
+              "worldID": 1,
+              "alternative": "Coal Mine",
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+
+    "penny-farthings": {
+      "id": 31,
+      "worldID": 1,
+      "img": "engineers/high-wheeler.webp",
+      "chain": "Penny Farthings",
+      "socialClassID": 4,
+      "finalProduct": "Penny Farthings",
+      "name": "Bicycle Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Furnace",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Iron Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Charcoal Kiln",
+              "worldID": 1,
+              "alternative": "Coal Mine",
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Caoutchouc Plantation",
+          "worldID": 2,
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
 
     "steam_motors": {
-      "id": 24,
+      "id": 32,
       "worldID": 1,
-      "img": "engineers/steam-machine.webp",
+      "img": "engineers/steam-motor.webp",
       "chain": "Steam Motors",
       "socialClassID": 4,
       "finalProduct": "Steam Motors",
-      "name": "Motor Assembly Lines",
+      "name": "Motor Assembly Line",
       "alternative": "",
       "children": [{
           "name": "Furnace",
@@ -659,6 +824,83 @@
           ]
         }
       ]
+    },
+    "pocket-watches": {
+      "id": 33,
+      "worldID": 1,
+      "img": "engineers/pocket-watch.webp",
+      "chain": "Pocket Watches",
+      "socialClassID": 4,
+      "finalProduct": "Pocket Watches",
+      "name": "Clockmakers",
+      "alternative": "",
+      "children": [{
+          "name": "Goldsmiths",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Gold Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Charcoal Kiln",
+              "worldID": 1,
+              "alternative": "Coal Mine",
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Glassmakers",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+            "name": "Sand Mine",
+            "worldID": 1,
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
+    },
+
+    "light-bulbs": {
+      "id": 33,
+      "worldID": 1,
+      "img": "engineers/light-bulb.webp",
+      "chain": "Light Bulbs",
+      "socialClassID": 4,
+      "finalProduct": "Light Bulbs",
+      "name": "Light Bulb Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Filament Factory",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+            "name": "Charcoal Kiln",
+            "worldID": 1,
+            "alternative": "Coal Mine",
+            "children": null
+          }]
+        },
+        {
+          "name": "Glassmakers",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+            "name": "Sand Mine",
+            "worldID": 1,
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
     }
+
+
+
   }
 }

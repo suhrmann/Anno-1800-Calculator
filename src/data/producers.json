@@ -1960,8 +1960,8 @@
         },
         "Caoutchouc Plantation": {
             "product": "Caoutchouc",
-            "building": "Poncho Darner",
-            "img": "jornaleros/poncho.webp",
+            "building": "Caoutchouc Plantation",
+            "img": "jornaleros/caoutchouc.webp",
             "worldID": 2,
             "productionTime": 60,
             "construction": {
