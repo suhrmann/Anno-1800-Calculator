@@ -46,7 +46,10 @@
             target="_blank"
           >
             <v-icon>shopping_cart</v-icon> &nbsp;
-            Buy Anno 1800 (Uplay)
+            Buy Anno 1800
+            <v-img :src="getImage('uplay.png', 'logos')" alt="UPLay Logo"
+                   contain height="30px"
+            />
           </v-btn>
           <v-btn
             color="primary"
@@ -56,7 +59,10 @@
             target="_blank"
           >
             <v-icon>shopping_cart</v-icon> &nbsp;
-            Buy Anno 1800 (Epic Games)
+            Buy Anno 1800
+            <v-img :src="getImage('epic_games.svg', 'logos')" alt="Epic Games Logo"
+                   contain height="30px"
+            />
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -140,6 +146,19 @@
 <script>
 export default {
   name: 'About',
+  methods: {
+    /**
+     * Workaround to load images dynamically in for-loop.
+     *
+     * @param {string} image The image to load.
+     * @param {string} folder The folder that contains the image
+     *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
+     * @return {string} The URL of the image (e.g. for use as img src).
+     */
+    getImage(image, folder) {
+      return image ? require(`../assets/${folder}/${image}`) : '';
+    },
+  },
 };
 </script>
 
