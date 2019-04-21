@@ -360,8 +360,26 @@
         }
       ]
     },
-    "Fried Plantains": {
+
+    "timber-new": {
       "id": 17,
+      "worldID": 2,
+      "img": "jornaleros/timber.webp",
+      "chain": "Timber",
+      "socialClassID": 6,
+      "finalProduct": "Timber",
+      "name": "Lumberjack Hut",
+      "alternative": "",
+      "children": [{
+        "name": "Sawmill",
+        "worldID": 2,
+        "alternative": "",
+        "children": null
+      }]
+    },
+
+    "Fried Plantains": {
+      "id": 18,
       "worldID": 2,
       "img": "jornaleros/fried-plantains.webp",
       "chain": "Fried Plantains",
@@ -383,8 +401,29 @@
         }
       ]
     },
+    "sails-new": {
+      "id": 19,
+      "worldID": 2,
+      "img": "jornaleros/sails.webp",
+      "chain": "Sails",
+      "socialClassID": 6,
+      "finalProduct": "Sails",
+      "name": "Sailmakers",
+      "alternative": "",
+      "children": [{
+        "name": "Cotton Mill",
+        "worldID": 2,
+        "alternative": "",
+        "children": [{
+          "name": "Cotton Plantation",
+          "worldID": 2,
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
     "rum": {
-      "id": 18,
+      "id": 20,
       "worldID": 2,
       "img": "jornaleros/rum.webp",
       "chain": "Rum",
@@ -407,7 +446,7 @@
       ]
     },
     "ponchos": {
-      "id": 19,
+      "id": 21,
       "worldID": 2,
       "img": "jornaleros/poncho.webp",
       "chain": "Ponchos",
@@ -422,8 +461,28 @@
         "children": null
       }]
     },
+
+    "bricks-new": {
+      "id": 22,
+      "worldID": 2,
+      "img": "obreros/bricks.webp",
+      "chain": "Bricks",
+      "socialClassID": 7,
+      "finalProduct": "Bricks",
+      "name": "Brick Factory",
+      "alternative": "",
+      "children": [{
+        "name": "Clay Pit",
+        "worldID": 2,
+        "alternative": "",
+        "children": null
+      }]
+    },
+
+
+
     "tortillas": {
-      "id": 20,
+      "id": 23,
       "worldID": 2,
       "img": "obreros/tortilla.webp",
       "chain": "Tortillas",
@@ -446,7 +505,7 @@
       ]
     },
     "coffee": {
-      "id": 21,
+      "id": 24,
       "worldID": 2,
       "img": "obreros/coffee.webp",
       "chain": "Coffee",
@@ -461,37 +520,43 @@
         "children": null
       }]
     },
-    "electricity": {
-      "id": 22,
+
+    "bowler-hats": {
+      "id": 25,
       "worldID": 2,
-      "img": "engineers/oil-power-plant.webp",
-      "chain": "Electricity",
+      "img": "obreros/bowler-hats.webp",
+      "chain": "Bowler Hats",
       "socialClassID": 7,
-      "finalProduct": "Electricity",
-      "name": "Oil Power Plant",
+      "finalProduct": "Bowler Hats",
+      "name": "Bombin Weaver",
       "alternative": "",
       "children": [{
-        "name": "Small Oil Harbour",
-        "alternative": "",
-        "children": [{
-            "name": "Railway",
-            "alternative": "",
-            "children": [{
-              "name": "Oil Refinery",
-              "alternative": "",
-              "children": null
-            }]
-          },
-          {
-            "name": "Oil Storage",
+          "name": "Cotton Mill",
+          "worldID": 2,
+          "alternative": "",
+          "children": [{
+            "name": "Cotton Plantation",
+            "worldID": 2,
             "alternative": "",
             "children": null
-          }
-        ]
-      }]
+          }]
+        },
+        {
+          "name": "Felt Producer",
+          "worldID": 2,
+          "alternative": "",
+          "children": [{
+            "name": "Alpaca Farm",
+            "worldID": 2,
+            "alternative": "",
+            "children": null
+          }]
+        }
+      ]
     },
+
     "cigars": {
-      "id": 23,
+      "id": 26,
       "worldID": 2,
       "img": "obreros/cigars.webp",
       "chain": "Cigars",
@@ -518,6 +583,36 @@
         }
       ]
     },
+
+    "chocolate": {
+      "id": 25,
+      "worldID": 2,
+      "img": "obreros/chocolate.webp",
+      "chain": "Chocolate",
+      "socialClassID": 7,
+      "finalProduct": "Chocolate",
+      "name": "Chocolate Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Sugar Refinery",
+          "worldID": 2,
+          "alternative": "",
+          "children": [{
+            "name": "Sugar Cane Plantation",
+            "worldID": 2,
+            "alternative": "",
+            "children": null
+          }]
+        },
+        {
+          "name": "Cocoa Plantation",
+          "worldID": 2,
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+
     "steam_motors": {
       "id": 24,
       "worldID": 1,
