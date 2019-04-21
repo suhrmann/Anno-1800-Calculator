@@ -117,6 +117,26 @@ export const helperFunctionMixin = {
       console.log('building not found :(');
     },
 
+    /**
+     * Get a building / producer by the produced item.
+     *
+     * @param {string} productName The name of the product; Check is case-insensitive
+     * @return {Object} A JS Object representing the matching producer
+     *
+     * TODO Distinguishe between Old and New World!
+     */
+    getBuildingByProduct(productName) {
+      const buildings = this.producerFile.Producers;
+      const productNameLC = productName.toLowerCase(); // To lower case
+
+      for (const building in buildings) {
+        if (buildings[building].product.toLowerCase() === productNameLC) {
+          return buildings[building];
+        }
+      }
+      console.log('building not found :(');
+    },
+
     getProductionChainById(id) {
       const productionChains = ProductionChains.Production_Chain;
       let chainObject = {};
