@@ -1,7 +1,7 @@
 {
     "Version": "Anno1800 Beta",
     "Producers": {
-        "Sawmill": {
+        "Sawmill Old": {
             "product": "Timber",
             "building": "Sawmill",
             "img": "farmers/timber.webp",
@@ -27,7 +27,7 @@
                 "investor": 0
             }
         },
-        "Lumberjack Hut": {
+        "Lumberjack Hut Old": {
             "product": "Wood",
             "building": "Lumberjack Hut",
             "img": "farmers/wood.webp",
@@ -183,7 +183,7 @@
                 "investor": 0
             }
         },
-        "Clay Pit": {
+        "Clay Pit Old": {
             "product": "Clay",
             "building": "Clay Pit",
             "img": "workers/clay.webp",
@@ -209,7 +209,7 @@
                 "investor": 0
             }
         },
-        "Brick Factory": {
+        "Brick Factory Old": {
             "product": "Bricks",
             "building": "Brick Factory",
             "img": "workers/bricks.webp",
@@ -287,7 +287,7 @@
                 "investor": 0
             }
         },
-        "Sailmakers": {
+        "Sailmakers Old": {
             "product": "Sails",
             "building": "Sailmakers",
             "img": "workers/sails.webp",
@@ -729,7 +729,7 @@
                 "investor": 0
             }
         },
-        "Cattle Farm": {
+        "Cattle Farm Old": {
             "product": "Beef",
             "building": "Cattle Farm",
             "img": "artisans/beef.webp",
@@ -760,7 +760,7 @@
             "building": "Cattle Farm",
             "img": "artisans/beef.webp",
             "worldID": 2,
-            "productionTime": 120,
+            "productionTime": 60,
             "construction": {
                 "cash": 2500,
                 "wood": 8,
@@ -1067,7 +1067,7 @@
                 "investor": 0
             }
         },
-        "Oil Refinery": {
+        "Oil Refinery Old": {
             "product": "Oil",
             "building": "Oil Refinery",
             "img": "engineers/glasses.webp",
@@ -1589,7 +1589,7 @@
                 "investor": 0
             }
         },
-        "Marquetry Workshop": {
+        "Marquetry Workshop Old": {
             "product": "Wood Veneers",
             "building": "Marquetry Workshop",
             "img": "investors/wood-veneers.webp",
@@ -1697,9 +1697,9 @@
 
 
 
-        "Lumberjack's Hut": {
+        "Lumberjack Hut": {
             "product": "Wood",
-            "building": "Lumberjack's Hut",
+            "building": "Lumberjack Hut",
             "img": "jornaleros/wood.webp",
             "worldID": 2,
             "productionTime": 15,

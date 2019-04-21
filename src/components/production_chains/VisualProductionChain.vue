@@ -1,7 +1,6 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <v-layout justify-center row wrap>
-
       <v-flex xs12>
         <WorkerPanel :chain="this.treeData"></WorkerPanel>
       </v-flex>
@@ -22,27 +21,22 @@
       <v-flex xs9 mr-5 pr-5>
         <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
       </v-flex>
-      <v-flex style="width: 60px" shrink>
-
-      </v-flex>
+      <v-flex style="width: 60px" shrink></v-flex>
 
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
       </v-flex>
 
-
       <v-flex xs12>
-
         <v-layout>
           <v-flex align-self-center md2 xs12>
-              <h2 color="primary">Production / Consumption:</h2>
+            <h2 color="primary">Production / Consumption:</h2>
           </v-flex>
 
           <v-flex xs3 align-self-center>
             <v-container fill-height>
               <v-flex align-self-center class="text-xs-right" xs12>
-                <h1>{{ outputPerMinute }}</h1>
-                Production Output (per Minute)
+                <h1>{{ outputPerMinute }}</h1>Production Output (per Minute)
               </v-flex>
             </v-container>
           </v-flex>
@@ -52,7 +46,12 @@
               <v-btn fab color="green lighten-4" depressed class="disable-events">
                 <v-icon large color="green">arrow_upward</v-icon>
               </v-btn>
-              <v-img :src="require('../../assets/buildings/farmers/warehouse.webp')" max-height="100px" min-height="33px" contain></v-img>
+              <v-img
+                :src="require('../../assets/buildings/farmers/warehouse.webp')"
+                max-height="100px"
+                min-height="33px"
+                contain
+              ></v-img>
               <v-btn fab color="deep-orange lighten-4" depressed class="disable-events">
                 <v-icon large color="deep-orange">arrow_downward</v-icon>
               </v-btn>
@@ -62,10 +61,8 @@
           <v-flex xs3 align-self-center>
             <v-container fill-height>
               <v-flex class="text-xs-left">
-
                 <div v-if="isConsumable">
-                  <h1>{{ consumptionPerMinute }}</h1>
-                  Consumption (per Minute)
+                  <h1>{{ consumptionPerMinute }}</h1>Consumption (per Minute)
                 </div>
                 <div v-else>
                   <h1>-</h1>
@@ -74,12 +71,8 @@
               </v-flex>
             </v-container>
           </v-flex>
-
         </v-layout>
-
       </v-flex>
-
-
     </v-layout>
   </v-container>
 </template>
@@ -89,8 +82,8 @@ import { chainNodeMixin } from "./chainNodeMixin.js";
 import { helperFunctionMixin } from "../helperFunctionMixin.js";
 import { EventBus } from "../../EventBus.js";
 import TreeChart from "../TreeChart";
-import WorkerPanel from "./WorkerPanel"
-import ResourcePanel from "./ResourcePanel"
+import WorkerPanel from "./WorkerPanel";
+import ResourcePanel from "./ResourcePanel";
 
 export default {
   components: {
@@ -161,7 +154,8 @@ export default {
     outputPerMinute() {
       const helperFunctionMixin = this;
       const rootBuilding = helperFunctionMixin.getBuildingByName(
-        this.productionChain.name
+        this.productionChain.name,
+        this.productionChain.worldID
       );
       const output = (60 * this.chainCount) / this.spt;
 
@@ -246,7 +240,10 @@ export default {
     addBuildingsAmount(spt, element) {
       const helperFunctionMixin = this;
 
-      const building = helperFunctionMixin.getBuildingByName(element.name);
+      const building = helperFunctionMixin.getBuildingByName(
+        element.name,
+        element.worldID
+      );
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount;
     },
@@ -265,7 +262,8 @@ export default {
      * @return {Object} Production Chain Object
      */
     getCurrentProductionChain() {
-      return JSON.parse(JSON.stringify(this.productionChain));
+      let chain = JSON.parse(JSON.stringify(this.productionChain));
+      return chain;
     },
 
     /**
@@ -305,8 +303,8 @@ export default {
 </script>
 
 <style scoped>
-  .disable-events {
-    pointer-events: none
-  }
+.disable-events {
+  pointer-events: none;
+}
 </style>
 
