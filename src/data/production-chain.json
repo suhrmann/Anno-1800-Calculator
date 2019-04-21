@@ -573,11 +573,11 @@
         {
           "name": "Marquetry Workshop",
           "worldID": 2,
-          "alternative": "",
+          "alternative": "NewWorld",
           "children": [{
             "name": "Lumberjack Hut",
             "worldID": 2,
-            "alternative": "",
+            "alternative": "NewWorld",
             "children": null
           }]
         }
@@ -898,9 +898,185 @@
           }]
         }
       ]
+    },
+
+    "champagne": {
+      "id": 35,
+      "worldID": 1,
+      "img": "investors/champagne.webp",
+      "chain": "Champagne",
+      "socialClassID": 5,
+      "finalProduct": "Champagne",
+      "name": "Champagne Cellar",
+      "alternative": "",
+      "children": [{
+          "name": "Glassmakers",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+            "name": "Sand Mine",
+            "worldID": 1,
+            "alternative": "",
+            "children": null
+          }]
+        },
+        {
+          "name": "Vineyard",
+          "worldID": 1,
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+
+    "jewellery": {
+      "id": 36,
+      "worldID": 1,
+      "img": "investors/jewelry.webp",
+      "chain": "Jewellery",
+      "socialClassID": 5,
+      "finalProduct": "Jewellery",
+      "name": "Jewellers",
+      "alternative": "",
+      "children": [{
+          "name": "Goldsmiths",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Gold Mine",
+              "worldID": 2,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Charcoal Kiln",
+              "worldID": 1,
+              "alternative": "Coal Mine",
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl Farm",
+          "worldID": 2,
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+
+    "gramophones": {
+      "id": 37,
+      "worldID": 1,
+      "img": "investors/gramophones.webp",
+      "chain": "Gramophones",
+      "socialClassID": 5,
+      "finalProduct": "Gramophones",
+      "name": "Gramophone Factory",
+      "alternative": "",
+      "children": [{
+          "name": "Marquetry Workshop",
+          "worldID": 2,
+          "alternative": "NewWorld",
+          "children": [{
+            "name": "Lumberjack Hut",
+            "worldID": 2,
+            "alternative": "NewWorld",
+            "children": null
+          }]
+        },
+        {
+          "name": "Brass Smeltery",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Zinc Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Copper Mine",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+
+    "steam-carriages": {
+      "id": 38,
+      "worldID": 1,
+      "img": "investors/steam-carriage.webp",
+      "chain": "Steam Carriages",
+      "socialClassID": 5,
+      "finalProduct": "Steam Carriages",
+      "name": "Cab Assembly Line",
+      "alternative": "",
+      "children": [{
+          "name": "Motor Assembly Line",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Furnace",
+              "worldID": 1,
+              "alternative": "",
+              "children": [{
+                  "name": "Iron Mine",
+                  "worldID": 1,
+                  "alternative": "",
+                  "children": null
+                },
+                {
+                  "name": "Charcoal Kiln",
+                  "worldID": 1,
+                  "alternative": "",
+                  "children": null
+                }
+              ]
+            },
+            {
+              "name": "Brass Smeltery",
+              "worldID": 1,
+              "alternative": "",
+              "children": [{
+                  "name": "Zinc Mine",
+                  "worldID": 1,
+                  "alternative": "",
+                  "children": null
+                },
+                {
+                  "name": "Copper Mine",
+                  "worldID": 1,
+                  "alternative": "",
+                  "children": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Coachmakers",
+          "worldID": 1,
+          "alternative": "",
+          "children": [{
+              "name": "Lumberjack Hut",
+              "worldID": 1,
+              "alternative": "",
+              "children": null
+            },
+            {
+              "name": "Caoutchouc Plantation",
+              "worldID": 2,
+              "alternative": "",
+              "children": null
+            }
+          ]
+        }
+
+      ]
     }
-
-
-
   }
 }

@@ -1827,7 +1827,34 @@
                 "investor": 0
             }
         },
-        "Pearl Farm": 0,
+        "Pearl Farm": {
+            "product": "Pearls",
+            "building": "Pearl Farm",
+            "img": "jornaleros/pearls.webp",
+            "worldID": 2,
+            "productionTime": 90,
+            "construction": {
+                "cash": 2500,
+                "wood": 10,
+                "brick": 0,
+                "steel": 0,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 25,
+                "jornaleros": 50,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+
+
         "Cotton Plantation": {
             "product": "Cotton",
             "building": "Cotton Plantation",
