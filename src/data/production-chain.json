@@ -867,7 +867,7 @@
     },
 
     "light-bulbs": {
-      "id": 33,
+      "id": 34,
       "worldID": 1,
       "img": "engineers/light-bulb.webp",
       "chain": "Light Bulbs",

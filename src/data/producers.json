@@ -1488,7 +1488,7 @@
         "Heavy Weapons Factory": {
             "product": "Advanced Weapons",
             "building": "Heavy Weapons Factory",
-            "img": "investors/champagne.webp",
+            "img": "engineers/advanced-weaponry.webp",
             "worldID": 1,
             "productionTime": 120,
             "construction": {
