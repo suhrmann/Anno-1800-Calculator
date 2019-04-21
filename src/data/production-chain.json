@@ -840,7 +840,7 @@
           "alternative": "",
           "children": [{
               "name": "Gold Mine",
-              "worldID": 1,
+              "worldID": 2,
               "alternative": "",
               "children": null
             },

@@ -1305,7 +1305,7 @@
             "product": "Gold Ore",
             "building": "Gold Mine",
             "img": "engineers/gold-ore.webp",
-            "worldID": 1,
+            "worldID": 2,
             "productionTime": 150,
             "construction": {
                 "cash": 5000,
