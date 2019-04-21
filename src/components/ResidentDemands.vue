@@ -23,12 +23,18 @@
         </div>
 
         <!-- Demands calculaiton -->
-        <v-tabs fixed-tabs>
+        <v-tabs
+          v-model="activeTab"
+          color="primary"
+          slider-color="secondary"
+          dark
+          fixed-tabs
+        >
           <!-- TAB: Demands as cards -->
           <v-tab
             :key="1"
           >
-            Demand Cards
+            Demands Cards
           </v-tab>
           <v-tab-item
             :key="1"
@@ -85,6 +91,12 @@ export default {
   },
 
   mixins: [residentDemandCalculatorMixin],
+
+  data: function() {
+    return {
+      activeTab: null,
+    };
+  },
 
   computed: {
     /**
