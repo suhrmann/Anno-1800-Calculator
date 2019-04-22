@@ -72,7 +72,6 @@ import ResidentDemandsCards from './resident_demands/ResidentDemandsCards';
 import ResidentDemandsTable from './resident_demands/ResidentDemandsTable';
 
 import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js';
-import store from '../store.js';
 
 export default {
   name: 'ResidentDemands',
@@ -94,11 +93,19 @@ export default {
 
   data: function() {
     return {
-      activeTab: null,
     };
   },
 
   computed: {
+    activeTab: {
+      get: function() {
+        return this.$store.state.selectedConsumptionTab;
+      },
+      set: function(tabID) {
+        this.$store.commit('changeSelectedConsumptionTab', tabID);
+      },
+    },
+
     /**
        * Check if any population was entered.
        *

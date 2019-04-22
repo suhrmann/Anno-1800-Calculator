@@ -49,15 +49,15 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { chainNodeMixin } from './chainNodeMixin.js';
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {
@@ -69,8 +69,8 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0
-      }
+        influence: 0,
+      },
     };
   },
 
@@ -81,20 +81,20 @@ export default {
       const chainNodeMixin = this;
       this.resetRequiredResources();
       chainNodeMixin.iterateProductionChain(
-        this.chain,
-        rootElement => this.getResourceReq(rootElement),
-        element => this.getResourceReq(element),
-        false
+          this.chain,
+          (rootElement) => this.getResourceReq(rootElement),
+          (element) => this.getResourceReq(element),
+          false
       );
-    }
+    },
   },
 
   methods: {
     getResourceReq(element) {
       const helperFunctionMixin = this;
-      let building = helperFunctionMixin.getBuildingByName(
-        element.name,
-        element.worldID
+      const building = helperFunctionMixin.getBuildingByName(
+          element.name,
+          element.worldID
       );
 
       this.requiredResources.cash +=
@@ -122,10 +122,10 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0
+        influence: 0,
       };
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -149,7 +149,7 @@ export const chainNodeMixin = {
      *                       or null if it were not found.
      */
     getProductionChainByProductName(product) {
-      //console.log('--- getProductionChainByProductName(', product, ') ---');
+      // console.log('--- getProductionChainByProductName(', product, ') ---');
 
       const chains = this.productionChains.Production_Chain;
       for (const chainKey in chains) {

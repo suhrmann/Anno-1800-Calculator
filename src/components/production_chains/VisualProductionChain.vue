@@ -78,25 +78,25 @@
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
-import WorkerPanel from "./WorkerPanel";
-import ResourcePanel from "./ResourcePanel";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { EventBus } from '../../EventBus.js';
+import TreeChart from '../TreeChart';
+import WorkerPanel from './WorkerPanel';
+import ResourcePanel from './ResourcePanel';
 
 export default {
   components: {
     TreeChart,
     WorkerPanel,
-    ResourcePanel
+    ResourcePanel,
   },
   data() {
     return {
       treeData: {},
       temporaryProductionChain: {},
       chainCount: 1,
-      spt: 0
+      spt: 0,
     };
   },
 
@@ -105,19 +105,18 @@ export default {
       this.initiateProductionChain();
     }
 
-    EventBus.$on("setSPTforChain", spt => {});
-    EventBus.$on("changeSlider", value => {});
+    EventBus.$on('setSPTforChain', (spt) => {});
+    EventBus.$on('changeSlider', (value) => {});
 
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.temporaryProductionChain = this.getCurrentProductionChain();
       const helperFunctionMixin = this;
-      const chainNodeMixin = this;
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
-        this.temporaryProductionChain
+          this.temporaryProductionChain
       );
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-        productionTimes
+          productionTimes
       );
 
       this.addBuildingRelationdToChain(shortestProductionTime);
@@ -186,7 +185,7 @@ export default {
         }
 
         return flatConsumption;
-      }
+      },
     },
 
     /**
@@ -197,8 +196,8 @@ export default {
       let returnValue = false;
       const good = this.treeData.finalProduct;
       const consumables = this.consumablesOverTime;
-      consumables.find(currentElement => {
-        if (good == currentElement) {
+      consumables.find((currentElement) => {
+        if (good === currentElement) {
           returnValue = true;
         }
       });
@@ -206,27 +205,28 @@ export default {
     },
 
     consumablesOverTime() {
+      let key;
       const listOfGoods = this.$store.state.consumption;
-      let consumablesArray = [];
+      const consumablesArray = [];
 
-      for (var key in listOfGoods.basic) {
+      for (key in listOfGoods.basic) {
         if (listOfGoods.basic[key] !== false) {
           consumablesArray.push(key);
         }
       }
 
-      for (var key in listOfGoods.luxury) {
+      for (key in listOfGoods.luxury) {
         if (listOfGoods.luxury[key] !== false) {
           consumablesArray.push(key);
         }
       }
       return consumablesArray;
-    }
+    },
   },
 
   methods: {
     changeCounter() {
-      EventBus.$emit("changeSlider", this.chainCount);
+      EventBus.$emit('changeSlider', this.chainCount);
     },
 
     /**
@@ -240,8 +240,8 @@ export default {
       const helperFunctionMixin = this;
 
       const building = helperFunctionMixin.getBuildingByName(
-        element.name,
-        element.worldID
+          element.name,
+          element.worldID
       );
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount;
@@ -252,8 +252,8 @@ export default {
      */
     initiateProductionChain() {
       const helperFunctions = this;
-      let productionChain = helperFunctions.getProductionChainById(1);
-      this.$store.commit("changeProductionChain", productionChain);
+      const productionChain = helperFunctions.getProductionChainById(1);
+      this.$store.commit('changeProductionChain', productionChain);
     },
 
     /**
@@ -261,7 +261,7 @@ export default {
      * @return {Object} Production Chain Object
      */
     getCurrentProductionChain() {
-      let chain = JSON.parse(JSON.stringify(this.productionChain));
+      const chain = JSON.parse(JSON.stringify(this.productionChain));
       return chain;
     },
 
@@ -277,14 +277,14 @@ export default {
       const chainNodeMixin = this;
       const vpc = this;
       chainNodeMixin.iterateProductionChain(
-        vpc.temporaryProductionChain,
-        rootElement => {
-          vpc.addBuildingsAmount(spt, rootElement);
-        },
-        element => {
-          vpc.addBuildingsAmount(spt, element);
-        },
-        false
+          vpc.temporaryProductionChain,
+          (rootElement) => {
+            vpc.addBuildingsAmount(spt, rootElement);
+          },
+          (element) => {
+            vpc.addBuildingsAmount(spt, element);
+          },
+          false
       );
     },
 
@@ -296,8 +296,8 @@ export default {
     getNewProductionChain() {
       const chainNodeMixin = this;
       return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain));
-    }
-  }
+    },
+  },
 };
 </script>
 
