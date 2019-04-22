@@ -62,15 +62,15 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { chainNodeMixin } from './chainNodeMixin.js';
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {
@@ -82,8 +82,8 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0
-      }
+        obreros: 0,
+      },
     };
   },
 
@@ -95,7 +95,7 @@ export default {
       } else {
         return true;
       }
-    }
+    },
   },
 
   watch: {
@@ -104,20 +104,20 @@ export default {
       this.resetRequiredPopulation();
       this.buildingQueue = {};
       chainNodeMixin.iterateProductionChain(
-        this.chain,
-        rootElement => this.getPopulationReq(rootElement),
-        element => this.getPopulationReq(element),
-        false
+          this.chain,
+          (rootElement) => this.getPopulationReq(rootElement),
+          (element) => this.getPopulationReq(element),
+          false
       );
-    }
+    },
   },
 
   methods: {
     getPopulationReq(element) {
       const helperFunctionMixin = this;
-      let building = helperFunctionMixin.getBuildingByName(
-        element.name,
-        element.worldID
+      const building = helperFunctionMixin.getBuildingByName(
+          element.name,
+          element.worldID
       );
       this.requiredPopulation.farmers +=
         building.maintenance.farmer * element.relativeAmount;
@@ -134,7 +134,7 @@ export default {
       this.requiredPopulation.obreros +=
         building.maintenance.obreros * element.relativeAmount;
 
-      //this.addBuildingToQueue(element.name);
+      // this.addBuildingToQueue(element.name);
     },
 
     resetRequiredPopulation() {
@@ -145,7 +145,7 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0
+        obreros: 0,
       };
     },
 
@@ -154,11 +154,11 @@ export default {
     },
 
     changeResidents() {
-      this.$store.commit("addBuildings", this.buildingQueue);
-      this.$store.commit("addToPopulationDemands", this.requiredPopulation);
-      this.$router.push("/demands");
-    }
-  }
+      this.$store.commit('addBuildings', this.buildingQueue);
+      this.$store.commit('addToPopulationDemands', this.requiredPopulation);
+      this.$router.push('/demands');
+    },
+  },
 };
 </script>
 

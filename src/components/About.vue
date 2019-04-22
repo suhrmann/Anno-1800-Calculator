@@ -2,7 +2,8 @@
   <v-container>
     <!-- Thank you -->
     <v-alert :value="true" color="secondary" class="text-sm-center">
-      <h1>THANK YOU Anno 1800 Wiki!</h1>This App is based on the content, information and images provided by volunteers to the Anno 1800 Wiki.
+      <h1>THANK YOU Anno 1800 Wiki!</h1>
+      This App is based on the content, information and images provided by volunteers to the Anno 1800 Wiki.
       If you want to improve this App contribute to the
       <a
         href="https://anno1800.fandom.com/wiki/Anno_1800_Wiki"
@@ -158,7 +159,8 @@
     <p>&nbsp;</p>
 
     <v-alert :value="true" color="secondary" type="error" outline>
-      <h3>Bugs and improvements</h3>If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
+      <h3>Bugs and improvements</h3>
+      If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
       <a
         href="https://github.com/Vadammt/Anno-1800-Calculator/issues"
         target="_blank"
@@ -169,7 +171,7 @@
 
 <script>
 export default {
-  name: "About",
+  name: 'About',
   methods: {
     /**
      * Workaround to load images dynamically in for-loop.
@@ -180,9 +182,9 @@ export default {
      * @return {string} The URL of the image (e.g. for use as img src).
      */
     getImage(image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : "";
-    }
-  }
+      return image ? require(`../assets/${folder}/${image}`) : '';
+    },
+  },
 };
 </script>
 

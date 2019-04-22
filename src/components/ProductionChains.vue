@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar.vue'
+import BottomNavBar from './BottomNavBar.vue';
 import VisualProductionChain from './production_chains/VisualProductionChain.vue';
-import store from "../store.js"
+import store from '../store.js';
 
 export default {
   name: 'ProductionChains',
@@ -19,17 +19,15 @@ export default {
     'visual-production-chain': VisualProductionChain,
   },
 
-  beforeRouteEnter (to, from, next) {
-    let chain = store.state.selectedProductionChain
-      if (chain === null){
-        store.commit('resetSelectionIDs')
-      }
-    next( vm => {
-      
-      //gets executed when component is loaded. has access to component
-    })
+  beforeRouteEnter(to, from, next) {
+    const chain = store.state.selectedProductionChain;
+    if (chain === null) {
+      store.commit('resetSelectionIDs');
+    }
+    next((vm) => {
 
-
+      // gets executed when component is loaded. has access to component
+    });
   },
 
 };

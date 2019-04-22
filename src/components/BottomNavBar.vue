@@ -70,27 +70,27 @@
 </template>
 
 <script>
-import worlds from "../data/worlds.json";
-import socialClasses from "../data/social-classes.json";
-import ProductionChains from "../data/production-chain";
-import { helperFunctionMixin } from "./helperFunctionMixin.js";
-import { EventBus } from "../EventBus.js";
+import worlds from '../data/worlds.json';
+import socialClasses from '../data/social-classes.json';
+import ProductionChains from '../data/production-chain';
+import { helperFunctionMixin } from './helperFunctionMixin.js';
+import { EventBus } from '../EventBus.js';
 
 export default {
-  name: "BottomNavBar",
+  name: 'BottomNavBar',
   mixins: [helperFunctionMixin],
   data() {
     return {
       // Init selection
-      //selectedWorldID: 1,
-      //selectedSocialClassID: 1,
-      //selectedProductionChainID: 1,
+      // selectedWorldID: 1,
+      // selectedSocialClassID: 1,
+      // selectedProductionChainID: 1,
 
       /* Store data from JSON in component */
       // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
       socialClasses: socialClasses,
-      productionChainsData: ProductionChains.Production_Chain
+      productionChainsData: ProductionChains.Production_Chain,
     };
   },
 
@@ -100,8 +100,8 @@ export default {
         return this.$store.state.selectedWorldID;
       },
       set: function(selectedWorldID) {
-        this.$store.commit("changeWorldID", selectedWorldID);
-      }
+        this.$store.commit('changeWorldID', selectedWorldID);
+      },
     },
 
     selectedSocialClassID: {
@@ -109,8 +109,8 @@ export default {
         return this.$store.state.selectedSocialClassID;
       },
       set: function(selectedSocialClassID) {
-        this.$store.commit("changeSocialClassID", selectedSocialClassID);
-      }
+        this.$store.commit('changeSocialClassID', selectedSocialClassID);
+      },
     },
 
     selectedProductionChainID: {
@@ -119,10 +119,10 @@ export default {
       },
       set: function(selectedProductionChainID) {
         this.$store.commit(
-          "changeProductionChainID",
-          selectedProductionChainID
+            'changeProductionChainID',
+            selectedProductionChainID
         );
-      }
+      },
     },
 
     /**
@@ -135,13 +135,13 @@ export default {
       const chainID = this.selectedProductionChainID;
       let productionChain = {};
 
-      Object.keys(selectedSocialClassChains).forEach(chain => {
+      Object.keys(selectedSocialClassChains).forEach((chain) => {
         if (selectedSocialClassChains[chain].id === chainID) {
           productionChain = selectedSocialClassChains[chain];
         }
       });
       this.setProductionChain(productionChain);
-      EventBus.$emit("bottomNavBarChanged");
+      EventBus.$emit('bottomNavBarChanged');
       return productionChain;
     },
 
@@ -161,7 +161,7 @@ export default {
     selectedSocialClasses: function() {
       const socialClasses = Object.values(this.socialClasses);
       return socialClasses.filter(
-        socialClass => socialClass.worldID === this.selectedWorldID
+          (socialClass) => socialClass.worldID === this.selectedWorldID
       );
     },
 
@@ -173,9 +173,9 @@ export default {
     selectedProductionChains: function() {
       const productionChains = Object.values(this.productionChainsData);
       return productionChains.filter(
-        chain => chain.socialClassID === this.selectedSocialClassID
+          (chain) => chain.socialClassID === this.selectedSocialClassID
       );
-    }
+    },
   },
   methods: {
     /**
@@ -188,12 +188,12 @@ export default {
       this.selectedWorldID = selectedWorld.id;
 
       const selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.socialClassIDs[0]
+          selectedWorld.socialClassIDs[0]
       );
       this.selectedSocialClassID = selectedSocialClass.id;
 
       this.changeSocialClass(selectedSocialClass.id);
-      EventBus.$emit("bottomNavBarChanged");
+      EventBus.$emit('bottomNavBarChanged');
     },
 
     /**
@@ -213,7 +213,7 @@ export default {
      * @param {Object} productionChain
      */
     setProductionChain(productionChain) {
-      this.$store.commit("changeProductionChain", productionChain);
+      this.$store.commit('changeProductionChain', productionChain);
     },
 
     /**
@@ -224,7 +224,7 @@ export default {
      */
     getWorldByID(id) {
       const worlds = Object.values(this.worlds);
-      const selectedWorld = worlds.filter(world => world.id === id)[0];
+      const selectedWorld = worlds.filter((world) => world.id === id)[0];
       return selectedWorld;
     },
 
@@ -237,11 +237,11 @@ export default {
     getSocialClassByID(id) {
       const socialClasses = Object.values(this.socialClasses);
       const selectedSocialClass = socialClasses.filter(
-        socialClass => socialClass.id === id
+          (socialClass) => socialClass.id === id
       )[0];
       return selectedSocialClass;
-    }
-  }
+    },
+  },
 };
 </script>
 

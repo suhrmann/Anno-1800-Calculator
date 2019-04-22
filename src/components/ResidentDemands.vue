@@ -72,7 +72,6 @@ import ResidentDemandsCards from './resident_demands/ResidentDemandsCards';
 import ResidentDemandsTable from './resident_demands/ResidentDemandsTable';
 
 import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js';
-import store from '../store.js';
 
 export default {
   name: 'ResidentDemands',

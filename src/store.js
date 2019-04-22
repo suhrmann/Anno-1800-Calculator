@@ -107,9 +107,9 @@ export default new Vuex.Store({
      * @param {object} state
      * @param {object} idObject
      * {
-     * @param {integer} chainID
-     * @param {integer} socialClassID
-     * @param {integer} worldID
+     *   @param {integer} chainID
+     *   @param {integer} socialClassID
+     *   @param {integer} worldID
      * }
      */
     changeSelectionIDs(state, idObject) {

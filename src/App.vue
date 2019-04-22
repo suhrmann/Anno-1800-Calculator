@@ -37,36 +37,36 @@
 </template>
 
 <script>
-import Producers from "./data/producers.json";
+import Producers from './data/producers.json';
 export default {
   data: () => ({
     drawer: null,
-    title: "Anno 1800 Calculator",
-    subtitle: "a production chain cheatsheet",
+    title: 'Anno 1800 Calculator',
+    subtitle: 'a production chain cheatsheet',
     items: [
-      { icon: "home", text: "Home", route: "/Home" },
+      { icon: 'home', text: 'Home', route: '/Home' },
       { divider: true },
-      { heading: "Production" },
-      { icon: "merge_type", text: "Production Chains", route: "/chains" },
-      { icon: "trending_up", text: "Resident Demand", route: "/demands" },
+      { heading: 'Production' },
+      { icon: 'merge_type', text: 'Production Chains', route: '/chains' },
+      { icon: 'trending_up', text: 'Resident Demand', route: '/demands' },
       { divider: true },
-      { heading: "Information" },
+      { heading: 'Information' },
       {
-        icon: "list",
-        text: "Building Queue (WIP)",
-        route: "/queue"
+        icon: 'list',
+        text: 'Building Queue (WIP)',
+        route: '/queue',
       },
       {
-        icon: "border_inner",
-        text: "Production Layouts (WIP)",
-        route: "/layouts"
+        icon: 'border_inner',
+        text: 'Production Layouts (WIP)',
+        route: '/layouts',
       },
       { divider: true },
-      { icon: "info", text: "About", route: "/about" }
-    ]
+      { icon: 'info', text: 'About', route: '/about' },
+    ],
   }),
   props: {
-    source: String
+    source: String,
   },
 
   mounted() {
@@ -85,10 +85,10 @@ export default {
         const productName = producerFile[producerKey].product;
         producerObject[productName] = 0;
       }
-      //console.log(producerObject);
+      // console.log(producerObject);
       return this.producerObject;
-    }
-  }
+    },
+  },
 };
 </script>
 

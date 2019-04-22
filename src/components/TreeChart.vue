@@ -53,20 +53,19 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "./helperFunctionMixin.js";
-import { EventBus } from "../EventBus.js";
+import { helperFunctionMixin } from './helperFunctionMixin.js';
 
 export default {
-  name: "TreeChart",
-  props: ["json"],
+  name: 'TreeChart',
+  props: ['json'],
   mixins: [helperFunctionMixin],
   data() {
     return {
       data: null,
       treeData: {},
-      path: "",
+      path: '',
       spt: 1, // shortest production time in chain
-      counter: 1
+      counter: 1,
     };
   },
 
@@ -81,7 +80,7 @@ export default {
           jsonData.extend =
             jsonData.extend === void 0 ? true : !!jsonData.extend;
           if (Array.isArray(jsonData.children)) {
-            jsonData.children.forEach(c => {
+            jsonData.children.forEach((c) => {
               extendKey(c);
             });
           }
@@ -91,8 +90,8 @@ export default {
           this.treeData = extendKey(Props);
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   methods: {
     toggleExtend: function(treeData) {
@@ -104,20 +103,20 @@ export default {
       const building = this.getBuildingByName(nodeData.name, nodeData.worldID);
 
       // build string
-      const headline = "Building: " + building.building;
-      const product = "Product: " + building.product;
-      const prodTime = "Production Time: " + building.productionTime;
+      const headline = 'Building: ' + building.building;
+      const product = 'Product: ' + building.product;
+      const prodTime = 'Production Time: ' + building.productionTime;
 
-      const buildingInfo = headline + "<br/>" + product + "<br/>" + prodTime;
+      const buildingInfo = headline + '<br/>' + product + '<br/>' + prodTime;
 
       return buildingInfo;
     },
 
     getBuildingImage(name, worldID) {
       const building = this.getBuildingByName(name, worldID);
-      return this.getImage(building.img, "buildings");
-    }
-  }
+      return this.getImage(building.img, 'buildings');
+    },
+  },
 };
 </script>
 
