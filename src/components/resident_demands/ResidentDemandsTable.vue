@@ -65,7 +65,7 @@
           </td>
           <!-- Production per Chain -->
           <td>
-            <span v-if="isConsumable(product, usage)">{{ productionPerMinute(product) }}</span>
+            <span v-if="isConsumable(product, usage)">{{ toFixedVariable(productionPerMinute(product), 4) }}</span>
             <span v-else>&mdash;</span>
           </td>
 
