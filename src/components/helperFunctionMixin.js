@@ -175,6 +175,19 @@ export const helperFunctionMixin = {
       return selectedSocialClass;
     },
 
+    /**
+     * Round a number to a maximum of digits.
+     * If its an integer, dont change; if its a float round using toFixed
+     *
+     * @param {number} num The number to round.
+     * @param {int} digits The number of digits to round to.
+     * @return {string} The resulting, nicely rounded number.
+     */
+    toFixedVariable(num, digits) {
+      return Number.isInteger(num)
+        ? num
+        : num.toFixed(digits);
+    },
 
   },
 };
