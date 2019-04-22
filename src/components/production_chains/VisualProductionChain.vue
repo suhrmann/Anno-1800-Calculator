@@ -152,12 +152,11 @@ export default {
     },
 
     outputPerMinute() {
-      const helperFunctionMixin = this;
-      const rootBuilding = helperFunctionMixin.getBuildingByName(
-        this.productionChain.name,
-        this.productionChain.worldID
-      );
-      const output = (60 * this.chainCount) / this.spt;
+      // Calculate the production of one chain
+      const productionPerMinute = 60 / this.spt; // Shortest Production Time
+
+      // Calculate the output of all chains
+      const output = productionPerMinute * this.chainCount;
 
       if (output % 1 === 0) {
         return output;
