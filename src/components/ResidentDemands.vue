@@ -94,11 +94,19 @@ export default {
 
   data: function() {
     return {
-      activeTab: null,
     };
   },
 
   computed: {
+    activeTab: {
+      get: function() {
+        return this.$store.state.selectedConsumptionTab;
+      },
+      set: function(tabID) {
+        this.$store.commit('changeSelectedConsumptionTab', tabID);
+      },
+    },
+
     /**
        * Check if any population was entered.
        *
