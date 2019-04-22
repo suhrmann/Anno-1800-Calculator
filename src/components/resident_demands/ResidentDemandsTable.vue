@@ -57,7 +57,16 @@
           </td>
           <!-- Required Chains -->
           <td>
-            <span v-if="isConsumable(product, usage)">{{ requiredChains(product, usage) }}</span>
+            <div v-if="isConsumable(product, usage)">
+              {{ requiredChains(product, usage) }} &times;
+              <v-avatar>
+                <img
+                  :src="getBuildingImage(product)"
+                  :alt="`{product} Image`"
+                  class="inline-img"
+                >
+              </v-avatar>
+            </div>
             <span v-else>&mdash;</span>
           </td>
           <!-- Efficiency of all chains -->
@@ -161,6 +170,12 @@ export default {
 </script>
 
 <style scoped>
+  .inline-img {
+    height: 66%;
+    width: auto;
+  }
+
+
   /**
    * Table style
    * Source: http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
