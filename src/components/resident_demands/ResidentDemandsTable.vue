@@ -11,17 +11,14 @@
         <th>Production per Chain</th>
       </tr>
       <template
-        v-for="(usage, product) in totalDemands.basic"
+        v-for="(usage, product) in totalDemandsFlat"
       >
         <tr
           v-if="usage"
           v-bind:key="product"
         >
-          <td
-            v-if="usage"
-            @click="isConsumable(product, usage) ? selectChain(product) : false"
-          >
-            basic
+          <td>
+            {{ isBasicDemand(product) ? 'basic' : 'luxury' }}
           </td>
           <!-- Icon -->
           <td>
@@ -86,26 +83,30 @@
 
     </table>
 
-    <p>&nbsp;</p>
-
-    <h2>Luxury Needs:</h2>
-    <b>TODO:</b> Add luxury demands here!
-
-    <v-spacer></v-spacer>
-
   </v-container>
 </template>
 
 <script>
-import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js';
+  import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js';
 
-export default {
+  export default {
   name: 'ResidentDemandsTable',
   data: function() {
     return {};
   },
   mixins: [residentDemandCalculatorMixin],
-  computed: {},
+  computed: {
+    /**
+     * Flatten the basic and luxury demands into one single, flat array.
+     * @return {array} Basic and luxury demands, but flattened and with additional value "type": 'basic'|'luxury'
+     */
+    totalDemandsFlat: function() {
+      const basicNeeds = this.totalDemands.basic;
+      const luxuryNeeds = this.totalDemands.luxury;
+
+      return Object.assign({}, basicNeeds, luxuryNeeds);
+    },
+  },
   watch: {},
   methods: {
     /**
@@ -164,6 +165,16 @@ export default {
       const efficiency = numChainsExact / numChainsRequired;
 
       return efficiency;
+    },
+
+    isBasicDemand: function(need) {
+      const basicNeeds = this.totalDemands.basic;
+      return (need in basicNeeds); // Check if OBJECT contains key
+    },
+
+    isLuxuryDemand: function(need) {
+      const luxuryNeeds = this.totalDemands.luxury;
+      return (need in luxuryNeeds); // Check if OBJECT contains key
     },
   },
 };
