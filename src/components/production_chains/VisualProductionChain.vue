@@ -176,10 +176,13 @@ export default {
         // Flatten consumption
         const flatConsumption = {};
         // Iterate over basic / luxury
-        for (const demandType in storeConsumption) {
+        for (let i = 0; i < storeConsumption.length; i++) {
+          const demandType = storeConsumption[i];
+
           const demands = storeConsumption[demandType];
           // Iterate over each demand
-          for (const dmndKey in demands) {
+          for (let i = 0; i < demands.length; i++) {
+            const dmndKey = demands[i];
             flatConsumption[dmndKey] = demands[dmndKey];
           }
         }

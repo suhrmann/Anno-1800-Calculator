@@ -114,7 +114,7 @@ export const helperFunctionMixin = {
           return buildings[building];
         }
       }
-      console.log('building not found :(');
+      console.error('Building "' + name + '" not found :(');
     },
 
     /**
@@ -134,7 +134,7 @@ export const helperFunctionMixin = {
           return buildings[building];
         }
       }
-      console.log('building not found :(');
+      console.error('Building for product "' + productName + '" not found :(');
     },
 
     getProductionChainById(id) {
