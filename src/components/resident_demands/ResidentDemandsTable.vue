@@ -88,6 +88,8 @@ export default {
     return {
 
       headers: [
+        // TODO Add value for old / new world
+        // TOOD Increase the number of displayed rows
         { text: 'Type', value: 'type' },
         { text: '', value: 'img', sortable: false },
         { text: 'Need', value: 'name' },
