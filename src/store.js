@@ -90,7 +90,7 @@ export default new Vuex.Store({
   mutations: {
     addToPopulationDemands(state, populationObject) {
       state.population.numFarmers = Number(state.population.numFarmers) + Number(populationObject.farmers);
-      state.population.numFarmers = Number(state.population.numFarmers) + Number(populationObject.workers);
+      state.population.numWorkers = Number(state.population.numWorkers) + Number(populationObject.workers);
       state.population.numArtisans = Number(state.population.numArtisans) + Number(populationObject.artisans);
       state.population.numEngineers = Number(state.population.numEngineers) + Number(populationObject.engineers);
       state.population.numInvestors = Number(state.population.numInvestors) + Number(populationObject.investors);
