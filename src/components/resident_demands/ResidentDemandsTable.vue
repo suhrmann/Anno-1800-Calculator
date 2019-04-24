@@ -1,98 +1,102 @@
 <template>
   <v-container grid-list-md text-xs-center>
 
-    <table width="100%" class="bordered">
-      <tr>
-        <th>Type</th>
-        <th colspan="2">Need</th>
-        <th>Consumption</th>
-        <th>Required Chains</th>
-        <th>Chains Efficiency</th>
-        <th>Production per Chain</th>
-      </tr>
-      <template
-        v-for="(usage, product) in totalDemandsFlat"
-      >
-        <tr
-          v-if="usage"
-          v-bind:key="product"
-        >
-          <td>
-            {{ isBasicDemand(product) ? 'basic' : 'luxury' }}
-          </td>
-          <!-- Icon -->
-          <td>
-            <a v-if="isConsumable(product, usage)"
-               @click="selectChain(product)"
-            >
-              <v-avatar>
-                <img
-                  :src="getBuildingImage(product)"
-                  :alt="`{product} Image`"
-                >
-              </v-avatar>
-            </a>
-            <v-avatar v-else>
+    <v-data-table
+      :headers="headers"
+      :items="totalDemandsDatatable"
+      class="elevation-1"
+    >
+      <template v-slot:items="props">
+        <td>
+          {{ isBasicDemand(props.item.name) ? 'basic' : 'luxury' }}
+        </td>
+        <!-- Icon -->
+        <td>
+          <a v-if="isConsumable(props.item.name, props.item.consumption)"
+             @click="selectChain(props.item.name)"
+          >
+            <v-avatar>
               <img
-                :src="getBuildingImage(product)"
-                :alt="`{product} Image`"
+                :src="getBuildingImage(props.item.name)"
+                :alt="`{props.item.name} Image`"
               >
             </v-avatar>
-          </td>
-          <!-- Consumption -->
-          <td>
-            <a v-if="isConsumable(product, usage)"
-               @click="selectChain(product)"
+          </a>
+          <v-avatar v-else>
+            <img
+              :src="getBuildingImage(props.item.name)"
+              :alt="`{props.item.name} Image`"
             >
-              <b>{{product}}</b>
-            </a>
-            <span v-else><b>{{product}}</b></span>
-          </td>
-          <td>
-            <span v-if="isConsumable(product, usage)">{{ formatUsage(usage) }}</span>
-            <span v-else>&mdash;</span>
-          </td>
-          <!-- Required Chains -->
-          <td>
-            <div v-if="isConsumable(product, usage)">
-              {{ requiredChains(product, usage) }} &times;
-              <v-avatar>
-                <img
-                  :src="getBuildingImage(product)"
-                  :alt="`{product} Image`"
-                  class="inline-img"
-                >
-              </v-avatar>
-            </div>
-            <span v-else>&mdash;</span>
-          </td>
-          <!-- Efficiency of all chains -->
-          <td>
-            <span v-if="isConsumable(product, usage)">{{( chainEfficiency(product, usage) * 100 ).toFixed(2) }} %</span>
-            <span v-else>&mdash;</span>
-          </td>
-          <!-- Production per Chain -->
-          <td>
-            <span v-if="isConsumable(product, usage)">{{ toFixedVariable(productionPerMinute(product), 4) }}</span>
-            <span v-else>&mdash;</span>
-          </td>
-
-
-        </tr>
+          </v-avatar>
+        </td>
+        <!-- Name -->
+        <td>
+          <a v-if="isConsumable(props.item.name, props.item.consumption)"
+             @click="selectChain(props.item.name)"
+          >
+            <b>{{props.item.name}}</b>
+          </a>
+          <span v-else><b>{{props.item.name}}</b></span>
+        </td>
+        <!-- Consumption -->
+        <td>
+          <span v-if="isConsumable(props.item.name, props.item.consumption)">
+            {{ formatUsage(props.item.consumption) }}
+          </span>
+          <span v-else>&mdash;</span>
+        </td>
+        <!-- Required Chains -->
+        <td>
+          <div v-if="isConsumable(props.item.name, props.item.consumption)">
+            {{ requiredChains(props.item.name, props.item.consumption) }} &times;
+            <v-avatar>
+              <img
+                :src="getBuildingImage(props.item.name)"
+                :alt="`{props.item.name} Image`"
+                class="inline-img"
+              >
+            </v-avatar>
+          </div>
+          <span v-else>&mdash;</span>
+        </td>
+        <!-- Efficiency of all chains -->
+        <td>
+          <span v-if="isConsumable(props.item.name, props.item.consumption)">
+            {{( chainEfficiency(props.item.name, props.item.consumption) * 100 ).toFixed(2) }} %
+          </span>
+          <span v-else>&mdash;</span>
+        </td>
+        <!-- Production per Chain -->
+        <td>
+          <span v-if="isConsumable(props.item.name, props.item.consumption)">
+            {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
+          </span>
+          <span v-else>&mdash;</span>
+        </td>
       </template>
-
-    </table>
+    </v-data-table>
 
   </v-container>
 </template>
 
 <script>
-  import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js';
+import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js';
 
-  export default {
+export default {
   name: 'ResidentDemandsTable',
   data: function() {
-    return {};
+    return {
+
+      headers: [
+        { text: 'Type', value: 'type' },
+        { text: '', value: 'img', sortable: false },
+        { text: 'Need', value: 'name' },
+        { text: 'Consumption', value: 'consumption' },
+        { text: 'Required Chains', value: 'numChains' },
+        { text: 'Chains Efficiency', value: 'efficiency' },
+        { text: 'Production per Chain', value: 'productionPerChain' },
+      ],
+    };
   },
   mixins: [residentDemandCalculatorMixin],
   computed: {
@@ -105,6 +109,37 @@
       const luxuryNeeds = this.totalDemands.luxury;
 
       return Object.assign({}, basicNeeds, luxuryNeeds);
+    },
+
+    /**
+     * Preprocess the populations' demands for Data Table of Vuetify.
+     *
+     * @return {array} An array of objects of type:
+     *   {
+     *       name: string,
+     *       need: float,
+     *       ...
+     *   }
+     */
+    totalDemandsDatatable: function() {
+      const items = [];
+      const allDemands = this.totalDemandsFlat;
+
+      for (const key in allDemands) {
+        const value = allDemands[key];
+
+        // Only add demand if it is present or > 0
+        if (value === true || value > 0) {
+          // TODO Create data here instead of in HTML table
+          items.push({
+            type: this.isBasicDemand(key) ? 'basic' : 'luxury',
+            name: key,
+            consumption: value,
+          });
+        }
+      }
+
+      return items;
     },
   },
   watch: {},
@@ -184,105 +219,5 @@
   .inline-img {
     height: 66%;
     width: auto;
-  }
-
-
-  /**
-   * Table style
-   * Source: http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
-   * Author: JohnSardine, 09 Dez 2010
-   */
-  table a:link {
-    color: #666;
-    font-weight: bold;
-    text-decoration:none;
-  }
-  table a:visited {
-    color: #999999;
-    font-weight:bold;
-    text-decoration:none;
-  }
-  table a:active,
-  table a:hover {
-    color: #bd5a35;
-    text-decoration:underline;
-  }
-  table {
-    color:#666;
-    text-shadow: 1px 1px 0px #fff;
-    background:#eaebec;
-    border:#ccc 1px solid;
-
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-    border-radius:3px;
-
-    -moz-box-shadow: 0 1px 2px #d1d1d1;
-    -webkit-box-shadow: 0 1px 2px #d1d1d1;
-    box-shadow: 0 1px 2px #d1d1d1;
-  }
-  table th {
-    padding:21px 25px 22px 25px;
-    border-top:1px solid #fafafa;
-    border-bottom:1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
-
-    background: #ededed;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
-    background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
-  }
-  table th:first-child {
-    border-left: 0;
-  }
-  table tr:first-child th:first-child {
-    -moz-border-radius-topleft:3px;
-    -webkit-border-top-left-radius:3px;
-    border-top-left-radius:3px;
-  }
-  table tr:first-child th:last-child {
-    -moz-border-radius-topright:3px;
-    -webkit-border-top-right-radius:3px;
-    border-top-right-radius:3px;
-    border-right: 0;
-  }
-  table tr {
-    text-align: center;
-    padding-left:20px;
-  }
-  table td:first-child {
-    border-left: 0;
-  }
-  table td {
-    border-top: 1px solid #ffffff;
-    border-bottom:1px solid #e0e0e0;
-    border-left: 1px solid #e0e0e0;
-
-    background: #fafafa;
-    background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
-    background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
-  }
-  table tr.even td {
-    background: #f6f6f6;
-    background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
-    background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
-  }
-  table tr:last-child td {
-    border-bottom:0;
-  }
-  table tr:last-child td:first-child {
-    -moz-border-radius-bottomleft:3px;
-    -webkit-border-bottom-left-radius:3px;
-    border-bottom-left-radius:3px;
-  }
-  table tr:last-child td:last-child {
-    -moz-border-radius-bottomright:3px;
-    -webkit-border-bottom-right-radius:3px;
-    border-bottom-right-radius:3px;
-  }
-  table tr:hover td {
-    background: #f2f2f2;
-    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
-    background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);
   }
 </style>
