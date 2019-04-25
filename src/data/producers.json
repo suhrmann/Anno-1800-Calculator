@@ -1319,9 +1319,9 @@
             "maintenance": {
                 "cash": 250,
                 "jornaleros": 0,
-                "obreros": 0,
+                "obreros": 100,
                 "farmer": 0,
-                "worker": 25,
+                "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
                 "investor": 0
