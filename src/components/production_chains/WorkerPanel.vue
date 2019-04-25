@@ -5,12 +5,14 @@
         <div class="inline" v-for="(soClass, i) in reqPopArray" :key="i">
           <v-flex xs1>
             <v-flex xs12>
-              <v-avatar>
+              <v-avatar size="24">
                 <img class="center" :src="getImage(soClass.image, 'icons')" :alt="soClass.name">
               </v-avatar>
             </v-flex>
             <div align-content-center class="center">
-              <v-flex xs12>{{soClass.name}}: {{soClass.population}}</v-flex>
+              <v-flex xs12>
+                <p class="pb-0 mb-0">{{soClass.name}}: {{soClass.population}}</p>
+              </v-flex>
             </div>
           </v-flex>
         </div>
@@ -193,7 +195,7 @@ img.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
 }
 </style>
