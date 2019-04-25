@@ -1,8 +1,5 @@
 <template>
-  <v-layout row wrap>
-    <v-flex align-self-center xs2>
-      <h2 color="primary">Resources</h2>
-    </v-flex>
+  <v-layout justify-space-between row wrap>
     <v-flex xs1>
       <v-flex xs12>
         <img :src="getImage('icon-credits.webp', 'icons')" :alt="'cash'">
@@ -49,15 +46,15 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from '../helperFunctionMixin.js';
-import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { chainNodeMixin } from "./chainNodeMixin.js";
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   data() {
     return {
@@ -69,8 +66,8 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0,
-      },
+        influence: 0
+      }
     };
   },
 
@@ -81,20 +78,20 @@ export default {
       const chainNodeMixin = this;
       this.resetRequiredResources();
       chainNodeMixin.iterateProductionChain(
-          this.chain,
-          (rootElement) => this.getResourceReq(rootElement),
-          (element) => this.getResourceReq(element),
-          false
+        this.chain,
+        rootElement => this.getResourceReq(rootElement),
+        element => this.getResourceReq(element),
+        false
       );
-    },
+    }
   },
 
   methods: {
     getResourceReq(element) {
       const helperFunctionMixin = this;
       const building = helperFunctionMixin.getBuildingByName(
-          element.name,
-          element.worldID
+        element.name,
+        element.worldID
       );
 
       this.requiredResources.cash +=
@@ -122,10 +119,10 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0,
+        influence: 0
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

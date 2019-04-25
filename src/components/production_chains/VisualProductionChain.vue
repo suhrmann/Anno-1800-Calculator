@@ -1,27 +1,37 @@
 <template>
-  <v-container grid-list-md text-xs-center>
+  <v-container grid-list-md text-xs-center mt-0 pt-0>
     <v-layout justify-center row wrap>
       <v-flex xs12>
-        <WorkerPanel :chain="this.treeData"></WorkerPanel>
+        <v-expansion-panel>
+          <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
+            <template slot="actions">
+              <v-icon color="white">$vuetify.icons.expand</v-icon>
+            </template>
+            <template slot="header">
+              <h4 color="accent">Workforce Demand</h4>
+            </template>
+            <v-card class="pb-1">
+              <WorkerPanel :chain="this.treeData"></WorkerPanel>
+            </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
       </v-flex>
 
-      <v-flex xs12>
-        <ResourcePanel :chain="this.treeData"></ResourcePanel>
+      <v-flex xs12 class="mb-3">
+        <v-expansion-panel>
+          <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
+            <template slot="actions">
+              <v-icon color="white">$vuetify.icons.expand</v-icon>
+            </template>
+            <template slot="header">
+              <h4>Construction Costs</h4>
+            </template>
+            <v-card class="pb-1">
+              <ResourcePanel :chain="this.treeData"></ResourcePanel>
+            </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
       </v-flex>
-
-      <v-flex xs1 mr-5 style="width: 60px" shrink>
-        <v-text-field
-          @change="changeCounter()"
-          v-model="chainCount"
-          hide-details
-          single-line
-          outline
-        ></v-text-field>
-      </v-flex>
-      <v-flex xs9 mr-5 pr-5>
-        <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
-      </v-flex>
-      <v-flex style="width: 60px" shrink></v-flex>
 
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
@@ -73,30 +83,37 @@
           </v-flex>
         </v-layout>
       </v-flex>
+
+      <v-flex xs1 mr-5 style="width: 60px" shrink>
+        <v-text-field label="Quantity" @change="changeCounter()" v-model="chainCount" outline></v-text-field>
+      </v-flex>
+      <v-flex xs9 mr-5 pr-5>
+        <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import { chainNodeMixin } from './chainNodeMixin.js';
-import { helperFunctionMixin } from '../helperFunctionMixin.js';
-import { EventBus } from '../../EventBus.js';
-import TreeChart from '../TreeChart';
-import WorkerPanel from './WorkerPanel';
-import ResourcePanel from './ResourcePanel';
+import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { EventBus } from "../../EventBus.js";
+import TreeChart from "../TreeChart";
+import WorkerPanel from "./WorkerPanel";
+import ResourcePanel from "./ResourcePanel";
 
 export default {
   components: {
     TreeChart,
     WorkerPanel,
-    ResourcePanel,
+    ResourcePanel
   },
   data() {
     return {
       treeData: {},
       temporaryProductionChain: {},
       chainCount: 1,
-      spt: 0,
+      spt: 0
     };
   },
 
@@ -105,18 +122,18 @@ export default {
       this.initiateProductionChain();
     }
 
-    EventBus.$on('setSPTforChain', (spt) => {});
-    EventBus.$on('changeSlider', (value) => {});
+    EventBus.$on("setSPTforChain", spt => {});
+    EventBus.$on("changeSlider", value => {});
 
-    EventBus.$on('bottomNavBarChanged', () => {
+    EventBus.$on("bottomNavBarChanged", () => {
       this.temporaryProductionChain = this.getCurrentProductionChain();
       const helperFunctionMixin = this;
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
-          this.temporaryProductionChain
+        this.temporaryProductionChain
       );
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-          productionTimes
+        productionTimes
       );
 
       this.addBuildingRelationdToChain(shortestProductionTime);
@@ -188,7 +205,7 @@ export default {
         }
 
         return flatConsumption;
-      },
+      }
     },
 
     /**
@@ -199,7 +216,7 @@ export default {
       let returnValue = false;
       const good = this.treeData.finalProduct;
       const consumables = this.consumablesOverTime;
-      consumables.find((currentElement) => {
+      consumables.find(currentElement => {
         if (good === currentElement) {
           returnValue = true;
         }
@@ -224,12 +241,12 @@ export default {
         }
       }
       return consumablesArray;
-    },
+    }
   },
 
   methods: {
     changeCounter() {
-      EventBus.$emit('changeSlider', this.chainCount);
+      EventBus.$emit("changeSlider", this.chainCount);
     },
 
     /**
@@ -243,8 +260,8 @@ export default {
       const helperFunctionMixin = this;
 
       const building = helperFunctionMixin.getBuildingByName(
-          element.name,
-          element.worldID
+        element.name,
+        element.worldID
       );
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount;
@@ -256,7 +273,7 @@ export default {
     initiateProductionChain() {
       const helperFunctions = this;
       const productionChain = helperFunctions.getProductionChainById(1);
-      this.$store.commit('changeProductionChain', productionChain);
+      this.$store.commit("changeProductionChain", productionChain);
     },
 
     /**
@@ -280,14 +297,14 @@ export default {
       const chainNodeMixin = this;
       const vpc = this;
       chainNodeMixin.iterateProductionChain(
-          vpc.temporaryProductionChain,
-          (rootElement) => {
-            vpc.addBuildingsAmount(spt, rootElement);
-          },
-          (element) => {
-            vpc.addBuildingsAmount(spt, element);
-          },
-          false
+        vpc.temporaryProductionChain,
+        rootElement => {
+          vpc.addBuildingsAmount(spt, rootElement);
+        },
+        element => {
+          vpc.addBuildingsAmount(spt, element);
+        },
+        false
       );
     },
 
@@ -299,14 +316,21 @@ export default {
     getNewProductionChain() {
       const chainNodeMixin = this;
       return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain));
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
 .disable-events {
   pointer-events: none;
+}
+h4 {
+  color: whitesmoke;
+}
+
+.cmp-expansion-panel-borders {
+  border-style: solid;
 }
 </style>
 

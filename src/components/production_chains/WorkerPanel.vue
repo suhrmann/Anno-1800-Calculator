@@ -1,20 +1,21 @@
 <template>
   <div>
-    <v-layout row wrap v-if="!newWorld">
-      <v-flex align-self-center xs2>
-        <h2 color="primary">Population</h2>
-      </v-flex>
+    <v-layout row wrap justify-space-between v-if="!newWorld">
       <v-flex xs1 v-if="requiredPopulation.farmers !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-farmers.webp', 'icons')" :alt="'farmers'">
-        </v-flex>
-        <v-flex xs12>Farmers: {{requiredPopulation.farmers}}</v-flex>
+        <div class="text-xs-center">
+          <v-flex xs12 align-self-center>
+            <img :src="getImage('workforce-farmers.webp', 'icons')" :alt="'farmers'">
+          </v-flex>
+        </div>
+        <div class="text-xs-center">
+          <v-flex xs12>Farmers: {{requiredPopulation.farmers}}</v-flex>
+        </div>
       </v-flex>
       <v-flex xs1 v-if="requiredPopulation.workers !== 0">
         <v-flex xs12>
           <img :src="getImage('workforce-workers.webp', 'icons')" :alt="'workers'">
         </v-flex>
-        <v-flex xs12>Workers: {{requiredPopulation.workers}}</v-flex>
+        <v-flex xs12>Worker: {{requiredPopulation.workers}}</v-flex>
       </v-flex>
       <v-flex xs1 v-if="requiredPopulation.artisans !== 0">
         <v-flex xs12>
@@ -62,15 +63,15 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from '../helperFunctionMixin.js';
-import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { chainNodeMixin } from "./chainNodeMixin.js";
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   data() {
     return {
@@ -82,12 +83,24 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0,
-      },
+        obreros: 0
+      }
     };
   },
 
   computed: {
+    reqPopArray() {
+      return [
+        { population: this.requiredPopulation.farmers, name: "Farmer" },
+        { population: this.requiredPopulation.workers, name: "Worker" },
+        { population: this.requiredPopulation.artisans, name: "Artisans" },
+        { population: this.requiredPopulation.engineers, name: "Engineers" },
+        { population: this.requiredPopulation.investors, name: "Investors" },
+        { population: this.requiredPopulation.jornaleros, name: "Jornaleros" },
+        { population: this.requiredPopulation.obreros, name: "Obreros" }
+      ];
+    },
+
     newWorld() {
       const worldID = this.$store.state.selectedWorldID;
       if (worldID === 1) {
@@ -95,7 +108,7 @@ export default {
       } else {
         return true;
       }
-    },
+    }
   },
 
   watch: {
@@ -104,20 +117,20 @@ export default {
       this.resetRequiredPopulation();
       this.buildingQueue = {};
       chainNodeMixin.iterateProductionChain(
-          this.chain,
-          (rootElement) => this.getPopulationReq(rootElement),
-          (element) => this.getPopulationReq(element),
-          false
+        this.chain,
+        rootElement => this.getPopulationReq(rootElement),
+        element => this.getPopulationReq(element),
+        false
       );
-    },
+    }
   },
 
   methods: {
     getPopulationReq(element) {
       const helperFunctionMixin = this;
       const building = helperFunctionMixin.getBuildingByName(
-          element.name,
-          element.worldID
+        element.name,
+        element.worldID
       );
       this.requiredPopulation.farmers +=
         building.maintenance.farmer * element.relativeAmount;
@@ -145,7 +158,7 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0,
+        obreros: 0
       };
     },
 
@@ -154,11 +167,11 @@ export default {
     },
 
     changeResidents() {
-      this.$store.commit('addBuildings', this.buildingQueue);
-      this.$store.commit('addToPopulationDemands', this.requiredPopulation);
-      this.$router.push('/demands');
-    },
-  },
+      this.$store.commit("addBuildings", this.buildingQueue);
+      this.$store.commit("addToPopulationDemands", this.requiredPopulation);
+      this.$router.push("/demands");
+    }
+  }
 };
 </script>
 
