@@ -17,7 +17,7 @@
           </v-flex>
         </div>
       </v-flex>
-      <v-flex align-self-center xs2>
+      <v-flex align-self-center xs3>
         <v-btn @click="changeResidents()">Add to Demands</v-btn>
       </v-flex>
     </v-layout>
