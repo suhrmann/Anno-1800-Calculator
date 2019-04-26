@@ -52,8 +52,14 @@ export default {
     // Event get emitted when clicking on Add to Demands Button in Visual Production Chain
     EventBus.$on("addToDemands", () => {
       this.$store.commit("addBuildings", this.buildingQueue);
-      this.$router.push({ name: 'resident-demands', params: { linkedFromChains: true, populationToAdd: this.requiredPopulation } })
-    })
+      this.$router.push({
+        name: "resident-demands",
+        query: {
+          linkedFromChains: true,
+          populationToAdd: this.requiredPopulation
+        }
+      });
+    });
   },
 
   computed: {
@@ -177,8 +183,7 @@ export default {
 
     addBuildingToQueue(building) {
       this.buildingQueue.push(building);
-    },
-
+    }
   }
 };
 </script>
