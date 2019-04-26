@@ -5,13 +5,13 @@
         <v-card class="mb-3" color="secondary" dark>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
           <v-card-text class="pt-0">
-            <v-radio-group class="pb-0 mb-0" v-model="row" row>
-              <v-radio label="Coal" value="radio-1"></v-radio>
-              <v-radio label="Charcoal" value="radio-2"></v-radio>
+            <v-radio-group class="pb-0 mb-0" v-model="coal" row>
+              <v-radio label="Charcoal" value="char"></v-radio>
+              <v-radio label="Coal" value="rock"></v-radio>
             </v-radio-group>
-            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="row" row>
-              <v-radio label="Old World Marquetry" value="radio-1"></v-radio>
-              <v-radio label="New World Marquetry" value="radio-2"></v-radio>
+            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="marq" row>
+              <v-radio label="Old World Marquetry" value="old"></v-radio>
+              <v-radio label="New World Marquetry" value="new"></v-radio>
             </v-radio-group>
           </v-card-text>
         </v-card>
@@ -137,8 +137,8 @@ export default {
       temporaryProductionChain: {},
       chainCount: 1,
       spt: 0,
-      coalSwitch: 0,
-      newWorldMarquetrySwitch: 0
+      coal: 'char',
+      marq: 'old'
     };
   },
 
@@ -185,9 +185,17 @@ export default {
     consumptionPerMinute() {
       // Find consumption of currently selected product.
       const currentProduct = this.productionChain.finalProduct;
+      console.log(currentProduct)
       // Search for currently selected product in demands
-      const consumption = this.demands[currentProduct];
+      if (this.demands.basic[currentProduct])
+      {
+      const consumption = this.demands.basic[currentProduct];
+      }
 
+      if (this.demands.luxury[currentProduct])
+      {
+      const consumption = this.demands.luxury[currentProduct];
+      }
       // Return consumption of product, or null.
       return isNaN(consumption) ? null : consumption;
     },
@@ -214,7 +222,7 @@ export default {
         if (!storeConsumption) {
           return null;
         }
-
+        console.log(storeConsumption)
         // Flatten consumption
         const flatConsumption = {};
         // Iterate over basic / luxury
