@@ -1,29 +1,47 @@
 <template>
   <v-layout justify-space-between row wrap>
-    <div>
-      <v-layout row wrap justify-center>
-        <v-flex>
-          <div class="inline" v-for="(cost, i) in costArray" :key="i">
-            <v-flex xs1>
-              <v-flex xs12>
-                <v-avatar size="24">
-                  <img
-                    class="center"
-                    :src="getImage(cost.image, cost.imageFileFolder)"
-                    :alt="cost.name"
-                  >
-                </v-avatar>
-              </v-flex>
-              <div align-content-center class="center">
-                <v-flex xs12>
-                  <p class="pb-0 mb-0">{{cost.name}}: {{cost.amount}}</p>
-                </v-flex>
-              </div>
-            </v-flex>
-          </div>
-        </v-flex>
-      </v-layout>
-    </div>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('icon-credits.webp', 'icons')" :alt="'cash'">
+      </v-flex>
+      <v-flex xs12>Cash: {{requiredResources.cash}}</v-flex>
+    </v-flex>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('balance.webp', 'icons')" :alt="'upkeep'">
+      </v-flex>
+      <v-flex xs12>Upkeep: {{requiredResources.cashUpkeep}}</v-flex>
+    </v-flex>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('wood.webp', 'buildings/farmers')" :alt="'wood'">
+      </v-flex>
+      <v-flex xs12>Wood: {{requiredResources.wood}}</v-flex>
+    </v-flex>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('bricks.webp', 'buildings/workers')" :alt="'bricks'">
+      </v-flex>
+      <v-flex xs12>Bricks: {{requiredResources.bricks}}</v-flex>
+    </v-flex>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('steel.webp', 'buildings/workers')" :alt="'steel'">
+      </v-flex>
+      <v-flex xs12>Steel: {{requiredResources.steel}}</v-flex>
+    </v-flex>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('windows.webp', 'buildings/artisans')" :alt="'windows'">
+      </v-flex>
+      <v-flex xs12>Windows: {{requiredResources.window}}</v-flex>
+    </v-flex>
+    <v-flex xs1>
+      <v-flex xs12>
+        <img :src="getImage('reinforced-concrete.webp', 'buildings/engineers')" :alt="'concrete'">
+      </v-flex>
+      <v-flex xs12>Concrete: {{requiredResources.concrete}}</v-flex>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -53,79 +71,7 @@ export default {
     };
   },
 
-  computed: {
-    costArray() {
-      let filteredArray = [];
-
-      if (this.requiredResources.cash !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.cash,
-          name: "Cash",
-          image: "icon-credits.webp",
-          imageFileFolder: "icons"
-        });
-      }
-
-      if (this.requiredResources.cashUpkeep !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.cashUpkeep,
-          name: "Upkeep",
-          image: "balance.webp",
-          imageFileFolder: "icons"
-        });
-      }
-      if (this.requiredResources.wood !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.wood,
-          name: "Wood",
-          image: "wood.webp",
-          imageFileFolder: "buildings/farmers"
-        });
-      }
-      if (this.requiredResources.bricks !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.bricks,
-          name: "Bricks",
-          image: "bricks.webp",
-          imageFileFolder: "buildings/workers"
-        });
-      }
-      if (this.requiredResources.steel !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.steel,
-          name: "Steel",
-          image: "steel.webp",
-          imageFileFolder: "buildings/workers"
-        });
-      }
-      if (this.requiredResources.window !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.window,
-          name: "Window",
-          image: "windows.webp",
-          imageFileFolder: "buildings/artisans"
-        });
-      }
-      if (this.requiredResources.concrete !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.concrete,
-          name: "Concrete",
-          image: "reinforced-concrete.webp",
-          imageFileFolder: "buildings/engineers"
-        });
-      }
-
-      if (this.requiredResources.influence !== 0) {
-        filteredArray.push({
-          amount: this.requiredResources.influence,
-          name: "Influence",
-          image: "influence.webp"
-        });
-      }
-
-      return filteredArray;
-    }
-  },
+  computed: {},
 
   watch: {
     chain(newChain) {

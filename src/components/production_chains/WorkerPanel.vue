@@ -17,6 +17,9 @@
           </v-flex>
         </div>
       </v-flex>
+      <v-flex align-self-center xs2>
+        <v-btn @click="changeResidents()">Add to Demands</v-btn>
+      </v-flex>
     </v-layout>
   </div>
 </template>
@@ -24,7 +27,6 @@
 <script>
 import { helperFunctionMixin } from "../helperFunctionMixin.js";
 import { chainNodeMixin } from "./chainNodeMixin.js";
-import { EventBus } from "../../EventBus.js";
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],

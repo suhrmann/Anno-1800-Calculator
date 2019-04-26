@@ -1,17 +1,13 @@
 import Consumption from '../../data/consumption.json';
 import Producers from '../../data/producers.json';
 import NonProducers from '../../data/non-producers.json';
-import {
-  chainNodeMixin
-} from '../production_chains/chainNodeMixin';
-import {
-  helperFunctionMixin
-} from '../helperFunctionMixin';
+import { chainNodeMixin } from '../production_chains/chainNodeMixin';
+import { helperFunctionMixin } from '../helperFunctionMixin';
 
 export default {
   name: 'ResidentDemandCalculator',
   mixins: [chainNodeMixin, helperFunctionMixin],
-  data: function () {
+  data: function() {
     return {
       producers: Producers.Producers,
       nonProducers: NonProducers.buildings,
@@ -20,73 +16,73 @@ export default {
   },
   computed: {
     // Computed properties for Vuex values
-    numFarmers: function () {
+    numFarmers: function() {
       return this.$store.state.population.numFarmers;
     },
-    numWorkers: function () {
+    numWorkers: function() {
       return this.$store.state.population.numWorkers;
     },
-    numArtisans: function () {
+    numArtisans: function() {
       return this.$store.state.population.numArtisans;
     },
-    numEngineers: function () {
+    numEngineers: function() {
       return this.$store.state.population.numEngineers;
     },
-    numInvestors: function () {
+    numInvestors: function() {
       return this.$store.state.population.numInvestors;
     },
-    numJornaleros: function () {
+    numJornaleros: function() {
       return this.$store.state.population.numJornaleros;
     },
-    numObreros: function () {
+    numObreros: function() {
       return this.$store.state.population.numObreros;
     },
 
 
     // Compute population demands
-    farmersDemands: function () {
+    farmersDemands: function() {
       const farmersDemands = this.consumption.Consumption.farmers;
       return {
         basic: this.calculateDemands(farmersDemands.basic, this.numFarmers),
         luxury: this.calculateDemands(farmersDemands.luxury, this.numFarmers),
       };
     },
-    workersDemands: function () {
+    workersDemands: function() {
       const workersDemands = this.consumption.Consumption.workers;
       return {
         basic: this.calculateDemands(workersDemands.basic, this.numWorkers),
         luxury: this.calculateDemands(workersDemands.luxury, this.numWorkers),
       };
     },
-    artisansDemands: function () {
+    artisansDemands: function() {
       const artisansDemands = this.consumption.Consumption.artisans;
       return {
         basic: this.calculateDemands(artisansDemands.basic, this.numArtisans),
         luxury: this.calculateDemands(artisansDemands.luxury, this.numArtisans),
       };
     },
-    engineersDemands: function () {
+    engineersDemands: function() {
       const engineersDemands = this.consumption.Consumption.engineers;
       return {
         basic: this.calculateDemands(engineersDemands.basic, this.numEngineers),
         luxury: this.calculateDemands(engineersDemands.luxury, this.numEngineers),
       };
     },
-    investorsDemands: function () {
+    investorsDemands: function() {
       const investorsDemands = this.consumption.Consumption.investors;
       return {
         basic: this.calculateDemands(investorsDemands.basic, this.numInvestors),
         luxury: this.calculateDemands(investorsDemands.luxury, this.numInvestors),
       };
     },
-    jornalerosDemands: function () {
+    jornalerosDemands: function() {
       const jornalerosDemands = this.consumption.Consumption.jornaleros;
       return {
         basic: this.calculateDemands(jornalerosDemands.basic, this.numJornaleros),
         luxury: this.calculateDemands(jornalerosDemands.luxury, this.numJornaleros),
       };
     },
-    obrerosDemands: function () {
+    obrerosDemands: function() {
       const obrerosDemands = this.consumption.Consumption.obreros;
       return {
         basic: this.calculateDemands(obrerosDemands.basic, this.numObreros),
@@ -109,7 +105,7 @@ export default {
      *           }
      *         }
      */
-    totalDemands: function () {
+    totalDemands: function() {
       // Merge all demands
       const demands = {
         farmers: this.farmersDemands,
@@ -121,10 +117,7 @@ export default {
         obreros: this.obrerosDemands,
       };
 
-      const totalDemands = {
-        basic: {},
-        luxury: {}
-      };
+      const totalDemands = { basic: {}, luxury: {} };
       // Iterate over all populations
       for (const [pKey, population] of Object.entries(demands)) { // eslint-disable-line no-unused-vars
         // Iterate over basic / luxury
@@ -156,17 +149,17 @@ export default {
      * @param {object} newConsumption
      * @param {object} oldConsumption Unused.
      */
-    totalDemands: function (newConsumption, oldConsumption) {
+    totalDemands: function(newConsumption, oldConsumption) {
       this.$store.commit('setConsumption', newConsumption);
     },
   },
   methods: {
     /**
-     * Find the image of a building by its produced product.
-     *
-     * @param {string} product The product name - see producers.json >> Producers.<Producer>.product
-     * @return {string} The URL to the image.
-     */
+       * Find the image of a building by its produced product.
+       *
+       * @param {string} product The product name - see producers.json >> Producers.<Producer>.product
+       * @return {string} The URL to the image.
+       */
     getBuildingImage(product) {
       const allProducers = Object.values(this.producers);
       const producer = allProducers.filter((producer) => producer.product === product)[0];
@@ -178,17 +171,17 @@ export default {
       return this.getImage(producer.img, 'buildings');
     },
     /**
-     * Workaround to load images dynamically in for-loop.
-     *
-     * @param {string} image The image to load.
-     * @param {string} folder The folder that contains the image
-     *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
-     * @return {string} The URL of the image (e.g. for use as img src).
-     */
+       * Workaround to load images dynamically in for-loop.
+       *
+       * @param {string} image The image to load.
+       * @param {string} folder The folder that contains the image
+       *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
+       * @return {string} The URL of the image (e.g. for use as img src).
+       */
     getImage(image, folder) {
       return image ? require(`../../assets/${folder}/${image}`) : '';
     },
-    calculateDemands: function (populationDemands, numPopulation) {
+    calculateDemands: function(populationDemands, numPopulation) {
       const demands = {};
       for (const [key, demand] of Object.entries(populationDemands)) {
         if (demand) {
@@ -217,7 +210,7 @@ export default {
      * @param {float} usage The number of usage to format.
      * @return {string} The pretty formatted usage.
      */
-    formatUsage: function (usage) {
+    formatUsage: function(usage) {
       return Math.round(usage * 100000) / 100000;
     },
 
@@ -232,11 +225,12 @@ export default {
       const socialClass = helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID);
       const world = helperFunctionMixin.getWorldByID(socialClass.worldID);
       this.$store.commit(
-        'changeSelectionIDs', {
-          worldID: world.id,
-          socialClassID: socialClass.id,
-          chainID: selectedChain.id,
-        });
+          'changeSelectionIDs',
+          {
+            worldID: world.id,
+            socialClassID: socialClass.id,
+            chainID: selectedChain.id,
+          });
       this.$store.commit('changeProductionChain', selectedChain);
       this.$router.push('/chains');
     },
