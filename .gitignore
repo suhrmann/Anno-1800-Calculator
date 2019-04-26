@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 
 # local env files
 .env.local
@@ -21,7 +20,7 @@ yarn-error.log*
 *.sw*
 
 #Electron-builder output
-/dist_electron
+#/dist_electron # DO NOT ignore (breaks CD of github-pages)
 
 package-lock.json
 .gitignore
