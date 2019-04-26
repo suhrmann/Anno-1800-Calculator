@@ -1,60 +1,23 @@
 <template>
   <div>
-    <v-layout row wrap v-if="!newWorld">
-      <v-flex align-self-center xs2>
-        <h2 color="primary">Population</h2>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.farmers !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-farmers.webp', 'icons')" :alt="'farmers'">
-        </v-flex>
-        <v-flex xs12>Farmers: {{requiredPopulation.farmers}}</v-flex>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.workers !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-workers.webp', 'icons')" :alt="'workers'">
-        </v-flex>
-        <v-flex xs12>Workers: {{requiredPopulation.workers}}</v-flex>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.artisans !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-artisans.webp', 'icons')" :alt="'artisans'">
-        </v-flex>
-        <v-flex xs12>Artisans: {{requiredPopulation.artisans}}</v-flex>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.engineers !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-engineers.webp', 'icons')" :alt="'Engineers'">
-        </v-flex>
-        <v-flex xs12>Engineers: {{requiredPopulation.engineers}}</v-flex>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.investors !== 0">
-        <v-flex xs12>
-          <img :alt="'Investors'">
-        </v-flex>
-        <v-flex xs12>Investors: {{requiredPopulation.investors}}</v-flex>
+    <v-layout row wrap justify-center>
+      <v-flex>
+        <div class="inline" v-for="(soClass, i) in reqPopArray" :key="i">
+          <v-flex xs1>
+            <v-flex xs12>
+              <v-avatar size="24">
+                <img class="center" :src="getImage(soClass.image, 'icons')" :alt="soClass.name">
+              </v-avatar>
+            </v-flex>
+            <div align-content-center class="center">
+              <v-flex xs12>
+                <p class="pb-0 mb-0">{{soClass.name}}: {{soClass.population}}</p>
+              </v-flex>
+            </div>
+          </v-flex>
+        </div>
       </v-flex>
       <v-flex align-self-center xs2>
-        <v-btn @click="changeResidents()">Add to Demands</v-btn>
-      </v-flex>
-    </v-layout>
-    <v-layout row wrap v-if="newWorld">
-      <v-flex align-self-center xs2>
-        <h2 color="primary">Population</h2>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.jornaleros !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-jornaleros.webp', 'icons')" :alt="'Jornaleros'">
-        </v-flex>
-        <v-flex xs12>Jornaleros: {{requiredPopulation.jornaleros}}</v-flex>
-      </v-flex>
-      <v-flex xs1 v-if="requiredPopulation.obreros !== 0">
-        <v-flex xs12>
-          <img :src="getImage('workforce-obreros.webp', 'icons')" :alt="'Obreros'">
-        </v-flex>
-        <v-flex xs12>Obreros: {{requiredPopulation.obreros}}</v-flex>
-      </v-flex>
-      <v-flex align-self-center>
         <v-btn @click="changeResidents()">Add to Demands</v-btn>
       </v-flex>
     </v-layout>
@@ -62,15 +25,15 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from '../helperFunctionMixin.js';
-import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { chainNodeMixin } from "./chainNodeMixin.js";
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   data() {
     return {
@@ -82,12 +45,69 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0,
-      },
+        obreros: 0
+      }
     };
   },
 
   computed: {
+    reqPopArray() {
+      let filteredArray = [];
+
+      if (this.requiredPopulation.farmers !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.farmers,
+          name: "Farmer",
+          image: "workforce-farmers.webp"
+        });
+      }
+
+      if (this.requiredPopulation.workers !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.workers,
+          name: "Worker",
+          image: "workforce-workers.webp"
+        });
+      }
+      if (this.requiredPopulation.artisans !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.artisans,
+          name: "Artisans",
+          image: "workforce-artisans.webp"
+        });
+      }
+      if (this.requiredPopulation.engineers !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.engineers,
+          name: "Engineers",
+          image: "workforce-engineers.webp"
+        });
+      }
+      if (this.requiredPopulation.investors !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.investors,
+          name: "Investors",
+          image: "workforce-investors.webp"
+        });
+      }
+      if (this.requiredPopulation.jornaleros !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.jornaleros,
+          name: "Jornaleros",
+          image: "workforce-jornaleros.webp"
+        });
+      }
+      if (this.requiredPopulation.obreros !== 0) {
+        filteredArray.push({
+          population: this.requiredPopulation.obreros,
+          name: "Obreros",
+          image: "workforce-obreros.webp"
+        });
+      }
+
+      return filteredArray;
+    },
+
     newWorld() {
       const worldID = this.$store.state.selectedWorldID;
       if (worldID === 1) {
@@ -95,7 +115,7 @@ export default {
       } else {
         return true;
       }
-    },
+    }
   },
 
   watch: {
@@ -104,20 +124,20 @@ export default {
       this.resetRequiredPopulation();
       this.buildingQueue = {};
       chainNodeMixin.iterateProductionChain(
-          this.chain,
-          (rootElement) => this.getPopulationReq(rootElement),
-          (element) => this.getPopulationReq(element),
-          false
+        this.chain,
+        rootElement => this.getPopulationReq(rootElement),
+        element => this.getPopulationReq(element),
+        false
       );
-    },
+    }
   },
 
   methods: {
     getPopulationReq(element) {
       const helperFunctionMixin = this;
       const building = helperFunctionMixin.getBuildingByName(
-          element.name,
-          element.worldID
+        element.name,
+        element.worldID
       );
       this.requiredPopulation.farmers +=
         building.maintenance.farmer * element.relativeAmount;
@@ -145,7 +165,7 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0,
+        obreros: 0
       };
     },
 
@@ -154,11 +174,11 @@ export default {
     },
 
     changeResidents() {
-      this.$store.commit('addBuildings', this.buildingQueue);
-      this.$store.commit('addToPopulationDemands', this.requiredPopulation);
-      this.$router.push('/demands');
-    },
-  },
+      this.$store.commit("addBuildings", this.buildingQueue);
+      this.$store.commit("addToPopulationDemands", this.requiredPopulation);
+      this.$router.push("/demands");
+    }
+  }
 };
 </script>
 
@@ -166,5 +186,16 @@ export default {
 img {
   height: 40%;
   width: 40%;
+}
+div.inline {
+  float: left;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
 }
 </style>
