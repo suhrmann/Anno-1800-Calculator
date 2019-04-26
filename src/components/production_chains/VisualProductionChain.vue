@@ -1,36 +1,59 @@
 <template>
-  <v-container grid-list-md text-xs-center mt-0 pt-0>
-    <v-layout justify-center row wrap>
-      <v-flex xs12>
-        <v-expansion-panel>
-          <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
-            <template slot="actions">
-              <v-icon color="white">$vuetify.icons.expand</v-icon>
-            </template>
-            <template slot="header">
-              <h4 color="accent">Workforce Demand</h4>
-            </template>
-            <v-card class="pb-1">
-              <WorkerPanel :chain="this.treeData"></WorkerPanel>
-            </v-card>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+  <v-container fluid grid-list-md text-xs-center mt-0 pt-0>
+    <v-layout row wrap>
+      <v-flex d-flex xs4>
+        <v-card class="mb-3" color="secondary" dark>
+          <v-card-title primary class="pb-0 title">Options</v-card-title>
+          <v-card-text class="pt-0">
+            <v-radio-group class="pb-0 mb-0" v-model="row" row>
+              <v-radio label="Coal" value="radio-1"></v-radio>
+              <v-radio label="Charcoal" value="radio-2"></v-radio>
+            </v-radio-group>
+            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="row" row>
+              <v-radio label="Old World Marquetry" value="radio-1"></v-radio>
+              <v-radio label="New World Marquetry" value="radio-2"></v-radio>
+            </v-radio-group>
+          </v-card-text>
+        </v-card>
       </v-flex>
+      <v-flex d-flex xs8>
+        <v-layout row wrap>
+          <v-flex d-flex>
+            <v-layout row wrap>
+              <v-flex xs12 d-flex>
+                <v-expansion-panel>
+                  <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
+                    <template slot="actions">
+                      <v-icon color="white">$vuetify.icons.expand</v-icon>
+                    </template>
+                    <template slot="header">
+                      <h4 color="accent">Workforce Demand</h4>
+                    </template>
+                    <v-card class="pb-1">
+                      <WorkerPanel :chain="this.treeData"></WorkerPanel>
+                    </v-card>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-flex>
 
-      <v-flex xs12 class="mb-3">
-        <v-expansion-panel>
-          <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
-            <template slot="actions">
-              <v-icon color="white">$vuetify.icons.expand</v-icon>
-            </template>
-            <template slot="header">
-              <h4>Construction Costs</h4>
-            </template>
-            <v-card class="pb-1">
-              <ResourcePanel :chain="this.treeData"></ResourcePanel>
-            </v-card>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+              <v-flex d-flex xs12 class="mb-3">
+                <v-expansion-panel>
+                  <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
+                    <template slot="actions">
+                      <v-icon color="white">$vuetify.icons.expand</v-icon>
+                    </template>
+                    <template slot="header">
+                      <h4>Construction Costs</h4>
+                    </template>
+                    <v-card class="pb-1">
+                      <ResourcePanel :chain="this.treeData"></ResourcePanel>
+                    </v-card>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-layout>
       </v-flex>
 
       <v-flex xs12>
@@ -113,7 +136,9 @@ export default {
       treeData: {},
       temporaryProductionChain: {},
       chainCount: 1,
-      spt: 0
+      spt: 0,
+      coalSwitch: 0,
+      newWorldMarquetrySwitch: 0
     };
   },
 
