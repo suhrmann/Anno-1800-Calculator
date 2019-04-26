@@ -7,7 +7,7 @@
       class="elevation-1"
       hide-actions
     >
-      <template slot="items" slot-scope="props">
+      <template v-slot:items="props">
         <td>
           {{ isBasicDemand(props.item.name) ? 'basic' : 'luxury' }}
         </td>

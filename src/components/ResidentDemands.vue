@@ -70,6 +70,7 @@
 import BottomPopulationInput from './resident_demands/BottomPopulationInput';
 import ResidentDemandsCards from './resident_demands/ResidentDemandsCards';
 import ResidentDemandsTable from './resident_demands/ResidentDemandsTable';
+
 import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js';
 
 export default {
@@ -84,11 +85,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     // do sth
     next((vm) => {
-      if(vm.$route.params.linkedFromChains === true)
-      {
-        let newPop = vm.$route.params.populationToAdd
-        vm.$store.commit("addToPopulationDemands", newPop);
-      }
+      // gets executed when component is loaded. has access to component
     });
   },
 
