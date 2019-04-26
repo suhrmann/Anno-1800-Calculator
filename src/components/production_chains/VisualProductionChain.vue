@@ -4,7 +4,7 @@
       <v-flex d-flex xs4>
         <v-card class="mb-3" color="secondary" dark>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
-          <v-card-text class="pt-0">
+          <v-card-text class="mb-0 pb-0 pt-0">
             <v-radio-group class="pb-0 mb-0" v-model="coal" row>
               <v-radio label="Charcoal" value="char"></v-radio>
               <v-radio label="Coal" value="rock"></v-radio>
@@ -21,13 +21,16 @@
           <v-flex d-flex>
             <v-layout row wrap>
               <v-flex xs12 d-flex>
-                <v-expansion-panel>
+                <v-expansion-panel popout>
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
                     </template>
                     <template slot="header">
-                      <h4 color="accent">Workforce Demand</h4>
+                      <h4 color="accent">Workforce Demand</h4> 
+                      <v-flex class="pa-0 ma-0" xs3>
+                        <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
+                      </v-flex>
                     </template>
                     <v-card class="pb-1">
                       <WorkerPanel :chain="this.treeData"></WorkerPanel>
@@ -37,7 +40,7 @@
               </v-flex>
 
               <v-flex d-flex xs12 class="mb-3">
-                <v-expansion-panel>
+                <v-expansion-panel popout>
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
@@ -95,7 +98,7 @@
             <v-container fill-height>
               <v-flex class="text-xs-left">
                 <div v-if="isConsumable">
-                  <h1>{{ consumptionPerMinute }}</h1>Consumption (per Minute)
+                  <h1>{{ consumptionPerMinute | rounded(2) }}</h1>Consumption (per Minute)
                 </div>
                 <div v-else>
                   <h1>-</h1>
@@ -110,8 +113,11 @@
       <v-flex xs1 mr-5 style="width: 60px" shrink>
         <v-text-field label="Quantity" @change="changeCounter()" v-model="chainCount" outline></v-text-field>
       </v-flex>
-      <v-flex xs9 mr-5 pr-5>
+      <v-flex xs6 mr-5 pr-5>
         <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
+      </v-flex>
+            <v-flex xs3 mr-5 pr-5>
+        <v-btn>Match Demands</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -168,6 +174,14 @@ export default {
   },
 
   mixins: [chainNodeMixin, helperFunctionMixin],
+
+  filters: {
+    rounded: function(number, decimals) {
+      return number.toFixed(decimals)
+    }
+  },
+
+
   computed: {
     productionChain() {
       return this.$store.state.selectedProductionChain;
@@ -185,17 +199,12 @@ export default {
     consumptionPerMinute() {
       // Find consumption of currently selected product.
       const currentProduct = this.productionChain.finalProduct;
-      console.log(currentProduct)
-      // Search for currently selected product in demands
-      if (this.demands.basic[currentProduct])
-      {
-      const consumption = this.demands.basic[currentProduct];
-      }
+      const demands = this.$store.state.consumption
+      let unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic))
+      Object.assign(unifiedDemandsObject, JSON.parse(JSON.stringify(demands.luxury)))
 
-      if (this.demands.luxury[currentProduct])
-      {
-      const consumption = this.demands.luxury[currentProduct];
-      }
+      const consumption = unifiedDemandsObject[currentProduct]
+
       // Return consumption of product, or null.
       return isNaN(consumption) ? null : consumption;
     },
@@ -211,33 +220,6 @@ export default {
         return output;
       } else {
         return output.toFixed(2);
-      }
-    },
-
-    demands: {
-      get() {
-        const storeConsumption = this.$store.state.consumption;
-
-        // Check if consumption is set
-        if (!storeConsumption) {
-          return null;
-        }
-        console.log(storeConsumption)
-        // Flatten consumption
-        const flatConsumption = {};
-        // Iterate over basic / luxury
-        for (let i = 0; i < storeConsumption.length; i++) {
-          const demandType = storeConsumption[i];
-
-          const demands = storeConsumption[demandType];
-          // Iterate over each demand
-          for (let i = 0; i < demands.length; i++) {
-            const dmndKey = demands[i];
-            flatConsumption[dmndKey] = demands[dmndKey];
-          }
-        }
-
-        return flatConsumption;
       }
     },
 
@@ -349,6 +331,11 @@ export default {
     getNewProductionChain() {
       const chainNodeMixin = this;
       return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain));
+    },
+
+    changeResidents() {
+      // emits event in WorkerPanel.vue
+      EventBus.$emit("addToDemands")
     }
   }
 };
