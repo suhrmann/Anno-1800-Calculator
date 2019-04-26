@@ -17,9 +17,6 @@
           </v-flex>
         </div>
       </v-flex>
-      <v-flex align-self-center xs2>
-        <v-btn @click="changeResidents()">Add to Demands</v-btn>
-      </v-flex>
     </v-layout>
   </div>
 </template>
@@ -27,6 +24,7 @@
 <script>
 import { helperFunctionMixin } from "../helperFunctionMixin.js";
 import { chainNodeMixin } from "./chainNodeMixin.js";
+import { EventBus } from "../../EventBus.js";
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
@@ -48,6 +46,14 @@ export default {
         obreros: 0
       }
     };
+  },
+
+  created() {
+    // Event get emitted when clicking on Add to Demands Button in Visual Production Chain
+    EventBus.$on("addToDemands", () => {
+      this.$store.commit("addBuildings", this.buildingQueue);
+      this.$router.push({ name: 'resident-demands', params: { linkedFromChains: true, populationToAdd: this.requiredPopulation } })
+    })
   },
 
   computed: {
@@ -173,11 +179,6 @@ export default {
       this.buildingQueue.push(building);
     },
 
-    changeResidents() {
-      this.$store.commit("addBuildings", this.buildingQueue);
-      this.$store.commit("addToPopulationDemands", this.requiredPopulation);
-      this.$router.push("/demands");
-    }
   }
 };
 </script>
