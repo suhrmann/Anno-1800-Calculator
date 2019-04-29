@@ -256,7 +256,7 @@ export default {
       const items = [];
       const allDemands = this.totalDemandsFlat;
 
-      for (const key in allDemands) {
+      for (const key in allDemands) { // TODO Fix warning to avoid iterating over unexpected items!
         const value = allDemands[key];
 
         // Only add demand if it is present or > 0
