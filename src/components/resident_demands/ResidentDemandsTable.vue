@@ -1,88 +1,71 @@
 <template>
   <v-container grid-list-md text-xs-center>
 
-    <!-- Filter by demand type -->
+    <v-card class="mb-2">
 
-    <v-container fluid class="ma-0 py-1">
-      <v-layout row wrap>
-        <v-flex xs12>
-          <h3 class="left">Show. . . </h3>
-        </v-flex>
-      </v-layout>
-    </v-container>
+      <v-card-title primary-title class="pb-0">
+        <div>
+          <h3>Filter Table . . .</h3>
+        </div>
+      </v-card-title>
 
 
-    <!-- TODO Fix padding & margin -_- -->
-    <v-card>
-      <v-card-text>
+      <v-card-text class="ma-0 py-0">
         <v-container fluid>
-          <v-layout row wrap>
-            <!-- Basic / Luxury demands -->
-            <!-- TODO Make this Chkbx XOR: None or only one! -->
-            <v-flex xs12 sm4 md4>
-              <v-switch
-                v-model="onlyBasicChkbx"
-                label="Only basic"
-                value=""
-                hide-details
-              ></v-switch>
+          <v-layout row wrap class="my-0 py-0">
+
+            <!-- Filter by demand type -->
+            <v-flex xs12 sm6 md4>
+              <v-radio-group v-model="radios1" class="my-0">
+                <template slot="label">
+                  <div>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path d="M14,12V19.88C14.04,20.18 13.94,20.5 13.71,20.71C13.32,21.1 12.69,21.1 12.3,20.71L10.29,18.7C10.06,18.47 9.96,18.16 10,17.87V12H9.97L4.21,4.62C3.87,4.19 3.95,3.56 4.38,3.22C4.57,3.08 4.78,3 5,3V3H19V3C19.22,3 19.43,3.08 19.62,3.22C20.05,3.56 20.13,4.19 19.79,4.62L14.03,12H14Z" />
+                    </svg>
+                    <strong>Filter Demand Type</strong>
+                  </div>
+                </template>
+                <v-radio
+                  label="All"
+                  :value="FILTER_VALUES.TYPE_ALL"
+                ></v-radio>
+                <v-radio
+                  label="Only Basic"
+                  :value="FILTER_VALUES.TYPE_BASIC"
+                ></v-radio>
+                <v-radio
+                  label="Only Luxury"
+                  :value="FILTER_VALUES.TYPE_LUXURY"
+                ></v-radio>
+              </v-radio-group>
             </v-flex>
-            <v-flex xs12 sm4 md4>
-              <v-switch
-                v-model="onlyLuxuryChkbx"
-                label="Only luxury"
-                value=""
-                hide-details
-              ></v-switch>
-            </v-flex>
-            <!--
-            <v-flex xs12 sm4 md4>
-              <v-switch
-                v-model="ex11"
-                label="All"
-                value="indigo"
-                hide-details
-              ></v-switch>
-            </v-flex>
-            -->
-          </v-layout>
-        </v-container>
-      </v-card-text>
-    </v-card>
 
 
-    <v-card>
-      <v-card-text>
-        <v-container fluid>
-          <v-layout row wrap>
-            <!-- Consumable / Non-Consumable -->
-            <!-- TODO Make this Chkbx XOR: None or only one! -->
-            <v-flex xs12 sm4 md4>
-              <v-switch
-                v-model="onlyConsumableChkbx"
-                label="Only consumable"
-                value=""
-                hide-details
-              ></v-switch>
+            <!-- Filter by Consumable / Non-Consumable -->
+            <v-flex xs12 sm6 md4>
+              <v-radio-group v-model="radios2" class="my-0">
+                <template slot="label">
+                  <div>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="" d="M14,12V19.88C14.04,20.18 13.94,20.5 13.71,20.71C13.32,21.1 12.69,21.1 12.3,20.71L10.29,18.7C10.06,18.47 9.96,18.16 10,17.87V12H9.97L4.21,4.62C3.87,4.19 3.95,3.56 4.38,3.22C4.57,3.08 4.78,3 5,3V3H19V3C19.22,3 19.43,3.08 19.62,3.22C20.05,3.56 20.13,4.19 19.79,4.62L14.03,12H14Z" />
+                    </svg>
+                    <strong>Filter Consumable</strong>
+                  </div>
+                </template>
+                <v-radio
+                  label="All"
+                  value="all"
+                ></v-radio>
+                <v-radio
+                  label="Only Consumable"
+                  value="consumable"
+                ></v-radio>
+                <v-radio
+                  label="Only Non-Consumable"
+                  value="non-consumable"
+                ></v-radio>
+              </v-radio-group>
             </v-flex>
-            <v-flex xs12 sm4 md4>
-              <v-switch
-                v-model="onlyNonConsumableChkbx"
-                label="Only non-consumable"
-                value=""
-                hide-details
-              ></v-switch>
-            </v-flex>
-            <!--
-            <v-flex xs12 sm4 md4>
-              <v-switch
-                v-model="ex11"
-                label="All"
-                value="indigo"
-                hide-details
-              ></v-switch>
-            </v-flex>
-            -->
 
           </v-layout>
         </v-container>
@@ -96,6 +79,15 @@
       class="elevation-1"
       hide-actions
     >
+      <!-- Warn about no data -->
+      <template slot="no-data">
+        <v-alert :value="true" color="warning" icon="warning">
+          <h3>Sorry, nothing to display here :(</h3>
+          <p class="mb-0">Enter the number of your populations to start calculation of demands.</p>
+        </v-alert>
+      </template>
+
+      <!-- Data: Rows . . . -->
       <template slot="items" slot-scope="props"
                 v-if="(
                   (onlyBasicChkbx && isBasicDemand(props.item.name))
@@ -191,11 +183,8 @@ export default {
   name: 'ResidentDemandsTable',
   data: function() {
     return {
-
-      onlyBasicChkbx: false,
-      onlyLuxuryChkbx: true,
-      onlyConsumableChkbx: false,
-      onlyNonConsumableChkbx: false,
+      radios1: 'all',
+      radios2: 'all',
 
       headers: [
         // TODO Add value for old / new world
@@ -212,6 +201,36 @@ export default {
   },
   mixins: [residentDemandCalculatorMixin],
   computed: {
+
+    FILTER_VALUES: function() {
+      return {
+        // Filter values for demand type
+        TYPE_ALL: 'all',
+        TYPE_BASIC: 'basic',
+        TYPE_LUXURY: 'luxury',
+
+        // Filter values for consumable
+        CONSUMABLE_ALL: 'all',
+        CONSUMABLE: 'consumable',
+        CONSUMABLE_NON: 'non-consumable',
+      };
+    },
+
+    onlyBasicChkbx: function() {
+      return this.radios1 === this.FILTER_VALUES.TYPE_BASIC;
+    },
+    onlyLuxuryChkbx: function() {
+      return this.radios1 === this.FILTER_VALUES.TYPE_LUXURY;
+    },
+
+    onlyConsumableChkbx: function() {
+      return this.radios2 === this.FILTER_VALUES.CONSUMABLE;
+    },
+    onlyNonConsumableChkbx: function() {
+      return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON;
+    },
+
+
     /**
        * Flatten the basic and luxury demands into one single, flat array.
        * @return {array} Basic and luxury demands, but flattened and with additional value "type": 'basic'|'luxury'

@@ -9,13 +9,6 @@
 
       <v-container grid-list-md text-xs-center>
 
-        <!-- Alert if no population was entered -->
-        <div v-if="isPopulationEmpty">
-          <v-alert class="my-5" :value="true" type="warning" transition="scale-transition">
-            <h3>No population set</h3>Enter the number of at least one populations to start calculation of demands.
-          </v-alert>
-        </div>
-
         <!-- Demands as table -->
         <resident-demands-table></resident-demands-table>
 
@@ -53,24 +46,6 @@ export default {
     return {};
   },
 
-  computed: {
-    /**
-     * Check if any population was entered.
-     *
-     * @return {boolean} true if no population is set.
-     */
-    isPopulationEmpty: function() {
-      return !(
-        this.$store.state.population.numFarmers > 0 ||
-        this.$store.state.population.numWorkers > 0 ||
-        this.$store.state.population.numArtisans > 0 ||
-        this.$store.state.population.numEngineers > 0 ||
-        this.$store.state.population.numInvestors > 0 ||
-        this.$store.state.population.numJornaleros > 0 ||
-        this.$store.state.population.numObreros > 0
-      );
-    },
-  },
 };
 </script>
 
