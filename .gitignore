@@ -21,6 +21,3 @@ yarn-error.log*
 
 #Electron-builder output
 #/dist_electron # DO NOT ignore (breaks CD of github-pages)
-
-package-lock.json
-.gitignore

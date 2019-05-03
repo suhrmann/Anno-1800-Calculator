@@ -13,12 +13,6 @@ export default new Vuex.Store({
     buildingQueue: [],
 
     /**
-     * The selected tab (cards / table) in demands view.
-     * @var {int} ID
-     */
-    selectedConsumptionTab: 1,
-
-    /**
      * The user's input of number of populations - for consumption calculation.
      */
     population: {
@@ -134,15 +128,6 @@ export default new Vuex.Store({
       state.selectedProductionChainID = 1;
       state.selectedSocialClassID = 1;
       state.selectedWorldID = 1;
-    },
-
-    /**
-     * Change the selected tab in component of population demands.
-     * @param {object} state
-     * @param {object} newTabID
-     */
-    changeSelectedConsumptionTab(state, newTabID) {
-      state.selectedConsumptionTab = newTabID;
     },
 
     /**
