@@ -1,9 +1,37 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  plugins: [
+    // Configure the plugin "vuex-persistedstate" (key and what to store)
+    createPersistedState({
+      /**
+       * The key to store the persisted state under. (default: vuex)
+       */
+      key: 'anno-1800-caluclator',
+      /**
+       * reducer?: (state: any, paths: string[]) => object;
+       *
+       * A function that will be called to reduce the state to persist based on the given paths.
+       * Defaults to include the values.
+       */
+      reducer(state, paths) {
+        return {
+          // Store selected production chain
+          selectedWorldID: state.selectedWorldID,
+          selectedSocialClassID: state.selectedSocialClassID,
+          selectedProductionChainID: state.selectedProductionChainID,
+
+          // Store entered population
+          population: state.population,
+        };
+      },
+    }),
+  ],
+
   state: {
     selectedProductionChain: null,
     selectedWorldID: 0,
