@@ -1,6 +1,27 @@
 <template>
   <v-container grid-list-md text-xs-center>
 
+
+    <!-- Show alert with info about cigars appearing twice -->
+    <v-layout
+      row
+      wrap
+      class="py-4"
+      v-if="numInvestors > 0 || numObreros > 0"
+    >
+      <v-alert
+        type="info"
+        transition="scale-transition"
+        dismissible
+
+        v-model="cigarsInfo"
+        class="md10 xs12"
+      >
+        Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the demands table.
+      </v-alert>
+    </v-layout>
+
+
     <v-card class="mb-2">
 
       <v-card-title primary-title class="pb-0">
@@ -73,6 +94,7 @@
     </v-card>
 
 
+    <!-- Data Table -->
     <v-data-table
       :headers="headers"
       :items="totalDemandsDatatable"
@@ -90,8 +112,8 @@
       <!-- Data: Rows . . . -->
       <template slot="items" slot-scope="props"
                 v-if="(
-                  (onlyBasicChkbx && isBasicDemand(props.item.name))
-                      || (onlyLuxuryChkbx && !isBasicDemand(props.item.name))
+                  (onlyBasicChkbx && props.item.isBasic)
+                      || (onlyLuxuryChkbx && props.item.isLuxury)
                       || (!onlyBasicChkbx && !onlyLuxuryChkbx)
                 ) &&
                 (
@@ -101,11 +123,11 @@
                 )"
       >
         <td>
-          {{ isBasicDemand(props.item.name) ? 'basic' : 'luxury' }}
+          {{ props.item.isBasic ? 'basic' : (props.item.isLuxury ? 'luxury' : 'N/A') }}
         </td>
         <!-- Is Consumable -->
         <td>
-          {{ props.item.isConsumable }}
+          {{ props.item.isConsumable ? '✔️️️' : '✖️️' }}
         </td>
         <!-- Icon -->
         <td>
@@ -183,8 +205,12 @@ export default {
   name: 'ResidentDemandsTable',
   data: function() {
     return {
+      // The values of the radio buttons to filter table
       radios1: 'all',
       radios2: 'all',
+
+      // Show an info about cigars appearing twice in the data table
+      cigarsInfo: true,
 
       headers: [
         // TODO Add value for old / new world
@@ -230,18 +256,6 @@ export default {
       return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON;
     },
 
-
-    /**
-       * Flatten the basic and luxury demands into one single, flat array.
-       * @return {array} Basic and luxury demands, but flattened and with additional value "type": 'basic'|'luxury'
-       */
-    totalDemandsFlat: function() {
-      const basicNeeds = this.totalDemands.basic;
-      const luxuryNeeds = this.totalDemands.luxury;
-
-      return Object.assign({}, basicNeeds, luxuryNeeds);
-    },
-
     /**
        * Preprocess the populations' demands for Data Table of Vuetify.
        *
@@ -253,21 +267,33 @@ export default {
        *   }
        */
     totalDemandsDatatable: function() {
+      const basicNeeds = this.totalDemands.basic;
+      const luxuryNeeds = this.totalDemands.luxury;
+
       const items = [];
-      const allDemands = this.totalDemandsFlat;
 
-      for (const key in allDemands) { // TODO Fix warning to avoid iterating over unexpected items!
-        const value = allDemands[key];
 
-        // Only add demand if it is present or > 0
-        if (value === true || value > 0) {
-          // TODO Create data here instead of in HTML table
-          items.push({
-            type: this.isBasicDemand(key) ? 'basic' : 'luxury',
-            name: key,
-            consumption: value,
-            isConsumable: this.isConsumable(key, value),
-          });
+      // Iterate over demands of basic / luxury
+      for (const demands of [basicNeeds, luxuryNeeds]) { // eslint-disable-line guard-for-in
+        const isBasic = demands === basicNeeds;
+        const isLuxury = demands === luxuryNeeds;
+
+        // Iterate over all demands of the current population
+        for (const [dKey, demand] of Object.entries(demands)) {
+
+          if (dKey === 'Cigars') console.log('Hello', demand, 'Cigars!');
+          // Only add demand if it is present or > 0
+          if (demand === true || demand > 0) {
+            // TODO Create data here instead of in HTML table
+            items.push({
+              type: isBasic ? 'basic' : (isLuxury ? 'luxury' : 'N/A'),
+              isBasic: demands === basicNeeds,
+              isLuxury: demands === luxuryNeeds,
+              name: dKey,
+              consumption: demand,
+              isConsumable: this.isConsumable(dKey, demand),
+            });
+          }
         }
       }
 

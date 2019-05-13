@@ -27,7 +27,7 @@
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
                     </template>
                     <template slot="header">
-                      <h4 color="accent">Workforce Demand</h4> 
+                      <h4 color="accent">Workforce Demand</h4>
                       <v-flex class="pa-0 ma-0" xs3>
                         <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
                       </v-flex>
@@ -124,18 +124,18 @@
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
-import WorkerPanel from "./WorkerPanel";
-import ResourcePanel from "./ResourcePanel";
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { EventBus } from '../../EventBus.js';
+import TreeChart from '../TreeChart';
+import WorkerPanel from './WorkerPanel';
+import ResourcePanel from './ResourcePanel';
 
 export default {
   components: {
     TreeChart,
     WorkerPanel,
-    ResourcePanel
+    ResourcePanel,
   },
   data() {
     return {
@@ -144,7 +144,7 @@ export default {
       chainCount: 1,
       spt: 0,
       coal: 'char',
-      marq: 'old'
+      marq: 'old',
     };
   },
 
@@ -153,18 +153,18 @@ export default {
       this.initiateProductionChain();
     }
 
-    EventBus.$on("setSPTforChain", spt => {});
-    EventBus.$on("changeSlider", value => {});
+    EventBus.$on('setSPTforChain', (spt) => {});
+    EventBus.$on('changeSlider', (value) => {});
 
-    EventBus.$on("bottomNavBarChanged", () => {
+    EventBus.$on('bottomNavBarChanged', () => {
       this.temporaryProductionChain = this.getCurrentProductionChain();
       const helperFunctionMixin = this;
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
-        this.temporaryProductionChain
+          this.temporaryProductionChain
       );
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-        productionTimes
+          productionTimes
       );
 
       this.addBuildingRelationdToChain(shortestProductionTime);
@@ -177,8 +177,8 @@ export default {
 
   filters: {
     rounded: function(number, decimals) {
-      return number.toFixed(decimals)
-    }
+      return number.toFixed(decimals);
+    },
   },
 
 
@@ -199,11 +199,11 @@ export default {
     consumptionPerMinute() {
       // Find consumption of currently selected product.
       const currentProduct = this.productionChain.finalProduct;
-      const demands = this.$store.state.consumption
-      let unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic))
-      Object.assign(unifiedDemandsObject, JSON.parse(JSON.stringify(demands.luxury)))
+      const demands = this.$store.state.consumption;
+      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic));
+      Object.assign(unifiedDemandsObject, JSON.parse(JSON.stringify(demands.luxury)));
 
-      const consumption = unifiedDemandsObject[currentProduct]
+      const consumption = unifiedDemandsObject[currentProduct];
 
       // Return consumption of product, or null.
       return isNaN(consumption) ? null : consumption;
@@ -231,7 +231,7 @@ export default {
       let returnValue = false;
       const good = this.treeData.finalProduct;
       const consumables = this.consumablesOverTime;
-      consumables.find(currentElement => {
+      consumables.find((currentElement) => {
         if (good === currentElement) {
           returnValue = true;
         }
@@ -256,12 +256,12 @@ export default {
         }
       }
       return consumablesArray;
-    }
+    },
   },
 
   methods: {
     changeCounter() {
-      EventBus.$emit("changeSlider", this.chainCount);
+      EventBus.$emit('changeSlider', this.chainCount);
     },
 
     /**
@@ -275,8 +275,8 @@ export default {
       const helperFunctionMixin = this;
 
       const building = helperFunctionMixin.getBuildingByName(
-        element.name,
-        element.worldID
+          element.name,
+          element.worldID
       );
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount;
@@ -288,7 +288,7 @@ export default {
     initiateProductionChain() {
       const helperFunctions = this;
       const productionChain = helperFunctions.getProductionChainById(1);
-      this.$store.commit("changeProductionChain", productionChain);
+      this.$store.commit('changeProductionChain', productionChain);
     },
 
     /**
@@ -312,14 +312,14 @@ export default {
       const chainNodeMixin = this;
       const vpc = this;
       chainNodeMixin.iterateProductionChain(
-        vpc.temporaryProductionChain,
-        rootElement => {
-          vpc.addBuildingsAmount(spt, rootElement);
-        },
-        element => {
-          vpc.addBuildingsAmount(spt, element);
-        },
-        false
+          vpc.temporaryProductionChain,
+          (rootElement) => {
+            vpc.addBuildingsAmount(spt, rootElement);
+          },
+          (element) => {
+            vpc.addBuildingsAmount(spt, element);
+          },
+          false
       );
     },
 
@@ -335,9 +335,9 @@ export default {
 
     changeResidents() {
       // emits event in WorkerPanel.vue
-      EventBus.$emit("addToDemands")
-    }
-  }
+      EventBus.$emit('addToDemands');
+    },
+  },
 };
 </script>
 

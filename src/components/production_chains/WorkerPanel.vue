@@ -22,16 +22,16 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { EventBus } from "../../EventBus.js";
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { chainNodeMixin } from './chainNodeMixin.js';
+import { EventBus } from '../../EventBus.js';
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {
@@ -43,77 +43,77 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0
-      }
+        obreros: 0,
+      },
     };
   },
 
   created() {
     // Event get emitted when clicking on Add to Demands Button in Visual Production Chain
-    EventBus.$on("addToDemands", () => {
-      this.$store.commit("addBuildings", this.buildingQueue);
+    EventBus.$on('addToDemands', () => {
+      this.$store.commit('addBuildings', this.buildingQueue);
       this.$router.push({
-        name: "resident-demands",
+        name: 'resident-demands',
         query: {
           linkedFromChains: true,
-          populationToAdd: this.requiredPopulation
-        }
+          populationToAdd: this.requiredPopulation,
+        },
       });
     });
   },
 
   computed: {
     reqPopArray() {
-      let filteredArray = [];
+      const filteredArray = [];
 
       if (this.requiredPopulation.farmers !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.farmers,
-          name: "Farmer",
-          image: "workforce-farmers.webp"
+          name: 'Farmer',
+          image: 'workforce-farmers.webp',
         });
       }
 
       if (this.requiredPopulation.workers !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.workers,
-          name: "Worker",
-          image: "workforce-workers.webp"
+          name: 'Worker',
+          image: 'workforce-workers.webp',
         });
       }
       if (this.requiredPopulation.artisans !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.artisans,
-          name: "Artisans",
-          image: "workforce-artisans.webp"
+          name: 'Artisans',
+          image: 'workforce-artisans.webp',
         });
       }
       if (this.requiredPopulation.engineers !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.engineers,
-          name: "Engineers",
-          image: "workforce-engineers.webp"
+          name: 'Engineers',
+          image: 'workforce-engineers.webp',
         });
       }
       if (this.requiredPopulation.investors !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.investors,
-          name: "Investors",
-          image: "workforce-investors.webp"
+          name: 'Investors',
+          image: 'workforce-investors.webp',
         });
       }
       if (this.requiredPopulation.jornaleros !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.jornaleros,
-          name: "Jornaleros",
-          image: "workforce-jornaleros.webp"
+          name: 'Jornaleros',
+          image: 'workforce-jornaleros.webp',
         });
       }
       if (this.requiredPopulation.obreros !== 0) {
         filteredArray.push({
           population: this.requiredPopulation.obreros,
-          name: "Obreros",
-          image: "workforce-obreros.webp"
+          name: 'Obreros',
+          image: 'workforce-obreros.webp',
         });
       }
 
@@ -127,7 +127,7 @@ export default {
       } else {
         return true;
       }
-    }
+    },
   },
 
   watch: {
@@ -136,20 +136,20 @@ export default {
       this.resetRequiredPopulation();
       this.buildingQueue = {};
       chainNodeMixin.iterateProductionChain(
-        this.chain,
-        rootElement => this.getPopulationReq(rootElement),
-        element => this.getPopulationReq(element),
-        false
+          this.chain,
+          (rootElement) => this.getPopulationReq(rootElement),
+          (element) => this.getPopulationReq(element),
+          false
       );
-    }
+    },
   },
 
   methods: {
     getPopulationReq(element) {
       const helperFunctionMixin = this;
       const building = helperFunctionMixin.getBuildingByName(
-        element.name,
-        element.worldID
+          element.name,
+          element.worldID
       );
       this.requiredPopulation.farmers +=
         building.maintenance.farmer * element.relativeAmount;
@@ -177,14 +177,14 @@ export default {
         engineers: 0,
         investors: 0,
         jornaleros: 0,
-        obreros: 0
+        obreros: 0,
       };
     },
 
     addBuildingToQueue(building) {
       this.buildingQueue.push(building);
-    }
-  }
+    },
+  },
 };
 </script>
 
