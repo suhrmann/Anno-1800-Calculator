@@ -256,18 +256,21 @@ export default {
       const items = [];
       const allDemands = this.totalDemandsFlat;
 
-      for (const key in allDemands) { // TODO Fix warning to avoid iterating over unexpected items!
-        const value = allDemands[key];
+      // Iterate over all demands
+      for (const key in allDemands) {
+        if (allDemands.hasOwnProperty(key)) { // The body of a for-in should be wrapped in an if statement to filter unwanted properties from the prototype
 
-        // Only add demand if it is present or > 0
-        if (value === true || value > 0) {
-          // TODO Create data here instead of in HTML table
-          items.push({
-            type: this.isBasicDemand(key) ? 'basic' : 'luxury',
-            name: key,
-            consumption: value,
-            isConsumable: this.isConsumable(key, value),
-          });
+          const value = allDemands[key];
+          // Only add demand if it is present or > 0
+          if (value === true || value > 0) {
+            // TODO Create data here instead of in HTML table
+            items.push({
+              type: this.isBasicDemand(key) ? 'basic' : 'luxury',
+              name: key,
+              consumption: value,
+              isConsumable: this.isConsumable(key, value),
+            });
+          }
         }
       }
 
