@@ -21,7 +21,7 @@
           <v-flex d-flex>
             <v-layout row wrap>
               <v-flex xs12 d-flex>
-                <v-expansion-panel popout>
+                <v-expansion-panel>
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
@@ -40,7 +40,7 @@
               </v-flex>
 
               <v-flex d-flex xs12 class="mb-3">
-                <v-expansion-panel popout>
+                <v-expansion-panel>
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
@@ -116,7 +116,7 @@
       <v-flex xs6 mr-5 pr-5>
         <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
       </v-flex>
-            <v-flex xs3 mr-5 pr-5>
+      <v-flex xs3 mr-5 pr-5>
         <v-btn>Match Demands</v-btn>
       </v-flex>
     </v-layout>
@@ -124,18 +124,18 @@
 </template>
 
 <script>
-import { chainNodeMixin } from './chainNodeMixin.js';
-import { helperFunctionMixin } from '../helperFunctionMixin.js';
-import { EventBus } from '../../EventBus.js';
-import TreeChart from '../TreeChart';
-import WorkerPanel from './WorkerPanel';
-import ResourcePanel from './ResourcePanel';
+import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from "../helperFunctionMixin.js";
+import { EventBus } from "../../EventBus.js";
+import TreeChart from "../TreeChart";
+import WorkerPanel from "./WorkerPanel";
+import ResourcePanel from "./ResourcePanel";
 
 export default {
   components: {
     TreeChart,
     WorkerPanel,
-    ResourcePanel,
+    ResourcePanel
   },
   data() {
     return {
@@ -143,8 +143,8 @@ export default {
       temporaryProductionChain: {},
       chainCount: 1,
       spt: 0,
-      coal: 'char',
-      marq: 'old',
+      coal: "char",
+      marq: "old"
     };
   },
 
@@ -153,18 +153,18 @@ export default {
       this.initiateProductionChain();
     }
 
-    EventBus.$on('setSPTforChain', (spt) => {});
-    EventBus.$on('changeSlider', (value) => {});
+    EventBus.$on("setSPTforChain", spt => {});
+    EventBus.$on("changeSlider", value => {});
 
-    EventBus.$on('bottomNavBarChanged', () => {
+    EventBus.$on("bottomNavBarChanged", () => {
       this.temporaryProductionChain = this.getCurrentProductionChain();
       const helperFunctionMixin = this;
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
-          this.temporaryProductionChain
+        this.temporaryProductionChain
       );
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
-          productionTimes
+        productionTimes
       );
 
       this.addBuildingRelationdToChain(shortestProductionTime);
@@ -178,9 +178,8 @@ export default {
   filters: {
     rounded: function(number, decimals) {
       return number.toFixed(decimals);
-    },
+    }
   },
-
 
   computed: {
     productionChain() {
@@ -201,7 +200,10 @@ export default {
       const currentProduct = this.productionChain.finalProduct;
       const demands = this.$store.state.consumption;
       const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic));
-      Object.assign(unifiedDemandsObject, JSON.parse(JSON.stringify(demands.luxury)));
+      Object.assign(
+        unifiedDemandsObject,
+        JSON.parse(JSON.stringify(demands.luxury))
+      );
 
       const consumption = unifiedDemandsObject[currentProduct];
 
@@ -231,7 +233,7 @@ export default {
       let returnValue = false;
       const good = this.treeData.finalProduct;
       const consumables = this.consumablesOverTime;
-      consumables.find((currentElement) => {
+      consumables.find(currentElement => {
         if (good === currentElement) {
           returnValue = true;
         }
@@ -256,12 +258,12 @@ export default {
         }
       }
       return consumablesArray;
-    },
+    }
   },
 
   methods: {
     changeCounter() {
-      EventBus.$emit('changeSlider', this.chainCount);
+      EventBus.$emit("changeSlider", this.chainCount);
     },
 
     /**
@@ -275,8 +277,8 @@ export default {
       const helperFunctionMixin = this;
 
       const building = helperFunctionMixin.getBuildingByName(
-          element.name,
-          element.worldID
+        element.name,
+        element.worldID
       );
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount;
@@ -288,7 +290,7 @@ export default {
     initiateProductionChain() {
       const helperFunctions = this;
       const productionChain = helperFunctions.getProductionChainById(1);
-      this.$store.commit('changeProductionChain', productionChain);
+      this.$store.commit("changeProductionChain", productionChain);
     },
 
     /**
@@ -312,14 +314,14 @@ export default {
       const chainNodeMixin = this;
       const vpc = this;
       chainNodeMixin.iterateProductionChain(
-          vpc.temporaryProductionChain,
-          (rootElement) => {
-            vpc.addBuildingsAmount(spt, rootElement);
-          },
-          (element) => {
-            vpc.addBuildingsAmount(spt, element);
-          },
-          false
+        vpc.temporaryProductionChain,
+        rootElement => {
+          vpc.addBuildingsAmount(spt, rootElement);
+        },
+        element => {
+          vpc.addBuildingsAmount(spt, element);
+        },
+        false
       );
     },
 
@@ -335,9 +337,9 @@ export default {
 
     changeResidents() {
       // emits event in WorkerPanel.vue
-      EventBus.$emit('addToDemands');
-    },
-  },
+      EventBus.$emit("addToDemands");
+    }
+  }
 };
 </script>
 
