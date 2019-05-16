@@ -33,10 +33,25 @@ export default new Vuex.Store({
   ],
 
   state: {
-    selectedProductionChain: null,
-    selectedWorldID: 0,
-    selectedSocialClassID: 0,
-    selectedProductionChainID: 0,
+    selectedProductionChain: {
+      id: 1,
+      worldID: 1,
+      chain: 'Timber',
+      socialClassID: 1,
+      finalProduct: 'Timber',
+      name: 'Sawmill',
+      img: 'farmers/timber.webp',
+      alternative: '',
+      children: [{
+        name: 'Lumberjack Hut',
+        worldID: 1,
+        alternative: '',
+        children: null,
+      }],
+    },
+    selectedWorldID: 1,
+    selectedSocialClassID: 1,
+    selectedProductionChainID: 1,
 
     buildingQueue: [],
 
@@ -152,7 +167,8 @@ export default new Vuex.Store({
       state.selectedProductionChainID = chainID;
     },
 
-    resetSelectionIDs(state) {
+    resetSelectionIDs(state, initChain) {
+      state.selectedProductionChain = initChain;
       state.selectedProductionChainID = 1;
       state.selectedSocialClassID = 1;
       state.selectedWorldID = 1;
