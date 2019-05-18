@@ -80,7 +80,7 @@
           <v-flex xs2>
             <v-container fill-height>
               <v-btn fab color="green lighten-4" depressed class="disable-events">
-                <v-icon large color="green">arrow_upward</v-icon>
+                <v-icon large color="green">mdi-arrow-up</v-icon>
               </v-btn>
               <v-img
                 :src="require('../../assets/buildings/farmers/warehouse.webp')"
@@ -89,7 +89,7 @@
                 contain
               ></v-img>
               <v-btn fab color="deep-orange lighten-4" depressed class="disable-events">
-                <v-icon large color="deep-orange">arrow_downward</v-icon>
+                <v-icon large color="deep-orange">mdi-arrow-down</v-icon>
               </v-btn>
             </v-container>
           </v-flex>
