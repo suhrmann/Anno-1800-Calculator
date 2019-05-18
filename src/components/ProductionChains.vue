@@ -8,28 +8,18 @@
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar.vue';
-import VisualProductionChain from './production_chains/VisualProductionChain.vue';
-import store from '../store.js';
+import BottomNavBar from "./BottomNavBar.vue";
+import VisualProductionChain from "./production_chains/VisualProductionChain.vue";
+import { helperFunctionMixin } from "./helperFunctionMixin.js";
+import store from "../store.js";
 
 export default {
-  name: 'ProductionChains',
+  name: "ProductionChains",
+  mixins: [helperFunctionMixin],
   components: {
-    'bottom-nav-bar': BottomNavBar,
-    'visual-production-chain': VisualProductionChain,
-  },
-
-  beforeRouteEnter(to, from, next) {
-    const chain = store.state.selectedProductionChain;
-    if (chain === null) {
-      store.commit('resetSelectionIDs');
-    }
-    next((vm) => {
-
-      // gets executed when component is loaded. has access to component
-    });
-  },
-
+    "bottom-nav-bar": BottomNavBar,
+    "visual-production-chain": VisualProductionChain
+  }
 };
 </script>
 

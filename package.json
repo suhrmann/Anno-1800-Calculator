@@ -19,6 +19,8 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "@mdi/font": "^2.6.95",
+    "roboto-fontface": "*",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.22",
     "vue-router": "^3.0.1",
