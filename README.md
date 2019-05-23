@@ -3,6 +3,10 @@
 [![Build Status](https://travis-ci.org/suhrmann/Anno-1800-Calculator.svg?branch=master)](https://travis-ci.org/suhrmann/Anno-1800-Calculator)
 [![](https://img.shields.io/github/downloads/Vadammt/Anno-1800-Calculator/total.svg?style=flat)](https://github.com/Vadammt/Anno-1800-Calculator/releases)
 
+<a href="https://github.com/suhrmann/Anno-1800-Calculator/wiki/images/production-chains-sample.png">
+ <img src="https://github.com/suhrmann/Anno-1800-Calculator/wiki/images/production-chains-sample.png" width="45%">
+</a>
+
 There are two versions of the calculator: An online version and a Desktop App.
 
 ## Online Calculator
