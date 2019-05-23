@@ -281,7 +281,6 @@ export default {
         // Iterate over all demands of the current population
         for (const [dKey, demand] of Object.entries(demands)) {
 
-          if (dKey === 'Cigars') console.log('Hello', demand, 'Cigars!');
           // Only add demand if it is present or > 0
           if (demand === true || demand > 0) {
             // TODO Create data here instead of in HTML table
