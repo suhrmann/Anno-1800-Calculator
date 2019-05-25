@@ -5,13 +5,13 @@
         <v-card class="mb-3" color="secondary" dark>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
           <v-card-text class="mb-0 pb-0 pt-0">
-            <v-radio-group class="pb-0 mb-0" v-model="coal" row>
-              <v-radio label="Charcoal" value="char"></v-radio>
+            <v-radio-group class="pb-0 mb-0" v-model="coalOption" row>
+              <v-radio label="Charcoal" value="char" ></v-radio>
               <v-radio label="Coal" value="rock"></v-radio>
             </v-radio-group>
-            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="marq" row>
+            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="marquetryOption" row>
               <v-radio label="Old World Marquetry" value="old"></v-radio>
-              <v-radio label="New World Marquetry" value="new"></v-radio>
+              <v-radio label="New World Marquetry" value ="new"></v-radio>
             </v-radio-group>
           </v-card-text>
         </v-card>
@@ -154,11 +154,13 @@ export default {
 
     EventBus.$on("bottomNavBarChanged", () => {
       this.temporaryProductionChain = this.getCurrentProductionChain();
+
       const helperFunctionMixin = this;
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
         this.temporaryProductionChain
       );
+
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
         productionTimes
       );
@@ -178,6 +180,31 @@ export default {
   },
 
   computed: {
+    
+    coalOption: {
+      get() {
+        return this.$store.state.coalOption;
+      },
+      set(value) {
+        this.$store.commit("setCoalOption", value);
+        EventBus.$emit("recalculateChain")
+      }
+    },
+
+    marquetryOption: {
+      get() {
+        return this.$store.state.marquetryOption;
+      },
+      set(value) {
+        this.$store.commit("setMarquetryOption", value);
+        EventBus.$emit("recalculateChain")
+      }
+    
+    
+    },
+
+
+
     productionChain() {
       return this.$store.state.selectedProductionChain;
     },

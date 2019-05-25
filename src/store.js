@@ -53,6 +53,13 @@ export default new Vuex.Store({
     selectedSocialClassID: 1,
     selectedProductionChainID: 1,
 
+    /**
+    * The following 2 properties are linked to the options in VisualProductionChain.vue
+    * these 2 determine, if the chain is calculated using the alternate building
+    */
+    coalOption: 'char',
+    marquetryOption: 'old',
+
     buildingQueue: [],
 
     /**
@@ -137,6 +144,14 @@ export default new Vuex.Store({
 
     addBuildings(state, buildings) {
       state.buildingQueue = buildings;
+    },
+
+    setCoalOption(state, value) {
+      state.coalOption = value;
+    },
+
+    setMarquetryOption(state, value) {
+      state.marquetryOption = value;
     },
 
     /**
