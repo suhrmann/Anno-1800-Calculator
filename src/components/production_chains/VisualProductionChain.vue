@@ -149,10 +149,6 @@ export default {
   },
 
   created() {
-    if (this.productionChain == null) {
-      this.initiateProductionChain();
-    }
-
     EventBus.$on("setSPTforChain", spt => {});
     EventBus.$on("changeSlider", value => {});
 
@@ -282,15 +278,6 @@ export default {
       );
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount;
-    },
-
-    /**
-     * sets initial ProductionChain to Timber
-     */
-    initiateProductionChain() {
-      const helperFunctions = this;
-      const productionChain = helperFunctions.getProductionChainById(1);
-      this.$store.commit("changeProductionChain", productionChain);
     },
 
     /**
