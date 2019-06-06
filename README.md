@@ -22,11 +22,11 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 
 ---
 
-## Project setup
+## Project setup for developers
 
 ```bash
 # Get Project
-git clone https://github.com/Vadammt/Anno-1800-Calculator.git
+git clone https://github.com/suhrmann/Anno-1800-Calculator.git
 cd Anno-1800-Calculator
 
 # Install dependencies
