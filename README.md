@@ -34,6 +34,10 @@ npm install
 
 # Compile and hot-reload for development
 npm run serve
+
+# Build desktop application with electron-buiilder.
+npm run electron:build
+
 ```
 
 # Used Technologies
