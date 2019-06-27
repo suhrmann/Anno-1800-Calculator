@@ -1070,7 +1070,7 @@
         "Oil Refinery Old": {
             "product": "Oil",
             "building": "Oil Refinery",
-            "img": "engineers/glasses.webp",
+            "img": "engineers/oil.webp",
             "worldID": 1,
             "productionTime": 15,
             "construction": {
@@ -1088,6 +1088,32 @@
                 "obreros": 0,
                 "farmer": 0,
                 "worker": 100,
+                "artisan": 0,
+                "engineer": 0,
+                "investor": 0
+            }
+        },
+        "Oil Well Old": {
+            "product": "Oil",
+            "building": "Oil Well",
+            "img": "engineers/oil-well.png",
+            "worldID": 1,
+            "productionTime": 15,
+            "construction": {
+                "cash": 4000,
+                "wood": 6,
+                "brick": 10,
+                "steel": 8,
+                "window": 0,
+                "concrete": 0,
+                "influence": 0
+            },
+            "maintenance": {
+                "cash": 0,
+                "jornaleros": 0,
+                "obreros": 0,
+                "farmer": 0,
+                "worker": 0,
                 "artisan": 0,
                 "engineer": 0,
                 "investor": 0
@@ -2457,6 +2483,5 @@
                 "investor": 0
             }
         }
-
     }
 }

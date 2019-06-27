@@ -742,13 +742,13 @@
       ]
     },
 
-    "penny-farthings": {
+    "high-wheelers": {
       "id": 31,
       "worldID": 1,
       "img": "engineers/high-wheeler.webp",
-      "chain": "Penny Farthings",
+      "chain": "High Wheelers",
       "socialClassID": 4,
-      "finalProduct": "Penny Farthings",
+      "finalProduct": "High Wheelers",
       "name": "Bicycle Factory",
       "alternative": "",
       "children": [{
