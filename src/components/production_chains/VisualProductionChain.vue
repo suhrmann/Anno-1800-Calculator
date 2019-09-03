@@ -5,13 +5,13 @@
         <v-card class="mb-3" color="secondary" dark>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
           <v-card-text class="mb-0 pb-0 pt-0">
-            <v-radio-group class="pb-0 mb-0" v-model="coal" row>
-              <v-radio label="Charcoal" value="char"></v-radio>
+            <v-radio-group class="pb-0 mb-0" v-model="coalOption" row>
+              <v-radio label="Charcoal" value="char" ></v-radio>
               <v-radio label="Coal" value="rock"></v-radio>
             </v-radio-group>
-            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="marq" row>
+            <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="marquetryOption" row>
               <v-radio label="Old World Marquetry" value="old"></v-radio>
-              <v-radio label="New World Marquetry" value="new"></v-radio>
+              <v-radio label="New World Marquetry" value ="new"></v-radio>
             </v-radio-group>
           </v-card-text>
         </v-card>
@@ -21,13 +21,13 @@
           <v-flex d-flex>
             <v-layout row wrap>
               <v-flex xs12 d-flex>
-                <v-expansion-panel popout>
+                <v-expansion-panel>
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
                     </template>
                     <template slot="header">
-                      <h4 color="accent">Workforce Demand</h4> 
+                      <h4 color="accent">Workforce Demand</h4>
                       <v-flex class="pa-0 ma-0" xs3>
                         <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
                       </v-flex>
@@ -40,7 +40,7 @@
               </v-flex>
 
               <v-flex d-flex xs12 class="mb-3">
-                <v-expansion-panel popout>
+                <v-expansion-panel>
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
@@ -80,7 +80,7 @@
           <v-flex xs2>
             <v-container fill-height>
               <v-btn fab color="green lighten-4" depressed class="disable-events">
-                <v-icon large color="green">arrow_upward</v-icon>
+                <v-icon large color="green">mdi-arrow-up</v-icon>
               </v-btn>
               <v-img
                 :src="require('../../assets/buildings/farmers/warehouse.webp')"
@@ -89,7 +89,7 @@
                 contain
               ></v-img>
               <v-btn fab color="deep-orange lighten-4" depressed class="disable-events">
-                <v-icon large color="deep-orange">arrow_downward</v-icon>
+                <v-icon large color="deep-orange">mdi-arrow-down</v-icon>
               </v-btn>
             </v-container>
           </v-flex>
@@ -116,7 +116,7 @@
       <v-flex xs6 mr-5 pr-5>
         <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
       </v-flex>
-            <v-flex xs3 mr-5 pr-5>
+      <v-flex xs3 mr-5 pr-5>
         <v-btn>Match Demands</v-btn>
       </v-flex>
     </v-layout>
@@ -143,26 +143,24 @@ export default {
       temporaryProductionChain: {},
       chainCount: 1,
       spt: 0,
-      coal: 'char',
-      marq: 'old'
+      coal: "char",
+      marq: "old"
     };
   },
 
   created() {
-    if (this.productionChain == null) {
-      this.initiateProductionChain();
-    }
-
     EventBus.$on("setSPTforChain", spt => {});
     EventBus.$on("changeSlider", value => {});
 
     EventBus.$on("bottomNavBarChanged", () => {
       this.temporaryProductionChain = this.getCurrentProductionChain();
+
       const helperFunctionMixin = this;
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
         this.temporaryProductionChain
       );
+
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
         productionTimes
       );
@@ -177,12 +175,36 @@ export default {
 
   filters: {
     rounded: function(number, decimals) {
-      return number.toFixed(decimals)
+      return number.toFixed(decimals);
     }
   },
 
-
   computed: {
+    
+    coalOption: {
+      get() {
+        return this.$store.state.coalOption;
+      },
+      set(value) {
+        this.$store.commit("setCoalOption", value);
+        EventBus.$emit("recalculateChain")
+      }
+    },
+
+    marquetryOption: {
+      get() {
+        return this.$store.state.marquetryOption;
+      },
+      set(value) {
+        this.$store.commit("setMarquetryOption", value);
+        EventBus.$emit("recalculateChain")
+      }
+    
+    
+    },
+
+
+
     productionChain() {
       return this.$store.state.selectedProductionChain;
     },
@@ -199,11 +221,14 @@ export default {
     consumptionPerMinute() {
       // Find consumption of currently selected product.
       const currentProduct = this.productionChain.finalProduct;
-      const demands = this.$store.state.consumption
-      let unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic))
-      Object.assign(unifiedDemandsObject, JSON.parse(JSON.stringify(demands.luxury)))
+      const demands = this.$store.state.consumption;
+      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic));
+      Object.assign(
+        unifiedDemandsObject,
+        JSON.parse(JSON.stringify(demands.luxury))
+      );
 
-      const consumption = unifiedDemandsObject[currentProduct]
+      const consumption = unifiedDemandsObject[currentProduct];
 
       // Return consumption of product, or null.
       return isNaN(consumption) ? null : consumption;
@@ -283,15 +308,6 @@ export default {
     },
 
     /**
-     * sets initial ProductionChain to Timber
-     */
-    initiateProductionChain() {
-      const helperFunctions = this;
-      const productionChain = helperFunctions.getProductionChainById(1);
-      this.$store.commit("changeProductionChain", productionChain);
-    },
-
-    /**
      * gets Current active ProductionChain
      * @return {Object} Production Chain Object
      */
@@ -335,7 +351,7 @@ export default {
 
     changeResidents() {
       // emits event in WorkerPanel.vue
-      EventBus.$emit("addToDemands")
+      EventBus.$emit("addToDemands");
     }
   }
 };

@@ -1,22 +1,66 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    selectedProductionChain: null,
-    selectedWorldID: 0,
-    selectedSocialClassID: 0,
-    selectedProductionChainID: 0,
+  plugins: [
+    // Configure the plugin "vuex-persistedstate" (key and what to store)
+    createPersistedState({
+      /**
+       * The key to store the persisted state under. (default: vuex)
+       */
+      key: 'anno-1800-caluclator',
+      /**
+       * reducer?: (state: any, paths: string[]) => object;
+       *
+       * A function that will be called to reduce the state to persist based on the given paths.
+       * Defaults to include the values.
+       */
+      reducer(state, paths) {
+        return {
+          // Store selected production chain
+          selectedWorldID: state.selectedWorldID,
+          selectedSocialClassID: state.selectedSocialClassID,
+          selectedProductionChainID: state.selectedProductionChainID,
 
-    buildingQueue: [],
+          // Store entered population
+          population: state.population,
+        };
+      },
+    }),
+  ],
+
+  state: {
+    selectedProductionChain: {
+      id: 1,
+      worldID: 1,
+      chain: 'Timber',
+      socialClassID: 1,
+      finalProduct: 'Timber',
+      name: 'Sawmill',
+      img: 'farmers/timber.webp',
+      alternative: '',
+      children: [{
+        name: 'Lumberjack Hut',
+        worldID: 1,
+        alternative: '',
+        children: null,
+      }],
+    },
+    selectedWorldID: 1,
+    selectedSocialClassID: 1,
+    selectedProductionChainID: 1,
 
     /**
-     * The selected tab (cards / table) in demands view.
-     * @var {int} ID
-     */
-    selectedConsumptionTab: 1,
+    * The following 2 properties are linked to the options in VisualProductionChain.vue
+    * these 2 determine, if the chain is calculated using the alternate building
+    */
+    coalOption: 'char',
+    marquetryOption: 'old',
+
+    buildingQueue: [],
 
     /**
      * The user's input of number of populations - for consumption calculation.
@@ -102,6 +146,14 @@ export default new Vuex.Store({
       state.buildingQueue = buildings;
     },
 
+    setCoalOption(state, value) {
+      state.coalOption = value;
+    },
+
+    setMarquetryOption(state, value) {
+      state.marquetryOption = value;
+    },
+
     /**
      * Change the IDs corresponding to the selected productionChain
      * @param {object} state
@@ -130,19 +182,11 @@ export default new Vuex.Store({
       state.selectedProductionChainID = chainID;
     },
 
-    resetSelectionIDs(state) {
+    resetSelectionIDs(state, initChain) {
+      state.selectedProductionChain = initChain;
       state.selectedProductionChainID = 1;
       state.selectedSocialClassID = 1;
       state.selectedWorldID = 1;
-    },
-
-    /**
-     * Change the selected tab in component of population demands.
-     * @param {object} state
-     * @param {object} newTabID
-     */
-    changeSelectedConsumptionTab(state, newTabID) {
-      state.selectedConsumptionTab = newTabID;
     },
 
     /**

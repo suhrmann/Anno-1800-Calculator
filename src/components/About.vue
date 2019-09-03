@@ -45,10 +45,11 @@
             href="https://store.ubi.com/en/anno-1800/5b647010ef3aa548048c5958.html"
             target="_blank"
           >
-            <v-icon>shopping_cart</v-icon>&nbsp;
-            Buy Anno 1800
+            <v-icon>mdi-cart</v-icon>&nbsp;
+            Buy Anno 1800 &nbsp;
             <v-img :src="getImage('uplay.png', 'logos')" alt="UPLay Logo" contain height="30px"/>
           </v-btn>
+
           <v-btn
             color="primary"
             large
@@ -56,8 +57,8 @@
             href="https://www.epicgames.com/store/en-US/product/anno-1800/home"
             target="_blank"
           >
-            <v-icon>shopping_cart</v-icon>&nbsp;
-            Buy Anno 1800
+            <v-icon>mdi-cart</v-icon>&nbsp;
+            Buy Anno 1800 &nbsp;
             <v-img
               :src="getImage('epic_games.svg', 'logos')"
               alt="Epic Games Logo"

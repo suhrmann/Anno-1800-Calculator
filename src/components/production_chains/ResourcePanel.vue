@@ -28,15 +28,15 @@
 </template>
 
 <script>
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { chainNodeMixin } from "./chainNodeMixin.js";
+import { helperFunctionMixin } from '../helperFunctionMixin.js';
+import { chainNodeMixin } from './chainNodeMixin.js';
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   props: {
     chain: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {
@@ -48,83 +48,83 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0
-      }
+        influence: 0,
+      },
     };
   },
 
   computed: {
     costArray() {
-      let filteredArray = [];
+      const filteredArray = [];
 
       if (this.requiredResources.cash !== 0) {
         filteredArray.push({
           amount: this.requiredResources.cash,
-          name: "Cash",
-          image: "icon-credits.webp",
-          imageFileFolder: "icons"
+          name: 'Cash',
+          image: 'icon-credits.webp',
+          imageFileFolder: 'icons',
         });
       }
 
       if (this.requiredResources.cashUpkeep !== 0) {
         filteredArray.push({
           amount: this.requiredResources.cashUpkeep,
-          name: "Upkeep",
-          image: "balance.webp",
-          imageFileFolder: "icons"
+          name: 'Upkeep',
+          image: 'balance.webp',
+          imageFileFolder: 'icons',
         });
       }
       if (this.requiredResources.wood !== 0) {
         filteredArray.push({
           amount: this.requiredResources.wood,
-          name: "Wood",
-          image: "wood.webp",
-          imageFileFolder: "buildings/farmers"
+          name: 'Wood',
+          image: 'wood.webp',
+          imageFileFolder: 'buildings/farmers',
         });
       }
       if (this.requiredResources.bricks !== 0) {
         filteredArray.push({
           amount: this.requiredResources.bricks,
-          name: "Bricks",
-          image: "bricks.webp",
-          imageFileFolder: "buildings/workers"
+          name: 'Bricks',
+          image: 'bricks.webp',
+          imageFileFolder: 'buildings/workers',
         });
       }
       if (this.requiredResources.steel !== 0) {
         filteredArray.push({
           amount: this.requiredResources.steel,
-          name: "Steel",
-          image: "steel.webp",
-          imageFileFolder: "buildings/workers"
+          name: 'Steel',
+          image: 'steel.webp',
+          imageFileFolder: 'buildings/workers',
         });
       }
       if (this.requiredResources.window !== 0) {
         filteredArray.push({
           amount: this.requiredResources.window,
-          name: "Window",
-          image: "windows.webp",
-          imageFileFolder: "buildings/artisans"
+          name: 'Window',
+          image: 'windows.webp',
+          imageFileFolder: 'buildings/artisans',
         });
       }
       if (this.requiredResources.concrete !== 0) {
         filteredArray.push({
           amount: this.requiredResources.concrete,
-          name: "Concrete",
-          image: "reinforced-concrete.webp",
-          imageFileFolder: "buildings/engineers"
+          name: 'Concrete',
+          image: 'reinforced-concrete.webp',
+          imageFileFolder: 'buildings/engineers',
         });
       }
 
       if (this.requiredResources.influence !== 0) {
         filteredArray.push({
           amount: this.requiredResources.influence,
-          name: "Influence",
-          image: "influence.webp"
+          name: 'Influence',
+          image: 'influence.webp',
         });
       }
 
       return filteredArray;
-    }
+    },
   },
 
   watch: {
@@ -132,20 +132,20 @@ export default {
       const chainNodeMixin = this;
       this.resetRequiredResources();
       chainNodeMixin.iterateProductionChain(
-        this.chain,
-        rootElement => this.getResourceReq(rootElement),
-        element => this.getResourceReq(element),
-        false
+          this.chain,
+          (rootElement) => this.getResourceReq(rootElement),
+          (element) => this.getResourceReq(element),
+          false
       );
-    }
+    },
   },
 
   methods: {
     getResourceReq(element) {
       const helperFunctionMixin = this;
       const building = helperFunctionMixin.getBuildingByName(
-        element.name,
-        element.worldID
+          element.name,
+          element.worldID
       );
 
       this.requiredResources.cash +=
@@ -173,10 +173,10 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0
+        influence: 0,
       };
-    }
-  }
+    },
+  },
 };
 </script>
 

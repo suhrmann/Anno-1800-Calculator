@@ -46,14 +46,15 @@ export const helperFunctionMixin = {
       this.productionTimes = [];
       const chainNodeMixin = this;
       chainNodeMixin.iterateProductionChain(
-        productionChain,
-        (rootElement) => {
-          this.fetchProductionTime(rootElement);
-        },
-        (element) => {
-          this.fetchProductionTime(element);
-        },
-        false);
+          productionChain,
+          (rootElement) => {
+            this.fetchProductionTime(rootElement);
+          },
+          (element) => {
+            this.fetchProductionTime(element);
+          },
+          false
+      );
       return this.productionTimes;
     },
 
@@ -170,7 +171,7 @@ export const helperFunctionMixin = {
     getSocialClassByID(id) {
       const socialClasses = Object.values(SocialClasses);
       const selectedSocialClass = socialClasses.filter(
-        (socialClass) => socialClass.id === id
+          (socialClass) => socialClass.id === id
       )[0];
       return selectedSocialClass;
     },
@@ -184,9 +185,9 @@ export const helperFunctionMixin = {
      * @return {string} The resulting, nicely rounded number.
      */
     toFixedVariable(num, digits) {
-      return Number.isInteger(num) ?
-        num :
-        num.toFixed(digits);
+      return Number.isInteger(num)
+        ? num
+        : num.toFixed(digits);
     },
 
   },
