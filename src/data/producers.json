@@ -1219,7 +1219,7 @@
                 "farmer": 0,
                 "worker": 25,
                 "artisan": 0,
-                "engineer": 100,
+                "engineer": 0,
                 "investor": 0
             }
         },
@@ -1427,7 +1427,7 @@
                 "farmer": 0,
                 "worker": 0,
                 "artisan": 0,
-                "engineer": 125,
+                "engineer": 150,
                 "investor": 0
             }
         },
