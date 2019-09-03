@@ -1646,7 +1646,7 @@
             "building": "Gramophone Factory",
             "img": "investors/gramophones.webp",
             "worldID": 1,
-            "productionTime": 120,
+            "productionTime": 60,
             "construction": {
                 "cash": 25000,
                 "wood": 10,
