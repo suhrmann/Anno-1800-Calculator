@@ -1,23 +1,25 @@
-# Sample frmo electron-builder: https://www.electron.build/multi-platform-build#sample-travisyml-to-build-electron-app-for-macos-linux-and-windows
+# Sample from electron-builder: https://www.electron.build/multi-platform-build#sample-travisyml-to-build-electron-app-for-macos-linux-and-windows
 # Fixed deployment with travis-cli: travis setup releases
 matrix:
   include:
     - os: osx
-      osx_image: xcode9.4
+      osx_image: xcode10.2
       language: node_js
       node_js: "10"
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
     - os: linux
       services: docker
-      language: node_js
-      node_js: "10"
+      language: generic
+
 cache:
   directories:
     - node_modules
-    - "$HOME/.cache/electron"
-    - "$HOME/.cache/electron-builder"
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+
 script:
   # Build release for github-pages
   - |
@@ -29,7 +31,7 @@ script:
   - |
     if [ "$TRAVIS_OS_NAME" == "linux" ]; then
       docker run --rm \
-        --env-file <(env | grep -vE '\r|\n' | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS_TAG|TRAVIS|TRAVIS_REPO_|TRAVIS_BUILD_|TRAVIS_BRANCH|TRAVIS_PULL_REQUEST_|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_') \
+        --env-file <(env | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_') \
         -v ${PWD}:/project \
         -v ~/.cache/electron:/root/.cache/electron \
         -v ~/.cache/electron-builder:/root/.cache/electron-builder \
@@ -43,6 +45,7 @@ script:
     fi
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
+
 branches:
   only:
     - releases
@@ -65,4 +68,4 @@ deploy:
       - "dist_electron/*.AppImage" # Linux
       - "dist_electron/*.snap" # Linux  on:
     on:
-branch: releases
+      branch: releases
