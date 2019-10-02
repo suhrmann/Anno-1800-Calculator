@@ -72,7 +72,19 @@
           <v-flex xs3 align-self-center>
             <v-container fill-height>
               <v-flex align-self-center class="text-xs-right" xs12>
-                <h1>{{ outputPerMinute }}</h1>Production Output (per Minute)
+                <div v-if="productionChain.finalProduct === 'Electricity'">
+                  <v-img
+                    :src="require('../../assets/icons/electricity.png')"
+                    position="right"
+                    max-height="75px"
+                    min-height="33px"
+                    contain
+                  ></v-img>
+                  Electricity
+                </div>
+                <div v-else>
+                  <h1>{{ outputPerMinute }}</h1>Production Output (per Minute)
+                </div>
               </v-flex>
             </v-container>
           </v-flex>
@@ -180,7 +192,7 @@ export default {
   },
 
   computed: {
-    
+
     coalOption: {
       get() {
         return this.$store.state.coalOption;
@@ -199,8 +211,8 @@ export default {
         this.$store.commit("setMarquetryOption", value);
         EventBus.$emit("recalculateChain")
       }
-    
-    
+
+
     },
 
 

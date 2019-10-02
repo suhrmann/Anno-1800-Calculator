@@ -1124,7 +1124,7 @@
             "building": "Oil Power Plant",
             "img": "engineers/oil-power-plant.webp",
             "worldID": 1,
-            "productionTime": -1,
+            "productionTime": 5,
             "construction": {
                 "cash": 25000,
                 "wood": 30,

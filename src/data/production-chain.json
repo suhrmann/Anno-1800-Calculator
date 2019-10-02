@@ -648,6 +648,24 @@
       ]
     },
 
+    "oil-power-plant": {
+      "id": 10001,
+      "worldID": 1,
+      "img": "engineers/oil-power-plant.webp",
+      "chain": "Oil Power Plant",
+      "socialClassID": 4,
+      "finalProduct": "Electricity",
+      "name": "Oil Power Plant",
+      "alternative": "",
+      "children": [{
+          "name": "Oil Refinery",
+          "worldID": 1,
+          "alternative": "",
+          "children": null
+        }
+      ]
+    },
+
     "glasses": {
       "id": 29,
       "worldID": 1,
