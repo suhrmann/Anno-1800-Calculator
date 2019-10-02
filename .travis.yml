@@ -1,5 +1,5 @@
 # Sample from electron-builder: https://www.electron.build/multi-platform-build#sample-travisyml-to-build-electron-app-for-macos-linux-and-windows
-# Fixed deployment with travis-cli: travis setup releases
+# Fixed deployment with travis-cli: ``travis setup releases``
 matrix:
   include:
     - os: osx
@@ -9,7 +9,6 @@ matrix:
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-
     - os: linux
       services: docker
       language: node_js
@@ -17,9 +16,8 @@ matrix:
 cache:
   directories:
     - node_modules
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-
+    - "$HOME/.cache/electron"
+    - "$HOME/.cache/electron-builder"
 script:
   # Build release for github-pages
   - |
@@ -31,7 +29,7 @@ script:
   - |
     if [ "$TRAVIS_OS_NAME" == "linux" ]; then
       docker run --rm \
-        --env-file <(env | grep -vE '\r|\n' | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_') \
+        --env-file <(env | grep -vE '\r|\n' | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS_TAG|TRAVIS|TRAVIS_REPO_|TRAVIS_BUILD_|TRAVIS_BRANCH|TRAVIS_PULL_REQUEST_|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_') \
         -v ${PWD}:/project \
         -v ~/.cache/electron:/root/.cache/electron \
         -v ~/.cache/electron-builder:/root/.cache/electron-builder \
@@ -45,7 +43,6 @@ script:
     fi
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
-
 branches:
   only:
     - releases
@@ -57,15 +54,16 @@ deploy:
     keep-history: true
     on:
       branch: releases
+
   - provider: releases
     skip-cleanup: true
     api_key:
-      secure: PcdvvKLSfjwdcx4ggrJuLGhjmr7lBqZCb0GTCcuVf/ckQYQv6+FQevzShZjJrHwKI0T3TH6ZLRbBCp0FVQOD2r5vwPWgF4ODQtSUtahx1FUoFpO+RgEYA6IDSVaowydGFzX+aq+R6ogQ2dJxVg2Z1aROKwZV7stXkXnz1ax8YuqE8B7yQ8E/br3u925M/oigIUAuyyvsvj90b07tVpSlT2hfUu/SXAKGfcBfAphw/P2FK9IYXwELySfYje3nAIEFr+gVVuFd0FTV/zknFrwSEPNqn53yE9clSkhwZuxBZFs6Ib28QdAMRZ/rFCd2TWw5icwcHMMA+QcV454EUz0xxQ6qLPAl7BUuxUFHcamKm/AFwECWJ58EB3KYR5jH1RDFVkByRXeFdt11/jnnz5GmFrpn/ihy9i62HnO3/RGjpOqclAKqHcuoyRgJcwNaoPEzRbpkkMRWJAGdKzsi8sCCd+Y+x6fucdV3novoT54EQCzVb1ZpqNzfR6gyeXt3sUL+6w+QfMmz3Oy0RD622VMnHPKObZWkIMv6SYNxpoQK+0s7AdulCwueHnIK+OQ+4a+SY0Emk7Y/fk3M7zRedj0e1iGpJP7EWyP8k71TpzN5SOzEK3w5/EUtuzT1dtMqY44xOCdLYIFvxdpvqxfDTY85cPWCbDsARjkEzhf6umdph1o=
+      secure: Lnqbz12Tn7bFSe9srCaZ/EQTLMf5z1Bnviyw0C+bnEFauKfn/oir7yg6WaShX/ZqITi/bmKTM9FCtyA2haqZ/dbcACmEeOPvqNwGECyLjpJUpSYEbanbCY03gZiA6qwoAfL5ti3OOg9rmWf2oHuaEqJGl5G4E7pVHNdgxOSfr1JmHfavUdKUY4bsLJrETOjEtPoL8U6HGjpub6rqzuoeS0HCH6q56o1thaLsqjePSKffUNGdXPT3V1Ii1WJI8pRMObdw0XEBDFnnF9sYrGviO4kMMouIAszJCIAl7YFb8oDkuv3K5BirBaXj/UV9Zxoe7DUqA0Owzbny/b73/7HHM7qNIX2oVi471Zb/LBL26T44V4q3cPg26/qk/JqahqQlB9bP0HNuB9E9Dzg6aF9IkZoUunpR1ydqXuYtLGSG8RvS+h/yniJdVii772Ci1hWPkRbPedCEJo8TyYpUn+jRM/7wkogRdu7ntexVgfibsI/NXNAikY8s0R4TjFw0jM1AUeSBX4pdgzFyGlGbc6xtNziq4bhGrOg6Dsvd6kNqBpk0wIdwz5O9EhrP/Bg7Rpgyf3xQxiYes7ZNIRcO6ZsUFnjTi+bZDTaHIzRNx3QaMPC/+Cu8OCjX+lKZJXGtO8f2uv1u83XqJtp/xo/+kxghxosr/LSvAnUOxi2ExwSR4QA=
     file_glob: true
     file:
       - "dist_electron/*.exe" # Windows
       - "dist_electron/*.dmg" # MacOS
       - "dist_electron/*.AppImage" # Linux
-      - "dist_electron/*.snap" # Linux  on:
+      - "dist_electron/*.snap" # Linux
     on:
       branch: releases
