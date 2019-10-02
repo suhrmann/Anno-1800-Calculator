@@ -83,9 +83,9 @@
         and the data of production chains and the consumptions values of population.
       </p>
       <p>
-        This software is licensed under the
+        This software is licensed under
         <a
-          href="https://github.com/suhrmann/Anno-1800-Calculator/blob/master/README.md"
+          href="https://github.com/suhrmann/Anno-1800-Calculator/blob/master/README.md#legal"
           target="_blank"
         >MIT License</a>
       </p>
@@ -98,11 +98,11 @@
     <ul>
       <li>
         Simon Uhrmann
-        <a href="https://github.com/Vadammt" target="_blank">@Vadammt</a>
+        <a href="https://github.com/suhrmann" target="_blank">@suhrmann</a>
       </li>
       <li>
         Tobias Luderer
-        <a href="https://github.com/exarkun1298">@exarkun1298</a>
+        <a href="https://github.com/tluderer">@tluderer</a>
       </li>
     </ul>
 
