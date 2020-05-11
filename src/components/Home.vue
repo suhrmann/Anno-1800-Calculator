@@ -57,7 +57,9 @@
               <v-icon>mdi-call-merge</v-icon>
             </td>
             <td>
-              <b>Production Chains:</b>
+              <b>
+                <router-link to="/chains">Production Chains:</router-link>
+              </b>
             </td>
             <td>Enter your population or their residents and calculate their resulting demand for goods.</td>
           </tr>
@@ -66,9 +68,22 @@
               <v-icon>mdi-trending-up</v-icon>
             </td>
             <td>
-              <b>Resident Demand:</b>
+              <b>
+                <router-link to="/demands">Resident Demand:</router-link>
+              </b>
             </td>
             <td>Displays the optimal ratio of all production chains in the game in an appealing production chain tree.</td>
+          </tr>
+          <tr>
+            <td>
+              <v-icon>mdi-border-inside</v-icon>
+            </td>
+            <td>
+              <b>
+                <router-link to="/layouts">Production Layouts:</router-link>
+              </b>
+            </td>
+            <td>Look up the most efficient layouts for each Production Chain on the Anno1800 Wiki.</td>
           </tr>
         </table>
       </div>
