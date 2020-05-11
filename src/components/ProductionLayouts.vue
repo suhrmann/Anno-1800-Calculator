@@ -1,26 +1,35 @@
 <template>
   <v-container fluid fill-height>
-    <v-layout row wrap align-content-space-between>
-      <v-flex xs12>
-        <h1>Production Layouts</h1>
+    <v-layout wrap align-content-space-between fill-height>
+      <v-flex xs12 id="frame">
+        <iframe
+          id="frame"
+          referrerpolicy="no-referrer"
+          allowfullscreen="true"
+          src="https://anno1800.fandom.com/wiki/Production_layouts"
+        ></iframe>
       </v-flex>
-      <!-- Production Layouts -->
+      <!-- Production Layouts 
       <bottom-nav-bar></bottom-nav-bar>
+      -->
     </v-layout>
   </v-container>
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar';
+import BottomNavBar from "./BottomNavBar";
 
 export default {
-  name: 'ProductionLayout',
+  name: "ProductionLayout",
   components: {
-    BottomNavBar,
-  },
+    BottomNavBar
+  }
 };
 </script>
 
 <style scoped>
-
+#frame {
+  height: 100%;
+  width: 100%;
+}
 </style>
