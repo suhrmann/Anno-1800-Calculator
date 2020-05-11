@@ -1,162 +1,188 @@
 <template>
 
-  <v-layout justify-center row wrap>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/farmers.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numFarmerResidences"
-          label="Farmer Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Farmers: ' + numFarmers"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/workers.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numWorkerResidences"
-          label="Worker Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Workers: ' + numWorkers"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/artisans.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numArtisanResidences"
-          label="Artisan Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Artisans: ' + numArtisans"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/engineers.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numEngineerResidences"
-          label="Engineer Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Engineers: ' + numEngineers"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/investors.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numInvestorResidences"
-          label="Investor Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Investors: ' + numInvestors"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/jornaleros.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numJornaleroResidences"
-          label="Jornalero Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Jornaleros: ' + numJornaleros"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
-    <v-flex lg1 md2 sm2>
-      <v-card height="105" class="text-xs-center">
-        <v-avatar>
-          <v-img
-            :src="require('../../assets/population/obreros.webp')"
-            alt="Farmers"
-          />
-          <v-img
-            :src="require('../../assets/buildings/farmers/residence.webp')"
-            alt="Residence"
-          />
-        </v-avatar>
-        <v-text-field
-          v-model="numObreroResidences"
-          label="Obrero Residences"
-          type="number"
-          min="0"
-          box
-          :messages="'Obreros: ' + numObreros"
-        ></v-text-field>
-      </v-card>
-    </v-flex>
+  <v-container fluid>
+    <v-layout row :class="{wrap: $vuetify.breakpoint.smAndDown}">
 
-  </v-layout>
+      <v-flex
+        pa-1
+        sm4 xs6
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <v-img
+              :src="require('../../assets/population/farmers.webp')"
+              alt="Farmers"
+            />
+            <v-img
+              :src="require('../../assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
+          <v-text-field
+            v-model="numFarmerResidences"
+            label="Farmer Residences"
+            type="number"
+            min="0"
+            box
+            :messages="'Farmers: ' + numFarmers"
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+
+      <v-flex
+        pa-1
+        sm4 xs6
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <v-img
+              :src="require('../../assets/population/workers.webp')"
+              alt="Farmers"
+            />
+            <v-img
+              :src="require('../../assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
+          <v-text-field
+            v-model="numWorkerResidences"
+            label="Worker Residences"
+            type="number"
+            min="0"
+            box
+            :messages="'Workers: ' + numWorkers"
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+
+      <v-flex
+        pa-1
+        sm4 xs6
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <v-img
+              :src="require('../../assets/population/artisans.webp')"
+              alt="Farmers"
+            />
+            <v-img
+              :src="require('../../assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
+          <v-text-field
+            v-model="numArtisanResidences"
+            label="Artisan Residences"
+            type="number"
+            min="0"
+            box
+            :messages="'Artisans: ' + numArtisans"
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+
+      <v-flex
+        pa-1
+        sm4 xs6
+        :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <v-img
+              :src="require('../../assets/population/engineers.webp')"
+              alt="Farmers"
+            />
+            <v-img
+              :src="require('../../assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
+          <v-text-field
+            v-model="numEngineerResidences"
+            label="Engineer Residences"
+            type="number"
+            min="0"
+            box
+            :messages="'Engineers: ' + numEngineers"
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+
+      <v-flex
+        pa-1
+        sm4 xs6
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <v-img
+              :src="require('../../assets/population/investors.webp')"
+              alt="Farmers"
+            />
+            <v-img
+              :src="require('../../assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
+          <v-text-field
+            v-model="numInvestorResidences"
+            label="Investor Residences"
+            type="number"
+            min="0"
+            box
+            :messages="'Investors: ' + numInvestors"
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+
+      <v-flex
+        pa-1
+        sm4 xs6
+        :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <v-img
+              :src="require('../../assets/population/obreros.webp')"
+              alt="Farmers"
+            />
+            <v-img
+              :src="require('../../assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
+          <v-text-field
+            v-model="numObreroResidences"
+            label="Obrero Residences"
+            type="number"
+            min="0"
+            box
+            :messages="'Obreros: ' + numObreros"
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+
+      <v-flex
+        pa-1
+        sm4 xs6
+      >
+        <v-card height="105" class="text-xs-center">
+          <v-avatar>
+            <img
+              src="../../assets/population/obreros.webp"
+              alt="Obreros"
+            >
+          </v-avatar>
+          <v-text-field
+            v-model="numObreros"
+            label="Obreros"
+            type="number"
+            min="0"
+            box
+          ></v-text-field>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 
 </template>
 
