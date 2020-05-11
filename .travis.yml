@@ -13,11 +13,13 @@ matrix:
       services: docker
       language: node_js
       node_js: "10"
+
 cache:
   directories:
     - node_modules
-    - "$HOME/.cache/electron"
-    - "$HOME/.cache/electron-builder"
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+
 script:
   # Build release for github-pages
   - |
@@ -43,11 +45,13 @@ script:
     fi
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
+
 branches:
   only:
-    - releases
+  - releases
+
 deploy:
-  - provider: pages
+  - provider: pages  # Github pages
     skip-cleanup: true
     local_dir: dist
     github-token: $GITHUB_TOKEN # a token generated on github allowing travis to push code on you repository
@@ -55,10 +59,10 @@ deploy:
     on:
       branch: releases
 
-  - provider: releases
-    skip-cleanup: true
+  - provider: releases  # Github releases
+    skip_cleanup: 'true'
     api_key:
-      secure: Lnqbz12Tn7bFSe9srCaZ/EQTLMf5z1Bnviyw0C+bnEFauKfn/oir7yg6WaShX/ZqITi/bmKTM9FCtyA2haqZ/dbcACmEeOPvqNwGECyLjpJUpSYEbanbCY03gZiA6qwoAfL5ti3OOg9rmWf2oHuaEqJGl5G4E7pVHNdgxOSfr1JmHfavUdKUY4bsLJrETOjEtPoL8U6HGjpub6rqzuoeS0HCH6q56o1thaLsqjePSKffUNGdXPT3V1Ii1WJI8pRMObdw0XEBDFnnF9sYrGviO4kMMouIAszJCIAl7YFb8oDkuv3K5BirBaXj/UV9Zxoe7DUqA0Owzbny/b73/7HHM7qNIX2oVi471Zb/LBL26T44V4q3cPg26/qk/JqahqQlB9bP0HNuB9E9Dzg6aF9IkZoUunpR1ydqXuYtLGSG8RvS+h/yniJdVii772Ci1hWPkRbPedCEJo8TyYpUn+jRM/7wkogRdu7ntexVgfibsI/NXNAikY8s0R4TjFw0jM1AUeSBX4pdgzFyGlGbc6xtNziq4bhGrOg6Dsvd6kNqBpk0wIdwz5O9EhrP/Bg7Rpgyf3xQxiYes7ZNIRcO6ZsUFnjTi+bZDTaHIzRNx3QaMPC/+Cu8OCjX+lKZJXGtO8f2uv1u83XqJtp/xo/+kxghxosr/LSvAnUOxi2ExwSR4QA=
+      secure: aWO+C1FB7xcrRWY5O3gtAug0xoVrKO3e5Hw/FKOIxjlmeUp+49bq/jsCIdRNJuWj+Mdz1bnWxeTbDmBUCb80FZ5Wda3MNupxYoaVZuCxAKvdWOgJI571OzJ7TWa/uO5t7z57w726bOhx5KWRytECSsJTBZyUvR/o4iZG+A3fH3Ry/nRU/yc+R6E/Hly9djltk3opFZCRRrwiFgyDCXqN95fA5H4ANIQDRKxwLDlvtLJfYBQMjBSnOF8sPPJss/z5yFLdDsNvyUgy7NlRcC9bCiM9DWsHcy0uSFDg2ACZWgN7rgGQfCudT8/9Abtmhm6HtdUczaz8DsC86cQPafGqGMgHi22pWfyP2N0kWe5eZdE5UEvOtK+G9p6p7S1fhCMt27qgqm3PY4P5TryT0bq0HiVMti3YtQM/ZpNGwvbmYMXJfxJEG/rLTvIBM6yvo7q2Nn5ctkcZhRc9xg7TfZTrEbvQPAcA1tEKEQgMnZJYEyaetjB/zlJ6BIvZPpIz6kqoiNc3VN8EYzQo+bvP2f6okcH1L0aAKqrAY/k8NHtYQwRlC/UmIrddNnkTDayQoYLjLPixOMdIhgCJfUoulWdPyDQbb8S2bHCYdsLLA0grUJKHgQAb/L7JajziCD+DBB245mrTdt11Z13s8GqRzDmLUpV4xKjJoPM/H8mU+yK2vZE=
     file_glob: true
     file:
       - "dist_electron/*.exe" # Windows
@@ -66,4 +70,5 @@ deploy:
       - "dist_electron/*.AppImage" # Linux
       - "dist_electron/*.snap" # Linux
     on:
+      repo: suhrmann/Anno-1800-Calculator
       branch: releases
