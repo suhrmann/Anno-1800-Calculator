@@ -1,15 +1,19 @@
 {
   "name": "anno-1800-calculator",
   "productName": "Anno 1800 Calculator",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Calculate your populations' demands and optimal production chains.",
+  "contributors": [
+    "Simon Uhrmann <suhrmann@posteo.de>",
+    "Tobias Luderer <tobias.luderer@gmail.com>"
+  ],
   "main": "background.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Vadammt/Anno-1800-Calculator.git"
+    "url": "https://github.com/suhrmann/Anno-1800-Calculator.git"
   },
-  "bugs": "https://github.com/Vadammt/Anno-1800-Calculator/issues",
-  "homepage": "https://vadammt.github.io/Anno-1800-Calculator",
+  "bugs": "https://github.com/suhrmann/Anno-1800-Calculator/issues",
+  "homepage": "https://suhrmann.github.io/Anno-1800-Calculator",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
