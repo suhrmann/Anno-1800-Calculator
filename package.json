@@ -10,10 +10,10 @@
   "main": "background.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Vadammt/Anno-1800-Calculator.git"
+    "url": "https://github.com/suhrmann/Anno-1800-Calculator.git"
   },
-  "bugs": "https://github.com/Vadammt/Anno-1800-Calculator/issues",
-  "homepage": "https://vadammt.github.io/Anno-1800-Calculator",
+  "bugs": "https://github.com/suhrmann/Anno-1800-Calculator/issues",
+  "homepage": "https://suhrmann.github.io/Anno-1800-Calculator",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
