@@ -21,7 +21,10 @@
           <v-flex d-flex>
             <v-layout row wrap>
               <v-flex xs12 d-flex>
-                <v-expansion-panel>
+                <v-expansion-panel
+                  v-model="open_workforce_demand"
+                  expand
+                >
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
@@ -40,7 +43,10 @@
               </v-flex>
 
               <v-flex d-flex xs12 class="mb-3">
-                <v-expansion-panel>
+                <v-expansion-panel
+                  v-model="open_construction_costs"
+                  expand
+                >
                   <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
                     <template slot="actions">
                       <v-icon color="white">$vuetify.icons.expand</v-icon>
@@ -180,7 +186,7 @@ export default {
   },
 
   computed: {
-    
+
     coalOption: {
       get() {
         return this.$store.state.coalOption;
@@ -199,8 +205,6 @@ export default {
         this.$store.commit("setMarquetryOption", value);
         EventBus.$emit("recalculateChain")
       }
-    
-    
     },
 
 
@@ -281,7 +285,27 @@ export default {
         }
       }
       return consumablesArray;
+    },
+
+    open_workforce_demand: {
+      get() {
+        return [this.$store.state.config.prodcution_chains.open_workforce_demand];
+      },
+      set(value) {
+        const isOpen = value[0];
+        this.$store.commit("toggle_workforce_demand", isOpen);
+      }
+    },
+    open_construction_costs: {
+      get() {
+        return [this.$store.state.config.prodcution_chains.open_construction_costs];
+      },
+      set(value) {
+        const isOpen = value[0];
+        this.$store.commit("toggle_construction_costs", isOpen);
+      }
     }
+
   },
 
   methods: {
