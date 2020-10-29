@@ -11,7 +11,6 @@
 import BottomNavBar from "./BottomNavBar.vue";
 import VisualProductionChain from "./production_chains/VisualProductionChain.vue";
 import { helperFunctionMixin } from "./helperFunctionMixin.js";
-import store from "../store.js";
 
 export default {
   name: "ProductionChains",

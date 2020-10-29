@@ -1,18 +1,19 @@
-import Vue from 'vue';
-import './plugins/vuetify';
-import App from './App.vue';
-import store from './store';
-import router from './router';
-import VTooltip from 'v-tooltip';
-import 'roboto-fontface/css/roboto/roboto-fontface.css';
-import '@mdi/font/css/materialdesignicons.css';
+import Vue from 'vue'
+import VTooltip from 'v-tooltip'
 
-Vue.use(VTooltip);
-Vue.config.productionTip = false;
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import vuetify from './plugins/vuetify'
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import '@mdi/font/css/materialdesignicons.css'
 
+Vue.use(VTooltip)
+Vue.config.productionTip = false
 
 new Vue({
-  store,
   router,
-  render: (h) => h(App),
-}).$mount('#app');
+  store,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
