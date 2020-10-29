@@ -130,6 +130,15 @@ export default new Vuex.Store({
       }, // eslint-disable-line max-len
     },
 
+    /**
+     * Configuration values and page settings
+     */
+    config: {
+      prodcution_chains: {
+        open_workforce_demand: true,
+        open_construction_costs: true,
+      },
+    },
   },
   mutations: {
     addToPopulationDemands(state, populationObject) {
@@ -159,9 +168,9 @@ export default new Vuex.Store({
      * @param {object} state
      * @param {object} idObject
      * {
-     *   @param {integer} chainID
-     *   @param {integer} socialClassID
-     *   @param {integer} worldID
+     *   {integer} chainID
+     *   {integer} socialClassID
+     *   {integer} worldID
      * }
      */
     changeSelectionIDs(state, idObject) {
@@ -281,7 +290,23 @@ export default new Vuex.Store({
       state.consumption = consumption;
     },
 
+    /**
+     * Toggle (open / close) the workforce demand of a production chain.
+     * @param {object} state
+     * @param {boolean} isOpen
+     */
+    toggle_workforce_demand(state, isOpen) {
+      state.config.prodcution_chains.open_workforce_demand = Boolean(isOpen);
+    },
 
+    /**
+     * Toggle (open / close) the construction costs of a production chain.
+     * @param {object} state
+     * @param {boolean} isOpen
+     */
+    toggle_construction_costs(state, isOpen) {
+      state.config.prodcution_chains.open_construction_costs = Boolean(isOpen);
+    },
   },
   actions: {
 
