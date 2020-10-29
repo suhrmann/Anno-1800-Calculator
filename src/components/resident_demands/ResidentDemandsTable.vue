@@ -1,7 +1,6 @@
 <template>
   <v-container grid-list-md text-xs-center>
 
-
     <!-- Show alert with info about cigars appearing twice -->
     <v-layout
       row
@@ -21,7 +20,6 @@
       </v-alert>
     </v-layout>
 
-
     <v-card class="mb-2">
 
       <v-card-title primary-title class="pb-0">
@@ -29,7 +27,6 @@
           <h3>Filter Table . . .</h3>
         </div>
       </v-card-title>
-
 
       <v-card-text class="ma-0 py-0">
         <v-container fluid>
@@ -61,7 +58,6 @@
               </v-radio-group>
             </v-flex>
 
-
             <!-- Filter by Consumable / Non-Consumable -->
             <v-flex xs12 sm6 md4>
               <v-radio-group v-model="radios2" class="my-0">
@@ -92,7 +88,6 @@
         </v-container>
       </v-card-text>
     </v-card>
-
 
     <!-- Data Table -->
     <v-data-table
@@ -199,11 +194,11 @@
 </template>
 
 <script>
-import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js';
+import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js'
 
 export default {
   name: 'ResidentDemandsTable',
-  data: function() {
+  data: function () {
     return {
       // The values of the radio buttons to filter table
       radios1: 'all',
@@ -221,14 +216,14 @@ export default {
         { text: 'Consumption', value: 'consumption' },
         { text: 'Required Chains', value: 'numChains' },
         { text: 'Chains Efficiency', value: 'efficiency' },
-        { text: 'Production per Chain', value: 'productionPerChain' },
-      ],
-    };
+        { text: 'Production per Chain', value: 'productionPerChain' }
+      ]
+    }
   },
   mixins: [residentDemandCalculatorMixin],
   computed: {
 
-    FILTER_VALUES: function() {
+    FILTER_VALUES: function () {
       return {
         // Filter values for demand type
         TYPE_ALL: 'all',
@@ -238,22 +233,22 @@ export default {
         // Filter values for consumable
         CONSUMABLE_ALL: 'all',
         CONSUMABLE: 'consumable',
-        CONSUMABLE_NON: 'non-consumable',
-      };
+        CONSUMABLE_NON: 'non-consumable'
+      }
     },
 
-    onlyBasicChkbx: function() {
-      return this.radios1 === this.FILTER_VALUES.TYPE_BASIC;
+    onlyBasicChkbx: function () {
+      return this.radios1 === this.FILTER_VALUES.TYPE_BASIC
     },
-    onlyLuxuryChkbx: function() {
-      return this.radios1 === this.FILTER_VALUES.TYPE_LUXURY;
+    onlyLuxuryChkbx: function () {
+      return this.radios1 === this.FILTER_VALUES.TYPE_LUXURY
     },
 
-    onlyConsumableChkbx: function() {
-      return this.radios2 === this.FILTER_VALUES.CONSUMABLE;
+    onlyConsumableChkbx: function () {
+      return this.radios2 === this.FILTER_VALUES.CONSUMABLE
     },
-    onlyNonConsumableChkbx: function() {
-      return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON;
+    onlyNonConsumableChkbx: function () {
+      return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON
     },
 
     /**
@@ -266,21 +261,19 @@ export default {
        *       ...
        *   }
        */
-    totalDemandsDatatable: function() {
-      const basicNeeds = this.totalDemands.basic;
-      const luxuryNeeds = this.totalDemands.luxury;
+    totalDemandsDatatable: function () {
+      const basicNeeds = this.totalDemands.basic
+      const luxuryNeeds = this.totalDemands.luxury
 
-      const items = [];
-
+      const items = []
 
       // Iterate over demands of basic / luxury
       for (const demands of [basicNeeds, luxuryNeeds]) { // eslint-disable-line guard-for-in
-        const isBasic = demands === basicNeeds;
-        const isLuxury = demands === luxuryNeeds;
+        const isBasic = demands === basicNeeds
+        const isLuxury = demands === luxuryNeeds
 
         // Iterate over all demands of the current population
         for (const [dKey, demand] of Object.entries(demands)) {
-
           // Only add demand if it is present or > 0
           if (demand === true || demand > 0) {
             // TODO Create data here instead of in HTML table
@@ -290,14 +283,14 @@ export default {
               isLuxury: demands === luxuryNeeds,
               name: dKey,
               consumption: demand,
-              isConsumable: this.isConsumable(dKey, demand),
-            });
+              isConsumable: this.isConsumable(dKey, demand)
+            })
           }
         }
       }
 
-      return items;
-    },
+      return items
+    }
   },
   watch: {},
   methods: {
@@ -307,13 +300,13 @@ export default {
        * @param {string} product The name of the product.
        * @return {number} The amount of products per minute.
        */
-    productionPerMinute: function(product) {
-      const building = this.getBuildingByProduct(product); // TODO Does not differ between Old and New World!!!
+    productionPerMinute: function (product) {
+      const building = this.getBuildingByProduct(product) // TODO Does not differ between Old and New World!!!
 
       // The production time (in seconds) of one production chain to produce one item
-      const productionTime = building.productionTime;
+      const productionTime = building.productionTime
 
-      return 60 / productionTime;
+      return 60 / productionTime
     },
 
     /**
@@ -323,17 +316,17 @@ export default {
        * @param {number} consumption The population consumes this much products per minute.
        * @return {int} The amount of full production chains (!) required to fulfill consumption.
        */
-    requiredChains(product, consumption) {
+    requiredChains (product, consumption) {
       // The production chain produces this much
-      const production = this.productionPerMinute(product);
+      const production = this.productionPerMinute(product)
 
       // Calculate the required amount of production chains (exact)
-      const numChainsExact = consumption / production;
+      const numChainsExact = consumption / production
 
       // Only full chains are possible to build
-      const numChainsRequired = Math.ceil(numChainsExact);
+      const numChainsRequired = Math.ceil(numChainsExact)
 
-      return numChainsRequired;
+      return numChainsRequired
     },
 
     /**
@@ -343,33 +336,33 @@ export default {
        * @param {number} consumption The population consumes this much products per minute.
        * @return {number} The efficiency of this production.
        */
-    chainEfficiency(product, consumption) {
+    chainEfficiency (product, consumption) {
       // The production chain produces this much
-      const production = this.productionPerMinute(product);
+      const production = this.productionPerMinute(product)
 
       // Calculate the required amount of production chains (exact)
-      const numChainsExact = consumption / production;
+      const numChainsExact = consumption / production
 
       // Only full chains are possible to build
-      const numChainsRequired = Math.ceil(numChainsExact);
+      const numChainsRequired = Math.ceil(numChainsExact)
 
       // Calculate the efficiency
-      const efficiency = numChainsExact / numChainsRequired;
+      const efficiency = numChainsExact / numChainsRequired
 
-      return efficiency;
+      return efficiency
     },
 
-    isBasicDemand: function(need) {
-      const basicNeeds = this.totalDemands.basic;
-      return (need in basicNeeds); // Check if OBJECT contains key
+    isBasicDemand: function (need) {
+      const basicNeeds = this.totalDemands.basic
+      return (need in basicNeeds) // Check if OBJECT contains key
     },
 
-    isLuxuryDemand: function(need) {
-      const luxuryNeeds = this.totalDemands.luxury;
-      return (need in luxuryNeeds); // Check if OBJECT contains key
-    },
-  },
-};
+    isLuxuryDemand: function (need) {
+      const luxuryNeeds = this.totalDemands.luxury
+      return (need in luxuryNeeds) // Check if OBJECT contains key
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -37,61 +37,61 @@
 </template>
 
 <script>
-import Producers from "./data/producers.json";
+import Producers from './data/producers.json'
 export default {
   data: () => ({
     drawer: null,
-    title: "Anno 1800 Calculator",
-    subtitle: "a production chain cheatsheet",
+    title: 'Anno 1800 Calculator',
+    subtitle: 'a production chain cheatsheet',
     items: [
-      { icon: "mdi-home", text: "Home", route: "/home" },
+      { icon: 'mdi-home', text: 'Home', route: '/home' },
       { divider: true },
-      { heading: "Production" },
-      { icon: "mdi-call-merge", text: "Production Chains", route: "/chains" },
-      { icon: "mdi-trending-up", text: "Resident Demand", route: "/demands" },
+      { heading: 'Production' },
+      { icon: 'mdi-call-merge', text: 'Production Chains', route: '/chains' },
+      { icon: 'mdi-trending-up', text: 'Resident Demand', route: '/demands' },
       { divider: true },
-      { heading: "Information" },
+      { heading: 'Information' },
       {
-        icon: "mdi-format-list-bulleted",
-        text: "Building Queue (WIP)",
-        route: "/queue"
+        icon: 'mdi-format-list-bulleted',
+        text: 'Building Queue (WIP)',
+        route: '/queue'
       },
       {
-        icon: "mdi-border-inside",
-        text: "Production Layouts",
-        route: "/layouts"
+        icon: 'mdi-border-inside',
+        text: 'Production Layouts',
+        route: '/layouts'
       },
       { divider: true },
-      { icon: "mdi-information", text: "About", route: "/about" }
+      { icon: 'mdi-information', text: 'About', route: '/about' }
     ]
   }),
   props: {
     source: String
   },
 
-  mounted() {
-    this.$nextTick(function() {
-      const productionProducts = this.buildProductObject();
-      const consumptionProducts = this.buildProductObject();
+  mounted () {
+    this.$nextTick(function () {
+      // const productionProducts = this.buildProductObject()
+      // const consumptionProducts = this.buildProductObject()
       // this.$store.commit( "buildProductObjects",productionProducts,consumptionProducts);
-    });
+    })
   },
 
   methods: {
-    buildProductObject() {
-      const producerObject = {};
-      const producerFile = JSON.parse(JSON.stringify(Producers.Producers));
+    buildProductObject () {
+      const producerObject = {}
+      const producerFile = JSON.parse(JSON.stringify(Producers.Producers))
       for (let i = 0; i < producerFile.length; i++) {
-        const producerKey = producerFile[i];
+        const producerKey = producerFile[i]
 
-        const productName = producerFile[producerKey].product;
-        producerObject[productName] = 0;
+        const productName = producerFile[producerKey].product
+        producerObject[productName] = 0
       }
       // console.log(producerObject);
-      return this.producerObject;
+      return this.producerObject
     }
   }
-};
+}
 </script>
 
 <style lang="stylus">

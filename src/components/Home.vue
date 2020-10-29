@@ -101,13 +101,13 @@
 
 <script>
 export default {
-  name: "home",
+  name: 'home',
   methods: {
     loadImg: src => {
-      return require(src);
+      return require(src)
     }
   }
-};
+}
 </script>
 
 <style>

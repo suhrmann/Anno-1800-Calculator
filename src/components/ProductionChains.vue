@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import BottomNavBar from "./BottomNavBar.vue";
-import VisualProductionChain from "./production_chains/VisualProductionChain.vue";
-import { helperFunctionMixin } from "./helperFunctionMixin.js";
+import BottomNavBar from './BottomNavBar.vue'
+import VisualProductionChain from './production_chains/VisualProductionChain.vue'
+import { helperFunctionMixin } from './helperFunctionMixin.js'
 
 export default {
-  name: "ProductionChains",
+  name: 'ProductionChains',
   mixins: [helperFunctionMixin],
   components: {
-    "bottom-nav-bar": BottomNavBar,
-    "visual-production-chain": VisualProductionChain
+    'bottom-nav-bar': BottomNavBar,
+    'visual-production-chain': VisualProductionChain
   }
-};
+}
 </script>
 
 <style scoped>

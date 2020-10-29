@@ -130,12 +130,12 @@
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
-import WorkerPanel from "./WorkerPanel";
-import ResourcePanel from "./ResourcePanel";
+import { chainNodeMixin } from './chainNodeMixin.js'
+import { helperFunctionMixin } from '../helperFunctionMixin.js'
+import { EventBus } from '../../EventBus.js'
+import TreeChart from '../TreeChart'
+import WorkerPanel from './WorkerPanel'
+import ResourcePanel from './ResourcePanel'
 
 export default {
   components: {
@@ -143,78 +143,76 @@ export default {
     WorkerPanel,
     ResourcePanel
   },
-  data() {
+  data () {
     return {
       treeData: {},
       temporaryProductionChain: {},
       chainCount: 1,
       spt: 0,
-      coal: "char",
-      marq: "old"
-    };
+      coal: 'char',
+      marq: 'old'
+    }
   },
 
-  created() {
-    EventBus.$on("setSPTforChain", spt => {});
-    EventBus.$on("changeSlider", value => {});
+  created () {
+    EventBus.$on('setSPTforChain', spt => {})
+    EventBus.$on('changeSlider', value => {})
 
-    EventBus.$on("bottomNavBarChanged", () => {
-      this.temporaryProductionChain = this.getCurrentProductionChain();
+    EventBus.$on('bottomNavBarChanged', () => {
+      this.temporaryProductionChain = this.getCurrentProductionChain()
 
-      const helperFunctionMixin = this;
+      const helperFunctionMixin = this
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
         this.temporaryProductionChain
-      );
+      )
 
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
         productionTimes
-      );
+      )
 
-      this.addBuildingRelationdToChain(shortestProductionTime);
-      this.treeData = this.getNewProductionChain();
-      this.spt = shortestProductionTime;
-    });
+      this.addBuildingRelationdToChain(shortestProductionTime)
+      this.treeData = this.getNewProductionChain()
+      this.spt = shortestProductionTime
+    })
   },
 
   mixins: [chainNodeMixin, helperFunctionMixin],
 
   filters: {
-    rounded: function(number, decimals) {
-      return number.toFixed(decimals);
+    rounded: function (number, decimals) {
+      return number.toFixed(decimals)
     }
   },
 
   computed: {
 
     coalOption: {
-      get() {
-        return this.$store.state.coalOption;
+      get () {
+        return this.$store.state.coalOption
       },
-      set(value) {
-        this.$store.commit("setCoalOption", value);
-        EventBus.$emit("recalculateChain")
+      set (value) {
+        this.$store.commit('setCoalOption', value)
+        EventBus.$emit('recalculateChain')
       }
     },
 
     marquetryOption: {
-      get() {
-        return this.$store.state.marquetryOption;
+      get () {
+        return this.$store.state.marquetryOption
       },
-      set(value) {
-        this.$store.commit("setMarquetryOption", value);
-        EventBus.$emit("recalculateChain")
+      set (value) {
+        this.$store.commit('setMarquetryOption', value)
+        EventBus.$emit('recalculateChain')
       }
     },
 
-
-
-    productionChain() {
-      return this.$store.state.selectedProductionChain;
+    productionChain () {
+      return this.$store.state.selectedProductionChain
     },
 
-    consumption() {
-      return this.$store.state.consumption;
+    consumption () {
+      return this.$store.state.consumption
     },
 
     /**
@@ -222,33 +220,33 @@ export default {
      *
      * @return {number|null} Number >= 0 if product is consumable, otherwise null.
      */
-    consumptionPerMinute() {
+    consumptionPerMinute () {
       // Find consumption of currently selected product.
-      const currentProduct = this.productionChain.finalProduct;
-      const demands = this.$store.state.consumption;
-      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic));
+      const currentProduct = this.productionChain.finalProduct
+      const demands = this.$store.state.consumption
+      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic))
       Object.assign(
         unifiedDemandsObject,
         JSON.parse(JSON.stringify(demands.luxury))
-      );
+      )
 
-      const consumption = unifiedDemandsObject[currentProduct];
+      const consumption = unifiedDemandsObject[currentProduct]
 
       // Return consumption of product, or null.
-      return isNaN(consumption) ? null : consumption;
+      return isNaN(consumption) ? null : consumption
     },
 
-    outputPerMinute() {
+    outputPerMinute () {
       // Calculate the production of one chain
-      const productionPerMinute = 60 / this.spt; // Shortest Production Time
+      const productionPerMinute = 60 / this.spt // Shortest Production Time
 
       // Calculate the output of all chains
-      const output = productionPerMinute * this.chainCount;
+      const output = productionPerMinute * this.chainCount
 
       if (output % 1 === 0) {
-        return output;
+        return output
       } else {
-        return output.toFixed(2);
+        return output.toFixed(2)
       }
     },
 
@@ -256,61 +254,61 @@ export default {
      * checks if current ProductionChain produces a good which is consumed by population over time
      * @return {boolean} true if consumable good
      */
-    isConsumable() {
-      let returnValue = false;
-      const good = this.treeData.finalProduct;
-      const consumables = this.consumablesOverTime;
+    isConsumable () {
+      let returnValue = false
+      const good = this.treeData.finalProduct
+      const consumables = this.consumablesOverTime
       consumables.find(currentElement => {
         if (good === currentElement) {
-          returnValue = true;
+          returnValue = true
         }
-      });
-      return returnValue;
+      })
+      return returnValue
     },
 
-    consumablesOverTime() {
-      let key;
-      const listOfGoods = this.$store.state.consumption;
-      const consumablesArray = [];
+    consumablesOverTime () {
+      let key
+      const listOfGoods = this.$store.state.consumption
+      const consumablesArray = []
 
       for (key in listOfGoods.basic) {
         if (listOfGoods.basic[key] !== false) {
-          consumablesArray.push(key);
+          consumablesArray.push(key)
         }
       }
 
       for (key in listOfGoods.luxury) {
         if (listOfGoods.luxury[key] !== false) {
-          consumablesArray.push(key);
+          consumablesArray.push(key)
         }
       }
-      return consumablesArray;
+      return consumablesArray
     },
 
     open_workforce_demand: {
-      get() {
-        return [this.$store.state.config.prodcution_chains.open_workforce_demand];
+      get () {
+        return [this.$store.state.config.prodcution_chains.open_workforce_demand]
       },
-      set(value) {
-        const isOpen = value[0];
-        this.$store.commit("toggle_workforce_demand", isOpen);
+      set (value) {
+        const isOpen = value[0]
+        this.$store.commit('toggle_workforce_demand', isOpen)
       }
     },
     open_construction_costs: {
-      get() {
-        return [this.$store.state.config.prodcution_chains.open_construction_costs];
+      get () {
+        return [this.$store.state.config.prodcution_chains.open_construction_costs]
       },
-      set(value) {
-        const isOpen = value[0];
-        this.$store.commit("toggle_construction_costs", isOpen);
+      set (value) {
+        const isOpen = value[0]
+        this.$store.commit('toggle_construction_costs', isOpen)
       }
     }
 
   },
 
   methods: {
-    changeCounter() {
-      EventBus.$emit("changeSlider", this.chainCount);
+    changeCounter () {
+      EventBus.$emit('changeSlider', this.chainCount)
     },
 
     /**
@@ -320,24 +318,24 @@ export default {
      * @return {void}
      */
 
-    addBuildingsAmount(spt, element) {
-      const helperFunctionMixin = this;
+    addBuildingsAmount (spt, element) {
+      const helperFunctionMixin = this
 
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
         element.worldID
-      );
+      )
       element.relativeAmount =
-        (building.productionTime / spt) * this.chainCount;
+        (building.productionTime / spt) * this.chainCount
     },
 
     /**
      * gets Current active ProductionChain
      * @return {Object} Production Chain Object
      */
-    getCurrentProductionChain() {
-      const chain = JSON.parse(JSON.stringify(this.productionChain));
-      return chain;
+    getCurrentProductionChain () {
+      const chain = JSON.parse(JSON.stringify(this.productionChain))
+      return chain
     },
 
     /**
@@ -348,19 +346,19 @@ export default {
      * @param {number} spt the shortest production time of a building in a certain production Chain
      * @return {void} the function just modifies the productionChain
      */
-    addBuildingRelationdToChain(spt) {
-      const chainNodeMixin = this;
-      const vpc = this;
+    addBuildingRelationdToChain (spt) {
+      const chainNodeMixin = this
+      const vpc = this
       chainNodeMixin.iterateProductionChain(
         vpc.temporaryProductionChain,
         rootElement => {
-          vpc.addBuildingsAmount(spt, rootElement);
+          vpc.addBuildingsAmount(spt, rootElement)
         },
         element => {
-          vpc.addBuildingsAmount(spt, element);
+          vpc.addBuildingsAmount(spt, element)
         },
         false
-      );
+      )
     },
 
     /**
@@ -368,17 +366,17 @@ export default {
      * the newProductionChain property found in chainNodeMixin
      * @return {object} the new, maybe modified productionChain
      */
-    getNewProductionChain() {
-      const chainNodeMixin = this;
-      return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain));
+    getNewProductionChain () {
+      const chainNodeMixin = this
+      return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain))
     },
 
-    changeResidents() {
+    changeResidents () {
       // emits event in WorkerPanel.vue
-      EventBus.$emit("addToDemands");
+      EventBus.$emit('addToDemands')
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -393,4 +391,3 @@ h4 {
   border-style: solid;
 }
 </style>
-

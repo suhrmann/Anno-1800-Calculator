@@ -161,35 +161,35 @@ export default {
   name: 'BottomPopulationInput',
   computed: {
     numFarmers: {
-      get: function() {return this.$store.state.population.numFarmers;},
-      set: function(numFarmers) {this.$store.commit('setNumFarmers', numFarmers);},
+      get: function () { return this.$store.state.population.numFarmers },
+      set: function (numFarmers) { this.$store.commit('setNumFarmers', numFarmers) }
     },
     numWorkers: {
-      get: function() {return this.$store.state.population.numWorkers;},
-      set: function(numWorkers) {this.$store.commit('setNumWorkers', numWorkers);},
+      get: function () { return this.$store.state.population.numWorkers },
+      set: function (numWorkers) { this.$store.commit('setNumWorkers', numWorkers) }
     },
     numArtisans: {
-      get: function() {return this.$store.state.population.numArtisans;},
-      set: function(numArtisans) {this.$store.commit('setNumArtisans', numArtisans);},
+      get: function () { return this.$store.state.population.numArtisans },
+      set: function (numArtisans) { this.$store.commit('setNumArtisans', numArtisans) }
     },
     numEngineers: {
-      get: function() {return this.$store.state.population.numEngineers;},
-      set: function(numEngineers) {this.$store.commit('setNumEngineers', numEngineers);},
+      get: function () { return this.$store.state.population.numEngineers },
+      set: function (numEngineers) { this.$store.commit('setNumEngineers', numEngineers) }
     },
     numInvestors: {
-      get: function() {return this.$store.state.population.numInvestors;},
-      set: function(numInvestors) {this.$store.commit('setNumInvestors', numInvestors);},
+      get: function () { return this.$store.state.population.numInvestors },
+      set: function (numInvestors) { this.$store.commit('setNumInvestors', numInvestors) }
     },
     numJornaleros: {
-      get: function() {return this.$store.state.population.numJornaleros;},
-      set: function(numJornaleros) {this.$store.commit('setNumJornaleros', numJornaleros);},
+      get: function () { return this.$store.state.population.numJornaleros },
+      set: function (numJornaleros) { this.$store.commit('setNumJornaleros', numJornaleros) }
     },
     numObreros: {
-      get: function() {return this.$store.state.population.numObreros;},
-      set: function(numObreros) {this.$store.commit('setNumObreros', numObreros);},
-    },
-  },
-};
+      get: function () { return this.$store.state.population.numObreros },
+      set: function (numObreros) { this.$store.commit('setNumObreros', numObreros) }
+    }
+  }
+}
 </script>
 
 <style scoped>

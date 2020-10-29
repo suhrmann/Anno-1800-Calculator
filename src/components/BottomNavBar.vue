@@ -70,16 +70,16 @@
 </template>
 
 <script>
-import worlds from '../data/worlds.json';
-import socialClasses from '../data/social-classes.json';
-import ProductionChains from '../data/production-chain';
-import { helperFunctionMixin } from './helperFunctionMixin.js';
-import { EventBus } from '../EventBus.js';
+import worlds from '../data/worlds.json'
+import socialClasses from '../data/social-classes.json'
+import ProductionChains from '../data/production-chain'
+import { helperFunctionMixin } from './helperFunctionMixin.js'
+import { EventBus } from '../EventBus.js'
 
 export default {
   name: 'BottomNavBar',
   mixins: [helperFunctionMixin],
-  data() {
+  data () {
     return {
       // Init selection
       // selectedWorldID: 1,
@@ -90,39 +90,39 @@ export default {
       // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
       socialClasses: socialClasses,
-      productionChainsData: ProductionChains.Production_Chain,
-    };
+      productionChainsData: ProductionChains.Production_Chain
+    }
   },
 
   computed: {
     selectedWorldID: {
-      get: function() {
-        return this.$store.state.selectedWorldID;
+      get: function () {
+        return this.$store.state.selectedWorldID
       },
-      set: function(selectedWorldID) {
-        this.$store.commit('changeWorldID', selectedWorldID);
-      },
+      set: function (selectedWorldID) {
+        this.$store.commit('changeWorldID', selectedWorldID)
+      }
     },
 
     selectedSocialClassID: {
-      get: function() {
-        return this.$store.state.selectedSocialClassID;
+      get: function () {
+        return this.$store.state.selectedSocialClassID
       },
-      set: function(selectedSocialClassID) {
-        this.$store.commit('changeSocialClassID', selectedSocialClassID);
-      },
+      set: function (selectedSocialClassID) {
+        this.$store.commit('changeSocialClassID', selectedSocialClassID)
+      }
     },
 
     selectedProductionChainID: {
-      get: function() {
-        return this.$store.state.selectedProductionChainID;
+      get: function () {
+        return this.$store.state.selectedProductionChainID
       },
-      set: function(selectedProductionChainID) {
+      set: function (selectedProductionChainID) {
         this.$store.commit(
-            'changeProductionChainID',
-            selectedProductionChainID
-        );
-      },
+          'changeProductionChainID',
+          selectedProductionChainID
+        )
+      }
     },
 
     /**
@@ -130,27 +130,27 @@ export default {
      *
      * @return {Object} The selected Production Chain
      */
-    selectedProductionChain() {
-      const selectedSocialClassChains = this.selectedProductionChains;
-      const chainID = this.selectedProductionChainID;
-      let productionChain = {};
+    selectedProductionChain () {
+      const selectedSocialClassChains = this.selectedProductionChains
+      const chainID = this.selectedProductionChainID
+      let productionChain = {}
 
       Object.keys(selectedSocialClassChains).forEach((chain) => {
         if (selectedSocialClassChains[chain].id === chainID) {
-          productionChain = selectedSocialClassChains[chain];
+          productionChain = selectedSocialClassChains[chain]
         }
-      });
-      this.setProductionChain(productionChain);
-      EventBus.$emit('bottomNavBarChanged');
-      return productionChain;
+      })
+      this.setProductionChain(productionChain)
+      EventBus.$emit('bottomNavBarChanged')
+      return productionChain
     },
 
     /**
      * Returns a deep copy of all Production Chains
      * @return {Object} A JS Object with all production chain objects init
      */
-    fetchAllProductionChains() {
-      return JSON.parse(JSON.stringify(this.productionChainsData));
+    fetchAllProductionChains () {
+      return JSON.parse(JSON.stringify(this.productionChainsData))
     },
 
     /**
@@ -158,11 +158,11 @@ export default {
      *
      * @return {array} The social classes of the selected world.
      */
-    selectedSocialClasses: function() {
-      const socialClasses = Object.values(this.socialClasses);
+    selectedSocialClasses: function () {
+      const socialClasses = Object.values(this.socialClasses)
       return socialClasses.filter(
-          (socialClass) => socialClass.worldID === this.selectedWorldID
-      );
+        (socialClass) => socialClass.worldID === this.selectedWorldID
+      )
     },
 
     /**
@@ -170,12 +170,12 @@ export default {
      *
      * @return {array} The production chains of the selected world and social class.
      */
-    selectedProductionChains: function() {
-      const productionChains = Object.values(this.productionChainsData);
+    selectedProductionChains: function () {
+      const productionChains = Object.values(this.productionChainsData)
       return productionChains.filter(
-          (chain) => chain.socialClassID === this.selectedSocialClassID
-      );
-    },
+        (chain) => chain.socialClassID === this.selectedSocialClassID
+      )
+    }
   },
   methods: {
     /**
@@ -183,17 +183,17 @@ export default {
      *
      * @param {int} worldID The id of the world that caused this reset.
      */
-    changeWorld: function(worldID) {
-      const selectedWorld = this.getWorldByID(worldID);
-      this.selectedWorldID = selectedWorld.id;
+    changeWorld: function (worldID) {
+      const selectedWorld = this.getWorldByID(worldID)
+      this.selectedWorldID = selectedWorld.id
 
       const selectedSocialClass = this.getSocialClassByID(
-          selectedWorld.socialClassIDs[0]
-      );
-      this.selectedSocialClassID = selectedSocialClass.id;
+        selectedWorld.socialClassIDs[0]
+      )
+      this.selectedSocialClassID = selectedSocialClass.id
 
-      this.changeSocialClass(selectedSocialClass.id);
-      EventBus.$emit('bottomNavBarChanged');
+      this.changeSocialClass(selectedSocialClass.id)
+      EventBus.$emit('bottomNavBarChanged')
     },
 
     /**
@@ -201,9 +201,9 @@ export default {
      *
      * @param {int} socialClassID The id of the social class that caused this reset.
      */
-    changeSocialClass: function(socialClassID) {
-      const socialClass = this.getSocialClassByID(socialClassID);
-      this.selectedProductionChainID = socialClass.firstProductionChain;
+    changeSocialClass: function (socialClassID) {
+      const socialClass = this.getSocialClassByID(socialClassID)
+      this.selectedProductionChainID = socialClass.firstProductionChain
     },
 
     /**
@@ -212,8 +212,8 @@ export default {
      *
      * @param {Object} productionChain
      */
-    setProductionChain(productionChain) {
-      this.$store.commit('changeProductionChain', productionChain);
+    setProductionChain (productionChain) {
+      this.$store.commit('changeProductionChain', productionChain)
     },
 
     /**
@@ -222,10 +222,10 @@ export default {
      * @param {int} id
      * @return {Object} The selected World Object
      */
-    getWorldByID(id) {
-      const worlds = Object.values(this.worlds);
-      const selectedWorld = worlds.filter((world) => world.id === id)[0];
-      return selectedWorld;
+    getWorldByID (id) {
+      const worlds = Object.values(this.worlds)
+      const selectedWorld = worlds.filter((world) => world.id === id)[0]
+      return selectedWorld
     },
 
     /**
@@ -234,15 +234,15 @@ export default {
      * @param {int} id
      * @return {Object} The selected Social Class Object
      */
-    getSocialClassByID(id) {
-      const socialClasses = Object.values(this.socialClasses);
+    getSocialClassByID (id) {
+      const socialClasses = Object.values(this.socialClasses)
       const selectedSocialClass = socialClasses.filter(
-          (socialClass) => socialClass.id === id
-      )[0];
-      return selectedSocialClass;
-    },
-  },
-};
+        (socialClass) => socialClass.id === id
+      )[0]
+      return selectedSocialClass
+    }
+  }
+}
 </script>
 
 <style scoped>

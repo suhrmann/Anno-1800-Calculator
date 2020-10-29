@@ -6,75 +6,75 @@ export const chainCalcMixin = {
      *
      * @return {int} The number of workers.
      */
-    totalUpkeepCosts: function() {
+    totalUpkeepCosts: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of farmers this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumFarmers: function() {
+    totalNumFarmers: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of workers this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumWorkers: function() {
+    totalNumWorkers: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of artisans this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumArtisans: function() {
+    totalNumArtisans: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of engineers this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumEngineers: function() {
+    totalNumEngineers: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of investors this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumInvestors: function() {
+    totalNumInvestors: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of jornaleros this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumJornaleros: function() {
+    totalNumJornaleros: function () {
       // TODO Implement me!
-      return -1;
+      return -1
     },
     /**
      * Calculate the amount of obreros this production chain requires to operate.
      *
      * @return {int} The number of workers.
      */
-    totalNumObreros: function() {
+    totalNumObreros: function () {
       // TODO Implement me!
-      return -1;
-    },
+      return -1
+    }
   },
-  data: function() {
+  data: function () {
     return {
       /**
        * The name of this production chain.
@@ -85,7 +85,7 @@ export const chainCalcMixin = {
        * The trunk of this production chain; aka the final / last production.
        * @var {Producer}
        */
-      trunk: null,
-    };
-  },
-};
+      trunk: null
+    }
+  }
+}

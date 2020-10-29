@@ -182,11 +182,11 @@ export default {
      *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImage(image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : '';
-    },
-  },
-};
+    getImage (image, folder) {
+      return image ? require(`../assets/${folder}/${image}`) : ''
+    }
+  }
+}
 </script>
 
 <style scoped>

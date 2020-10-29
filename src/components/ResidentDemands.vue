@@ -83,10 +83,10 @@
 </template>
 
 <script>
-import PopulationInput from './resident_demands/PopulationInput';
-import ResidenceInput from './resident_demands/ResidenceInput';
-import ResidentDemandsTable from './resident_demands/ResidentDemandsTable';
-import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js';
+import PopulationInput from './resident_demands/PopulationInput'
+import ResidenceInput from './resident_demands/ResidenceInput'
+import ResidentDemandsTable from './resident_demands/ResidentDemandsTable'
+import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js'
 
 export default {
   name: 'ResidentDemands',
@@ -94,26 +94,26 @@ export default {
     'resident-demands-table': ResidentDemandsTable,
 
     'population-input': PopulationInput,
-    'residence-input': ResidenceInput,
+    'residence-input': ResidenceInput
   },
 
-  beforeRouteEnter(to, from, next) {
+  beforeRouteEnter (to, from, next) {
     // do sth
     next((vm) => {
       if (vm.$route.query.linkedFromChains === true) {
-        const newPop = vm.$route.query.populationToAdd;
-        vm.$store.commit('addToPopulationDemands', newPop);
+        const newPop = vm.$route.query.populationToAdd
+        vm.$store.commit('addToPopulationDemands', newPop)
       }
-    });
+    })
   },
 
   mixins: [residentDemandCalculatorMixin],
 
-  data: function() {
-    return {};
-  },
+  data: function () {
+    return {}
+  }
 
-};
+}
 </script>
 
 <style scoped>
