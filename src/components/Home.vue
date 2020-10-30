@@ -44,7 +44,7 @@
     </section>
 
     <!-- Description -->
-    <v-content>
+    <v-main>
       <!-- TODO - then enable "scroll down" button in image /\ -->
       <h1 id="about-me">Anno 1800 Calculator!</h1>
 
@@ -95,7 +95,7 @@
 
       <!-- Add some space to bottom -->
       <p style="height: 10vh"></p>
-    </v-content>
+    </v-main>
   </v-container>
 </template>
 
