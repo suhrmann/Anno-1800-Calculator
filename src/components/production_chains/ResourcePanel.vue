@@ -1,30 +1,25 @@
 <template>
-  <v-layout justify-space-between row wrap>
-    <div>
-      <v-layout row wrap justify-center>
-        <v-flex>
-          <div class="inline" v-for="(cost, i) in costArray" :key="i">
-            <v-flex xs1>
-              <v-flex xs12>
-                <v-avatar size="24">
-                  <img
-                    class="center"
-                    :src="getImage(cost.image, cost.imageFileFolder)"
-                    :alt="cost.name"
-                  >
-                </v-avatar>
-              </v-flex>
-              <div align-content-center class="center">
-                <v-flex xs12>
-                  <p class="pb-0 mb-0">{{cost.name}}: {{cost.amount}}</p>
-                </v-flex>
-              </div>
+  <v-container class="pa-0">
+    <v-row>
+      <v-col class="col-1 pa-1" v-for="(cost, i) in costArray" :key="i">
+        <v-row class="col-border">
+          <v-col class="pa-0">
+            <v-flex class="text-center">
+              <v-avatar size="32">
+                <img class="center" :src="getImage(cost.image, cost.imageFileFolder)" :alt="cost.name">
+              </v-avatar>
+              <p class="pb-0 mb-0">{{cost.name}}</p>
             </v-flex>
-          </div>
-        </v-flex>
-      </v-layout>
-    </div>
-  </v-layout>
+          </v-col>
+        </v-row>
+        <v-row class="col-border">
+          <v-col class="py-0 text-right font-weight-black">
+            <b> {{cost.amount}} </b>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -180,9 +175,8 @@ export default {
 }
 </script>
 
-<style>
-img {
-  height: 40%;
-  width: 40%;
+<style scoped>
+.col-border {
+  border-right: 1px solid #777777;
 }
 </style>

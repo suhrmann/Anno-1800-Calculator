@@ -7,7 +7,7 @@
         pa-1
         sm4 xs6
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/farmers.webp"
@@ -28,7 +28,7 @@
         pa-1
         sm4 xs6
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/workers.webp"
@@ -49,7 +49,7 @@
         pa-1
         sm4 xs6
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/artisans.webp"
@@ -71,7 +71,7 @@
         sm4 xs6
         :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/engineers.webp"
@@ -92,7 +92,7 @@
         pa-1
         sm4 xs6
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/investors.webp"
@@ -114,7 +114,7 @@
         sm4 xs6
         :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/jornaleros.webp"
@@ -135,7 +135,7 @@
         pa-1
         sm4 xs6
       >
-        <v-card height="105" class="text-xs-center">
+        <v-card height="105" class="text-center">
           <v-avatar>
             <img
               src="../../assets/population/obreros.webp"

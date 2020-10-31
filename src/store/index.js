@@ -135,8 +135,8 @@ export default new Vuex.Store({
      */
     config: {
       prodcution_chains: {
-        open_workforce_demand: true,
-        open_construction_costs: true
+        open_workforce_demand: 0,
+        open_construction_costs: 0
       }
     }
   },

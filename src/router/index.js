@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '@/components/Home.vue'
-import ProductionChains from '@/components/ProductionChains'
-import ResidentDemands from '@/components/ResidentDemands'
-import ProductionLayouts from '@/components/ProductionLayouts'
-import About from '@/components/About'
+import Home from '@/views/Home.vue'
+import ProductionChains from '@/views/ProductionChains'
+import ResidentDemands from '@/views/ResidentDemands'
+import ProductionLayouts from '@/views/ProductionLayouts'
+import About from '@/views/About'
 
 Vue.use(VueRouter)
 

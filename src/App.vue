@@ -7,7 +7,7 @@
         >
           <template v-for="(item, i) in items">
             <v-subheader v-if="item.heading" :key="i">{{ item.heading }}</v-subheader>
-            <v-divider v-else-if="item.divider" :key="i" dark class="my-3"></v-divider>
+            <v-divider v-else-if="item.divider" :key="i" dark class="my-4"></v-divider>
             <v-list-item v-else
                          :to="{path: item.route}"
                          :key="i"
@@ -25,7 +25,7 @@
     </v-navigation-drawer>
     <v-app-bar color="primary" app scroll-off-screen clipped-left>
       <v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <span class="title ml-3 mr-5">
+      <span class="title ml-4 mr-12">
         {{ title }} ||&nbsp;<span class="font-weight-light subheading">{{subtitle}}</span>
       </span>
     </v-app-bar>

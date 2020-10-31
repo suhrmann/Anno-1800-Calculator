@@ -1,5 +1,5 @@
 <template>
-  <div text-xs-center d-flex align-center>
+  <div text-center d-flex align-center>
     <table v-if="treeData.name" style="display:inline-block">
       <tr>
         <td

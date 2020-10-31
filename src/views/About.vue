@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!-- Thank you -->
-    <v-alert :value="true" color="secondary" class="text-sm-center">
+    <v-alert color="secondary" class="text-sm-center">
       <h1>THANK YOU Anno 1800 Wiki!</h1>
       This App is based on the content, information and images provided by volunteers to the Anno 1800 Wiki.
       If you want to improve this App contribute to the
@@ -73,7 +73,7 @@
     <p>&nbsp;</p>
 
     <!-- Legal / Ubisoft stuff -->
-    <v-alert :value="true" type="info" color="secondary" outline>
+    <v-alert type="info" color="secondary" outline>
       <h2>Legal</h2>
       <p>
         All the assets from
@@ -159,7 +159,7 @@
 
     <p>&nbsp;</p>
 
-    <v-alert :value="true" color="secondary" type="error" outline>
+    <v-alert color="secondary" type="error" outline>
       <h3>Bugs and improvements</h3>
       If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
       <a

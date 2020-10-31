@@ -39,7 +39,7 @@
             <v-avatar
               color="grey lighten-2"
             >
-              <img src="../assets/population/engineers.webp" alt="avatar">
+              <img src="src/assets/population/engineers.webp" alt="avatar">
             </v-avatar>
           </v-tab>
           <v-tab-item
@@ -56,7 +56,7 @@
           <v-tab>
             Residence
             <v-avatar>
-              <img src="../assets/buildings/farmers/residence.webp" alt="avatar">
+              <img src="src/assets/buildings/farmers/residence.webp" alt="avatar">
             </v-avatar>
           </v-tab>
           <v-tab-item
@@ -72,7 +72,7 @@
         </v-tabs>
       </v-flex>
 
-      <v-container grid-list-md text-xs-center>
+      <v-container grid-list-md text-center>
 
         <!-- Demands as table -->
         <resident-demands-table></resident-demands-table>
@@ -83,10 +83,10 @@
 </template>
 
 <script>
-import PopulationInput from './resident_demands/PopulationInput'
-import ResidenceInput from './resident_demands/ResidenceInput'
-import ResidentDemandsTable from './resident_demands/ResidentDemandsTable'
-import residentDemandCalculatorMixin from './resident_demands/residentDemandCalculatorMixin.js'
+import PopulationInput from '@/components/resident_demands/PopulationInput'
+import ResidenceInput from '@/components/resident_demands/ResidenceInput'
+import ResidentDemandsTable from '@/components/resident_demands/ResidentDemandsTable'
+import residentDemandCalculatorMixin from '@/components/resident_demands/residentDemandCalculatorMixin.js'
 
 export default {
   name: 'ResidentDemands',

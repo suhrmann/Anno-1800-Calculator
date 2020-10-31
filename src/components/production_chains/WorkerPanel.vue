@@ -1,30 +1,31 @@
 <template>
-  <div>
-    <v-layout row wrap justify-center>
-      <v-flex>
-        <div class="inline" v-for="(soClass, i) in reqPopArray" :key="i">
-          <v-flex xs1>
-            <v-flex xs12>
-              <v-avatar size="24">
+  <v-container class="pa-0">
+    <v-row>
+      <v-col class="col-1 pa-1" v-for="(soClass, i) in reqPopArray" :key="i">
+        <v-row class="col-border">
+          <v-col class="pa-0">
+            <v-flex class="text-center">
+              <v-avatar size="32">
                 <img class="center" :src="getImage(soClass.image, 'icons')" :alt="soClass.name">
               </v-avatar>
+              <p class="pb-0 mb-0">{{soClass.name}}</p>
             </v-flex>
-            <div align-content-center class="center">
-              <v-flex xs12>
-                <p class="pb-0 mb-0">{{soClass.name}}: {{soClass.population}}</p>
-              </v-flex>
-            </div>
-          </v-flex>
-        </div>
-      </v-flex>
-    </v-layout>
-  </div>
+          </v-col>
+        </v-row>
+        <v-row class="col-border">
+          <v-col class="py-0 text-right font-weight-black">
+            {{soClass.population}}
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 import { helperFunctionMixin } from '../helperFunctionMixin.js'
 import { chainNodeMixin } from './chainNodeMixin.js'
-import { EventBus } from '../../EventBus.js'
+import { EventBus } from '@/EventBus'
 
 export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
@@ -188,20 +189,8 @@ export default {
 }
 </script>
 
-<style>
-img {
-  height: 40%;
-  width: 40%;
-}
-div.inline {
-  float: left;
-}
-
-img.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100%;
+<style scoped>
+.col-border {
+  border-right: 1px solid #777777;
 }
 </style>

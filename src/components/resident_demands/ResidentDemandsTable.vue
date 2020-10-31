@@ -1,11 +1,11 @@
 <template>
-  <v-container grid-list-md text-xs-center>
+  <v-container grid-list-md text-center>
 
     <!-- Show alert with info about cigars appearing twice -->
     <v-layout
       row
       wrap
-      class="py-4"
+      class="py-6"
       v-if="numInvestors > 0 || numObreros > 0"
     >
       <v-alert
@@ -98,7 +98,7 @@
     >
       <!-- Warn about no data -->
       <template slot="no-data">
-        <v-alert :value="true" color="warning" icon="warning">
+        <v-alert color="warning" icon="warning">
           <h3>Sorry, nothing to display here :(</h3>
           <p class="mb-0">Enter the number of your populations to start calculation of demands.</p>
         </v-alert>

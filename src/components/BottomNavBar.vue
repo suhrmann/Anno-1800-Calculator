@@ -7,16 +7,16 @@
     <p v-show="false">{{selectedProductionChain}}</p>
 
     <v-card height="70px" tile>
-      <v-bottom-nav
-        :active.sync="selectedProductionChainID"
-        :value="true"
+      <v-bottom-navigation
+        v-model="selectedProductionChainID"
         absolute
         dark
         height="70"
+        grow
       >
         <v-btn
           color="primary"
-          flat
+          text
           v-for="(chain, i) in selectedProductionChains"
           :key="i"
           :value="chain.id"
@@ -26,15 +26,21 @@
             <img :src="getImage(chain.img, 'buildings')" :alt="chain.name + ' Image'">
           </v-avatar>
         </v-btn>
-      </v-bottom-nav>
+      </v-bottom-navigation>
     </v-card>
 
     <!-- Nav Bar: SOCIAL CLASS -->
     <v-card height="70px" tile>
-      <v-bottom-nav :active.sync="selectedSocialClassID" :value="true" absolute dark height="70">
+      <v-bottom-navigation
+        v-model="selectedSocialClassID"
+        absolute
+        dark
+        height="70"
+        grow
+      >
         <v-btn
           color="primary"
-          flat
+          text
           v-for="(socialClass, i) in selectedSocialClasses"
           :key="i"
           :value="socialClass.id"
@@ -45,15 +51,21 @@
             <img :src="getImage(socialClass.img, 'population')" :alt="socialClass.name + ' Image'">
           </v-avatar>
         </v-btn>
-      </v-bottom-nav>
+      </v-bottom-navigation>
     </v-card>
 
     <!-- Nav Bar: WORLD -->
     <v-card height="70px" tile>
-      <v-bottom-nav :active.sync="selectedWorldID" :value="true" absolute dark height="70">
+      <v-bottom-navigation
+        v-model="selectedWorldID"
+        absolute
+        dark
+        height="70"
+        grow
+      >
         <v-btn
           color="primary"
-          flat
+          text
           v-for="(world, i) in worlds"
           :key="i"
           :value="world.id"
@@ -64,7 +76,7 @@
             <img :src="getImage(world.img, 'worlds')" :alt="world.name + ' Image'">
           </v-avatar>
         </v-btn>
-      </v-bottom-nav>
+      </v-bottom-navigation>
     </v-card>
   </v-flex>
 </template>
@@ -236,9 +248,7 @@ export default {
      */
     getSocialClassByID (id) {
       const socialClasses = Object.values(this.socialClasses)
-      const selectedSocialClass = socialClasses.filter(
-        (socialClass) => socialClass.id === id
-      )[0]
+      const selectedSocialClass = socialClasses.filter((socialClass) => socialClass.id === id)[0]
       return selectedSocialClass
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <v-container fluid fill-height>
-    <v-layout row wrap align-content-space-between>
+    <v-layout row>
       <visual-production-chain></visual-production-chain>
       <bottom-nav-bar></bottom-nav-bar>
     </v-layout>
@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import BottomNavBar from './BottomNavBar.vue'
-import VisualProductionChain from './production_chains/VisualProductionChain.vue'
-import { helperFunctionMixin } from './helperFunctionMixin.js'
+import BottomNavBar from '@/components/BottomNavBar.vue'
+import VisualProductionChain from '@/components/production_chains/VisualProductionChain.vue'
+import { helperFunctionMixin } from '@/components/helperFunctionMixin'
 
 export default {
   name: 'ProductionChains',

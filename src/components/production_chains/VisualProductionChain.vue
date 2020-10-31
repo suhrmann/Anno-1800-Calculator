@@ -1,8 +1,8 @@
 <template>
-  <v-container fluid grid-list-md text-xs-center mt-0 pt-0>
-    <v-layout row wrap>
-      <v-flex d-flex xs4>
-        <v-card class="mb-3" color="secondary" dark>
+  <v-container fluid grid-list-md text-center mt-0 pt-0>
+    <v-row>
+      <v-col cols="4">
+        <v-card class="mb-3" color="secondary" dark tile>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
           <v-card-text class="mb-0 pb-0 pt-0">
             <v-radio-group class="pb-0 mb-0" v-model="coalOption" row>
@@ -15,55 +15,57 @@
             </v-radio-group>
           </v-card-text>
         </v-card>
-      </v-flex>
-      <v-flex d-flex xs8>
-        <v-layout row wrap>
-          <v-flex d-flex>
-            <v-layout row wrap>
-              <v-flex xs12 d-flex>
-                <v-expansion-panel
+      </v-col>
+      <v-col cols="8">
+        <v-row>
+          <v-col class="py-0">
+            <v-row class="mb-3" wrap>
+              <v-col class="pa-0">
+                <v-expansion-panels
                   v-model="open_workforce_demand"
-                  expand
+                  tile
+                  flat
                 >
-                  <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
-                    <template slot="actions">
-                      <v-icon color="white">$vuetify.icons.expand</v-icon>
-                    </template>
-                    <template slot="header">
-                      <h4 color="accent">Workforce Demand</h4>
+                  <v-expansion-panel class="secondary pa-1">
+                    <v-expansion-panel-header>
+                      <h3>Workforce Demand</h3>
                       <v-flex class="pa-0 ma-0" xs3>
                         <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
                       </v-flex>
-                    </template>
-                    <v-card class="pb-1">
-                      <WorkerPanel :chain="this.treeData"></WorkerPanel>
-                    </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-              </v-flex>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content eager>
+                      <v-card class="ma-0" tile>
+                        <WorkerPanel :chain="this.treeData"></WorkerPanel>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-col>
+            </v-row>
 
-              <v-flex d-flex xs12 class="mb-3">
-                <v-expansion-panel
+            <v-row>
+              <v-col class="pa-0">
+                <v-expansion-panels
                   v-model="open_construction_costs"
-                  expand
+                  tile
+                  flat
                 >
-                  <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
-                    <template slot="actions">
-                      <v-icon color="white">$vuetify.icons.expand</v-icon>
-                    </template>
-                    <template slot="header">
-                      <h4>Construction Costs</h4>
-                    </template>
-                    <v-card class="pb-1">
-                      <ResourcePanel :chain="this.treeData"></ResourcePanel>
-                    </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-              </v-flex>
-            </v-layout>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+                  <v-expansion-panel class="secondary pa-1">
+                    <v-expansion-panel-header>
+                      <h3>Construction Costs</h3>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content eager>
+                      <v-card class="pb-1" tile>
+                        <ResourcePanel :chain="this.treeData"></ResourcePanel>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-col>
 
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
@@ -125,14 +127,14 @@
       <v-flex xs3 mr-5 pr-5>
         <v-btn>Match Demands</v-btn>
       </v-flex>
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import { chainNodeMixin } from './chainNodeMixin.js'
 import { helperFunctionMixin } from '../helperFunctionMixin.js'
-import { EventBus } from '../../EventBus.js'
+import { EventBus } from '@/EventBus'
 import TreeChart from '../TreeChart'
 import WorkerPanel from './WorkerPanel'
 import ResourcePanel from './ResourcePanel'
@@ -287,20 +289,18 @@ export default {
 
     open_workforce_demand: {
       get () {
-        return [this.$store.state.config.prodcution_chains.open_workforce_demand]
+        return this.$store.state.config.prodcution_chains.open_workforce_demand
       },
       set (value) {
-        const isOpen = value[0]
-        this.$store.commit('toggle_workforce_demand', isOpen)
+        this.$store.commit('toggle_workforce_demand', value)
       }
     },
     open_construction_costs: {
       get () {
-        return [this.$store.state.config.prodcution_chains.open_construction_costs]
+        return this.$store.state.config.prodcution_chains.open_construction_costs
       },
       set (value) {
-        const isOpen = value[0]
-        this.$store.commit('toggle_construction_costs', isOpen)
+        this.$store.commit('toggle_construction_costs', value)
       }
     }
 
@@ -383,11 +383,15 @@ export default {
 .disable-events {
   pointer-events: none;
 }
-h4 {
+h3,h4 {
   color: whitesmoke;
 }
 
-.cmp-expansion-panel-borders {
-  border-style: solid;
+/* Narrow $expansion-panel-active-margin 16px !default */
+.v-expansion-panel-header {
+  padding: 8px 24px;
+}
+.v-expansion-panel-content > :first-child {
+  padding: 0;
 }
 </style>
