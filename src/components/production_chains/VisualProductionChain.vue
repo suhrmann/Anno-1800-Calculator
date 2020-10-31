@@ -1,8 +1,8 @@
 <template>
-  <v-container fluid grid-list-md text-xs-center mt-0 pt-0>
-    <v-layout row wrap>
-      <v-flex d-flex xs4>
-        <v-card class="mb-3" color="secondary" dark>
+  <v-container fluid grid-list-md text-center mt-0 pt-0>
+    <v-row>
+      <v-col cols="4">
+        <v-card class="mb-3" color="secondary" dark tile>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
           <v-card-text class="mb-0 pb-0 pt-0">
             <v-radio-group class="pb-0 mb-0" v-model="coalOption" row>
@@ -15,55 +15,57 @@
             </v-radio-group>
           </v-card-text>
         </v-card>
-      </v-flex>
-      <v-flex d-flex xs8>
-        <v-layout row wrap>
-          <v-flex d-flex>
-            <v-layout row wrap>
-              <v-flex xs12 d-flex>
-                <v-expansion-panel
+      </v-col>
+      <v-col cols="8">
+        <v-row>
+          <v-col class="py-0">
+            <v-row class="mb-3" wrap>
+              <v-col class="pa-0">
+                <v-expansion-panels
                   v-model="open_workforce_demand"
-                  expand
+                  tile
+                  flat
                 >
-                  <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
-                    <template slot="actions">
-                      <v-icon color="white">$vuetify.icons.expand</v-icon>
-                    </template>
-                    <template slot="header">
-                      <h4 color="accent">Workforce Demand</h4>
+                  <v-expansion-panel class="secondary pa-1">
+                    <v-expansion-panel-header>
+                      <h3>Workforce Demand</h3>
                       <v-flex class="pa-0 ma-0" xs3>
                         <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
                       </v-flex>
-                    </template>
-                    <v-card class="pb-1">
-                      <WorkerPanel :chain="this.treeData"></WorkerPanel>
-                    </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-              </v-flex>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content eager>
+                      <v-card class="ma-0" tile>
+                        <WorkerPanel :chain="this.treeData"></WorkerPanel>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-col>
+            </v-row>
 
-              <v-flex d-flex xs12 class="mb-3">
-                <v-expansion-panel
+            <v-row>
+              <v-col class="pa-0">
+                <v-expansion-panels
                   v-model="open_construction_costs"
-                  expand
+                  tile
+                  flat
                 >
-                  <v-expansion-panel-content class="secondary cmp-expansion-panel-borders">
-                    <template slot="actions">
-                      <v-icon color="white">$vuetify.icons.expand</v-icon>
-                    </template>
-                    <template slot="header">
-                      <h4>Construction Costs</h4>
-                    </template>
-                    <v-card class="pb-1">
-                      <ResourcePanel :chain="this.treeData"></ResourcePanel>
-                    </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-              </v-flex>
-            </v-layout>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+                  <v-expansion-panel class="secondary pa-1">
+                    <v-expansion-panel-header>
+                      <h3>Construction Costs</h3>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content eager>
+                      <v-card class="pb-1" tile>
+                        <ResourcePanel :chain="this.treeData"></ResourcePanel>
+                      </v-card>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-col>
 
       <v-flex xs12>
         <TreeChart :json="this.treeData"></TreeChart>
@@ -125,17 +127,17 @@
       <v-flex xs3 mr-5 pr-5>
         <v-btn>Match Demands</v-btn>
       </v-flex>
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import { chainNodeMixin } from "./chainNodeMixin.js";
-import { helperFunctionMixin } from "../helperFunctionMixin.js";
-import { EventBus } from "../../EventBus.js";
-import TreeChart from "../TreeChart";
-import WorkerPanel from "./WorkerPanel";
-import ResourcePanel from "./ResourcePanel";
+import { chainNodeMixin } from './chainNodeMixin.js'
+import { helperFunctionMixin } from '../helperFunctionMixin.js'
+import { EventBus } from '@/EventBus'
+import TreeChart from '../TreeChart'
+import WorkerPanel from './WorkerPanel'
+import ResourcePanel from './ResourcePanel'
 
 export default {
   components: {
@@ -143,78 +145,76 @@ export default {
     WorkerPanel,
     ResourcePanel
   },
-  data() {
+  data () {
     return {
       treeData: {},
       temporaryProductionChain: {},
       chainCount: 1,
       spt: 0,
-      coal: "char",
-      marq: "old"
-    };
+      coal: 'char',
+      marq: 'old'
+    }
   },
 
-  created() {
-    EventBus.$on("setSPTforChain", spt => {});
-    EventBus.$on("changeSlider", value => {});
+  created () {
+    EventBus.$on('setSPTforChain', spt => {})
+    EventBus.$on('changeSlider', value => {})
 
-    EventBus.$on("bottomNavBarChanged", () => {
-      this.temporaryProductionChain = this.getCurrentProductionChain();
+    EventBus.$on('bottomNavBarChanged', () => {
+      this.temporaryProductionChain = this.getCurrentProductionChain()
 
-      const helperFunctionMixin = this;
+      const helperFunctionMixin = this
 
       const productionTimes = helperFunctionMixin.getAllProductionTimesOfChain(
         this.temporaryProductionChain
-      );
+      )
 
       const shortestProductionTime = helperFunctionMixin.getShortestprodTime(
         productionTimes
-      );
+      )
 
-      this.addBuildingRelationdToChain(shortestProductionTime);
-      this.treeData = this.getNewProductionChain();
-      this.spt = shortestProductionTime;
-    });
+      this.addBuildingRelationdToChain(shortestProductionTime)
+      this.treeData = this.getNewProductionChain()
+      this.spt = shortestProductionTime
+    })
   },
 
   mixins: [chainNodeMixin, helperFunctionMixin],
 
   filters: {
-    rounded: function(number, decimals) {
-      return number.toFixed(decimals);
+    rounded: function (number, decimals) {
+      return number.toFixed(decimals)
     }
   },
 
   computed: {
 
     coalOption: {
-      get() {
-        return this.$store.state.coalOption;
+      get () {
+        return this.$store.state.coalOption
       },
-      set(value) {
-        this.$store.commit("setCoalOption", value);
-        EventBus.$emit("recalculateChain")
+      set (value) {
+        this.$store.commit('setCoalOption', value)
+        EventBus.$emit('recalculateChain')
       }
     },
 
     marquetryOption: {
-      get() {
-        return this.$store.state.marquetryOption;
+      get () {
+        return this.$store.state.marquetryOption
       },
-      set(value) {
-        this.$store.commit("setMarquetryOption", value);
-        EventBus.$emit("recalculateChain")
+      set (value) {
+        this.$store.commit('setMarquetryOption', value)
+        EventBus.$emit('recalculateChain')
       }
     },
 
-
-
-    productionChain() {
-      return this.$store.state.selectedProductionChain;
+    productionChain () {
+      return this.$store.state.selectedProductionChain
     },
 
-    consumption() {
-      return this.$store.state.consumption;
+    consumption () {
+      return this.$store.state.consumption
     },
 
     /**
@@ -222,33 +222,33 @@ export default {
      *
      * @return {number|null} Number >= 0 if product is consumable, otherwise null.
      */
-    consumptionPerMinute() {
+    consumptionPerMinute () {
       // Find consumption of currently selected product.
-      const currentProduct = this.productionChain.finalProduct;
-      const demands = this.$store.state.consumption;
-      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic));
+      const currentProduct = this.productionChain.finalProduct
+      const demands = this.$store.state.consumption
+      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic))
       Object.assign(
         unifiedDemandsObject,
         JSON.parse(JSON.stringify(demands.luxury))
-      );
+      )
 
-      const consumption = unifiedDemandsObject[currentProduct];
+      const consumption = unifiedDemandsObject[currentProduct]
 
       // Return consumption of product, or null.
-      return isNaN(consumption) ? null : consumption;
+      return isNaN(consumption) ? null : consumption
     },
 
-    outputPerMinute() {
+    outputPerMinute () {
       // Calculate the production of one chain
-      const productionPerMinute = 60 / this.spt; // Shortest Production Time
+      const productionPerMinute = 60 / this.spt // Shortest Production Time
 
       // Calculate the output of all chains
-      const output = productionPerMinute * this.chainCount;
+      const output = productionPerMinute * this.chainCount
 
       if (output % 1 === 0) {
-        return output;
+        return output
       } else {
-        return output.toFixed(2);
+        return output.toFixed(2)
       }
     },
 
@@ -256,61 +256,59 @@ export default {
      * checks if current ProductionChain produces a good which is consumed by population over time
      * @return {boolean} true if consumable good
      */
-    isConsumable() {
-      let returnValue = false;
-      const good = this.treeData.finalProduct;
-      const consumables = this.consumablesOverTime;
+    isConsumable () {
+      let returnValue = false
+      const good = this.treeData.finalProduct
+      const consumables = this.consumablesOverTime
       consumables.find(currentElement => {
         if (good === currentElement) {
-          returnValue = true;
+          returnValue = true
         }
-      });
-      return returnValue;
+      })
+      return returnValue
     },
 
-    consumablesOverTime() {
-      let key;
-      const listOfGoods = this.$store.state.consumption;
-      const consumablesArray = [];
+    consumablesOverTime () {
+      let key
+      const listOfGoods = this.$store.state.consumption
+      const consumablesArray = []
 
       for (key in listOfGoods.basic) {
         if (listOfGoods.basic[key] !== false) {
-          consumablesArray.push(key);
+          consumablesArray.push(key)
         }
       }
 
       for (key in listOfGoods.luxury) {
         if (listOfGoods.luxury[key] !== false) {
-          consumablesArray.push(key);
+          consumablesArray.push(key)
         }
       }
-      return consumablesArray;
+      return consumablesArray
     },
 
     open_workforce_demand: {
-      get() {
-        return [this.$store.state.config.prodcution_chains.open_workforce_demand];
+      get () {
+        return this.$store.state.config.prodcution_chains.open_workforce_demand
       },
-      set(value) {
-        const isOpen = value[0];
-        this.$store.commit("toggle_workforce_demand", isOpen);
+      set (value) {
+        this.$store.commit('toggle_workforce_demand', value)
       }
     },
     open_construction_costs: {
-      get() {
-        return [this.$store.state.config.prodcution_chains.open_construction_costs];
+      get () {
+        return this.$store.state.config.prodcution_chains.open_construction_costs
       },
-      set(value) {
-        const isOpen = value[0];
-        this.$store.commit("toggle_construction_costs", isOpen);
+      set (value) {
+        this.$store.commit('toggle_construction_costs', value)
       }
     }
 
   },
 
   methods: {
-    changeCounter() {
-      EventBus.$emit("changeSlider", this.chainCount);
+    changeCounter () {
+      EventBus.$emit('changeSlider', this.chainCount)
     },
 
     /**
@@ -320,24 +318,24 @@ export default {
      * @return {void}
      */
 
-    addBuildingsAmount(spt, element) {
-      const helperFunctionMixin = this;
+    addBuildingsAmount (spt, element) {
+      const helperFunctionMixin = this
 
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
         element.worldID
-      );
+      )
       element.relativeAmount =
-        (building.productionTime / spt) * this.chainCount;
+        (building.productionTime / spt) * this.chainCount
     },
 
     /**
      * gets Current active ProductionChain
      * @return {Object} Production Chain Object
      */
-    getCurrentProductionChain() {
-      const chain = JSON.parse(JSON.stringify(this.productionChain));
-      return chain;
+    getCurrentProductionChain () {
+      const chain = JSON.parse(JSON.stringify(this.productionChain))
+      return chain
     },
 
     /**
@@ -348,19 +346,19 @@ export default {
      * @param {number} spt the shortest production time of a building in a certain production Chain
      * @return {void} the function just modifies the productionChain
      */
-    addBuildingRelationdToChain(spt) {
-      const chainNodeMixin = this;
-      const vpc = this;
+    addBuildingRelationdToChain (spt) {
+      const chainNodeMixin = this
+      const vpc = this
       chainNodeMixin.iterateProductionChain(
         vpc.temporaryProductionChain,
         rootElement => {
-          vpc.addBuildingsAmount(spt, rootElement);
+          vpc.addBuildingsAmount(spt, rootElement)
         },
         element => {
-          vpc.addBuildingsAmount(spt, element);
+          vpc.addBuildingsAmount(spt, element)
         },
         false
-      );
+      )
     },
 
     /**
@@ -368,29 +366,32 @@ export default {
      * the newProductionChain property found in chainNodeMixin
      * @return {object} the new, maybe modified productionChain
      */
-    getNewProductionChain() {
-      const chainNodeMixin = this;
-      return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain));
+    getNewProductionChain () {
+      const chainNodeMixin = this
+      return JSON.parse(JSON.stringify(chainNodeMixin.newProductionChain))
     },
 
-    changeResidents() {
+    changeResidents () {
       // emits event in WorkerPanel.vue
-      EventBus.$emit("addToDemands");
+      EventBus.$emit('addToDemands')
     }
   }
-};
+}
 </script>
 
 <style scoped>
 .disable-events {
   pointer-events: none;
 }
-h4 {
+h3,h4 {
   color: whitesmoke;
 }
 
-.cmp-expansion-panel-borders {
-  border-style: solid;
+/* Narrow $expansion-panel-active-margin 16px !default */
+.v-expansion-panel-header {
+  padding: 8px 24px;
+}
+.v-expansion-panel-content > :first-child {
+  padding: 0;
 }
 </style>
-

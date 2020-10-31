@@ -1,26 +1,26 @@
-import producers from '../data/producers.json';
-import nonProducers from '../data/non-producers.json';
-import ProductionChains from '../data/production-chain.json';
-import Worlds from '../data/worlds.json';
-import SocialClasses from '../data/social-classes.json';
+import producers from '../data/producers.json'
+import nonProducers from '../data/non-producers.json'
+import ProductionChains from '../data/production-chain.json'
+import Worlds from '../data/worlds.json'
+import SocialClasses from '../data/social-classes.json'
 import {
-  chainNodeMixin,
-} from './production_chains/chainNodeMixin';
+  chainNodeMixin
+} from './production_chains/chainNodeMixin'
 
 export const helperFunctionMixin = {
   mixins: [chainNodeMixin],
-  data() {
+  data () {
     return {
-      productionTimes: [],
-    };
+      productionTimes: []
+    }
   },
   computed: {
-    producerFile() {
-      return JSON.parse(JSON.stringify(producers));
+    producerFile () {
+      return JSON.parse(JSON.stringify(producers))
     },
-    nonProducerFile() {
-      return JSON.parse(JSON.stringify(nonProducers));
-    },
+    nonProducerFile () {
+      return JSON.parse(JSON.stringify(nonProducers))
+    }
   },
   methods: {
     /**
@@ -31,8 +31,8 @@ export const helperFunctionMixin = {
      *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImage(image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : '';
+    getImage (image, folder) {
+      return image ? require(`../assets/${folder}/${image}`) : ''
     },
 
     /**
@@ -42,20 +42,20 @@ export const helperFunctionMixin = {
      * @return {Array} An Array containing all objects production times
      */
 
-    getAllProductionTimesOfChain(productionChain) {
-      this.productionTimes = [];
-      const chainNodeMixin = this;
+    getAllProductionTimesOfChain (productionChain) {
+      this.productionTimes = []
+      const chainNodeMixin = this
       chainNodeMixin.iterateProductionChain(
-          productionChain,
-          (rootElement) => {
-            this.fetchProductionTime(rootElement);
-          },
-          (element) => {
-            this.fetchProductionTime(element);
-          },
-          false
-      );
-      return this.productionTimes;
+        productionChain,
+        (rootElement) => {
+          this.fetchProductionTime(rootElement)
+        },
+        (element) => {
+          this.fetchProductionTime(element)
+        },
+        false
+      )
+      return this.productionTimes
     },
 
     /**
@@ -65,17 +65,16 @@ export const helperFunctionMixin = {
      *  which the least common multiplier is wanted
      * @return {Number} The least common multiplier
      */
-    getLCM(prodTimeArray) {
-      const productionTimesArray = JSON.parse(JSON.stringify(prodTimeArray));
+    getLCM (prodTimeArray) {
+      const productionTimesArray = JSON.parse(JSON.stringify(prodTimeArray))
 
-      const gcd = (a, b) => a ? gcd(b % a, a) : b;
+      const gcd = (a, b) => a ? gcd(b % a, a) : b
 
-      const lcm = (a, b) => a * b / gcd(a, b);
+      const lcm = (a, b) => a * b / gcd(a, b)
 
-
-      const lcmOfArray = productionTimesArray.reduce(lcm); // Returns 60
+      const lcmOfArray = productionTimesArray.reduce(lcm) // Returns 60
       // console.log(lcmOfArray);
-      return lcmOfArray;
+      return lcmOfArray
     },
 
     /**
@@ -85,8 +84,8 @@ export const helperFunctionMixin = {
      *  which the least common multiplier is wanted
      * @return {Number} the shortest production time
      */
-    getShortestprodTime(prodTimeArray) {
-      return Math.min(...prodTimeArray);
+    getShortestprodTime (prodTimeArray) {
+      return Math.min(...prodTimeArray)
     },
 
     /**
@@ -96,9 +95,9 @@ export const helperFunctionMixin = {
      * @return {void} pushes the respective production time to a v-data-property array
      */
 
-    fetchProductionTime(node) {
-      const building = this.getBuildingByName(node.name, node.worldID);
-      this.productionTimes.push(building.productionTime);
+    fetchProductionTime (node) {
+      const building = this.getBuildingByName(node.name, node.worldID)
+      this.productionTimes.push(building.productionTime)
     },
 
     /**
@@ -108,14 +107,14 @@ export const helperFunctionMixin = {
      * @param {int} worldID The current worldID
      * @return {Object} A JS Object representing the matching producer
      */
-    getBuildingByName(name, worldID) {
-      const buildings = this.producerFile.Producers;
+    getBuildingByName (name, worldID) {
+      const buildings = this.producerFile.Producers
       for (const building in buildings) {
         if (buildings[building].building === name && buildings[building].worldID === worldID) {
-          return buildings[building];
+          return buildings[building]
         }
       }
-      console.error('Building "' + name + '" not found :(');
+      console.error('Building "' + name + '" not found :(')
     },
 
     /**
@@ -126,28 +125,28 @@ export const helperFunctionMixin = {
      *
      * TODO Distinguishe between Old and New World!
      */
-    getBuildingByProduct(productName) {
-      const buildings = this.producerFile.Producers;
-      const productNameLC = productName.toLowerCase(); // To lower case
+    getBuildingByProduct (productName) {
+      const buildings = this.producerFile.Producers
+      const productNameLC = productName.toLowerCase() // To lower case
 
       for (const building in buildings) {
         if (buildings[building].product.toLowerCase() === productNameLC) {
-          return buildings[building];
+          return buildings[building]
         }
       }
-      console.error('Building for product "' + productName + '" not found :(');
+      console.error('Building for product "' + productName + '" not found :(')
     },
 
-    getProductionChainById(id) {
-      const productionChains = ProductionChains.Production_Chain;
-      let chainObject = {};
+    getProductionChainById (id) {
+      const productionChains = ProductionChains.Production_Chain
+      let chainObject = {}
       Object.keys(productionChains).some((chain) => {
         if (productionChains[chain].id === id) {
-          chainObject = productionChains[chain];
-          return chainObject;
+          chainObject = productionChains[chain]
+          return chainObject
         }
-      });
-      return chainObject;
+      })
+      return chainObject
     },
 
     /**
@@ -156,10 +155,10 @@ export const helperFunctionMixin = {
      * @param {int} id
      * @return {Object} The selected World Object
      */
-    getWorldByID(id) {
-      const worlds = Object.values(Worlds);
-      const selectedWorld = worlds.filter((world) => world.id === id)[0];
-      return selectedWorld;
+    getWorldByID (id) {
+      const worlds = Object.values(Worlds)
+      const selectedWorld = worlds.filter((world) => world.id === id)[0]
+      return selectedWorld
     },
 
     /**
@@ -168,12 +167,12 @@ export const helperFunctionMixin = {
      * @param {int} id
      * @return {Object} The selected Social Class Object
      */
-    getSocialClassByID(id) {
-      const socialClasses = Object.values(SocialClasses);
+    getSocialClassByID (id) {
+      const socialClasses = Object.values(SocialClasses)
       const selectedSocialClass = socialClasses.filter(
-          (socialClass) => socialClass.id === id
-      )[0];
-      return selectedSocialClass;
+        (socialClass) => socialClass.id === id
+      )[0]
+      return selectedSocialClass
     },
 
     /**
@@ -184,11 +183,11 @@ export const helperFunctionMixin = {
      * @param {int} digits The number of digits to round to.
      * @return {string} The resulting, nicely rounded number.
      */
-    toFixedVariable(num, digits) {
+    toFixedVariable (num, digits) {
       return Number.isInteger(num)
         ? num
-        : num.toFixed(digits);
-    },
+        : num.toFixed(digits)
+    }
 
-  },
-};
+  }
+}
