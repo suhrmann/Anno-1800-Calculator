@@ -10,19 +10,6 @@
     <v-row>
       <v-col>
 
-<!--
-        <v-alert
-          :value="true"
-          color="secondary"
-          icon="mdi-information"
-          outline
-          dismissible
-        >
-          Enter your population either directly as number of <kbd>Population</kbd> (farmers, workers, etc.) or via the amount of
-          <kbd>Residences</kbd> per population.
-        </v-alert>
--->
-
         <v-tabs
           v-model="currentTab"
           centered
@@ -52,6 +39,7 @@
 
         <v-tabs-items
           v-model="currentTab"
+          class="tabs-items-border"
         >
           <!-- Population input -->
           <v-tab-item key="1">
@@ -123,5 +111,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .tabs-items-border {
+    border: 3px solid var(--v-primary-base); /* See: https://vuetifyjs.com/en/features/theme/#custom-properties */
+    border-top: none;
+  }
 </style>
