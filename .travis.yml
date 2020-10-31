@@ -3,5 +3,5 @@ language: node_js
 node_js:
   - "lts/*" # latest LTS Node.js release
 script:
-  - yarn build
-  - yarn electron:build
+  - yarn run build
+  - yarn run electron:build
