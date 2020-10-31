@@ -1,14 +1,14 @@
 <template>
   <v-container fluid fill-height>
-    <v-layout row wrap align-content-space-between>
-      <v-flex xs12>
+    <v-row>
+      <v-col>
         <h1>Resident Demands</h1>
-      </v-flex>
-      <!-- Resident Demands -->
+      </v-col>
+    </v-row>
 
-      <v-flex
-        xs12
-      >
+    <!-- Resident Demands -->
+    <v-row>
+      <v-col>
 
 <!--
         <v-alert
@@ -24,11 +24,12 @@
 -->
 
         <v-tabs
+          v-model="currentTab"
           centered
-          color="primary"
+          background-color="secondary"
+          active-class="primary"
           dark
           icons-and-text
-          fixed-tabs
           grow
         >
           <v-tabs-slider color="secondary"></v-tabs-slider>
@@ -36,49 +37,53 @@
           <!-- Population input -->
           <v-tab>
             Population
-            <v-avatar
-              color="grey lighten-2"
-            >
-              <img src="src/assets/population/engineers.webp" alt="avatar">
+            <v-avatar color="grey lighten-2">
+              <img src="@/assets/population/engineers.webp" alt="avatar">
             </v-avatar>
           </v-tab>
-          <v-tab-item
-            key="1"
-          >
+          <!-- Residence input -->
+          <v-tab>
+            Residence
+            <v-avatar>
+              <img src="@/assets/buildings/farmers/residence.webp" alt="avatar">
+            </v-avatar>
+          </v-tab>
+        </v-tabs>
+
+        <v-tabs-items
+          v-model="currentTab"
+        >
+          <!-- Population input -->
+          <v-tab-item key="1">
             <v-card flat>
               <v-card-text>
                 <population-input></population-input>
               </v-card-text>
             </v-card>
           </v-tab-item>
-
           <!-- Residence input -->
-          <v-tab>
-            Residence
-            <v-avatar>
-              <img src="src/assets/buildings/farmers/residence.webp" alt="avatar">
-            </v-avatar>
-          </v-tab>
-          <v-tab-item
-            key="2"
-          >
+          <v-tab-item key="2">
             <v-card flat>
               <v-card-text>
                 <residence-input></residence-input>
               </v-card-text>
             </v-card>
           </v-tab-item>
+        </v-tabs-items>
 
-        </v-tabs>
-      </v-flex>
+      </v-col>
+    </v-row>
 
-      <v-container grid-list-md text-center>
+    <v-row>
+      <v-col>
+        <v-container grid-list-md text-center>
 
-        <!-- Demands as table -->
-        <resident-demands-table></resident-demands-table>
+          <!-- Demands as table -->
+          <resident-demands-table></resident-demands-table>
 
-      </v-container>
-    </v-layout>
+        </v-container>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -110,7 +115,9 @@ export default {
   mixins: [residentDemandCalculatorMixin],
 
   data: function () {
-    return {}
+    return {
+      currentTab: null
+    }
   }
 
 }
