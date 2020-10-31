@@ -43,7 +43,7 @@
             />
           </v-avatar>
           <v-text-field
-            v-model="numFarmerResidences"
+            v-model="numWorkerResidences"
             class="centered-input"
             label="Worker Residences"
             type="number"
@@ -144,7 +144,7 @@
         <v-card height="105" class="text-center">
           <v-avatar>
             <v-img
-              :src="require('@/assets/population/obreros.webp')"
+              :src="require('@/assets/population/jornaleros.webp')"
               alt="Farmers"
             />
           </v-avatar>
@@ -155,13 +155,13 @@
             />
           </v-avatar>
           <v-text-field
-            v-model="numObreroResidences"
+            v-model="numJornaleroResidences"
             class="centered-input"
             label="Obrero Residences"
             type="number"
             min="0"
             box
-            :messages="'Obreros: ' + numObreros"
+            :messages="'Jornaleros: ' + numJornaleros"
           ></v-text-field>
         </v-card>
       </v-col>
@@ -174,13 +174,20 @@
               alt="Obreros"
             >
           </v-avatar>
+          <v-avatar>
+            <v-img
+              :src="require('@/assets/buildings/farmers/residence.webp')"
+              alt="Residence"
+            />
+          </v-avatar>
           <v-text-field
-            v-model="numObreros"
+            v-model="numObreroResidences"
             class="centered-input"
             label="Obreros"
             type="number"
             min="0"
             box
+            :messages="'Obreros: ' + numObreros"
           ></v-text-field>
         </v-card>
       </v-col>
