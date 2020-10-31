@@ -2,23 +2,24 @@
   <v-container grid-list-md text-center>
 
     <!-- Show alert with info about cigars appearing twice -->
-    <v-layout
-      row
-      wrap
+    <v-row
+      v-if="showDuplicatesAlert"
       class="py-6"
-      v-if="numInvestors > 0 || numObreros > 0"
+      justify="center"
     >
-      <v-alert
-        type="info"
-        transition="scale-transition"
-        dismissible
+      <v-col cols="12" md="10" lg="8">
+        <v-alert
+          type="info"
+          transition="scale-transition"
+          dismissible
 
-        v-model="cigarsInfo"
-        class="md10 xs12"
-      >
-        Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the demands table.
-      </v-alert>
-    </v-layout>
+          v-model="cigarsInfo"
+          class="md10 xs12"
+        >
+          Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the demands table.
+        </v-alert>
+      </v-col>
+    </v-row>
 
     <v-card class="mb-2">
 
@@ -90,7 +91,8 @@
       :headers="headers"
       :items="totalDemandsDatatable"
       class="elevation-1"
-      hide-actions
+      multi-sort
+      hide-default-footer
     >
       <!-- Warn about no data -->
       <template slot="no-data">
@@ -101,7 +103,7 @@
       </template>
 
       <!-- Data: Rows . . . -->
-      <template slot="items" slot-scope="props"
+      <template slot="item" slot-scope="props"
                 v-if="(
                   (onlyBasicChkbx && props.item.isBasic)
                       || (onlyLuxuryChkbx && props.item.isLuxury)
@@ -113,76 +115,78 @@
                       || (!onlyConsumableChkbx && !onlyNonConsumableChkbx)
                 )"
       >
-        <td>
-          {{ props.item.isBasic ? 'basic' : (props.item.isLuxury ? 'luxury' : 'N/A') }}
-        </td>
-        <!-- Is Consumable -->
-        <td>
-          {{ props.item.isConsumable ? '✔️️️' : '✖️️' }}
-        </td>
-        <!-- Icon -->
-        <td>
-          <a v-if="props.item.isConsumable"
-             @click="selectChain(props.item.name)"
-          >
-            <v-avatar>
-              <img
-                :src="getBuildingImage(props.item.name)"
-                :alt="`{props.item.name} Image`"
-              >
-            </v-avatar>
-          </a>
-          <v-avatar v-else>
-            <img
-              :src="getBuildingImage(props.item.name)"
-              :alt="`{props.item.name} Image`"
+        <tr>
+          <td>
+            {{ props.item.isBasic ? 'basic' : (props.item.isLuxury ? 'luxury' : 'N/A') }}
+          </td>
+          <!-- Is Consumable -->
+          <td>
+            {{ props.item.isConsumable ? '✔️️️' : '✖️️' }}
+          </td>
+          <!-- Icon -->
+          <td>
+            <a v-if="props.item.isConsumable"
+               @click="selectChain(props.item.name)"
             >
-          </v-avatar>
-        </td>
-        <!-- Name -->
-        <td>
-          <a v-if="props.item.isConsumable"
-             @click="selectChain(props.item.name)"
-          >
-            <b>{{props.item.name}}</b>
-          </a>
-          <span v-else><b>{{props.item.name}}</b></span>
-        </td>
-        <!-- Consumption -->
-        <td>
-          <span v-if="props.item.isConsumable">
-            {{ formatUsage(props.item.consumption) }}
-          </span>
-          <span v-else>&mdash;</span>
-        </td>
-        <!-- Required Chains -->
-        <td>
-          <div v-if="props.item.isConsumable">
-            {{ requiredChains(props.item.name, props.item.consumption) }} &times;
-            <v-avatar>
+              <v-avatar>
+                <img
+                  :src="getBuildingImage(props.item.name)"
+                  :alt="`{props.item.name} Image`"
+                >
+              </v-avatar>
+            </a>
+            <v-avatar v-else>
               <img
                 :src="getBuildingImage(props.item.name)"
                 :alt="`{props.item.name} Image`"
-                class="inline-img"
               >
             </v-avatar>
-          </div>
-          <span v-else>&mdash;</span>
-        </td>
-        <!-- Efficiency of all chains -->
-        <td>
-          <span v-if="props.item.isConsumable">
-            {{( chainEfficiency(props.item.name, props.item.consumption) * 100 ).toFixed(2) }} %
-          </span>
-          <span v-else>&mdash;</span>
-        </td>
-        <!-- Production per Chain -->
-        <td>
-          <span v-if="props.item.isConsumable">
-            {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
-          </span>
-          <span v-else>&mdash;</span>
-        </td>
+          </td>
+          <!-- Name -->
+          <td>
+            <a v-if="props.item.isConsumable"
+               @click="selectChain(props.item.name)"
+            >
+              <b>{{props.item.name}}</b>
+            </a>
+            <span v-else><b>{{props.item.name}}</b></span>
+          </td>
+          <!-- Consumption -->
+          <td>
+            <span v-if="props.item.isConsumable">
+              {{ formatUsage(props.item.consumption) }}
+            </span>
+            <span v-else>&mdash;</span>
+          </td>
+          <!-- Required Chains -->
+          <td>
+            <div v-if="props.item.isConsumable">
+              {{ requiredChains(props.item.name, props.item.consumption) }} &times;
+              <v-avatar>
+                <img
+                  :src="getBuildingImage(props.item.name)"
+                  :alt="`{props.item.name} Image`"
+                  class="inline-img"
+                >
+              </v-avatar>
+            </div>
+            <span v-else>&mdash;</span>
+          </td>
+          <!-- Efficiency of all chains -->
+          <td>
+            <span v-if="props.item.isConsumable">
+              {{( chainEfficiency(props.item.name, props.item.consumption) * 100 ).toFixed(2) }} %
+            </span>
+            <span v-else>&mdash;</span>
+          </td>
+          <!-- Production per Chain -->
+          <td>
+            <span v-if="props.item.isConsumable">
+              {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
+            </span>
+            <span v-else>&mdash;</span>
+          </td>
+        </tr>
       </template>
     </v-data-table>
 
@@ -205,19 +209,26 @@ export default {
 
       headers: [
         // TODO Add value for old / new world
-        { text: 'Type', value: 'type' },
-        { text: 'Is Consumable', value: 'isConsumable' }, // TODO Width: Narrow (width should fit content)
-        { text: '', value: 'img', sortable: false }, // TODO Width: Narrow (width should fit content)
-        { text: 'Need', value: 'name' },
-        { text: 'Consumption', value: 'consumption' },
-        { text: 'Required Chains', value: 'numChains' },
-        { text: 'Chains Efficiency', value: 'efficiency' },
-        { text: 'Production per Chain', value: 'productionPerChain' }
+        { text: 'Type', value: 'type', align: 'center' },
+        { text: 'Is Consumable', value: 'isConsumable', align: 'center' }, // TODO Width: Narrow (width should fit content)
+        { text: '', value: 'img', sortable: false, align: 'center' }, // TODO Width: Narrow (width should fit content)
+        { text: 'Need', value: 'name', align: 'left' },
+        { text: 'Consumption', value: 'consumption', align: 'center' },
+        { text: 'Required Chains', value: 'numChains', align: 'center' },
+        { text: 'Chains Efficiency', value: 'efficiency', align: 'center' },
+        { text: 'Production per Chain', value: 'productionPerChain', align: 'center' }
       ]
     }
   },
   mixins: [residentDemandCalculatorMixin],
   computed: {
+
+    /**
+     * Display an alert to info about duplicate items in the table.
+     */
+    showDuplicatesAlert: function () {
+      return this.numInvestors > 0 || this.numObreros > 0 // Duplicate cigars (Inv: Mandatory, Obr: Luxury)
+    },
 
     FILTER_VALUES: function () {
       return {
