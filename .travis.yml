@@ -37,6 +37,13 @@ branches:
   only:
   - releases
 
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "suhrmann"
+  - git config --local user.email ""
+  - export TRAVIS_TAG=${$(node -p "require('./package.json').version")-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+
 deploy:
   # Github pages
   - provider: pages
