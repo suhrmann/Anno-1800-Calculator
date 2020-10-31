@@ -1,26 +1,25 @@
 <template>
-  <v-container grid-list-md text-xs-center>
-
+  <v-container grid-list-md text-center>
 
     <!-- Show alert with info about cigars appearing twice -->
-    <v-layout
-      row
-      wrap
-      class="py-4"
-      v-if="numInvestors > 0 || numObreros > 0"
+    <v-row
+      v-if="showDuplicatesAlert"
+      class="py-6"
+      justify="center"
     >
-      <v-alert
-        type="info"
-        transition="scale-transition"
-        dismissible
+      <v-col cols="12" md="10" lg="8">
+        <v-alert
+          type="info"
+          transition="scale-transition"
+          dismissible
 
-        v-model="cigarsInfo"
-        class="md10 xs12"
-      >
-        Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the demands table.
-      </v-alert>
-    </v-layout>
-
+          v-model="cigarsInfo"
+          class="md10 xs12"
+        >
+          Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the demands table.
+        </v-alert>
+      </v-col>
+    </v-row>
 
     <v-card class="mb-2">
 
@@ -29,7 +28,6 @@
           <h3>Filter Table . . .</h3>
         </div>
       </v-card-title>
-
 
       <v-card-text class="ma-0 py-0">
         <v-container fluid>
@@ -40,9 +38,7 @@
               <v-radio-group v-model="radios1" class="my-0">
                 <template slot="label">
                   <div>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                      <path d="M14,12V19.88C14.04,20.18 13.94,20.5 13.71,20.71C13.32,21.1 12.69,21.1 12.3,20.71L10.29,18.7C10.06,18.47 9.96,18.16 10,17.87V12H9.97L4.21,4.62C3.87,4.19 3.95,3.56 4.38,3.22C4.57,3.08 4.78,3 5,3V3H19V3C19.22,3 19.43,3.08 19.62,3.22C20.05,3.56 20.13,4.19 19.79,4.62L14.03,12H14Z" />
-                    </svg>
+                    <v-icon color="black">mdi-filter</v-icon>
                     <strong>Filter Demand Type</strong>
                   </div>
                 </template>
@@ -61,15 +57,12 @@
               </v-radio-group>
             </v-flex>
 
-
             <!-- Filter by Consumable / Non-Consumable -->
             <v-flex xs12 sm6 md4>
               <v-radio-group v-model="radios2" class="my-0">
                 <template slot="label">
                   <div>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                      <path fill="" d="M14,12V19.88C14.04,20.18 13.94,20.5 13.71,20.71C13.32,21.1 12.69,21.1 12.3,20.71L10.29,18.7C10.06,18.47 9.96,18.16 10,17.87V12H9.97L4.21,4.62C3.87,4.19 3.95,3.56 4.38,3.22C4.57,3.08 4.78,3 5,3V3H19V3C19.22,3 19.43,3.08 19.62,3.22C20.05,3.56 20.13,4.19 19.79,4.62L14.03,12H14Z" />
-                    </svg>
+                    <v-icon color="black">mdi-filter</v-icon>
                     <strong>Filter Consumable</strong>
                   </div>
                 </template>
@@ -93,24 +86,24 @@
       </v-card-text>
     </v-card>
 
-
     <!-- Data Table -->
     <v-data-table
       :headers="headers"
       :items="totalDemandsDatatable"
       class="elevation-1"
-      hide-actions
+      multi-sort
+      hide-default-footer
     >
       <!-- Warn about no data -->
       <template slot="no-data">
-        <v-alert :value="true" color="warning" icon="warning">
+        <v-alert color="warning" icon="mid-warning">
           <h3>Sorry, nothing to display here :(</h3>
           <p class="mb-0">Enter the number of your populations to start calculation of demands.</p>
         </v-alert>
       </template>
 
       <!-- Data: Rows . . . -->
-      <template slot="items" slot-scope="props"
+      <template slot="item" slot-scope="props"
                 v-if="(
                   (onlyBasicChkbx && props.item.isBasic)
                       || (onlyLuxuryChkbx && props.item.isLuxury)
@@ -122,76 +115,78 @@
                       || (!onlyConsumableChkbx && !onlyNonConsumableChkbx)
                 )"
       >
-        <td>
-          {{ props.item.isBasic ? 'basic' : (props.item.isLuxury ? 'luxury' : 'N/A') }}
-        </td>
-        <!-- Is Consumable -->
-        <td>
-          {{ props.item.isConsumable ? '✔️️️' : '✖️️' }}
-        </td>
-        <!-- Icon -->
-        <td>
-          <a v-if="props.item.isConsumable"
-             @click="selectChain(props.item.name)"
-          >
-            <v-avatar>
-              <img
-                :src="getBuildingImage(props.item.name)"
-                :alt="`{props.item.name} Image`"
-              >
-            </v-avatar>
-          </a>
-          <v-avatar v-else>
-            <img
-              :src="getBuildingImage(props.item.name)"
-              :alt="`{props.item.name} Image`"
+        <tr>
+          <td>
+            {{ props.item.isBasic ? 'basic' : (props.item.isLuxury ? 'luxury' : 'N/A') }}
+          </td>
+          <!-- Is Consumable -->
+          <td>
+            {{ props.item.isConsumable ? '✔️️️' : '✖️️' }}
+          </td>
+          <!-- Icon -->
+          <td>
+            <a v-if="props.item.isConsumable"
+               @click="selectChain(props.item.name)"
             >
-          </v-avatar>
-        </td>
-        <!-- Name -->
-        <td>
-          <a v-if="props.item.isConsumable"
-             @click="selectChain(props.item.name)"
-          >
-            <b>{{props.item.name}}</b>
-          </a>
-          <span v-else><b>{{props.item.name}}</b></span>
-        </td>
-        <!-- Consumption -->
-        <td>
-          <span v-if="props.item.isConsumable">
-            {{ formatUsage(props.item.consumption) }}
-          </span>
-          <span v-else>&mdash;</span>
-        </td>
-        <!-- Required Chains -->
-        <td>
-          <div v-if="props.item.isConsumable">
-            {{ requiredChains(props.item.name, props.item.consumption) }} &times;
-            <v-avatar>
+              <v-avatar>
+                <img
+                  :src="getBuildingImage(props.item.name)"
+                  :alt="`{props.item.name} Image`"
+                >
+              </v-avatar>
+            </a>
+            <v-avatar v-else>
               <img
                 :src="getBuildingImage(props.item.name)"
                 :alt="`{props.item.name} Image`"
-                class="inline-img"
               >
             </v-avatar>
-          </div>
-          <span v-else>&mdash;</span>
-        </td>
-        <!-- Efficiency of all chains -->
-        <td>
-          <span v-if="props.item.isConsumable">
-            {{( chainEfficiency(props.item.name, props.item.consumption) * 100 ).toFixed(2) }} %
-          </span>
-          <span v-else>&mdash;</span>
-        </td>
-        <!-- Production per Chain -->
-        <td>
-          <span v-if="props.item.isConsumable">
-            {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
-          </span>
-          <span v-else>&mdash;</span>
-        </td>
+          </td>
+          <!-- Name -->
+          <td>
+            <a v-if="props.item.isConsumable"
+               @click="selectChain(props.item.name)"
+            >
+              <b>{{props.item.name}}</b>
+            </a>
+            <span v-else><b>{{props.item.name}}</b></span>
+          </td>
+          <!-- Consumption -->
+          <td>
+            <span v-if="props.item.isConsumable">
+              {{ formatUsage(props.item.consumption) }}
+            </span>
+            <span v-else>&mdash;</span>
+          </td>
+          <!-- Required Chains -->
+          <td>
+            <div v-if="props.item.isConsumable">
+              {{ requiredChains(props.item.name, props.item.consumption) }} &times;
+              <v-avatar>
+                <img
+                  :src="getBuildingImage(props.item.name)"
+                  :alt="`{props.item.name} Image`"
+                  class="inline-img"
+                >
+              </v-avatar>
+            </div>
+            <span v-else>&mdash;</span>
+          </td>
+          <!-- Efficiency of all chains -->
+          <td>
+            <span v-if="props.item.isConsumable">
+              {{( chainEfficiency(props.item.name, props.item.consumption) * 100 ).toFixed(2) }} %
+            </span>
+            <span v-else>&mdash;</span>
+          </td>
+          <!-- Production per Chain -->
+          <td>
+            <span v-if="props.item.isConsumable">
+              {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
+            </span>
+            <span v-else>&mdash;</span>
+          </td>
+        </tr>
       </template>
     </v-data-table>
 
@@ -199,11 +194,11 @@
 </template>
 
 <script>
-import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js';
+import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js'
 
 export default {
   name: 'ResidentDemandsTable',
-  data: function() {
+  data: function () {
     return {
       // The values of the radio buttons to filter table
       radios1: 'all',
@@ -214,21 +209,28 @@ export default {
 
       headers: [
         // TODO Add value for old / new world
-        { text: 'Type', value: 'type' },
-        { text: 'Is Consumable', value: 'isConsumable' }, // TODO Width: Narrow (width should fit content)
-        { text: '', value: 'img', sortable: false }, // TODO Width: Narrow (width should fit content)
-        { text: 'Need', value: 'name' },
-        { text: 'Consumption', value: 'consumption' },
-        { text: 'Required Chains', value: 'numChains' },
-        { text: 'Chains Efficiency', value: 'efficiency' },
-        { text: 'Production per Chain', value: 'productionPerChain' },
-      ],
-    };
+        { text: 'Type', value: 'type', align: 'center' },
+        { text: 'Is Consumable', value: 'isConsumable', align: 'center' }, // TODO Width: Narrow (width should fit content)
+        { text: '', value: 'img', sortable: false, align: 'center' }, // TODO Width: Narrow (width should fit content)
+        { text: 'Need', value: 'name', align: 'left' },
+        { text: 'Consumption', value: 'consumption', align: 'center' },
+        { text: 'Required Chains', value: 'numChains', align: 'center' },
+        { text: 'Chains Efficiency', value: 'efficiency', align: 'center' },
+        { text: 'Production per Chain', value: 'productionPerChain', align: 'center' }
+      ]
+    }
   },
   mixins: [residentDemandCalculatorMixin],
   computed: {
 
-    FILTER_VALUES: function() {
+    /**
+     * Display an alert to info about duplicate items in the table.
+     */
+    showDuplicatesAlert: function () {
+      return this.numInvestors > 0 || this.numObreros > 0 // Duplicate cigars (Inv: Mandatory, Obr: Luxury)
+    },
+
+    FILTER_VALUES: function () {
       return {
         // Filter values for demand type
         TYPE_ALL: 'all',
@@ -238,22 +240,22 @@ export default {
         // Filter values for consumable
         CONSUMABLE_ALL: 'all',
         CONSUMABLE: 'consumable',
-        CONSUMABLE_NON: 'non-consumable',
-      };
+        CONSUMABLE_NON: 'non-consumable'
+      }
     },
 
-    onlyBasicChkbx: function() {
-      return this.radios1 === this.FILTER_VALUES.TYPE_BASIC;
+    onlyBasicChkbx: function () {
+      return this.radios1 === this.FILTER_VALUES.TYPE_BASIC
     },
-    onlyLuxuryChkbx: function() {
-      return this.radios1 === this.FILTER_VALUES.TYPE_LUXURY;
+    onlyLuxuryChkbx: function () {
+      return this.radios1 === this.FILTER_VALUES.TYPE_LUXURY
     },
 
-    onlyConsumableChkbx: function() {
-      return this.radios2 === this.FILTER_VALUES.CONSUMABLE;
+    onlyConsumableChkbx: function () {
+      return this.radios2 === this.FILTER_VALUES.CONSUMABLE
     },
-    onlyNonConsumableChkbx: function() {
-      return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON;
+    onlyNonConsumableChkbx: function () {
+      return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON
     },
 
     /**
@@ -266,21 +268,19 @@ export default {
        *       ...
        *   }
        */
-    totalDemandsDatatable: function() {
-      const basicNeeds = this.totalDemands.basic;
-      const luxuryNeeds = this.totalDemands.luxury;
+    totalDemandsDatatable: function () {
+      const basicNeeds = this.totalDemands.basic
+      const luxuryNeeds = this.totalDemands.luxury
 
-      const items = [];
-
+      const items = []
 
       // Iterate over demands of basic / luxury
       for (const demands of [basicNeeds, luxuryNeeds]) { // eslint-disable-line guard-for-in
-        const isBasic = demands === basicNeeds;
-        const isLuxury = demands === luxuryNeeds;
+        const isBasic = demands === basicNeeds
+        const isLuxury = demands === luxuryNeeds
 
         // Iterate over all demands of the current population
         for (const [dKey, demand] of Object.entries(demands)) {
-
           // Only add demand if it is present or > 0
           if (demand === true || demand > 0) {
             // TODO Create data here instead of in HTML table
@@ -290,14 +290,14 @@ export default {
               isLuxury: demands === luxuryNeeds,
               name: dKey,
               consumption: demand,
-              isConsumable: this.isConsumable(dKey, demand),
-            });
+              isConsumable: this.isConsumable(dKey, demand)
+            })
           }
         }
       }
 
-      return items;
-    },
+      return items
+    }
   },
   watch: {},
   methods: {
@@ -307,13 +307,13 @@ export default {
        * @param {string} product The name of the product.
        * @return {number} The amount of products per minute.
        */
-    productionPerMinute: function(product) {
-      const building = this.getBuildingByProduct(product); // TODO Does not differ between Old and New World!!!
+    productionPerMinute: function (product) {
+      const building = this.getBuildingByProduct(product) // TODO Does not differ between Old and New World!!!
 
       // The production time (in seconds) of one production chain to produce one item
-      const productionTime = building.productionTime;
+      const productionTime = building.productionTime
 
-      return 60 / productionTime;
+      return 60 / productionTime
     },
 
     /**
@@ -323,17 +323,17 @@ export default {
        * @param {number} consumption The population consumes this much products per minute.
        * @return {int} The amount of full production chains (!) required to fulfill consumption.
        */
-    requiredChains(product, consumption) {
+    requiredChains (product, consumption) {
       // The production chain produces this much
-      const production = this.productionPerMinute(product);
+      const production = this.productionPerMinute(product)
 
       // Calculate the required amount of production chains (exact)
-      const numChainsExact = consumption / production;
+      const numChainsExact = consumption / production
 
       // Only full chains are possible to build
-      const numChainsRequired = Math.ceil(numChainsExact);
+      const numChainsRequired = Math.ceil(numChainsExact)
 
-      return numChainsRequired;
+      return numChainsRequired
     },
 
     /**
@@ -343,33 +343,33 @@ export default {
        * @param {number} consumption The population consumes this much products per minute.
        * @return {number} The efficiency of this production.
        */
-    chainEfficiency(product, consumption) {
+    chainEfficiency (product, consumption) {
       // The production chain produces this much
-      const production = this.productionPerMinute(product);
+      const production = this.productionPerMinute(product)
 
       // Calculate the required amount of production chains (exact)
-      const numChainsExact = consumption / production;
+      const numChainsExact = consumption / production
 
       // Only full chains are possible to build
-      const numChainsRequired = Math.ceil(numChainsExact);
+      const numChainsRequired = Math.ceil(numChainsExact)
 
       // Calculate the efficiency
-      const efficiency = numChainsExact / numChainsRequired;
+      const efficiency = numChainsExact / numChainsRequired
 
-      return efficiency;
+      return efficiency
     },
 
-    isBasicDemand: function(need) {
-      const basicNeeds = this.totalDemands.basic;
-      return (need in basicNeeds); // Check if OBJECT contains key
+    isBasicDemand: function (need) {
+      const basicNeeds = this.totalDemands.basic
+      return (need in basicNeeds) // Check if OBJECT contains key
     },
 
-    isLuxuryDemand: function(need) {
-      const luxuryNeeds = this.totalDemands.luxury;
-      return (need in luxuryNeeds); // Check if OBJECT contains key
-    },
-  },
-};
+    isLuxuryDemand: function (need) {
+      const luxuryNeeds = this.totalDemands.luxury
+      return (need in luxuryNeeds) // Check if OBJECT contains key
+    }
+  }
+}
 </script>
 
 <style scoped>

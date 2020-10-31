@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!-- Thank you -->
-    <v-alert :value="true" color="secondary" class="text-sm-center">
+    <v-alert color="secondary" class="text-sm-center" dark>
       <h1>THANK YOU Anno 1800 Wiki!</h1>
       This App is based on the content, information and images provided by volunteers to the Anno 1800 Wiki.
       If you want to improve this App contribute to the
@@ -10,8 +10,6 @@
         target="_blank"
       >Anno 1800 Wiki</a>!
     </v-alert>
-
-    <p>&nbsp;</p>
 
     <!-- Buy Anno 1800 card -->
     <v-flex xs12 sm8 offset-sm2 lg6 offset-lg3>
@@ -38,34 +36,39 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn
-            color="primary"
-            large
-            block
-            href="https://store.ubi.com/en/anno-1800/5b647010ef3aa548048c5958.html"
-            target="_blank"
-          >
-            <v-icon>mdi-cart</v-icon>&nbsp;
-            Buy Anno 1800 &nbsp;
-            <v-img :src="getImage('uplay.png', 'logos')" alt="UPLay Logo" contain height="30px"/>
-          </v-btn>
+          <v-row>
+            <v-col>
+              <v-btn
+                color="primary"
+                large
+                block
+                href="https://store.ubi.com/en/anno-1800/5b647010ef3aa548048c5958.html"
+                target="_blank"
+              >
+                <span class="pr-5">
+                  <v-icon>mdi-cart</v-icon>&nbsp;
+                  Buy Anno 1800 &nbsp;
+                </span>
+                <img src="@/assets/logos/uplay.png" alt="UPLay Logo" height="30px"/>
+              </v-btn>
+            </v-col>
 
-          <v-btn
-            color="primary"
-            large
-            block
-            href="https://www.epicgames.com/store/en-US/product/anno-1800/home"
-            target="_blank"
-          >
-            <v-icon>mdi-cart</v-icon>&nbsp;
-            Buy Anno 1800 &nbsp;
-            <v-img
-              :src="getImage('epic_games.svg', 'logos')"
-              alt="Epic Games Logo"
-              contain
-              height="30px"
-            />
-          </v-btn>
+            <v-col>
+              <v-btn
+                color="primary"
+                large
+                block
+                href="https://www.epicgames.com/store/en-US/product/anno-1800/home"
+                target="_blank"
+              >
+                <span class="pr-5">
+                  <v-icon>mdi-cart</v-icon>&nbsp;
+                  Buy Anno 1800 &nbsp;
+                </span>
+                <img src="@/assets/logos/epic_games.svg" alt="Epic Games Logo" height="30px" />
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -73,7 +76,7 @@
     <p>&nbsp;</p>
 
     <!-- Legal / Ubisoft stuff -->
-    <v-alert :value="true" type="info" color="secondary" outline>
+    <v-alert type="info" color="secondary" outlined>
       <h2>Legal</h2>
       <p>
         All the assets from
@@ -159,7 +162,7 @@
 
     <p>&nbsp;</p>
 
-    <v-alert :value="true" color="secondary" type="error" outline>
+    <v-alert color="secondary" type="error" outlined>
       <h3>Bugs and improvements</h3>
       If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
       <a
@@ -182,11 +185,11 @@ export default {
      *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImage(image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : '';
-    },
-  },
-};
+    getImage (image, folder) {
+      return image ? require(`../assets/${folder}/${image}`) : ''
+    }
+  }
+}
 </script>
 
 <style scoped>

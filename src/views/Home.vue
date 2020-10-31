@@ -29,13 +29,13 @@
                 </v-col>
                 <br />
 
-                <div class="text-xs-center">
+                <div class="text-center">
                   <v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
                     <v-icon>mdi-chevron-double-down</v-icon>
                   </v-btn>
                 </div>
 
-                <div class="mb-3">&nbsp;</div>
+                <div class="mb-4">&nbsp;</div>
               </v-row>
             </v-layout>
           </v-theme-provider>
@@ -44,11 +44,11 @@
     </section>
 
     <!-- Description -->
-    <v-content>
+    <v-main>
       <!-- TODO - then enable "scroll down" button in image /\ -->
       <h1 id="about-me">Anno 1800 Calculator!</h1>
 
-      <div class="my-3">
+      <div class="my-4">
         <h2>Description</h2>
         <p>With Anno 1800 Calculator you can calculate your population demands for goods and build optimal production chains.</p>
         <table>
@@ -88,26 +88,26 @@
         </table>
       </div>
 
-      <div class="my-3">
+      <div class="my-4">
         <h2>NOTE</h2>
         <i>Building Queue</i> ist still 🙄 in "work in progress"!
       </div>
 
       <!-- Add some space to bottom -->
       <p style="height: 10vh"></p>
-    </v-content>
+    </v-main>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: 'home',
   methods: {
     loadImg: src => {
-      return require(src);
+      return require(src)
     }
   }
-};
+}
 </script>
 
 <style>

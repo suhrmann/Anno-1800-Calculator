@@ -1,97 +1,96 @@
-import Consumption from '../../data/consumption.json';
-import Producers from '../../data/producers.json';
-import NonProducers from '../../data/non-producers.json';
+import Consumption from '../../data/consumption.json'
+import Producers from '../../data/producers.json'
+import NonProducers from '../../data/non-producers.json'
 import {
-  chainNodeMixin,
-} from '../production_chains/chainNodeMixin';
+  chainNodeMixin
+} from '../production_chains/chainNodeMixin'
 import {
-  helperFunctionMixin,
-} from '../helperFunctionMixin';
+  helperFunctionMixin
+} from '../helperFunctionMixin'
 
 export default {
   name: 'ResidentDemandCalculator',
   mixins: [chainNodeMixin, helperFunctionMixin],
-  data: function() {
+  data: function () {
     return {
       producers: Producers.Producers,
       nonProducers: NonProducers.buildings,
-      consumption: Consumption,
-    };
+      consumption: Consumption
+    }
   },
   computed: {
     // Computed properties for Vuex values
-    numFarmers: function() {
-      return this.$store.state.population.numFarmers;
+    numFarmers: function () {
+      return this.$store.state.population.numFarmers
     },
-    numWorkers: function() {
-      return this.$store.state.population.numWorkers;
+    numWorkers: function () {
+      return this.$store.state.population.numWorkers
     },
-    numArtisans: function() {
-      return this.$store.state.population.numArtisans;
+    numArtisans: function () {
+      return this.$store.state.population.numArtisans
     },
-    numEngineers: function() {
-      return this.$store.state.population.numEngineers;
+    numEngineers: function () {
+      return this.$store.state.population.numEngineers
     },
-    numInvestors: function() {
-      return this.$store.state.population.numInvestors;
+    numInvestors: function () {
+      return this.$store.state.population.numInvestors
     },
-    numJornaleros: function() {
-      return this.$store.state.population.numJornaleros;
+    numJornaleros: function () {
+      return this.$store.state.population.numJornaleros
     },
-    numObreros: function() {
-      return this.$store.state.population.numObreros;
+    numObreros: function () {
+      return this.$store.state.population.numObreros
     },
-
 
     // Compute population demands
-    farmersDemands: function() {
-      const farmersDemands = this.consumption.Consumption.farmers;
+    farmersDemands: function () {
+      const farmersDemands = this.consumption.Consumption.farmers
       return {
         basic: this.calculateDemands(farmersDemands.basic, this.numFarmers),
-        luxury: this.calculateDemands(farmersDemands.luxury, this.numFarmers),
-      };
+        luxury: this.calculateDemands(farmersDemands.luxury, this.numFarmers)
+      }
     },
-    workersDemands: function() {
-      const workersDemands = this.consumption.Consumption.workers;
+    workersDemands: function () {
+      const workersDemands = this.consumption.Consumption.workers
       return {
         basic: this.calculateDemands(workersDemands.basic, this.numWorkers),
-        luxury: this.calculateDemands(workersDemands.luxury, this.numWorkers),
-      };
+        luxury: this.calculateDemands(workersDemands.luxury, this.numWorkers)
+      }
     },
-    artisansDemands: function() {
-      const artisansDemands = this.consumption.Consumption.artisans;
+    artisansDemands: function () {
+      const artisansDemands = this.consumption.Consumption.artisans
       return {
         basic: this.calculateDemands(artisansDemands.basic, this.numArtisans),
-        luxury: this.calculateDemands(artisansDemands.luxury, this.numArtisans),
-      };
+        luxury: this.calculateDemands(artisansDemands.luxury, this.numArtisans)
+      }
     },
-    engineersDemands: function() {
-      const engineersDemands = this.consumption.Consumption.engineers;
+    engineersDemands: function () {
+      const engineersDemands = this.consumption.Consumption.engineers
       return {
         basic: this.calculateDemands(engineersDemands.basic, this.numEngineers),
-        luxury: this.calculateDemands(engineersDemands.luxury, this.numEngineers),
-      };
+        luxury: this.calculateDemands(engineersDemands.luxury, this.numEngineers)
+      }
     },
-    investorsDemands: function() {
-      const investorsDemands = this.consumption.Consumption.investors;
+    investorsDemands: function () {
+      const investorsDemands = this.consumption.Consumption.investors
       return {
         basic: this.calculateDemands(investorsDemands.basic, this.numInvestors),
-        luxury: this.calculateDemands(investorsDemands.luxury, this.numInvestors),
-      };
+        luxury: this.calculateDemands(investorsDemands.luxury, this.numInvestors)
+      }
     },
-    jornalerosDemands: function() {
-      const jornalerosDemands = this.consumption.Consumption.jornaleros;
+    jornalerosDemands: function () {
+      const jornalerosDemands = this.consumption.Consumption.jornaleros
       return {
         basic: this.calculateDemands(jornalerosDemands.basic, this.numJornaleros),
-        luxury: this.calculateDemands(jornalerosDemands.luxury, this.numJornaleros),
-      };
+        luxury: this.calculateDemands(jornalerosDemands.luxury, this.numJornaleros)
+      }
     },
-    obrerosDemands: function() {
-      const obrerosDemands = this.consumption.Consumption.obreros;
+    obrerosDemands: function () {
+      const obrerosDemands = this.consumption.Consumption.obreros
       return {
         basic: this.calculateDemands(obrerosDemands.basic, this.numObreros),
-        luxury: this.calculateDemands(obrerosDemands.luxury, this.numObreros),
-      };
+        luxury: this.calculateDemands(obrerosDemands.luxury, this.numObreros)
+      }
     },
 
     /**
@@ -109,7 +108,7 @@ export default {
      *           }
      *         }
      */
-    totalDemands: function() {
+    totalDemands: function () {
       // Merge all demands
       const demands = {
         farmers: this.farmersDemands,
@@ -118,13 +117,13 @@ export default {
         engineers: this.engineersDemands,
         investors: this.investorsDemands,
         jornaleros: this.jornalerosDemands,
-        obreros: this.obrerosDemands,
-      };
+        obreros: this.obrerosDemands
+      }
 
       const totalDemands = {
         basic: {},
-        luxury: {},
-      };
+        luxury: {}
+      }
       // Iterate over all populations
       for (const [pKey, population] of Object.entries(demands)) { // eslint-disable-line no-unused-vars
         // Iterate over basic / luxury
@@ -133,22 +132,22 @@ export default {
           for (const [dKey, demand] of Object.entries(demandType)) {
             // Init demand with 0 if it does not exist in total demands
             if (!totalDemands[dtKey][dKey]) {
-              totalDemands[dtKey][dKey] = 0;
+              totalDemands[dtKey][dKey] = 0
             }
 
             // Sum up new demands
             if (typeof demand === 'number') {
               // Demand is consumable -> Add consumption to existing.
-              totalDemands[dtKey][dKey] += demand;
+              totalDemands[dtKey][dKey] += demand
             } else {
               // Demand has area effect -> Enable / disable
-              totalDemands[dtKey][dKey] = totalDemands[dtKey][dKey] || demand;
+              totalDemands[dtKey][dKey] = totalDemands[dtKey][dKey] || demand
             }
           }
         }
       }
-      return totalDemands;
-    },
+      return totalDemands
+    }
   },
   watch: {
     /**
@@ -156,9 +155,9 @@ export default {
      * @param {object} newConsumption
      * @param {object} oldConsumption Unused.
      */
-    totalDemands: function(newConsumption, oldConsumption) {
-      this.$store.commit('setConsumption', newConsumption);
-    },
+    totalDemands: function (newConsumption, oldConsumption) {
+      this.$store.commit('setConsumption', newConsumption)
+    }
   },
   methods: {
     /**
@@ -167,15 +166,15 @@ export default {
      * @param {string} product The product name - see producers.json >> Producers.<Producer>.product
      * @return {string} The URL to the image.
      */
-    getBuildingImage(product) {
-      const allProducers = Object.values(this.producers);
-      const producer = allProducers.filter((producer) => producer.product === product)[0];
+    getBuildingImage (product) {
+      const allProducers = Object.values(this.producers)
+      const producer = allProducers.filter((producer) => producer.product === product)[0]
       if (!producer) {
-        const allNonProducers = Object.values(this.nonProducers);
-        const nonProducer = allNonProducers.filter((nonProducer) => nonProducer.name === product)[0];
-        return nonProducer ? this.getImage(nonProducer.img, 'buildings') : (product + 'Image');
+        const allNonProducers = Object.values(this.nonProducers)
+        const nonProducer = allNonProducers.filter((nonProducer) => nonProducer.name === product)[0]
+        return nonProducer ? this.getImage(nonProducer.img, 'buildings') : (product + 'Image')
       }
-      return this.getImage(producer.img, 'buildings');
+      return this.getImage(producer.img, 'buildings')
     },
     /**
      * Workaround to load images dynamically in for-loop.
@@ -185,19 +184,19 @@ export default {
      *                        NOTE: Relative to "assets" AND WITHOUT "/" at start and end.
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImage(image, folder) {
-      return image ? require(`../../assets/${folder}/${image}`) : '';
+    getImage (image, folder) {
+      return image ? require(`../../assets/${folder}/${image}`) : ''
     },
-    calculateDemands: function(populationDemands, numPopulation) {
-      const demands = {};
+    calculateDemands: function (populationDemands, numPopulation) {
+      const demands = {}
       for (const [key, demand] of Object.entries(populationDemands)) {
         if (demand) {
-          demands[key] = demand * numPopulation;
+          demands[key] = demand * numPopulation
         } else {
-          demands[key] = numPopulation > 0;
+          demands[key] = numPopulation > 0
         }
       }
-      return demands;
+      return demands
     },
 
     /**
@@ -207,8 +206,8 @@ export default {
      * @param {float|boolean} usage The usage of the product.
      * @return {boolean} True if the product is consumable, otherwise false.
      */
-    isConsumable(product, usage) {
-      return typeof usage !== 'boolean';
+    isConsumable (product, usage) {
+      return typeof usage !== 'boolean'
     },
 
     /**
@@ -217,8 +216,8 @@ export default {
      * @param {float} usage The number of usage to format.
      * @return {string} The pretty formatted usage.
      */
-    formatUsage: function(usage) {
-      return Math.round(usage * 100000) / 100000;
+    formatUsage: function (usage) {
+      return Math.round(usage * 100000) / 100000
     },
 
     /**
@@ -226,19 +225,19 @@ export default {
      *
      * @param {string} product The selected Product.
      */
-    selectChain(product) {
-      const helperFunctionMixin = this;
-      const selectedChain = this.getProductionChainByProductName(product);
-      const socialClass = helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID);
-      const world = helperFunctionMixin.getWorldByID(socialClass.worldID);
+    selectChain (product) {
+      const helperFunctionMixin = this
+      const selectedChain = this.getProductionChainByProductName(product)
+      const socialClass = helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID)
+      const world = helperFunctionMixin.getWorldByID(socialClass.worldID)
       this.$store.commit(
-          'changeSelectionIDs', {
-            worldID: world.id,
-            socialClassID: socialClass.id,
-            chainID: selectedChain.id,
-          });
-      this.$store.commit('changeProductionChain', selectedChain);
-      this.$router.push('/chains');
-    },
-  },
-};
+        'changeSelectionIDs', {
+          worldID: world.id,
+          socialClassID: socialClass.id,
+          chainID: selectedChain.id
+        })
+      this.$store.commit('changeProductionChain', selectedChain)
+      this.$router.push('/chains')
+    }
+  }
+}

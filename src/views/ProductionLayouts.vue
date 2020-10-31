@@ -20,14 +20,11 @@
 </template>
 
 <script>
-import BottomNavBar from "./BottomNavBar";
-
 export default {
-  name: "ProductionLayout",
+  name: 'ProductionLayout',
   components: {
-    BottomNavBar
   }
-};
+}
 </script>
 
 <style scoped>
