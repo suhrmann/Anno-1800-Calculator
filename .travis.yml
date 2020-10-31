@@ -24,24 +24,12 @@ cache:
     - $HOME/.cache/electron-builder
 
 before_install:
-  # Install yarn on OS X via Homebrew
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install yarn; fi
-  # Install yarn on Windows via Chocolatey
-  - |-
-    case $TRAVIS_OS_NAME in
-      windows)
-        choco install -y yarn
-        ;;
-    esac
-  # Install all dependencies listed in your package.json file
+  # Install yarn on all OS
   - yarn
 
 script:
   # Build release for github-pages once on linux
-  - |
-    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-     yarn run build
-    fi
+  - yarn run build
   # Build multi-OS binaries (using "Vue CLI Plugin Electron Builder")
   - yarn run electron:build
 
@@ -50,7 +38,8 @@ branches:
   - releases
 
 deploy:
-  - provider: pages  # Github pages
+  # Github pages
+  - provider: pages
     skip-cleanup: true
     local_dir: dist
     github-token: $GITHUB_TOKEN # a token generated on github allowing travis to push code on you repository
@@ -58,8 +47,9 @@ deploy:
     on:
       branch: releases
 
-  - provider: releases  # Github releases
-    skip_cleanup: 'true'
+  # Github releases
+  - provider: releases
+    skip_cleanup: true
     api_key:
       secure: aWO+C1FB7xcrRWY5O3gtAug0xoVrKO3e5Hw/FKOIxjlmeUp+49bq/jsCIdRNJuWj+Mdz1bnWxeTbDmBUCb80FZ5Wda3MNupxYoaVZuCxAKvdWOgJI571OzJ7TWa/uO5t7z57w726bOhx5KWRytECSsJTBZyUvR/o4iZG+A3fH3Ry/nRU/yc+R6E/Hly9djltk3opFZCRRrwiFgyDCXqN95fA5H4ANIQDRKxwLDlvtLJfYBQMjBSnOF8sPPJss/z5yFLdDsNvyUgy7NlRcC9bCiM9DWsHcy0uSFDg2ACZWgN7rgGQfCudT8/9Abtmhm6HtdUczaz8DsC86cQPafGqGMgHi22pWfyP2N0kWe5eZdE5UEvOtK+G9p6p7S1fhCMt27qgqm3PY4P5TryT0bq0HiVMti3YtQM/ZpNGwvbmYMXJfxJEG/rLTvIBM6yvo7q2Nn5ctkcZhRc9xg7TfZTrEbvQPAcA1tEKEQgMnZJYEyaetjB/zlJ6BIvZPpIz6kqoiNc3VN8EYzQo+bvP2f6okcH1L0aAKqrAY/k8NHtYQwRlC/UmIrddNnkTDayQoYLjLPixOMdIhgCJfUoulWdPyDQbb8S2bHCYdsLLA0grUJKHgQAb/L7JajziCD+DBB245mrTdt11Z13s8GqRzDmLUpV4xKjJoPM/H8mU+yK2vZE=
     file_glob: true
