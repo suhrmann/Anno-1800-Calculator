@@ -26,10 +26,10 @@ script:
   # Build release for github-pages once on linux
   - |
     if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-     yarn build
+     yarn run build
     fi
   # Build multi-OS binaries (using "Vue CLI Plugin Electron Builder")
-  - yarn electron:build
+  - yarn run electron:build
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
 
