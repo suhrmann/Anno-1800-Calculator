@@ -14,11 +14,7 @@ export default new Vuetify({
         primary: '#C68D5C',
         secondary: '#8E6B49',
         accent: '#C66F1B',
-        complementary: '#3f6696',
-        error: '#FF5252',
-        info: '#2196F3',
-        success: '#4CAF50',
-        warning: '#FFC107'
+        complementary: '#3f6696'
       }
     }
   }
