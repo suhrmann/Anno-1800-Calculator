@@ -17,22 +17,24 @@ matrix:
       node_js: "lts/*"
 
 cache:
+  yarn: true
   directories:
     - node_modules
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
 
 before_install:
-  # Install yarn on MacOS with brew
-  - |
-    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-     brew install yarn
-    fi
-  # Install yarn on MacOS on Windows with choco
-  - |
-    if [ "$TRAVIS_OS_NAME" == "windows" ]; then
-     choco install yarn
-    fi
+  # Install yarn on OS X via Homebrew
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install yarn; fi
+  # Install yarn on Windows via Chocolatey
+  - |-
+    case $TRAVIS_OS_NAME in
+      windows)
+        choco install -y yarn
+        ;;
+    esac
+  # Install all dependencies listed in your package.json file
+  - yarn
 
 script:
   # Build release for github-pages once on linux
@@ -42,8 +44,6 @@ script:
     fi
   # Build multi-OS binaries (using "Vue CLI Plugin Electron Builder")
   - yarn run electron:build
-before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
 
 branches:
   only:
