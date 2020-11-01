@@ -2,6 +2,9 @@ module.exports = {
   transpileDependencies: [
     'vuetify'
   ],
+
+  publicPath: '/Anno-1800-Calculator/',
+
   chainWebpack: config => {
     config
       .plugin('html')
