@@ -3,7 +3,7 @@ module.exports = {
     'vuetify'
   ],
 
-  publicPath: '/Anno-1800-Calculator/',
+  publicPath: '.',
 
   chainWebpack: config => {
     config
