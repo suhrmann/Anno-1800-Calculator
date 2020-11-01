@@ -44,7 +44,7 @@ before_deploy:
   - ls .
   - ls $HOME
   - ls $TRAVIS_BUILD_DIR
-  - export VERSION=$(node -p "require('$HOME/suhrmann/Anno-1800-Calculator/package.json').version")
+  - export VERSION=$(node -p "require('./package.json').version")
   - export TRAVIS_TAG=$VERSION-$(git log --format=%h -1)
   - git tag $TRAVIS_TAG
 
