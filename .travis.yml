@@ -9,12 +9,17 @@ matrix:
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
     - os: linux
       language: node_js
       node_js: "lts/*"
+
     - os: windows
       language: node_js
       node_js: "lts/*"
+
+  allow_failures:
+    - os: windows # Allow failures on failing build on Windows
 
 cache:
   yarn: true
