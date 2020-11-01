@@ -41,9 +41,6 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "suhrmann"
   - git config --local user.email "suhrmann@posteo.de"
-  - ls .
-  - ls $HOME
-  - ls $TRAVIS_BUILD_DIR
   - export VERSION=$(node -p "require('./package.json').version")
   - export TRAVIS_TAG=$VERSION-$(git log --format=%h -1)
   - git tag --force $TRAVIS_TAG
