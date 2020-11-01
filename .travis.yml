@@ -47,7 +47,7 @@ before_deploy:
   - export VERSION=$(node -p "require('./package.json').version")
   - export TRAVIS_TAG=$VERSION-$(git log --format=%h -1)
   # Only tag once on linux
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; git tag $TRAVIS_TAG ; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then git tag $TRAVIS_TAG ; fi
 
 deploy:
   # Github pages
