@@ -40,8 +40,9 @@ branches:
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "suhrmann"
-  - git config --local user.email ""
-  - export TRAVIS_TAG=${$(node -p "require('$TRAVIS_BUILD_DIR/package.json').version")-$(git log --format=%h -1)}
+  - git config --local user.email "suhrmann@posteo.de"
+  - export VERSION=$(node -p "require('$HOME/suhrmann/Anno-1800-Calculator/package.json').version")
+  - export TRAVIS_TAG=$VERSION-$(git log --format=%h -1)
   - git tag $TRAVIS_TAG
 
 deploy:
