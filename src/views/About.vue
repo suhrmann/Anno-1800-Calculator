@@ -97,7 +97,7 @@
     <p>&nbsp;</p>
 
     <!-- About -->
-    <h2>Authors</h2>
+    <h2>🤓 Authors</h2>
     <ul>
       <li>
         Simon Uhrmann
@@ -109,7 +109,9 @@
       </li>
     </ul>
 
-    <h2>Information</h2>
+    <p>&nbsp;</p>
+
+    <h2>📜 Information</h2>
     <ul>
       <li>
         <strong>English Anno 1800 Wiki</strong>:
@@ -127,7 +129,9 @@
       </li>
     </ul>
 
-    <h2>Images and Icons</h2>
+    <p>&nbsp;</p>
+
+    <h2>🖼️ Images and Icons</h2>
     <ul>
       <li>
         ALL Icons (buildings, population, items, etc.) &copy; Ubisoft
@@ -150,13 +154,25 @@
       </li>
     </ul>
 
-    <h2>Design</h2>
+    <p>&nbsp;</p>
+
+    <h2>🎨️ Design</h2>
     <ul>
       <li>
         Color scheme (based on):
         <a
           href="https://www.ubisoft.com/en-gb/game/anno-1800/"
         >The official Anno 1800 page</a>
+      </li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <h2>📣 Shout Out</h2>
+    <ul>
+      <li>
+        <b>Schwubbe</b> for his awesome <a href="https://schwubbe.de/">Anno 1800 Warenrechner [Anno 1800 Calculator]</a> <br>
+        Its more focused on functions that just a nice facade - so if this calculator lacks some features (again) head over to Schwube's calculator
       </li>
     </ul>
 
