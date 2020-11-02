@@ -122,10 +122,10 @@
         <v-text-field label="Quantity" @change="changeCounter()" v-model="chainCount" outline></v-text-field>
       </v-flex>
       <v-flex xs6 mr-5 pr-5>
-        <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
+        <v-slider @input="changeCounter()" max="50" min="1" v-model="chainCount"></v-slider>
       </v-flex>
-      <v-flex xs3 mr-5 pr-5>
-        <v-btn @click="matchDemands()">Match Demands</v-btn>
+      <v-flex xs3 mr-5 pr-5 >
+        <v-btn v-if="isConsumable" @click="matchDemands()">Match Demands</v-btn>
       </v-flex>
     </v-row>
   </v-container>
@@ -308,7 +308,8 @@ export default {
 
   methods: {
     matchDemands () {
-      this.chainCount = this.consumptionPerMinute / this.outputPerMinute
+      this.chainCount = Math.ceil(this.consumptionPerMinute / (1 / (this.spt / 60)))
+      console.log(this.chainCount)
     },
 
     changeCounter () {
