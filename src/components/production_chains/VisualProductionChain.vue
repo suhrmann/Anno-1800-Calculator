@@ -125,7 +125,7 @@
         <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
       </v-flex>
       <v-flex xs3 mr-5 pr-5>
-        <v-btn>Match Demands</v-btn>
+        <v-btn @click="matchDemands()">Match Demands</v-btn>
       </v-flex>
     </v-row>
   </v-container>
@@ -307,6 +307,10 @@ export default {
   },
 
   methods: {
+    matchDemands () {
+      this.chainCount = this.consumptionPerMinute / this.outputPerMinute
+    },
+
     changeCounter () {
       EventBus.$emit('changeSlider', this.chainCount)
     },
