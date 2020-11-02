@@ -137,6 +137,9 @@ export default new Vuex.Store({
       prodcution_chains: {
         open_workforce_demand: 0,
         open_construction_costs: 0
+      },
+      demands: {
+        is_sorted_by: 'isConsumable'
       }
     }
   },
@@ -306,6 +309,15 @@ export default new Vuex.Store({
      */
     toggle_construction_costs (state, isOpen) {
       state.config.prodcution_chains.open_construction_costs = Boolean(isOpen)
+    },
+
+    /**
+     * Toggle (open / close) the construction costs of a production chain.
+     * @param {object} state
+     * @param {string} sortedDemandsBy
+     */
+    sort_demands_by (state, sortedDemandsBy) {
+      state.config.demands.is_sorted_by = sortedDemandsBy
     }
   },
   actions: {

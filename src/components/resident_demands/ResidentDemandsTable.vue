@@ -96,6 +96,7 @@
       multi-sort
       hide-default-footer
       show-group-by
+      :group-by.sync="sort_demands_by"
     >
       <!-- Warn about no data -->
       <template slot="no-data">
@@ -299,6 +300,15 @@ export default {
     },
     onlyNonConsumableChkbx: function () {
       return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON
+    },
+
+    sort_demands_by: {
+      get () {
+        return this.$store.state.config.demands.is_sorted_by
+      },
+      set (value) {
+        this.$store.commit('sort_demands_by', value)
+      }
     },
 
     /**
