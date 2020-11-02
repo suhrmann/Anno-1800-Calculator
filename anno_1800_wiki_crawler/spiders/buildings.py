@@ -11,28 +11,35 @@ from scrapy.selector import Selector
 
 class BuildingsSpider(scrapy.Spider):
     name = 'buildings'
-    allowed_domains = ['anno1800.wikia.com', 'vignette.wikia.nocookie.net']
-    start_urls = ['http://anno1800.wikia.com/wiki/Buildings']
+    allowed_domains = ['anno1800.wikia.com', 'anno1800.fandom.com', 'static.wikia.nocookie.net']
+    start_urls = ['https://anno1800.fandom.com/wiki/Buildings']
 
     # Store the downloaded images here
     IMAGE_PATH = './images'
 
     # Define the regex we'll need to filter the returned links
-    # Sample: https://vignette.wikia.nocookie.net/anno1800/images/a/a0/Workforce_-_farmers.png/revision/latest?cb=20190203165406
-    url_matcher = re.compile('^https:\/\/vignette\.wikia\.nocookie\.net\/anno1800\/images\/')
+    # Sample: https://static.wikia.nocookie.net/anno1800/images/5/52/Dirt_road.png/revision/latest/scale-to-width-down/40?cb=20190203162550
+    url_matcher = r"(https://static.wikia.nocookie.net/anno1800/images/).*\.(png|webp|jpg)"
 
     # The XPaths to the various populations
     POPULATION_XPATHS = {
-            # Old world:
-                'farmers':   '//*[@id="mw-content-text"]/table[1]',
-                'workers':   '//*[@id="mw-content-text"]/table[2]',
-                'artisans':  '//*[@id="mw-content-text"]/table[3]',
-                'engineers': '//*[@id="mw-content-text"]/table[4]',
-                'investors': '//*[@id="mw-content-text"]/table[5]',
-            # New world:
-                'jornaleros': '//*[@id="mw-content-text"]/table[6]',
-                'obreros':    '//*[@id="mw-content-text"]/table[7]',
-             }
+        # Old world:
+        'farmers': '//*[@id="mw-content-text"]/div/table[1]',
+        'workers': '//*[@id="mw-content-text"]/div/table[2]',
+        'artisans': '//*[@id="mw-content-text"]/div/table[3]',
+        'engineers': '//*[@id="mw-content-text"]/div/table[4]',
+        'investors': '//*[@id="mw-content-text"]/div/table[5]',
+        'scholars': '//*[@id="mw-content-text"]/div/table[6]',
+        # New world:
+        'jornaleros': '//*[@id="mw-content-text"]/div/table[7]',
+        'obreros': '//*[@id="mw-content-text"]/div/table[8]',
+        # Arctic
+        'explorers': '//*[@id="mw-content-text"]/div/table[9]',
+        'technicians': '//*[@id="mw-content-text"]/div/table[10]',
+        # Enbesa
+        'shepherds': '//*[@id="mw-content-text"]/div/table[11]',
+        'elders': '//*[@id="mw-content-text"]/div/table[12]'
+    }
 
     # Keep track of the crawled ids
     crawled_images = []
@@ -53,8 +60,10 @@ class BuildingsSpider(scrapy.Spider):
                 filename = image_url.split('/')[-3]  # Extract the filename from URL
                 f_filename = self.format_filename(filename)  # The formatted filename
                 file_path = os.path.join(path, f_filename)  # The full path to store the file
-                self.download(image_url, file_path)  # Download the file
-
+                url_tokens = re.split(r"(.png|.webp|.jpg)", image_url)  # Crawl the original image - cut the url after image file
+                original_image_url = url_tokens[0] + url_tokens[1]  # Merge tokens into original image URL
+                self.logger.info(' >> image_url: ' + image_url + '- original_image_url:' + original_image_url)
+                self.download(original_image_url, file_path)  # Download the file
 
     def download(self, url, filename):
         """
@@ -83,9 +92,10 @@ class BuildingsSpider(scrapy.Spider):
         #  - remove spaces (in URLs: %27)
         #  - replace file extension: Images are .webp instead of .png
         #  - remove ugly parts ("---", etc.)
-        return filename\
-            .lower()\
-            .replace('_', '-') \
-            .replace('%27', '') \
-            .replace('.png', '.webp') \
-            .replace('-0', '').replace('---', '-').replace('--', '-')
+        return filename \
+            .lower() \
+            .replace('_', '-')
+        #    .replace('%27', '') \
+        #    .replace('.png', '.webp') \
+        #    .replace('-0', '').replace('---', '-').replace('--', '-')
+#
