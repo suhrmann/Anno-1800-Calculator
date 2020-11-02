@@ -234,7 +234,7 @@
         },
         "School": {
             "name": "School",
-            "img": "workers/school-icon.webp",
+            "img": "workers/school.webp",
             "construction": {
                 "cash": 2500,
                 "wood": 20,
