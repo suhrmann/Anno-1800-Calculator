@@ -1,7 +1,7 @@
 {
   "name": "anno-1800-calculator",
   "productName": "Anno 1800 Calculator",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Calculate your populations' demands and optimal production chains.",
   "contributors": [
     "Simon Uhrmann <suhrmann@posteo.de>",

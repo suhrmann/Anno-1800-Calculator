@@ -368,10 +368,10 @@
       "chain": "Timber",
       "socialClassID": 6,
       "finalProduct": "Timber",
-      "name": "Lumberjack Hut",
+      "name": "Sawmill",
       "alternative": "",
       "children": [{
-        "name": "Sawmill",
+        "name": "Lumberjack Hut",
         "worldID": 2,
         "alternative": "",
         "children": null
@@ -573,7 +573,7 @@
         {
           "name": "Marquetry Workshop",
           "worldID": 2,
-          "alternative": "NewWorld",
+          "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
             "worldID": 2,
@@ -692,7 +692,7 @@
     "advanced-weapons": {
       "id": 30,
       "worldID": 1,
-      "img": "engineers/advanced-weaponry.webp",
+      "img": "engineers/advanced-weapons.webp",
       "chain": "Advanced Weapons",
       "socialClassID": 4,
       "finalProduct": "Advanced Weapons",
@@ -781,7 +781,7 @@
     "steam_motors": {
       "id": 32,
       "worldID": 1,
-      "img": "engineers/steam-motor.webp",
+      "img": "engineers/steam-motors.webp",
       "chain": "Steam Motors",
       "socialClassID": 4,
       "finalProduct": "Steam Motors",
@@ -968,7 +968,7 @@
     "gramophones": {
       "id": 37,
       "worldID": 1,
-      "img": "investors/gramophones.webp",
+      "img": "investors/gramophone.webp",
       "chain": "Gramophones",
       "socialClassID": 5,
       "finalProduct": "Gramophones",
@@ -976,11 +976,11 @@
       "alternative": "",
       "children": [{
           "name": "Marquetry Workshop",
-          "worldID": 2,
-          "alternative": "NewWorld",
+          "worldID": 1,
+          "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
-            "worldID": 2,
+            "worldID": 1,
             "alternative": "NewWorld",
             "children": null
           }]
@@ -1009,7 +1009,7 @@
     "steam-carriages": {
       "id": 38,
       "worldID": 1,
-      "img": "investors/steam-carriage.webp",
+      "img": "investors/steam-carriages.webp",
       "chain": "Steam Carriages",
       "socialClassID": 5,
       "finalProduct": "Steam Carriages",

@@ -5,11 +5,24 @@
         <v-card class="mb-3" color="secondary" dark tile>
           <v-card-title primary class="pb-0 title">Options</v-card-title>
           <v-card-text class="mb-0 pb-0 pt-0">
+            <!-- Option: Charcoal or Coal -->
             <v-radio-group class="pb-0 mb-0" v-model="coalOption" row>
-              <v-radio label="Charcoal" value="char" ></v-radio>
-              <v-radio label="Coal" value="rock"></v-radio>
+              <div style="width: 35px">&nbsp;</div>
+              <v-radio label="Charcoal" value="char" >
+                <template v-slot:label>
+                  <v-img src="@/assets/buildings/workers/charcoal-kiln.webp" contain width="32px"/> &nbsp;
+                  Charcoal
+                </template>
+              </v-radio>
+              <v-radio label="Coal" value="rock">
+                <template v-slot:label><v-img src="@/assets/buildings/artisans/coal.webp" contain width="32px"/>&nbsp;
+                  Coal
+                </template>
+              </v-radio>
             </v-radio-group>
+            <!-- Option: New World or Old World Marquetry -->
             <v-radio-group class="mb-0 pt-0 pt-0 mt-0" v-model="marquetryOption" row>
+              <div style="width: 35px"><v-img src="@/assets/buildings/investors/wood-veneers.webp" contain width="32px" height="32px" /></div>
               <v-radio label="Old World Marquetry" value="old"></v-radio>
               <v-radio label="New World Marquetry" value ="new"></v-radio>
             </v-radio-group>
@@ -122,10 +135,10 @@
         <v-text-field label="Quantity" @change="changeCounter()" v-model="chainCount" outline></v-text-field>
       </v-flex>
       <v-flex xs6 mr-5 pr-5>
-        <v-slider @input="changeCounter()" max="25" min="1" v-model="chainCount"></v-slider>
+        <v-slider @input="changeCounter()" max="50" min="1" v-model="chainCount"></v-slider>
       </v-flex>
-      <v-flex xs3 mr-5 pr-5>
-        <v-btn>Match Demands</v-btn>
+      <v-flex xs3 mr-5 pr-5 >
+        <v-btn v-if="isConsumable" @click="matchDemands()">Match Demands</v-btn>
       </v-flex>
     </v-row>
   </v-container>
@@ -307,6 +320,11 @@ export default {
   },
 
   methods: {
+    matchDemands () {
+      this.chainCount = Math.ceil(this.consumptionPerMinute / (1 / (this.spt / 60)))
+      console.log(this.chainCount)
+    },
+
     changeCounter () {
       EventBus.$emit('changeSlider', this.chainCount)
     },
@@ -394,4 +412,8 @@ h3,h4 {
 .v-expansion-panel-content > :first-child {
   padding: 0;
 }
+ .inline-img {
+   height: 66%;
+   width: auto;
+ }
 </style>
