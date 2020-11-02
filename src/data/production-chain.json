@@ -368,10 +368,10 @@
       "chain": "Timber",
       "socialClassID": 6,
       "finalProduct": "Timber",
-      "name": "Lumberjack Hut",
+      "name": "Sawmill",
       "alternative": "",
       "children": [{
-        "name": "Sawmill",
+        "name": "Lumberjack Hut",
         "worldID": 2,
         "alternative": "",
         "children": null
@@ -573,7 +573,7 @@
         {
           "name": "Marquetry Workshop",
           "worldID": 2,
-          "alternative": "NewWorld",
+          "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
             "worldID": 2,
@@ -976,11 +976,11 @@
       "alternative": "",
       "children": [{
           "name": "Marquetry Workshop",
-          "worldID": 2,
-          "alternative": "NewWorld",
+          "worldID": 1,
+          "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
-            "worldID": 2,
+            "worldID": 1,
             "alternative": "NewWorld",
             "children": null
           }]

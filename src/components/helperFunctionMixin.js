@@ -20,7 +20,14 @@ export const helperFunctionMixin = {
     },
     nonProducerFile () {
       return JSON.parse(JSON.stringify(nonProducers))
+    },
+    getMarquetryWorkshopState () {
+      return this.$store.state.marquetryOption
+    },
+    getCoalState () {
+      return this.$store.state.coalOption
     }
+
   },
   methods: {
     /**
@@ -47,10 +54,10 @@ export const helperFunctionMixin = {
       const chainNodeMixin = this
       chainNodeMixin.iterateProductionChain(
         productionChain,
-        (rootElement) => {
+        rootElement => {
           this.fetchProductionTime(rootElement)
         },
-        (element) => {
+        element => {
           this.fetchProductionTime(element)
         },
         false
@@ -68,9 +75,9 @@ export const helperFunctionMixin = {
     getLCM (prodTimeArray) {
       const productionTimesArray = JSON.parse(JSON.stringify(prodTimeArray))
 
-      const gcd = (a, b) => a ? gcd(b % a, a) : b
+      const gcd = (a, b) => (a ? gcd(b % a, a) : b)
 
-      const lcm = (a, b) => a * b / gcd(a, b)
+      const lcm = (a, b) => (a * b) / gcd(a, b)
 
       const lcmOfArray = productionTimesArray.reduce(lcm) // Returns 60
       // console.log(lcmOfArray);
@@ -109,8 +116,39 @@ export const helperFunctionMixin = {
      */
     getBuildingByName (name, worldID) {
       const buildings = this.producerFile.Producers
+      const helperFunctionMixin = this
+
+      if (this.$store.state.selectedProductionChain.id === 26 || this.$store.state.selectedProductionChain.id === 37) {
+        if (name === 'Marquetry Workshop') {
+          if (helperFunctionMixin.getMarquetryWorkshopState === 'old') {
+            return buildings['Marquetry Workshop Old']
+          } else {
+            return buildings['Marquetry Workshop']
+          }
+        }
+
+        if (name === 'Lumberjack Hut') {
+          if (helperFunctionMixin.getMarquetryWorkshopState === 'old') {
+            return buildings['Lumberjack Hut Old']
+          } else {
+            return buildings['Lumberjack Hut']
+          }
+        }
+      }
+
+      if (name === 'Charcoal Kiln' || name === 'Coal Mine') {
+        if (helperFunctionMixin.getCoalState === 'char') {
+          return buildings['Charcoal Kiln']
+        } else {
+          return buildings['Coal Mine']
+        }
+      }
+
       for (const building in buildings) {
-        if (buildings[building].building === name && buildings[building].worldID === worldID) {
+        if (
+          buildings[building].building === name &&
+          buildings[building].worldID === worldID
+        ) {
           return buildings[building]
         }
       }
@@ -140,7 +178,7 @@ export const helperFunctionMixin = {
     getProductionChainById (id) {
       const productionChains = ProductionChains.Production_Chain
       let chainObject = {}
-      Object.keys(productionChains).some((chain) => {
+      Object.keys(productionChains).some(chain => {
         if (productionChains[chain].id === id) {
           chainObject = productionChains[chain]
           return chainObject
@@ -157,7 +195,7 @@ export const helperFunctionMixin = {
      */
     getWorldByID (id) {
       const worlds = Object.values(Worlds)
-      const selectedWorld = worlds.filter((world) => world.id === id)[0]
+      const selectedWorld = worlds.filter(world => world.id === id)[0]
       return selectedWorld
     },
 
@@ -170,7 +208,7 @@ export const helperFunctionMixin = {
     getSocialClassByID (id) {
       const socialClasses = Object.values(SocialClasses)
       const selectedSocialClass = socialClasses.filter(
-        (socialClass) => socialClass.id === id
+        socialClass => socialClass.id === id
       )[0]
       return selectedSocialClass
     },
@@ -184,10 +222,7 @@ export const helperFunctionMixin = {
      * @return {string} The resulting, nicely rounded number.
      */
     toFixedVariable (num, digits) {
-      return Number.isInteger(num)
-        ? num
-        : num.toFixed(digits)
+      return Number.isInteger(num) ? num : num.toFixed(digits)
     }
-
   }
 }

@@ -28,7 +28,7 @@
               >
                 <img :src="getBuildingImage(treeData.name, treeData.worldID)" :alt="treeData.name">
               </div>
-              <div class="name">{{treeData.name}}</div>
+              <div class="name">{{getBuildingName(treeData.name, treeData.worldID)}}</div>
               <div class="name">{{treeData.relativeAmount}}</div>
             </div>
           </div>
@@ -69,7 +69,9 @@ export default {
     }
   },
 
-  computed: {},
+  computed: {
+
+  },
 
   created () {},
 
@@ -115,6 +117,10 @@ export default {
     getBuildingImage (name, worldID) {
       const building = this.getBuildingByName(name, worldID)
       return this.getImage(building.img, 'buildings')
+    },
+    getBuildingName (name, worldID) {
+      const building = this.getBuildingByName(name, worldID)
+      return building.building
     }
   }
 }
