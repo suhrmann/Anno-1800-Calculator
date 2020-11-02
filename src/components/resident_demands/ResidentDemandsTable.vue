@@ -90,6 +90,7 @@
     <v-data-table
       :headers="headers"
       :items="totalDemandsDatatable"
+      disable-pagination
       class="elevation-1"
       multi-sort
       hide-default-footer
