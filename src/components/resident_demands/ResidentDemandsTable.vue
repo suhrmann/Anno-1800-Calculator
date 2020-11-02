@@ -16,7 +16,8 @@
           v-model="cigarsInfo"
           class="md10 xs12"
         >
-          Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the demands table.
+          Cigars are both basic demand for investors and luxury demand for obreros. Therefore cigars appear twice in the
+          demands table.
         </v-alert>
       </v-col>
     </v-row>
@@ -90,9 +91,11 @@
     <v-data-table
       :headers="headers"
       :items="totalDemandsDatatable"
+      disable-pagination
       class="elevation-1"
       multi-sort
       hide-default-footer
+      show-group-by
     >
       <!-- Warn about no data -->
       <template slot="no-data">
@@ -147,9 +150,9 @@
             <a v-if="props.item.isConsumable"
                @click="selectChain(props.item.name)"
             >
-              <b>{{props.item.name}}</b>
+              <b>{{ props.item.name }}</b>
             </a>
-            <span v-else><b>{{props.item.name}}</b></span>
+            <span v-else><b>{{ props.item.name }}</b></span>
           </td>
           <!-- Consumption -->
           <td>
@@ -175,7 +178,7 @@
           <!-- Efficiency of all chains -->
           <td>
             <span v-if="props.item.isConsumable">
-              {{( chainEfficiency(props.item.name, props.item.consumption) * 100 ).toFixed(2) }} %
+              {{ (chainEfficiency(props.item.name, props.item.consumption) * 100).toFixed(2) }} %
             </span>
             <span v-else>&mdash;</span>
           </td>
@@ -209,14 +212,54 @@ export default {
 
       headers: [
         // TODO Add value for old / new world
-        { text: 'Type', value: 'type', align: 'center' },
-        { text: 'Is Consumable', value: 'isConsumable', align: 'center' }, // TODO Width: Narrow (width should fit content)
-        { text: '', value: 'img', sortable: false, align: 'center' }, // TODO Width: Narrow (width should fit content)
-        { text: 'Need', value: 'name', align: 'left' },
-        { text: 'Consumption', value: 'consumption', align: 'center' },
-        { text: 'Required Chains', value: 'numChains', align: 'center' },
-        { text: 'Chains Efficiency', value: 'efficiency', align: 'center' },
-        { text: 'Production per Chain', value: 'productionPerChain', align: 'center' }
+        {
+          text: 'Type',
+          value: 'type',
+          align: 'center'
+        },
+        {
+          text: 'Is Consumable',
+          value: 'isConsumable',
+          align: 'center'
+        },
+        {
+          // Icon
+          text: '',
+          value: 'img',
+          sortable: false,
+          groupable: false,
+          align: 'center'
+        },
+        {
+          text: 'Need',
+          value: 'name',
+          groupable: false,
+          align: 'left'
+        },
+        {
+          text: 'Consumption',
+          value: 'consumption',
+          groupable: false,
+          align: 'center'
+        },
+        {
+          text: 'Required Chains',
+          value: 'numChains',
+          groupable: false,
+          align: 'center'
+        },
+        {
+          text: 'Chains Efficiency',
+          value: 'efficiency',
+          groupable: false,
+          align: 'center'
+        },
+        {
+          text: 'Production per Chain',
+          value: 'productionPerChain',
+          groupable: false,
+          align: 'center'
+        }
       ]
     }
   },
@@ -259,15 +302,15 @@ export default {
     },
 
     /**
-       * Preprocess the populations' demands for Data Table of Vuetify.
-       *
-       * @return {array} An array of objects of type:
-       *   {
-       *       name: string,
-       *       need: float,
-       *       ...
-       *   }
-       */
+     * Preprocess the populations' demands for Data Table of Vuetify.
+     *
+     * @return {array} An array of objects of type:
+     *   {
+     *       name: string,
+     *       need: float,
+     *       ...
+     *   }
+     */
     totalDemandsDatatable: function () {
       const basicNeeds = this.totalDemands.basic
       const luxuryNeeds = this.totalDemands.luxury
@@ -302,11 +345,11 @@ export default {
   watch: {},
   methods: {
     /**
-       * The production per minute of one production chain.
-       *
-       * @param {string} product The name of the product.
-       * @return {number} The amount of products per minute.
-       */
+     * The production per minute of one production chain.
+     *
+     * @param {string} product The name of the product.
+     * @return {number} The amount of products per minute.
+     */
     productionPerMinute: function (product) {
       const building = this.getBuildingByProduct(product) // TODO Does not differ between Old and New World!!!
 
@@ -317,12 +360,12 @@ export default {
     },
 
     /**
-       * This many production chains are required to fulfill the populations' consumption.
-       *
-       * @param {string} product The name of the product.
-       * @param {number} consumption The population consumes this much products per minute.
-       * @return {int} The amount of full production chains (!) required to fulfill consumption.
-       */
+     * This many production chains are required to fulfill the populations' consumption.
+     *
+     * @param {string} product The name of the product.
+     * @param {number} consumption The population consumes this much products per minute.
+     * @return {int} The amount of full production chains (!) required to fulfill consumption.
+     */
     requiredChains (product, consumption) {
       // The production chain produces this much
       const production = this.productionPerMinute(product)
@@ -337,12 +380,12 @@ export default {
     },
 
     /**
-       * The efficiency of this production chain to fulfill the demands.
-       *
-       * @param {string} product The name of the product.
-       * @param {number} consumption The population consumes this much products per minute.
-       * @return {number} The efficiency of this production.
-       */
+     * The efficiency of this production chain to fulfill the demands.
+     *
+     * @param {string} product The name of the product.
+     * @param {number} consumption The population consumes this much products per minute.
+     * @return {number} The efficiency of this production.
+     */
     chainEfficiency (product, consumption) {
       // The production chain produces this much
       const production = this.productionPerMinute(product)
@@ -373,8 +416,8 @@ export default {
 </script>
 
 <style scoped>
-  .inline-img {
-    height: 66%;
-    width: auto;
-  }
+.inline-img {
+  height: 66%;
+  width: auto;
+}
 </style>

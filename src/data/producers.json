@@ -1174,7 +1174,7 @@
         "Zinc Mine": {
             "product": "Zinc",
             "building": "Zinc Mine",
-            "img": "engineers/zinc-ore.webp",
+            "img": "engineers/zinc.webp",
             "worldID": 1,
             "productionTime": 30,
             "construction": {
@@ -1278,7 +1278,7 @@
         "Motor Assembly Line": {
             "product": "Steam Motors",
             "building": "Motor Assembly Line",
-            "img": "engineers/steam-motor.webp",
+            "img": "engineers/steam-motors.webp",
             "worldID": 1,
             "productionTime": 90,
             "construction": {
@@ -1408,7 +1408,7 @@
         "Filament Factory": {
             "product": "Filament",
             "building": "Filament Factory",
-            "img": "engineers/filament.webp",
+            "img": "engineers/carbon-filament.webp",
             "worldID": 1,
             "productionTime": 60,
             "construction": {
@@ -1462,7 +1462,7 @@
         "Saltpeter Works": {
             "product": "Saltpeter",
             "building": "Saltpeter Works",
-            "img": "investors/saltpeter.webp",
+            "img": "engineers/saltpeter.webp",
             "worldID": 1,
             "productionTime": 120,
             "construction": {
@@ -1488,7 +1488,7 @@
         "Dynamite Factory": {
             "product": "Dynamite",
             "building": "Dynamite Factory",
-            "img": "investors/dynamite.webp",
+            "img": "engineers/dynamite.webp",
             "worldID": 1,
             "productionTime": 60,
             "construction": {
@@ -1514,7 +1514,7 @@
         "Heavy Weapons Factory": {
             "product": "Advanced Weapons",
             "building": "Heavy Weapons Factory",
-            "img": "engineers/advanced-weaponry.webp",
+            "img": "engineers/advanced-weapons.webp",
             "worldID": 1,
             "productionTime": 120,
             "construction": {
@@ -1644,7 +1644,7 @@
         "Gramophone Factory": {
             "product": "Gramophones",
             "building": "Gramophone Factory",
-            "img": "investors/gramophones.webp",
+            "img": "investors/gramophone.webp",
             "worldID": 1,
             "productionTime": 60,
             "construction": {
@@ -1696,7 +1696,7 @@
         "Cab Assembly Line": {
             "product": "Steam Carriages",
             "building": "Cab Assembly Line",
-            "img": "investors/steam-carriage.webp",
+            "img": "investors/steam-carriages.webp",
             "worldID": 1,
             "productionTime": 60,
             "construction": {
