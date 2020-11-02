@@ -11,7 +11,7 @@ This crawler requires Python 3 and is based on [Scrapy](https://scrapy.org/).
 
 2. Install dependency Scrapy:
     ```
-    pip install scrapy
+    pip install scrapy requests
     ```
 3. Run crawler
     ```
