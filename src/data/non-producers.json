@@ -705,7 +705,7 @@
         },
         "Chapel": {
             "name": "Chapel",
-            "img": "jornaleros/chapel.webp",
+            "img": "jornaleros/church.webp",
             "construction": {
                 "cash": 500,
                 "wood": 10,
@@ -823,7 +823,7 @@
         },
         "Museum": {
             "name": "Chapel",
-            "img": "obreros/chapel.webp",
+            "img": "obreros/church.webp",
             "construction": {
                 "cash": 10000,
                 "wood": 30,
