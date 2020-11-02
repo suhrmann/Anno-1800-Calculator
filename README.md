@@ -9,6 +9,8 @@
   </a>
 </p>
 
+-----
+
 There are two versions of the calculator: An online version and a Desktop App.
 
 ## Online Calculator
@@ -21,6 +23,16 @@ No download, no install. Just calculate: [Anno 1800 Calculator](https://suhrmann
 The Desktop App (for Windows, MacOS and Linux) does not require a Internet connection once downloaded. 
 
 [Download here](https://github.com/Vadammt/Anno-1800-Calculator/releases)
+
+---
+
+## Changelog:
+
+- ``2020-11-02`` ``v0.4.0`` Update dependencies to latest version - i.a. Vuetify 2, giving full facelift, bug fixes, ...
+- ``2020-10-20`` ``v0.3.0`` Merge pull request #24 dependabot, fixing critical issue in electron
+- ``2020-05-11`` ``v0.3.0`` Load production layouts from Anno 1800 Wiki
+- ``2020-05-11`` ``v0.2.0`` Smaller changes (meta info, UI enhancements, ...)
+- ``2019-02-08`` ``v0.1.0`` Basic features working 🎉🎉🎉
 
 ---
 
