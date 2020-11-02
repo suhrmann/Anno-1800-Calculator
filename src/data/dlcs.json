@@ -1,0 +1,63 @@
+{
+  "version": "2020.11.2",
+  "dlcs": [
+    {
+      "name": "Sunken Treasures",
+      "season": 1,
+      "content-pack": false,
+      "img": "sunken-treasures.webp"
+    },
+    {
+      "name": "Botanica",
+      "season": 1,
+      "content-pack": false,
+      "img": "botanica.webp"
+    },
+    {
+      "name": "The Passage",
+      "season": 1,
+      "content-pack": false,
+      "img": "the-passage.webp"
+    },
+
+
+    {
+      "name": "Seat of Power",
+      "season": 2,
+      "content-pack": false,
+      "img": "seat-of-power.webp"
+    },
+    {
+      "name": "Bright Harvest",
+      "season": 2,
+      "content-pack": false,
+      "img": "bright-harvest.webp"
+    },
+    {
+      "name": "Land of Lions",
+      "season": 2,
+      "content-pack": false,
+      "img": "land-of-lions.webp"
+    },
+
+
+    {
+      "name": "The Anarchist",
+      "season": false,
+      "content-pack": true,
+      "img": "the-anarchist.webp"
+    },
+    {
+      "name": "Amusements Pack",
+      "season": false,
+      "content-pack": true,
+      "img": "amusement-pack.jpg"
+    },
+    {
+      "name": "Holiday Pack",
+      "season": false,
+      "content-pack": true,
+      "img": "holiday-pack.webp"
+    }
+  ]
+}
