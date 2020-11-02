@@ -1,5 +1,10 @@
 # Sample from electron-builder: https://www.electron.build/multi-platform-build#sample-travisyml-to-build-electron-app-for-macos-linux-and-windows
 # Fixed deployment with travis-cli: ``travis setup releases``
+
+# Default: Linux with node_js
+os: linux
+language: node_js
+
 matrix:
   include:
     - os: osx
