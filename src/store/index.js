@@ -26,7 +26,10 @@ export default new Vuex.Store({
           selectedProductionChainID: state.selectedProductionChainID,
 
           // Store entered population
-          population: state.population
+          population: state.population,
+
+          // Store config value
+          config: state.config
         }
       }
     })
