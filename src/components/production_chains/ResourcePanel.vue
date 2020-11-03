@@ -193,7 +193,8 @@ export default {
         window: 0,
         concrete: 0,
         influence: 0,
-        wanza_timber: 0
+        wanza_timber: 0,
+        mud_bricks: 0
       }
     }
   }

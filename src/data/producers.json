@@ -3197,7 +3197,20 @@
     }
   },
 
-
+  "Wanza Woodcutter": {
+    "product": "Wanza Timber",
+    "building": "Wanza Woodcutter",
+    "img": "shepherds/wansa-wood.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 500
+    },
+    "maintenance": {
+      "cash": 15,
+      "shepherds": 15
+    }
+  },
   "Goat Farm": {
     "product": "Goat Milk",
     "building": "Goat Farm",
@@ -3205,23 +3218,42 @@
     "regionID": 5,
     "productionTime": 60,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 500,
+      "wanza_timber": 5
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 5,
+      "shepherds": 30
+    }
+  },
+  "Linseed Farm": {
+    "product": "Linseed",
+    "building": "Linseed Farm",
+    "img": "shepherds/linen-farm.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 500,
+      "wanza_timber": 2
+    },
+    "maintenance": {
+      "cash": 10,
+      "shepherds": 5
+    }
+  },
+  "Linen Mill": {
+    "product": "Linen",
+    "building": "Linen Mill",
+    "img": "shepherds/linen-fabric.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 500,
+      "wanza_timber": 6
+    },
+    "maintenance": {
+      "cash": 20,
+      "shepherds": 25
     }
   },
   "Embroiderer": {
@@ -3229,25 +3261,44 @@
     "building": "Embroiderer",
     "img": "shepherds/traditional-clothing.webp",
     "regionID": 5,
-    "productionTime": 30,
+    "productionTime": 60,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 1250,
+      "wanza_timber": 8
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 20,
+      "shepherds": 40
+    }
+  },
+  "Sanga Farm": {
+    "product": "Sanga Cows",
+    "building": "Sanga Farm",
+    "img": "shepherds/watusi.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 750,
+      "wanza_timber": 4
+    },
+    "maintenance": {
+      "cash": 10,
+      "shepherds": 20
+    }
+  },
+  "Salt Works": {
+    "product": "Salt",
+    "building": "Salt Works",
+    "img": "shepherds/salt.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 750,
+      "wanza_timber": 8
+    },
+    "maintenance": {
+      "cash": 15,
+      "shepherds": 15
     }
   },
   "Dry-House": {
@@ -3257,23 +3308,27 @@
     "regionID": 5,
     "productionTime": 30,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 750,
+      "wanza_timber": 6
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 25,
+      "shepherds": 50
+    }
+  },
+  "Hibiscus Farm": {
+    "product": "Dried Meat",
+    "building": "Hibiscus Farm",
+    "img": "shepherds/hibiscus-farm.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 1250,
+      "wanza_timber": 6
+    },
+    "maintenance": {
+      "cash": 15,
+      "shepherds": 15
     }
   },
   "Tea Spicer": {
@@ -3283,50 +3338,74 @@
     "regionID": 5,
     "productionTime": 30,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 2500,
+      "wanza_timber": 10
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 60,
+      "shepherds": 35
     }
   },
 
-  "Brick Dry-House": {
-    "product": "Mud Bricks",
-    "building": "Brick Dry-House",
-    "img": "shepherds/hibiscus-tea.webp",
+  "Clay Harvester": {
+    "product": "Clay",
+    "building": "Clay Harvester",
+    "img": "elders/clay.webp",
     "regionID": 5,
     "productionTime": 15,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 2500,
+      "wanza_timber": 6
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 20,
+      "shepherds": 35
+    }
+  },
+  "Teff Farm": {
+    "product": "Teff",
+    "building": "Teff Farm",
+    "img": "elders/teff-grass.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 1500,
+      "wanza_timber": 5
+    },
+    "maintenance": {
+      "cash": 20,
+      "shepherds": 20
+    }
+  },
+  "Brick Dry-House": {
+    "product": "Mud Bricks",
+    "building": "Brick Dry-House",
+    "img": "elders/mud-bricks.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 8
+    },
+    "maintenance": {
+      "cash": 40,
+      "elders": 100
+    }
+  },
+  "Indigo Farm": {
+    "product": "Indigo",
+    "building": "Indigo Farm",
+    "img": "elders/mud-bricks.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2000,
+      "wanza_timber": 5
+    },
+    "maintenance": {
+      "cash": 25,
+      "shepherds": 20,
+      "elders": 0
     }
   },
   "Ceramics Workshop": {
@@ -3334,25 +3413,16 @@
     "building": "Ceramics Workshop",
     "img": "elders/ceramics.webp",
     "regionID": 5,
-    "productionTime": 15,
+    "productionTime": 30,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 4000,
+      "wanza_timber": 12,
+      "mud_bricks": 3
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 100,
+      "shepherds": 0,
+      "elders": 100
     }
   },
   "Tapestry Looms": {
@@ -3362,23 +3432,64 @@
     "regionID": 5,
     "productionTime": 30,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 5000,
+      "wanza_timber": 10,
+      "mud_bricks": 7
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 190,
+      "shepherds": 0,
+      "elders": 90
+    }
+  },
+  "Spice Farm": {
+    "product": "Spices",
+    "building": "Spice Farm",
+    "img": "elders/spices.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 10
+    },
+    "maintenance": {
+      "cash": 25,
+      "shepherds": 15,
+      "elders": 0
+    }
+  },
+  "Teff Mill": {
+    "product": "Spiced Flour",
+    "building": "Teff Mill",
+    "img": "elders/teff-flour.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 2500,
+      "wanza_timber": 10,
+      "mud_bricks": 5
+    },
+    "maintenance": {
+      "cash": 75,
+      "shepherds": 0,
+      "elders": 50
+    }
+  },
+  "Lobster Fishery": {
+    "product": "Lobsters",
+    "building": "Lobster Fishery",
+    "img": "elders/seafood.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 3000,
+      "wanza_timber": 12,
+      "mud_bricks": 8
+    },
+    "maintenance": {
+      "cash": 40,
+      "shepherds": 35,
+      "elders": 0
     }
   },
   "Wat Kitchen": {
@@ -3388,23 +3499,14 @@
     "regionID": 5,
     "productionTime": 30,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 4500,
+      "wanza_timber": 15,
+      "mud_bricks": 10
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 150,
+      "shepherds": 0,
+      "elders": 70
     }
   },
   "Pipe Maker": {
@@ -3414,23 +3516,31 @@
     "regionID": 5,
     "productionTime": 15,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 9000,
+      "wanza_timber": 10,
+      "mud_bricks": 15
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 180,
+      "shepherds": 0,
+      "elders": 75
+    }
+  },
+  "Paper Mill": {
+    "product": "Paper",
+    "building": "Paper Mill",
+    "img": "elders/paper.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 6500,
+      "wanza_timber": 10,
+      "mud_bricks": 15
+    },
+    "maintenance": {
+      "cash": 55,
+      "shepherds": 0,
+      "elders": 85
     }
   },
   "Luminer": {
@@ -3440,23 +3550,68 @@
     "regionID": 5,
     "productionTime": 15,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 12000,
+      "wanza_timber": 15,
+      "mud_bricks": 20
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 250,
+      "shepherds": 0,
+      "elders": 100
+    }
+  },
+  "Fuel Station": {
+    "product": "Fuel",
+    "building": "Fuel Station",
+    "img": "elders/fuel.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 25000,
+      "wanza_timber": 30,
+      "mud_bricks": 50,
+      "steel": 40,
+      "windows": 10,
+      "concrete": 10
+    },
+    "maintenance": {
+      "cash": 350,
+      "shepherds": 0,
+      "elders": 75
+    }
+  },
+  "Apiary": {
+    "product": "Beeswax",
+    "building": "Apiary",
+    "img": "elders/beeswax.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 9000,
+      "wanza_timber": 15,
+      "mud_bricks": 0
+    },
+    "maintenance": {
+      "cash": 70,
+      "shepherds": 30,
+      "elders": 0
+    }
+  },
+  "Chandler": {
+    "product": "Ornate Candles",
+    "building": "Chandler",
+    "img": "elders/candles.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 7000,
+      "wanza_timber": 15,
+      "mud_bricks": 10
+    },
+    "maintenance": {
+      "cash": 120,
+      "shepherds": 0,
+      "elders": 30
     }
   },
   "Lanternsmith": {
@@ -3464,25 +3619,16 @@
     "building": "Lanternsmith",
     "img": "elders/lanterns.webp",
     "regionID": 5,
-    "productionTime": 15,
+    "productionTime": 60,
     "construction": {
-      "cash": 0,
-      "wood": 0,
-      "brick": 0,
-      "steel": 0,
-      "window": 0,
-      "concrete": 0,
-      "influence": 0
+      "cash": 18000,
+      "wanza_timber": 20,
+      "mud_bricks": 20
     },
     "maintenance": {
-      "cash": 0,
-      "jornaleros": 0,
-      "obreros": 0,
-      "farmer": 0,
-      "worker": 0,
-      "artisan": 0,
-      "engineer": 0,
-      "investor": 0
+      "cash": 300,
+      "shepherds": 0,
+      "elders": 75
     }
   }
 }

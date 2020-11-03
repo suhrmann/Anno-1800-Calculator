@@ -1520,7 +1520,7 @@
       "chain": "Seafood Stew",
       "populationID": 12,
       "finalProduct": "Seafood Stew",
-      "name": "Wal Kitchen",
+      "name": "Wat Kitchen",
       "alternative": "",
       "children": [{
         "name": "Teff Mill",
@@ -1580,7 +1580,7 @@
         "alternative": "",
         "children": [{
           "name": "Lumberjack Hut",
-          "regionID": 5,
+          "regionID": 1,
           "alternative": "",
           "children": null
         }]
