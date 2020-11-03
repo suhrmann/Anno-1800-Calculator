@@ -18,7 +18,7 @@
     "name": "Cape Trelawney",
     "img": "cape-trelawney.webp",
     "dlcID": 2,
-    "populationIDs": [1, 2, 3, 4, 5]
+    "populationIDs": [1, 2, 3, 4, 5, 8]
   },
   "theArctic": {
     "id": 4,
