@@ -171,6 +171,10 @@
     <h2>📣 Shout Out</h2>
     <ul>
       <li>
+        <b>Banan1996.1996</b> an admin of Anno 1800 Wiki. Thank you for your help and the tons of work, spent  the
+        awesome <a href="">Anno 1800 Wiki</a>!
+      </li>
+      <li>
         <b>Schwubbe</b> for his awesome <a href="https://schwubbe.de/">Anno 1800 Warenrechner [Anno 1800 Calculator]</a> <br>
         Its more focused on functions that just a nice facade - so if this calculator lacks some features (again) head over to Schwube's calculator
       </li>
