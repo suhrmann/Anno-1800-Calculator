@@ -54,7 +54,7 @@
       </v-bottom-navigation>
     </v-card>
 
-    <!-- Nav Bar: WORLD -->
+    <!-- Nav Bar: REGION -->
     <v-card height="70px" tile>
       <v-bottom-navigation
         v-model="selectedregionID"
@@ -66,14 +66,14 @@
         <v-btn
           color="primary"
           text
-          v-for="(world, i) in worlds"
+          v-for="(region, i) in regions"
           :key="i"
-          :value="world.id"
-          @click="changeWorld(world.id)"
+          :value="region.id"
+          @click="changeRegion(region.id)"
         >
-          <span>{{ world.name }}</span>
+          <span>{{ region.name }}</span>
           <v-avatar>
-            <img :src="getImage(world.img, 'regions')" :alt="world.name + ' Image'">
+            <img :src="getImage(region.img, 'regions')" :alt="region.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -82,11 +82,11 @@
 </template>
 
 <script>
-import worlds from '../data/regions.json'
-import populations from '../data/population.json'
-import ProductionChains from '../data/production-chains.json'
+import regions from '@/data/regions.json'
+import populations from '@/data/population.json'
+import ProductionChains from '@/data/production-chains.json'
 import { helperFunctionMixin } from './helperFunctionMixin.js'
-import { EventBus } from '../EventBus.js'
+import { EventBus } from '@/EventBus'
 
 export default {
   name: 'BottomNavBar',
@@ -100,7 +100,7 @@ export default {
 
       /* Store data from JSON in component */
       // TODO Load these centrally and access this data e.g. via Vuex
-      worlds: worlds,
+      regions: regions,
       populations: populations,
       productionChainsData: ProductionChains.Production_Chain
     }
@@ -166,9 +166,9 @@ export default {
     },
 
     /**
-     * Filter the social classes for the ones available in the selected world.
+     * Filter the social classes for the ones available in the selected region.
      *
-     * @return {array} The social classes of the selected world.
+     * @return {array} The social classes of the selected region.
      */
     selectedSocialClasses: function () {
       const populations = Object.values(this.populations)
@@ -180,7 +180,7 @@ export default {
     /**
      * Filter the production chains for the ones available in the selected social class.
      *
-     * @return {array} The production chains of the selected world and social class.
+     * @return {array} The production chains of the selected region and social class.
      */
     selectedProductionChains: function () {
       const productionChains = Object.values(this.productionChainsData)
@@ -191,16 +191,16 @@ export default {
   },
   methods: {
     /**
-     * After changing the world, display the first social class.
+     * After changing the region, display the first social class.
      *
-     * @param {int} regionID The id of the world that caused this reset.
+     * @param {int} regionID The id of the region that caused this reset.
      */
-    changeWorld: function (regionID) {
-      const selectedWorld = this.getWorldByID(regionID)
-      this.selectedregionID = selectedWorld.id
+    changeRegion: function (regionID) {
+      const selectedRegion = this.getRegionByID(regionID)
+      this.selectedregionID = selectedRegion.id
 
       const selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.populationIDs[0]
+        selectedRegion.populationIDs[0]
       )
       this.selectedpopulationID = selectedSocialClass.id
 
@@ -229,15 +229,15 @@ export default {
     },
 
     /**
-     * Searches all worlds by their world id
+     * Searches all regions by their region id
      *
      * @param {int} id
-     * @return {Object} The selected World Object
+     * @return {Object} The selected region Object
      */
-    getWorldByID (id) {
-      const worlds = Object.values(this.worlds)
-      const selectedWorld = worlds.filter((world) => world.id === id)[0]
-      return selectedWorld
+    getRegionByID (id) {
+      const regions = Object.values(this.regions)
+      const selectedRegion = regions.filter((region) => region.id === id)[0]
+      return selectedRegion
     },
 
     /**

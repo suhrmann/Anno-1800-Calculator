@@ -1,7 +1,7 @@
 import producers from '@/data/producers.json'
 import nonProducers from '@/data/non-producers.json'
 import ProductionChains from '@/data/production-chains.json'
-import Worlds from '@/data/regions.json'
+import Regions from '@/data/regions.json'
 import SocialClasses from '@/data/population.json'
 import {
   chainNodeMixin
@@ -188,15 +188,15 @@ export const helperFunctionMixin = {
     },
 
     /**
-     * Searches all worlds by their world id
+     * Searches all regions by their region id
      *
      * @param {int} id
-     * @return {Object} The selected World Object
+     * @return {Object} The selected region Object
      */
-    getWorldByID (id) {
-      const worlds = Object.values(Worlds)
-      const selectedWorld = worlds.filter(world => world.id === id)[0]
-      return selectedWorld
+    getRegionByID (id) {
+      const regions = Object.values(Regions)
+      const selectedRegion = regions.filter(region => region.id === id)[0]
+      return selectedRegion
     },
 
     /**

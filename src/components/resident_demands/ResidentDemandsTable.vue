@@ -212,7 +212,7 @@ export default {
       cigarsInfo: true,
 
       headers: [
-        // TODO Add value for old / new world
+        // TODO Add value for old / new region
         {
           text: 'Type',
           value: 'type',
