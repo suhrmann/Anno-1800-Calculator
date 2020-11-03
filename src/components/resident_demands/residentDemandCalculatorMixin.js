@@ -19,84 +19,14 @@ export default {
     }
   },
   computed: {
-    // Computed properties for Vuex values
-    numFarmers: function () {
-      return this.$store.state.population.numFarmers
-    },
-    numWorkers: function () {
-      return this.$store.state.population.numWorkers
-    },
-    numArtisans: function () {
-      return this.$store.state.population.numArtisans
-    },
-    numEngineers: function () {
-      return this.$store.state.population.numEngineers
-    },
-    numInvestors: function () {
-      return this.$store.state.population.numInvestors
-    },
-    numJornaleros: function () {
-      return this.$store.state.population.numJornaleros
-    },
-    numObreros: function () {
-      return this.$store.state.population.numObreros
-    },
-
-    // Compute population demands
-    farmersDemands: function () {
-      const farmersDemands = this.consumption.farmers
-      return {
-        basic: this.calculateDemands(farmersDemands.basic, this.numFarmers),
-        luxury: this.calculateDemands(farmersDemands.luxury, this.numFarmers)
-      }
-    },
-    workersDemands: function () {
-      const workersDemands = this.consumption.workers
-      return {
-        basic: this.calculateDemands(workersDemands.basic, this.numWorkers),
-        luxury: this.calculateDemands(workersDemands.luxury, this.numWorkers)
-      }
-    },
-    artisansDemands: function () {
-      const artisansDemands = this.consumption.artisans
-      return {
-        basic: this.calculateDemands(artisansDemands.basic, this.numArtisans),
-        luxury: this.calculateDemands(artisansDemands.luxury, this.numArtisans)
-      }
-    },
-    engineersDemands: function () {
-      const engineersDemands = this.consumption.engineers
-      return {
-        basic: this.calculateDemands(engineersDemands.basic, this.numEngineers),
-        luxury: this.calculateDemands(engineersDemands.luxury, this.numEngineers)
-      }
-    },
-    investorsDemands: function () {
-      const investorsDemands = this.consumption.investors
-      return {
-        basic: this.calculateDemands(investorsDemands.basic, this.numInvestors),
-        luxury: this.calculateDemands(investorsDemands.luxury, this.numInvestors)
-      }
-    },
-    jornalerosDemands: function () {
-      const jornalerosDemands = this.consumption.jornaleros
-      return {
-        basic: this.calculateDemands(jornalerosDemands.basic, this.numJornaleros),
-        luxury: this.calculateDemands(jornalerosDemands.luxury, this.numJornaleros)
-      }
-    },
-    obrerosDemands: function () {
-      const obrerosDemands = this.consumption.obreros
-      return {
-        basic: this.calculateDemands(obrerosDemands.basic, this.numObreros),
-        luxury: this.calculateDemands(obrerosDemands.luxury, this.numObreros)
-      }
+    numPopulation: function () {
+      return this.$store.state.population
     },
 
     /**
      * Merge the various population's demands into one object.
      *
-     * @return {object} The basic and luxury demands of the popuation.
+     * @return {object} The basic and luxury demands of the population.
      *         Structure: {
      *           basic: {
      *             <Product>: {number} <consumption>
@@ -110,15 +40,19 @@ export default {
      */
     totalDemands: function () {
       // Merge all demands
-      const demands = {
-        farmers: this.farmersDemands,
-        workers: this.workersDemands,
-        artisans: this.artisansDemands,
-        engineers: this.engineersDemands,
-        investors: this.investorsDemands,
-        jornaleros: this.jornalerosDemands,
-        obreros: this.obrerosDemands
-      }
+      const _self = this
+      const demands = Object.assign(...Object.keys(this.consumption).map(
+        pop => {
+          const numPopStr = 'num' + pop.charAt(0).toUpperCase() + pop.slice(1) // build e.g. "numFarmers" from "farmers"
+          return {
+            [pop]: {
+              basic: _self.calculateDemands(_self.consumption[pop].basic, _self.numPopulation[numPopStr]),
+              luxury: _self.calculateDemands(_self.consumption[pop].luxury, _self.numPopulation[numPopStr])
+            }
+          }
+        }
+      ))
+      console.log('TOTAL DEMANDS: ', demands)
 
       const totalDemands = {
         basic: {},
