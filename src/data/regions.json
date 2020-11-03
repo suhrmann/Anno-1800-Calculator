@@ -4,7 +4,7 @@
     "name": "The Old World",
     "img": "the-old-world.webp",
     "dlcID": 0,
-    "populationIDs": [1, 2, 3, 4, 5]
+    "populationIDs": [1, 2, 3, 4, 5, 8]
   },
   "newWorld": {
     "id": 2,
@@ -25,13 +25,13 @@
     "name": "The Arctic",
     "img": "the-arctic.webp",
     "dlcID": 4,
-    "populationIDs": []
+    "populationIDs": [9, 10]
   },
   "enbesa": {
     "id": 5,
     "name": "Enbesa",
     "img": "enbesa.webp",
     "dlcID": 9,
-    "populationIDs": []
+    "populationIDs": [11, 12]
   }
 }
