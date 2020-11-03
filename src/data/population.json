@@ -28,8 +28,13 @@
     "id": 5,
     "name": "Investors",
     "img": "investors.webp",
-    "regionID": 1,
     "firstProductionChain": 35
+  },
+  "scholars": {
+    "id": 8,
+    "name": "Scholars",
+    "img": "scholars.webp",
+    "firstProductionChain": 17
   },
 
 
@@ -44,5 +49,13 @@
     "name": "Obreros",
     "img": "obreros.webp",
     "firstProductionChain": 22
+  },
+
+
+  "explorers": {
+    "id": 8,
+    "name": "Explorer",
+    "img": "explorers.webp",
+    "firstProductionChain": 17
   }
 }

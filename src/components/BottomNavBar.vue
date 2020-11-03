@@ -167,8 +167,9 @@ export default {
      */
     selectedPopulations: function () {
       const populations = Object.values(this.populations)
+      const region = this.getRegionByID(this.selectedRegionID)
       return populations.filter(
-        (population) => population.regionID === this.selectedRegionID
+        (population) => region.populationIDs.includes(population.id)
       )
     },
 
