@@ -41,10 +41,10 @@
         <v-btn
           color="primary"
           text
-          v-for="(population, i) in selectedSocialClasses"
+          v-for="(population, i) in selectedPopulations"
           :key="i"
           :value="population.id"
-          @click="changeSocialClass(population.id)"
+          @click="changePopulation(population.id)"
         >
           <span>{{ population.name }}</span>
           <v-avatar>
@@ -143,13 +143,13 @@ export default {
      * @return {Object} The selected Production Chain
      */
     selectedProductionChain () {
-      const selectedSocialClassChains = this.selectedProductionChains
+      const selectedPopulationChains = this.selectedProductionChains
       const chainID = this.selectedProductionChainID
       let productionChain = {}
 
-      Object.keys(selectedSocialClassChains).forEach((chain) => {
-        if (selectedSocialClassChains[chain].id === chainID) {
-          productionChain = selectedSocialClassChains[chain]
+      Object.keys(selectedPopulationChains).forEach((chain) => {
+        if (selectedPopulationChains[chain].id === chainID) {
+          productionChain = selectedPopulationChains[chain]
         }
       })
       this.setProductionChain(productionChain)
@@ -170,7 +170,7 @@ export default {
      *
      * @return {array} The social classes of the selected region.
      */
-    selectedSocialClasses: function () {
+    selectedPopulations: function () {
       const populations = Object.values(this.populations)
       return populations.filter(
         (population) => population.regionID === this.selectedregionID
@@ -199,12 +199,12 @@ export default {
       const selectedRegion = this.getRegionByID(regionID)
       this.selectedregionID = selectedRegion.id
 
-      const selectedSocialClass = this.getSocialClassByID(
+      const selectedPopulation = this.getPopulationByID(
         selectedRegion.populationIDs[0]
       )
-      this.selectedpopulationID = selectedSocialClass.id
+      this.selectedpopulationID = selectedPopulation.id
 
-      this.changeSocialClass(selectedSocialClass.id)
+      this.changePopulation(selectedPopulation.id)
       EventBus.$emit('bottomNavBarChanged')
     },
 
@@ -213,8 +213,8 @@ export default {
      *
      * @param {int} populationID The id of the social class that caused this reset.
      */
-    changeSocialClass: function (populationID) {
-      const population = this.getSocialClassByID(populationID)
+    changePopulation: function (populationID) {
+      const population = this.getPopulationByID(populationID)
       this.selectedProductionChainID = population.firstProductionChain
     },
 
@@ -246,10 +246,10 @@ export default {
      * @param {int} id
      * @return {Object} The selected Social Class Object
      */
-    getSocialClassByID (id) {
+    getPopulationByID (id) {
       const populations = Object.values(this.populations)
-      const selectedSocialClass = populations.filter((population) => population.id === id)[0]
-      return selectedSocialClass
+      const selectedPopulation = populations.filter((population) => population.id === id)[0]
+      return selectedPopulation
     }
   }
 }

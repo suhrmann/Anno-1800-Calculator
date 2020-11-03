@@ -2,7 +2,7 @@ import producers from '@/data/producers.json'
 import nonProducers from '@/data/non-producers.json'
 import ProductionChains from '@/data/production-chains.json'
 import Regions from '@/data/regions.json'
-import SocialClasses from '@/data/population.json'
+import Populations from '@/data/population.json'
 import {
   chainNodeMixin
 } from './production_chains/chainNodeMixin'
@@ -205,12 +205,12 @@ export const helperFunctionMixin = {
      * @param {int} id
      * @return {Object} The selected Social Class Object
      */
-    getSocialClassByID (id) {
-      const populations = Object.values(SocialClasses)
-      const selectedSocialClass = populations.filter(
+    getPopulationByID (id) {
+      const populations = Object.values(Populations)
+      const selectedPopulation = populations.filter(
         population => population.id === id
       )[0]
-      return selectedSocialClass
+      return selectedPopulation
     },
 
     /**
