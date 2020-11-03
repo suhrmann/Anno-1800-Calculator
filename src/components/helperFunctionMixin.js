@@ -103,7 +103,7 @@ export const helperFunctionMixin = {
      */
 
     fetchProductionTime (node) {
-      const building = this.getBuildingByName(node.name, node.worldID)
+      const building = this.getBuildingByName(node.name, node.regionID)
       this.productionTimes.push(building.productionTime)
     },
 
@@ -111,10 +111,10 @@ export const helperFunctionMixin = {
      * Search for building by its name.
      *
      * @param {String} name The buildings name.
-     * @param {int} worldID The current worldID
+     * @param {int} regionID The current regionID
      * @return {Object} A JS Object representing the matching producer
      */
-    getBuildingByName (name, worldID) {
+    getBuildingByName (name, regionID) {
       const buildings = this.producerFile
       const helperFunctionMixin = this
 
@@ -147,7 +147,7 @@ export const helperFunctionMixin = {
       for (const building in buildings) {
         if (
           buildings[building].building === name &&
-          buildings[building].worldID === worldID
+          buildings[building].regionID === regionID
         ) {
           return buildings[building]
         }

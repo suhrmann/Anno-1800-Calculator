@@ -229,10 +229,10 @@ export default {
       const helperFunctionMixin = this
       const selectedChain = this.getProductionChainByProductName(product)
       const population = helperFunctionMixin.getSocialClassByID(selectedChain.populationID)
-      const world = helperFunctionMixin.getWorldByID(population.worldID)
+      const world = helperFunctionMixin.getWorldByID(population.regionID)
       this.$store.commit(
         'changeSelectionIDs', {
-          worldID: world.id,
+          regionID: world.id,
           populationID: population.id,
           chainID: selectedChain.id
         })

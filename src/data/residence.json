@@ -1,36 +1,36 @@
 {
   "farmers": {
-    "worldID": 1,
+    "regionID": 1,
     "populationId": 1,
     "residence": 10
   },
   "workers": {
-    "worldID": 1,
+    "regionID": 1,
     "populationId": 2,
     "residence": 20
   },
   "artisans": {
-    "worldID": 1,
+    "regionID": 1,
     "populationId": 3,
     "residence": 30
   },
   "engineers": {
-    "worldID": 1,
+    "regionID": 1,
     "populationId": 4,
     "residence": 40
   },
   "investors": {
-    "worldID": 1,
+    "regionID": 1,
     "populationId": 5,
     "residence": 50
   },
   "jornaleros": {
-    "worldID": 2,
+    "regionID": 2,
     "populationId": 6,
     "residence": 10
   },
   "obreros": {
-    "worldID": 2,
+    "regionID": 2,
     "populationId": 7,
     "residence": 20
   }

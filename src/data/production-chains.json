@@ -3,7 +3,7 @@
   "Production_Chain": {
     "timber": {
       "id": 1,
-      "worldID": 1,
+      "regionID": 1,
       "img": "farmers/timber.webp",
       "chain": "Timber",
       "populationID": 1,
@@ -12,14 +12,14 @@
       "alternative": "",
       "children": [{
         "name": "Lumberjack Hut",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": null
       }]
     },
     "fish": {
       "id": 2,
-      "worldID": 1,
+      "regionID": 1,
       "chain": "Fish",
       "img": "farmers/fish.webp",
       "populationID": 1,
@@ -30,7 +30,7 @@
     },
     "schnapps": {
       "id": 3,
-      "worldID": 1,
+      "regionID": 1,
       "img": "farmers/schnapps.webp",
       "chain": "Schnapps",
       "populationID": 1,
@@ -39,14 +39,14 @@
       "alternative": "",
       "children": [{
         "name": "Potato Farm",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": null
       }]
     },
     "work-clothes": {
       "id": 4,
-      "worldID": 1,
+      "regionID": 1,
       "img": "farmers/work-clothes.webp",
       "chain": "Clothes",
       "populationID": 1,
@@ -55,14 +55,14 @@
       "alternative": "",
       "children": [{
         "name": "Sheep Farm",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": null
       }]
     },
     "bricks": {
       "id": 5,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/bricks.webp",
       "chain": "Bricks",
       "populationID": 2,
@@ -71,14 +71,14 @@
       "alternative": "",
       "children": [{
         "name": "Clay Pit",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": null
       }]
     },
     "sausages": {
       "id": 6,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/sausages.webp",
       "chain": "Sausages",
       "populationID": 2,
@@ -87,14 +87,14 @@
       "alternative": "",
       "children": [{
         "name": "Pig Farm",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": null
       }]
     },
     "sails": {
       "id": 7,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/sails.webp",
       "chain": "Sails",
       "populationID": 2,
@@ -103,14 +103,14 @@
       "alternative": "",
       "children": [{
         "name": "Sheep Farm",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": null
       }]
     },
     "bread": {
       "id": 8,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/bread.webp",
       "chain": "Bread",
       "populationID": 2,
@@ -119,11 +119,11 @@
       "alternative": "",
       "children": [{
         "name": "Flour Mill",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": [{
           "name": "Grain Farm",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         }]
@@ -131,7 +131,7 @@
     },
     "soap": {
       "id": 9,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/soap.webp",
       "chain": "Soap",
       "populationID": 2,
@@ -140,11 +140,11 @@
       "alternative": "",
       "children": [{
         "name": "Rendering Works",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": [{
           "name": "Pig Farm",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         }]
@@ -152,7 +152,7 @@
     },
     "steel-beams": {
       "id": 10,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/steel-beams.webp",
       "chain": "Steel Beams",
       "populationID": 2,
@@ -161,17 +161,17 @@
       "alternative": "",
       "children": [{
         "name": "Furnace",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": [{
             "name": "Iron Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           },
           {
             "name": "Charcoal Kiln",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }
@@ -180,7 +180,7 @@
     },
     "weapons": {
       "id": 11,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/weapons.webp",
       "chain": "Weapons",
       "populationID": 2,
@@ -189,17 +189,17 @@
       "alternative": "",
       "children": [{
         "name": "Furnace",
-        "worldID": 1,
+        "regionID": 1,
         "alternative": "",
         "children": [{
             "name": "Iron Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           },
           {
             "name": "Charcoal Kiln",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }
@@ -208,7 +208,7 @@
     },
     "beer": {
       "id": 12,
-      "worldID": 1,
+      "regionID": 1,
       "img": "workers/beer.webp",
       "chain": "Beer",
       "populationID": 2,
@@ -217,17 +217,17 @@
       "alternative": "",
       "children": [{
           "name": "Hop Farm",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         },
         {
           "name": "Malthouse",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Grain Farm",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }]
@@ -236,7 +236,7 @@
     },
     "windows": {
       "id": 13,
-      "worldID": 1,
+      "regionID": 1,
       "img": "artisans/windows.webp",
       "chain": "Windows",
       "populationID": 3,
@@ -245,17 +245,17 @@
       "alternative": "",
       "children": [{
           "name": "Lumberjack Hut",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         },
         {
           "name": "Glassmakers",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }]
@@ -264,7 +264,7 @@
     },
     "canned-food": {
       "id": 14,
-      "worldID": 1,
+      "regionID": 1,
       "img": "artisans/canned-food.webp",
       "chain": "Canned Food",
       "populationID": 3,
@@ -273,23 +273,23 @@
       "alternative": "",
       "children": [{
           "name": "Iron Mine",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         },
         {
           "name": "Artisanal Kitchen",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Cattle Farm",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Red Pepper Farm",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             }
@@ -299,7 +299,7 @@
     },
     "sewing-machines": {
       "id": 15,
-      "worldID": 1,
+      "regionID": 1,
       "img": "artisans/sewing-machines.webp",
       "chain": "Sewing Machines",
       "populationID": 3,
@@ -308,23 +308,23 @@
       "alternative": "",
       "children": [{
           "name": "Lumberjack Hut",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         },
         {
           "name": "Furnace",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Coal Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Charcoal Kiln",
               "children": null
             }
@@ -334,7 +334,7 @@
     },
     "fur-coats": {
       "id": 16,
-      "worldID": 1,
+      "regionID": 1,
       "img": "artisans/fur-coats.webp",
       "chain": "Fur Coats",
       "populationID": 3,
@@ -343,17 +343,17 @@
       "alternative": "",
       "children": [{
           "name": "Hunting Cabin",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         },
         {
           "name": "Cotton Mill",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": [{
             "name": "Cotton Plantation",
-            "worldID": 2,
+            "regionID": 2,
             "alternative": "",
             "children": null
           }]
@@ -363,7 +363,7 @@
 
     "timber-new": {
       "id": 17,
-      "worldID": 2,
+      "regionID": 2,
       "img": "jornaleros/timber.webp",
       "chain": "Timber",
       "populationID": 6,
@@ -372,7 +372,7 @@
       "alternative": "",
       "children": [{
         "name": "Lumberjack Hut",
-        "worldID": 2,
+        "regionID": 2,
         "alternative": "",
         "children": null
       }]
@@ -380,7 +380,7 @@
 
     "Fried Plantains": {
       "id": 18,
-      "worldID": 2,
+      "regionID": 2,
       "img": "jornaleros/fried-plantains.webp",
       "chain": "Fried Plantains",
       "populationID": 6,
@@ -389,13 +389,13 @@
       "alternative": "",
       "children": [{
           "name": "Fish Oil Factory",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         },
         {
           "name": "Plantain Plantation",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }
@@ -403,7 +403,7 @@
     },
     "sails-new": {
       "id": 19,
-      "worldID": 2,
+      "regionID": 2,
       "img": "jornaleros/sails.webp",
       "chain": "Sails",
       "populationID": 6,
@@ -412,11 +412,11 @@
       "alternative": "",
       "children": [{
         "name": "Cotton Mill",
-        "worldID": 2,
+        "regionID": 2,
         "alternative": "",
         "children": [{
           "name": "Cotton Plantation",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }]
@@ -424,7 +424,7 @@
     },
     "rum": {
       "id": 20,
-      "worldID": 2,
+      "regionID": 2,
       "img": "jornaleros/rum.webp",
       "chain": "Rum",
       "populationID": 6,
@@ -433,13 +433,13 @@
       "alternative": "",
       "children": [{
           "name": "Lumberjack Hut",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         },
         {
           "name": "Sugar Cane Plantation",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }
@@ -447,7 +447,7 @@
     },
     "ponchos": {
       "id": 21,
-      "worldID": 2,
+      "regionID": 2,
       "img": "jornaleros/poncho.webp",
       "chain": "Ponchos",
       "populationID": 6,
@@ -456,7 +456,7 @@
       "alternative": "",
       "children": [{
         "name": "Alpaca Farm",
-        "worldID": 2,
+        "regionID": 2,
         "alternative": "",
         "children": null
       }]
@@ -464,7 +464,7 @@
 
     "bricks-new": {
       "id": 22,
-      "worldID": 2,
+      "regionID": 2,
       "img": "obreros/bricks.webp",
       "chain": "Bricks",
       "populationID": 7,
@@ -473,7 +473,7 @@
       "alternative": "",
       "children": [{
         "name": "Clay Pit",
-        "worldID": 2,
+        "regionID": 2,
         "alternative": "",
         "children": null
       }]
@@ -483,7 +483,7 @@
 
     "tortillas": {
       "id": 23,
-      "worldID": 2,
+      "regionID": 2,
       "img": "obreros/tortilla.webp",
       "chain": "Tortillas",
       "populationID": 7,
@@ -492,13 +492,13 @@
       "alternative": "",
       "children": [{
           "name": "Cattle Farm",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         },
         {
           "name": "Corn Farm",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }
@@ -506,7 +506,7 @@
     },
     "coffee": {
       "id": 24,
-      "worldID": 2,
+      "regionID": 2,
       "img": "obreros/coffee.webp",
       "chain": "Coffee",
       "populationID": 7,
@@ -515,7 +515,7 @@
       "alternative": "",
       "children": [{
         "name": "Coffee Plantation",
-        "worldID": 2,
+        "regionID": 2,
         "alternative": "",
         "children": null
       }]
@@ -523,7 +523,7 @@
 
     "bowler-hats": {
       "id": 25,
-      "worldID": 2,
+      "regionID": 2,
       "img": "obreros/bowler-hats.webp",
       "chain": "Bowler Hats",
       "populationID": 7,
@@ -532,22 +532,22 @@
       "alternative": "",
       "children": [{
           "name": "Cotton Mill",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": [{
             "name": "Cotton Plantation",
-            "worldID": 2,
+            "regionID": 2,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Felt Producer",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": [{
             "name": "Alpaca Farm",
-            "worldID": 2,
+            "regionID": 2,
             "alternative": "",
             "children": null
           }]
@@ -557,7 +557,7 @@
 
     "cigars": {
       "id": 26,
-      "worldID": 2,
+      "regionID": 2,
       "img": "obreros/cigars.webp",
       "chain": "Cigars",
       "populationID": 7,
@@ -566,17 +566,17 @@
       "alternative": "",
       "children": [{
           "name": "Tobacco Plantation",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         },
         {
           "name": "Marquetry Workshop",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
-            "worldID": 2,
+            "regionID": 2,
             "alternative": "NewWorld",
             "children": null
           }]
@@ -586,7 +586,7 @@
 
     "chocolate": {
       "id": 27,
-      "worldID": 2,
+      "regionID": 2,
       "img": "obreros/chocolate.webp",
       "chain": "Chocolate",
       "populationID": 7,
@@ -595,18 +595,18 @@
       "alternative": "",
       "children": [{
           "name": "Sugar Refinery",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": [{
             "name": "Sugar Cane Plantation",
-            "worldID": 2,
+            "regionID": 2,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Cocoa Plantation",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }
@@ -614,7 +614,7 @@
     },
     "reinforced-concrete": {
       "id": 28,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/reinforced-concrete.webp",
       "chain": "Reinforced Concrete",
       "populationID": 4,
@@ -623,17 +623,17 @@
       "alternative": "",
       "children": [{
           "name": "Furnace",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -641,7 +641,7 @@
         },
         {
           "name": "Limestone Quarry",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         }
@@ -650,7 +650,7 @@
 
     "glasses": {
       "id": 29,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/glasses.webp",
       "chain": "Glasses",
       "populationID": 4,
@@ -659,28 +659,28 @@
       "alternative": "",
       "children": [{
           "name": "Glassmakers",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Brass Smeltery",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Zinc Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Copper Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             }
@@ -691,7 +691,7 @@
 
     "advanced-weapons": {
       "id": 30,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/advanced-weapons.webp",
       "chain": "Advanced Weapons",
       "populationID": 4,
@@ -700,22 +700,22 @@
       "alternative": "",
       "children": [{
           "name": "Dynamite Factory",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Rendering Works",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": [{
                 "name": "Pig Farm",
-                "worldID": 1,
+                "regionID": 1,
                 "alternative": "",
                 "children": null
               }]
             },
             {
               "name": "Saltpeter Works",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             }
@@ -723,17 +723,17 @@
         },
         {
           "name": "Furnace",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -744,7 +744,7 @@
 
     "high-wheelers": {
       "id": 31,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/high-wheeler.webp",
       "chain": "High Wheelers",
       "populationID": 4,
@@ -753,17 +753,17 @@
       "alternative": "",
       "children": [{
           "name": "Furnace",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -771,7 +771,7 @@
         },
         {
           "name": "Caoutchouc Plantation",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }
@@ -780,7 +780,7 @@
 
     "steam_motors": {
       "id": 32,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/steam-motors.webp",
       "chain": "Steam Motors",
       "populationID": 4,
@@ -789,17 +789,17 @@
       "alternative": "",
       "children": [{
           "name": "Furnace",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -807,17 +807,17 @@
         },
         {
           "name": "Brass Smeltery",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Zinc Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Copper Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             }
@@ -827,7 +827,7 @@
     },
     "pocket-watches": {
       "id": 33,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/pocket-watch.webp",
       "chain": "Pocket Watches",
       "populationID": 4,
@@ -836,17 +836,17 @@
       "alternative": "",
       "children": [{
           "name": "Goldsmiths",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Gold Mine",
-              "worldID": 2,
+              "regionID": 2,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -854,11 +854,11 @@
         },
         {
           "name": "Glassmakers",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }]
@@ -868,7 +868,7 @@
 
     "light-bulbs": {
       "id": 34,
-      "worldID": 1,
+      "regionID": 1,
       "img": "engineers/light-bulb.webp",
       "chain": "Light Bulbs",
       "populationID": 4,
@@ -877,22 +877,22 @@
       "alternative": "",
       "children": [{
           "name": "Filament Factory",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Charcoal Kiln",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "Coal Mine",
             "children": null
           }]
         },
         {
           "name": "Glassmakers",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }]
@@ -902,7 +902,7 @@
 
     "champagne": {
       "id": 35,
-      "worldID": 1,
+      "regionID": 1,
       "img": "investors/champagne.webp",
       "chain": "Champagne",
       "populationID": 5,
@@ -911,18 +911,18 @@
       "alternative": "",
       "children": [{
           "name": "Glassmakers",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Vineyard",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": null
         }
@@ -931,7 +931,7 @@
 
     "jewellery": {
       "id": 36,
-      "worldID": 1,
+      "regionID": 1,
       "img": "investors/jewelry.webp",
       "chain": "Jewellery",
       "populationID": 5,
@@ -940,17 +940,17 @@
       "alternative": "",
       "children": [{
           "name": "Goldsmiths",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Gold Mine",
-              "worldID": 2,
+              "regionID": 2,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -958,7 +958,7 @@
         },
         {
           "name": "Pearl Farm",
-          "worldID": 2,
+          "regionID": 2,
           "alternative": "",
           "children": null
         }
@@ -967,7 +967,7 @@
 
     "gramophones": {
       "id": 37,
-      "worldID": 1,
+      "regionID": 1,
       "img": "investors/gramophone.webp",
       "chain": "Gramophones",
       "populationID": 5,
@@ -976,28 +976,28 @@
       "alternative": "",
       "children": [{
           "name": "Marquetry Workshop",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
-            "worldID": 1,
+            "regionID": 1,
             "alternative": "NewWorld",
             "children": null
           }]
         },
         {
           "name": "Brass Smeltery",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Zinc Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Copper Mine",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             }
@@ -1008,7 +1008,7 @@
 
     "steam-carriages": {
       "id": 38,
-      "worldID": 1,
+      "regionID": 1,
       "img": "investors/steam-carriages.webp",
       "chain": "Steam Carriages",
       "populationID": 5,
@@ -1017,21 +1017,21 @@
       "alternative": "",
       "children": [{
           "name": "Motor Assembly Line",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Furnace",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": [{
                   "name": "Iron Mine",
-                  "worldID": 1,
+                  "regionID": 1,
                   "alternative": "",
                   "children": null
                 },
                 {
                   "name": "Charcoal Kiln",
-                  "worldID": 1,
+                  "regionID": 1,
                   "alternative": "",
                   "children": null
                 }
@@ -1039,17 +1039,17 @@
             },
             {
               "name": "Brass Smeltery",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": [{
                   "name": "Zinc Mine",
-                  "worldID": 1,
+                  "regionID": 1,
                   "alternative": "",
                   "children": null
                 },
                 {
                   "name": "Copper Mine",
-                  "worldID": 1,
+                  "regionID": 1,
                   "alternative": "",
                   "children": null
                 }
@@ -1059,17 +1059,17 @@
         },
         {
           "name": "Coachmakers",
-          "worldID": 1,
+          "regionID": 1,
           "alternative": "",
           "children": [{
               "name": "Lumberjack Hut",
-              "worldID": 1,
+              "regionID": 1,
               "alternative": "",
               "children": null
             },
             {
               "name": "Caoutchouc Plantation",
-              "worldID": 2,
+              "regionID": 2,
               "alternative": "",
               "children": null
             }

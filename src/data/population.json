@@ -3,28 +3,28 @@
     "id": 1,
     "name": "Farmers",
     "img": "farmers.webp",
-    "worldID": 1,
+    "regionID": 1,
     "firstProductionChain": 1
   },
   "workers": {
     "id": 2,
     "name": "Workers",
     "img": "workers.webp",
-    "worldID": 1,
+    "regionID": 1,
     "firstProductionChain": 5
   },
   "artisans": {
     "id": 3,
     "name": "Artisans",
     "img": "artisans.webp",
-    "worldID": 1,
+    "regionID": 1,
     "firstProductionChain": 13
   },
   "engineers": {
     "id": 4,
     "name": "Engineers",
     "img": "engineers.webp",
-    "worldID": 1,
+    "regionID": 1,
     "firstProductionChain": 28
 
   },
@@ -32,7 +32,7 @@
     "id": 5,
     "name": "Investors",
     "img": "investors.webp",
-    "worldID": 1,
+    "regionID": 1,
     "firstProductionChain": 35
   },
 
@@ -41,14 +41,14 @@
     "id": 6,
     "name": "Jornaleros",
     "img": "jornaleros.webp",
-    "worldID": 2,
+    "regionID": 2,
     "firstProductionChain": 17
   },
   "obreros": {
     "id": 7,
     "name": "Obreros",
     "img": "obreros.webp",
-    "worldID": 2,
+    "regionID": 2,
     "firstProductionChain": 22
   }
 }

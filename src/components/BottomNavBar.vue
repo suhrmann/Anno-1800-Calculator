@@ -57,7 +57,7 @@
     <!-- Nav Bar: WORLD -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedWorldID"
+        v-model="selectedregionID"
         absolute
         dark
         height="70"
@@ -94,7 +94,7 @@ export default {
   data () {
     return {
       // Init selection
-      // selectedWorldID: 1,
+      // selectedregionID: 1,
       // selectedpopulationID: 1,
       // selectedProductionChainID: 1,
 
@@ -107,12 +107,12 @@ export default {
   },
 
   computed: {
-    selectedWorldID: {
+    selectedregionID: {
       get: function () {
-        return this.$store.state.selectedWorldID
+        return this.$store.state.selectedregionID
       },
-      set: function (selectedWorldID) {
-        this.$store.commit('changeWorldID', selectedWorldID)
+      set: function (selectedregionID) {
+        this.$store.commit('changeregionID', selectedregionID)
       }
     },
 
@@ -173,7 +173,7 @@ export default {
     selectedSocialClasses: function () {
       const populations = Object.values(this.populations)
       return populations.filter(
-        (population) => population.worldID === this.selectedWorldID
+        (population) => population.regionID === this.selectedregionID
       )
     },
 
@@ -193,11 +193,11 @@ export default {
     /**
      * After changing the world, display the first social class.
      *
-     * @param {int} worldID The id of the world that caused this reset.
+     * @param {int} regionID The id of the world that caused this reset.
      */
-    changeWorld: function (worldID) {
-      const selectedWorld = this.getWorldByID(worldID)
-      this.selectedWorldID = selectedWorld.id
+    changeWorld: function (regionID) {
+      const selectedWorld = this.getWorldByID(regionID)
+      this.selectedregionID = selectedWorld.id
 
       const selectedSocialClass = this.getSocialClassByID(
         selectedWorld.populationIDs[0]

@@ -21,7 +21,7 @@ export default new Vuex.Store({
       reducer (state, paths) {
         return {
           // Store selected production chain
-          selectedWorldID: state.selectedWorldID,
+          selectedregionID: state.selectedregionID,
           selectedpopulationID: state.selectedpopulationID,
           selectedProductionChainID: state.selectedProductionChainID,
 
@@ -35,7 +35,7 @@ export default new Vuex.Store({
   state: {
     selectedProductionChain: {
       id: 1,
-      worldID: 1,
+      regionID: 1,
       chain: 'Timber',
       populationID: 1,
       finalProduct: 'Timber',
@@ -44,12 +44,12 @@ export default new Vuex.Store({
       alternative: '',
       children: [{
         name: 'Lumberjack Hut',
-        worldID: 1,
+        regionID: 1,
         alternative: '',
         children: null
       }]
     },
-    selectedWorldID: 1,
+    selectedregionID: 1,
     selectedpopulationID: 1,
     selectedProductionChainID: 1,
 
@@ -173,17 +173,17 @@ export default new Vuex.Store({
      * {
      *   {integer} chainID
      *   {integer} populationID
-     *   {integer} worldID
+     *   {integer} regionID
      * }
      */
     changeSelectionIDs (state, idObject) {
       state.selectedProductionChainID = idObject.chainID
       state.selectedpopulationID = idObject.populationID
-      state.selectedWorldID = idObject.worldID
+      state.selectedregionID = idObject.regionID
     },
 
-    changeWorldID (state, worldID) {
-      state.selectedWorldID = worldID
+    changeregionID (state, regionID) {
+      state.selectedregionID = regionID
     },
 
     changepopulationID (state, populationID) {
@@ -198,7 +198,7 @@ export default new Vuex.Store({
       state.selectedProductionChain = initChain
       state.selectedProductionChainID = 1
       state.selectedpopulationID = 1
-      state.selectedWorldID = 1
+      state.selectedregionID = 1
     },
 
     /**

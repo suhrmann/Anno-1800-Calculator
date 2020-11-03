@@ -341,7 +341,7 @@ export default {
 
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
-        element.worldID
+        element.regionID
       )
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount

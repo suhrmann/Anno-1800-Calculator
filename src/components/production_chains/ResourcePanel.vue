@@ -140,7 +140,7 @@ export default {
       const helperFunctionMixin = this
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
-        element.worldID
+        element.regionID
       )
 
       this.requiredResources.cash +=
