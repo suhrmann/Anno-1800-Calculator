@@ -22,7 +22,7 @@ export default new Vuex.Store({
         return {
           // Store selected production chain
           selectedWorldID: state.selectedWorldID,
-          selectedSocialClassID: state.selectedSocialClassID,
+          selectedpopulationID: state.selectedpopulationID,
           selectedProductionChainID: state.selectedProductionChainID,
 
           // Store entered population
@@ -37,7 +37,7 @@ export default new Vuex.Store({
       id: 1,
       worldID: 1,
       chain: 'Timber',
-      socialClassID: 1,
+      populationID: 1,
       finalProduct: 'Timber',
       name: 'Sawmill',
       img: 'farmers/timber.webp',
@@ -50,7 +50,7 @@ export default new Vuex.Store({
       }]
     },
     selectedWorldID: 1,
-    selectedSocialClassID: 1,
+    selectedpopulationID: 1,
     selectedProductionChainID: 1,
 
     /**
@@ -172,13 +172,13 @@ export default new Vuex.Store({
      * @param {object} idObject
      * {
      *   {integer} chainID
-     *   {integer} socialClassID
+     *   {integer} populationID
      *   {integer} worldID
      * }
      */
     changeSelectionIDs (state, idObject) {
       state.selectedProductionChainID = idObject.chainID
-      state.selectedSocialClassID = idObject.socialClassID
+      state.selectedpopulationID = idObject.populationID
       state.selectedWorldID = idObject.worldID
     },
 
@@ -186,8 +186,8 @@ export default new Vuex.Store({
       state.selectedWorldID = worldID
     },
 
-    changeSocialClassID (state, socialClassID) {
-      state.selectedSocialClassID = socialClassID
+    changepopulationID (state, populationID) {
+      state.selectedpopulationID = populationID
     },
 
     changeProductionChainID (state, chainID) {
@@ -197,14 +197,14 @@ export default new Vuex.Store({
     resetSelectionIDs (state, initChain) {
       state.selectedProductionChain = initChain
       state.selectedProductionChainID = 1
-      state.selectedSocialClassID = 1
+      state.selectedpopulationID = 1
       state.selectedWorldID = 1
     },
 
     /**
      * Change the selected production chain from bottom navbar.
      * @param {object} state
-     * @param {object} newChain The new selected production chain from production-chain.json.
+     * @param {object} newChain The new selected production chain from production-chains.json.
      */
     changeProductionChain (state, newChain) {
       state.selectedProductionChain = newChain

@@ -1,8 +1,8 @@
-import producers from '../data/producers.json'
-import nonProducers from '../data/non-producers.json'
-import ProductionChains from '../data/production-chain.json'
-import Worlds from '../data/worlds.json'
-import SocialClasses from '../data/social-classes.json'
+import producers from '@/data/producers.json'
+import nonProducers from '@/data/non-producers.json'
+import ProductionChains from '@/data/production-chains.json'
+import Worlds from '@/data/worlds.json'
+import SocialClasses from '@/data/population.json'
 import {
   chainNodeMixin
 } from './production_chains/chainNodeMixin'
@@ -39,13 +39,13 @@ export const helperFunctionMixin = {
      * @return {string} The URL of the image (e.g. for use as img src).
      */
     getImage (image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : ''
+      return image ? require(`@/assets/${folder}/${image}`) : ''
     },
 
     /**
      * Extracts all production Times of a given production chain
      *
-     * @param {Object} productionChain a productionChain object as defined in production-chain.json
+     * @param {Object} productionChain a productionChain object as defined in production-chains.json
      * @return {Array} An Array containing all objects production times
      */
 
@@ -115,7 +115,7 @@ export const helperFunctionMixin = {
      * @return {Object} A JS Object representing the matching producer
      */
     getBuildingByName (name, worldID) {
-      const buildings = this.producerFile.Producers
+      const buildings = this.producerFile
       const helperFunctionMixin = this
 
       if (this.$store.state.selectedProductionChain.id === 26 || this.$store.state.selectedProductionChain.id === 37) {
@@ -164,7 +164,7 @@ export const helperFunctionMixin = {
      * TODO Distinguishe between Old and New World!
      */
     getBuildingByProduct (productName) {
-      const buildings = this.producerFile.Producers
+      const buildings = this.producerFile
       const productNameLC = productName.toLowerCase() // To lower case
 
       for (const building in buildings) {
@@ -206,9 +206,9 @@ export const helperFunctionMixin = {
      * @return {Object} The selected Social Class Object
      */
     getSocialClassByID (id) {
-      const socialClasses = Object.values(SocialClasses)
-      const selectedSocialClass = socialClasses.filter(
-        socialClass => socialClass.id === id
+      const populations = Object.values(SocialClasses)
+      const selectedSocialClass = populations.filter(
+        population => population.id === id
       )[0]
       return selectedSocialClass
     },

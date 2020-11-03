@@ -79,7 +79,7 @@ export default {
   methods: {
     buildProductObject () {
       const producerObject = {}
-      const producerFile = JSON.parse(JSON.stringify(Producers.Producers))
+      const producerFile = JSON.parse(JSON.stringify(Producers))
       for (let i = 0; i < producerFile.length; i++) {
         const producerKey = producerFile[i]
 

@@ -32,7 +32,7 @@
     <!-- Nav Bar: SOCIAL CLASS -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedSocialClassID"
+        v-model="selectedpopulationID"
         absolute
         dark
         height="70"
@@ -41,14 +41,14 @@
         <v-btn
           color="primary"
           text
-          v-for="(socialClass, i) in selectedSocialClasses"
+          v-for="(population, i) in selectedSocialClasses"
           :key="i"
-          :value="socialClass.id"
-          @click="changeSocialClass(socialClass.id)"
+          :value="population.id"
+          @click="changeSocialClass(population.id)"
         >
-          <span>{{ socialClass.name }}</span>
+          <span>{{ population.name }}</span>
           <v-avatar>
-            <img :src="getImage(socialClass.img, 'population')" :alt="socialClass.name + ' Image'">
+            <img :src="getImage(population.img, 'population')" :alt="population.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -83,8 +83,8 @@
 
 <script>
 import worlds from '../data/worlds.json'
-import socialClasses from '../data/social-classes.json'
-import ProductionChains from '../data/production-chain'
+import populations from '../data/population.json'
+import ProductionChains from '../data/production-chains.json'
 import { helperFunctionMixin } from './helperFunctionMixin.js'
 import { EventBus } from '../EventBus.js'
 
@@ -95,13 +95,13 @@ export default {
     return {
       // Init selection
       // selectedWorldID: 1,
-      // selectedSocialClassID: 1,
+      // selectedpopulationID: 1,
       // selectedProductionChainID: 1,
 
       /* Store data from JSON in component */
       // TODO Load these centrally and access this data e.g. via Vuex
       worlds: worlds,
-      socialClasses: socialClasses,
+      populations: populations,
       productionChainsData: ProductionChains.Production_Chain
     }
   },
@@ -116,12 +116,12 @@ export default {
       }
     },
 
-    selectedSocialClassID: {
+    selectedpopulationID: {
       get: function () {
-        return this.$store.state.selectedSocialClassID
+        return this.$store.state.selectedpopulationID
       },
-      set: function (selectedSocialClassID) {
-        this.$store.commit('changeSocialClassID', selectedSocialClassID)
+      set: function (selectedpopulationID) {
+        this.$store.commit('changepopulationID', selectedpopulationID)
       }
     },
 
@@ -171,9 +171,9 @@ export default {
      * @return {array} The social classes of the selected world.
      */
     selectedSocialClasses: function () {
-      const socialClasses = Object.values(this.socialClasses)
-      return socialClasses.filter(
-        (socialClass) => socialClass.worldID === this.selectedWorldID
+      const populations = Object.values(this.populations)
+      return populations.filter(
+        (population) => population.worldID === this.selectedWorldID
       )
     },
 
@@ -185,7 +185,7 @@ export default {
     selectedProductionChains: function () {
       const productionChains = Object.values(this.productionChainsData)
       return productionChains.filter(
-        (chain) => chain.socialClassID === this.selectedSocialClassID
+        (chain) => chain.populationID === this.selectedpopulationID
       )
     }
   },
@@ -200,9 +200,9 @@ export default {
       this.selectedWorldID = selectedWorld.id
 
       const selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.socialClassIDs[0]
+        selectedWorld.populationIDs[0]
       )
-      this.selectedSocialClassID = selectedSocialClass.id
+      this.selectedpopulationID = selectedSocialClass.id
 
       this.changeSocialClass(selectedSocialClass.id)
       EventBus.$emit('bottomNavBarChanged')
@@ -211,11 +211,11 @@ export default {
     /**
      * After changing the social class, display the first production chain.
      *
-     * @param {int} socialClassID The id of the social class that caused this reset.
+     * @param {int} populationID The id of the social class that caused this reset.
      */
-    changeSocialClass: function (socialClassID) {
-      const socialClass = this.getSocialClassByID(socialClassID)
-      this.selectedProductionChainID = socialClass.firstProductionChain
+    changeSocialClass: function (populationID) {
+      const population = this.getSocialClassByID(populationID)
+      this.selectedProductionChainID = population.firstProductionChain
     },
 
     /**
@@ -247,8 +247,8 @@ export default {
      * @return {Object} The selected Social Class Object
      */
     getSocialClassByID (id) {
-      const socialClasses = Object.values(this.socialClasses)
-      const selectedSocialClass = socialClasses.filter((socialClass) => socialClass.id === id)[0]
+      const populations = Object.values(this.populations)
+      const selectedSocialClass = populations.filter((population) => population.id === id)[0]
       return selectedSocialClass
     }
   }

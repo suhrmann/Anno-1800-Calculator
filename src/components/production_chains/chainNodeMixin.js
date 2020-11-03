@@ -1,4 +1,4 @@
-import productionChains from '../../data/production-chain.json'
+import productionChains from '../../data/production-chains.json'
 
 export const chainNodeMixin = {
   name: 'ProductionChainNode',

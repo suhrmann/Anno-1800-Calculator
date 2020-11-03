@@ -1,848 +1,832 @@
 {
-    "version": "Anno 1800 Beta",
-    "buildings": {
-        "Dirt Road": {
-            "name": "Dirt Road",
-            "img": "farmers/dirt-road.webp",
-            "construction": {
-                "cash": 3,
-                "wood": 0,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Marketplace": {
-            "name": "Marketplace",
-            "img": "farmers/marketplace.webp",
-            "construction": {
-                "cash": 500,
-                "wood": 10,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 20,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Farmer Residence": {
-            "name": "Farmer Residence",
-            "img": "farmers/residence.webp",
-            "construction": {
-                "cash": 0,
-                "wood": 2,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-
-        "Small Warehouse": {
-            "name": "Small Warehouse",
-            "img": "farmers/warehouse.webp",
-            "construction": {
-                "cash": 500,
-                "wood": 10,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 20,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Fire Station": {
-            "name": "Fire Station",
-            "img": "farmers/fire-station.webp",
-            "construction": {
-                "cash": 500,
-                "wood": 4,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 25,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Pub": {
-            "name": "Pub",
-            "img": "farmers/pub.webp",
-            "construction": {
-                "cash": 500,
-                "wood": 10,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 20,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Paved Street": {
-            "name": "Paved Street",
-            "img": "workers/paved-street.webp",
-            "construction": {
-                "cash": 5,
-                "wood": 0,
-                "brick": 1,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Trade Union": {
-            "name": "Trade Union",
-            "img": "workers/trade-union.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 25,
-                "brick": 5,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 25
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Church": {
-            "name": "Church",
-            "img": "workers/church.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 20,
-                "brick": 25,
-                "steel": 0,
-                "window": 0,
-                "concrete": 25,
-                "influence": 25
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Police Station": {
-            "name": "Police Station",
-            "img": "workers/police-station.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 8,
-                "brick": 10,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "School": {
-            "name": "School",
-            "img": "workers/school.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 20,
-                "brick": 25,
-                "steel": 20,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Town Hall": {
-            "name": "Town Hall",
-            "img": "artisans/town-hall.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 20,
-                "brick": 25,
-                "steel": 20,
-                "window": 5,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Variety Theatre": {
-            "name": "Variety Theatre",
-            "img": "artisans/variety-theatre.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 30,
-                "brick": 50,
-                "steel": 40,
-                "window": 40,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 100,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Zoo": {
-            "name": "Zoo",
-            "img": "artisans/zoo.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 30,
-                "brick": 30,
-                "steel": 10,
-                "window": 5,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 100,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Hospital": {
-            "name": "Hospital",
-            "img": "artisans/hospital.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 12,
-                "brick": 20,
-                "steel": 16,
-                "window": 40,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 100,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "University": {
-            "name": "University",
-            "img": "artisans/university.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 30,
-                "brick": 50,
-                "steel": 40,
-                "window": 40,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 400,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-
-
-        "Rails": {
-            "name": "Rails",
-            "img": "engineers/railway.webp",
-            "construction": {
-                "cash": 100,
-                "wood": 1,
-                "brick": 0,
-                "steel": 1,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Small Oil Harbour": {
-            "name": "Small Oil Harbour",
-            "img": "engineers/oil-harbour.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 20,
-                "brick": 25,
-                "steel": 20,
-                "window": 15,
-                "concrete": 15,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 100,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Oil Storage": {
-            "name": "Oil Storage",
-            "img": "engineers/oil-storage.webp",
-            "construction": {
-                "cash": 25000,
-                "wood": 8,
-                "brick": 15,
-                "steel": 12,
-                "window": 10,
-                "concrete": 10,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Steam Shipyard": {
-            "name": "Steam Shipyard",
-            "img": "engineers/steam-shipyard.webp",
-            "construction": {
-                "cash": 50000,
-                "wood": 50,
-                "brick": 100,
-                "steel": 80,
-                "window": 75,
-                "concrete": 75,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 400,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 200,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Bank": {
-            "name": "Bank",
-            "img": "engineers/bank.webp",
-            "construction": {
-                "cash": 25000,
-                "wood": 40,
-                "brick": 75,
-                "steel": 60,
-                "window": 60,
-                "concrete": 50,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 1000,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-
-
-        "World's Fair: Foundations": {
-            "name": "World's Fair: Foundations",
-            "img": "investors/world-fair.webp",
-            "construction": {
-                "cash": 100000,
-                "wood": 100,
-                "brick": 200,
-                "steel": 160,
-                "window": 150,
-                "concrete": 150,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 500,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Members Club": {
-            "name": "Members Club",
-            "img": "investors/members-club.webp",
-            "construction": {
-                "cash": 50000,
-                "wood": 50,
-                "brick": 100,
-                "steel": 80,
-                "window": 75,
-                "concrete": 75,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 350,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-
-
-
-
-
-
-        "Jornalero Residence": {
-            "name": "Jornalero Residence",
-            "img": "jornaleros/residence.webp",
-            "construction": {
-                "cash": 0,
-                "wood": 1,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Quay": {
-            "name": "Quay",
-            "img": "jornaleros/quay.webp",
-            "construction": {
-                "cash": 20,
-                "wood": 0,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Sailing shipyard": {
-            "name": "Residence",
-            "img": "jornaleros/residence.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 20,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 100,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 100,
-                "obrero": 0
-            }
-        },
-        "Depot": {
-            "name": "Depot",
-            "img": "jornaleros/depot.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 10,
-                "brick": 10,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 20,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Harbourmaster's Office": {
-            "name": "Residence",
-            "img": "jornaleros/residence.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 10,
-                "brick": 10,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Repair Crane": {
-            "name": "Repair Crane",
-            "img": "jornaleros/repair-crane.webp",
-            "construction": {
-                "cash": 500,
-                "wood": 50,
-                "brick": 75,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Mounted Guns": {
-            "name": "Mounted Guns",
-            "img": "jornaleros/mounted-guns.webp",
-            "construction": {
-                "cash": 5000,
-                "wood": 20,
-                "brick": 20,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "weapons": 10,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 0,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Chapel": {
-            "name": "Chapel",
-            "img": "jornaleros/church.webp",
-            "construction": {
-                "cash": 500,
-                "wood": 10,
-                "brick": 0,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 10,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-
-
-        "Public Mooring": {
-            "name": "Public Mooring",
-            "img": "obreros/public-mooring.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 20,
-                "brick": 10,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 250,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Pier": {
-            "name": "Pier",
-            "img": "obreros/pier.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 30,
-                "brick": 50,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 50,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Cannon Tower": {
-            "name": "Cannon Tower",
-            "img": "obreros/cannon-tower.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 40,
-                "brick": 40,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "weapons": 10,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 10,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Boxing Arena": {
-            "name": "Boxing Arena",
-            "img": "obreros/boxing-arena.webp",
-            "construction": {
-                "cash": 2500,
-                "wood": 20,
-                "brick": 25,
-                "steel": 0,
-                "window": 0,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 20,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        },
-        "Museum": {
-            "name": "Chapel",
-            "img": "obreros/church.webp",
-            "construction": {
-                "cash": 10000,
-                "wood": 30,
-                "brick": 30,
-                "steel": 10,
-                "window": 5,
-                "concrete": 0,
-                "influence": 0
-            },
-            "maintenance": {
-                "cash": 100,
-                "farmer": 0,
-                "worker": 0,
-                "artisan": 0,
-                "engineer": 0,
-                "investor": 0,
-                "jornalero": 0,
-                "obrero": 0
-            }
-        }
+  "Dirt Road": {
+    "name": "Dirt Road",
+    "img": "farmers/dirt-road.webp",
+    "construction": {
+      "cash": 3,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
     }
+  },
+  "Marketplace": {
+    "name": "Marketplace",
+    "img": "farmers/marketplace.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 10,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Farmer Residence": {
+    "name": "Farmer Residence",
+    "img": "farmers/residence.webp",
+    "construction": {
+      "cash": 0,
+      "wood": 2,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Small Warehouse": {
+    "name": "Small Warehouse",
+    "img": "farmers/warehouse.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 10,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Fire Station": {
+    "name": "Fire Station",
+    "img": "farmers/fire-station.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 4,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 25,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Pub": {
+    "name": "Pub",
+    "img": "farmers/pub.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 10,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Paved Street": {
+    "name": "Paved Street",
+    "img": "workers/paved-street.webp",
+    "construction": {
+      "cash": 5,
+      "wood": 0,
+      "brick": 1,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Trade Union": {
+    "name": "Trade Union",
+    "img": "workers/trade-union.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 25,
+      "brick": 5,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 25
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Church": {
+    "name": "Church",
+    "img": "workers/church.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 20,
+      "brick": 25,
+      "steel": 0,
+      "window": 0,
+      "concrete": 25,
+      "influence": 25
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Police Station": {
+    "name": "Police Station",
+    "img": "workers/police-station.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 8,
+      "brick": 10,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "School": {
+    "name": "School",
+    "img": "workers/school.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 20,
+      "brick": 25,
+      "steel": 20,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Town Hall": {
+    "name": "Town Hall",
+    "img": "artisans/town-hall.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 20,
+      "brick": 25,
+      "steel": 20,
+      "window": 5,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Variety Theatre": {
+    "name": "Variety Theatre",
+    "img": "artisans/variety-theatre.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 30,
+      "brick": 50,
+      "steel": 40,
+      "window": 40,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Zoo": {
+    "name": "Zoo",
+    "img": "artisans/zoo.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 30,
+      "brick": 30,
+      "steel": 10,
+      "window": 5,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Hospital": {
+    "name": "Hospital",
+    "img": "artisans/hospital.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 12,
+      "brick": 20,
+      "steel": 16,
+      "window": 40,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "University": {
+    "name": "University",
+    "img": "artisans/university.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 30,
+      "brick": 50,
+      "steel": 40,
+      "window": 40,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 400,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Rails": {
+    "name": "Rails",
+    "img": "engineers/railway.webp",
+    "construction": {
+      "cash": 100,
+      "wood": 1,
+      "brick": 0,
+      "steel": 1,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Small Oil Harbour": {
+    "name": "Small Oil Harbour",
+    "img": "engineers/oil-harbour.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 20,
+      "brick": 25,
+      "steel": 20,
+      "window": 15,
+      "concrete": 15,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Oil Storage": {
+    "name": "Oil Storage",
+    "img": "engineers/oil-storage.webp",
+    "construction": {
+      "cash": 25000,
+      "wood": 8,
+      "brick": 15,
+      "steel": 12,
+      "window": 10,
+      "concrete": 10,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Steam Shipyard": {
+    "name": "Steam Shipyard",
+    "img": "engineers/steam-shipyard.webp",
+    "construction": {
+      "cash": 50000,
+      "wood": 50,
+      "brick": 100,
+      "steel": 80,
+      "window": 75,
+      "concrete": 75,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 400,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 200,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Bank": {
+    "name": "Bank",
+    "img": "engineers/bank.webp",
+    "construction": {
+      "cash": 25000,
+      "wood": 40,
+      "brick": 75,
+      "steel": 60,
+      "window": 60,
+      "concrete": 50,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 1000,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "World's Fair: Foundations": {
+    "name": "World's Fair: Foundations",
+    "img": "investors/world-fair.webp",
+    "construction": {
+      "cash": 100000,
+      "wood": 100,
+      "brick": 200,
+      "steel": 160,
+      "window": 150,
+      "concrete": 150,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 500,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Members Club": {
+    "name": "Members Club",
+    "img": "investors/members-club.webp",
+    "construction": {
+      "cash": 50000,
+      "wood": 50,
+      "brick": 100,
+      "steel": 80,
+      "window": 75,
+      "concrete": 75,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 350,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Jornalero Residence": {
+    "name": "Jornalero Residence",
+    "img": "jornaleros/residence.webp",
+    "construction": {
+      "cash": 0,
+      "wood": 1,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Quay": {
+    "name": "Quay",
+    "img": "jornaleros/quay.webp",
+    "construction": {
+      "cash": 20,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Sailing shipyard": {
+    "name": "Residence",
+    "img": "jornaleros/residence.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 20,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 100,
+      "obrero": 0
+    }
+  },
+  "Depot": {
+    "name": "Depot",
+    "img": "jornaleros/depot.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 10,
+      "brick": 10,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Harbourmaster's Office": {
+    "name": "Residence",
+    "img": "jornaleros/residence.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 10,
+      "brick": 10,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Repair Crane": {
+    "name": "Repair Crane",
+    "img": "jornaleros/repair-crane.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 50,
+      "brick": 75,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Mounted Guns": {
+    "name": "Mounted Guns",
+    "img": "jornaleros/mounted-guns.webp",
+    "construction": {
+      "cash": 5000,
+      "wood": 20,
+      "brick": 20,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "weapons": 10,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Chapel": {
+    "name": "Chapel",
+    "img": "jornaleros/church.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 10,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 10,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Public Mooring": {
+    "name": "Public Mooring",
+    "img": "obreros/public-mooring.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 20,
+      "brick": 10,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 250,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Pier": {
+    "name": "Pier",
+    "img": "obreros/pier.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 30,
+      "brick": 50,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Cannon Tower": {
+    "name": "Cannon Tower",
+    "img": "obreros/cannon-tower.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 40,
+      "brick": 40,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "weapons": 10,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 10,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Boxing Arena": {
+    "name": "Boxing Arena",
+    "img": "obreros/boxing-arena.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 20,
+      "brick": 25,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Museum": {
+    "name": "Chapel",
+    "img": "obreros/church.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 30,
+      "brick": 30,
+      "steel": 10,
+      "window": 5,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  }
 }
