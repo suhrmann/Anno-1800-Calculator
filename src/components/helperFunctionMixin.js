@@ -79,9 +79,7 @@ export const helperFunctionMixin = {
 
       const lcm = (a, b) => (a * b) / gcd(a, b)
 
-      const lcmOfArray = productionTimesArray.reduce(lcm) // Returns 60
-      // console.log(lcmOfArray);
-      return lcmOfArray
+      return productionTimesArray.reduce(lcm) // Returns 60
     },
 
     /**
