@@ -96,6 +96,24 @@
         <v-card height="105" class="text-center">
           <v-avatar>
             <img
+              src="@/assets/population/scholars.webp"
+              alt="Scholars"
+            >
+          </v-avatar>
+          <v-text-field
+            v-model="numScholars"
+            class="centered-input"
+            label="Scholars"
+            type="number"
+            min="0"
+          ></v-text-field>
+        </v-card>
+      </v-col>
+
+      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+        <v-card height="105" class="text-center">
+          <v-avatar>
+            <img
               src="@/assets/population/jornaleros.webp"
               alt="Jornaleros"
             >
@@ -127,14 +145,94 @@
           ></v-text-field>
         </v-card>
       </v-col>
+
+      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+        <v-card height="105" class="text-center">
+          <v-avatar>
+            <img
+              src="@/assets/population/explorers.webp"
+              alt="Explorers"
+            >
+          </v-avatar>
+          <v-text-field
+            v-model="numExplorers"
+            class="centered-input"
+            label="Explorers"
+            type="number"
+            min="0"
+          ></v-text-field>
+        </v-card>
+      </v-col>
+
+      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+        <v-card height="105" class="text-center">
+          <v-avatar>
+            <img
+              src="@/assets/population/technicians.webp"
+              alt="Technicians"
+            >
+          </v-avatar>
+          <v-text-field
+            v-model="numTechnicians"
+            class="centered-input"
+            label="Technicians"
+            type="number"
+            min="0"
+          ></v-text-field>
+        </v-card>
+      </v-col>
+
+      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+        <v-card height="105" class="text-center">
+          <v-avatar>
+            <img
+              src="@/assets/population/shepherd.webp"
+              alt="Shepherds"
+            >
+          </v-avatar>
+          <v-text-field
+            v-model="numShepherds"
+            class="centered-input"
+            label="Shepherds"
+            type="number"
+            min="0"
+          ></v-text-field>
+        </v-card>
+      </v-col>
+
+      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+        <v-card height="105" class="text-center">
+          <v-avatar>
+            <img
+              src="@/assets/population/elders.webp"
+              alt="Elders"
+            >
+          </v-avatar>
+          <v-text-field
+            v-model="numElders"
+            class="centered-input"
+            label="Elders"
+            type="number"
+            min="0"
+          ></v-text-field>
+        </v-card>
+      </v-col>
+
     </v-row>
   </v-container>
 
 </template>
 
 <script>
+import population from '@/data/population.json'
+
 export default {
   name: 'BottomPopulationInput',
+  data () {
+    return {
+      population: population
+    }
+  },
   computed: {
     numFarmers: {
       get: function () {
@@ -176,6 +274,15 @@ export default {
         this.$store.commit('setNumInvestors', numInvestors)
       }
     },
+    numScholars: {
+      get: function () {
+        return this.$store.state.population.numScholars
+      },
+      set: function (numScholars) {
+        this.$store.commit('setNumScholars', numScholars)
+      }
+    },
+
     numJornaleros: {
       get: function () {
         return this.$store.state.population.numJornaleros
@@ -190,6 +297,40 @@ export default {
       },
       set: function (numObreros) {
         this.$store.commit('setNumObreros', numObreros)
+      }
+    },
+
+    numExplorers: {
+      get: function () {
+        return this.$store.state.population.numExplorers
+      },
+      set: function (numExplorers) {
+        this.$store.commit('setNumExplorers', numExplorers)
+      }
+    },
+    numTechnicians: {
+      get: function () {
+        return this.$store.state.population.numTechnicians
+      },
+      set: function (numTechnicians) {
+        this.$store.commit('setNumTechnicians', numTechnicians)
+      }
+    },
+
+    numShepherds: {
+      get: function () {
+        return this.$store.state.population.numShepherds
+      },
+      set: function (numShepherds) {
+        this.$store.commit('setNumShepherds', numShepherds)
+      }
+    },
+    numElders: {
+      get: function () {
+        return this.$store.state.population.numElders
+      },
+      set: function (numElders) {
+        this.$store.commit('setNumElders', numElders)
       }
     }
   }

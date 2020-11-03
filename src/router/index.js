@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '@/views/Home.vue'
 import ProductionChains from '@/views/ProductionChains'
-import ResidentDemands from '@/views/ResidentDemands'
+import ResidentDemands from '@/views/PopulationDemands'
 import ProductionLayouts from '@/views/ProductionLayouts'
 import About from '@/views/About'
 

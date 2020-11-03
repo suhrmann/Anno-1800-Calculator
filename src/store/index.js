@@ -71,8 +71,16 @@ export default new Vuex.Store({
       numArtisans: 0,
       numEngineers: 0,
       numInvestors: 0,
+      numScholars: 0,
+
       numJornaleros: 0,
-      numObreros: 0
+      numObreros: 0,
+
+      numExplorers: 0,
+      numTechnicians: 0,
+
+      numShepherds: 0,
+      numElders: 0
     },
 
     /**
@@ -236,7 +244,7 @@ export default new Vuex.Store({
     /**
      * Set the number of workers for demands calculation.
      * @param {object} state
-     * @param {float} numWorkers The new number of farmers
+     * @param {float} numWorkers The new number of workers
      */
     setNumWorkers (state, numWorkers) {
       state.population.numWorkers = numWorkers
@@ -244,7 +252,7 @@ export default new Vuex.Store({
     /**
      * Set the number of artisans for demands calculation.
      * @param {object} state
-     * @param {float} numArtisans The new number of farmers
+     * @param {float} numArtisans The new number of artisans
      */
     setNumArtisans (state, numArtisans) {
       state.population.numArtisans = numArtisans
@@ -252,7 +260,7 @@ export default new Vuex.Store({
     /**
      * Set the number of engineers for demands calculation.
      * @param {object} state
-     * @param {float} numEngineers The new number of farmers
+     * @param {float} numEngineers The new number of engineers
      */
     setNumEngineers (state, numEngineers) {
       state.population.numEngineers = numEngineers
@@ -260,10 +268,18 @@ export default new Vuex.Store({
     /**
      * Set the number of investors for demands calculation.
      * @param {object} state
-     * @param {float} numInvestors The new number of farmers
+     * @param {float} numInvestors The new number of investors
      */
     setNumInvestors (state, numInvestors) {
       state.population.numInvestors = numInvestors
+    },
+    /**
+     * Set the number of scholars for demands calculation.
+     * @param {object} state
+     * @param {float} numScholars The new number of scholars
+     */
+    setNumScholars (state, numScholars) {
+      state.population.numScholars = numScholars
     },
     /**
      * Set the number of jornaleros for demands calculation.
@@ -280,6 +296,40 @@ export default new Vuex.Store({
      */
     setNumObreros (state, numObreros) {
       state.population.numObreros = numObreros
+    },
+
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numExplorers The new number of farmers
+     */
+    setNumExplorers (state, numExplorers) {
+      state.population.numExplorers = numExplorers
+    },
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numTechnicians The new number of farmers
+     */
+    setNumTechnicians (state, numTechnicians) {
+      state.population.numTechnicians = numTechnicians
+    },
+
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numShepherds The new number of farmers
+     */
+    setNumShepherds (state, numShepherds) {
+      state.population.numShepherds = numShepherds
+    },
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numElders The new number of farmers
+     */
+    setNumElders (state, numElders) {
+      state.population.numElders = numElders
     },
 
     /**
