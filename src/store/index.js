@@ -21,12 +21,15 @@ export default new Vuex.Store({
       reducer (state, paths) {
         return {
           // Store selected production chain
-          selectedWorldID: state.selectedWorldID,
-          selectedSocialClassID: state.selectedSocialClassID,
+          selectedregionID: state.selectedregionID,
+          selectedpopulationID: state.selectedpopulationID,
           selectedProductionChainID: state.selectedProductionChainID,
 
           // Store entered population
-          population: state.population
+          population: state.population,
+
+          // Store config value
+          config: state.config
         }
       }
     })
@@ -35,22 +38,22 @@ export default new Vuex.Store({
   state: {
     selectedProductionChain: {
       id: 1,
-      worldID: 1,
+      regionID: 1,
       chain: 'Timber',
-      socialClassID: 1,
+      populationID: 1,
       finalProduct: 'Timber',
       name: 'Sawmill',
       img: 'farmers/timber.webp',
       alternative: '',
       children: [{
         name: 'Lumberjack Hut',
-        worldID: 1,
+        regionID: 1,
         alternative: '',
         children: null
       }]
     },
-    selectedWorldID: 1,
-    selectedSocialClassID: 1,
+    selectedregionID: 1,
+    selectedpopulationID: 1,
     selectedProductionChainID: 1,
 
     /**
@@ -71,8 +74,16 @@ export default new Vuex.Store({
       numArtisans: 0,
       numEngineers: 0,
       numInvestors: 0,
+      numScholars: 0,
+
       numJornaleros: 0,
-      numObreros: 0
+      numObreros: 0,
+
+      numExplorers: 0,
+      numTechnicians: 0,
+
+      numShepherds: 0,
+      numElders: 0
     },
 
     /**
@@ -118,7 +129,7 @@ export default new Vuex.Store({
         Beer: 0,
         'Variety Theatre': false,
         Rum: 0,
-        'High Wheelers': 0,
+        'Penny Farthingss': 0,
         'Pocket Watches': 0,
         Bank: false,
         'Members Club': false,
@@ -139,6 +150,7 @@ export default new Vuex.Store({
         open_construction_costs: 0
       },
       demands: {
+        population_input_tab: 'population',
         is_sorted_by: 'isConsumable'
       }
     }
@@ -172,22 +184,22 @@ export default new Vuex.Store({
      * @param {object} idObject
      * {
      *   {integer} chainID
-     *   {integer} socialClassID
-     *   {integer} worldID
+     *   {integer} populationID
+     *   {integer} regionID
      * }
      */
     changeSelectionIDs (state, idObject) {
       state.selectedProductionChainID = idObject.chainID
-      state.selectedSocialClassID = idObject.socialClassID
-      state.selectedWorldID = idObject.worldID
+      state.selectedpopulationID = idObject.populationID
+      state.selectedregionID = idObject.regionID
     },
 
-    changeWorldID (state, worldID) {
-      state.selectedWorldID = worldID
+    changeRegionID (state, regionID) {
+      state.selectedregionID = regionID
     },
 
-    changeSocialClassID (state, socialClassID) {
-      state.selectedSocialClassID = socialClassID
+    changePopulationID (state, populationID) {
+      state.selectedpopulationID = populationID
     },
 
     changeProductionChainID (state, chainID) {
@@ -197,14 +209,14 @@ export default new Vuex.Store({
     resetSelectionIDs (state, initChain) {
       state.selectedProductionChain = initChain
       state.selectedProductionChainID = 1
-      state.selectedSocialClassID = 1
-      state.selectedWorldID = 1
+      state.selectedpopulationID = 1
+      state.selectedregionID = 1
     },
 
     /**
      * Change the selected production chain from bottom navbar.
      * @param {object} state
-     * @param {object} newChain The new selected production chain from production-chain.json.
+     * @param {object} newChain The new selected production chain from production-chains.json.
      */
     changeProductionChain (state, newChain) {
       state.selectedProductionChain = newChain
@@ -236,7 +248,7 @@ export default new Vuex.Store({
     /**
      * Set the number of workers for demands calculation.
      * @param {object} state
-     * @param {float} numWorkers The new number of farmers
+     * @param {float} numWorkers The new number of workers
      */
     setNumWorkers (state, numWorkers) {
       state.population.numWorkers = numWorkers
@@ -244,7 +256,7 @@ export default new Vuex.Store({
     /**
      * Set the number of artisans for demands calculation.
      * @param {object} state
-     * @param {float} numArtisans The new number of farmers
+     * @param {float} numArtisans The new number of artisans
      */
     setNumArtisans (state, numArtisans) {
       state.population.numArtisans = numArtisans
@@ -252,7 +264,7 @@ export default new Vuex.Store({
     /**
      * Set the number of engineers for demands calculation.
      * @param {object} state
-     * @param {float} numEngineers The new number of farmers
+     * @param {float} numEngineers The new number of engineers
      */
     setNumEngineers (state, numEngineers) {
       state.population.numEngineers = numEngineers
@@ -260,10 +272,18 @@ export default new Vuex.Store({
     /**
      * Set the number of investors for demands calculation.
      * @param {object} state
-     * @param {float} numInvestors The new number of farmers
+     * @param {float} numInvestors The new number of investors
      */
     setNumInvestors (state, numInvestors) {
       state.population.numInvestors = numInvestors
+    },
+    /**
+     * Set the number of scholars for demands calculation.
+     * @param {object} state
+     * @param {float} numScholars The new number of scholars
+     */
+    setNumScholars (state, numScholars) {
+      state.population.numScholars = numScholars
     },
     /**
      * Set the number of jornaleros for demands calculation.
@@ -280,6 +300,40 @@ export default new Vuex.Store({
      */
     setNumObreros (state, numObreros) {
       state.population.numObreros = numObreros
+    },
+
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numExplorers The new number of farmers
+     */
+    setNumExplorers (state, numExplorers) {
+      state.population.numExplorers = numExplorers
+    },
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numTechnicians The new number of farmers
+     */
+    setNumTechnicians (state, numTechnicians) {
+      state.population.numTechnicians = numTechnicians
+    },
+
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numShepherds The new number of farmers
+     */
+    setNumShepherds (state, numShepherds) {
+      state.population.numShepherds = numShepherds
+    },
+    /**
+     * Set the number of obreros for demands calculation.
+     * @param {object} state
+     * @param {float} numElders The new number of farmers
+     */
+    setNumElders (state, numElders) {
+      state.population.numElders = numElders
     },
 
     /**
@@ -309,6 +363,19 @@ export default new Vuex.Store({
      */
     toggle_construction_costs (state, isOpen) {
       state.config.prodcution_chains.open_construction_costs = Boolean(isOpen)
+    },
+
+    /**
+     * Change the input of population for demands: Population or residence
+     * @param state
+     * @param newTab {string} 'population' or 'residence'
+     */
+    set_population_tab (state, newTab) {
+      if (newTab === 'population' || newTab === 'residence') {
+        state.config.demands.population_input_tab = String(newTab)
+      } else {
+        console.error('Unknown type of population input ' + newTab + '.')
+      }
     },
 
     /**

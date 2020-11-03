@@ -1,6 +1,6 @@
-import Consumption from '../../data/consumption.json'
-import Producers from '../../data/producers.json'
-import NonProducers from '../../data/non-producers.json'
+import Consumption from '@/data/consumption.json'
+import Producers from '@/data/producers.json'
+import NonProducers from '@/data/non-producers.json'
 import {
   chainNodeMixin
 } from '../production_chains/chainNodeMixin'
@@ -13,90 +13,20 @@ export default {
   mixins: [chainNodeMixin, helperFunctionMixin],
   data: function () {
     return {
-      producers: Producers.Producers,
-      nonProducers: NonProducers.buildings,
+      producers: Producers,
+      nonProducers: NonProducers,
       consumption: Consumption
     }
   },
   computed: {
-    // Computed properties for Vuex values
-    numFarmers: function () {
-      return this.$store.state.population.numFarmers
-    },
-    numWorkers: function () {
-      return this.$store.state.population.numWorkers
-    },
-    numArtisans: function () {
-      return this.$store.state.population.numArtisans
-    },
-    numEngineers: function () {
-      return this.$store.state.population.numEngineers
-    },
-    numInvestors: function () {
-      return this.$store.state.population.numInvestors
-    },
-    numJornaleros: function () {
-      return this.$store.state.population.numJornaleros
-    },
-    numObreros: function () {
-      return this.$store.state.population.numObreros
-    },
-
-    // Compute population demands
-    farmersDemands: function () {
-      const farmersDemands = this.consumption.Consumption.farmers
-      return {
-        basic: this.calculateDemands(farmersDemands.basic, this.numFarmers),
-        luxury: this.calculateDemands(farmersDemands.luxury, this.numFarmers)
-      }
-    },
-    workersDemands: function () {
-      const workersDemands = this.consumption.Consumption.workers
-      return {
-        basic: this.calculateDemands(workersDemands.basic, this.numWorkers),
-        luxury: this.calculateDemands(workersDemands.luxury, this.numWorkers)
-      }
-    },
-    artisansDemands: function () {
-      const artisansDemands = this.consumption.Consumption.artisans
-      return {
-        basic: this.calculateDemands(artisansDemands.basic, this.numArtisans),
-        luxury: this.calculateDemands(artisansDemands.luxury, this.numArtisans)
-      }
-    },
-    engineersDemands: function () {
-      const engineersDemands = this.consumption.Consumption.engineers
-      return {
-        basic: this.calculateDemands(engineersDemands.basic, this.numEngineers),
-        luxury: this.calculateDemands(engineersDemands.luxury, this.numEngineers)
-      }
-    },
-    investorsDemands: function () {
-      const investorsDemands = this.consumption.Consumption.investors
-      return {
-        basic: this.calculateDemands(investorsDemands.basic, this.numInvestors),
-        luxury: this.calculateDemands(investorsDemands.luxury, this.numInvestors)
-      }
-    },
-    jornalerosDemands: function () {
-      const jornalerosDemands = this.consumption.Consumption.jornaleros
-      return {
-        basic: this.calculateDemands(jornalerosDemands.basic, this.numJornaleros),
-        luxury: this.calculateDemands(jornalerosDemands.luxury, this.numJornaleros)
-      }
-    },
-    obrerosDemands: function () {
-      const obrerosDemands = this.consumption.Consumption.obreros
-      return {
-        basic: this.calculateDemands(obrerosDemands.basic, this.numObreros),
-        luxury: this.calculateDemands(obrerosDemands.luxury, this.numObreros)
-      }
+    numPopulation: function () {
+      return this.$store.state.population
     },
 
     /**
      * Merge the various population's demands into one object.
      *
-     * @return {object} The basic and luxury demands of the popuation.
+     * @return {object} The basic and luxury demands of the population.
      *         Structure: {
      *           basic: {
      *             <Product>: {number} <consumption>
@@ -110,15 +40,18 @@ export default {
      */
     totalDemands: function () {
       // Merge all demands
-      const demands = {
-        farmers: this.farmersDemands,
-        workers: this.workersDemands,
-        artisans: this.artisansDemands,
-        engineers: this.engineersDemands,
-        investors: this.investorsDemands,
-        jornaleros: this.jornalerosDemands,
-        obreros: this.obrerosDemands
-      }
+      const _self = this
+      const demands = Object.assign(...Object.keys(this.consumption).map(
+        pop => {
+          const numPopStr = 'num' + pop.charAt(0).toUpperCase() + pop.slice(1) // build e.g. "numFarmers" from "farmers"
+          return {
+            [pop]: {
+              basic: _self.calculateDemands(_self.consumption[pop].basic, _self.numPopulation[numPopStr]),
+              luxury: _self.calculateDemands(_self.consumption[pop].luxury, _self.numPopulation[numPopStr])
+            }
+          }
+        }
+      ))
 
       const totalDemands = {
         basic: {},
@@ -185,7 +118,7 @@ export default {
      * @return {string} The URL of the image (e.g. for use as img src).
      */
     getImage (image, folder) {
-      return image ? require(`../../assets/${folder}/${image}`) : ''
+      return image ? require(`@/assets/${folder}/${image}`) : ''
     },
     calculateDemands: function (populationDemands, numPopulation) {
       const demands = {}
@@ -213,11 +146,11 @@ export default {
     /**
      * Format the float usage to pretty output (to avoid linebreaks when bin->dec conversion is not accurate).
      *
-     * @param {float} usage The number of usage to format.
+     * @param {number} usage The number of usage to format.
      * @return {string} The pretty formatted usage.
      */
     formatUsage: function (usage) {
-      return Math.round(usage * 100000) / 100000
+      return Number(usage).toFixed(5)
     },
 
     /**
@@ -228,12 +161,12 @@ export default {
     selectChain (product) {
       const helperFunctionMixin = this
       const selectedChain = this.getProductionChainByProductName(product)
-      const socialClass = helperFunctionMixin.getSocialClassByID(selectedChain.socialClassID)
-      const world = helperFunctionMixin.getWorldByID(socialClass.worldID)
+      const population = helperFunctionMixin.getPopulationByID(selectedChain.populationID)
+      const region = helperFunctionMixin.getRegionByID(population.regionID)
       this.$store.commit(
         'changeSelectionIDs', {
-          worldID: world.id,
-          socialClassID: socialClass.id,
+          regionID: region.id,
+          populationID: population.id,
           chainID: selectedChain.id
         })
       this.$store.commit('changeProductionChain', selectedChain)

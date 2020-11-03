@@ -1,7 +1,7 @@
 {
   "name": "anno-1800-calculator",
   "productName": "Anno 1800 Calculator",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Calculate your populations' demands and optimal production chains.",
   "contributors": [
     "Simon Uhrmann <suhrmann@posteo.de>",
@@ -33,9 +33,9 @@
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-tree-chart": "^1.2.4",
+    "vuetify": "^2.3.16",
     "vuex": "^3.4.0",
-    "vuex-persistedstate": "^2.5.4",
-    "vuetify": "^2.2.11"
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -45,6 +45,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
+    "deepmerge": "^4.2.2",
     "electron": "^9.0.0",
     "electron-devtools-installer": "^3.1.0",
     "eslint": "^6.7.2",
@@ -53,10 +54,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.5",
     "vue-cli-plugin-electron-builder": "~2.0.0-rc.5",
     "vue-cli-plugin-vuetify": "~2.0.7",
     "vue-template-compiler": "^2.6.11",

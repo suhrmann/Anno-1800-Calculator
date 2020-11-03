@@ -32,7 +32,7 @@
     <!-- Nav Bar: SOCIAL CLASS -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedSocialClassID"
+        v-model="selectedPopulationID"
         absolute
         dark
         height="70"
@@ -41,23 +41,23 @@
         <v-btn
           color="primary"
           text
-          v-for="(socialClass, i) in selectedSocialClasses"
+          v-for="(population, i) in selectedPopulations"
           :key="i"
-          :value="socialClass.id"
-          @click="changeSocialClass(socialClass.id)"
+          :value="population.id"
+          @click="changePopulation(population.id)"
         >
-          <span>{{ socialClass.name }}</span>
+          <span>{{ population.name }}</span>
           <v-avatar>
-            <img :src="getImage(socialClass.img, 'population')" :alt="socialClass.name + ' Image'">
+            <img :src="getImage(population.img, 'population')" :alt="population.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
     </v-card>
 
-    <!-- Nav Bar: WORLD -->
+    <!-- Nav Bar: REGION -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedWorldID"
+        v-model="selectedRegionID"
         absolute
         dark
         height="70"
@@ -66,14 +66,14 @@
         <v-btn
           color="primary"
           text
-          v-for="(world, i) in worlds"
+          v-for="(region, i) in regions"
           :key="i"
-          :value="world.id"
-          @click="changeWorld(world.id)"
+          :value="region.id"
+          @click="changeRegion(region.id)"
         >
-          <span>{{ world.name }}</span>
+          <span>{{ region.name }}</span>
           <v-avatar>
-            <img :src="getImage(world.img, 'worlds')" :alt="world.name + ' Image'">
+            <img :src="getImage(region.img, 'regions')" :alt="region.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -82,46 +82,41 @@
 </template>
 
 <script>
-import worlds from '../data/worlds.json'
-import socialClasses from '../data/social-classes.json'
-import ProductionChains from '../data/production-chain'
+import regions from '@/data/regions.json'
+import populations from '@/data/population.json'
+import ProductionChains from '@/data/production-chains.json'
 import { helperFunctionMixin } from './helperFunctionMixin.js'
-import { EventBus } from '../EventBus.js'
+import { EventBus } from '@/EventBus'
 
 export default {
   name: 'BottomNavBar',
   mixins: [helperFunctionMixin],
   data () {
     return {
-      // Init selection
-      // selectedWorldID: 1,
-      // selectedSocialClassID: 1,
-      // selectedProductionChainID: 1,
-
       /* Store data from JSON in component */
       // TODO Load these centrally and access this data e.g. via Vuex
-      worlds: worlds,
-      socialClasses: socialClasses,
+      regions: regions,
+      populations: populations,
       productionChainsData: ProductionChains.Production_Chain
     }
   },
 
   computed: {
-    selectedWorldID: {
+    selectedRegionID: {
       get: function () {
-        return this.$store.state.selectedWorldID
+        return this.$store.state.selectedregionID
       },
-      set: function (selectedWorldID) {
-        this.$store.commit('changeWorldID', selectedWorldID)
+      set: function (selectedRegionID) {
+        this.$store.commit('changeRegionID', selectedRegionID)
       }
     },
 
-    selectedSocialClassID: {
+    selectedPopulationID: {
       get: function () {
-        return this.$store.state.selectedSocialClassID
+        return this.$store.state.selectedpopulationID
       },
-      set: function (selectedSocialClassID) {
-        this.$store.commit('changeSocialClassID', selectedSocialClassID)
+      set: function (selectedPopulationID) {
+        this.$store.commit('changePopulationID', selectedPopulationID)
       }
     },
 
@@ -143,13 +138,13 @@ export default {
      * @return {Object} The selected Production Chain
      */
     selectedProductionChain () {
-      const selectedSocialClassChains = this.selectedProductionChains
+      const selectedPopulationChains = this.selectedProductionChains
       const chainID = this.selectedProductionChainID
       let productionChain = {}
 
-      Object.keys(selectedSocialClassChains).forEach((chain) => {
-        if (selectedSocialClassChains[chain].id === chainID) {
-          productionChain = selectedSocialClassChains[chain]
+      Object.keys(selectedPopulationChains).forEach((chain) => {
+        if (selectedPopulationChains[chain].id === chainID) {
+          productionChain = selectedPopulationChains[chain]
         }
       })
       this.setProductionChain(productionChain)
@@ -166,56 +161,57 @@ export default {
     },
 
     /**
-     * Filter the social classes for the ones available in the selected world.
+     * Filter the social classes for the ones available in the selected region.
      *
-     * @return {array} The social classes of the selected world.
+     * @return {array} The social classes of the selected region.
      */
-    selectedSocialClasses: function () {
-      const socialClasses = Object.values(this.socialClasses)
-      return socialClasses.filter(
-        (socialClass) => socialClass.worldID === this.selectedWorldID
+    selectedPopulations: function () {
+      const populations = Object.values(this.populations)
+      const region = this.getRegionByID(this.selectedRegionID)
+      return populations.filter(
+        (population) => region.populationIDs.includes(population.id)
       )
     },
 
     /**
      * Filter the production chains for the ones available in the selected social class.
      *
-     * @return {array} The production chains of the selected world and social class.
+     * @return {array} The production chains of the selected region and social class.
      */
     selectedProductionChains: function () {
       const productionChains = Object.values(this.productionChainsData)
       return productionChains.filter(
-        (chain) => chain.socialClassID === this.selectedSocialClassID
+        (chain) => chain.populationID === this.selectedPopulationID
       )
     }
   },
   methods: {
     /**
-     * After changing the world, display the first social class.
+     * After changing the region, display the first social class.
      *
-     * @param {int} worldID The id of the world that caused this reset.
+     * @param {int} regionID The id of the region that caused this reset.
      */
-    changeWorld: function (worldID) {
-      const selectedWorld = this.getWorldByID(worldID)
-      this.selectedWorldID = selectedWorld.id
+    changeRegion: function (regionID) {
+      const selectedRegion = this.getRegionByID(regionID)
+      this.selectedRegionID = selectedRegion.id
 
-      const selectedSocialClass = this.getSocialClassByID(
-        selectedWorld.socialClassIDs[0]
+      const selectedPopulation = this.getPopulationByID(
+        selectedRegion.populationIDs[0]
       )
-      this.selectedSocialClassID = selectedSocialClass.id
+      this.selectedPopulationID = selectedPopulation.id
 
-      this.changeSocialClass(selectedSocialClass.id)
+      this.changePopulation(selectedPopulation.id)
       EventBus.$emit('bottomNavBarChanged')
     },
 
     /**
      * After changing the social class, display the first production chain.
      *
-     * @param {int} socialClassID The id of the social class that caused this reset.
+     * @param {int} populationID The id of the social class that caused this reset.
      */
-    changeSocialClass: function (socialClassID) {
-      const socialClass = this.getSocialClassByID(socialClassID)
-      this.selectedProductionChainID = socialClass.firstProductionChain
+    changePopulation: function (populationID) {
+      const population = this.getPopulationByID(populationID)
+      this.selectedProductionChainID = population.firstProductionChain
     },
 
     /**
@@ -229,15 +225,15 @@ export default {
     },
 
     /**
-     * Searches all worlds by their world id
+     * Searches all regions by their region id
      *
      * @param {int} id
-     * @return {Object} The selected World Object
+     * @return {Object} The selected region Object
      */
-    getWorldByID (id) {
-      const worlds = Object.values(this.worlds)
-      const selectedWorld = worlds.filter((world) => world.id === id)[0]
-      return selectedWorld
+    getRegionByID (id) {
+      const regions = Object.values(this.regions)
+      const selectedRegion = regions.filter((region) => region.id === id)[0]
+      return selectedRegion
     },
 
     /**
@@ -246,10 +242,10 @@ export default {
      * @param {int} id
      * @return {Object} The selected Social Class Object
      */
-    getSocialClassByID (id) {
-      const socialClasses = Object.values(this.socialClasses)
-      const selectedSocialClass = socialClasses.filter((socialClass) => socialClass.id === id)[0]
-      return selectedSocialClass
+    getPopulationByID (id) {
+      const populations = Object.values(this.populations)
+      const selectedPopulation = populations.filter((population) => population.id === id)[0]
+      return selectedPopulation
     }
   }
 }

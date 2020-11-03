@@ -122,8 +122,8 @@ export default {
     },
 
     newWorld () {
-      const worldID = this.$store.state.selectedWorldID
-      if (worldID === 1) {
+      const regionID = this.$store.state.selectedregionID
+      if (regionID === 1) {
         return false
       } else {
         return true
@@ -150,7 +150,7 @@ export default {
       const helperFunctionMixin = this
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
-        element.worldID
+        element.regionID
       )
       this.requiredPopulation.farmers +=
         building.maintenance.farmer * element.relativeAmount

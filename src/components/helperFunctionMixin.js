@@ -1,8 +1,8 @@
-import producers from '../data/producers.json'
-import nonProducers from '../data/non-producers.json'
-import ProductionChains from '../data/production-chain.json'
-import Worlds from '../data/worlds.json'
-import SocialClasses from '../data/social-classes.json'
+import producers from '@/data/producers.json'
+import nonProducers from '@/data/non-producers.json'
+import ProductionChains from '@/data/production-chains.json'
+import Regions from '@/data/regions.json'
+import Populations from '@/data/population.json'
 import {
   chainNodeMixin
 } from './production_chains/chainNodeMixin'
@@ -39,13 +39,13 @@ export const helperFunctionMixin = {
      * @return {string} The URL of the image (e.g. for use as img src).
      */
     getImage (image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : ''
+      return image ? require(`@/assets/${folder}/${image}`) : ''
     },
 
     /**
      * Extracts all production Times of a given production chain
      *
-     * @param {Object} productionChain a productionChain object as defined in production-chain.json
+     * @param {Object} productionChain a productionChain object as defined in production-chains.json
      * @return {Array} An Array containing all objects production times
      */
 
@@ -79,9 +79,7 @@ export const helperFunctionMixin = {
 
       const lcm = (a, b) => (a * b) / gcd(a, b)
 
-      const lcmOfArray = productionTimesArray.reduce(lcm) // Returns 60
-      // console.log(lcmOfArray);
-      return lcmOfArray
+      return productionTimesArray.reduce(lcm) // Returns 60
     },
 
     /**
@@ -103,7 +101,7 @@ export const helperFunctionMixin = {
      */
 
     fetchProductionTime (node) {
-      const building = this.getBuildingByName(node.name, node.worldID)
+      const building = this.getBuildingByName(node.name, node.regionID)
       this.productionTimes.push(building.productionTime)
     },
 
@@ -111,11 +109,11 @@ export const helperFunctionMixin = {
      * Search for building by its name.
      *
      * @param {String} name The buildings name.
-     * @param {int} worldID The current worldID
+     * @param {int} regionID The current regionID
      * @return {Object} A JS Object representing the matching producer
      */
-    getBuildingByName (name, worldID) {
-      const buildings = this.producerFile.Producers
+    getBuildingByName (name, regionID) {
+      const buildings = this.producerFile
       const helperFunctionMixin = this
 
       if (this.$store.state.selectedProductionChain.id === 26 || this.$store.state.selectedProductionChain.id === 37) {
@@ -147,7 +145,7 @@ export const helperFunctionMixin = {
       for (const building in buildings) {
         if (
           buildings[building].building === name &&
-          buildings[building].worldID === worldID
+          buildings[building].regionID === regionID
         ) {
           return buildings[building]
         }
@@ -164,7 +162,7 @@ export const helperFunctionMixin = {
      * TODO Distinguishe between Old and New World!
      */
     getBuildingByProduct (productName) {
-      const buildings = this.producerFile.Producers
+      const buildings = this.producerFile
       const productNameLC = productName.toLowerCase() // To lower case
 
       for (const building in buildings) {
@@ -188,15 +186,15 @@ export const helperFunctionMixin = {
     },
 
     /**
-     * Searches all worlds by their world id
+     * Searches all regions by their region id
      *
      * @param {int} id
-     * @return {Object} The selected World Object
+     * @return {Object} The selected region Object
      */
-    getWorldByID (id) {
-      const worlds = Object.values(Worlds)
-      const selectedWorld = worlds.filter(world => world.id === id)[0]
-      return selectedWorld
+    getRegionByID (id) {
+      const regions = Object.values(Regions)
+      const selectedRegion = regions.filter(region => region.id === id)[0]
+      return selectedRegion
     },
 
     /**
@@ -205,12 +203,12 @@ export const helperFunctionMixin = {
      * @param {int} id
      * @return {Object} The selected Social Class Object
      */
-    getSocialClassByID (id) {
-      const socialClasses = Object.values(SocialClasses)
-      const selectedSocialClass = socialClasses.filter(
-        socialClass => socialClass.id === id
+    getPopulationByID (id) {
+      const populations = Object.values(Populations)
+      const selectedPopulation = populations.filter(
+        population => population.id === id
       )[0]
-      return selectedSocialClass
+      return selectedPopulation
     },
 
     /**

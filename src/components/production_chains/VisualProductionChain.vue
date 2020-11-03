@@ -104,7 +104,7 @@
                 <v-icon large color="green">mdi-arrow-up</v-icon>
               </v-btn>
               <v-img
-                :src="require('../../assets/buildings/farmers/warehouse.webp')"
+                :src="require('@/assets/buildings/farmers/warehouse.webp')"
                 max-height="100px"
                 min-height="33px"
                 contain
@@ -322,7 +322,6 @@ export default {
   methods: {
     matchDemands () {
       this.chainCount = Math.ceil(this.consumptionPerMinute / (1 / (this.spt / 60)))
-      console.log(this.chainCount)
     },
 
     changeCounter () {
@@ -341,7 +340,7 @@ export default {
 
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
-        element.worldID
+        element.regionID
       )
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount
