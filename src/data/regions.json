@@ -1,0 +1,32 @@
+{
+  "oldWorld": {
+    "id": 1,
+    "name": "The Old World",
+    "img": "the-old-world.webp",
+    "populationIDs": [1, 2, 3, 4, 5]
+  },
+  "newWorld": {
+    "id": 2,
+    "name": "The New World",
+    "img": "the-new-world.webp",
+    "populationIDs": [6, 7]
+  },
+  "capeTrelawney": {
+    "id": 3,
+    "name": "Cape Trelawney",
+    "img": "cape-trelawney.webp",
+    "populationIDs": []
+  },
+  "enbesa": {
+    "id": 4,
+    "name": "Enbesa",
+    "img": "enbesa.webp",
+    "populationIDs": []
+  },
+  "theArctic": {
+    "id": 5,
+    "name": "The Arctic",
+    "img": "the-arctic.webp",
+    "populationIDs": []
+  }
+}

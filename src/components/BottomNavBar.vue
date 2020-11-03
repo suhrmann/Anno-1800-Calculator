@@ -73,7 +73,7 @@
         >
           <span>{{ world.name }}</span>
           <v-avatar>
-            <img :src="getImage(world.img, 'worlds')" :alt="world.name + ' Image'">
+            <img :src="getImage(world.img, 'regions')" :alt="world.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import worlds from '../data/worlds.json'
+import worlds from '../data/regions.json'
 import populations from '../data/population.json'
 import ProductionChains from '../data/production-chains.json'
 import { helperFunctionMixin } from './helperFunctionMixin.js'

@@ -1,7 +1,7 @@
 import producers from '@/data/producers.json'
 import nonProducers from '@/data/non-producers.json'
 import ProductionChains from '@/data/production-chains.json'
-import Worlds from '@/data/worlds.json'
+import Worlds from '@/data/regions.json'
 import SocialClasses from '@/data/population.json'
 import {
   chainNodeMixin
