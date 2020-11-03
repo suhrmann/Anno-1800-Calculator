@@ -5,6 +5,7 @@ import Home from '@/views/Home.vue'
 import ProductionChains from '@/views/ProductionChains'
 import ResidentDemands from '@/views/PopulationDemands'
 import ProductionLayouts from '@/views/ProductionLayouts'
+import Settings from '@/views/Settings'
 import About from '@/views/About'
 
 Vue.use(VueRouter)
@@ -37,6 +38,11 @@ const routes = [
     component: ProductionLayouts
   },
   // ------
+  {
+    path: '/settings',
+    name: 'settings',
+    component: Settings
+  },
   {
     path: '/about',
     name: 'about',

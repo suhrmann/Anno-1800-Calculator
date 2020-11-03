@@ -50,17 +50,10 @@ export default {
       { icon: 'mdi-trending-up', text: 'Resident Demand', route: '/demands' },
       { divider: true },
       { heading: 'Information' },
-      {
-        icon: 'mdi-format-list-bulleted',
-        text: 'Building Queue (WIP)',
-        route: '/queue'
-      },
-      {
-        icon: 'mdi-border-inside',
-        text: 'Production Layouts',
-        route: '/layouts'
-      },
+      { icon: 'mdi-format-list-bulleted', text: 'Building Queue (WIP)', route: '/queue' },
+      { icon: 'mdi-border-inside', text: 'Production Layouts', route: '/layouts' },
       { divider: true },
+      { icon: 'mdi-settings', text: 'Settings', route: '/settings' },
       { icon: 'mdi-information', text: 'About', route: '/about' }
     ]
   }),
