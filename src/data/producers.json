@@ -2468,5 +2468,613 @@
       "engineer": 0,
       "investor": 0
     }
+  },
+  "Bootmakers": {
+    "product": "Leather Boots",
+    "building": "Bootmakers",
+    "img": "scholars/leather-shoes.webp",
+    "regionID": 1,
+    "productionTime": 60,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Tailor’s Shop": {
+    "product": "Tailored Suits",
+    "building": "Tailor’s Shop",
+    "img": "scholars/suits.webp",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Telephone Manufacturer": {
+    "product": "Telephones",
+    "building": "Telephone Manufacturer",
+    "img": "scholars/telephones.webp",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Advanced Coffee Roaster": {
+    "product": "Advanced Coffee",
+    "building": "Advanced Coffee Roaster",
+    "img": "scholars/coffee.webp",
+    "regionID": 1,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Advanced Rum Distillery": {
+    "product": "Advanced Rum",
+    "building": "Advanced Rum Distillery",
+    "img": "scholars/rum.webp",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Advanced Cotton Mill": {
+    "product": "Advanced Cotton Fabric",
+    "building": "Advanced Cotton Mill",
+    "img": "scholars/cotton-fabric.webp",
+    "regionID": 1,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+
+
+
+  "Sawmill Arctic": {
+    "product": "Timber",
+    "building": "Sawmill",
+    "img": "explorers/timber.webp",
+    "regionID": 4,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Pemmican Cookhouse": {
+    "product": "Pemmican",
+    "building": "Pemmican Cookhouse",
+    "img": "explorers/pemmican-cookhouse.webp",
+    "regionID": 4,
+    "productionTime": 60,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Sleeping Bag Factory": {
+    "product": "Sleeping Bags",
+    "building": "Sleeping Bag Factory",
+    "img": "explorers/sleeping-bag-factory.webp",
+    "regionID": 4,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Oil Lamp Factory": {
+    "product": "Oil Lamps",
+    "building": "Oil Lamp Factory",
+    "img": "explorers/oil-lamp-factory.webp",
+    "regionID": 4,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+
+
+
+  "Parka Factory": {
+    "product": "Parkas",
+    "building": "Parka Factory",
+    "img": "technicians/parka-factory.webp",
+    "regionID": 4,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Husky Sled Factory": {
+    "product": "Husky Sleds",
+    "building": "Husky Sled Factory",
+    "img": "technicians/husky-sled-factory.webp",
+    "regionID": 4,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+
+
+
+  "Goat Farm": {
+    "product": "Goat Milk",
+    "building": "Goat Farm",
+    "img": "shepherds/goat-milk.webp",
+    "regionID": 5,
+    "productionTime": 60,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Embroiderer": {
+    "product": "Finery",
+    "building": "Embroiderer",
+    "img": "shepherds/traditional-clothing.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Dry-House": {
+    "product": "Dried Meat",
+    "building": "Dry-House",
+    "img": "shepherds/dried-meat.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Tea Spicer": {
+    "product": "Hibiscus Tea",
+    "building": "Tea Spicer",
+    "img": "shepherds/hibiscus-tea.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+
+  "Brick Dry-House": {
+    "product": "Mud Bricks",
+    "building": "Brick Dry-House",
+    "img": "shepherds/hibiscus-tea.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Ceramics Workshop": {
+    "product": "Ceramics",
+    "building": "Ceramics Workshop",
+    "img": "elders/ceramics.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Tapestry Looms": {
+    "product": "Tapestries",
+    "building": "Tapestry Looms",
+    "img": "elders/tapestries.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Wat Kitchen": {
+    "product": "Seafood Stew",
+    "building": "Wat Kitchen",
+    "img": "elders/seafood.webp",
+    "regionID": 5,
+    "productionTime": 30,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Pipe Maker": {
+    "product": "Clay Pipes",
+    "building": "Pipe Maker",
+    "img": "elders/tobacco-pipes.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Luminer": {
+    "product": "Illuminated Scripts",
+    "building": "Luminer",
+    "img": "elders/scriptures.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
+  },
+  "Lanternsmith": {
+    "product": "Lanterns",
+    "building": "Lanternsmith",
+    "img": "elders/lanterns.webp",
+    "regionID": 5,
+    "productionTime": 15,
+    "construction": {
+      "cash": 0,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "jornaleros": 0,
+      "obreros": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0
+    }
   }
 }
