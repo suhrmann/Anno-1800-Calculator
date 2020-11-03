@@ -118,7 +118,7 @@ export default new Vuex.Store({
         Beer: 0,
         'Variety Theatre': false,
         Rum: 0,
-        'High Wheelers': 0,
+        'Penny Farthingss': 0,
         'Pocket Watches': 0,
         Bank: false,
         'Members Club': false,
