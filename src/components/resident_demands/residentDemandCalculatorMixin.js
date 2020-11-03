@@ -213,11 +213,11 @@ export default {
     /**
      * Format the float usage to pretty output (to avoid linebreaks when bin->dec conversion is not accurate).
      *
-     * @param {float} usage The number of usage to format.
+     * @param {number} usage The number of usage to format.
      * @return {string} The pretty formatted usage.
      */
     formatUsage: function (usage) {
-      return Math.round(usage * 100000) / 100000
+      return Number(usage).toFixed(5)
     },
 
     /**
