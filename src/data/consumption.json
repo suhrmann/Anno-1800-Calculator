@@ -2,115 +2,205 @@
   "farmers": {
     "basic": {
       "Marketplace": "",
-      "Fish": 0.0025,
-      "Work Clothes": 0.003076926
+      "Fish": 0.025000002,
+      "Work Clothes": 0.03076926
     },
     "luxury": {
-      "Schnapps": 0.003333336,
+      "Schnapps": 0.03333336,
       "Pub": ""
     }
   },
   "workers": {
     "basic": {
       "Marketplace": "",
-      "Fish": 0.0025,
-      "Work Clothes": 0.003076926,
-      "Sausages": 0.001000002,
-      "Bread": 0.00090909,
-      "Soap": 0.000416667,
+      "Fish": 0.050000004,
+      "Work Clothes": 0.06153852,
+      "Sausages": 0.02000004,
+      "Bread": 0.018181799999999998,
+      "Soap": 0.00833334,
       "School": ""
     },
     "luxury": {
-      "Schnapps": 0.003333336,
+      "Schnapps": 0.06666672,
       "Pub": "",
       "Church": "",
-      "Beer": 0.00076923
+      "Beer": 0.0153846
     }
   },
   "artisans": {
     "basic": {
-      "Sausages": 0.001333334,
-      "Bread": 0.001212122,
-      "Soap": 0.000555556,
+      "Sausages": 0.040000020000000004,
+      "Bread": 0.03636366,
+      "Soap": 0.01666668,
       "School": "",
-      "Canned Food": 0.00034188,
-      "Sewing Machines": 0.00095238,
-      "Fur Coats": 0.000888888,
+      "Canned Food": 0.0102564,
+      "Sewing Machines": 0.0285714,
+      "Fur Coats": 0.02666664,
       "University": ""
     },
     "luxury": {
       "Church": "",
-      "Beer": 0.001025642,
+      "Beer": 0.03076926,
       "Variety Theatre": "",
-      "Rum": 0.001904762
+      "Rum": 0.05714286
     }
   },
   "engineers": {
     "basic": {
-      "Canned Food": 0.00051282,
-      "Sewing Machines": 0.001428572,
-      "Fur Coats": 0.001333334,
+      "Canned Food": 0.0205128,
+      "Sewing Machines": 0.05714286,
+      "Fur Coats": 0.05333334,
       "University": "",
-      "Glasses": 0.000222222,
+      "Glasses": 0.00888888,
       "Electricity": "",
-      "Coffee": 0.001176471,
-      "Light Bulbs": 0.0003125
+      "Coffee": 0.047058840000000005,
+      "Light Bulbs": 0.01249998
     },
     "luxury": {
       "Variety Theatre": "",
-      "Rum": 0.002857143,
-      "High Wheelers": 0.000625001,
-      "Pocket Watches": 0.000196079,
+      "Rum": 0.11428572,
+      "High Wheelers": 0.02500002,
+      "Pocket Watches": 0.00784314,
       "Bank": ""
     }
   },
   "investors": {
     "basic": {
-      "Glasses": 0.000355555,
-      "Coffee": 0.001882352,
+      "Glasses": 0.01777776,
+      "Coffee": 0.09411762,
       "Electricity": "",
-      "Light Bulbs": 0.000499992,
-      "Champagne": 0.0004704,
-      "Cigars": 0.000444444,
-      "Chocolate": 0.001066667,
-      "Steam Carriages": 0.000133332
+      "Light Bulbs": 0.02500002,
+      "Champagne": 0.02352,
+      "Cigars": 0.0222222,
+      "Chocolate": 0.05333334,
+      "Steam Carriages": 0.00666666
     },
     "luxury": {
-      "High Wheelers": 0.001,
-      "Pocket Watches": 0.000313726,
+      "High Wheelers": 0.04999998,
+      "Pocket Watches": 0.01568628,
       "Bank": "",
       "Members Club": "",
-      "Jewelry": 0.000421052,
-      "Gramophones": 0.00010524
+      "Jewelry": 0.021052619999999998,
+      "Gramophones": 0.005262
     }
   },
+  "scholars": {
+    "basic": {
+      "University": "",
+      "Canned Food": 0.06,
+      "Tailored Suits ": 0.16499999999999998,
+      "Electricity": "",
+      "Seafood Stew": 0.09,
+      "Telephones": 0.09,
+      "Radio Tower": ""
+    },
+    "luxury": {
+      "Leather Boots": 0.12,
+      "Rum": 0.048,
+      "Bowler Hats": 0.048,
+      "Hibiscus Tea": 0.105,
+      "Tapestries": 0.075,
+      "Clay Pipes": 0.045,
+      "Gramophones": 0.042
+    }
+  },
+
+
+
   "jornaleros": {
     "basic": {
       "Marketplace": "",
-      "Fried Plantains": 0.00285714,
-      "Ponchos": 0.002500002
+      "Fried Plantains": 0.0285714,
+      "Ponchos": 0.02500002
     },
     "luxury": {
-      "Rum": 0.00142857,
+      "Rum": 0.0142857,
       "Chapel": ""
     }
   },
   "obreros": {
     "basic": {
       "Marketplace": "",
-      "Fried Plantains": 0.002857143,
-      "Ponchos": 0.002499999,
-      "Tortillas": 0.00142857,
-      "Coffee": 0.000588237,
-      "Bowler Hats": 0.001333332,
-      "Sewing Machines": 0.001250001
+      "Fried Plantains": 0.05714286,
+      "Ponchos": 0.04999998,
+      "Tortillas": 0.0285714,
+      "Coffee": 0.01176474,
+      "Bowler Hats": 0.02666664,
+      "Sewing Machines": 0.02500002
     },
     "luxury": {
-      "Rum": 0.001428573,
+      "Rum": 0.02857146,
       "Chapel": "",
       "Boxing Arena": "",
-      "Beer": 0.001333332,
-      "Cigars": 0.000555555
+      "Beer": 0.02666664,
+      "Cigars": 0.0111111
+    }
+  },
+
+
+
+  "explorers": {
+    "basic": {
+      "Canteen": "",
+      "Pemmican": 0.012,
+      "Oil Lamps": 0.006
+    },
+    "luxury": {
+      "Heater": "",
+      "Sleeping Bags": 0.009,
+      "Schnapps": 0.015
+    }
+  },
+  "technicians": {
+    "basic": {
+      "Canteen": "",
+      "Pemmican": 0.024,
+      "Oil Lamps": 0.012,
+      "Post Office": "",
+      "Canned Food": 0.012,
+      "Husky Sleds": 0.018
+    },
+    "luxury": {
+      "Heater": "",
+      "Sleeping Bags": 0.018,
+      "Schnapps": 0.03,
+      "Parkas": 0.024,
+      "Coffee": 0.024
+    }
+  },
+
+
+
+  "shepherds": {
+    "basic": {
+      "Marketplace": "",
+      "Goat Milk": 0.03,
+      "Finery": 0.015,
+      "Dried Meat": 0.021
+    },
+    "luxury": {
+      "Musicians' Court": "",
+      "Hibiscus Tea": 0.012
+    }
+  },
+  "elders": {
+    "basic": {
+      "Marketplace": "",
+      "Goat Milk": 0.06,
+      "Finery": 0.03,
+      "Dried Meat": 0.042,
+      "Ceramics": 0.024,
+      "Seafood Stew ": 0.0222,
+      "Illuminated Scripts": 0.0108,
+      "Lanterns": 0.018
+    },
+    "luxury": {
+      "Musicians' Court": "",
+      "Hibiscus Tea": 0.024,
+      "Tapestries": 0.021,
+      "Clay Pipes": 0.009,
+      "Glasses": 0.0072,
+      "Monastery": ""
     }
   }
 }
