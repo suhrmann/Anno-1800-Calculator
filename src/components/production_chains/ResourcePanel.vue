@@ -43,7 +43,9 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0
+        influence: 0,
+        wanza_timber: 0,
+        mud_bricks: 0
       }
     }
   },
@@ -52,7 +54,7 @@ export default {
     costArray () {
       const filteredArray = []
 
-      if (this.requiredResources.cash !== 0) {
+      if (this.requiredResources.cash !== 0 && this.requiredResources.cash !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.cash,
           name: 'Cash',
@@ -61,7 +63,7 @@ export default {
         })
       }
 
-      if (this.requiredResources.cashUpkeep !== 0) {
+      if (this.requiredResources.cashUpkeep !== 0 && this.requiredResources.cashUpkeep !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.cashUpkeep,
           name: 'Upkeep',
@@ -69,7 +71,7 @@ export default {
           imageFileFolder: 'icons'
         })
       }
-      if (this.requiredResources.wood !== 0) {
+      if (this.requiredResources.wood !== 0 && this.requiredResources.wood !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.wood,
           name: 'Wood',
@@ -77,7 +79,7 @@ export default {
           imageFileFolder: 'buildings/farmers'
         })
       }
-      if (this.requiredResources.bricks !== 0) {
+      if (this.requiredResources.bricks !== 0 && this.requiredResources.bricks !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.bricks,
           name: 'Bricks',
@@ -85,7 +87,7 @@ export default {
           imageFileFolder: 'buildings/workers'
         })
       }
-      if (this.requiredResources.steel !== 0) {
+      if (this.requiredResources.steel !== 0 && this.requiredResources.steel !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.steel,
           name: 'Steel',
@@ -93,7 +95,7 @@ export default {
           imageFileFolder: 'buildings/workers'
         })
       }
-      if (this.requiredResources.window !== 0) {
+      if (this.requiredResources.window !== 0 && this.requiredResources.window !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.window,
           name: 'Window',
@@ -101,7 +103,7 @@ export default {
           imageFileFolder: 'buildings/artisans'
         })
       }
-      if (this.requiredResources.concrete !== 0) {
+      if (this.requiredResources.concrete !== 0 && this.requiredResources.concrete !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.concrete,
           name: 'Concrete',
@@ -110,7 +112,25 @@ export default {
         })
       }
 
-      if (this.requiredResources.influence !== 0) {
+      if (this.requiredResources.wanza_timber !== 0 && this.requiredResources.wanza_timber !== undefined) {
+        filteredArray.push({
+          amount: this.requiredResources.wanza_timber,
+          name: 'Wanza',
+          image: 'wansa-wood.webp',
+          imageFileFolder: 'buildings/shepherds'
+        })
+      }
+
+      if (this.requiredResources.mud_bricks !== 0 && this.requiredResources.mud_bricks !== undefined) {
+        filteredArray.push({
+          amount: this.requiredResources.mud_bricks,
+          name: 'Mud Bricks',
+          image: 'mud-bricks.webp',
+          imageFileFolder: 'buildings/elders'
+        })
+      }
+
+      if (this.requiredResources.influence !== 0 && this.requiredResources.influence !== undefined) {
         filteredArray.push({
           amount: this.requiredResources.influence,
           name: 'Influence',
@@ -144,19 +164,23 @@ export default {
       )
 
       this.requiredResources.cash +=
-        building.construction.cash * element.relativeAmount
+        (building.construction.cash ?? 0) * element.relativeAmount
       this.requiredResources.cashUpkeep +=
-        building.maintenance.cash * element.relativeAmount
+        (building.maintenance.cash ?? 0) * element.relativeAmount
       this.requiredResources.wood +=
-        building.construction.wood * element.relativeAmount
+        (building.construction.wood ?? 0) * element.relativeAmount
       this.requiredResources.bricks +=
-        building.construction.brick * element.relativeAmount
+        (building.construction.brick ?? 0) * element.relativeAmount
       this.requiredResources.steel +=
-        building.construction.steel * element.relativeAmount
+        (building.construction.steel ?? 0) * element.relativeAmount
       this.requiredResources.window +=
-        building.construction.window * element.relativeAmount
+        (building.construction.window ?? 0) * element.relativeAmount
       this.requiredResources.concrete +=
-        building.construction.concrete * element.relativeAmount
+        (building.construction.concrete ?? 0) * element.relativeAmount
+      this.requiredResources.wanza_timber +=
+        (building.construction.wanza_timber ?? 0) * element.relativeAmount
+      this.requiredResources.mud_bricks +=
+        (building.construction.mud_bricks ?? 0) * element.relativeAmount
     },
 
     resetRequiredResources () {
@@ -168,7 +192,9 @@ export default {
         steel: 0,
         window: 0,
         concrete: 0,
-        influence: 0
+        influence: 0,
+        wanza_timber: 0,
+        mud_bricks: 0
       }
     }
   }

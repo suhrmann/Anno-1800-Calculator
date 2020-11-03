@@ -180,6 +180,7 @@ export default {
      */
     selectedProductionChains: function () {
       const productionChains = Object.values(this.productionChainsData)
+      console.log(productionChains)
       return productionChains.filter(
         (chain) => chain.populationID === this.selectedPopulationID
       )

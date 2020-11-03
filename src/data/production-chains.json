@@ -1077,286 +1077,203 @@
         }
 
       ]
-    }
-  },
-
-  "leather-boots": {
-    "id": 39,
-    "regionID": 1,
-    "img": "scholars/leather-shoes.webp",
-    "chain": "Leather Boots",
-    "populationID": 8,
-    "finalProduct": "Leather Boots",
-    "name": "Bootmakers",
-    "alternative": "",
-    "children": [{
-      "name": "Sanga Farm",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-  "tailored-suits": {
-    "id": 40,
-    "regionID": 1,
-    "img": "scholars/suits.webp",
-    "chain": "Tailored Suits",
-    "populationID": 8,
-    "finalProduct": "Tailored Suits",
-    "name": "Tailors Shop",
-    "alternative": "",
-    "children": [{
-      "name": "Cotton Mill",
-      "regionID": 2,
+    },
+    "leather-boots": {
+      "id": 39,
+      "regionID": 1,
+      "img": "scholars/leather-shoes.webp",
+      "chain": "Leather Boots",
+      "populationID": 8,
+      "finalProduct": "Leather Boots",
+      "name": "Bootmakers",
       "alternative": "",
       "children": [{
-        "name": "Cotton Plantation",
-        "regionID": 2,
-        "alternative": "",
-        "children": null
-      }]
-    },{
-      "name": "Linen Mill",
-      "regionID": 5,
-      "alternative": "",
-      "children": [{
-        "name": "Linseed Farm",
+        "name": "Sanga Farm",
         "regionID": 5,
         "alternative": "",
         "children": null
       }]
-    }]
-  },
-  "telephones": {
-    "id": 41,
-    "regionID": 1,
-    "img": "scholars/telephones.webp",
-    "chain": "Telephones",
-    "populationID": 8,
-    "finalProduct": "Telephones",
-    "name": "Telephone Manufacturer",
-    "alternative": "",
-    "children": [{
-      "name": "Filament Factory",
+    },
+  
+    "tailored-suits": {
+      "id": 40,
       "regionID": 1,
+      "img": "scholars/suits.webp",
+      "chain": "Tailored Suits",
+      "populationID": 8,
+      "finalProduct": "Tailored Suits",
+      "name": "Tailors Shop",
+      "alternative": "",
+      "children": [{
+        "name": "Cotton Mill",
+        "regionID": 2,
+        "alternative": "",
+        "children": [{
+          "name": "Cotton Plantation",
+          "regionID": 2,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Linen Mill",
+        "regionID": 5,
+        "alternative": "",
+        "children": [{
+          "name": "Linseed Farm",
+          "regionID": 5,
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
+    "telephones": {
+      "id": 41,
+      "regionID": 1,
+      "img": "scholars/telephones.webp",
+      "chain": "Telephones",
+      "populationID": 8,
+      "finalProduct": "Telephones",
+      "name": "Telephone Manufacturer",
+      "alternative": "",
+      "children": [{
+        "name": "Filament Factory",
+        "regionID": 1,
+        "alternative": "",
+        "children": [{
+          "name": "Coal Mine",
+          "regionID": 1,
+          "alternative": "Charcoal Kiln",
+          "children": null
+        }]
+      },{
+        "name": "Marquetry Workshop",
+        "regionID": 1,
+        "alternative": "",
+        "children": [{
+          "name": "Lumberjack Hut",
+          "regionID": 1,
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
+  
+  
+    "advanced-coffee": {
+      "id": 42,
+      "regionID": 1,
+      "img": "scholars/coffee.webp",
+      "chain": "Advanced Coffee",
+      "populationID": 8,
+      "finalProduct": "Advanced Coffee",
+      "name": "Advanced Coffee Roaster",
+      "alternative": "",
+      "children": [{
+        "name": "Malthouse",
+        "regionID": 1,
+        "alternative": "",
+        "children": [{
+          "name": "Grain Farm",
+          "regionID": 1,
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
+  
+    "advanced-rum": {
+      "id": 43,
+      "regionID": 1,
+      "img": "scholars/rum.webp",
+      "chain": "Advanced Rum",
+      "populationID": 8,
+      "finalProduct": "Advanced Rum",
+      "name": "Advanced Rum Distillery",
       "alternative": "",
       "children": [{
         "name": "Coal Mine",
         "regionID": 1,
-        "alternative": "Charcoal Kiln",
+        "alternative": "",
         "children": null
-      }]
-    },{
-      "name": "Marquetry Workshop",
-      "regionID": 1,
-      "alternative": "",
-      "children": [{
-        "name": "Lumberjack Hit",
+      },{
+        "name": "Potato Farm",
         "regionID": 1,
         "alternative": "",
         "children": null
       }]
-    }]
-  },
-
-
-  "advanced-coffee": {
-    "id": 42,
-    "regionID": 1,
-    "img": "scholars/coffee.webp",
-    "chain": "Advanced Coffee",
-    "populationID": 8,
-    "finalProduct": "Advanced Coffee",
-    "name": "Advanced Coffee Roaster",
-    "alternative": "",
-    "children": [{
-      "name": "Malthouse",
+    },
+  
+    "Advanced Cotton Fabric": {
+      "id": 44,
       "regionID": 1,
+      "img": "scholars/cotton-fabric.webp",
+      "chain": "Advanced Cotton Fabric",
+      "populationID": 8,
+      "finalProduct": "Advanced Cotton Fabric",
+      "name": "Advanced Cotton Mill",
       "alternative": "",
       "children": [{
-        "name": "Grain Farm",
-        "regionID": 1,
-        "alternative": "",
-        "children": null
-      }]
-    }]
-  },
-
-  "advanced-rum": {
-    "id": 43,
-    "regionID": 1,
-    "img": "scholars/rum.webp",
-    "chain": "Advanced Rum",
-    "populationID": 8,
-    "finalProduct": "Advanced Rum",
-    "name": "Advanced Rum Distillery",
-    "alternative": "",
-    "children": [{
-      "name": "Coal Mine",
-      "regionID": 1,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Potato Farm",
-      "regionID": 1,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-  "Advanced Cotton Fabric": {
-    "id": 44,
-    "regionID": 1,
-    "img": "scholars/cotton-fabric.webp",
-    "chain": "Advanced Cotton Fabric",
-    "populationID": 8,
-    "finalProduct": "Advanced Cotton Fabric",
-    "name": "Advanced Cotton Mill",
-    "alternative": "",
-    "children": [{
-      "name": "Sheep Farm",
-      "regionID": 1,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Lumberjack Hut",
-      "regionID": 1,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-
-
-  "timber-arctic": {
-    "id": 45,
-    "regionID": 4,
-    "img": "explorers/timber.webp",
-    "chain": "Timber",
-    "populationID": 9,
-    "finalProduct": "Timber",
-    "name": "Sawmill",
-    "alternative": "",
-    "children": [{
-      "name": "Lumberjack Hut",
-      "regionID": 4,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-  "pemmican": {
-    "id": 46,
-    "regionID": 4,
-    "img": "explorers/pemmican-cookhouse.webp",
-    "chain": "Pemmican",
-    "populationID": 9,
-    "finalProduct": "Pemmican",
-    "name": "Pemmican Cookhouse",
-    "alternative": "",
-    "children": [{
-      "name": "Whaling Station",
-      "regionID": 4,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Caribou Hunting Cabin",
-      "regionID": 4,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-  "sleeping-bags": {
-    "id": 47,
-    "regionID": 4,
-    "img": "explorers/sleeping-bag-factory.webp",
-    "chain": "Sleeping Bags",
-    "populationID": 9,
-    "finalProduct": "Sleeping Bags",
-    "name": "Sleeping Bag Factory",
-    "alternative": "",
-    "children": [{
-      "name": "Seal Hunting Docks",
-      "regionID": 4,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Goose Farm",
-      "regionID": 4,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-
-  "oil-lamps": {
-    "id": 48,
-    "regionID": 4,
-    "img": "explorers/oil-lamp-factory.webp",
-    "chain": "Oil Lamps",
-    "populationID": 9,
-    "finalProduct": "Oil Lamps",
-    "name": "Oil Lamps Factory",
-    "alternative": "",
-    "children": [{
-      "name": "Brass Smeltery",
-      "regionID": 1,
-      "alternative": "",
-      "children": [{
-        "name": "Copper Mine",
+        "name": "Sheep Farm",
         "regionID": 1,
         "alternative": "",
         "children": null
       },{
-        "name": "Zinc Mine",
+        "name": "Lumberjack Hut",
         "regionID": 1,
         "alternative": "",
         "children": null
       }]
-    },{
-      "name": "Whaling Station",
+    },
+  
+  
+  
+    "timber-arctic": {
+      "id": 45,
       "regionID": 4,
+      "img": "explorers/timber.webp",
+      "chain": "Timber",
+      "populationID": 9,
+      "finalProduct": "Timber",
+      "name": "Sawmill",
       "alternative": "",
-      "children": null
-    }]
-  },
-
-  "parkas": {
-    "id": 49,
-    "regionID": 4,
-    "img": "technicians/parka-factory.webp",
-    "chain": "Parkas",
-    "populationID": 10,
-    "finalProduct": "Parkas",
-    "name": "Parka Factory",
-    "alternative": "",
-    "children": [{
-      "name": "Seal Hunting Docks",
+      "children": [{
+        "name": "Lumberjack Hut",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      }]
+    },
+  
+    "pemmican": {
+      "id": 46,
       "regionID": 4,
+      "img": "explorers/pemmican-cookhouse.webp",
+      "chain": "Pemmican",
+      "populationID": 9,
+      "finalProduct": "Pemmican",
+      "name": "Pemmican Cookhouse",
       "alternative": "",
-      "children": null
-    },{
-      "name": "Bear Hunting Cabin",
+      "children": [{
+        "name": "Whaling Station",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      },{
+        "name": "Caribou Hunting Cabin",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      }]
+    },
+  
+    "sleeping-bags": {
+      "id": 47,
       "regionID": 4,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-  "husky-sleds": {
-    "id": 50,
-    "regionID": 4,
-    "img": "technicians/husky-sled-factory.webp",
-    "chain": "Husky Sleds",
-    "populationID": 10,
-    "finalProduct": "Husky Sleds",
-    "name": "Husky Sled Factory",
-    "alternative": "",
-    "children": [{
-      "name": "Sled Frame Factory",
-      "regionID": 4,
+      "img": "explorers/sleeping-bag-factory.webp",
+      "chain": "Sleeping Bags",
+      "populationID": 9,
+      "finalProduct": "Sleeping Bags",
+      "name": "Sleeping Bag Factory",
       "alternative": "",
       "children": [{
         "name": "Seal Hunting Docks",
@@ -1364,269 +1281,353 @@
         "alternative": "",
         "children": null
       },{
-        "name": "Lumberjack Hut",
+        "name": "Goose Farm",
         "regionID": 4,
         "alternative": "",
         "children": null
       }]
-    },{
-      "name": "Husky Farm",
+    },
+  
+  
+    "oil-lamps": {
+      "id": 48,
       "regionID": 4,
-      "alternative": "",
-      "children": null
-    }]
-  },
-
-  "goat-milk": {
-    "id": 51,
-    "regionID": 5,
-    "img": "shepherds/icon-goat-milk-0.webp",
-    "chain": "Goat Milk",
-    "populationID": 11,
-    "finalProduct": "Goat Milk",
-    "name": "Goat Farm",
-    "alternative": "",
-    "children": null
-  },
-
-  "Finery": {
-    "id": 52,
-    "regionID": 5,
-    "img": "shepherds/icon-traditional-clothing-0.webp",
-    "chain": "Finery",
-    "populationID": 11,
-    "finalProduct": "Finery",
-    "name": "Embroiderer",
-    "alternative": "",
-    "children": [{
-      "name": "Linen Mill",
-      "regionID": 5,
+      "img": "explorers/oil-lamp-factory.webp",
+      "chain": "Oil Lamps",
+      "populationID": 9,
+      "finalProduct": "Oil Lamps",
+      "name": "Oil Lamps Factory",
       "alternative": "",
       "children": [{
-        "name": "Linseed Farm",
+        "name": "Brass Smeltery",
+        "regionID": 1,
+        "alternative": "",
+        "children": [{
+          "name": "Copper Mine",
+          "regionID": 1,
+          "alternative": "",
+          "children": null
+        },{
+          "name": "Zinc Mine",
+          "regionID": 1,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Whaling Station",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      }]
+    },
+  
+    "parkas": {
+      "id": 49,
+      "regionID": 4,
+      "img": "technicians/parka-factory.webp",
+      "chain": "Parkas",
+      "populationID": 10,
+      "finalProduct": "Parkas",
+      "name": "Parka Factory",
+      "alternative": "",
+      "children": [{
+        "name": "Seal Hunting Docks",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      },{
+        "name": "Bear Hunting Cabin",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      }]
+    },
+  
+    "husky-sleds": {
+      "id": 50,
+      "regionID": 4,
+      "img": "technicians/husky-sled-factory.webp",
+      "chain": "Husky Sleds",
+      "populationID": 10,
+      "finalProduct": "Husky Sleds",
+      "name": "Husky Sled Factory",
+      "alternative": "",
+      "children": [{
+        "name": "Sled Frame Factory",
+        "regionID": 4,
+        "alternative": "",
+        "children": [{
+          "name": "Seal Hunting Docks",
+          "regionID": 4,
+          "alternative": "",
+          "children": null
+        },{
+          "name": "Lumberjack Hut",
+          "regionID": 4,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Husky Farm",
+        "regionID": 4,
+        "alternative": "",
+        "children": null
+      }]
+    },
+  
+    "goat-milk": {
+      "id": 51,
+      "regionID": 5,
+      "img": "shepherds/goat-milk.webp",
+      "chain": "Goat Milk",
+      "populationID": 11,
+      "finalProduct": "Goat Milk",
+      "name": "Goat Farm",
+      "alternative": "",
+      "children": null
+    },
+  
+    "Finery": {
+      "id": 52,
+      "regionID": 5,
+      "img": "shepherds/traditional-clothing.webp",
+      "chain": "Finery",
+      "populationID": 11,
+      "finalProduct": "Finery",
+      "name": "Embroiderer",
+      "alternative": "",
+      "children": [{
+        "name": "Linen Mill",
+        "regionID": 5,
+        "alternative": "",
+        "children": [{
+          "name": "Linseed Farm",
+          "regionID": 5,
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    },
+    "dried-meat": {
+      "id": 53,
+      "regionID": 5,
+      "img": "shepherds/dried-meat.webp",
+      "chain": "Dried Meat",
+      "populationID": 11,
+      "finalProduct": "Dried Meat",
+      "name": "Dry-House",
+      "alternative": "",
+      "children": [{
+        "name": "Salt Works",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      },{
+        "name": "Sanga Farm",
         "regionID": 5,
         "alternative": "",
         "children": null
       }]
-    }]
-  },
-  "dried-meat": {
-    "id": 53,
-    "regionID": 5,
-    "img": "shepherds/lcon-dried-meat-0.webp",
-    "chain": "Dried Meat",
-    "populationID": 11,
-    "finalProduct": "Dried Meat",
-    "name": "Dry-House",
-    "alternative": "",
-    "children": [{
-      "name": "Salt Works",
+    },
+    "hibiscus-tea": {
+      "id": 54,
       "regionID": 5,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Sanga Farm",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-  "hibiscus-tea": {
-    "id": 54,
-    "regionID": 5,
-    "img": "shepherds/lcon-hibiscus-tea-0.webp",
-    "chain": "Hibiscus Tea",
-    "populationID": 11,
-    "finalProduct": "Hibiscus Tea",
-    "name": "Tea Spicer",
-    "alternative": "",
-    "children": [{
-      "name": "Hibiscus Farm",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-  "mud-bricks": {
-    "id": 55,
-    "regionID": 5,
-    "img": "elders/mud-bricks.webp",
-    "chain": "Mud Bricks",
-    "populationID": 12,
-    "finalProduct": "Mud Bricks",
-    "name": "Brick Dry-House",
-    "alternative": "",
-    "children": [{
-      "name": "Clay Harvester",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Teff Farm",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-  "ceramics": {
-    "id": 56,
-    "regionID": 5,
-    "img": "elders/ceramics.webp",
-    "chain": "Ceramics",
-    "populationID": 12,
-    "finalProduct": "Ceramics",
-    "name": "Ceramics Workshop",
-    "alternative": "",
-    "children": [{
-      "name": "Clay Harvester",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Indigo Farm",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-  "tapestries": {
-    "id": 57,
-    "regionID": 5,
-    "img": "elders/tapestries.webp",
-    "chain": "Tapestries",
-    "populationID": 12,
-    "finalProduct": "Tapestries",
-    "name": "Tapestry Looms",
-    "alternative": "",
-    "children": [{
-      "name": "Linen Mill",
-      "regionID": 5,
+      "img": "shepherds/hibiscus-tea.webp",
+      "chain": "Hibiscus Tea",
+      "populationID": 11,
+      "finalProduct": "Hibiscus Tea",
+      "name": "Tea Spicer",
       "alternative": "",
       "children": [{
-        "name": "Linseed Farm",
+        "name": "Hibiscus Farm",
         "regionID": 5,
         "alternative": "",
         "children": null
       }]
-    },{
-      "name": "Indigo Farm",
+    },
+    "mud-bricks": {
+      "id": 55,
       "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-  "seafood-stew": {
-    "id": 58,
-    "regionID": 5,
-    "img": "elders/seafood.webp",
-    "chain": "Seafood Stew",
-    "populationID": 12,
-    "finalProduct": "Seafood Stew",
-    "name": "Wal Kitchen",
-    "alternative": "",
-    "children": [{
-      "name": "Teff Mill",
-      "regionID": 5,
+      "img": "elders/mud-bricks.webp",
+      "chain": "Mud Bricks",
+      "populationID": 12,
+      "finalProduct": "Mud Bricks",
+      "name": "Brick Dry-House",
       "alternative": "",
       "children": [{
+        "name": "Clay Harvester",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      },{
         "name": "Teff Farm",
         "regionID": 5,
         "alternative": "",
         "children": null
-      },{
-        "name": "Spice Farm",
-        "regionID": 5,
-        "alternative": "",
-        "children": null
       }]
-    },{
-      "name": "Lobster Fishery",
+    },
+    "ceramics": {
+      "id": 56,
       "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-    "clay-pipes": {
-    "id": 59,
-    "regionID": 5,
-    "img": "elders/tobacco-pipes.webp",
-    "chain": "Clay Pipes",
-    "populationID": 12,
-    "finalProduct": "Clay Pipes",
-    "name": "Pipe Maker",
-    "alternative": "",
-    "children": [{
-      "name": "Clay Harvester",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    },{
-      "name": "Tobacco Plantation",
-      "regionID": 2,
-      "alternative": "",
-      "children": null
-    }]
-  },    
-  "illuminated-scripts": {
-    "id": 60,
-    "regionID": 5,
-    "img": "elders/scriptures.webp",
-    "chain": "Illuminated Scripts",
-    "populationID": 12,
-    "finalProduct": "Illuminated Scripts",
-    "name": "Luminer",
-    "alternative": "",
-    "children": [{
-      "name": "Paper Mill",
-      "regionID": 5,
+      "img": "elders/ceramics.webp",
+      "chain": "Ceramics",
+      "populationID": 12,
+      "finalProduct": "Ceramics",
+      "name": "Ceramics Workshop",
       "alternative": "",
       "children": [{
-        "name": "Lumberjack Hut",
-        "regionID": 5,
-        "alternative": "",
-        "children": null
-      }]
-    },{
-      "name": "Indigo Farm",
-      "regionID": 5,
-      "alternative": "",
-      "children": null
-    }]
-  },
-  "lanterns": {
-    "id": 61,
-    "regionID": 5,
-    "img": "elders/lanterns.webp",
-    "chain": "Lanterns",
-    "populationID": 12,
-    "finalProduct": "Lanterns",
-    "name": "Lanternsmith",
-    "alternative": "",
-    "children": [{
-      "name": "Glassmakers",
-      "regionID": 1,
-      "alternative": "",
-      "children": [{
-        "name": "Sand Mine",
-        "regionID": 1,
-        "alternative": "",
-        "children": null
-      }]
-    },{
-      "name": "Chandler",
-      "regionID": 5,
-      "alternative": "",
-      "children": [{
-        "name": "Apiary",
+        "name": "Clay Harvester",
         "regionID": 5,
         "alternative": "",
         "children": null
       },{
-        "name": "Cotton Plantation",
+        "name": "Indigo Farm",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "tapestries": {
+      "id": 57,
+      "regionID": 5,
+      "img": "elders/tapestries.webp",
+      "chain": "Tapestries",
+      "populationID": 12,
+      "finalProduct": "Tapestries",
+      "name": "Tapestry Looms",
+      "alternative": "",
+      "children": [{
+        "name": "Linen Mill",
+        "regionID": 5,
+        "alternative": "",
+        "children": [{
+          "name": "Linseed Farm",
+          "regionID": 5,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Indigo Farm",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "seafood-stew": {
+      "id": 58,
+      "regionID": 5,
+      "img": "elders/seafood.webp",
+      "chain": "Seafood Stew",
+      "populationID": 12,
+      "finalProduct": "Seafood Stew",
+      "name": "Wat Kitchen",
+      "alternative": "",
+      "children": [{
+        "name": "Teff Mill",
+        "regionID": 5,
+        "alternative": "",
+        "children": [{
+          "name": "Teff Farm",
+          "regionID": 5,
+          "alternative": "",
+          "children": null
+        },{
+          "name": "Spice Farm",
+          "regionID": 5,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Lobster Fishery",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      }]
+    },
+      "clay-pipes": {
+      "id": 59,
+      "regionID": 5,
+      "img": "elders/tobacco-pipes.webp",
+      "chain": "Clay Pipes",
+      "populationID": 12,
+      "finalProduct": "Clay Pipes",
+      "name": "Pipe Maker",
+      "alternative": "",
+      "children": [{
+        "name": "Clay Harvester",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      },{
+        "name": "Tobacco Plantation",
         "regionID": 2,
         "alternative": "",
         "children": null
       }]
-    }]
+    },    
+    "illuminated-scripts": {
+      "id": 60,
+      "regionID": 5,
+      "img": "elders/scriptures.webp",
+      "chain": "Illuminated Scripts",
+      "populationID": 12,
+      "finalProduct": "Illuminated Scripts",
+      "name": "Luminer",
+      "alternative": "",
+      "children": [{
+        "name": "Paper Mill",
+        "regionID": 5,
+        "alternative": "",
+        "children": [{
+          "name": "Lumberjack Hut",
+          "regionID": 1,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Indigo Farm",
+        "regionID": 5,
+        "alternative": "",
+        "children": null
+      }]
+    },
+    "lanterns": {
+      "id": 61,
+      "regionID": 5,
+      "img": "elders/lanterns.webp",
+      "chain": "Lanterns",
+      "populationID": 12,
+      "finalProduct": "Lanterns",
+      "name": "Lanternsmith",
+      "alternative": "",
+      "children": [{
+        "name": "Glassmakers",
+        "regionID": 1,
+        "alternative": "",
+        "children": [{
+          "name": "Sand Mine",
+          "regionID": 1,
+          "alternative": "",
+          "children": null
+        }]
+      },{
+        "name": "Chandler",
+        "regionID": 5,
+        "alternative": "",
+        "children": [{
+          "name": "Apiary",
+          "regionID": 5,
+          "alternative": "",
+          "children": null
+        },{
+          "name": "Cotton Plantation",
+          "regionID": 2,
+          "alternative": "",
+          "children": null
+        }]
+      }]
+    }
   }
+
+  
 }

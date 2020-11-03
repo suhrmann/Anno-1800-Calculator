@@ -68,7 +68,7 @@
                       <h3>Construction Costs</h3>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content eager>
-                      <v-card class="pb-1" tile>
+                      <v-card tile>
                         <ResourcePanel :chain="this.treeData"></ResourcePanel>
                       </v-card>
                     </v-expansion-panel-content>
