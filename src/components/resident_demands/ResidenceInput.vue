@@ -320,7 +320,7 @@
 </template>
 
 <script>
-import ResidenceData from '../../data/residence.json'
+import ResidenceData from '@/data/residence.json'
 
 export default {
   name: 'BottomPopulationInput',

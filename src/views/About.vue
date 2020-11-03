@@ -16,7 +16,7 @@
       <v-card>
         <a href="https://www.ubisoft.com/en-gb/game/anno-1800/" target="_blank">
           <v-img
-            :src="require('../assets/backgrounds/anno1800wallpaper@0,1x.jpg')"
+            :src="require('@/assets/backgrounds/anno1800wallpaper@0,1x.jpg')"
             position="top center"
             aspect-ratio="3"
           ></v-img>
@@ -206,7 +206,7 @@ export default {
      * @return {string} The URL of the image (e.g. for use as img src).
      */
     getImage (image, folder) {
-      return image ? require(`../assets/${folder}/${image}`) : ''
+      return image ? require(`@/assets/${folder}/${image}`) : ''
     }
   }
 }
