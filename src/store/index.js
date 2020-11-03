@@ -182,11 +182,11 @@ export default new Vuex.Store({
       state.selectedregionID = idObject.regionID
     },
 
-    changeregionID (state, regionID) {
+    changeRegionID (state, regionID) {
       state.selectedregionID = regionID
     },
 
-    changepopulationID (state, populationID) {
+    changePopulationID (state, populationID) {
       state.selectedpopulationID = populationID
     },
 

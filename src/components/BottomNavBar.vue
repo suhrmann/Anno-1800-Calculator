@@ -32,7 +32,7 @@
     <!-- Nav Bar: SOCIAL CLASS -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedpopulationID"
+        v-model="selectedPopulationID"
         absolute
         dark
         height="70"
@@ -57,7 +57,7 @@
     <!-- Nav Bar: REGION -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedregionID"
+        v-model="selectedRegionID"
         absolute
         dark
         height="70"
@@ -93,11 +93,6 @@ export default {
   mixins: [helperFunctionMixin],
   data () {
     return {
-      // Init selection
-      // selectedregionID: 1,
-      // selectedpopulationID: 1,
-      // selectedProductionChainID: 1,
-
       /* Store data from JSON in component */
       // TODO Load these centrally and access this data e.g. via Vuex
       regions: regions,
@@ -107,21 +102,21 @@ export default {
   },
 
   computed: {
-    selectedregionID: {
+    selectedRegionID: {
       get: function () {
         return this.$store.state.selectedregionID
       },
-      set: function (selectedregionID) {
-        this.$store.commit('changeregionID', selectedregionID)
+      set: function (selectedRegionID) {
+        this.$store.commit('changeRegionID', selectedRegionID)
       }
     },
 
-    selectedpopulationID: {
+    selectedPopulationID: {
       get: function () {
         return this.$store.state.selectedpopulationID
       },
-      set: function (selectedpopulationID) {
-        this.$store.commit('changepopulationID', selectedpopulationID)
+      set: function (selectedPopulationID) {
+        this.$store.commit('changePopulationID', selectedPopulationID)
       }
     },
 
@@ -173,7 +168,7 @@ export default {
     selectedPopulations: function () {
       const populations = Object.values(this.populations)
       return populations.filter(
-        (population) => population.regionID === this.selectedregionID
+        (population) => population.regionID === this.selectedRegionID
       )
     },
 
@@ -185,7 +180,7 @@ export default {
     selectedProductionChains: function () {
       const productionChains = Object.values(this.productionChainsData)
       return productionChains.filter(
-        (chain) => chain.populationID === this.selectedpopulationID
+        (chain) => chain.populationID === this.selectedPopulationID
       )
     }
   },
@@ -197,12 +192,12 @@ export default {
      */
     changeRegion: function (regionID) {
       const selectedRegion = this.getRegionByID(regionID)
-      this.selectedregionID = selectedRegion.id
+      this.selectedRegionID = selectedRegion.id
 
       const selectedPopulation = this.getPopulationByID(
         selectedRegion.populationIDs[0]
       )
-      this.selectedpopulationID = selectedPopulation.id
+      this.selectedPopulationID = selectedPopulation.id
 
       this.changePopulation(selectedPopulation.id)
       EventBus.$emit('bottomNavBarChanged')
