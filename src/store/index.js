@@ -147,6 +147,7 @@ export default new Vuex.Store({
         open_construction_costs: 0
       },
       demands: {
+        population_input_tab: 'population',
         is_sorted_by: 'isConsumable'
       }
     }
@@ -359,6 +360,19 @@ export default new Vuex.Store({
      */
     toggle_construction_costs (state, isOpen) {
       state.config.prodcution_chains.open_construction_costs = Boolean(isOpen)
+    },
+
+    /**
+     * Change the input of population for demands: Population or residence
+     * @param state
+     * @param newTab {string} 'population' or 'residence'
+     */
+    set_population_tab (state, newTab) {
+      if (newTab === 'population' || newTab === 'residence') {
+        state.config.demands.population_input_tab = String(newTab)
+      } else {
+        console.error('Unknown type of population input ' + newTab + '.')
+      }
     },
 
     /**

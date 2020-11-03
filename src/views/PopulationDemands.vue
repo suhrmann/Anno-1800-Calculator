@@ -21,15 +21,13 @@
         >
           <v-tabs-slider color="secondary"></v-tabs-slider>
 
-          <!-- Population input -->
-          <v-tab>
+          <v-tab key="population">
             Population
             <v-avatar color="grey lighten-2">
               <img src="@/assets/population/engineers.webp" alt="avatar">
             </v-avatar>
           </v-tab>
-          <!-- Residence input -->
-          <v-tab>
+          <v-tab key="residence">
             Residence
             <v-avatar>
               <img src="@/assets/buildings/farmers/residence.webp" alt="avatar">
@@ -41,16 +39,14 @@
           v-model="currentTab"
           class="tabs-items-border"
         >
-          <!-- Population input -->
-          <v-tab-item key="1">
+          <v-tab-item key="population">
             <v-card flat>
               <v-card-text>
                 <population-input></population-input>
               </v-card-text>
             </v-card>
           </v-tab-item>
-          <!-- Residence input -->
-          <v-tab-item key="2">
+          <v-tab-item key="residence">
             <v-card flat>
               <v-card-text>
                 <residence-input></residence-input>
@@ -102,9 +98,34 @@ export default {
 
   mixins: [residentDemandCalculatorMixin],
 
+  computed: {
+    /**
+     * Convert the tab IDs (0 or 1) to tab "names" (0 = "population"; 1 = "residence")
+     */
+    currentTab: {
+      get: function () {
+        // Convert tab names (string) from storage to numeric tab ids
+        switch (this.$store.state.config.demands.population_input_tab) {
+          case 'population': return 0
+          case 'residence': return 1
+          default:
+            console.error('Unknown tab from store ' + this.$store.state.config.demands.population_input_tab)
+            return -1
+        }
+      },
+      set: function (newTab) {
+        // Convert numeric tab ids for storage to tab names as string
+        switch (newTab) {
+          case 0: this.$store.commit('set_population_tab', 'population'); break
+          case 1: this.$store.commit('set_population_tab', 'residence'); break
+          default: console.error('Unknown tab ' + newTab)
+        }
+      }
+    }
+  },
+
   data: function () {
     return {
-      currentTab: null
     }
   }
 
