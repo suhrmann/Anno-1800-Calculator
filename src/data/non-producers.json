@@ -828,5 +828,599 @@
       "jornalero": 0,
       "obrero": 0
     }
+  },
+  "Radio Tower": {
+    "name": "Radio Tower",
+    "img": "scholars/radio-station.webp",
+    "construction": {
+      "cash": 50000,
+      "wood": 40,
+      "brick": 70,
+      "steel": 60,
+      "window": 50,
+      "concrete": 40,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 400,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Research Institute: Foundations": {
+    "name": "Research Institute: Foundations",
+    "img": "scholars/research-center.webp",
+    "construction": {
+      "cash": 120000,
+      "wood": 100,
+      "brick": 150,
+      "steel": 125,
+      "window": 75,
+      "concrete": 75,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 500,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Road Arctic": {
+    "name": "Road",
+    "img": "explorers/road-arctic.webp",
+    "construction": {
+      "cash": 5,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Canteen": {
+    "name": "Canteen",
+    "img": "explorers/canteen.webp",
+    "construction": {
+      "cash": 1000,
+      "wood": 5,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Explorer Shelter": {
+    "name": "Explorer Shelter",
+    "img": "explorers/residence.webp",
+    "construction": {
+      "cash": 0,
+      "wood": 2,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Small Warehouse Arctic": {
+    "name": "Small Warehouse",
+    "img": "explorers/warehouse.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 5,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Heater": {
+    "name": "Heater",
+    "img": "explorers/heater.webp",
+    "construction": {
+      "cash": 1000,
+      "wood": 5,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Ranger Station": {
+    "name": "Ranger Station",
+    "img": "explorers/ranger-station.webp",
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "brick": 0,
+      "steel": 5,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 75,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Depot Arctic": {
+    "name": "Depot",
+    "img": "explorers/depot.webp",
+    "construction": {
+      "cash": 4000,
+      "wood": 10,
+      "brick": 0,
+      "steel": 5,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Post Office": {
+    "name": "Post Office",
+    "img": "technicians/post-office.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 20,
+      "brick": 0,
+      "steel": 10,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 75,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Desert Road": {
+    "name": "Desert Road",
+    "img": "shepherds/desert-road.webp",
+    "construction": {
+      "cash": 5,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Marketplace Enbesa": {
+    "name": "Marketplace",
+    "img": "shepherds/marketplace.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 8
+    },
+    "maintenance": {
+      "cash": 20,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Shepherd Residence": {
+    "name": "Shepherd Residence",
+    "img": "shepherds/residence.webp",
+    "construction": {
+      "cash": 5,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 1
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Small Warehouse Enbesa": {
+    "name": "Small Warehouse",
+    "img": "shepherds/warehouse.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 5
+    },
+    "maintenance": {
+      "cash": 10,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Canal": {
+    "name": "Canal",
+    "img": "shepherds/canal.webp",
+    "construction": {
+      "cash": 5,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Water Pump": {
+    "name": "Water Pump",
+    "img": "shepherds/water-pump.webp",
+    "construction": {
+      "cash": 1000,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 5
+    },
+    "maintenance": {
+      "cash": 25,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Musicians Court": {
+    "name": "Musicians Court",
+    "img": "shepherds/music-plaza.webp",
+    "construction": {
+      "cash": 3000,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 20
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Trade Union Enbesa": {
+    "name": "Trade Union",
+    "img": "shepherds/trade-union.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 20,
+      "wanza-timber": 25
+    },
+    "maintenance": {
+      "cash": 5,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Fire Station Enbesa": {
+    "name": "Fire Station",
+    "img": "shepherds/fire-station.webp",
+    "construction": {
+      "cash": 1000,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 6
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Paved Street Enbesa": {
+    "name": "Paved Street",
+    "img": "elders/paved-street.webp",
+    "construction": {
+      "cash": 13,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 0,
+      "mud-bricks": 0
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Police Station Enbesa": {
+    "name": "Paved Street",
+    "img": "elders/police-station.webp",
+    "construction": {
+      "cash": 2000,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 8,
+      "mud-bricks": 0
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Silo": {
+    "name": "Silo",
+    "img": "elders/silo.webp",
+    "construction": {
+      "cash": 1000,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 20,
+      "mud-bricks": 10
+    },
+    "maintenance": {
+      "cash": 0,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Town Hall Enbesa": {
+    "name": "Paved Street",
+    "img": "elders/town-hall.webp",
+    "construction": {
+      "cash": 2500,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 20,
+      "wanza-timber": 25,
+      "mud-bricks": 25
+    },
+    "maintenance": {
+      "cash": 50,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Hospital Enbesa": {
+    "name": "Hospital",
+    "img": "elders/hospital.webp",
+    "construction": {
+      "cash": 500,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 15,
+      "mud-bricks": 20
+    },
+    "maintenance": {
+      "cash": 100,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
+  },
+  "Monastery": {
+    "name": "Monastery",
+    "img": "elders/monastery.webp",
+    "construction": {
+      "cash": 10000,
+      "wood": 0,
+      "brick": 0,
+      "steel": 0,
+      "window": 0,
+      "concrete": 0,
+      "influence": 0,
+      "wanza-timber": 30,
+      "mud-bricks": 30
+    },
+    "maintenance": {
+      "cash": 140,
+      "farmer": 0,
+      "worker": 0,
+      "artisan": 0,
+      "engineer": 0,
+      "investor": 0,
+      "jornalero": 0,
+      "obrero": 0
+    }
   }
 }
