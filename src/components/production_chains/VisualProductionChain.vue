@@ -322,7 +322,6 @@ export default {
   methods: {
     matchDemands () {
       this.chainCount = Math.ceil(this.consumptionPerMinute / (1 / (this.spt / 60)))
-      console.log(this.chainCount)
     },
 
     changeCounter () {

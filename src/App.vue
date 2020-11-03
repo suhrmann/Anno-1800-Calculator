@@ -86,7 +86,6 @@ export default {
         const productName = producerFile[producerKey].product
         producerObject[productName] = 0
       }
-      // console.log(producerObject);
       return this.producerObject
     }
   }

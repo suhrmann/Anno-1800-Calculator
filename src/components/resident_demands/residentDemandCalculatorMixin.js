@@ -52,7 +52,6 @@ export default {
           }
         }
       ))
-      console.log('TOTAL DEMANDS: ', demands)
 
       const totalDemands = {
         basic: {},
