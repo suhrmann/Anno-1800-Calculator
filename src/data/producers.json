@@ -2976,7 +2976,7 @@
   "Wat Kitchen": {
     "product": "Seafood Stew",
     "building": "Wat Kitchen",
-    "img": "elders/seafood.webp",
+    "img": "elders/wat-stew.webp",
     "regionID": 5,
     "productionTime": 30,
     "construction": {
