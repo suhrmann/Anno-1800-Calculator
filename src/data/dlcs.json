@@ -1,54 +1,85 @@
 [
   {
+    "id": 0,
+    "name": "Anno 1800",
+    "season": 0,
+    "content-pack": false,
+    "img": "anno-1800.jpg"
+  },
+
+
+  {
+    "id": 2,
     "name": "Sunken Treasures",
+    "release": "2019-07-30",
     "season": 1,
     "content-pack": false,
     "img": "sunken-treasures.webp"
   },
   {
+    "id": 3,
     "name": "Botanica",
+    "release": "2019-09-10",
     "season": 1,
     "content-pack": false,
     "img": "botanica.webp"
   },
   {
+    "id": 4,
     "name": "The Passage",
+    "release": "2019-12-10",
     "season": 1,
     "content-pack": false,
     "img": "the-passage.webp"
   },
+
+
   {
+    "id": 5,
     "name": "Seat of Power",
+    "release": "2020-03-24",
     "season": 2,
     "content-pack": false,
     "img": "seat-of-power.webp"
   },
   {
+    "id": 6,
     "name": "Bright Harvest",
+    "release": "2020-06-02",
     "season": 2,
     "content-pack": false,
     "img": "bright-harvest.webp"
   },
   {
+    "id": 9,
     "name": "Land of Lions",
+    "release": "2020-10-20",
     "season": 2,
     "content-pack": false,
     "img": "land-of-lions.webp"
   },
+
+
   {
+    "id": 1,
     "name": "The Anarchist",
+    "release": "2019-04-16",
     "season": false,
     "content-pack": true,
     "img": "the-anarchist--edited.webp"
   },
   {
+    "id": 7,
     "name": "Amusements Pack",
+    "release": "2020-08-11",
     "season": false,
     "content-pack": true,
     "img": "amusement-pack.jpg"
   },
   {
+    "id": 8,
     "name": "Holiday Pack",
+    "release": "2019-12-10",
     "season": false,
     "content-pack": true,
     "img": "holiday-pack.webp"
