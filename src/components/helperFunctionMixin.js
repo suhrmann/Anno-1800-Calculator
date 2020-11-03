@@ -116,7 +116,7 @@ export const helperFunctionMixin = {
       const buildings = this.producerFile
       const helperFunctionMixin = this
 
-      if (this.$store.state.selectedProductionChain.id === 26 || this.$store.state.selectedProductionChain.id === 37) {
+      if (this.$store.state.selectedProductionChain.id === 26 || this.$store.state.selectedProductionChain.id === 37 || this.$store.state.selectedProductionChain.id === 41) {
         if (name === 'Marquetry Workshop') {
           if (helperFunctionMixin.getMarquetryWorkshopState === 'old') {
             return buildings['Marquetry Workshop Old']
