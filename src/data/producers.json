@@ -526,7 +526,7 @@
     "building": "Coal Mine",
     "img": "artisans/coal.webp",
     "regionID": 1,
-    "productionTime": 30,
+    "productionTime": 15,
     "construction": {
       "cash": 500,
       "wood": 4,
