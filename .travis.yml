@@ -39,7 +39,7 @@ before_install:
 
 script:
   # Build release for github-pages once on linux
-  - yarn run build
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then   yarn run build   ; fi
   # Build multi-OS binaries (using "Vue CLI Plugin Electron Builder")
   - yarn run electron:build
 
@@ -56,7 +56,7 @@ before_deploy:
   - git tag --force $TRAVIS_TAG
 
 deploy:
-  # Github pages
+  # Github pages, deploy only on linux
   - provider: pages
     skip-cleanup: true
     local_dir: dist
@@ -64,6 +64,7 @@ deploy:
     keep-history: true
     on:
       branch: releases
+      condition: $TRAVIS_OS_NAME = "linux"
 
   # Github releases
   - provider: releases
