@@ -3,38 +3,43 @@
     "id": 1,
     "name": "Farmers",
     "img": "farmers.webp",
-    "firstProductionChain": 1
+    "firstProductionChain": 1,
+    "residence": 10
   },
   "workers": {
     "id": 2,
     "name": "Workers",
     "img": "workers.webp",
-    "firstProductionChain": 5
+    "firstProductionChain": 5,
+    "residence": 20
   },
   "artisans": {
     "id": 3,
     "name": "Artisans",
     "img": "artisans.webp",
-    "firstProductionChain": 13
+    "firstProductionChain": 13,
+    "residence": 30
   },
   "engineers": {
     "id": 4,
     "name": "Engineers",
     "img": "engineers.webp",
-    "firstProductionChain": 28
-
+    "firstProductionChain": 28,
+    "residence": 40
   },
   "investors": {
     "id": 5,
     "name": "Investors",
     "img": "investors.webp",
-    "firstProductionChain": 35
+    "firstProductionChain": 35,
+    "residence": 50
   },
   "scholars": {
     "id": 8,
     "name": "Scholars",
     "img": "scholars.webp",
-    "firstProductionChain": 39
+    "firstProductionChain": 39,
+    "residence": 60
   },
 
 
@@ -42,13 +47,15 @@
     "id": 6,
     "name": "Jornaleros",
     "img": "jornaleros.webp",
-    "firstProductionChain": 17
+    "firstProductionChain": 17,
+    "residence": 10
   },
   "obreros": {
     "id": 7,
     "name": "Obreros",
     "img": "obreros.webp",
-    "firstProductionChain": 22
+    "firstProductionChain": 22,
+    "residence": 20
   },
 
 
@@ -56,13 +63,15 @@
     "id": 9,
     "name": "Explorers",
     "img": "explorers.webp",
-    "firstProductionChain": 45
+    "firstProductionChain": 45,
+    "residence": 10
   },
   "technicians": {
     "id": 10,
     "name": "Technicians",
     "img": "technicians.webp",
-    "firstProductionChain": 49
+    "firstProductionChain": 49,
+    "residence": 20
   },
 
 
@@ -70,12 +79,14 @@
     "id": 11,
     "name": "Shepherds",
     "img": "shepherd.webp",
-    "firstProductionChain": 51
+    "firstProductionChain": 51,
+    "residence": 10
   },
   "elders": {
     "id": 12,
     "name": "Elders",
     "img": "elders.webp",
-    "firstProductionChain": 55
+    "firstProductionChain": 55,
+    "residence": 20
   }
 }
