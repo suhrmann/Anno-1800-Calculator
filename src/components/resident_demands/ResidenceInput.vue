@@ -320,27 +320,27 @@
 </template>
 
 <script>
-import ResidenceData from '@/data/residence.json'
+import Population from '@/data/population.json'
 
 export default {
   name: 'BottomPopulationInput',
   data: function () {
     return {
-      farmersPerResidence: ResidenceData.farmers.residence,
-      workersPerResidence: ResidenceData.workers.residence,
-      artisansPerResidence: ResidenceData.artisans.residence,
-      engineersPerResidence: ResidenceData.engineers.residence,
-      investorsPerResidence: ResidenceData.investors.residence,
-      scholarsPerResidence: ResidenceData.scholars.residence, // TODO VALIDATE! Unknown by now
+      farmersPerResidence: Population.farmers.residence,
+      workersPerResidence: Population.workers.residence,
+      artisansPerResidence: Population.artisans.residence,
+      engineersPerResidence: Population.engineers.residence,
+      investorsPerResidence: Population.investors.residence,
+      scholarsPerResidence: Population.scholars.residence, // TODO VALIDATE! Unknown by now
 
-      jornalerosPerResidence: ResidenceData.jornaleros.residence,
-      obrerosPerResidence: ResidenceData.obreros.residence,
+      jornalerosPerResidence: Population.jornaleros.residence,
+      obrerosPerResidence: Population.obreros.residence,
 
-      explorersPerResidence: ResidenceData.explorers.residence,
-      techniciansPerResidence: ResidenceData.technicians.residence,
+      explorersPerResidence: Population.explorers.residence,
+      techniciansPerResidence: Population.technicians.residence,
 
-      shepherdsPerResidence: ResidenceData.shepherds.residence, // TODO VALIDATE! Unknown by now
-      eldersPerResidence: ResidenceData.elders.residence // TODO VALIDATE! Unknown by now
+      shepherdsPerResidence: Population.shepherds.residence, // TODO VALIDATE! Unknown by now
+      eldersPerResidence: Population.elders.residence // TODO VALIDATE! Unknown by now
     }
   },
   computed: {

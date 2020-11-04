@@ -1,6 +1,8 @@
-import Consumption from '@/data/consumption.json'
+import ConsumptionPerResidence from '@/data/consumption.json'
 import Producers from '@/data/producers.json'
 import NonProducers from '@/data/non-producers.json'
+import Population from '@/data/population.json'
+
 import {
   chainNodeMixin
 } from '../production_chains/chainNodeMixin'
@@ -15,10 +17,33 @@ export default {
     return {
       producers: Producers,
       nonProducers: NonProducers,
-      consumption: Consumption
+      consumptionPerResidence: ConsumptionPerResidence,
+      population: Population
     }
   },
+
   computed: {
+
+    /**
+     * "The amount of goods each residence of this tier consumes every second."
+     * So for this population based calculation we need to convert it to "consumption per population".
+     */
+    consumptionPerPopulation () {
+      const consumption = JSON.parse(JSON.stringify(this.consumptionPerResidence)) // Clone consumptionPerResidence
+      // Convert value per residence to per population
+      Object.keys(consumption).forEach(pop => {
+        Object.keys(consumption[pop]).forEach(type => {
+          Object.keys(consumption[pop][type]).forEach(demand => {
+            const populationPerResidence = this.population[pop].residence
+            consumption[pop][type][demand] = consumption[pop][type][demand] / populationPerResidence
+          })
+        })
+      })
+
+      console.log('consumption: ', consumption)
+      return consumption
+    },
+
     numPopulation: function () {
       return this.$store.state.population
     },
@@ -41,13 +66,13 @@ export default {
     totalDemands: function () {
       // Merge all demands
       const _self = this
-      const demands = Object.assign(...Object.keys(this.consumption).map(
+      const demands = Object.assign(...Object.keys(this.consumptionPerPopulation).map(
         pop => {
           const numPopStr = 'num' + pop.charAt(0).toUpperCase() + pop.slice(1) // build e.g. "numFarmers" from "farmers"
           return {
             [pop]: {
-              basic: _self.calculateDemands(_self.consumption[pop].basic, _self.numPopulation[numPopStr]),
-              luxury: _self.calculateDemands(_self.consumption[pop].luxury, _self.numPopulation[numPopStr])
+              basic: _self.calculateDemands(_self.consumptionPerPopulation[pop].basic, _self.numPopulation[numPopStr]),
+              luxury: _self.calculateDemands(_self.consumptionPerPopulation[pop].luxury, _self.numPopulation[numPopStr])
             }
           }
         }
