@@ -38,7 +38,7 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 
 # Developers
 
-## Documentation
+## Documentation [Wiki]
 > We developed this project completely in our free time so please dont expect too much from the documentation. If you have questions, feel free to contact us via mail, issue (especially bugs and errors), PR etc.
 
 The technical documenation is done in the [Wiki of this repo](https://github.com/suhrmann/Anno-1800-Calculator/wiki). Among others there is CI/CD via Travis-CI and the [data structure](https://github.com/suhrmann/Anno-1800-Calculator/tree/master/src/data) described.
