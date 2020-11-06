@@ -23,9 +23,6 @@ matrix:
       language: node_js
       node_js: "lts/*"
 
-  allow_failures:
-    - os: windows # Allow failures on failing build on Windows
-
 cache:
   yarn: true
   directories:
