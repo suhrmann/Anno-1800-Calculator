@@ -30,8 +30,8 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
     # From "How do I use MSYS2?" on windows to fix deployment errors (2020-11-06)
-    - $HOME/AppData/Local/Temp/chocolatey
-    - /C/tools/msys64
+    #- $HOME/AppData/Local/Temp/chocolatey
+    #- /C/tools/msys64
 
 before_install:
   # Install yarn on all OS
