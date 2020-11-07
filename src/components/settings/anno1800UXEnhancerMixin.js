@@ -7,7 +7,9 @@ export const anno1800UXEnhancerMixin = {
   },
   computed: {
     /**
-     *  The URL of Anno1800UXEnhancer - Use the fixed english URL
+     *  The URL of Anno1800UXEnhancer population server - use the fixed english URL
+     *  See  NiHoel/Anno1800Calculator  > PopulationReader.handleResponse()
+     *       https://github.com/NiHoel/Anno1800Calculator/blob/master/AnnoCalculator.js#L1062
      * @returns {string}
      */
     anno1800UXEnhancerURL: {
