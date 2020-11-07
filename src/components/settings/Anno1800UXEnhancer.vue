@@ -1,7 +1,8 @@
 <template>
   <div>
-    Load population from  NiHoel / Anno1800UXEnhancer
-    https://github.com/NiHoel/Anno1800UXEnhancer
+    <p>Load population from  NiHoel / Anno1800UXEnhancer</p>
+    <p><a href="https://github.com/NiHoel/Anno1800UXEnhancer">https://github.com/NiHoel/Anno1800UXEnhancer</a></p>
+    <pre>receivedPopulation: {{ JSON.stringify(receivedPopulation, null, 2) }}</pre>
   </div>
 </template>
 
@@ -9,8 +10,18 @@
 import { anno1800UXEnhancerMixin } from './anno1800UXEnhancerMixin.js'
 
 export default {
-  name: 'anno-1800-ux-enhancer',
-  mixins: [anno1800UXEnhancerMixin]
+  name: 'Settings.vue',
+  mixins: [anno1800UXEnhancerMixin],
+  components: {
+  },
+  data: function () {
+    return {
+      receivedPopulation: { a: 1, b: 2 }
+    }
+  },
+  mounted: async () => {
+    this.receivedPopulation = await anno1800UXEnhancerMixin.readPopulation()
+  }
 }
 </script>
 
