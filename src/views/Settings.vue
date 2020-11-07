@@ -12,7 +12,6 @@
         <h2>DLCs</h2>
       </v-col>
     </v-row>
-    <select-dlcs></select-dlcs>
 
     <v-row>
       <v-col>
@@ -28,13 +27,11 @@
 </template>
 
 <script>
-import SelectDLCs from '@/components/settings/SelectDLCs'
 import Anno1800UXEnhancer from '@/components/settings/Anno1800UXEnhancer'
 
 export default {
   name: 'Settings.vue',
   components: {
-    'select-dlcs': SelectDLCs,
     'anno1800-ux-enhancer': Anno1800UXEnhancer
   },
   data: function () {
