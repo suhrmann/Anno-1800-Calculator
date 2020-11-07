@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "roboto-fontface": "*",
     "v-tooltip": "^2.0.0-rc.33",
