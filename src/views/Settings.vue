@@ -12,7 +12,11 @@
         <h2>DLCs</h2>
       </v-col>
     </v-row>
-    <select-dlcs></select-dlcs>
+    <v-row>
+      <v-col>
+        <select-dlcs></select-dlcs>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
