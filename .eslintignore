@@ -1,0 +1,4 @@
+# Ignore files and directories while linting via ESLint
+
+# git submodule https://github.com/NiHoel/Anno1800Calculator
+/src/anno1800calculator-nihoel/
