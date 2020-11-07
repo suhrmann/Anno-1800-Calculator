@@ -28,6 +28,11 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 
 ## Changelog:
 
+- ``2020-11-06`` ``v0.4.4`` Fix builds for Windows, Linux and MacOS
+- ``2020-11-04`` ``v0.4.4`` Hot fix demands calculation (population, not residence) and correct "productionTime" of "Coal Mine"
+- ``2020-11-03`` ``v0.4.3`` Finally add all production chains (by now)
+- ``2020-11-03`` ``v0.4.2`` Add population demands for population of all DLCs, by now
+- ``2020-11-02`` ``v0.4.1`` Working options in production chains & lots of fixed bugs
 - ``2020-11-02`` ``v0.4.0`` Update dependencies to latest version - i.a. Vuetify 2, giving full facelift, bug fixes, ...
 - ``2020-10-20`` ``v0.3.0`` Merge pull request #24 dependabot, fixing critical issue in electron
 - ``2020-05-11`` ``v0.3.0`` Load production layouts from Anno 1800 Wiki
