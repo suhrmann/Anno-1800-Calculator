@@ -2100,7 +2100,7 @@
     "building": "Tea Spicer",
     "img": "shepherds/hibiscus-tea.webp",
     "regionID": 5,
-    "productionTime": 30,
+    "productionTime": 90,
     "construction": {
       "cash": 2500,
       "wanza_timber": 10
