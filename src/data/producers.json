@@ -2081,11 +2081,11 @@
     }
   },
   "Hibiscus Farm": {
-    "product": "Dried Meat",
+    "product": "Hibiscus",
     "building": "Hibiscus Farm",
     "img": "shepherds/hibiscus-farm.webp",
     "regionID": 5,
-    "productionTime": 30,
+    "productionTime": 60,
     "construction": {
       "cash": 1250,
       "wanza_timber": 6
