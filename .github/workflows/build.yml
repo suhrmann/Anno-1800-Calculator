@@ -1,0 +1,30 @@
+# This workflow will do a clean install of node dependencies and build the source code
+# It runs on every commit (push) and pull request.
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI Website
+
+# CI everything
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: yarn
+        # Alternatively, you can install the versions in the yarn.lock file and prevent updates to the yarn.lock file:
+        # run: yarn --frozen-lockfile
+
+      - name: Build
+        run: yarn run build
