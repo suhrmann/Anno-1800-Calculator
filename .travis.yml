@@ -1,7 +1,0 @@
-# Travis CI (https://travis-ci.org/) configuration
-os: linux # Test only on Linux
-language: node_js
-node_js: "lts/*" # latest LTS Node.js release
-script:
-  - yarn run build
-  - yarn run electron:build
