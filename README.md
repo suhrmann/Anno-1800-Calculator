@@ -28,6 +28,7 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 
 ## Changelog:
 
+- ``2020-01-01`` ``v0.4.5`` Replace greedy Travis-CI with GitHub Actions! 🚀 Fix some smaller issues
 - ``2020-11-06`` ``v0.4.4`` Fix builds for Windows, Linux and MacOS
 - ``2020-11-04`` ``v0.4.4`` Hot fix demands calculation (population, not residence) and correct "productionTime" of "Coal Mine"
 - ``2020-11-03`` ``v0.4.3`` Finally add all production chains (by now)
@@ -63,8 +64,20 @@ npm run serve
 
 # Build desktop application with electron-buiilder.
 npm run electron:build
-
 ```
+
+
+## CI / CD
+
+Continuous Integration (CI) and Continuous Delivery (CD) use [GitHub Actions](https://github.com/features/actions). The workflow scripts are located in [.github/workflows](.github/workflows).
+ - The CI script ``build.yml`` builds the website on ALL pushs and pull requests
+ - The publish (CD) scripts ``release-electron.yml`` to publish Electron on GitHub Releases and ``release-gh-pages.yml`` for Web on GitHub pages react to Git tags ``"v*"``.
+
+### Publish a release:
+ 1. Update ``version`` in ``package.json`` e.g. ``"version": "0.4.5"``
+ 2. The publish scripts react to Git tags ``"v*"``, so to publish a release, tag your commit and push both e.g.: 
+    - ``git tag -a v0.4.5 -m "New version v0.4.5"`` - commit and tag (note the version is prefixed **v** ) 
+    - ``git push && git push --tags`` and push (don't forget the tags!)
 
 # Used Technologies
 
