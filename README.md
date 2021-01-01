@@ -40,7 +40,9 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 - ``2020-05-11`` ``v0.2.0`` Smaller changes (meta info, UI enhancements, ...)
 - ``2019-02-08`` ``v0.1.0`` Basic features working 🎉🎉🎉
 
----
+
+-----
+
 
 # Developers
 
@@ -48,6 +50,7 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 > We developed this project completely in our free time so please dont expect too much from the documentation. If you have questions, feel free to contact us via mail, issue (especially bugs and errors), PR etc.
 
 The technical documenation is done in the [Wiki of this repo](https://github.com/suhrmann/Anno-1800-Calculator/wiki). Among others there is CI/CD via Travis-CI and the [data structure](https://github.com/suhrmann/Anno-1800-Calculator/tree/master/src/data) described.
+
 
 ## Project setup for developers
 
@@ -79,6 +82,8 @@ Continuous Integration (CI) and Continuous Delivery (CD) use [GitHub Actions](ht
     - ``git tag -a v0.4.5 -m "New version v0.4.5"`` - commit and tag (note the version is prefixed **v** ) 
     - ``git push && git push --tags`` and push (don't forget the tags!)
 
+
+
 # Used Technologies
 
 **Core Technologies:**
@@ -93,8 +98,10 @@ Continuous Integration (CI) and Continuous Delivery (CD) use [GitHub Actions](ht
  - [vue-tree-chart](https://refined-x.com/Vue-Tree-Chart/) - Vue.js component to display tree chart, really awesome ⭐
  - [v-tooltip](https://akryum.github.io/v-tooltip/#/) - highly customizable tooltips
 
- ---
- 
+
+-----
+
+
 ### Legal
 
 This project is licensed under [MIT License](LICENSE).
