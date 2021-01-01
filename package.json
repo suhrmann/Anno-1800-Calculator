@@ -1,7 +1,7 @@
 {
   "name": "anno-1800-calculator",
   "productName": "Anno 1800 Calculator",
-  "version": "v0.4.5",
+  "version": "0.4.5",
   "description": "Calculate your populations' demands and optimal production chains.",
   "contributors": [
     "Simon Uhrmann <suhrmann@posteo.de>",
@@ -20,6 +20,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "release": "vue-cli-service electron:build",
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
