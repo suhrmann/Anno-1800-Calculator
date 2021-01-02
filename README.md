@@ -27,7 +27,7 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 ---
 
 ## Changelog:
-
+- ``2020-01-02`` ``v0.4.7`` Fix layout of production chains
 - ``2020-01-02`` ``v0.4.6`` Refactored Vuex - thx to [Cahllagerfeld](https://github.com/Cahllagerfeld)
 - ``2020-01-01`` ``v0.4.5`` Replace greedy Travis-CI with GitHub Actions! 🚀 Fix some smaller issues
 - ``2020-11-06`` ``v0.4.4`` Fix builds for Windows, Linux and MacOS
