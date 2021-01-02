@@ -1,9 +1,9 @@
 <template>
-  <v-container class="pa-0">
+  <v-container>
     <v-row>
       <v-col class="col-1 pa-1" v-for="(cost, i) in costArray" :key="i">
         <v-row class="col-border">
-          <v-col class="pa-0">
+          <v-col>
             <v-flex class="text-center">
               <v-avatar size="32">
                 <img class="center" :src="getImage(cost.image, cost.imageFileFolder)" :alt="cost.name">
@@ -13,7 +13,7 @@
           </v-col>
         </v-row>
         <v-row class="col-border">
-          <v-col class="py-0 text-right font-weight-black">
+          <v-col class="pt-0 text-right font-weight-black">
             <b> {{cost.amount}} </b>
           </v-col>
         </v-row>

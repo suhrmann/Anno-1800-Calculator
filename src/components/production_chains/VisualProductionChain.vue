@@ -31,51 +31,47 @@
       </v-col>
       <v-col cols="8">
         <v-row>
-          <v-col class="py-0">
-            <v-row class="mb-3" wrap>
-              <v-col class="pa-0">
-                <v-expansion-panels
-                  v-model="open_workforce_demand"
-                  tile
-                  flat
-                >
-                  <v-expansion-panel class="secondary pa-1">
-                    <v-expansion-panel-header>
-                      <h3>Workforce Demand</h3>
-                      <v-flex class="pa-0 ma-0" xs3>
-                        <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
-                      </v-flex>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content eager>
-                      <v-card class="ma-0" tile>
-                        <WorkerPanel :chain="this.treeData"></WorkerPanel>
-                      </v-card>
-                    </v-expansion-panel-content>
-                  </v-expansion-panel>
-                </v-expansion-panels>
-              </v-col>
-            </v-row>
+          <v-col>
+            <v-expansion-panels
+              v-model="open_workforce_demand"
+              tile
+              flat
+            >
+              <v-expansion-panel class="secondary pa-1">
+                <v-expansion-panel-header>
+                  <h3>Workforce Demand</h3>
+                  <v-flex class="pa-0 ma-0" xs3>
+                    <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
+                  </v-flex>
+                </v-expansion-panel-header>
+                <v-expansion-panel-content eager>
+                  <v-card tile>
+                    <WorkerPanel :chain="this.treeData"></WorkerPanel>
+                  </v-card>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
+          </v-col>
+        </v-row>
 
-            <v-row>
-              <v-col class="pa-0">
-                <v-expansion-panels
-                  v-model="open_construction_costs"
-                  tile
-                  flat
-                >
-                  <v-expansion-panel class="secondary pa-1">
-                    <v-expansion-panel-header>
-                      <h3>Construction Costs</h3>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content eager>
-                      <v-card tile>
-                        <ResourcePanel :chain="this.treeData"></ResourcePanel>
-                      </v-card>
-                    </v-expansion-panel-content>
-                  </v-expansion-panel>
-                </v-expansion-panels>
-              </v-col>
-            </v-row>
+        <v-row>
+          <v-col>
+            <v-expansion-panels
+              v-model="open_construction_costs"
+              tile
+              flat
+            >
+              <v-expansion-panel class="secondary pa-1">
+                <v-expansion-panel-header>
+                  <h3>Construction Costs</h3>
+                </v-expansion-panel-header>
+                <v-expansion-panel-content eager>
+                  <v-card tile>
+                    <ResourcePanel :chain="this.treeData"></ResourcePanel>
+                  </v-card>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
           </v-col>
         </v-row>
       </v-col>
