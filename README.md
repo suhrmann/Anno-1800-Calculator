@@ -98,6 +98,7 @@ Continuous Integration (CI) and Continuous Delivery (CD) use [GitHub Actions](ht
  - [vuex](https://vuex.vuejs.org/) - state management pattern + library for Vue.js
  - [vue-tree-chart](https://refined-x.com/Vue-Tree-Chart/) - Vue.js component to display tree chart, really awesome ⭐
  - [v-tooltip](https://akryum.github.io/v-tooltip/#/) - highly customizable tooltips
+ - [vue-router](https://router.vuejs.org/) - Official Router for SPAs created with Vue
 
 
 -----
