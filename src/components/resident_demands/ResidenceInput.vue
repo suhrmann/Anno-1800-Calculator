@@ -1,9 +1,11 @@
 <template>
-
   <v-container fluid>
     <v-row>
       <!-- The Old World -->
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
             <v-img
@@ -28,7 +30,10 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
             <v-img
@@ -53,7 +58,10 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
             <v-img
@@ -80,8 +88,9 @@
 
       <v-col
         pa-1
-        sm4 xs6
-        :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
+        sm4
+        xs6
+        :class="{ 'offset-sm2': $vuetify.breakpoint.smAndDown }"
       >
         <v-card height="105" class="text-center">
           <v-avatar>
@@ -107,7 +116,10 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
             <v-img
@@ -132,7 +144,10 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
             <v-img
@@ -160,8 +175,9 @@
       <!-- The New World -->
       <v-col
         pa-1
-        sm4 xs6
-        :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
+        sm4
+        xs6
+        :class="{ 'offset-sm2': $vuetify.breakpoint.smAndDown }"
       >
         <v-card height="105" class="text-center">
           <v-avatar>
@@ -187,13 +203,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/obreros.webp"
-              alt="Obreros"
-            >
+            <img src="@/assets/population/obreros.webp" alt="Obreros" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -213,13 +229,14 @@
       </v-col>
 
       <!-- The Arctic -->
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(4)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/explorers.webp"
-              alt="Explorers"
-            >
+            <img src="@/assets/population/explorers.webp" alt="Explorers" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -238,13 +255,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(4)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/technicians.webp"
-              alt="Technicians"
-            >
+            <img src="@/assets/population/technicians.webp" alt="Technicians" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -264,13 +282,14 @@
       </v-col>
 
       <!-- Enbesa -->
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(9)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/shepherd.webp"
-              alt="Shepherds"
-            >
+            <img src="@/assets/population/shepherd.webp" alt="Shepherds" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -289,13 +308,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(9)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/elders.webp"
-              alt="Elders"
-            >
+            <img src="@/assets/population/elders.webp" alt="Elders" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -313,10 +333,8 @@
           ></v-text-field>
         </v-card>
       </v-col>
-
     </v-row>
   </v-container>
-
 </template>
 
 <script>
@@ -344,6 +362,9 @@ export default {
     }
   },
   computed: {
+    selectedDLCs () {
+      return this.$store.state.selectedDLCs
+    },
     // Get/Set population
     numFarmers: {
       get: function () {
@@ -500,7 +521,8 @@ export default {
         return Math.ceil(this.numJornaleros / this.jornalerosPerResidence)
       },
       set: function (numJornalerosResidences) {
-        this.numJornaleros = numJornalerosResidences * this.jornalerosPerResidence
+        this.numJornaleros =
+          numJornalerosResidences * this.jornalerosPerResidence
       }
     },
     numObreroResidences: {
@@ -525,7 +547,8 @@ export default {
         return Math.ceil(this.numTechnicians / this.techniciansPerResidence)
       },
       set: function (numTechniciansResidences) {
-        this.numTechnicians = numTechniciansResidences * this.techniciansPerResidence
+        this.numTechnicians =
+          numTechniciansResidences * this.techniciansPerResidence
       }
     },
 
@@ -551,6 +574,6 @@ export default {
 
 <style scoped>
 .centered-input >>> input {
-  text-align: right
+  text-align: right;
 }
 </style>

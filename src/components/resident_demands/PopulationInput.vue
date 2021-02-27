@@ -1,14 +1,13 @@
 <template>
-
   <v-container fluid>
     <v-row>
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/farmers.webp"
-              alt="Farmers"
-            >
+            <img src="@/assets/population/farmers.webp" alt="Farmers" />
           </v-avatar>
           <v-text-field
             v-model="numFarmers"
@@ -20,13 +19,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/workers.webp"
-              alt="Workers"
-            >
+            <img src="@/assets/population/workers.webp" alt="Workers" />
           </v-avatar>
           <v-text-field
             v-model="numWorkers"
@@ -38,13 +37,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/artisans.webp"
-              alt="Artisans"
-            >
+            <img src="@/assets/population/artisans.webp" alt="Artisans" />
           </v-avatar>
           <v-text-field
             v-model="numArtisans"
@@ -56,13 +55,17 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
+        <v-card
+          height="105"
+          v-if="selectedDLCs.includes(0)"
+          class="text-center"
+        >
           <v-avatar>
-            <img
-              src="@/assets/population/engineers.webp"
-              alt="Engineers"
-            >
+            <img src="@/assets/population/engineers.webp" alt="Engineers" />
           </v-avatar>
           <v-text-field
             v-model="numEngineers"
@@ -74,13 +77,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/investors.webp"
-              alt="Investors"
-            >
+            <img src="@/assets/population/investors.webp" alt="Investors" />
           </v-avatar>
           <v-text-field
             v-model="numInvestors"
@@ -92,13 +95,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/scholars.webp"
-              alt="Scholars"
-            >
+            <img src="@/assets/population/scholars.webp" alt="Scholars" />
           </v-avatar>
           <v-text-field
             v-model="numScholars"
@@ -110,13 +113,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/jornaleros.webp"
-              alt="Jornaleros"
-            >
+            <img src="@/assets/population/jornaleros.webp" alt="Jornaleros" />
           </v-avatar>
           <v-text-field
             v-model="numJornaleros"
@@ -128,13 +131,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/obreros.webp"
-              alt="Obreros"
-            >
+            <img src="@/assets/population/obreros.webp" alt="Obreros" />
           </v-avatar>
           <v-text-field
             v-model="numObreros"
@@ -146,13 +149,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(4)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/explorers.webp"
-              alt="Explorers"
-            >
+            <img src="@/assets/population/explorers.webp" alt="Explorers" />
           </v-avatar>
           <v-text-field
             v-model="numExplorers"
@@ -164,13 +168,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(4)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/technicians.webp"
-              alt="Technicians"
-            >
+            <img src="@/assets/population/technicians.webp" alt="Technicians" />
           </v-avatar>
           <v-text-field
             v-model="numTechnicians"
@@ -182,13 +187,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(9)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/shepherd.webp"
-              alt="Shepherds"
-            >
+            <img src="@/assets/population/shepherd.webp" alt="Shepherds" />
           </v-avatar>
           <v-text-field
             v-model="numShepherds"
@@ -200,13 +206,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
+      <v-col
+        v-if="selectedDLCs.includes(9)"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+      >
         <v-card height="105" class="text-center">
           <v-avatar>
-            <img
-              src="@/assets/population/elders.webp"
-              alt="Elders"
-            >
+            <img src="@/assets/population/elders.webp" alt="Elders" />
           </v-avatar>
           <v-text-field
             v-model="numElders"
@@ -217,10 +224,8 @@
           ></v-text-field>
         </v-card>
       </v-col>
-
     </v-row>
   </v-container>
-
 </template>
 
 <script>
@@ -234,6 +239,9 @@ export default {
     }
   },
   computed: {
+    selectedDLCs () {
+      return this.$store.state.selectedDLCs
+    },
     numFarmers: {
       get: function () {
         return this.$store.state.population.numFarmers
@@ -339,6 +347,6 @@ export default {
 
 <style scoped>
 .centered-input >>> input {
-  text-align: right
+  text-align: right;
 }
 </style>
