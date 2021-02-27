@@ -1,4 +1,5 @@
 export default {
+  selectedDLCs: [0],
   selectedProductionChain: {
     id: 1,
     regionID: 1,

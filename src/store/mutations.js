@@ -1,4 +1,7 @@
 export default {
+  setSelectedDLCs (state, dlcsArray) {
+    state.selectedDLCs = dlcsArray
+  },
   addToPopulationDemands (state, populationObject) {
     state.population.numFarmers =
       Number(state.population.numFarmers) + Number(populationObject.farmers)
