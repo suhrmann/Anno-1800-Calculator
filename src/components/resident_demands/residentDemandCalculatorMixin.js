@@ -39,8 +39,6 @@ export default {
           })
         })
       })
-
-      console.log('consumption: ', consumption)
       return consumption
     },
 
