@@ -80,8 +80,8 @@ Continuous Integration (CI) and Continuous Delivery (CD) use [GitHub Actions](ht
 ### Publish a release:
  1. Update ``version`` in ``package.json`` e.g. ``"version": "0.4.5"``
  2. The publish scripts react to Git tags ``"v*"``, so to publish a release, tag your commit and push both e.g.: 
-    - ``git tag -a v0.4.5 -m "New version v0.4.5"`` - commit and tag (note the version is prefixed **v** ) 
-    - ``git push && git push --tags`` and push (don't forget the tags!)
+    1. ``git tag -a v0.4.5 -m "New version v0.4.5"`` - commit and tag (note the version is prefixed `v` ) 
+    2. ``git push && git push --tags`` and push (don't forget the tags!)
 
 
 
