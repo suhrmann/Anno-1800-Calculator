@@ -1,6 +1,6 @@
 <template>
   <!-- Show alert with info about cigars appearing twice -->
-  <v-row  justify="center">
+  <v-row justify="center">
     <v-col v-if="showDuplicatesAlert" cols="12" md="10" lg="8">
       <v-alert
         type="info"
@@ -15,23 +15,22 @@
     </v-col>
     <v-col cols="12">
       <v-card>
-        <v-card-title primary-title class="pb-0">
-          <div>
+        <v-card-title primary-title>
+          <!-- <div>
             <h3>Filter Table . . .</h3>
-          </div>
+          </div> -->
+          Filter Table
         </v-card-title>
 
         <v-card-text class="ma-0 py-0">
           <v-container fluid>
             <v-layout row wrap class="my-0 py-0">
               <!-- Filter by demand type -->
-              <v-flex xs12 sm6 md4>
+              <v-flex xs12 sm6 md6 lg6>
                 <v-radio-group v-model="radios1" class="my-0">
                   <template slot="label">
-                    <div>
-                      <v-icon color="black">mdi-filter</v-icon>
-                      <strong>Filter Demand Type</strong>
-                    </div>
+                    <v-icon color="black">mdi-filter</v-icon>
+                    <strong>Filter Demand Type</strong>
                   </template>
                   <v-radio
                     label="All"
@@ -49,7 +48,7 @@
               </v-flex>
 
               <!-- Filter by Consumable / Non-Consumable -->
-              <v-flex xs12 sm6 md4>
+              <v-flex xs12 sm6 md6 lg6>
                 <v-radio-group v-model="radios2" class="my-0">
                   <template slot="label">
                     <div>
@@ -72,131 +71,136 @@
     </v-col>
     <!-- Data Table -->
     <v-col cols="12">
-      <v-data-table
-        :headers="headers"
-        :items="totalDemandsDatatable"
-        disable-pagination
-        class="elevation-1"
-        multi-sort
-        hide-default-footer
-        show-group-by
-        :group-by.sync="sort_demands_by"
-      >
-        <!-- Warn about no data -->
-        <template slot="no-data">
-          <v-alert color="warning" icon="mid-warning">
-            <h3>Sorry, nothing to display here :(</h3>
-            <p class="mb-0">
-              Enter the number of your populations to start calculation of
-              demands.
-            </p>
-          </v-alert>
-        </template>
-
-        <!-- Data: Rows . . . -->
-        <template
-          slot="item"
-          slot-scope="props"
-          v-if="
-            ((onlyBasicChkbx && props.item.isBasic) ||
-              (onlyLuxuryChkbx && props.item.isLuxury) ||
-              (!onlyBasicChkbx && !onlyLuxuryChkbx)) &&
-              ((onlyConsumableChkbx && props.item.isConsumable) ||
-                (onlyNonConsumableChkbx && !props.item.isConsumable) ||
-                (!onlyConsumableChkbx && !onlyNonConsumableChkbx))
-          "
+      <v-card>
+        <v-card-title primary-title>
+          Data Table
+        </v-card-title>
+        <v-data-table
+          :headers="headers"
+          :items="totalDemandsDatatable"
+          disable-pagination
+          class="elevation-1"
+          multi-sort
+          hide-default-footer
+          show-group-by
+          :group-by.sync="sort_demands_by"
         >
-          <tr>
-            <td>
-              {{
-                props.item.isBasic
-                  ? "basic"
-                  : props.item.isLuxury
-                  ? "luxury"
-                  : "N/A"
-              }}
-            </td>
-            <!-- Is Consumable -->
-            <td>
-              {{ props.item.isConsumable ? "✔️️️" : "✖️️" }}
-            </td>
-            <!-- Icon -->
-            <td>
-              <a
-                v-if="props.item.isConsumable"
-                @click="selectChain(props.item.name)"
-              >
-                <v-avatar>
-                  <img
-                    :src="getBuildingImage(props.item.name)"
-                    :alt="`{props.item.name} Image`"
-                  />
-                </v-avatar>
-              </a>
-              <v-avatar v-else>
-                <img
-                  :src="getBuildingImage(props.item.name)"
-                  :alt="`{props.item.name} Image`"
-                />
-              </v-avatar>
-            </td>
-            <!-- Name -->
-            <td>
-              <a
-                v-if="props.item.isConsumable"
-                @click="selectChain(props.item.name)"
-              >
-                <b>{{ props.item.name }}</b>
-              </a>
-              <span v-else
-                ><b>{{ props.item.name }}</b></span
-              >
-            </td>
-            <!-- Consumption -->
-            <td>
-              <span v-if="props.item.isConsumable">
-                {{ formatUsage(props.item.consumption) }}
-              </span>
-              <span v-else>&mdash;</span>
-            </td>
-            <!-- Required Chains -->
-            <td>
-              <div v-if="props.item.isConsumable">
-                {{ requiredChains(props.item.name, props.item.consumption) }}
-                &times;
-                <v-avatar>
-                  <img
-                    :src="getBuildingImage(props.item.name)"
-                    :alt="`{props.item.name} Image`"
-                    class="inline-img"
-                  />
-                </v-avatar>
-              </div>
-              <span v-else>&mdash;</span>
-            </td>
-            <!-- Efficiency of all chains -->
-            <td>
-              <span v-if="props.item.isConsumable">
+          <!-- Warn about no data -->
+          <template slot="no-data">
+            <v-alert color="warning" icon="mid-warning">
+              <h3>Sorry, nothing to display here :(</h3>
+              <p class="mb-0">
+                Enter the number of your populations to start calculation of
+                demands.
+              </p>
+            </v-alert>
+          </template>
+
+          <!-- Data: Rows . . . -->
+          <template
+            slot="item"
+            slot-scope="props"
+            v-if="
+              ((onlyBasicChkbx && props.item.isBasic) ||
+                (onlyLuxuryChkbx && props.item.isLuxury) ||
+                (!onlyBasicChkbx && !onlyLuxuryChkbx)) &&
+                ((onlyConsumableChkbx && props.item.isConsumable) ||
+                  (onlyNonConsumableChkbx && !props.item.isConsumable) ||
+                  (!onlyConsumableChkbx && !onlyNonConsumableChkbx))
+            "
+          >
+            <tr>
+              <td>
                 {{
-                  (
-                    chainEfficiency(props.item.name, props.item.consumption) *
-                    100
-                  ).toFixed(2)
+                  props.item.isBasic
+                    ? "basic"
+                    : props.item.isLuxury
+                    ? "luxury"
+                    : "N/A"
                 }}
-                %
-              </span>
-              <span v-else>&mdash;</span>
-            </td>
-            <!-- Production per Chain -->
-            <td>
-              <span v-if="props.item.isConsumable">
-                {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
-              </span>
-              <span v-else>&mdash;</span>
-            </td>
-          </tr>
-        </template>
-      </v-data-table>
+              </td>
+              <!-- Is Consumable -->
+              <td>
+                {{ props.item.isConsumable ? "✔️️️" : "✖️️" }}
+              </td>
+              <!-- Icon -->
+              <td>
+                <a
+                  v-if="props.item.isConsumable"
+                  @click="selectChain(props.item.name)"
+                >
+                  <v-avatar>
+                    <img
+                      :src="getBuildingImage(props.item.name)"
+                      :alt="`{props.item.name} Image`"
+                    />
+                  </v-avatar>
+                </a>
+                <v-avatar v-else>
+                  <img
+                    :src="getBuildingImage(props.item.name)"
+                    :alt="`{props.item.name} Image`"
+                  />
+                </v-avatar>
+              </td>
+              <!-- Name -->
+              <td>
+                <a
+                  v-if="props.item.isConsumable"
+                  @click="selectChain(props.item.name)"
+                >
+                  <b>{{ props.item.name }}</b>
+                </a>
+                <span v-else
+                  ><b>{{ props.item.name }}</b></span
+                >
+              </td>
+              <!-- Consumption -->
+              <td>
+                <span v-if="props.item.isConsumable">
+                  {{ formatUsage(props.item.consumption) }}
+                </span>
+                <span v-else>&mdash;</span>
+              </td>
+              <!-- Required Chains -->
+              <td>
+                <div v-if="props.item.isConsumable">
+                  {{ requiredChains(props.item.name, props.item.consumption) }}
+                  &times;
+                  <v-avatar>
+                    <img
+                      :src="getBuildingImage(props.item.name)"
+                      :alt="`{props.item.name} Image`"
+                      class="inline-img"
+                    />
+                  </v-avatar>
+                </div>
+                <span v-else>&mdash;</span>
+              </td>
+              <!-- Efficiency of all chains -->
+              <td>
+                <span v-if="props.item.isConsumable">
+                  {{
+                    (
+                      chainEfficiency(props.item.name, props.item.consumption) *
+                      100
+                    ).toFixed(2)
+                  }}
+                  %
+                </span>
+                <span v-else>&mdash;</span>
+              </td>
+              <!-- Production per Chain -->
+              <td>
+                <span v-if="props.item.isConsumable">
+                  {{ toFixedVariable(productionPerMinute(props.item.name), 4) }}
+                </span>
+                <span v-else>&mdash;</span>
+              </td>
+            </tr>
+          </template>
+        </v-data-table>
+      </v-card>
     </v-col>
   </v-row>
 </template>
