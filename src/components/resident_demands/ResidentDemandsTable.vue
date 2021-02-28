@@ -131,6 +131,7 @@
                 >
                   <v-avatar>
                     <img
+                      class="inline-img"
                       :src="getBuildingImage(props.item.name)"
                       :alt="`{props.item.name} Image`"
                     />
@@ -138,6 +139,7 @@
                 </a>
                 <v-avatar v-else>
                   <img
+                    class="inline-img"
                     :src="getBuildingImage(props.item.name)"
                     :alt="`{props.item.name} Image`"
                   />
