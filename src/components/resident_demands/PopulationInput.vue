@@ -59,7 +59,6 @@
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
-        v-if="selectedDLCs.includes(0)"
       >
         <v-card class="text-center pa-2">
           <v-avatar>
@@ -92,7 +91,7 @@
       </v-col>
 
       <v-col
-        v-if="selectedDLCs.includes(9)"
+        v-if="hasLandOfLions"
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
@@ -147,7 +146,7 @@
       </v-col>
 
       <v-col
-        v-if="selectedDLCs.includes(4)"
+        v-if="hasPassage"
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
@@ -166,7 +165,7 @@
       </v-col>
 
       <v-col
-        v-if="selectedDLCs.includes(4)"
+        v-if="hasPassage"
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
@@ -185,7 +184,7 @@
       </v-col>
 
       <v-col
-        v-if="selectedDLCs.includes(9)"
+        v-if="hasLandOfLions"
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
@@ -204,7 +203,7 @@
       </v-col>
 
       <v-col
-        v-if="selectedDLCs.includes(9)"
+        v-if="hasLandOfLions"
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
@@ -236,8 +235,11 @@ export default {
     }
   },
   computed: {
-    selectedDLCs () {
-      return this.$store.state.selectedDLCs
+    hasPassage () {
+      return this.$store.getters.hasPassage
+    },
+    hasLandOfLions () {
+      return this.$store.getters.hasLandOfLions
     },
     numFarmers: {
       get: function () {
