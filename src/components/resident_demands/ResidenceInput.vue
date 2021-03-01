@@ -1,10 +1,13 @@
 <template>
-
   <v-container fluid>
     <v-row>
       <!-- The Old World -->
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/farmers.webp')"
@@ -19,7 +22,6 @@
           </v-avatar>
           <v-text-field
             v-model="numFarmerResidences"
-            class="centered-input"
             label="Farmers' Residences"
             type="number"
             min="0"
@@ -28,8 +30,12 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/workers.webp')"
@@ -44,7 +50,6 @@
           </v-avatar>
           <v-text-field
             v-model="numWorkerResidences"
-            class="centered-input"
             label="Workers' Residences"
             type="number"
             min="0"
@@ -53,8 +58,12 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/artisans.webp')"
@@ -69,7 +78,6 @@
           </v-avatar>
           <v-text-field
             v-model="numArtisanResidences"
-            class="centered-input"
             label="Artisans' Residences"
             type="number"
             min="0"
@@ -80,10 +88,11 @@
 
       <v-col
         pa-1
-        sm4 xs6
-        :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
+        sm4
+        xs6
+        :class="{ 'offset-sm2': $vuetify.breakpoint.smAndDown }"
       >
-        <v-card height="105" class="text-center">
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/engineers.webp')"
@@ -98,7 +107,6 @@
           </v-avatar>
           <v-text-field
             v-model="numEngineerResidences"
-            class="centered-input"
             label="Engineers' Residences"
             type="number"
             min="0"
@@ -107,8 +115,12 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/investors.webp')"
@@ -123,7 +135,6 @@
           </v-avatar>
           <v-text-field
             v-model="numInvestorResidences"
-            class="centered-input"
             label="Investors' Residences"
             type="number"
             min="0"
@@ -132,8 +143,13 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        v-if="hasLandOfLions"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/scholars.webp')"
@@ -148,7 +164,6 @@
           </v-avatar>
           <v-text-field
             v-model="numScholarsResidences"
-            class="centered-input"
             label="Scholars' Residences"
             type="number"
             min="0"
@@ -159,11 +174,11 @@
 
       <!-- The New World -->
       <v-col
-        pa-1
-        sm4 xs6
-        :class="{'offset-sm2': $vuetify.breakpoint.smAndDown}"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card height="105" class="text-center">
+        <v-card class="text-center pa-2">
           <v-avatar>
             <v-img
               :src="require('@/assets/population/jornaleros.webp')"
@@ -178,7 +193,6 @@
           </v-avatar>
           <v-text-field
             v-model="numJornaleroResidences"
-            class="centered-input"
             label="Jornaleros' Residences"
             type="number"
             min="0"
@@ -187,13 +201,14 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
-            <img
-              src="@/assets/population/obreros.webp"
-              alt="Obreros"
-            >
+            <img src="@/assets/population/obreros.webp" alt="Obreros" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -203,7 +218,6 @@
           </v-avatar>
           <v-text-field
             v-model="numObreroResidences"
-            class="centered-input"
             label="Obreros' Residences"
             type="number"
             min="0"
@@ -213,13 +227,15 @@
       </v-col>
 
       <!-- The Arctic -->
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        v-if="hasPassage"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
-            <img
-              src="@/assets/population/explorers.webp"
-              alt="Explorers"
-            >
+            <img src="@/assets/population/explorers.webp" alt="Explorers" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -229,7 +245,6 @@
           </v-avatar>
           <v-text-field
             v-model="numExplorersResidences"
-            class="centered-input"
             label="Explorers' Residences"
             type="number"
             min="0"
@@ -238,13 +253,15 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        v-if="hasPassage"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
-            <img
-              src="@/assets/population/technicians.webp"
-              alt="Technicians"
-            >
+            <img src="@/assets/population/technicians.webp" alt="Technicians" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -254,7 +271,6 @@
           </v-avatar>
           <v-text-field
             v-model="numTechniciansResidences"
-            class="centered-input"
             label="Technicians' Residences"
             type="number"
             min="0"
@@ -264,13 +280,15 @@
       </v-col>
 
       <!-- Enbesa -->
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        v-if="hasLandOfLions"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
-            <img
-              src="@/assets/population/shepherd.webp"
-              alt="Shepherds"
-            >
+            <img src="@/assets/population/shepherd.webp" alt="Shepherds" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -280,7 +298,6 @@
           </v-avatar>
           <v-text-field
             v-model="numShepherdsResidences"
-            class="centered-input"
             label="Shepherds' Residences"
             type="number"
             min="0"
@@ -289,13 +306,15 @@
         </v-card>
       </v-col>
 
-      <v-col :cols="$vuetify.breakpoint.smAndDown ? 6 : false" :sm="$vuetify.breakpoint.smAndDown ? 4 : false">
-        <v-card height="105" class="text-center">
+      <v-col
+        v-if="hasLandOfLions"
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2">
           <v-avatar>
-            <img
-              src="@/assets/population/elders.webp"
-              alt="Elders"
-            >
+            <img src="@/assets/population/elders.webp" alt="Elders" />
           </v-avatar>
           <v-avatar>
             <v-img
@@ -305,7 +324,6 @@
           </v-avatar>
           <v-text-field
             v-model="numEldersResidences"
-            class="centered-input"
             label="Elders' Residences"
             type="number"
             min="0"
@@ -313,10 +331,8 @@
           ></v-text-field>
         </v-card>
       </v-col>
-
     </v-row>
   </v-container>
-
 </template>
 
 <script>
@@ -344,6 +360,12 @@ export default {
     }
   },
   computed: {
+    hasPassage () {
+      return this.$store.getters.hasPassage
+    },
+    hasLandOfLions () {
+      return this.$store.getters.hasLandOfLions
+    },
     // Get/Set population
     numFarmers: {
       get: function () {
@@ -500,7 +522,8 @@ export default {
         return Math.ceil(this.numJornaleros / this.jornalerosPerResidence)
       },
       set: function (numJornalerosResidences) {
-        this.numJornaleros = numJornalerosResidences * this.jornalerosPerResidence
+        this.numJornaleros =
+          numJornalerosResidences * this.jornalerosPerResidence
       }
     },
     numObreroResidences: {
@@ -525,7 +548,8 @@ export default {
         return Math.ceil(this.numTechnicians / this.techniciansPerResidence)
       },
       set: function (numTechniciansResidences) {
-        this.numTechnicians = numTechniciansResidences * this.techniciansPerResidence
+        this.numTechnicians =
+          numTechniciansResidences * this.techniciansPerResidence
       }
     },
 
@@ -549,8 +573,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.centered-input >>> input {
-  text-align: right
-}
-</style>
+<style scoped></style>
