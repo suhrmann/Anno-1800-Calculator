@@ -190,7 +190,7 @@
       <h3>Bugs and improvements</h3>
       If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
       <a
-        href="https://github.com/Vadammt/Anno-1800-Calculator/issues"
+        href="https://github.com/suhrmann/Anno-1800-Calculator/issues"
         target="_blank"
       >Issue on Github</a>
     </v-alert>

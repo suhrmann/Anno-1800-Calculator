@@ -1,7 +1,7 @@
 # Anno 1800 Calculator
 
 [![Build Status](https://travis-ci.org/suhrmann/Anno-1800-Calculator.svg?branch=master)](https://travis-ci.org/suhrmann/Anno-1800-Calculator)
-[![](https://img.shields.io/github/downloads/Vadammt/Anno-1800-Calculator/total.svg?style=flat)](https://github.com/Vadammt/Anno-1800-Calculator/releases)
+[![](https://img.shields.io/github/downloads/suhrmann/Anno-1800-Calculator/total.svg?style=flat)](https://github.com/suhrmann/Anno-1800-Calculator/releases)
 
 <p align="center">
   <a href="https://suhrmann.github.io/Anno-1800-Calculator/#/chains">
@@ -22,7 +22,7 @@ No download, no install. Just calculate: [Anno 1800 Calculator](https://suhrmann
 
 The Desktop App (for Windows, MacOS and Linux) does not require a Internet connection once downloaded. 
 
-[Download here](https://github.com/Vadammt/Anno-1800-Calculator/releases)
+[Download here](https://github.com/suhrmann/Anno-1800-Calculator/releases)
 
 ---
 
