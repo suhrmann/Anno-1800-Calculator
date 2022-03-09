@@ -104,8 +104,8 @@
         <a href="https://github.com/suhrmann" target="_blank">@suhrmann</a>
       </li>
       <li>
-        Tobias Luderer
-        <a href="https://github.com/tluderer">@tluderer</a>
+        Tobias Fürst
+        <a href="https://github.com/tfuerst">@tfuerst</a>
       </li>
     </ul>
 

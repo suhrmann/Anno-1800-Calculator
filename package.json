@@ -5,7 +5,7 @@
   "description": "Calculate your populations' demands and optimal production chains.",
   "contributors": [
     "Simon Uhrmann <suhrmann@posteo.de>",
-    "Tobias Luderer <tobias.luderer@gmail.com>"
+    "Tobias Fürst <tfuerst@posteo.de>"
   ],
   "license": "MIT",
   "main": "background.js",
