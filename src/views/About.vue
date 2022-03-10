@@ -26,11 +26,8 @@
           <div>
             <h3 class="headline mb-0">Buy Anno 1800!</h3>
             <div>
-              If you haven't already, buy Anno 1800 - it's awesome!
-              <span class="grey--text">
-                These are
-                <span class>no</span> affiliate links
-              </span>
+              If you haven't already, buy Anno 1800 - it's awesome! <br>
+              <span class="grey--text">These are no affiliate links</span>
             </div>
           </div>
         </v-card-title>
@@ -186,6 +183,10 @@
 
     <p>&nbsp;</p>
 
+    <pre>Version: {{ version }}</pre>
+
+    <p> </p>
+
     <v-alert color="secondary" type="error" outlined>
       <h3>Bugs and improvements</h3>
       If you encounter any bugs or inconveniences or if you want to suggest improvements, create an
@@ -200,6 +201,11 @@
 <script>
 export default {
   name: 'About',
+  data: () => {
+    return {
+      version: 'v' + process.env.VUE_APP_VERSION + '-' + process.env.NODE_ENV
+    }
+  },
   methods: {
     /**
      * Workaround to load images dynamically in for-loop.
