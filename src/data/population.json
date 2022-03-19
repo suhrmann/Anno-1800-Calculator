@@ -1,6 +1,7 @@
 {
   "farmers": {
     "id": 1,
+    "guid": 15000000,
     "name": "Farmers",
     "img": "farmers.webp",
     "firstProductionChain": 1,
@@ -8,6 +9,7 @@
   },
   "workers": {
     "id": 2,
+    "guid": 15000001,
     "name": "Workers",
     "img": "workers.webp",
     "firstProductionChain": 5,
@@ -15,6 +17,7 @@
   },
   "artisans": {
     "id": 3,
+    "guid": 15000002,
     "name": "Artisans",
     "img": "artisans.webp",
     "firstProductionChain": 13,
@@ -22,6 +25,7 @@
   },
   "engineers": {
     "id": 4,
+    "guid": 15000003,
     "name": "Engineers",
     "img": "engineers.webp",
     "firstProductionChain": 28,
@@ -29,6 +33,7 @@
   },
   "investors": {
     "id": 5,
+    "guid": 15000004,
     "name": "Investors",
     "img": "investors.webp",
     "firstProductionChain": 35,
@@ -36,6 +41,7 @@
   },
   "scholars": {
     "id": 8,
+    "guid": 118745,
     "name": "Scholars",
     "img": "scholars.webp",
     "firstProductionChain": 39,
@@ -45,6 +51,7 @@
 
   "jornaleros": {
     "id": 6,
+    "guid": 15000005,
     "name": "Jornaleros",
     "img": "jornaleros.webp",
     "firstProductionChain": 17,
@@ -52,6 +59,7 @@
   },
   "obreros": {
     "id": 7,
+    "guid": 15000006,
     "name": "Obreros",
     "img": "obreros.webp",
     "firstProductionChain": 22,
@@ -61,6 +69,7 @@
 
   "explorers": {
     "id": 9,
+    "guid": 112642,
     "name": "Explorers",
     "img": "explorers.webp",
     "firstProductionChain": 45,
@@ -68,6 +77,7 @@
   },
   "technicians": {
     "id": 10,
+    "guid": 112643,
     "name": "Technicians",
     "img": "technicians.webp",
     "firstProductionChain": 49,
@@ -77,6 +87,7 @@
 
   "shepherds": {
     "id": 11,
+    "guid": 114329,
     "name": "Shepherds",
     "img": "shepherd.webp",
     "firstProductionChain": 51,
@@ -84,6 +95,7 @@
   },
   "elders": {
     "id": 12,
+    "guid": 114330,
     "name": "Elders",
     "img": "elders.webp",
     "firstProductionChain": 55,

@@ -1,11 +1,17 @@
+import { populationLevels, regions } from '@/data/anno1800params'
+import anno1800icons from '@/data/anno1800icons'
+import { chainNodeMixin } from './production_chains/chainNodeMixin'
+
+// LEGACY DATA
 import producers from '@/data/producers.json'
 import nonProducers from '@/data/non-producers.json'
 import ProductionChains from '@/data/production-chains.json'
-import Regions from '@/data/regions.json'
-import Populations from '@/data/population.json'
-import {
-  chainNodeMixin
-} from './production_chains/chainNodeMixin'
+
+/**
+ * Fallback icon if icon could not be found.
+ * @type {string}
+ */
+const DEFAULT_ICON_PATH = '@/assets/question-mark.png'
 
 export const helperFunctionMixin = {
   mixins: [chainNodeMixin],
@@ -31,6 +37,21 @@ export const helperFunctionMixin = {
   },
   methods: {
     /**
+     * Get the image by its Anno 1800 GUID.
+     * Workaround to load images dynamically in for-loop.
+     *
+     * @param {number} guid The image to load.
+     * @return {string} The URL of the image (e.g. for use as img src).
+     */
+    getImage (guid) {
+      const icon = anno1800icons.find(icon => icon.guid === guid)
+      const iconPath = icon ? icon.iconPath : undefined
+      if (!iconPath) console.error('No ICON found for guid ', guid)
+      return iconPath ? require(`@/assets/${iconPath}`) : require(DEFAULT_ICON_PATH)
+    },
+
+    /**
+     * Legacy: Used to load images of Production Chains TODO Replace with GUID usage!
      * Workaround to load images dynamically in for-loop.
      *
      * @param {string} image The image to load.
@@ -38,8 +59,8 @@ export const helperFunctionMixin = {
      *                        NOTE: Relative to assets/ AND WITHOUT "/" at start and end.
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImage (image, folder) {
-      return image ? require(`@/assets/${folder}/${image}`) : ''
+    getDirectImage (image, folder) {
+      return image ? require(`@/assets/${folder}/${image}`) : require(DEFAULT_ICON_PATH)
     },
 
     /**
@@ -101,7 +122,7 @@ export const helperFunctionMixin = {
      */
 
     fetchProductionTime (node) {
-      const building = this.getBuildingByName(node.name, node.regionID)
+      const building = this.getBuildingByName(node.name, node.regionGUID)
       this.productionTimes.push(building.productionTime)
     },
 
@@ -109,10 +130,10 @@ export const helperFunctionMixin = {
      * Search for building by its name.
      *
      * @param {String} name The buildings name.
-     * @param {int} regionID The current regionID
+     * @param {int} regionGUID The current regionGUID
      * @return {Object} A JS Object representing the matching producer
      */
-    getBuildingByName (name, regionID) {
+    getBuildingByName (name, regionGUID) {
       const buildings = this.producerFile
       const helperFunctionMixin = this
 
@@ -145,7 +166,7 @@ export const helperFunctionMixin = {
       for (const building in buildings) {
         if (
           buildings[building].building === name &&
-          buildings[building].regionID === regionID
+          buildings[building].regionGUID === regionGUID
         ) {
           return buildings[building]
         }
@@ -186,28 +207,24 @@ export const helperFunctionMixin = {
     },
 
     /**
-     * Searches all regions by their region id
+     * Searches all regions by their region guid
      *
-     * @param {int} id
+     * @param {int} guid
      * @return {Object} The selected region Object
      */
-    getRegionByID (id) {
-      const regions = Object.values(Regions)
-      const selectedRegion = regions.filter(region => region.id === id)[0]
+    getRegionByGUID (guid) {
+      const selectedRegion = regions.find(region => region.guid === guid)
       return selectedRegion
     },
 
     /**
-     * Searches all social classes by their social class id
+     * Searches all population levels by their population level guid
      *
-     * @param {int} id
-     * @return {Object} The selected Social Class Object
+     * @param {int} guid
+     * @return {Object} The selected population level Object
      */
-    getPopulationByID (id) {
-      const populations = Object.values(Populations)
-      const selectedPopulation = populations.filter(
-        population => population.id === id
-      )[0]
+    getPopulationByGUID (guid) {
+      const selectedPopulation = populationLevels.find(population => population.guid === guid)
       return selectedPopulation
     },
 

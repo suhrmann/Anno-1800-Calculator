@@ -336,27 +336,27 @@
 </template>
 
 <script>
-import Population from '@/data/population.json'
+import { populationLevels as populations } from '@/data/anno1800params'
 
 export default {
   name: 'BottomPopulationInput',
   data: function () {
     return {
-      farmersPerResidence: Population.farmers.residence,
-      workersPerResidence: Population.workers.residence,
-      artisansPerResidence: Population.artisans.residence,
-      engineersPerResidence: Population.engineers.residence,
-      investorsPerResidence: Population.investors.residence,
-      scholarsPerResidence: Population.scholars.residence, // TODO VALIDATE! Unknown by now
+      farmersPerResidence: populations.farmers.residence,
+      workersPerResidence: populations.workers.residence,
+      artisansPerResidence: populations.artisans.residence,
+      engineersPerResidence: populations.engineers.residence,
+      investorsPerResidence: populations.investors.residence,
+      scholarsPerResidence: populations.scholars.residence,
 
-      jornalerosPerResidence: Population.jornaleros.residence,
-      obrerosPerResidence: Population.obreros.residence,
+      jornalerosPerResidence: populations.jornaleros.residence,
+      obrerosPerResidence: populations.obreros.residence,
 
-      explorersPerResidence: Population.explorers.residence,
-      techniciansPerResidence: Population.technicians.residence,
+      explorersPerResidence: populations.explorers.residence,
+      techniciansPerResidence: populations.technicians.residence,
 
-      shepherdsPerResidence: Population.shepherds.residence, // TODO VALIDATE! Unknown by now
-      eldersPerResidence: Population.elders.residence // TODO VALIDATE! Unknown by now
+      shepherdsPerResidence: populations.shepherds.residence,
+      eldersPerResidence: populations.elders.residence
     }
   },
   computed: {

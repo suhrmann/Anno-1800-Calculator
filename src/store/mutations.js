@@ -1,3 +1,5 @@
+import { farmersGUID, oldWorldGUID } from '@/data/anno1800params'
+
 export default {
   setSelectedDLCs (state, dlcsArray) {
     state.selectedDLCs = dlcsArray
@@ -32,38 +34,38 @@ export default {
   },
 
   /**
-   * Change the IDs corresponding to the selected productionChain
+   * Change the GUIDs corresponding to the selected productionChain
    * @param {object} state
-   * @param {object} idObject
+   * @param {object} guidObject
    * {
    *   {integer} chainID
-   *   {integer} populationID
-   *   {integer} regionID
+   *   {integer} populationGUID
+   *   {integer} regionGUID
    * }
    */
-  changeSelectionIDs (state, idObject) {
-    state.selectedProductionChainID = idObject.chainID
-    state.selectedpopulationID = idObject.populationID
-    state.selectedregionID = idObject.regionID
+  changeSelectionGUIDs (state, guidObject) {
+    state.selectedProductionChainID = guidObject.chainID
+    state.selectedPopulationGUID = guidObject.populationGUID
+    state.selectedRegionGUID = guidObject.regionGUID
   },
 
-  changeRegionID (state, regionID) {
-    state.selectedregionID = regionID
+  changeRegionGUID (state, regionGUID) {
+    state.selectedRegionGUID = regionGUID
   },
 
-  changePopulationID (state, populationID) {
-    state.selectedpopulationID = populationID
+  changePopulationGUID (state, populationGUID) {
+    state.selectedPopulationGUID = populationGUID
   },
 
-  changeProductionChainID (state, chainID) {
+  changeProductionchainID (state, chainID) {
     state.selectedProductionChainID = chainID
   },
 
-  resetSelectionIDs (state, initChain) {
+  resetSelectionGUIDs (state, initChain) {
     state.selectedProductionChain = initChain
     state.selectedProductionChainID = 1
-    state.selectedpopulationID = 1
-    state.selectedregionID = 1
+    state.selectedPopulationGUID = farmersGUID
+    state.selectedRegionGUID = oldWorldGUID
   },
 
   /**

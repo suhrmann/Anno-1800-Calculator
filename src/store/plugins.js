@@ -16,8 +16,8 @@ export default [
     reducer (state, paths) {
       return {
         // Store selected production chain
-        selectedregionID: state.selectedregionID,
-        selectedpopulationID: state.selectedpopulationID,
+        selectedRegionGUID: state.selectedRegionGUID,
+        selectedPopulationGUID: state.selectedPopulationGUID,
         selectedProductionChainID: state.selectedProductionChainID,
 
         // Store entered population

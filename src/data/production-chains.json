@@ -3,26 +3,26 @@
   "Production_Chain": {
     "timber": {
       "id": 1,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "farmers/timber.webp",
       "chain": "Timber",
-      "populationID": 1,
+      "populationGUID": 15000000,
       "finalProduct": "Timber",
       "name": "Sawmill",
       "alternative": "",
       "children": [{
         "name": "Lumberjack Hut",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
     "fish": {
       "id": 2,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "chain": "Fish",
       "img": "farmers/fish.webp",
-      "populationID": 1,
+      "populationGUID": 15000000,
       "finalProduct": "Fish",
       "name": "Fishery",
       "alternative": "",
@@ -30,100 +30,100 @@
     },
     "schnapps": {
       "id": 3,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "farmers/schnapps.webp",
       "chain": "Schnapps",
-      "populationID": 1,
+      "populationGUID": 15000000,
       "finalProduct": "Schnapps",
       "name": "Schnapps Distillery",
       "alternative": "",
       "children": [{
         "name": "Potato Farm",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
     "work-clothes": {
       "id": 4,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "farmers/work-clothes.webp",
       "chain": "Clothes",
-      "populationID": 1,
+      "populationGUID": 15000000,
       "finalProduct": "Work Clothes",
       "name": "Framework Knitters",
       "alternative": "",
       "children": [{
         "name": "Sheep Farm",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
     "bricks": {
       "id": 5,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/bricks.webp",
       "chain": "Bricks",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Bricks",
       "name": "Brick Factory",
       "alternative": "",
       "children": [{
         "name": "Clay Pit",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
     "sausages": {
       "id": 6,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/sausages.webp",
       "chain": "Sausages",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Sausages",
       "name": "Slaughterhouse",
       "alternative": "",
       "children": [{
         "name": "Pig Farm",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
     "sails": {
       "id": 7,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/sails.webp",
       "chain": "Sails",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Sails",
       "name": "Sailmakers",
       "alternative": "",
       "children": [{
         "name": "Sheep Farm",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
     "bread": {
       "id": 8,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/bread.webp",
       "chain": "Bread",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Bread",
       "name": "Bakery",
       "alternative": "",
       "children": [{
         "name": "Flour Mill",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Grain Farm",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
@@ -131,20 +131,20 @@
     },
     "soap": {
       "id": 9,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/soap.webp",
       "chain": "Soap",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Soap",
       "name": "Soap Factory",
       "alternative": "",
       "children": [{
         "name": "Rendering Works",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Pig Farm",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
@@ -152,26 +152,26 @@
     },
     "steel-beams": {
       "id": 10,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/steel-beams.webp",
       "chain": "Steel Beams",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Steel Beams",
       "name": "Steelworks",
       "alternative": "",
       "children": [{
         "name": "Furnace",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
             "name": "Iron Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           },
           {
             "name": "Charcoal Kiln",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }
@@ -180,26 +180,26 @@
     },
     "weapons": {
       "id": 11,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/weapons.webp",
       "chain": "Weapons",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Weapons",
       "name": "Weapon Factory",
       "alternative": "",
       "children": [{
         "name": "Furnace",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
             "name": "Iron Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           },
           {
             "name": "Charcoal Kiln",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }
@@ -208,26 +208,26 @@
     },
     "beer": {
       "id": 12,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "workers/beer.webp",
       "chain": "Beer",
-      "populationID": 2,
+      "populationGUID": 15000001,
       "finalProduct": "Beer",
       "name": "Brewery",
       "alternative": "",
       "children": [{
           "name": "Hop Farm",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         },
         {
           "name": "Malthouse",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Grain Farm",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }]
@@ -236,26 +236,26 @@
     },
     "windows": {
       "id": 13,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "artisans/windows.webp",
       "chain": "Windows",
-      "populationID": 3,
+      "populationGUID": 15000002,
       "finalProduct": "Windows",
       "name": "Window Makers",
       "alternative": "",
       "children": [{
           "name": "Lumberjack Hut",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         },
         {
           "name": "Glassmakers",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }]
@@ -264,32 +264,32 @@
     },
     "canned-food": {
       "id": 14,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "artisans/canned-food.webp",
       "chain": "Canned Food",
-      "populationID": 3,
+      "populationGUID": 15000002,
       "finalProduct": "Canned Food",
       "name": "Cannery",
       "alternative": "",
       "children": [{
           "name": "Iron Mine",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         },
         {
           "name": "Artisanal Kitchen",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Cattle Farm",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Red Pepper Farm",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             }
@@ -299,32 +299,32 @@
     },
     "sewing-machines": {
       "id": 15,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "artisans/sewing-machines.webp",
       "chain": "Sewing Machines",
-      "populationID": 3,
+      "populationGUID": 15000002,
       "finalProduct": "Sewing Machines",
       "name": "Sewing Machine Factory",
       "alternative": "",
       "children": [{
           "name": "Lumberjack Hut",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         },
         {
           "name": "Furnace",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Coal Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Charcoal Kiln",
               "children": null
             }
@@ -334,26 +334,26 @@
     },
     "fur-coats": {
       "id": 16,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "artisans/fur-coats.webp",
       "chain": "Fur Coats",
-      "populationID": 3,
+      "populationGUID": 15000002,
       "finalProduct": "Fur Coats",
       "name": "Fur Dealer",
       "alternative": "",
       "children": [{
           "name": "Hunting Cabin",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         },
         {
           "name": "Cotton Mill",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": [{
             "name": "Cotton Plantation",
-            "regionID": 2,
+            "regionGUID": 5000001,
             "alternative": "",
             "children": null
           }]
@@ -363,16 +363,16 @@
 
     "timber-new": {
       "id": 17,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "jornaleros/timber.webp",
       "chain": "Timber",
-      "populationID": 6,
+      "populationGUID": 15000005,
       "finalProduct": "Timber",
       "name": "Sawmill",
       "alternative": "",
       "children": [{
         "name": "Lumberjack Hut",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": null
       }]
@@ -380,22 +380,22 @@
 
     "Fried Plantains": {
       "id": 18,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "jornaleros/fried-plantains.webp",
       "chain": "Fried Plantains",
-      "populationID": 6,
+      "populationGUID": 15000005,
       "finalProduct": "Fried Plantains",
       "name": "Fried Plantain Kitchen",
       "alternative": "",
       "children": [{
           "name": "Fish Oil Factory",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         },
         {
           "name": "Plantain Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }
@@ -403,20 +403,20 @@
     },
     "sails-new": {
       "id": 19,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "jornaleros/sails.webp",
       "chain": "Sails",
-      "populationID": 6,
+      "populationGUID": 15000005,
       "finalProduct": "Sails",
       "name": "Sailmakers",
       "alternative": "",
       "children": [{
         "name": "Cotton Mill",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": [{
           "name": "Cotton Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }]
@@ -424,22 +424,22 @@
     },
     "rum": {
       "id": 20,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "jornaleros/rum.webp",
       "chain": "Rum",
-      "populationID": 6,
+      "populationGUID": 15000005,
       "finalProduct": "Rum",
       "name": "Rum Distillery",
       "alternative": "",
       "children": [{
           "name": "Lumberjack Hut",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         },
         {
           "name": "Sugar Cane Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }
@@ -447,16 +447,16 @@
     },
     "ponchos": {
       "id": 21,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "jornaleros/poncho.webp",
       "chain": "Ponchos",
-      "populationID": 6,
+      "populationGUID": 15000005,
       "finalProduct": "Ponchos",
       "name": "Poncho Darner",
       "alternative": "",
       "children": [{
         "name": "Alpaca Farm",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": null
       }]
@@ -464,16 +464,16 @@
 
     "bricks-new": {
       "id": 22,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "obreros/bricks.webp",
       "chain": "Bricks",
-      "populationID": 7,
+      "populationGUID": 15000006,
       "finalProduct": "Bricks",
       "name": "Brick Factory",
       "alternative": "",
       "children": [{
         "name": "Clay Pit",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": null
       }]
@@ -483,22 +483,22 @@
 
     "tortillas": {
       "id": 23,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "obreros/tortilla.webp",
       "chain": "Tortillas",
-      "populationID": 7,
+      "populationGUID": 15000006,
       "finalProduct": "Tortillas",
       "name": "Tortilla Maker",
       "alternative": "",
       "children": [{
           "name": "Cattle Farm",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         },
         {
           "name": "Corn Farm",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }
@@ -506,16 +506,16 @@
     },
     "coffee": {
       "id": 24,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "obreros/coffee.webp",
       "chain": "Coffee",
-      "populationID": 7,
+      "populationGUID": 15000006,
       "finalProduct": "Coffee",
       "name": "Coffee Roaster",
       "alternative": "",
       "children": [{
         "name": "Coffee Plantation",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": null
       }]
@@ -523,31 +523,31 @@
 
     "bowler-hats": {
       "id": 25,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "obreros/bowler-hats.webp",
       "chain": "Bowler Hats",
-      "populationID": 7,
+      "populationGUID": 15000006,
       "finalProduct": "Bowler Hats",
       "name": "Bombin Weaver",
       "alternative": "",
       "children": [{
           "name": "Cotton Mill",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": [{
             "name": "Cotton Plantation",
-            "regionID": 2,
+            "regionGUID": 5000001,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Felt Producer",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": [{
             "name": "Alpaca Farm",
-            "regionID": 2,
+            "regionGUID": 5000001,
             "alternative": "",
             "children": null
           }]
@@ -557,26 +557,26 @@
 
     "cigars": {
       "id": 26,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "obreros/cigars.webp",
       "chain": "Cigars",
-      "populationID": 7,
+      "populationGUID": 15000006,
       "finalProduct": "Cigars",
       "name": "Cigar Factory",
       "alternative": "",
       "children": [{
           "name": "Tobacco Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         },
         {
           "name": "Marquetry Workshop",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
-            "regionID": 2,
+            "regionGUID": 5000001,
             "alternative": "NewWorld",
             "children": null
           }]
@@ -586,27 +586,27 @@
 
     "chocolate": {
       "id": 27,
-      "regionID": 2,
+      "regionGUID": 5000001,
       "img": "obreros/chocolate.webp",
       "chain": "Chocolate",
-      "populationID": 7,
+      "populationGUID": 15000006,
       "finalProduct": "Chocolate",
       "name": "Chocolate Factory",
       "alternative": "",
       "children": [{
           "name": "Sugar Refinery",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": [{
             "name": "Sugar Cane Plantation",
-            "regionID": 2,
+            "regionGUID": 5000001,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Cocoa Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }
@@ -614,26 +614,26 @@
     },
     "reinforced-concrete": {
       "id": 28,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/reinforced-concrete.webp",
       "chain": "Reinforced Concrete",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Reinforced Concrete",
       "name": "Concrete Factory",
       "alternative": "",
       "children": [{
           "name": "Furnace",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -641,7 +641,7 @@
         },
         {
           "name": "Limestone Quarry",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }
@@ -650,37 +650,37 @@
 
     "glasses": {
       "id": 29,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/glasses.webp",
       "chain": "Glasses",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Glasses",
       "name": "Spectacle Factory",
       "alternative": "",
       "children": [{
           "name": "Glassmakers",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Brass Smeltery",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Zinc Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Copper Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             }
@@ -691,31 +691,31 @@
 
     "advanced-weapons": {
       "id": 30,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/advanced-weapons.webp",
       "chain": "Advanced Weapons",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Advanced Weapons",
       "name": "Heavy Weapons Factory",
       "alternative": "",
       "children": [{
           "name": "Dynamite Factory",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Rendering Works",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": [{
                 "name": "Pig Farm",
-                "regionID": 1,
+                "regionGUID": 5000000,
                 "alternative": "",
                 "children": null
               }]
             },
             {
               "name": "Saltpeter Works",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             }
@@ -723,17 +723,17 @@
         },
         {
           "name": "Furnace",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -744,26 +744,26 @@
 
     "high-wheelers": {
       "id": 31,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/high-wheeler.webp",
       "chain": "Penny Farthingss",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Penny Farthingss",
       "name": "Bicycle Factory",
       "alternative": "",
       "children": [{
           "name": "Furnace",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -771,7 +771,7 @@
         },
         {
           "name": "Caoutchouc Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }
@@ -780,26 +780,26 @@
 
     "steam_motors": {
       "id": 32,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/steam-motors.webp",
       "chain": "Steam Motors",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Steam Motors",
       "name": "Motor Assembly Line",
       "alternative": "",
       "children": [{
           "name": "Furnace",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Iron Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -807,17 +807,17 @@
         },
         {
           "name": "Brass Smeltery",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Zinc Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Copper Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             }
@@ -827,26 +827,26 @@
     },
     "pocket-watches": {
       "id": 33,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/pocket-watch.webp",
       "chain": "Pocket Watches",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Pocket Watches",
       "name": "Clockmakers",
       "alternative": "",
       "children": [{
           "name": "Goldsmiths",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Gold Mine",
-              "regionID": 2,
+              "regionGUID": 5000001,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -854,11 +854,11 @@
         },
         {
           "name": "Glassmakers",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }]
@@ -868,31 +868,31 @@
 
     "light-bulbs": {
       "id": 34,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "engineers/light-bulb.webp",
       "chain": "Light Bulbs",
-      "populationID": 4,
+      "populationGUID": 15000003,
       "finalProduct": "Light Bulbs",
       "name": "Light Bulb Factory",
       "alternative": "",
       "children": [{
           "name": "Filament Factory",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Charcoal Kiln",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "Coal Mine",
             "children": null
           }]
         },
         {
           "name": "Glassmakers",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }]
@@ -902,27 +902,27 @@
 
     "champagne": {
       "id": 35,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "investors/champagne.webp",
       "chain": "Champagne",
-      "populationID": 5,
+      "populationGUID": 15000004,
       "finalProduct": "Champagne",
       "name": "Champagne Cellar",
       "alternative": "",
       "children": [{
           "name": "Glassmakers",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
             "name": "Sand Mine",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "",
             "children": null
           }]
         },
         {
           "name": "Vineyard",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }
@@ -931,26 +931,26 @@
 
     "jewellery": {
       "id": 36,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "investors/jewelry.webp",
       "chain": "Jewellery",
-      "populationID": 5,
+      "populationGUID": 15000004,
       "finalProduct": "Jewellery",
       "name": "Jewellers",
       "alternative": "",
       "children": [{
           "name": "Goldsmiths",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Gold Mine",
-              "regionID": 2,
+              "regionGUID": 5000001,
               "alternative": "",
               "children": null
             },
             {
               "name": "Charcoal Kiln",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "Coal Mine",
               "children": null
             }
@@ -958,7 +958,7 @@
         },
         {
           "name": "Pearl Farm",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }
@@ -967,37 +967,37 @@
 
     "gramophones": {
       "id": 37,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "investors/gramophone.webp",
       "chain": "Gramophones",
-      "populationID": 5,
+      "populationGUID": 15000004,
       "finalProduct": "Gramophones",
       "name": "Gramophone Factory",
       "alternative": "",
       "children": [{
           "name": "Marquetry Workshop",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "Marquetry Workshop",
           "children": [{
             "name": "Lumberjack Hut",
-            "regionID": 1,
+            "regionGUID": 5000000,
             "alternative": "NewWorld",
             "children": null
           }]
         },
         {
           "name": "Brass Smeltery",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Zinc Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Copper Mine",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             }
@@ -1008,30 +1008,30 @@
 
     "steam-carriages": {
       "id": 38,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "investors/steam-carriages.webp",
       "chain": "Steam Carriages",
-      "populationID": 5,
+      "populationGUID": 15000004,
       "finalProduct": "Steam Carriages",
       "name": "Cab Assembly Line",
       "alternative": "",
       "children": [{
           "name": "Motor Assembly Line",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Furnace",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": [{
                   "name": "Iron Mine",
-                  "regionID": 1,
+                  "regionGUID": 5000000,
                   "alternative": "",
                   "children": null
                 },
                 {
                   "name": "Charcoal Kiln",
-                  "regionID": 1,
+                  "regionGUID": 5000000,
                   "alternative": "",
                   "children": null
                 }
@@ -1039,17 +1039,17 @@
             },
             {
               "name": "Brass Smeltery",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": [{
                   "name": "Zinc Mine",
-                  "regionID": 1,
+                  "regionGUID": 5000000,
                   "alternative": "",
                   "children": null
                 },
                 {
                   "name": "Copper Mine",
-                  "regionID": 1,
+                  "regionGUID": 5000000,
                   "alternative": "",
                   "children": null
                 }
@@ -1059,17 +1059,17 @@
         },
         {
           "name": "Coachmakers",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": [{
               "name": "Lumberjack Hut",
-              "regionID": 1,
+              "regionGUID": 5000000,
               "alternative": "",
               "children": null
             },
             {
               "name": "Caoutchouc Plantation",
-              "regionID": 2,
+              "regionGUID": 5000001,
               "alternative": "",
               "children": null
             }
@@ -1080,47 +1080,47 @@
     },
     "leather-boots": {
       "id": 39,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "scholars/leather-shoes.webp",
       "chain": "Leather Boots",
-      "populationID": 8,
+      "populationGUID": 118745,
       "finalProduct": "Leather Boots",
       "name": "Bootmakers",
       "alternative": "",
       "children": [{
         "name": "Sanga Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "tailored-suits": {
       "id": 40,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "scholars/suits.webp",
       "chain": "Tailored Suits",
-      "populationID": 8,
+      "populationGUID": 118745,
       "finalProduct": "Tailored Suits",
       "name": "Tailors Shop",
       "alternative": "",
       "children": [{
         "name": "Cotton Mill",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": [{
           "name": "Cotton Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Linen Mill",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": [{
           "name": "Linseed Farm",
-          "regionID": 5,
+          "regionGUID": 114327,
           "alternative": "",
           "children": null
         }]
@@ -1128,281 +1128,281 @@
     },
     "telephones": {
       "id": 41,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "scholars/telephones.webp",
       "chain": "Telephones",
-      "populationID": 8,
+      "populationGUID": 118745,
       "finalProduct": "Telephones",
       "name": "Telephone Manufacturer",
       "alternative": "",
       "children": [{
         "name": "Filament Factory",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Coal Mine",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "Charcoal Kiln",
           "children": null
         }]
       },{
         "name": "Marquetry Workshop",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Lumberjack Hut",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
       }]
     },
-  
-  
+
+
     "advanced-coffee": {
       "id": 42,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "scholars/coffee.webp",
       "chain": "Advanced Coffee",
-      "populationID": 8,
+      "populationGUID": 118745,
       "finalProduct": "Advanced Coffee",
       "name": "Advanced Coffee Roaster",
       "alternative": "",
       "children": [{
         "name": "Malthouse",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Grain Farm",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
       }]
     },
-  
+
     "advanced-rum": {
       "id": 43,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "scholars/rum.webp",
       "chain": "Advanced Rum",
-      "populationID": 8,
+      "populationGUID": 118745,
       "finalProduct": "Advanced Rum",
       "name": "Advanced Rum Distillery",
       "alternative": "",
       "children": [{
         "name": "Coal Mine",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       },{
         "name": "Potato Farm",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "Advanced Cotton Fabric": {
       "id": 44,
-      "regionID": 1,
+      "regionGUID": 5000000,
       "img": "scholars/cotton-fabric.webp",
       "chain": "Advanced Cotton Fabric",
-      "populationID": 8,
+      "populationGUID": 118745,
       "finalProduct": "Advanced Cotton Fabric",
       "name": "Advanced Cotton Mill",
       "alternative": "",
       "children": [{
         "name": "Sheep Farm",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       },{
         "name": "Lumberjack Hut",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": null
       }]
     },
-  
-  
-  
+
+
+
     "timber-arctic": {
       "id": 45,
-      "regionID": 4,
+      "regionGUID": 160001,
       "img": "explorers/timber.webp",
       "chain": "Timber",
-      "populationID": 9,
+      "populationGUID": 112642,
       "finalProduct": "Timber",
       "name": "Sawmill",
       "alternative": "",
       "children": [{
         "name": "Lumberjack Hut",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "pemmican": {
       "id": 46,
-      "regionID": 4,
+      "regionGUID": 160001,
       "img": "explorers/pemmican-cookhouse.webp",
       "chain": "Pemmican",
-      "populationID": 9,
+      "populationGUID": 112642,
       "finalProduct": "Pemmican",
       "name": "Pemmican Cookhouse",
       "alternative": "",
       "children": [{
         "name": "Whaling Station",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       },{
         "name": "Caribou Hunting Cabin",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "sleeping-bags": {
       "id": 47,
-      "regionID": 4,
+      "regionGUID": 160001,
       "img": "explorers/sleeping-bag-factory.webp",
       "chain": "Sleeping Bags",
-      "populationID": 9,
+      "populationGUID": 112642,
       "finalProduct": "Sleeping Bags",
       "name": "Sleeping Bag Factory",
       "alternative": "",
       "children": [{
         "name": "Seal Hunting Docks",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       },{
         "name": "Goose Farm",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       }]
     },
-  
-  
+
+
     "oil-lamps": {
       "id": 48,
-      "regionID": 4,
+      "regionGUID": 160001,
       "img": "explorers/oil-lamp-factory.webp",
       "chain": "Oil Lamps",
-      "populationID": 9,
+      "populationGUID": 112642,
       "finalProduct": "Oil Lamps",
       "name": "Oil Lamps Factory",
       "alternative": "",
       "children": [{
         "name": "Brass Smeltery",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Copper Mine",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         },{
           "name": "Zinc Mine",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Whaling Station",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "parkas": {
       "id": 49,
-      "regionID": 4,
+      "regionGUID": 160001,
       "img": "technicians/parka-factory.webp",
       "chain": "Parkas",
-      "populationID": 10,
+      "populationGUID": 112643,
       "finalProduct": "Parkas",
       "name": "Parka Factory",
       "alternative": "",
       "children": [{
         "name": "Seal Hunting Docks",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       },{
         "name": "Bear Hunting Cabin",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "husky-sleds": {
       "id": 50,
-      "regionID": 4,
+      "regionGUID": 160001,
       "img": "technicians/husky-sled-factory.webp",
       "chain": "Husky Sleds",
-      "populationID": 10,
+      "populationGUID": 112643,
       "finalProduct": "Husky Sleds",
       "name": "Husky Sled Factory",
       "alternative": "",
       "children": [{
         "name": "Sled Frame Factory",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": [{
           "name": "Seal Hunting Docks",
-          "regionID": 4,
+          "regionGUID": 160001,
           "alternative": "",
           "children": null
         },{
           "name": "Lumberjack Hut",
-          "regionID": 4,
+          "regionGUID": 160001,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Husky Farm",
-        "regionID": 4,
+        "regionGUID": 160001,
         "alternative": "",
         "children": null
       }]
     },
-  
+
     "goat-milk": {
       "id": 51,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "shepherds/goat-milk.webp",
       "chain": "Goat Milk",
-      "populationID": 11,
+      "populationGUID": 114329,
       "finalProduct": "Goat Milk",
       "name": "Goat Farm",
       "alternative": "",
       "children": null
     },
-  
+
     "Finery": {
       "id": 52,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "shepherds/traditional-clothing.webp",
       "chain": "Finery",
-      "populationID": 11,
+      "populationGUID": 114329,
       "finalProduct": "Finery",
       "name": "Embroiderer",
       "alternative": "",
       "children": [{
         "name": "Linen Mill",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": [{
           "name": "Linseed Farm",
-          "regionID": 5,
+          "regionGUID": 114327,
           "alternative": "",
           "children": null
         }]
@@ -1410,218 +1410,218 @@
     },
     "dried-meat": {
       "id": 53,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "shepherds/dried-meat.webp",
       "chain": "Dried Meat",
-      "populationID": 11,
+      "populationGUID": 114329,
       "finalProduct": "Dried Meat",
       "name": "Dry-House",
       "alternative": "",
       "children": [{
         "name": "Salt Works",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       },{
         "name": "Sanga Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
     "hibiscus-tea": {
       "id": 54,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "shepherds/hibiscus-tea.webp",
       "chain": "Hibiscus Tea",
-      "populationID": 11,
+      "populationGUID": 114329,
       "finalProduct": "Hibiscus Tea",
       "name": "Tea Spicer",
       "alternative": "",
       "children": [{
         "name": "Hibiscus Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
     "mud-bricks": {
       "id": 55,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/mud-bricks.webp",
       "chain": "Mud Bricks",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Mud Bricks",
       "name": "Brick Dry-House",
       "alternative": "",
       "children": [{
         "name": "Clay Harvester",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       },{
         "name": "Teff Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
     "ceramics": {
       "id": 56,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/ceramics.webp",
       "chain": "Ceramics",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Ceramics",
       "name": "Ceramics Workshop",
       "alternative": "",
       "children": [{
         "name": "Clay Harvester",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       },{
         "name": "Indigo Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
     "tapestries": {
       "id": 57,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/tapestries.webp",
       "chain": "Tapestries",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Tapestries",
       "name": "Tapestry Looms",
       "alternative": "",
       "children": [{
         "name": "Linen Mill",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": [{
           "name": "Linseed Farm",
-          "regionID": 5,
+          "regionGUID": 114327,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Indigo Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
     "seafood-stew": {
       "id": 58,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/seafood.webp",
       "chain": "Seafood Stew",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Seafood Stew",
       "name": "Wat Kitchen",
       "alternative": "",
       "children": [{
         "name": "Teff Mill",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": [{
           "name": "Teff Farm",
-          "regionID": 5,
+          "regionGUID": 114327,
           "alternative": "",
           "children": null
         },{
           "name": "Spice Farm",
-          "regionID": 5,
+          "regionGUID": 114327,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Lobster Fishery",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
       "clay-pipes": {
       "id": 59,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/tobacco-pipes.webp",
       "chain": "Clay Pipes",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Clay Pipes",
       "name": "Pipe Maker",
       "alternative": "",
       "children": [{
         "name": "Clay Harvester",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       },{
         "name": "Tobacco Plantation",
-        "regionID": 2,
+        "regionGUID": 5000001,
         "alternative": "",
         "children": null
       }]
-    },    
+    },
     "illuminated-scripts": {
       "id": 60,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/scriptures.webp",
       "chain": "Illuminated Scripts",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Illuminated Scripts",
       "name": "Luminer",
       "alternative": "",
       "children": [{
         "name": "Paper Mill",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": [{
           "name": "Lumberjack Hut",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Indigo Farm",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": null
       }]
     },
     "lanterns": {
       "id": 61,
-      "regionID": 5,
+      "regionGUID": 114327,
       "img": "elders/lanterns.webp",
       "chain": "Lanterns",
-      "populationID": 12,
+      "populationGUID": 114330,
       "finalProduct": "Lanterns",
       "name": "Lanternsmith",
       "alternative": "",
       "children": [{
         "name": "Glassmakers",
-        "regionID": 1,
+        "regionGUID": 5000000,
         "alternative": "",
         "children": [{
           "name": "Sand Mine",
-          "regionID": 1,
+          "regionGUID": 5000000,
           "alternative": "",
           "children": null
         }]
       },{
         "name": "Chandler",
-        "regionID": 5,
+        "regionGUID": 114327,
         "alternative": "",
         "children": [{
           "name": "Apiary",
-          "regionID": 5,
+          "regionGUID": 114327,
           "alternative": "",
           "children": null
         },{
           "name": "Cotton Plantation",
-          "regionID": 2,
+          "regionGUID": 5000001,
           "alternative": "",
           "children": null
         }]
@@ -1629,5 +1629,5 @@
     }
   }
 
-  
+
 }

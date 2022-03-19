@@ -1,6 +1,7 @@
 {
   "oldWorld": {
     "id": 1,
+    "guid": 5000000,
     "name": "The Old World",
     "img": "the-old-world.webp",
     "dlcID": 0,
@@ -8,20 +9,15 @@
   },
   "newWorld": {
     "id": 2,
+    "guid": 5000001,
     "name": "The New World",
     "img": "the-new-world.webp",
     "dlcID": 0,
     "populationIDs": [6, 7]
   },
-  "capeTrelawney": {
-    "id": 3,
-    "name": "Cape Trelawney",
-    "img": "cape-trelawney.webp",
-    "dlcID": 2,
-    "populationIDs": [1, 2, 3, 4, 5, 8]
-  },
   "theArctic": {
     "id": 4,
+    "guid": 160001,
     "name": "The Arctic",
     "img": "the-arctic.webp",
     "dlcID": 4,
@@ -29,6 +25,7 @@
   },
   "enbesa": {
     "id": 5,
+    "guid": 114327,
     "name": "Enbesa",
     "img": "enbesa.webp",
     "dlcID": 9,

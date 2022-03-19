@@ -3,7 +3,7 @@
     "product": "Timber",
     "building": "Sawmill",
     "img": "farmers/timber.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 15,
     "construction": {
       "cash": 100
@@ -17,7 +17,7 @@
     "product": "Wood",
     "building": "Lumberjack Hut",
     "img": "farmers/wood.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 15,
     "construction": {
       "cash": 100
@@ -31,7 +31,7 @@
     "product": "Fish",
     "building": "Fishery",
     "img": "farmers/fish.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 100,
@@ -46,7 +46,7 @@
     "product": "Schnapps",
     "building": "Schnapps Distillery",
     "img": "farmers/schnapps.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 100,
@@ -61,7 +61,7 @@
     "product": "Potatoes",
     "building": "Potato Farm",
     "img": "farmers/potato.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 100,
@@ -76,7 +76,7 @@
     "product": "Work Clothes",
     "building": "Framework Knitters",
     "img": "farmers/work-clothes.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 100,
@@ -91,7 +91,7 @@
     "product": "Wool",
     "building": "Sheep Farm",
     "img": "farmers/wool.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 100,
@@ -106,7 +106,7 @@
     "product": "Clay",
     "building": "Clay Pit",
     "img": "workers/clay.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -121,7 +121,7 @@
     "product": "Bricks",
     "building": "Brick Factory",
     "img": "workers/bricks.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -136,7 +136,7 @@
     "product": "Pigs",
     "building": "Pig Farm",
     "img": "workers/pigs.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -151,7 +151,7 @@
     "product": "Sausages",
     "building": "Slaughterhouse",
     "img": "workers/sausages.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -167,7 +167,7 @@
     "product": "Sails",
     "building": "Sailmakers",
     "img": "workers/sails.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -183,7 +183,7 @@
     "product": "Grain",
     "building": "Grain Farm",
     "img": "workers/grain.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -198,7 +198,7 @@
     "product": "Flour",
     "building": "Flour Mill",
     "img": "workers/flour.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -214,7 +214,7 @@
     "product": "Bread",
     "building": "Bakery",
     "img": "workers/bread.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -230,7 +230,7 @@
     "product": "Tallow",
     "building": "Rendering Works",
     "img": "workers/tallow.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -247,7 +247,7 @@
     "product": "Soap",
     "building": "Soap Factory",
     "img": "workers/soap.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -264,7 +264,7 @@
     "product": "Iron",
     "building": "Iron Mine",
     "img": "workers/iron.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 15,
     "construction": {
       "cash": 500,
@@ -280,7 +280,7 @@
     "product": "Coal",
     "building": "Charcoal Kiln",
     "img": "workers/charcoal-kiln.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -296,7 +296,7 @@
     "product": "Steel",
     "building": "Furnace",
     "img": "workers/steel.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -312,7 +312,7 @@
     "product": "Steel Beams",
     "building": "Steelworks",
     "img": "workers/steel-beams.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 45,
     "construction": {
       "cash": 500,
@@ -328,7 +328,7 @@
     "product": "Weapons",
     "building": "Weapon Factory",
     "img": "workers/weapons.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 90,
     "construction": {
       "cash": 500,
@@ -345,7 +345,7 @@
     "product": "Malt",
     "building": "Malthouse",
     "img": "workers/malt.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -362,7 +362,7 @@
     "product": "Hop",
     "building": "Hop Farm",
     "img": "workers/hops.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 90,
     "construction": {
       "cash": 500,
@@ -377,7 +377,7 @@
     "product": "Beer",
     "building": "Brewery",
     "img": "workers/beer.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -394,7 +394,7 @@
     "product": "Quartz Sand",
     "building": "Sand Mine",
     "img": "artisans/quartz-sand.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 2000,
@@ -410,7 +410,7 @@
     "product": "Glass",
     "building": "Glassmakers",
     "img": "artisans/glass.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 2000,
@@ -427,7 +427,7 @@
     "product": "Windows",
     "building": "Window Makers",
     "img": "artisans/windows.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 2000,
@@ -444,7 +444,7 @@
     "product": "Beef",
     "building": "Cattle Farm",
     "img": "artisans/beef.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 2000,
@@ -459,7 +459,7 @@
     "product": "Beef",
     "building": "Cattle Farm",
     "img": "artisans/beef.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -474,7 +474,7 @@
     "product": "Red Peppers",
     "building": "Red Pepper Farm",
     "img": "artisans/red-peppers.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 2000,
@@ -489,7 +489,7 @@
     "product": "Goulash",
     "building": "Artisanal Kitchen",
     "img": "artisans/goulash.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 2000,
@@ -507,7 +507,7 @@
     "product": "Canned Food",
     "building": "Cannery",
     "img": "artisans/canned-food.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 90,
     "construction": {
       "cash": 2000,
@@ -525,7 +525,7 @@
     "product": "Coal",
     "building": "Coal Mine",
     "img": "artisans/coal.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 15,
     "construction": {
       "cash": 500,
@@ -541,7 +541,7 @@
     "product": "Sewing Machines",
     "building": "Sewing Machine Factory",
     "img": "artisans/sewing-machines.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -559,7 +559,7 @@
     "product": "Sugar Cane",
     "building": "Sugar Cane Plantation",
     "img": "artisans/sugar-cane.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -574,7 +574,7 @@
     "product": "Rum",
     "building": "Rum Distillery",
     "img": "artisans/rum.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -589,7 +589,7 @@
     "product": "Furs",
     "building": "Hunting Cabin",
     "img": "artisans/furs.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 2000,
@@ -604,7 +604,7 @@
     "product": "Fur Coats",
     "building": "Fur Dealer",
     "img": "artisans/fur-coats.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 2000,
@@ -622,7 +622,7 @@
     "product": "Cement",
     "building": "Limestone Quarry",
     "img": "engineers/cement.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 5000,
@@ -640,7 +640,7 @@
     "product": "Reinforced Concrete",
     "building": "Concrete Factory",
     "img": "engineers/reinforced-concrete.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 10000,
@@ -658,7 +658,7 @@
     "product": "Oil",
     "building": "Oil Refinery",
     "img": "engineers/oil.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 15,
     "construction": {
       "cash": 5000,
@@ -677,7 +677,7 @@
     "product": "Oil",
     "building": "Oil Well",
     "img": "engineers/oil-well.png",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 15,
     "construction": {
       "cash": 4000,
@@ -693,7 +693,7 @@
     "product": "Electricity",
     "building": "Oil Power Plant",
     "img": "engineers/oil-power-plant.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": -1,
     "construction": {
       "cash": 25000,
@@ -712,7 +712,7 @@
     "product": "Electricity",
     "building": "Coal Power Plant",
     "img": "engineers/coal-power-plant.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": -1,
     "construction": {
       "cash": 25000,
@@ -731,7 +731,7 @@
     "product": "Zinc",
     "building": "Zinc Mine",
     "img": "engineers/zinc.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 5000,
@@ -750,7 +750,7 @@
     "product": "Copper",
     "building": "Copper Mine",
     "img": "engineers/copper.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 5000,
@@ -769,7 +769,7 @@
     "product": "Brass",
     "building": "Brass Smeltery",
     "img": "engineers/brass.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 5000,
@@ -788,7 +788,7 @@
     "product": "Glasses",
     "building": "Spectacle Factory",
     "img": "engineers/glasses.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 90,
     "construction": {
       "cash": 5000,
@@ -807,7 +807,7 @@
     "product": "Steam Motors",
     "building": "Motor Assembly Line",
     "img": "engineers/steam-motors.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 90,
     "construction": {
       "cash": 10000,
@@ -826,7 +826,7 @@
     "product": "Penny Farthingss",
     "building": "Bicycle Factory",
     "img": "engineers/high-wheeler.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 5000,
@@ -845,7 +845,7 @@
     "product": "Gold Ore",
     "building": "Gold Mine",
     "img": "engineers/gold-ore.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 150,
     "construction": {
       "cash": 5000,
@@ -864,7 +864,7 @@
     "product": "Gold",
     "building": "Goldsmiths",
     "img": "engineers/gold.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 5000,
@@ -883,7 +883,7 @@
     "product": "Pocket Watches",
     "building": "Clockmakers",
     "img": "engineers/pocket-watch.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 90,
     "construction": {
       "cash": 10000,
@@ -902,7 +902,7 @@
     "product": "Filament",
     "building": "Filament Factory",
     "img": "engineers/carbon-filament.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 5000,
@@ -921,7 +921,7 @@
     "product": "Light Bulbs",
     "building": "Light Bulb Factory",
     "img": "engineers/light-bulb.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 10000,
@@ -940,7 +940,7 @@
     "product": "Saltpeter",
     "building": "Saltpeter Works",
     "img": "engineers/saltpeter.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 10000,
@@ -957,7 +957,7 @@
     "product": "Dynamite",
     "building": "Dynamite Factory",
     "img": "engineers/dynamite.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 10000,
@@ -976,7 +976,7 @@
     "product": "Advanced Weapons",
     "building": "Heavy Weapons Factory",
     "img": "engineers/advanced-weapons.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 25000,
@@ -995,7 +995,7 @@
     "product": "Grapes",
     "building": "Vineyard",
     "img": "investors/grapes.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 10000,
@@ -1010,7 +1010,7 @@
     "product": "Champagne",
     "building": "Champagne Cellar",
     "img": "investors/champagne.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 25000,
@@ -1029,7 +1029,7 @@
     "product": "Jewelry",
     "building": "Jewellers",
     "img": "investors/jewelry.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 25000,
@@ -1048,7 +1048,7 @@
     "product": "Wood Veneers",
     "building": "Marquetry Workshop",
     "img": "investors/wood-veneers.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 10000,
@@ -1067,7 +1067,7 @@
     "product": "Gramophones",
     "building": "Gramophone Factory",
     "img": "investors/gramophone.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 25000,
@@ -1086,7 +1086,7 @@
     "product": "Chassis",
     "building": "Coachmakers",
     "img": "investors/chassis.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 120,
     "construction": {
       "cash": 10000,
@@ -1105,7 +1105,7 @@
     "product": "Steam Carriages",
     "building": "Cab Assembly Line",
     "img": "investors/steam-carriages.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 25000,
@@ -1125,7 +1125,7 @@
     "product": "Wood",
     "building": "Lumberjack Hut",
     "img": "jornaleros/wood.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 15,
     "construction": {
       "cash": 500
@@ -1139,7 +1139,7 @@
     "product": "Timber",
     "building": "Sawmill",
     "img": "jornaleros/timber.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 15,
     "construction": {
       "cash": 500
@@ -1153,7 +1153,7 @@
     "product": "Fish Oil",
     "building": "Fish Oil Factory",
     "img": "jornaleros/fish-oil.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1168,7 +1168,7 @@
     "product": "Plantains",
     "building": "Plantain Plantation",
     "img": "jornaleros/plantains.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1183,7 +1183,7 @@
     "product": "Fried Plantains",
     "building": "Fried Plantain Kitchen",
     "img": "jornaleros/fried-plantains.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1198,7 +1198,7 @@
     "product": "Pearls",
     "building": "Pearl Farm",
     "img": "jornaleros/pearls.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 90,
     "construction": {
       "cash": 2500,
@@ -1213,7 +1213,7 @@
     "product": "Cotton",
     "building": "Cotton Plantation",
     "img": "jornaleros/cotton.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -1228,7 +1228,7 @@
     "product": "Cotton Fabric",
     "building": "Cotton Mill",
     "img": "jornaleros/cotton-fabric.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1243,7 +1243,7 @@
     "product": "Sails",
     "building": "Sailmakers",
     "img": "jornaleros/sails.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1258,7 +1258,7 @@
     "product": "Alpaca Wool",
     "building": "Alpaca Farm",
     "img": "jornaleros/alpaca-wool.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1273,7 +1273,7 @@
     "product": "Ponchos",
     "building": "Poncho Darner",
     "img": "jornaleros/poncho.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1288,7 +1288,7 @@
     "product": "Caoutchouc",
     "building": "Caoutchouc Plantation",
     "img": "jornaleros/caoutchouc.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -1303,7 +1303,7 @@
     "product": "Clay",
     "building": "Clay Pit",
     "img": "obreros/clay.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -1318,7 +1318,7 @@
     "product": "Bricks",
     "building": "Brick Factory",
     "img": "obreros/bricks.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -1333,7 +1333,7 @@
     "product": "Corn",
     "building": "Corn Farm",
     "img": "obreros/corn.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -1348,7 +1348,7 @@
     "product": "Tortillas",
     "building": "Tortilla Maker",
     "img": "obreros/tortilla.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -1364,7 +1364,7 @@
     "product": "Coffee Beans",
     "building": "Coffee Plantation",
     "img": "obreros/coffee-beans.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -1379,7 +1379,7 @@
     "product": "Coffee",
     "building": "Coffee Roaster",
     "img": "obreros/coffee.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -1395,7 +1395,7 @@
     "product": "Felt",
     "building": "Felt Producer",
     "img": "obreros/felt.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -1411,7 +1411,7 @@
     "product": "Bowler Hats",
     "building": "Bombin Weaver",
     "img": "obreros/bowler-hats.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -1427,7 +1427,7 @@
     "product": "Oil",
     "building": "Oil Refinery",
     "img": "obreros/oil.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 15,
     "construction": {
       "cash": 2500,
@@ -1446,7 +1446,7 @@
     "product": "Oil Storage",
     "building": "Oil Storage",
     "img": "obreros/oil-storage.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "construction": {
       "cash": 2500,
       "wood": 8,
@@ -1463,7 +1463,7 @@
     "product": "Oil Storage",
     "building": "Small Oil Harbour",
     "img": "obreros/oil-harbour.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "construction": {
       "cash": 10000,
       "wood": 20,
@@ -1480,7 +1480,7 @@
     "product": "Tobacco",
     "building": "Tobacco Plantation",
     "img": "obreros/tobacco.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 120,
     "construction": {
       "cash": 2500,
@@ -1495,7 +1495,7 @@
     "product": "Cigars",
     "building": "Cigar Factory",
     "img": "obreros/cigars.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -1511,7 +1511,7 @@
     "product": "Wood Veneers",
     "building": "Marquetry Workshop",
     "img": "obreros/wood-veneers.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -1527,7 +1527,7 @@
     "product": "Cocoa",
     "building": "Cocoa Plantation",
     "img": "obreros/cocoa.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -1542,7 +1542,7 @@
     "product": "Sugar",
     "building": "Sugar Refinery",
     "img": "obreros/chocolate.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1557,7 +1557,7 @@
     "product": "Chocolate",
     "building": "Chocolate Factory",
     "img": "obreros/chocolate.webp",
-    "regionID": 2,
+    "regionGUID": 5000001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1572,7 +1572,7 @@
     "product": "Leather Boots",
     "building": "Bootmakers",
     "img": "scholars/leather-shoes.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 4000,
@@ -1590,7 +1590,7 @@
     "product": "Tailored Suits",
     "building": "Tailors Shop",
     "img": "scholars/suits.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 60,
     "construction": {
       "cash": 9000,
@@ -1608,7 +1608,7 @@
     "product": "Telephones",
     "building": "Telephone Manufacturer",
     "img": "scholars/telephones.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 45,
     "construction": {
       "cash": 38000,
@@ -1627,7 +1627,7 @@
     "product": "Advanced Coffee",
     "building": "Advanced Coffee Roaster",
     "img": "scholars/coffee.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 12000,
@@ -1646,7 +1646,7 @@
     "product": "Advanced Rum",
     "building": "Advanced Rum Distillery",
     "img": "scholars/rum.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 12000,
@@ -1664,7 +1664,7 @@
     "product": "Advanced Cotton Fabric",
     "building": "Advanced Cotton Mill",
     "img": "scholars/cotton-fabric.webp",
-    "regionID": 1,
+    "regionGUID": 5000000,
     "productionTime": 30,
     "construction": {
       "cash": 12000,
@@ -1686,7 +1686,7 @@
     "product": "Timber",
     "building": "Sawmill",
     "img": "explorers/timber.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 15,
     "construction": {
       "cash": 100
@@ -1700,7 +1700,7 @@
     "product": "Wood",
     "building": "Lumberjack Hut",
     "img": "jornaleros/wood.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 15,
     "construction": {
       "cash": 100
@@ -1715,7 +1715,7 @@
     "product": "Charcoal",
     "building": "Charcoal Kiln",
     "img": "explorers/charcoal-kiln.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -1731,7 +1731,7 @@
     "product": "Whale Oil",
     "building": "Whaling Station",
     "img": "explorers/whaling-station.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 200,
@@ -1747,7 +1747,7 @@
     "product": "Caribou Meat",
     "building": "Caribou Hunting Cabin",
     "img": "explorers/caribou-hunting-cabin.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 200,
@@ -1762,7 +1762,7 @@
     "product": "Pemmican",
     "building": "Pemmican Cookhouse",
     "img": "explorers/pemmican-cookhouse.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 1000,
@@ -1778,7 +1778,7 @@
     "product": "Seal Skin",
     "building": "Seal Hunting Docks",
     "img": "explorers/seal-hunting-docks.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 30,
     "construction": {
       "cash": 200,
@@ -1794,7 +1794,7 @@
     "product": "Goose Feathers",
     "building": "Goose Farm",
     "img": "explorers/goose-farm.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 120,
     "construction": {
       "cash": 200,
@@ -1812,7 +1812,7 @@
     "product": "Sleeping Bags",
     "building": "Sleeping Bag Factory",
     "img": "explorers/sleeping-bag-factory.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 1500,
@@ -1827,7 +1827,7 @@
     "product": "Oil Lamps",
     "building": "Oil Lamps Factory",
     "img": "explorers/oil-lamp-factory.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 2000,
@@ -1843,7 +1843,7 @@
     "product": "Bear Furs",
     "building": "Bear Hunting Cabin",
     "img": "technicians/bear-hunting-cabin.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 90,
     "construction": {
       "cash": 4000,
@@ -1862,7 +1862,7 @@
     "product": "Parkas",
     "building": "Parka Factory",
     "img": "technicians/parka-factory.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 90,
     "construction": {
       "cash": 4000,
@@ -1879,7 +1879,7 @@
     "product": "Furs",
     "building": "Pristine Hunting Cabin",
     "img": "technicians/furs.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 15,
     "construction": {
       "cash": 4000,
@@ -1896,7 +1896,7 @@
     "product": "Huskies",
     "building": "Husky Farm",
     "img": "technicians/husky-farm.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 120,
     "construction": {
       "cash": 4000,
@@ -1913,7 +1913,7 @@
     "product": "Sleds",
     "building": "Sled Frame Factory",
     "img": "technicians/sled-frame-factory.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 4000,
@@ -1931,7 +1931,7 @@
     "product": "Husky Sleds",
     "building": "Husky Sled Factory",
     "img": "technicians/husky-sled-factory.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 4000,
@@ -1948,7 +1948,7 @@
     "product": "Gold",
     "building": "Deep Gold Mine",
     "img": "technicians/gold-ore.webp",
-    "regionID": 4,
+    "regionGUID": 160001,
     "productionTime": 60,
     "construction": {
       "cash": 5000,
@@ -1965,7 +1965,7 @@
     "product": "Wanza Timber",
     "building": "Wanza Woodcutter",
     "img": "shepherds/wansa-wood.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 15,
     "construction": {
       "cash": 500
@@ -1979,7 +1979,7 @@
     "product": "Goat Milk",
     "building": "Goat Farm",
     "img": "shepherds/goat-milk.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -1994,7 +1994,7 @@
     "product": "Linseed",
     "building": "Linseed Farm",
     "img": "shepherds/linen-farm.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 500,
@@ -2009,7 +2009,7 @@
     "product": "Linen",
     "building": "Linen Mill",
     "img": "shepherds/linen-fabric.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 500,
@@ -2024,7 +2024,7 @@
     "product": "Finery",
     "building": "Embroiderer",
     "img": "shepherds/traditional-clothing.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 1250,
@@ -2039,7 +2039,7 @@
     "product": "Sanga Cows",
     "building": "Sanga Farm",
     "img": "shepherds/watusi.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 750,
@@ -2054,7 +2054,7 @@
     "product": "Salt",
     "building": "Salt Works",
     "img": "shepherds/salt.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 750,
@@ -2069,7 +2069,7 @@
     "product": "Dried Meat",
     "building": "Dry-House",
     "img": "shepherds/dried-meat.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 750,
@@ -2084,7 +2084,7 @@
     "product": "Hibiscus",
     "building": "Hibiscus Farm",
     "img": "shepherds/hibiscus-farm.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 1250,
@@ -2099,7 +2099,7 @@
     "product": "Hibiscus Tea",
     "building": "Tea Spicer",
     "img": "shepherds/hibiscus-tea.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 90,
     "construction": {
       "cash": 2500,
@@ -2115,7 +2115,7 @@
     "product": "Clay",
     "building": "Clay Harvester",
     "img": "elders/clay.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 15,
     "construction": {
       "cash": 2500,
@@ -2130,7 +2130,7 @@
     "product": "Teff",
     "building": "Teff Farm",
     "img": "elders/teff-grass.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 1500,
@@ -2145,7 +2145,7 @@
     "product": "Mud Bricks",
     "building": "Brick Dry-House",
     "img": "elders/mud-bricks.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -2160,7 +2160,7 @@
     "product": "Indigo",
     "building": "Indigo Farm",
     "img": "elders/mud-bricks.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 2000,
@@ -2175,7 +2175,7 @@
     "product": "Ceramics",
     "building": "Ceramics Workshop",
     "img": "elders/ceramics.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 4000,
@@ -2191,7 +2191,7 @@
     "product": "Tapestries",
     "building": "Tapestry Looms",
     "img": "elders/tapestries.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 5000,
@@ -2207,7 +2207,7 @@
     "product": "Spices",
     "building": "Spice Farm",
     "img": "elders/spices.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 2500,
@@ -2222,7 +2222,7 @@
     "product": "Spiced Flour",
     "building": "Teff Mill",
     "img": "elders/teff-flour.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 2500,
@@ -2238,7 +2238,7 @@
     "product": "Lobsters",
     "building": "Lobster Fishery",
     "img": "elders/seafood.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 3000,
@@ -2254,7 +2254,7 @@
     "product": "Seafood Stew",
     "building": "Wat Kitchen",
     "img": "elders/wat-stew.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 4500,
@@ -2270,7 +2270,7 @@
     "product": "Clay Pipes",
     "building": "Pipe Maker",
     "img": "elders/tobacco-pipes.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 15,
     "construction": {
       "cash": 9000,
@@ -2286,7 +2286,7 @@
     "product": "Paper",
     "building": "Paper Mill",
     "img": "elders/paper.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 15,
     "construction": {
       "cash": 6500,
@@ -2302,7 +2302,7 @@
     "product": "Illuminated Scripts",
     "building": "Luminer",
     "img": "elders/scriptures.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 15,
     "construction": {
       "cash": 12000,
@@ -2318,7 +2318,7 @@
     "product": "Fuel",
     "building": "Fuel Station",
     "img": "elders/fuel.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 15,
     "construction": {
       "cash": 25000,
@@ -2337,7 +2337,7 @@
     "product": "Beeswax",
     "building": "Apiary",
     "img": "elders/beeswax.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 9000,
@@ -2352,7 +2352,7 @@
     "product": "Ornate Candles",
     "building": "Chandler",
     "img": "elders/candles.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 30,
     "construction": {
       "cash": 7000,
@@ -2368,7 +2368,7 @@
     "product": "Lanterns",
     "building": "Lanternsmith",
     "img": "elders/lanterns.webp",
-    "regionID": 5,
+    "regionGUID": 114327,
     "productionTime": 60,
     "construction": {
       "cash": 18000,

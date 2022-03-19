@@ -6,7 +6,7 @@
           <v-col>
             <v-flex class="text-center">
               <v-avatar size="32">
-                <img class="center" :src="getImage(cost.image, cost.imageFileFolder)" :alt="cost.name">
+                <img class="center" :src="getDirectImage(cost.image, cost.imageFileFolder)" :alt="cost.name">
               </v-avatar>
               <p class="pb-0 mb-0">{{cost.name}}</p>
             </v-flex>
@@ -160,7 +160,7 @@ export default {
       const helperFunctionMixin = this
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
-        element.regionID
+        element.regionGUID
       )
 
       this.requiredResources.cash +=

@@ -1,20 +1,20 @@
 <template>
   <v-container>
     <v-row>
-      <v-col class="col-1 pa-1" v-for="(soClass, i) in reqPopArray" :key="i">
+      <v-col class="col-1 pa-1" v-for="(popLevel, i) in reqPopArray" :key="i">
         <v-row class="col-border">
           <v-col>
             <v-flex class="text-center">
               <v-avatar size="32">
-                <img class="center" :src="getImage(soClass.image, 'icons')" :alt="soClass.name">
+                <img class="center" :src="getDirectImage(popLevel.image, 'icons')" :alt="popLevel.name">
               </v-avatar>
-              <p class="pb-0 mb-0">{{soClass.name}}</p>
+              <p class="pb-0 mb-0">{{popLevel.name}}</p>
             </v-flex>
           </v-col>
         </v-row>
         <v-row class="col-border">
           <v-col class="pt-0 text-right font-weight-black">
-            {{soClass.population}}
+            {{popLevel.population}}
           </v-col>
         </v-row>
       </v-col>
@@ -169,7 +169,7 @@ export default {
       const helperFunctionMixin = this
       const building = helperFunctionMixin.getBuildingByName(
         element.name,
-        element.regionID
+        element.regionGUID
       )
       this.requiredPopulation.farmers +=
         (building.maintenance.farmer ?? 0) * element.relativeAmount

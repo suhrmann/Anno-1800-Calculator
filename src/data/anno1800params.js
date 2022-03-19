@@ -26,3 +26,24 @@ export const sessions = params.sessions
 export const tradeContracts = params.tradeContracts
 export const traders = params.traders
 export const workforce = params.workforce
+
+// Worlds
+export const oldWorldGUID = 5000000
+export const newWorldGUID = 5000001
+export const arcticGUID = 160001
+export const enbesaGUID = 114327
+
+// Populations
+export const farmersGUID = 15000000
+export const workersGUID = 15000001
+export const artisansGUID = 15000002
+export const engineersGUID = 15000003
+export const investorsGUID = 15000004
+export const jornalerosGUID = 15000005
+export const obrerosGUID = 15000006
+export const touristsGUID = 601379
+export const explorersGUID = 112642
+export const techniciansGUID = 112643
+export const shepherdsGUID = 114329
+export const eldersGUID = 114330
+export const scholarsGUID = 118745

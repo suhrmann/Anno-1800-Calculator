@@ -1,8 +1,10 @@
+import { farmersGUID, oldWorldGUID } from '@/data/anno1800params'
+
 export default {
   selectedDLCs: [0],
   selectedProductionChain: {
     id: 1,
-    regionID: 1,
+    regionGUID: 5000000,
     chain: 'Timber',
     populationID: 1,
     finalProduct: 'Timber',
@@ -12,15 +14,15 @@ export default {
     children: [
       {
         name: 'Lumberjack Hut',
-        regionID: 1,
+        regionGUID: 5000000,
         alternative: '',
         children: null
       }
     ]
   },
-  selectedregionID: 1,
-  selectedpopulationID: 1,
-  selectedProductionChainID: 1,
+  selectedRegionGUID: oldWorldGUID,
+  selectedPopulationGUID: farmersGUID,
+  selectedProductionChainID: 1, // TODO GUID of TODO
 
   /**
    * The following 2 properties are linked to the options in VisualProductionChain.vue

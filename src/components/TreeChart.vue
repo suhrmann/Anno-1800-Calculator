@@ -26,9 +26,9 @@
             }"
                 class="avat"
               >
-                <img :src="getBuildingImage(treeData.name, treeData.regionID)" :alt="treeData.name">
+                <img :src="getBuildingImage(treeData.name, treeData.regionGUID)" :alt="treeData.name">
               </div>
-              <div class="name">{{getBuildingName(treeData.name, treeData.regionID)}}</div>
+              <div class="name">{{getBuildingName(treeData.name, treeData.regionGUID)}}</div>
               <div class="name">{{treeData.relativeAmount}}</div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default {
     },
 
     getBuildingInfo (nodeData) {
-      const building = this.getBuildingByName(nodeData.name, nodeData.regionID)
+      const building = this.getBuildingByName(nodeData.name, nodeData.regionGUID)
 
       // build string
       const headline = 'Building: ' + building.building
@@ -114,12 +114,12 @@ export default {
       return buildingInfo
     },
 
-    getBuildingImage (name, regionID) {
-      const building = this.getBuildingByName(name, regionID)
-      return this.getImage(building.img, 'buildings')
+    getBuildingImage (name, regionGUID) {
+      const building = this.getBuildingByName(name, regionGUID)
+      return this.getDirectImage(building.img, 'buildings')
     },
-    getBuildingName (name, regionID) {
-      const building = this.getBuildingByName(name, regionID)
+    getBuildingName (name, regionGUID) {
+      const building = this.getBuildingByName(name, regionGUID)
       return building.building
     }
   }

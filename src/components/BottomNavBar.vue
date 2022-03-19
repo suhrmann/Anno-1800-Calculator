@@ -17,22 +17,22 @@
         <v-btn
           color="primary"
           text
-          v-for="(chain, i) in selectedProductionChains"
-          :key="i"
+          v-for="(chain) of selectedProductionChains"
+          :key="chain.id"
           :value="chain.id"
         >
           <span>{{ chain.name }}</span>
           <v-avatar>
-            <img :src="getImage(chain.img, 'buildings')" :alt="chain.name + ' Image'">
+            <img :src="getDirectImage(chain.img, 'buildings')" :alt="chain.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
     </v-card>
 
-    <!-- Nav Bar: SOCIAL CLASS -->
+    <!-- Nav Bar: POPULATION LEVEL -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedPopulationID"
+        v-model="selectedPopulationGUID"
         absolute
         dark
         height="70"
@@ -41,14 +41,14 @@
         <v-btn
           color="primary"
           text
-          v-for="(population, i) in selectedPopulations"
-          :key="i"
-          :value="population.id"
-          @click="changePopulation(population.id)"
+          v-for="(population) of selectedPopulations"
+          :key="population.guid"
+          :value="population.guid"
+          @click="changePopulation(population.guid)"
         >
-          <span>{{ population.name }}</span>
+          <span>{{ population.locaText.english }}</span>
           <v-avatar>
-            <img :src="getImage(population.img, 'population')" :alt="population.name + ' Image'">
+            <img :src="getImage(population.guid)" :alt="population.locaText.english + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -57,7 +57,7 @@
     <!-- Nav Bar: REGION -->
     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedRegionID"
+        v-model="selectedRegionGUID"
         absolute
         dark
         height="70"
@@ -66,14 +66,14 @@
         <v-btn
           color="primary"
           text
-          v-for="(region, i) in regions"
-          :key="i"
-          :value="region.id"
-          @click="changeRegion(region.id)"
+          v-for="(region) of regions"
+          :key="region.guid"
+          :value="region.guid"
+          @click="changeRegion(region.guid)"
         >
-          <span>{{ region.name }}</span>
+          <span>{{ region.locaText.english }}</span>
           <v-avatar>
-            <img :src="getImage(region.img, 'regions')" :alt="region.name + ' Image'">
+            <img :src="getImage(region.guid)" :alt="region.locaText.english + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -82,8 +82,8 @@
 </template>
 
 <script>
-import regions from '@/data/regions.json'
-import populations from '@/data/population.json'
+import { regions, populationLevels } from '@/data/anno1800params'
+import legacyPopulations from '@/data/population'
 import ProductionChains from '@/data/production-chains.json'
 import { helperFunctionMixin } from './helperFunctionMixin.js'
 import { EventBus } from '@/EventBus'
@@ -94,29 +94,28 @@ export default {
   data () {
     return {
       /* Store data from JSON in component */
-      // TODO Load these centrally and access this data e.g. via Vuex
       regions: regions,
-      populations: populations,
+      populations: populationLevels,
       productionChainsData: ProductionChains.Production_Chain
     }
   },
 
   computed: {
-    selectedRegionID: {
+    selectedRegionGUID: {
       get: function () {
-        return this.$store.state.selectedregionID
+        return this.$store.state.selectedRegionGUID
       },
-      set: function (selectedRegionID) {
-        this.$store.commit('changeRegionID', selectedRegionID)
+      set: function (selectedRegionGUID) {
+        this.$store.commit('changeRegionGUID', selectedRegionGUID)
       }
     },
 
-    selectedPopulationID: {
+    selectedPopulationGUID: {
       get: function () {
-        return this.$store.state.selectedpopulationID
+        return this.$store.state.selectedPopulationGUID
       },
-      set: function (selectedPopulationID) {
-        this.$store.commit('changePopulationID', selectedPopulationID)
+      set: function (selectedPopulationGUID) {
+        this.$store.commit('changePopulationGUID', selectedPopulationGUID)
       }
     },
 
@@ -126,14 +125,14 @@ export default {
       },
       set: function (selectedProductionChainID) {
         this.$store.commit(
-          'changeProductionChainID',
+          'changeProductionchainID',
           selectedProductionChainID
         )
       }
     },
 
     /**
-     * Search production chain by ChainID.
+     * Search production chain by chainID.
      *
      * @return {Object} The selected Production Chain
      */
@@ -161,58 +160,50 @@ export default {
     },
 
     /**
-     * Filter the social classes for the ones available in the selected region.
+     * Filter the population levels for the ones available in the selected region.
      *
-     * @return {array} The social classes of the selected region.
+     * @return {array} The population levels of the selected region.
      */
     selectedPopulations: function () {
-      const populations = Object.values(this.populations)
-      const region = this.getRegionByID(this.selectedRegionID)
-      return populations.filter(
-        (population) => region.populationIDs.includes(population.id)
-      )
+      // const populationGroup = populationGroups.find(popGroup => popGroup.region === this.selectedRegionGUID)
+      return populationLevels.filter(popLevel => popLevel.region === this.selectedRegionGUID)
     },
 
     /**
-     * Filter the production chains for the ones available in the selected social class.
+     * Filter the production chains for the ones available in the selected population level.
      *
-     * @return {array} The production chains of the selected region and social class.
+     * @return {array} The production chains of the selected region and population level.
      */
     selectedProductionChains: function () {
       const productionChains = Object.values(this.productionChainsData)
-      console.log(productionChains)
-      return productionChains.filter(
-        (chain) => chain.populationID === this.selectedPopulationID
-      )
+      return productionChains.filter((chain) => chain.populationGUID === this.selectedPopulationGUID)
     }
   },
   methods: {
     /**
-     * After changing the region, display the first social class.
+     * After changing the region, display the first population level.
      *
-     * @param {int} regionID The id of the region that caused this reset.
+     * @param {int} regionGUID The id of the region that caused this reset.
      */
-    changeRegion: function (regionID) {
-      const selectedRegion = this.getRegionByID(regionID)
-      this.selectedRegionID = selectedRegion.id
+    changeRegion: function (regionGUID) {
+      this.selectedRegionGUID = regionGUID
 
-      const selectedPopulation = this.getPopulationByID(
-        selectedRegion.populationIDs[0]
-      )
-      this.selectedPopulationID = selectedPopulation.id
+      const selectedPopulation = populationLevels.find(popLevel => popLevel.region === this.selectedRegionGUID)
+      this.selectedPopulationGUID = selectedPopulation.guid
 
-      this.changePopulation(selectedPopulation.id)
+      this.changePopulation(selectedPopulation.guid)
       EventBus.$emit('bottomNavBarChanged')
     },
 
     /**
-     * After changing the social class, display the first production chain.
+     * After changing the population level, display the first production chain.
      *
-     * @param {int} populationID The id of the social class that caused this reset.
+     * @param {int} populationGUID The id of the population level that caused this reset.
      */
-    changePopulation: function (populationID) {
-      const population = this.getPopulationByID(populationID)
-      this.selectedProductionChainID = population.firstProductionChain
+    changePopulation: function (populationGUID) {
+      const legacyPopulation = Object.values(legacyPopulations).filter((pop) => pop.guid === populationGUID)
+      const firstProductionChainID = legacyPopulation[0].firstProductionChain
+      this.selectedProductionChainID = firstProductionChainID
     },
 
     /**
@@ -223,30 +214,6 @@ export default {
      */
     setProductionChain (productionChain) {
       this.$store.commit('changeProductionChain', productionChain)
-    },
-
-    /**
-     * Searches all regions by their region id
-     *
-     * @param {int} id
-     * @return {Object} The selected region Object
-     */
-    getRegionByID (id) {
-      const regions = Object.values(this.regions)
-      const selectedRegion = regions.filter((region) => region.id === id)[0]
-      return selectedRegion
-    },
-
-    /**
-     * Searches all social classes by their social class id
-     *
-     * @param {int} id
-     * @return {Object} The selected Social Class Object
-     */
-    getPopulationByID (id) {
-      const populations = Object.values(this.populations)
-      const selectedPopulation = populations.filter((population) => population.id === id)[0]
-      return selectedPopulation
     }
   }
 }

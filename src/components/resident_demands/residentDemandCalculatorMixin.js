@@ -184,12 +184,12 @@ export default {
     selectChain (product) {
       const helperFunctionMixin = this
       const selectedChain = this.getProductionChainByProductName(product)
-      const population = helperFunctionMixin.getPopulationByID(selectedChain.populationID)
-      const region = helperFunctionMixin.getRegionByID(population.regionID)
+      const population = helperFunctionMixin.getPopulationByGUID(selectedChain.populationGUID)
+      const region = helperFunctionMixin.getRegionByGUID(population.regionGUID)
       this.$store.commit(
-        'changeSelectionIDs', {
-          regionID: region.id,
-          populationID: population.id,
+        'changeSelectionGUIDs', {
+          regionGUID: region.guid,
+          populationGUID: population.guid,
           chainID: selectedChain.id
         })
       this.$store.commit('changeProductionChain', selectedChain)
