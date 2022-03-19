@@ -27,6 +27,10 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 ---
 
 ## Changelog:
+- ``2022-03-19`` ``v0.4.11`` Update dependencies using yarn
+- ``2022-03-10`` ``v0.4.10`` Show version info in About view
+- ``2022-03-10`` ``v0.4.9`` Bug fixes and performance improvements...
+- ``2022-03-09`` ``v0.4.8`` Switch ordering in sidebar: first Demands second Chains
 - ``2020-01-02`` ``v0.4.7`` Fix layout of production chains
 - ``2020-01-02`` ``v0.4.6`` Refactored Vuex - thx to [Cahllagerfeld](https://github.com/Cahllagerfeld)
 - ``2020-01-01`` ``v0.4.5`` Replace greedy Travis-CI with GitHub Actions! 🚀 Fix some smaller issues
