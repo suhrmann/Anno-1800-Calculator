@@ -61,7 +61,7 @@ export default {
   production: null,
 
   /**
-   * The calculated consumption per good. Inited with no demands / consumption.
+   * The calculated consumption per good. Inited with no needs / consumption.
    * Unit: Consumption per Minute
    */
   consumption: {
@@ -114,10 +114,10 @@ export default {
    */
   config: {
     prodcution_chains: {
-      open_workforce_demand: 0,
+      open_workforce_need: 0,
       open_construction_costs: 0
     },
-    demands: {
+    needs: {
       population_input_tab: 'population',
       is_sorted_by: 'isConsumable'
     }

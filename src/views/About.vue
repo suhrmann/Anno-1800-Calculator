@@ -168,12 +168,15 @@
     <h2>📣 Shout Out</h2>
     <ul>
       <li>
-        <b>Banan1996.1996</b> an admin of Anno 1800 Wiki. Thank you for your help and the tons of work, spent  the
-        awesome <a href="">Anno 1800 Wiki</a>!
+        <h3>Nico Höllerich <a href="https://github.com/NiHoel">@NiHoel <small>[GitHub.com]</small></a></h3>
+        We are using his <code>params.js</code> that contains all the Anno 1800 information directly from the game. <br>
+        Check out his awesome <a href="https://nihoel.github.io/Anno1800Calculator/">Anno 1800 Calculator</a> together with his
+        <a href="https://github.com/NiHoel/Anno1800UXEnhancer">Anno1800UXEnhancer</a> if you want to calculate needs with production and
+        population modifiers!
       </li>
       <li>
-        <b>NiHoel</b> for his, in a positive way ;) technically insane <a href="https://nihoel.github.io/Anno1800Calculator/">Anno 1800 Calculator</a>,
-        especially for writing the <a href="https://github.com/NiHoel/Anno1800UXEnhancer">Anno1800UXEnhancer</a>. Servus!
+        <b>Banan1996.1996</b> an admin of Anno 1800 Wiki. Thank you for your help and the tons of work, spent  the
+        awesome <a href="">Anno 1800 Wiki</a>!
       </li>
       <li>
         <b>Schwubbe</b> for his awesome <a href="https://schwubbe.de/">Anno 1800 Warenrechner [Anno 1800 Calculator]</a> <br>

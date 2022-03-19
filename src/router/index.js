@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '@/views/Home.vue'
 import ProductionChains from '@/views/ProductionChains'
-import ResidentDemands from '@/views/PopulationDemands'
+import ResidentNeeds from '@/views/PopulationNeeds'
 import ProductionLayouts from '@/views/ProductionLayouts'
 import Settings from '@/views/Settings'
 import About from '@/views/About'
@@ -28,9 +28,9 @@ const routes = [
     component: ProductionChains
   },
   {
-    path: '/demands',
-    name: 'resident-demands',
-    component: ResidentDemands
+    path: '/needs',
+    name: 'resident-needs',
+    component: ResidentNeeds
   },
   {
     path: '/layouts',

@@ -46,7 +46,7 @@ export default {
       { icon: 'mdi-home', text: 'Home', route: '/home' },
       { divider: true },
       { heading: 'Production' },
-      { icon: 'mdi-trending-up', text: 'Resident Demand', route: '/demands' },
+      { icon: 'mdi-trending-up', text: 'Population Needs', route: '/needs' },
       { icon: 'mdi-call-merge', text: 'Production Chains', route: '/chains' },
       { divider: true },
       { heading: 'Information' },

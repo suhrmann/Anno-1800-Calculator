@@ -9,8 +9,8 @@
         v-model="cigarsInfo"
         class="md10 xs12"
       >
-        Cigars are both basic demand for investors and luxury demand for
-        obreros. Therefore cigars appear twice in the demands table.
+        Cigars are both basic need for investors and luxury need for
+        obreros. Therefore cigars appear twice in the needs table.
       </v-alert>
     </v-col>
     <v-col cols="12">
@@ -25,12 +25,12 @@
         <v-card-text class="ma-0 py-0">
           <v-container fluid>
             <v-layout row wrap class="my-0 py-0">
-              <!-- Filter by demand type -->
+              <!-- Filter by need type -->
               <v-flex xs12 sm6 md6 lg6>
                 <v-radio-group v-model="radios1" class="my-0">
                   <template slot="label">
                     <v-icon color="black">mdi-filter</v-icon>
-                    <strong>Filter Demand Type</strong>
+                    <strong>Filter Need Type</strong>
                   </template>
                   <v-radio
                     label="All"
@@ -77,13 +77,13 @@
         </v-card-title>
         <v-data-table
           :headers="headers"
-          :items="totalDemandsDatatable"
+          :items="totalNeedsDatatable"
           disable-pagination
           class="elevation-1"
           multi-sort
           hide-default-footer
           show-group-by
-          :group-by.sync="sort_demands_by"
+          :group-by.sync="sort_needs_by"
         >
           <!-- Warn about no data -->
           <template slot="no-data">
@@ -91,7 +91,7 @@
               <h3>Sorry, nothing to display here :(</h3>
               <p class="mb-0">
                 Enter the number of your populations to start calculation of
-                demands.
+                needs.
               </p>
             </v-alert>
           </template>
@@ -208,10 +208,10 @@
 </template>
 
 <script>
-import residentDemandCalculatorMixin from './residentDemandCalculatorMixin.js'
+import residentNeedCalculatorMixin from './residentNeedCalculatorMixin.js'
 
 export default {
-  name: 'ResidentDemandsTable',
+  name: 'ResidentNeedsTable',
   data: function () {
     return {
       // The values of the radio buttons to filter table
@@ -274,7 +274,7 @@ export default {
       ]
     }
   },
-  mixins: [residentDemandCalculatorMixin],
+  mixins: [residentNeedCalculatorMixin],
   computed: {
     /**
      * Display an alert to info about duplicate items in the table.
@@ -285,7 +285,7 @@ export default {
 
     FILTER_VALUES: function () {
       return {
-        // Filter values for demand type
+        // Filter values for need type
         TYPE_ALL: 'all',
         TYPE_BASIC: 'basic',
         TYPE_LUXURY: 'luxury',
@@ -311,17 +311,17 @@ export default {
       return this.radios2 === this.FILTER_VALUES.CONSUMABLE_NON
     },
 
-    sort_demands_by: {
+    sort_needs_by: {
       get () {
-        return this.$store.state.config.demands.is_sorted_by
+        return this.$store.state.config.needs.is_sorted_by
       },
       set (value) {
-        this.$store.commit('sort_demands_by', value)
+        this.$store.commit('sort_needs_by', value)
       }
     },
 
     /**
-     * Preprocess the populations' demands for Data Table of Vuetify.
+     * Preprocess the populations' needs for Data Table of Vuetify.
      *
      * @return {array} An array of objects of type:
      *   {
@@ -330,30 +330,30 @@ export default {
      *       ...
      *   }
      */
-    totalDemandsDatatable: function () {
-      const basicNeeds = this.totalDemands.basic
-      const luxuryNeeds = this.totalDemands.luxury
+    totalNeedsDatatable: function () {
+      const basicNeeds = this.totalNeeds.basic
+      const luxuryNeeds = this.totalNeeds.luxury
 
       const items = []
 
-      // Iterate over demands of basic / luxury
-      for (const demands of [basicNeeds, luxuryNeeds]) {
+      // Iterate over needs of basic / luxury
+      for (const needs of [basicNeeds, luxuryNeeds]) {
         // eslint-disable-line guard-for-in
-        const isBasic = demands === basicNeeds
-        const isLuxury = demands === luxuryNeeds
+        const isBasic = needs === basicNeeds
+        const isLuxury = needs === luxuryNeeds
 
-        // Iterate over all demands of the current population
-        for (const [dKey, demand] of Object.entries(demands)) {
-          // Only add demand if it is present or > 0
-          if (demand === true || demand > 0) {
+        // Iterate over all needs of the current population
+        for (const [dKey, need] of Object.entries(needs)) {
+          // Only add need if it is present or > 0
+          if (need === true || need > 0) {
             // TODO Create data here instead of in HTML table
             items.push({
               type: isBasic ? 'basic' : isLuxury ? 'luxury' : 'N/A',
-              isBasic: demands === basicNeeds,
-              isLuxury: demands === luxuryNeeds,
+              isBasic: needs === basicNeeds,
+              isLuxury: needs === luxuryNeeds,
               name: dKey,
-              consumption: demand,
-              isConsumable: this.isConsumable(dKey, demand)
+              consumption: need,
+              isConsumable: this.isConsumable(dKey, need)
             })
           }
         }
@@ -400,7 +400,7 @@ export default {
     },
 
     /**
-     * The efficiency of this production chain to fulfill the demands.
+     * The efficiency of this production chain to fulfill the needs.
      *
      * @param {string} product The name of the product.
      * @param {number} consumption The population consumes this much products per minute.
@@ -422,13 +422,13 @@ export default {
       return efficiency
     },
 
-    isBasicDemand: function (need) {
-      const basicNeeds = this.totalDemands.basic
+    isBasicNeed: function (need) {
+      const basicNeeds = this.totalNeeds.basic
       return need in basicNeeds // Check if OBJECT contains key
     },
 
-    isLuxuryDemand: function (need) {
-      const luxuryNeeds = this.totalDemands.luxury
+    isLuxuryNeed: function (need) {
+      const luxuryNeeds = this.totalNeeds.luxury
       return need in luxuryNeeds // Check if OBJECT contains key
     }
   }

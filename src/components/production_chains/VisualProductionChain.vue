@@ -33,15 +33,15 @@
         <v-row>
           <v-col>
             <v-expansion-panels
-              v-model="open_workforce_demand"
+              v-model="open_workforce_need"
               tile
               flat
             >
               <v-expansion-panel class="secondary pa-1">
                 <v-expansion-panel-header>
-                  <h3>Workforce Demand</h3>
+                  <h3>Workforce Need</h3>
                   <v-flex class="pa-0 ma-0" xs3>
-                    <v-btn @click.stop="changeResidents()">Add to Demands</v-btn>
+                    <v-btn @click.stop="changeResidents()">Add to Needs</v-btn>
                   </v-flex>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content eager>
@@ -134,7 +134,7 @@
         <v-slider @input="changeCounter()" max="50" min="1" v-model="chainCount"></v-slider>
       </v-flex>
       <v-flex xs3 mr-5 pr-5 >
-        <v-btn v-if="isConsumable" @click="matchDemands()">Match Demands</v-btn>
+        <v-btn v-if="isConsumable" @click="matchNeeds()">Match Needs</v-btn>
       </v-flex>
     </v-row>
   </v-container>
@@ -227,21 +227,21 @@ export default {
     },
 
     /**
-     * The consumption per minute, calculated in view Resident Demands calculator.
+     * The consumption per minute, calculated in view Resident Needs calculator.
      *
      * @return {number|null} Number >= 0 if product is consumable, otherwise null.
      */
     consumptionPerMinute () {
       // Find consumption of currently selected product.
       const currentProduct = this.productionChain.finalProduct
-      const demands = this.$store.state.consumption
-      const unifiedDemandsObject = JSON.parse(JSON.stringify(demands.basic))
+      const needs = this.$store.state.consumption
+      const unifiedNeedsObject = JSON.parse(JSON.stringify(needs.basic))
       Object.assign(
-        unifiedDemandsObject,
-        JSON.parse(JSON.stringify(demands.luxury))
+        unifiedNeedsObject,
+        JSON.parse(JSON.stringify(needs.luxury))
       )
 
-      const consumption = unifiedDemandsObject[currentProduct]
+      const consumption = unifiedNeedsObject[currentProduct]
 
       // Return consumption of product, or null.
       return isNaN(consumption) ? null : consumption
@@ -296,12 +296,12 @@ export default {
       return consumablesArray
     },
 
-    open_workforce_demand: {
+    open_workforce_need: {
       get () {
-        return this.$store.state.config.prodcution_chains.open_workforce_demand
+        return this.$store.state.config.prodcution_chains.open_workforce_need
       },
       set (value) {
-        this.$store.commit('toggle_workforce_demand', value)
+        this.$store.commit('toggle_workforce_need', value)
       }
     },
     open_construction_costs: {
@@ -316,7 +316,7 @@ export default {
   },
 
   methods: {
-    matchDemands () {
+    matchNeeds () {
       this.chainCount = Math.ceil(this.consumptionPerMinute / (1 / (this.spt / 60)))
     },
 
@@ -386,7 +386,7 @@ export default {
 
     changeResidents () {
       // emits event in WorkerPanel.vue
-      EventBus.$emit('addToDemands')
+      EventBus.$emit('addToNeeds')
     }
   }
 }

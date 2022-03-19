@@ -50,7 +50,7 @@
 
       <div class="my-4">
         <h2>Description</h2>
-        <p>With Anno 1800 Calculator you can calculate your population demands for goods and build optimal production chains.</p>
+        <p>With Anno 1800 Calculator you can calculate your population needs for goods and build optimal production chains.</p>
         <table>
           <tr>
             <td>
@@ -61,7 +61,7 @@
                 <router-link to="/chains">Production Chains:</router-link>
               </b>
             </td>
-            <td>Enter your population or their residents and calculate their resulting demand for goods.</td>
+            <td>Enter your population or their residents and calculate their resulting need for goods.</td>
           </tr>
           <tr>
             <td>
@@ -69,7 +69,7 @@
             </td>
             <td>
               <b>
-                <router-link to="/demands">Resident Demand:</router-link>
+                <router-link to="/needs">Resident Need:</router-link>
               </b>
             </td>
             <td>Displays the optimal ratio of all production chains in the game in an appealing production chain tree.</td>

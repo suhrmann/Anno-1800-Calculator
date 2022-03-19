@@ -4,7 +4,7 @@ export default {
   setSelectedDLCs (state, dlcsArray) {
     state.selectedDLCs = dlcsArray
   },
-  addToPopulationDemands (state, populationObject) {
+  addToPopulationNeeds (state, populationObject) {
     state.population.numFarmers =
       Number(state.population.numFarmers) + Number(populationObject.farmers)
     state.population.numWorkers =
@@ -93,7 +93,7 @@ export default {
   // Set number of population
   //
   /**
-   * Set the number of farmers for demands calculation.
+   * Set the number of farmers for needs calculation.
    * @param {object} state
    * @param {float} numFarmers The new number of farmers
    */
@@ -101,7 +101,7 @@ export default {
     state.population.numFarmers = numFarmers
   },
   /**
-   * Set the number of workers for demands calculation.
+   * Set the number of workers for needs calculation.
    * @param {object} state
    * @param {float} numWorkers The new number of workers
    */
@@ -109,7 +109,7 @@ export default {
     state.population.numWorkers = numWorkers
   },
   /**
-   * Set the number of artisans for demands calculation.
+   * Set the number of artisans for needs calculation.
    * @param {object} state
    * @param {float} numArtisans The new number of artisans
    */
@@ -117,7 +117,7 @@ export default {
     state.population.numArtisans = numArtisans
   },
   /**
-   * Set the number of engineers for demands calculation.
+   * Set the number of engineers for needs calculation.
    * @param {object} state
    * @param {float} numEngineers The new number of engineers
    */
@@ -125,7 +125,7 @@ export default {
     state.population.numEngineers = numEngineers
   },
   /**
-   * Set the number of investors for demands calculation.
+   * Set the number of investors for needs calculation.
    * @param {object} state
    * @param {float} numInvestors The new number of investors
    */
@@ -133,7 +133,7 @@ export default {
     state.population.numInvestors = numInvestors
   },
   /**
-   * Set the number of scholars for demands calculation.
+   * Set the number of scholars for needs calculation.
    * @param {object} state
    * @param {float} numScholars The new number of scholars
    */
@@ -141,7 +141,7 @@ export default {
     state.population.numScholars = numScholars
   },
   /**
-   * Set the number of jornaleros for demands calculation.
+   * Set the number of jornaleros for needs calculation.
    * @param {object} state
    * @param {float} numJornaleros The new number of farmers
    */
@@ -149,7 +149,7 @@ export default {
     state.population.numJornaleros = numJornaleros
   },
   /**
-   * Set the number of obreros for demands calculation.
+   * Set the number of obreros for needs calculation.
    * @param {object} state
    * @param {float} numObreros The new number of farmers
    */
@@ -158,7 +158,7 @@ export default {
   },
 
   /**
-   * Set the number of obreros for demands calculation.
+   * Set the number of obreros for needs calculation.
    * @param {object} state
    * @param {float} numExplorers The new number of farmers
    */
@@ -166,7 +166,7 @@ export default {
     state.population.numExplorers = numExplorers
   },
   /**
-   * Set the number of obreros for demands calculation.
+   * Set the number of obreros for needs calculation.
    * @param {object} state
    * @param {float} numTechnicians The new number of farmers
    */
@@ -175,7 +175,7 @@ export default {
   },
 
   /**
-   * Set the number of obreros for demands calculation.
+   * Set the number of obreros for needs calculation.
    * @param {object} state
    * @param {float} numShepherds The new number of farmers
    */
@@ -183,7 +183,7 @@ export default {
     state.population.numShepherds = numShepherds
   },
   /**
-   * Set the number of obreros for demands calculation.
+   * Set the number of obreros for needs calculation.
    * @param {object} state
    * @param {float} numElders The new number of farmers
    */
@@ -192,23 +192,23 @@ export default {
   },
 
   /**
-   * Set the calculated populations' demands.
+   * Set the calculated populations' needs.
    *
    * @param {object} state
-   * @param {object} consumption The calculated populations' demands.
-   *          For object structure see ResidentDemandCalculator.computed.totalDemands
+   * @param {object} consumption The calculated populations' needs.
+   *          For object structure see ResidentNeedCalculator.computed.totalNeeds
    */
   setConsumption (state, consumption) {
     state.consumption = consumption
   },
 
   /**
-   * Toggle (open / close) the workforce demand of a production chain.
+   * Toggle (open / close) the workforce need of a production chain.
    * @param {object} state
    * @param {boolean} isOpen
    */
-  toggle_workforce_demand (state, isOpen) {
-    state.config.prodcution_chains.open_workforce_demand = Boolean(isOpen)
+  toggle_workforce_need (state, isOpen) {
+    state.config.prodcution_chains.open_workforce_need = Boolean(isOpen)
   },
 
   /**
@@ -221,13 +221,13 @@ export default {
   },
 
   /**
-   * Change the input of population for demands: Population or residence
+   * Change the input of population for needs: Population or residence
    * @param state
    * @param newTab {string} 'population' or 'residence'
    */
   set_population_tab (state, newTab) {
     if (newTab === 'population' || newTab === 'residence') {
-      state.config.demands.population_input_tab = String(newTab)
+      state.config.needs.population_input_tab = String(newTab)
     } else {
       console.error('Unknown type of population input ' + newTab + '.')
     }
@@ -236,9 +236,9 @@ export default {
   /**
    * Toggle (open / close) the construction costs of a production chain.
    * @param {object} state
-   * @param {string} sortedDemandsBy
+   * @param {string} sortedNeedsBy
    */
-  sort_demands_by (state, sortedDemandsBy) {
-    state.config.demands.is_sorted_by = sortedDemandsBy
+  sort_needs_by (state, sortedNeedsBy) {
+    state.config.needs.is_sorted_by = sortedNeedsBy
   }
 }

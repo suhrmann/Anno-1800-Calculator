@@ -2,11 +2,11 @@
   <v-container fluid fill-height>
     <v-row>
       <v-col>
-        <h1>Resident Demands</h1>
+        <h1>Resident Needs</h1>
       </v-col>
     </v-row>
 
-    <!-- Resident Demands -->
+    <!-- Resident Needs -->
     <v-row>
       <v-col>
         <v-card>
@@ -56,21 +56,21 @@
         </v-card>
       </v-col>
     </v-row>
-    <!-- Demands as table -->
-    <resident-demands-table></resident-demands-table>
+    <!-- Needs as table -->
+    <resident-needs-table></resident-needs-table>
   </v-container>
 </template>
 
 <script>
-import PopulationInput from '@/components/resident_demands/PopulationInput'
-import ResidenceInput from '@/components/resident_demands/ResidenceInput'
-import ResidentDemandsTable from '@/components/resident_demands/ResidentDemandsTable'
-import residentDemandCalculatorMixin from '@/components/resident_demands/residentDemandCalculatorMixin.js'
+import PopulationInput from '@/components/resident_needs/PopulationInput'
+import ResidenceInput from '@/components/resident_needs/ResidenceInput'
+import ResidentNeedsTable from '@/components/resident_needs/ResidentNeedsTable'
+import residentNeedCalculatorMixin from '@/components/resident_needs/residentNeedCalculatorMixin.js'
 
 export default {
-  name: 'ResidentDemands',
+  name: 'ResidentNeeds',
   components: {
-    'resident-demands-table': ResidentDemandsTable,
+    'resident-needs-table': ResidentNeedsTable,
 
     'population-input': PopulationInput,
     'residence-input': ResidenceInput
@@ -81,12 +81,12 @@ export default {
     next(vm => {
       if (vm.$route.query.linkedFromChains === true) {
         const newPop = vm.$route.query.populationToAdd
-        vm.$store.commit('addToPopulationDemands', newPop)
+        vm.$store.commit('addToPopulationNeeds', newPop)
       }
     })
   },
 
-  mixins: [residentDemandCalculatorMixin],
+  mixins: [residentNeedCalculatorMixin],
 
   computed: {
     /**
@@ -95,7 +95,7 @@ export default {
     currentTab: {
       get: function () {
         // Convert tab names (string) from storage to numeric tab ids
-        switch (this.$store.state.config.demands.population_input_tab) {
+        switch (this.$store.state.config.needs.population_input_tab) {
           case 'population':
             return 0
           case 'residence':
@@ -103,7 +103,7 @@ export default {
           default:
             console.error(
               'Unknown tab from store ' +
-                this.$store.state.config.demands.population_input_tab
+                this.$store.state.config.needs.population_input_tab
             )
             return -1
         }

@@ -11,7 +11,7 @@ import {
 } from '../helperFunctionMixin'
 
 export default {
-  name: 'ResidentDemandCalculator',
+  name: 'ResidentNeedCalculator',
   mixins: [chainNodeMixin, helperFunctionMixin],
   data: function () {
     return {
@@ -33,9 +33,9 @@ export default {
       // Convert value per residence to per population
       Object.keys(consumption).forEach(pop => {
         Object.keys(consumption[pop]).forEach(type => {
-          Object.keys(consumption[pop][type]).forEach(demand => {
+          Object.keys(consumption[pop][type]).forEach(need => {
             const populationPerResidence = this.population[pop].residence
-            consumption[pop][type][demand] = consumption[pop][type][demand] / populationPerResidence
+            consumption[pop][type][need] = consumption[pop][type][need] / populationPerResidence
           })
         })
       })
@@ -47,71 +47,71 @@ export default {
     },
 
     /**
-     * Merge the various population's demands into one object.
+     * Merge the various population's needs into one object.
      *
-     * @return {object} The basic and luxury demands of the population.
+     * @return {object} The basic and luxury needs of the population.
      *         Structure: {
      *           basic: {
      *             <Product>: {number} <consumption>
-     *             <Demand-Building>: {boolean}
+     *             <Need-Building>: {boolean}
      *           }
      *           luxury: {
      *             <Product>: {number} <consumption>
-     *             <Demand-Building>: {boolean}
+     *             <Need-Building>: {boolean}
      *           }
      *         }
      */
-    totalDemands: function () {
-      // Merge all demands
+    totalNeeds: function () {
+      // Merge all needs
       const _self = this
-      const demands = Object.assign(...Object.keys(this.consumptionPerPopulation).map(
+      const needs = Object.assign(...Object.keys(this.consumptionPerPopulation).map(
         pop => {
           const numPopStr = 'num' + pop.charAt(0).toUpperCase() + pop.slice(1) // build e.g. "numFarmers" from "farmers"
           return {
             [pop]: {
-              basic: _self.calculateDemands(_self.consumptionPerPopulation[pop].basic, _self.numPopulation[numPopStr]),
-              luxury: _self.calculateDemands(_self.consumptionPerPopulation[pop].luxury, _self.numPopulation[numPopStr])
+              basic: _self.calculateNeeds(_self.consumptionPerPopulation[pop].basic, _self.numPopulation[numPopStr]),
+              luxury: _self.calculateNeeds(_self.consumptionPerPopulation[pop].luxury, _self.numPopulation[numPopStr])
             }
           }
         }
       ))
 
-      const totalDemands = {
+      const totalNeeds = {
         basic: {},
         luxury: {}
       }
       // Iterate over all populations
-      for (const [pKey, population] of Object.entries(demands)) { // eslint-disable-line no-unused-vars
+      for (const [pKey, population] of Object.entries(needs)) { // eslint-disable-line no-unused-vars
         // Iterate over basic / luxury
-        for (const [dtKey, demandType] of Object.entries(population)) {
-          // Iterate over all demands of the current population
-          for (const [dKey, demand] of Object.entries(demandType)) {
-            // Init demand with 0 if it does not exist in total demands
-            if (!totalDemands[dtKey][dKey]) {
-              totalDemands[dtKey][dKey] = 0
+        for (const [dtKey, needType] of Object.entries(population)) {
+          // Iterate over all needs of the current population
+          for (const [dKey, need] of Object.entries(needType)) {
+            // Init need with 0 if it does not exist in total needs
+            if (!totalNeeds[dtKey][dKey]) {
+              totalNeeds[dtKey][dKey] = 0
             }
 
-            // Sum up new demands
-            if (typeof demand === 'number') {
-              // Demand is consumable -> Add consumption to existing.
-              totalDemands[dtKey][dKey] += demand
+            // Sum up new needs
+            if (typeof need === 'number') {
+              // Need is consumable -> Add consumption to existing.
+              totalNeeds[dtKey][dKey] += need
             } else {
-              // Demand has area effect -> Enable / disable
-              totalDemands[dtKey][dKey] = totalDemands[dtKey][dKey] || demand
+              // Need has area effect -> Enable / disable
+              totalNeeds[dtKey][dKey] = totalNeeds[dtKey][dKey] || need
             }
           }
         }
       }
-      return totalDemands
+      return totalNeeds
     }
   },
   watch: {
     /**
-     * Whenever total demands is recalculated, commit changes to Vuex store.
+     * Whenever total needs is recalculated, commit changes to Vuex store.
      * @param {object} newConsumption
      * @param {object} oldConsumption Unused.
      */
-    totalDemands: function (newConsumption, oldConsumption) {
+    totalNeeds: function (newConsumption, oldConsumption) {
       this.$store.commit('setConsumption', newConsumption)
     }
   },
@@ -143,16 +143,16 @@ export default {
     getImage (image, folder) {
       return image ? require(`@/assets/${folder}/${image}`) : ''
     },
-    calculateDemands: function (populationDemands, numPopulation) {
-      const demands = {}
-      for (const [key, demand] of Object.entries(populationDemands)) {
-        if (demand) {
-          demands[key] = demand * numPopulation
+    calculateNeeds: function (populationNeeds, numPopulation) {
+      const needs = {}
+      for (const [key, need] of Object.entries(populationNeeds)) {
+        if (need) {
+          needs[key] = need * numPopulation
         } else {
-          demands[key] = numPopulation > 0
+          needs[key] = numPopulation > 0
         }
       }
-      return demands
+      return needs
     },
 
     /**
