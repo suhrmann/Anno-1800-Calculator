@@ -100,7 +100,7 @@
                 <v-icon large color="green">mdi-arrow-up</v-icon>
               </v-btn>
               <v-img
-                :src="require('@/assets/buildings/farmers/warehouse.webp')"
+                :src="require('@/assets/buildings/warehouse.webp')"
                 max-height="100px"
                 min-height="33px"
                 contain
