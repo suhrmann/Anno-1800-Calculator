@@ -31,7 +31,7 @@
               Residence
               <v-avatar>
                 <img
-                  src="@/assets/buildings/farmers/residence.webp"
+                  src="@/assets/buildings/residence.webp"
                   alt="avatar"
                 />
               </v-avatar>

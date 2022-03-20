@@ -6,7 +6,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 old-world-indicator">
           <v-avatar>
             <img src="@/assets/population/farmers.webp" alt="Farmers" />
           </v-avatar>
@@ -24,7 +24,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 old-world-indicator">
           <v-avatar>
             <img src="@/assets/population/workers.webp" alt="Workers" />
           </v-avatar>
@@ -42,7 +42,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 old-world-indicator">
           <v-avatar>
             <img src="@/assets/population/artisans.webp" alt="Artisans" />
           </v-avatar>
@@ -60,7 +60,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 old-world-indicator">
           <v-avatar>
             <img src="@/assets/population/engineers.webp" alt="Engineers" />
           </v-avatar>
@@ -77,7 +77,7 @@
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
-        ><v-card class="text-center pa-2">
+        ><v-card class="text-center pa-2 old-world-indicator">
           <v-avatar>
             <img src="@/assets/population/investors.webp" alt="Investors" />
           </v-avatar>
@@ -96,7 +96,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 old-world-indicator">
           <v-avatar>
             <img src="@/assets/population/scholars.webp" alt="Scholars" />
           </v-avatar>
@@ -110,11 +110,30 @@
       </v-col>
 
       <v-col
+        v-if="hasLandOfLions"
         :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 old-world-indicator">
+          <v-avatar>
+            <img src="@/assets/population/tourists.webp" alt="Tourists" />
+          </v-avatar>
+          <v-text-field
+            v-model="numTourists"
+            label="Tourists"
+            type="number"
+            min="0"
+          ></v-text-field>
+        </v-card>
+      </v-col>
+
+      <v-col
+        :cols="$vuetify.breakpoint.smAndDown ? 6 : false"
+        :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
+        :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
+      >
+        <v-card class="text-center pa-2 new-world-indicator">
           <v-avatar>
             <img src="@/assets/population/jornaleros.webp" alt="Jornaleros" />
           </v-avatar>
@@ -132,7 +151,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 new-world-indicator">
           <v-avatar>
             <img src="@/assets/population/obreros.webp" alt="Obreros" />
           </v-avatar>
@@ -151,7 +170,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 arctic-indicator">
           <v-avatar>
             <img src="@/assets/population/explorers.webp" alt="Explorers" />
           </v-avatar>
@@ -170,7 +189,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 arctic-indicator">
           <v-avatar>
             <img src="@/assets/population/technicians.webp" alt="Technicians" />
           </v-avatar>
@@ -189,7 +208,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 enbesa-indicator">
           <v-avatar>
             <img src="@/assets/population/shepherd.webp" alt="Shepherds" />
           </v-avatar>
@@ -208,7 +227,7 @@
         :sm="$vuetify.breakpoint.smAndDown ? 4 : false"
         :lg="$vuetify.breakpoint.lgAndDown ? 2 : false"
       >
-        <v-card class="text-center pa-2">
+        <v-card class="text-center pa-2 enbesa-indicator">
           <v-avatar>
             <img src="@/assets/population/elders.webp" alt="Elders" />
           </v-avatar>
@@ -236,60 +255,42 @@ export default {
   },
   computed: {
     hasPassage () {
-      return this.$store.getters.hasPassage
+      return true || this.$store.getters.hasPassage // TODO implement properly
     },
     hasLandOfLions () {
-      return this.$store.getters.hasLandOfLions
+      return true || this.$store.getters.hasLandOfLions // TODO implement properly
     },
+    // Old World
     numFarmers: {
-      get: function () {
-        return this.$store.state.population.numFarmers
-      },
-      set: function (numFarmers) {
-        this.$store.commit('setNumFarmers', numFarmers)
-      }
+      get: function () { return this.$store.state.population.numFarmers },
+      set: function (numFarmers) { this.$store.commit('setNumFarmers', numFarmers) }
     },
     numWorkers: {
-      get: function () {
-        return this.$store.state.population.numWorkers
-      },
-      set: function (numWorkers) {
-        this.$store.commit('setNumWorkers', numWorkers)
-      }
+      get: function () { return this.$store.state.population.numWorkers },
+      set: function (numWorkers) { this.$store.commit('setNumWorkers', numWorkers) }
     },
     numArtisans: {
-      get: function () {
-        return this.$store.state.population.numArtisans
-      },
-      set: function (numArtisans) {
-        this.$store.commit('setNumArtisans', numArtisans)
-      }
+      get: function () { return this.$store.state.population.numArtisans },
+      set: function (numArtisans) { this.$store.commit('setNumArtisans', numArtisans) }
     },
     numEngineers: {
-      get: function () {
-        return this.$store.state.population.numEngineers
-      },
-      set: function (numEngineers) {
-        this.$store.commit('setNumEngineers', numEngineers)
-      }
+      get: function () { return this.$store.state.population.numEngineers },
+      set: function (numEngineers) { this.$store.commit('setNumEngineers', numEngineers) }
     },
     numInvestors: {
-      get: function () {
-        return this.$store.state.population.numInvestors
-      },
-      set: function (numInvestors) {
-        this.$store.commit('setNumInvestors', numInvestors)
-      }
+      get: function () { return this.$store.state.population.numInvestors },
+      set: function (numInvestors) { this.$store.commit('setNumInvestors', numInvestors) }
     },
     numScholars: {
-      get: function () {
-        return this.$store.state.population.numScholars
-      },
-      set: function (numScholars) {
-        this.$store.commit('setNumScholars', numScholars)
-      }
+      get: function () { return this.$store.state.population.numScholars },
+      set: function (numScholars) { this.$store.commit('setNumScholars', numScholars) }
+    },
+    numTourists: {
+      get: function () { return this.$store.state.population.numTourists },
+      set: function (numTourists) { return this.$store.commit('setNumTourists', numTourists) }
     },
 
+    // New World
     numJornaleros: {
       get: function () {
         return this.$store.state.population.numJornaleros
@@ -307,6 +308,7 @@ export default {
       }
     },
 
+    // Arctic
     numExplorers: {
       get: function () {
         return this.$store.state.population.numExplorers
@@ -324,6 +326,7 @@ export default {
       }
     },
 
+    // Enbesa
     numShepherds: {
       get: function () {
         return this.$store.state.population.numShepherds
@@ -345,7 +348,24 @@ export default {
 </script>
 
 <style scoped>
-.centered-input >>> input {
-  text-align: right;
+.old-world-indicator {
+  background-image: url('~@/assets/regions/the-old-world.webp');
+  background-size: 30px 30px;
+  background-position: right 5px top 5px;
+}
+.new-world-indicator {
+  background-image: url('~@/assets/regions/the-new-world.webp');
+  background-size: 30px 30px;
+  background-position: right 5px top 5px;
+}
+.arctic-indicator {
+  background-image: url('~@/assets/regions/the-arctic.webp');
+  background-size: 30px 30px;
+  background-position: right 5px top 5px;
+}
+.enbesa-indicator {
+  background-image: url('~@/assets/regions/enbesa.webp');
+  background-size: 30px 30px;
+  background-position: right 5px top 5px;
 }
 </style>

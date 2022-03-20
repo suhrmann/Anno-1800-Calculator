@@ -43,6 +43,7 @@ export default {
     numEngineers: 0,
     numInvestors: 0,
     numScholars: 0,
+    numTourists: 0,
 
     numJornaleros: 0,
     numObreros: 0,

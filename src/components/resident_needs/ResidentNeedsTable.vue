@@ -88,10 +88,9 @@
           <!-- Warn about no data -->
           <template slot="no-data">
             <v-alert color="warning" icon="mid-warning">
-              <h3>Sorry, nothing to display here :(</h3>
+              <h3>Nothing to display here :(</h3>
               <p class="mb-0">
-                Enter the number of your populations to start calculation of
-                needs.
+                Enter the number of your populations to start calculation of needs.
               </p>
             </v-alert>
           </template>

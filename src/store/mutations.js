@@ -5,20 +5,20 @@ export default {
     state.selectedDLCs = dlcsArray
   },
   addToPopulationNeeds (state, populationObject) {
-    state.population.numFarmers =
-      Number(state.population.numFarmers) + Number(populationObject.farmers)
-    state.population.numWorkers =
-      Number(state.population.numWorkers) + Number(populationObject.workers)
-    state.population.numArtisans =
-      Number(state.population.numArtisans) + Number(populationObject.artisans)
-    state.population.numEngineers =
-      Number(state.population.numEngineers) + Number(populationObject.engineers)
-    state.population.numInvestors =
-      Number(state.population.numInvestors) + Number(populationObject.investors)
-    state.population.numJornaleros =
-      Number(state.population.numJornaleros) + Number(populationObject.jornaleros)
-    state.population.numObreros =
-      Number(state.population.numObreros) + Number(populationObject.obreros)
+    state.population.numFarmers = Number(state.population.numFarmers) + Number(populationObject.farmers)
+    state.population.numWorkers = Number(state.population.numWorkers) + Number(populationObject.workers)
+    state.population.numArtisans = Number(state.population.numArtisans) + Number(populationObject.artisans)
+    state.population.numEngineers = Number(state.population.numEngineers) + Number(populationObject.engineers)
+    state.population.numInvestors = Number(state.population.numInvestors) + Number(populationObject.investors)
+
+    state.population.numJornaleros = Number(state.population.numJornaleros) + Number(populationObject.jornaleros)
+    state.population.numObreros = Number(state.population.numObreros) + Number(populationObject.obreros)
+
+    state.population.numExplorers = Number(state.population.numExplorers) + Number(populationObject.explorers)
+    state.population.numTechnicians = Number(state.population.numTechnicians) + Number(populationObject.technicians)
+
+    state.population.numShepherds = Number(state.population.numShepherds) + Number(populationObject.shepherds)
+    state.population.numElders = Number(state.population.numElders) + Number(populationObject.elders)
   },
 
   addBuildings (state, buildings) {
@@ -95,7 +95,7 @@ export default {
   /**
    * Set the number of farmers for needs calculation.
    * @param {object} state
-   * @param {float} numFarmers The new number of farmers
+   * @param {number} numFarmers The new number of farmers
    */
   setNumFarmers (state, numFarmers) {
     state.population.numFarmers = numFarmers
@@ -103,7 +103,7 @@ export default {
   /**
    * Set the number of workers for needs calculation.
    * @param {object} state
-   * @param {float} numWorkers The new number of workers
+   * @param {number} numWorkers The new number of workers
    */
   setNumWorkers (state, numWorkers) {
     state.population.numWorkers = numWorkers
@@ -111,7 +111,7 @@ export default {
   /**
    * Set the number of artisans for needs calculation.
    * @param {object} state
-   * @param {float} numArtisans The new number of artisans
+   * @param {number} numArtisans The new number of artisans
    */
   setNumArtisans (state, numArtisans) {
     state.population.numArtisans = numArtisans
@@ -119,7 +119,7 @@ export default {
   /**
    * Set the number of engineers for needs calculation.
    * @param {object} state
-   * @param {float} numEngineers The new number of engineers
+   * @param {number} numEngineers The new number of engineers
    */
   setNumEngineers (state, numEngineers) {
     state.population.numEngineers = numEngineers
@@ -127,7 +127,7 @@ export default {
   /**
    * Set the number of investors for needs calculation.
    * @param {object} state
-   * @param {float} numInvestors The new number of investors
+   * @param {number} numInvestors The new number of investors
    */
   setNumInvestors (state, numInvestors) {
     state.population.numInvestors = numInvestors
@@ -135,15 +135,23 @@ export default {
   /**
    * Set the number of scholars for needs calculation.
    * @param {object} state
-   * @param {float} numScholars The new number of scholars
+   * @param {number} numScholars The new number of scholars
    */
   setNumScholars (state, numScholars) {
     state.population.numScholars = numScholars
   },
   /**
+   * Set the number of scholars for needs calculation.
+   * @param {object} state
+   * @param {number} numTourists The new number of scholars
+   */
+  setNumTourists (state, numTourists) {
+    state.population.numTourists = numTourists
+  },
+  /**
    * Set the number of jornaleros for needs calculation.
    * @param {object} state
-   * @param {float} numJornaleros The new number of farmers
+   * @param {number} numJornaleros The new number of farmers
    */
   setNumJornaleros (state, numJornaleros) {
     state.population.numJornaleros = numJornaleros
@@ -151,7 +159,7 @@ export default {
   /**
    * Set the number of obreros for needs calculation.
    * @param {object} state
-   * @param {float} numObreros The new number of farmers
+   * @param {number} numObreros The new number of farmers
    */
   setNumObreros (state, numObreros) {
     state.population.numObreros = numObreros
@@ -160,7 +168,7 @@ export default {
   /**
    * Set the number of obreros for needs calculation.
    * @param {object} state
-   * @param {float} numExplorers The new number of farmers
+   * @param {number} numExplorers The new number of farmers
    */
   setNumExplorers (state, numExplorers) {
     state.population.numExplorers = numExplorers
@@ -168,7 +176,7 @@ export default {
   /**
    * Set the number of obreros for needs calculation.
    * @param {object} state
-   * @param {float} numTechnicians The new number of farmers
+   * @param {number} numTechnicians The new number of farmers
    */
   setNumTechnicians (state, numTechnicians) {
     state.population.numTechnicians = numTechnicians
@@ -177,7 +185,7 @@ export default {
   /**
    * Set the number of obreros for needs calculation.
    * @param {object} state
-   * @param {float} numShepherds The new number of farmers
+   * @param {number} numShepherds The new number of farmers
    */
   setNumShepherds (state, numShepherds) {
     state.population.numShepherds = numShepherds
@@ -185,7 +193,7 @@ export default {
   /**
    * Set the number of obreros for needs calculation.
    * @param {object} state
-   * @param {float} numElders The new number of farmers
+   * @param {number} numElders The new number of farmers
    */
   setNumElders (state, numElders) {
     state.population.numElders = numElders
