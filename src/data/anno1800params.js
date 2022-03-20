@@ -27,7 +27,7 @@ export const tradeContracts = params.tradeContracts
 export const traders = params.traders
 export const workforce = params.workforce
 
-// Worlds
+// Regions
 export const oldWorldGUID = 5000000
 export const newWorldGUID = 5000001
 export const arcticGUID = 160001
@@ -47,3 +47,23 @@ export const techniciansGUID = 112643
 export const shepherdsGUID = 114329
 export const eldersGUID = 114330
 export const scholarsGUID = 118745
+
+/**
+ * Get the population from its GUID.
+ *
+ * @param guid
+ * @returns {*}
+ */
+export const getRegionByGUID = (guid) => {
+  return regions.find(region => region.guid === guid)
+}
+
+/**
+ * Get the population from its GUID.
+ *
+ * @param guid
+ * @returns {*}
+ */
+export const getPopulationByGUID = (guid) => {
+  return populationLevels.find(popLevel => popLevel.guid === guid)
+}

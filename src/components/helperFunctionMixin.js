@@ -1,4 +1,3 @@
-import { populationLevels, regions } from '@/data/anno1800params'
 import anno1800icons from '@/data/anno1800icons'
 import { chainNodeMixin } from './production_chains/chainNodeMixin'
 
@@ -204,28 +203,6 @@ export const helperFunctionMixin = {
         }
       })
       return chainObject
-    },
-
-    /**
-     * Searches all regions by their region guid
-     *
-     * @param {int} guid
-     * @return {Object} The selected region Object
-     */
-    getRegionByGUID (guid) {
-      const selectedRegion = regions.find(region => region.guid === guid)
-      return selectedRegion
-    },
-
-    /**
-     * Searches all population levels by their population level guid
-     *
-     * @param {int} guid
-     * @return {Object} The selected population level Object
-     */
-    getPopulationByGUID (guid) {
-      const selectedPopulation = populationLevels.find(population => population.guid === guid)
-      return selectedPopulation
     },
 
     /**

@@ -355,29 +355,29 @@
 
 <script>
 import {
-  populationLevels,
+  getPopulationByGUID,
   farmersGUID, workersGUID, artisansGUID, engineersGUID, investorsGUID, scholarsGUID, touristsGUID,
   jornalerosGUID, obrerosGUID,
   explorersGUID, techniciansGUID,
   shepherdsGUID, eldersGUID
 } from '@/data/anno1800params'
 
-const farmersPerResidence = populationLevels.find(popLevel => popLevel.guid === farmersGUID).fullHouse
-const workersPerResidence = populationLevels.find(popLevel => popLevel.guid === workersGUID).fullHouse
-const artisansPerResidence = populationLevels.find(popLevel => popLevel.guid === artisansGUID).fullHouse
-const engineersPerResidence = populationLevels.find(popLevel => popLevel.guid === engineersGUID).fullHouse
-const investorsPerResidence = populationLevels.find(popLevel => popLevel.guid === investorsGUID).fullHouse
-const scholarsPerResidence = populationLevels.find(popLevel => popLevel.guid === scholarsGUID).fullHouse
-const touristsPerResidence = populationLevels.find(popLevel => popLevel.guid === touristsGUID).fullHouse
+const farmersPerResidence = getPopulationByGUID(farmersGUID).fullHouse
+const workersPerResidence = getPopulationByGUID(workersGUID).fullHouse
+const artisansPerResidence = getPopulationByGUID(artisansGUID).fullHouse
+const engineersPerResidence = getPopulationByGUID(engineersGUID).fullHouse
+const investorsPerResidence = getPopulationByGUID(investorsGUID).fullHouse
+const scholarsPerResidence = getPopulationByGUID(scholarsGUID).fullHouse
+const touristsPerResidence = getPopulationByGUID(touristsGUID).fullHouse
 
-const jornalerosPerResidence = populationLevels.find(popLevel => popLevel.guid === jornalerosGUID).fullHouse
-const obrerosPerResidence = populationLevels.find(popLevel => popLevel.guid === obrerosGUID).fullHouse
+const jornalerosPerResidence = getPopulationByGUID(jornalerosGUID).fullHouse
+const obrerosPerResidence = getPopulationByGUID(obrerosGUID).fullHouse
 
-const explorersPerResidence = populationLevels.find(popLevel => popLevel.guid === explorersGUID).fullHouse
-const techniciansPerResidence = populationLevels.find(popLevel => popLevel.guid === techniciansGUID).fullHouse
+const explorersPerResidence = getPopulationByGUID(explorersGUID).fullHouse
+const techniciansPerResidence = getPopulationByGUID(techniciansGUID).fullHouse
 
-const shepherdsPerResidence = populationLevels.find(popLevel => popLevel.guid === shepherdsGUID).fullHouse
-const eldersPerResidence = populationLevels.find(popLevel => popLevel.guid === eldersGUID).fullHouse
+const shepherdsPerResidence = getPopulationByGUID(shepherdsGUID).fullHouse
+const eldersPerResidence = getPopulationByGUID(eldersGUID).fullHouse
 
 export default {
   name: 'BottomPopulationInput',

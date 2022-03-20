@@ -244,15 +244,8 @@
 </template>
 
 <script>
-import population from '@/data/population.json'
-
 export default {
   name: 'BottomPopulationInput',
-  data () {
-    return {
-      population: population
-    }
-  },
   computed: {
     hasPassage () {
       return true || this.$store.getters.hasPassage // TODO implement properly
