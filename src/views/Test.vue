@@ -31,30 +31,30 @@
 </template>
 
 <script>
-import { checkNeedType } from "@/data/anno1800params";
+import { checkNeedType } from '@/data/anno1800params'
 
 export default {
-  data() {
+  data () {
     return {
       productGUID: 1010349,
       popGUID: 15000001,
-      result: ""
-    };
+      result: ''
+    }
   },
 
   computed: {
-    prGUID() {
-      return parseInt(this.productGUID);
+    prGUID () {
+      return parseInt(this.productGUID)
     },
-    poGUID() {
-      return parseInt(this.popGUID);
+    poGUID () {
+      return parseInt(this.popGUID)
     }
   },
   methods: {
-    getNeedType() {
-      this.result = checkNeedType(this.prGUID, this.poGUID).description;
+    getNeedType () {
+      this.result = checkNeedType(this.prGUID, this.poGUID).description
     }
   }
-};
+}
 </script>
 <style lang=""></style>
