@@ -3,7 +3,6 @@
  * GUID: "icon/path.png"
  */
 export default [
-
   /*
    * Regions
    */
