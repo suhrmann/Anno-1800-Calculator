@@ -25,20 +25,42 @@
           ></v-text-field>
         </v-col>
       </v-row>
-      <p>Result: {{ this.result }}</p>
+      <p>Result: {{ this.result1 }}</p>
+    </v-container>
+    <v-container>
+      <v-row>
+        <v-col md3>
+          <v-btn @click="getProductInfo" color="success">Get Product Info</v-btn>
+        </v-col>
+      </v-row>
+      <p>Result: {{ this.result2 }}</p>
+    </v-container>
+    <v-container>
+      <v-row>
+        <v-col md3>
+          <v-btn @click="getRelevantProducts" color="success">Get Relevant Products</v-btn>
+        </v-col>
+        <v-col md3>
+          <v-switch label="mit Namen?" v-model="productNameSwitch"></v-switch>
+        </v-col>
+      </v-row>
+      <p>Result: {{ this.result3 }}</p>
     </v-container>
   </div>
 </template>
 
 <script>
-import { checkNeedType } from '@/data/anno1800params'
+import { checkNeedType, getProductInformation, getRelevantProducts } from '@/data/anno1800params'
 
 export default {
   data () {
     return {
-      productGUID: 1010349,
+      productGUID: 1010205,
       popGUID: 15000001,
-      result: ''
+      result1: '',
+      result2: '',
+      result3: '',
+      productNameSwitch: false
     }
   },
 
@@ -52,8 +74,21 @@ export default {
   },
   methods: {
     getNeedType () {
-      this.result = checkNeedType(this.prGUID, this.poGUID).description
+      this.result1 = checkNeedType(this.prGUID, this.poGUID).description
+    },
+    getProductInfo () {
+      this.result2 = getProductInformation(this.prGUID)
+    },
+    getRelevantProducts () {
+      const products = getRelevantProducts(this.productNameSwitch)
+      const fullInfo = []
+      products.forEach(product => {
+        fullInfo.push(getProductInformation(this.productNameSwitch ? product.guid : product))
+      })
+      fullInfo.sort((a, b) => a.firstLevel - b.firstLevel)
+      this.result3 = fullInfo
     }
+
   }
 }
 </script>
