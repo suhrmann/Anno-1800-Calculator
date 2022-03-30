@@ -40,17 +40,22 @@
         <v-col md3>
           <v-btn @click="getRelevantProducts" color="success">Get Relevant Products</v-btn>
         </v-col>
-        <v-col md3>
-          <v-switch label="mit Namen?" v-model="productNameSwitch"></v-switch>
-        </v-col>
       </v-row>
       <p>Result: {{ this.result3 }}</p>
+    </v-container>
+        <v-container>
+      <v-row>
+        <v-col md3>
+          <v-btn @click="generic_testmethod" color="success">Generic Test Method</v-btn>
+        </v-col>
+      </v-row>
+      <p>Result: </p>
     </v-container>
   </div>
 </template>
 
 <script>
-import { checkNeedType, getProductInformation, getRelevantProducts } from '@/data/anno1800params'
+import { checkNeedType, getProductInformation, getRelevantProducts, testmethod } from '@/data/anno1800params'
 
 export default {
   data () {
@@ -87,8 +92,11 @@ export default {
       })
       fullInfo.sort((a, b) => a.firstLevel - b.firstLevel)
       this.result3 = fullInfo
-    }
+    },
 
+    generic_testmethod () {
+      testmethod()
+    }
   }
 }
 </script>

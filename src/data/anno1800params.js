@@ -1,4 +1,6 @@
 import { params } from './params'
+// import { hierarchy } from './anno1800hierarchy'
+import icons from './anno1800icons'
 
 /**
  * Wrapper for params.js
@@ -7,7 +9,7 @@ import { params } from './params'
 
 export const factories = params.factories
 export const goodConsumptionUpgrades = params.goodConsumptionUpgrades
-export const icons = params.icons
+// export const icons = params.icons
 export const items = params.items
 export const languages = params.languages
 export const modules = params.modules
@@ -112,8 +114,15 @@ export const checkNeedType = (productGUID, popLevelGUID) => {
  */
 export const getRelevantProducts = (withNames = false) => {
   const relevantProducts = []
-
   const constructionProducts = productFilters.find(productFilter => productFilter.guid === 501957).products
+  /*   const constructionProducts = hierarchy.regions.forEach(region => {
+    region.populationLevels.forEach(populationLevel => {
+      populationLevel.factories = populationLevel.factories.forEach(factoryGUID => {
+        const output = params.factories.find(paramFactory => paramFactory.guid === factoryGUID).outputs[0]
+
+      })
+    })
+  }) */
 
   relevantProducts.push(...productFilters.find(productFilter => productFilter.guid === 502031).products)
   relevantProducts.push(...constructionProducts.filter(productGUID => ![112518, 112520, 112523].includes(productGUID)))
@@ -141,7 +150,7 @@ export const getProductInformation = (productID) => {
 
   factoryData.forEach(factory => {
     productInformation.push({
-      firstLevel: _getFirstPopulationLevelOfProduct(productID),
+      // firstLevel: _getFirstPopulationLevelOfProduct(productID),
       name: productData.name,
       factoryID: factory.guid,
       factoryName: factory.name,
@@ -152,17 +161,50 @@ export const getProductInformation = (productID) => {
   return productInformation
 }
 
-/**
- * Returns the GUID PopulationLevel where a Product Production Chain is first available to build.
- * TODO: Construction Material needs to be entered manually :/
- *
- * @param productID
- * @returns {number}
- */
-const _getFirstPopulationLevelOfProduct = (productID) => {
-  const popLevelsWithProductNeed = populationLevels.filter(populationLevel => populationLevel.needs.find(need => need.guid === parseInt(productID)) !== undefined)
-  const popLevelGUIDs = popLevelsWithProductNeed.map(popLevel => popLevel.guid)
-  let firstPopLevel = 0
-  if (popLevelGUIDs.length !== 0) { firstPopLevel = popLevelGUIDs.reduce((prev, current) => prev < current ? prev : current) }
-  return firstPopLevel
+export const testmethod = () => {
+  // this method iterates over every element in icons.product.data and
+  // builds a new json to use as data
+  // this is just a helper script to make data entry easier
+
+  // get product filter guid for each product
+  let found = false
+  icons.products.data.forEach(currentData => {
+    if (found === false) {
+      params.productFilter.forEach(filter => {
+        if (filter.products.includes(currentData.guid)) {
+          currentData.productFilter = filter.guid
+          found = true
+        }
+      })
+    }
+    if (found === false) {
+      currentData.productFilter = 0
+    }
+    found = false
+  })
+
+  // get data for each product
+  icons.products.data.forEach(currentData => {
+    const searchArray = []
+    searchArray.push(...params.products)
+    searchArray.push(...params.publicRecipeBuildings)
+    searchArray.push(...params.recipeLists)
+    searchArray.push(...params.residenceBuildings)
+    searchArray.push(...params.tradeContracts.piers)
+    searchArray.push(...params.traders)
+    const productData = searchArray.find(product => currentData.guid === product.guid)
+    console.log(productData)
+    console.log(currentData.guid)
+    if (productData.name === undefined) {
+      currentData.name = 'unknown'
+    } else {
+      currentData.name = productData.name
+    }
+  })
+
+  // get icon file for each product
+  icons.products.data.forEach(currentData => { })
+
+  // output data into stringified json
+  console.log(JSON.stringify(icons.products.data))
 }
