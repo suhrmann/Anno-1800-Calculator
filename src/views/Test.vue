@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { checkNeedType, getProductInformation, getRelevantProducts, testmethod } from '@/data/anno1800params'
+import { checkNeedType, getProductInformation, getRelevantEndProducts, testmethod } from '@/data/anno1800params'
 
 export default {
   data () {
@@ -85,13 +85,7 @@ export default {
       this.result2 = getProductInformation(this.prGUID)
     },
     getRelevantProducts () {
-      const products = getRelevantProducts(this.productNameSwitch)
-      const fullInfo = []
-      products.forEach(product => {
-        fullInfo.push(getProductInformation(this.productNameSwitch ? product.guid : product))
-      })
-      fullInfo.sort((a, b) => a.firstLevel - b.firstLevel)
-      this.result3 = fullInfo
+      console.log(getRelevantEndProducts())
     },
 
     generic_testmethod () {

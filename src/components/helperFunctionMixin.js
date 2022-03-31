@@ -40,13 +40,14 @@ export const helperFunctionMixin = {
      * Workaround to load images dynamically in for-loop.
      *
      * @param {number} guid The image to load.
+     * @param {number} key Specify a key where to look for the image (optional)
      * @return {string} The URL of the image (e.g. for use as img src).
      */
-    getImage (guid) {
-      const icon = anno1800icons.find(icon => icon.guid === guid)
+    getImage (guid, key) {
+      const icon = anno1800icons[key].data.find(icon => icon.guid === guid)
       const iconPath = icon ? icon.iconPath : undefined
       if (!iconPath) console.error('No ICON found for guid ', guid)
-      return iconPath ? require(`@/assets/${iconPath}`) : require(DEFAULT_ICON_PATH)
+      return iconPath ? require(`@/assets${iconPath}`) : require(DEFAULT_ICON_PATH)
     },
 
     /**

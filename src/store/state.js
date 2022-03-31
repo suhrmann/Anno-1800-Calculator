@@ -22,7 +22,7 @@ export default {
   },
   selectedRegionGUID: oldWorldGUID,
   selectedPopulationGUID: farmersGUID,
-  selectedProductionChainID: 1, // TODO GUID of TODO
+  selectedProductionChainID: 100451, // TODO GUID of TODO
 
   /**
    * The following 2 properties are linked to the options in VisualProductionChain.vue

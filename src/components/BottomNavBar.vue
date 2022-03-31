@@ -1,14 +1,9 @@
 <template>
   <v-flex xs12>
-    <!--
-      The following element is needed to trigger the initial rendering of the computed property selectedProductionChain
-      The element does render but is not shown
-    -->
-    <p v-show="false">{{selectedProductionChain}}</p>
-
-    <v-card height="70px" tile>
+        <!-- Nav Bar: CHAINS -->
+     <v-card height="70px" tile>
       <v-bottom-navigation
-        v-model="selectedProductionChainID"
+        v-model="selectedChainGUID"
         absolute
         dark
         height="70"
@@ -17,20 +12,20 @@
         <v-btn
           color="primary"
           text
-          v-for="(chain) of selectedProductionChains"
-          :key="chain.id"
-          :value="chain.id"
+          v-for="(chain) of chains"
+          :key="chain.guid"
+          :value="chain.guid"
+          @click="changeChain(chain.guid)"
         >
           <span>{{ chain.name }}</span>
           <v-avatar>
-            <img :src="getDirectImage(chain.img, 'buildings')" :alt="chain.name + ' Image'">
+            <img :src="getImage(chain.guid, 'factories')" :alt="chain.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
     </v-card>
-
-    <!-- Nav Bar: POPULATION LEVEL -->
-    <v-card height="70px" tile>
+    <!-- Nav Bar: POPLEVELS -->
+     <v-card height="70px" tile>
       <v-bottom-navigation
         v-model="selectedPopulationGUID"
         absolute
@@ -41,19 +36,18 @@
         <v-btn
           color="primary"
           text
-          v-for="(population) of selectedPopulations"
-          :key="population.guid"
-          :value="population.guid"
-          @click="changePopulation(population.guid)"
+          v-for="(populationLevel) of populationLevels"
+          :key="populationLevel.guid"
+          :value="populationLevel.guid"
+          @click="changePopulationLevel(populationLevel.guid)"
         >
-          <span>{{ population.locaText.english }}</span>
+          <span>{{ populationLevel.name }}</span>
           <v-avatar>
-            <img :src="getImage(population.guid)" :alt="population.locaText.english + ' Image'">
+            <img :src="getImage(populationLevel.guid, 'populationLevels')" :alt="populationLevel.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
     </v-card>
-
     <!-- Nav Bar: REGION -->
     <v-card height="70px" tile>
       <v-bottom-navigation
@@ -71,9 +65,9 @@
           :value="region.guid"
           @click="changeRegion(region.guid)"
         >
-          <span>{{ region.locaText.english }}</span>
+          <span>{{ region.name }}</span>
           <v-avatar>
-            <img :src="getImage(region.guid)" :alt="region.locaText.english + ' Image'">
+            <img :src="getImage(region.guid, 'regions')" :alt="region.name + ' Image'">
           </v-avatar>
         </v-btn>
       </v-bottom-navigation>
@@ -82,24 +76,21 @@
 </template>
 
 <script>
-import { regions, populationLevels } from '@/data/anno1800params'
-import legacyPopulations from '@/data/population'
-import ProductionChains from '@/data/production-chains.json'
-import { helperFunctionMixin } from './helperFunctionMixin.js'
-import { EventBus } from '@/EventBus'
-
+import { getEndProductsAsTree } from '@/data/anno1800params'
+import { helperFunctionMixin } from '@/components/helperFunctionMixin.js'
 export default {
-  name: 'BottomNavBar',
   mixins: [helperFunctionMixin],
+  mounted () {
+    this.regions = getEndProductsAsTree()
+    this.changeRegion(this.selectedRegionGUID)
+  },
   data () {
     return {
-      /* Store data from JSON in component */
-      regions: regions,
-      populations: populationLevels,
-      productionChainsData: ProductionChains.Production_Chain
+      regions: [],
+      populationLevels: [],
+      chains: []
     }
   },
-
   computed: {
     selectedRegionGUID: {
       get: function () {
@@ -109,7 +100,6 @@ export default {
         this.$store.commit('changeRegionGUID', selectedRegionGUID)
       }
     },
-
     selectedPopulationGUID: {
       get: function () {
         return this.$store.state.selectedPopulationGUID
@@ -119,7 +109,7 @@ export default {
       }
     },
 
-    selectedProductionChainID: {
+    selectedChainGUID: {
       get: function () {
         return this.$store.state.selectedProductionChainID
       },
@@ -129,95 +119,42 @@ export default {
           selectedProductionChainID
         )
       }
-    },
-
-    /**
-     * Search production chain by chainID.
-     *
-     * @return {Object} The selected Production Chain
-     */
-    selectedProductionChain () {
-      const selectedPopulationChains = this.selectedProductionChains
-      const chainID = this.selectedProductionChainID
-      let productionChain = {}
-
-      Object.keys(selectedPopulationChains).forEach((chain) => {
-        if (selectedPopulationChains[chain].id === chainID) {
-          productionChain = selectedPopulationChains[chain]
-        }
-      })
-      this.setProductionChain(productionChain)
-      EventBus.$emit('bottomNavBarChanged')
-      return productionChain
-    },
-
-    /**
-     * Returns a deep copy of all Production Chains
-     * @return {Object} A JS Object with all production chain objects init
-     */
-    fetchAllProductionChains () {
-      return JSON.parse(JSON.stringify(this.productionChainsData))
-    },
-
-    /**
-     * Filter the population levels for the ones available in the selected region.
-     *
-     * @return {array} The population levels of the selected region.
-     */
-    selectedPopulations: function () {
-      // const populationGroup = populationGroups.find(popGroup => popGroup.region === this.selectedRegionGUID)
-      return populationLevels.filter(popLevel => popLevel.region === this.selectedRegionGUID)
-    },
-
-    /**
-     * Filter the production chains for the ones available in the selected population level.
-     *
-     * @return {array} The production chains of the selected region and population level.
-     */
-    selectedProductionChains: function () {
-      const productionChains = Object.values(this.productionChainsData)
-      return productionChains.filter((chain) => chain.populationGUID === this.selectedPopulationGUID)
     }
+
   },
+
   methods: {
-    /**
-     * After changing the region, display the first population level.
-     *
-     * @param {int} regionGUID The id of the region that caused this reset.
-     */
-    changeRegion: function (regionGUID) {
-      this.selectedRegionGUID = regionGUID
 
-      const selectedPopulation = populationLevels.find(popLevel => popLevel.region === this.selectedRegionGUID)
-      this.selectedPopulationGUID = selectedPopulation.guid
+    changeRegion (toGUID) {
+      console.log('change to Region ' + toGUID)
+      this.selectedRegionGUID = toGUID
+      const regions = JSON.parse(JSON.stringify(this.regions))
+      const region = regions.find(region => region.guid === this.selectedRegionGUID)
 
-      this.changePopulation(selectedPopulation.guid)
-      EventBus.$emit('bottomNavBarChanged')
+      this.populationLevels = []
+
+      this.populationLevels.push(...region.populationLevels)
+
+      this.changePopulationLevel(this.populationLevels[0].guid)
     },
 
-    /**
-     * After changing the population level, display the first production chain.
-     *
-     * @param {int} populationGUID The id of the population level that caused this reset.
-     */
-    changePopulation: function (populationGUID) {
-      const legacyPopulation = Object.values(legacyPopulations).filter((pop) => pop.guid === populationGUID)
-      const firstProductionChainID = legacyPopulation[0].firstProductionChain
-      this.selectedProductionChainID = firstProductionChainID
-    },
+    changePopulationLevel (popLevelGUID) {
+      console.log('change to Population ' + popLevelGUID)
+      this.selectedPopulationGUID = popLevelGUID
 
-    /**
-     * Changes the VueX State so every Component can access the current productionChain
-     * This updates when this.selectedProductionChainID updates
-     *
-     * @param {Object} productionChain
-     */
-    setProductionChain (productionChain) {
-      this.$store.commit('changeProductionChain', productionChain)
+      const popLevels = JSON.parse(JSON.stringify(this.populationLevels))
+      const popLevel = popLevels.find(popLevel => popLevel.guid === this.selectedPopulationGUID)
+
+      this.chains = []
+      this.chains.push(...popLevel.factoryData)
+    },
+    changeChain (chainGUID) {
+      console.log('change to Chain chainGUID')
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
 </style>
