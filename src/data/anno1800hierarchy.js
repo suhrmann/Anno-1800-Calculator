@@ -1,4 +1,36 @@
 /* eslint-disable indent */
+/*
+    This is the hierarchy needed for Production Chains
+    There is a function in anno1800hierarchy.js which fetches all necessary Data for the following GUIDS
+    This function is called getEndProductsAsTree()
+
+    The data gets processed to:
+    {
+        regions: [
+            guid:
+            name:
+            icon:
+            populationLevels: [
+                {
+                    guid:
+                    name:
+                    icon:
+                    factories: []
+                    factoryData: [
+                        {
+                            guid:
+                            name:
+                            icon:
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+
+    Information can be hardcoded here to override result data (e.g. names or icons).
+    These hardcoded values will be ignored
+*/
 export default {
     regions: [
         {
@@ -23,13 +55,14 @@ export default {
                 guid: 15000004, // Investors
                 factories: [100659, 1010328, 1010326, 1010303]
             },
-            {
-                guid: 601379, // Tourists
-                factories: [133496, 132786, 132777, 133533]
-            },
+
             {
                 guid: 118745, // Scholars
                 factories: [118733, 118734, 118735, 124738, 124737, 124739]
+            }, {
+                guid: 601379, // Tourists
+                factories: [133496, 132786, 132777, 133533],
+                name: 'Tourists (WIP)'
             }]
         },
         {

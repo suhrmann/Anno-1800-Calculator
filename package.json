@@ -29,6 +29,7 @@
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "core-js": "^3.6.5",
+    "fuse.js": "^6.5.3",
     "roboto-fontface": "*",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.6.11",

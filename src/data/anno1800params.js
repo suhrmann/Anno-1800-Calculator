@@ -1,11 +1,14 @@
 import { params } from './params'
-// import { hierarchy } from './anno1800hierarchy'
+import hierarchy from './anno1800hierarchy'
 import icons from './anno1800icons'
+import { processProductInformation } from './devhelpers'
 
 /**
  * Wrapper for params.js
  * Provides the Anno 1800 data from NiHoel's params.js for this calculator.
  */
+
+export const defaultLang = 'english'
 
 export const factories = params.factories
 export const goodConsumptionUpgrades = params.goodConsumptionUpgrades
@@ -108,30 +111,36 @@ export const checkNeedType = (productGUID, popLevelGUID) => {
 }
 
 /**
- * Returns an Array containing of all relevant final products.
+ * Returns an Object with all final Producers as a Tree
+ * This tree ist organized in a hierarchical order
+ * The hierarchy follows the building unlock chronology ingame
  *
- * @returns {Array}
+ * @returns {*}
  */
-export const getRelevantProducts = (withNames = false) => {
-  const relevantProducts = []
-  const constructionProducts = productFilters.find(productFilter => productFilter.guid === 501957).products
-  /*   const constructionProducts = hierarchy.regions.forEach(region => {
-    region.populationLevels.forEach(populationLevel => {
-      populationLevel.factories = populationLevel.factories.forEach(factoryGUID => {
-        const output = params.factories.find(paramFactory => paramFactory.guid === factoryGUID).outputs[0]
+export const getEndProductsAsTree = () => {
+  return hierarchy.regions.map(region => {
+    const regionName = regions.find(paramsRegion => paramsRegion.guid === region.guid).locaText[defaultLang]
+    const regionIcon = (icons.regions.data.find(regionIcon => regionIcon.guid === region.guid)).iconPath
+    if (region.name === undefined) region.name = regionName
+    region.icon = regionIcon
 
+    region.populationLevels.map(populationLevel => {
+      const populationName = populationLevels.find(paramsPopulationLevel => paramsPopulationLevel.guid === populationLevel.guid).locaText[defaultLang]
+      const populationIcon = (icons.populationLevels.data.find(popIcon => popIcon.guid === populationLevel.guid)).iconPath
+      if (populationLevel.name === undefined) populationLevel.name = populationName
+      populationLevel.icon = populationIcon
+      populationLevel.factoryData = []
+
+      populationLevel.factories.map(factory => {
+        const factoryName = factories.find(paramsFactory => paramsFactory.guid === factory).locaText[defaultLang]
+        const factoryIcon = (icons.factories.data.find(factoryIcon => factoryIcon.guid === factory)).iconPath
+        populationLevel.factoryData.push({ guid: factory, name: factoryName, icon: factoryIcon })
+        return factory
       })
+      return populationLevel
     })
-  }) */
-
-  relevantProducts.push(...productFilters.find(productFilter => productFilter.guid === 502031).products)
-  relevantProducts.push(...constructionProducts.filter(productGUID => ![112518, 112520, 112523].includes(productGUID)))
-
-  if (withNames) {
-    return relevantProducts.map(relevantProduct => ({ guid: relevantProduct, name: products.find(product => { console.log(product.guid); console.log(relevantProduct); return product.guid === relevantProduct }).locaText.english }))
-  }
-
-  return relevantProducts
+    return region
+  })
 }
 
 /**
@@ -162,49 +171,5 @@ export const getProductInformation = (productID) => {
 }
 
 export const testmethod = () => {
-  // this method iterates over every element in icons.product.data and
-  // builds a new json to use as data
-  // this is just a helper script to make data entry easier
-
-  // get product filter guid for each product
-  let found = false
-  icons.products.data.forEach(currentData => {
-    if (found === false) {
-      params.productFilter.forEach(filter => {
-        if (filter.products.includes(currentData.guid)) {
-          currentData.productFilter = filter.guid
-          found = true
-        }
-      })
-    }
-    if (found === false) {
-      currentData.productFilter = 0
-    }
-    found = false
-  })
-
-  // get data for each product
-  icons.products.data.forEach(currentData => {
-    const searchArray = []
-    searchArray.push(...params.products)
-    searchArray.push(...params.publicRecipeBuildings)
-    searchArray.push(...params.recipeLists)
-    searchArray.push(...params.residenceBuildings)
-    searchArray.push(...params.tradeContracts.piers)
-    searchArray.push(...params.traders)
-    const productData = searchArray.find(product => currentData.guid === product.guid)
-    console.log(productData)
-    console.log(currentData.guid)
-    if (productData.name === undefined) {
-      currentData.name = 'unknown'
-    } else {
-      currentData.name = productData.name
-    }
-  })
-
-  // get icon file for each product
-  icons.products.data.forEach(currentData => { })
-
-  // output data into stringified json
-  console.log(JSON.stringify(icons.products.data))
+  processProductInformation(icons, params)
 }
