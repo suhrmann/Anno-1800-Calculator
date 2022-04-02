@@ -7,8 +7,8 @@
           :max-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
           position="top center"
           class="white--text"
-          :src="require('@/assets/backgrounds/anno1800wallpaper@0,25x.jpg')"
-          :lazy-src="require('@/assets/backgrounds/anno1800wallpaper@0,1x.jpg')"
+          :src="require('@/assets/backgrounds/anno1800wallpaper@0,25x.webp')"
+          :lazy-src="require('@/assets/backgrounds/anno1800wallpaper@0,1x.webp')"
           gradient="to top, rgba(0,0,0,.7), rgba(0,0,0,0)"
         >
           <v-theme-provider dark>

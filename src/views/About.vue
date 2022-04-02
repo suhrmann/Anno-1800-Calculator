@@ -16,7 +16,7 @@
       <v-card>
         <a href="https://www.ubisoft.com/en-gb/game/anno-1800/" target="_blank">
           <v-img
-            :src="require('@/assets/backgrounds/anno1800wallpaper@0,1x.jpg')"
+            :src="require('@/assets/backgrounds/anno1800wallpaper@0,1x.webp')"
             position="top center"
             aspect-ratio="3"
           ></v-img>
