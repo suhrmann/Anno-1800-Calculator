@@ -1,25 +1,49 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col class="col-1 pa-1" v-for="(cost, i) in costArray" :key="i">
-        <v-row class="col-border">
-          <v-col>
-            <v-flex class="text-center">
-              <v-avatar size="32">
-                <img class="center" :src="getDirectImage(cost.image, cost.imageFileFolder)" :alt="cost.name">
-              </v-avatar>
-              <p class="pb-0 mb-0">{{cost.name}}</p>
-            </v-flex>
-          </v-col>
-        </v-row>
-        <v-row class="col-border">
-          <v-col class="pt-0 text-right font-weight-black">
-            <b> {{cost.amount}} </b>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+        <v-expansion-panels
+              v-model="open_construction_costs"
+              tile
+              flat
+            >
+              <v-expansion-panel class="secondary pa-1">
+                <v-expansion-panel-header>
+                   <template v-slot:actions>
+                    <v-icon color="white">
+                      $expand
+                    </v-icon>
+                  </template>
+                  <h3>Construction Costs</h3>
+                    <v-flex class="pa-0 ma-0" xs3>
+                    <v-btn class="spacerbutton" >Add</v-btn>
+                  </v-flex>
+                </v-expansion-panel-header>
+                <v-expansion-panel-content eager>
+                  <v-card tile>
+                      <v-container>
+                        <v-row>
+                          <v-col class="col-1 pa-1" v-for="(cost, i) in costArray" :key="i">
+                            <v-row class="col-border">
+                              <v-col>
+                                <v-flex class="text-center">
+                                  <v-avatar size="32">
+                                    <img class="center" :src="getDirectImage(cost.image, cost.imageFileFolder)" :alt="cost.name">
+                                  </v-avatar>
+                                  <p class="pb-0 mb-0">{{cost.name}}</p>
+                                </v-flex>
+                              </v-col>
+                            </v-row>
+                            <v-row class="col-border">
+                              <v-col class="pt-0 text-right font-weight-black">
+                                <b> {{cost.amount}} </b>
+                              </v-col>
+                            </v-row>
+                          </v-col>
+                        </v-row>
+                    </v-container>
+                  </v-card>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
+
 </template>
 
 <script>
@@ -204,5 +228,20 @@ export default {
 <style scoped>
 .col-border {
   border-right: 1px solid #777777;
+}
+h3,h4 {
+  color: whitesmoke;
+}
+
+.spacerbutton {
+  visibility: hidden;
+}
+
+/* Narrow $expansion-panel-active-margin 16px !default */
+.v-expansion-panel-header {
+  padding: 8px 24px;
+}
+.v-expansion-panel-content > :first-child {
+  padding: 0;
 }
 </style>
