@@ -11,9 +11,9 @@
                       $expand
                     </v-icon>
                   </template>
-                  <h3>Workforce Need</h3>
-                  <v-flex class="pa-0 ma-0" xs3>
-                    <v-btn @click.stop="changeResidents()">Add to Needs</v-btn>
+                  <h3>Workforce</h3>
+                  <v-flex class="pa-0 ma-0" xs4>
+                    <v-btn @click.stop="changeResidents()">Add to Population</v-btn>
                   </v-flex>
                 </v-expansion-panel-header>
 

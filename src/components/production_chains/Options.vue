@@ -34,6 +34,19 @@
 <script>
 export default {
 
+  data () {
+    return {
+      options: [
+        {
+          name: 'Coal',
+          productAlternatives: [{
+
+          }]
+        }
+      ]
+    }
+  }
+
 }
 </script>
 

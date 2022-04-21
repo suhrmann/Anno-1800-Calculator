@@ -1,3 +1,5 @@
+// import { factories, products } from './anno1800params'
+
 /**
  * Map the Anno icons to our Anno-1800-Calculator assets.
  * GUID: "icon/path.png"
@@ -6,6 +8,7 @@ export default {
   /*
    * Populations
    */
+
   populationLevels: {
     paramsKeys: ['populationLevels'],
     data: [
@@ -1848,4 +1851,5 @@ export default {
       }
     ]
   }
+
 }

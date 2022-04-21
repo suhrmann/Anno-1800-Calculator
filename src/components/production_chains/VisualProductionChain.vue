@@ -66,13 +66,15 @@
   </v-container>
 </template>
 
-<script>
+<script lang="js">
+import { Vue } from 'vue-property-decorator'
 import { chainNodeMixin } from './chainNodeMixin.js'
 import { helperFunctionMixin } from '../helperFunctionMixin.js'
-import { EventBus } from '@/EventBus'
-import TreeChart from '../TreeChart'
+import { factories } from '../../data/anno1800params.js'
+import { EventBus } from '../../EventBus.js'
+import TreeChart from '../TreeChart.vue'
 
-export default {
+export default Vue.extend({
   components: {
     TreeChart
   },
@@ -91,8 +93,9 @@ export default {
     EventBus.$on('setSPTforChain', spt => {})
     EventBus.$on('changeSlider', value => {})
 
-    EventBus.$on('bottomNavBarChanged', () => {
-      this.temporaryProductionChain = this.getCurrentProductionChain()
+    EventBus.$on('chainSelected', () => {
+      const chain = this.buildProductionChainFromID(this.productionChainID)
+      console.log(chain)
 
       const helperFunctionMixin = this
 
@@ -140,8 +143,8 @@ export default {
       }
     },
 
-    productionChain () {
-      return this.$store.state.selectedProductionChain
+    productionChainID () {
+      return this.$store.state.selectedProductionChainID
     },
 
     consumption () {
@@ -238,6 +241,19 @@ export default {
   },
 
   methods: {
+    buildProductionChainFromID (chainID) {
+      // get final Factory
+      const finalFactory = factories.filter((factory) => factory.guid === chainID)
+
+      this.walkFactory(finalFactory)
+
+      return finalFactory
+    },
+
+    walkFactory (finalFactoryData) {
+
+    },
+
     matchNeeds () {
       this.chainCount = Math.ceil(this.consumptionPerMinute / (1 / (this.spt / 60)))
     },
@@ -262,15 +278,6 @@ export default {
       )
       element.relativeAmount =
         (building.productionTime / spt) * this.chainCount
-    },
-
-    /**
-     * gets Current active ProductionChain
-     * @return {Object} Production Chain Object
-     */
-    getCurrentProductionChain () {
-      const chain = JSON.parse(JSON.stringify(this.productionChain))
-      return chain
     },
 
     /**
@@ -311,7 +318,7 @@ export default {
       EventBus.$emit('addToNeeds')
     }
   }
-}
+})
 </script>
 
 <style scoped>

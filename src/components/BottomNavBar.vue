@@ -78,11 +78,14 @@
 <script>
 import { getEndProductsAsTree } from '@/data/anno1800params'
 import { helperFunctionMixin } from '@/components/helperFunctionMixin.js'
+import { EventBus } from '@/EventBus'
 export default {
   mixins: [helperFunctionMixin],
   mounted () {
     this.regions = getEndProductsAsTree()
     this.changeRegion(this.selectedRegionGUID)
+    this.changePopulationLevel(this.selectedPopulationGUID)
+    this.changeChain(this.selectedChainGUID)
   },
   data () {
     return {
@@ -147,9 +150,13 @@ export default {
 
       this.chains = []
       this.chains.push(...popLevel.factoryData)
+
+      this.changeChain(this.chains[0].guid)
     },
     changeChain (chainGUID) {
-      console.log('change to Chain chainGUID')
+      console.log('change to Chain ' + chainGUID)
+      this.selectedChainGUID = chainGUID
+      EventBus.$emit('chainSelected')
     }
   }
 }
