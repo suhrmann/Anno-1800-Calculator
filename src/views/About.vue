@@ -102,7 +102,7 @@
       </li>
       <li>
         Tobias Fürst
-        <a href="https://github.com/tfuerst">@tfuerst</a>
+        <a href="https://github.com/tbfuerst">@tbfuerst</a>
       </li>
     </ul>
 
