@@ -27,6 +27,7 @@ The Desktop App (for Windows, MacOS and Linux) does not require a Internet conne
 ---
 
 ## Changelog:
+- ``2022-11-11`` ``v0.4.13`` Bump electron from 15.5.5 to 18.3.7 PR #71
 - ``2022-10-24`` ``v0.4.12`` Update dependencies from dependabot (inter alia bump electron to 15.5.5)
 - ``2022-03-19`` ``v0.4.11`` Update dependencies using yarn
 - ``2022-03-10`` ``v0.4.10`` Show version info in About view
